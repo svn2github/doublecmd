@@ -1,0 +1,416 @@
+object frmMultiRename: TfrmMultiRename
+  Left = 368
+  Height = 354
+  Top = 160
+  Width = 608
+  HorzScrollBar.Page = 607
+  HorzScrollBar.Range = 603
+  VertScrollBar.Page = 353
+  VertScrollBar.Range = 345
+  ActiveControl = edName
+  Caption = 'MultiRename'
+  ClientHeight = 354
+  ClientWidth = 608
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  object gbMaska: TGroupBox
+    AnchorSideRight.Side = asrBottom
+    Height = 105
+    Top = 208
+    Width = 176
+    Anchors = [akLeft, akBottom]
+    Caption = 'Mask'
+    ClientHeight = 87
+    ClientWidth = 172
+    ParentCtl3D = False
+    TabOrder = 0
+    object lbName: TLabel
+      Left = 6
+      Height = 14
+      Width = 47
+      Caption = 'File Name'
+      ParentColor = False
+    end
+    object lbExt: TLabel
+      Left = 6
+      Height = 14
+      Top = 41
+      Width = 48
+      Caption = 'Extension'
+      ParentColor = False
+    end
+    object edName: TEdit
+      Left = 6
+      Height = 20
+      Top = 17
+      Width = 136
+      OnChange = cmbxFontChange
+      TabOrder = 0
+    end
+    object edExt: TEdit
+      Tag = 25
+      Left = 6
+      Height = 20
+      Top = 57
+      Width = 136
+      OnChange = cmbxFontChange
+      TabOrder = 2
+    end
+    object btnNameMenu: TButton
+      Left = 150
+      Height = 19
+      Top = 17
+      Width = 16
+      BorderSpacing.InnerBorder = 4
+      Caption = '...'
+      OnClick = btnNameMenuClick
+      TabOrder = 1
+    end
+    object btnExtMenu: TButton
+      Left = 150
+      Height = 20
+      Top = 57
+      Width = 16
+      BorderSpacing.InnerBorder = 4
+      Caption = '...'
+      OnClick = btnExtMenuClick
+      TabOrder = 3
+    end
+  end
+  object gbFindReplace: TGroupBox
+    AnchorSideLeft.Control = gbMaska
+    AnchorSideLeft.Side = asrBottom
+    Left = 182
+    Height = 105
+    Top = 208
+    Width = 132
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 6
+    Caption = 'Find && Replace'
+    ClientHeight = 87
+    ClientWidth = 128
+    ParentCtl3D = False
+    TabOrder = 1
+    object lbFind: TLabel
+      Left = 6
+      Height = 14
+      Width = 33
+      Caption = 'Find...'
+      ParentColor = False
+    end
+    object lbReplace: TLabel
+      Left = 6
+      Height = 14
+      Top = 41
+      Width = 51
+      Caption = 'Replace...'
+      ParentColor = False
+    end
+    object edFind: TEdit
+      Left = 6
+      Height = 20
+      Top = 17
+      Width = 120
+      OnChange = cmbxFontChange
+      TabOrder = 0
+    end
+    object edReplace: TEdit
+      Left = 6
+      Height = 20
+      Top = 57
+      Width = 120
+      OnChange = cmbxFontChange
+      TabOrder = 1
+    end
+  end
+  object gbFontStyle: TGroupBox
+    AnchorSideBottom.Control = gbLog
+    Left = 464
+    Height = 49
+    Top = 208
+    Width = 137
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Bottom = 6
+    Caption = 'File Name Style'
+    ClientHeight = 31
+    ClientWidth = 133
+    ParentCtl3D = False
+    TabOrder = 2
+    object cmbxFont: TComboBox
+      Left = 6
+      Height = 21
+      Top = 1
+      Width = 120
+      AutoCompleteText = [cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 13
+      ItemIndex = 0
+      Items.Strings = (
+        'no change'
+        'uppercase'
+        'lowercase'
+        'first char big'
+      )
+      MaxLength = 0
+      OnChange = cmbxFontChange
+      ParentCtl3D = False
+      Style = csDropDownList
+      TabOrder = 0
+    end
+  end
+  object gbCounter: TGroupBox
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideRight.Control = gbFontStyle
+    Left = 320
+    Height = 105
+    Top = 208
+    Width = 138
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 6
+    Caption = 'Counter'
+    ClientHeight = 87
+    ClientWidth = 134
+    ParentCtl3D = False
+    TabOrder = 3
+    object lbStNb: TLabel
+      Left = 6
+      Height = 14
+      Top = 1
+      Width = 65
+      Caption = 'Start Number'
+      ParentColor = False
+    end
+    object lbInterval: TLabel
+      Left = 6
+      Height = 14
+      Top = 57
+      Width = 39
+      Caption = 'Interval'
+      ParentColor = False
+    end
+    object lbWidth: TLabel
+      Left = 6
+      Height = 14
+      Top = 28
+      Width = 29
+      Caption = 'Width'
+      ParentColor = False
+    end
+    object edPoc: TEdit
+      Left = 80
+      Height = 20
+      Top = 1
+      Width = 48
+      MaxLength = 5
+      OnChange = edPocChange
+      TabOrder = 0
+      Text = '1'
+    end
+    object edInterval: TEdit
+      Left = 80
+      Height = 20
+      Top = 54
+      Width = 48
+      MaxLength = 5
+      OnChange = edIntervalChange
+      TabOrder = 1
+      Text = '1'
+    end
+    object cmbxWidth: TComboBox
+      Left = 80
+      Height = 21
+      Top = 25
+      Width = 50
+      AutoCompleteText = [cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 13
+      ItemIndex = 0
+      Items.Strings = (
+        '01'
+        '02'
+        '03'
+        '04'
+        '05'
+        '06'
+        '07'
+        '08'
+        '09'
+        '10'
+      )
+      MaxLength = 0
+      OnChange = cmbxFontChange
+      ParentCtl3D = False
+      Style = csDropDownList
+      TabOrder = 2
+      Text = '01'
+    end
+  end
+  object btnOK: TButton
+    AnchorSideRight.Control = btnCancel
+    Left = 320
+    Height = 32
+    Top = 320
+    Width = 66
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 6
+    BorderSpacing.InnerBorder = 4
+    Caption = 'OK'
+    OnClick = btnOKClick
+    TabOrder = 4
+  end
+  object btnCancel: TButton
+    AnchorSideRight.Control = gbLog
+    Left = 392
+    Height = 32
+    Top = 320
+    Width = 66
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 6
+    BorderSpacing.InnerBorder = 4
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 5
+  end
+  object gbLog: TGroupBox
+    Left = 464
+    Height = 82
+    Top = 263
+    Width = 137
+    Anchors = [akRight, akBottom]
+    Caption = 'Log Result'
+    ClientHeight = 64
+    ClientWidth = 133
+    ParentCtl3D = False
+    TabOrder = 6
+    object edFile: TEdit
+      Left = 6
+      Height = 20
+      Top = 16
+      Width = 120
+      TabOrder = 0
+    end
+    object cbLog: TCheckBox
+      Left = 8
+      Height = 19
+      Top = 40
+      Width = 44
+      AllowGrayed = True
+      Caption = 'Log'
+      OnClick = cbLogClick
+      TabOrder = 1
+    end
+  end
+  object btnRestore: TButton
+    Left = 8
+    Height = 32
+    Top = 318
+    Width = 136
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.InnerBorder = 4
+    Caption = 'Restore All'
+    OnClick = btnRestoreClick
+    TabOrder = 7
+  end
+  object lsvwFile: TListView
+    Left = 2
+    Height = 201
+    Top = 2
+    Width = 603
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Columns = <    
+      item
+        AutoSize = True
+        Caption = 'Old File Name'
+        Width = 120
+      end    
+      item
+        AutoSize = True
+        Caption = 'New File Name'
+        Width = 120
+      end    
+      item
+        AutoSize = True
+        Caption = 'File Path'
+        Width = 120
+      end>
+    TabOrder = 8
+    ViewStyle = vsReport
+  end
+  object ppNameMenu: TPopupMenu
+    AutoPopup = False
+    OnPopup = ppNameMenuPopup
+    left = 264
+    top = 320
+    object miNextName: TMenuItem
+      Caption = 'Name...'
+      object miName: TMenuItem
+        Caption = '[N]ame'
+        OnClick = NameClick
+      end
+      object miNameX: TMenuItem
+        Caption = '[Nx]ame'
+        OnClick = NameXClick
+      end
+      object miNameXX: TMenuItem
+        Caption = '[Nx:x]ame'
+        OnClick = NameXXClick
+      end
+    end
+    object N1: TMenuItem
+      Caption = '-'
+    end
+    object miNextExtension: TMenuItem
+      Caption = 'Extension...'
+      object Extension: TMenuItem
+        Caption = '[E]xtension'
+        OnClick = ExtensionClick
+      end
+      object miExtensionX: TMenuItem
+        Caption = '[Ex]xtension'
+        OnClick = ExtensionXClick
+      end
+      object miExtensionXX: TMenuItem
+        Caption = '[Ex:x]xtension'
+        OnClick = ExtensionXXClick
+      end
+    end
+    object N2: TMenuItem
+      Caption = '-'
+    end
+    object miCounter: TMenuItem
+      Caption = '[C]ounter'
+      OnClick = CounterClick
+    end
+    object N3: TMenuItem
+      Caption = '-'
+    end
+    object miNext: TMenuItem
+      Caption = 'Time...'
+      object miYear: TMenuItem
+        Caption = '[Y]ear'
+        Enabled = False
+      end
+      object miMonth: TMenuItem
+        Caption = '[Mo]nth'
+        Enabled = False
+      end
+      object miDay: TMenuItem
+        Caption = '[D]ay'
+        Enabled = False
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object miHour: TMenuItem
+        Caption = '[H]our'
+        Enabled = False
+      end
+      object miMinute: TMenuItem
+        Caption = '[Mi]nute'
+        Enabled = False
+      end
+      object miSecond: TMenuItem
+        Caption = '[S]econd'
+        Enabled = False
+      end
+    end
+  end
+end

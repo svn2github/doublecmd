@@ -1,0 +1,468 @@
+object frmFileProperties: TfrmFileProperties
+  Left = 308
+  Height = 432
+  Top = 132
+  Width = 458
+  HorzScrollBar.Page = 457
+  HorzScrollBar.Range = 425
+  VertScrollBar.Page = 431
+  VertScrollBar.Range = 401
+  ActiveControl = btnClose
+  Caption = 'Properties'
+  ClientHeight = 432
+  ClientWidth = 458
+  Position = poScreenCenter
+  object btnClose: TButton
+    AnchorSideRight.Control = pcPageControl
+    AnchorSideRight.Side = asrBottom
+    Left = 358
+    Height = 32
+    Top = 392
+    Width = 90
+    Anchors = [akTop, akRight]
+    BorderSpacing.InnerBorder = 4
+    Cancel = True
+    Caption = 'Close'
+    OnClick = btnCloseClick
+    TabOrder = 0
+  end
+  object pcPageControl: TPageControl
+    Left = 8
+    Height = 263
+    Top = 8
+    Width = 440
+    ActivePage = tsProperties
+    TabIndex = 0
+    TabOrder = 1
+    object tsProperties: TTabSheet
+      Caption = 'Properties'
+      ClientHeight = 237
+      ClientWidth = 432
+      object lblFileNameStr: TLabel
+        Left = 16
+        Height = 26
+        Top = 8
+        Width = 37
+        Caption = 'Name:'
+        Font.Color = clBlack
+        ParentColor = False
+      end
+      object lblFileName: TLabel
+        Left = 194
+        Height = 26
+        Top = 8
+        Width = 22
+        Caption = '???'
+        ParentColor = False
+        ShowAccelChar = False
+      end
+      object lblFolderStr: TLabel
+        Left = 16
+        Height = 26
+        Top = 32
+        Width = 29
+        Caption = 'Path:'
+        ParentColor = False
+      end
+      object lblFolder: TLabel
+        Left = 194
+        Height = 26
+        Top = 32
+        Width = 22
+        Caption = '???'
+        ParentColor = False
+        ShowAccelChar = False
+      end
+      object lblTypeStr: TLabel
+        Left = 16
+        Height = 26
+        Top = 48
+        Width = 31
+        Caption = 'Type:'
+        ParentColor = False
+      end
+      object lblType: TLabel
+        Left = 194
+        Height = 26
+        Top = 48
+        Width = 22
+        Caption = '???'
+        ParentColor = False
+        ShowAccelChar = False
+      end
+      object lblSymlinkStr: TLabel
+        Left = 16
+        Height = 26
+        Top = 64
+        Width = 47
+        Caption = 'Symlink:'
+        ParentColor = False
+      end
+      object lblSymlink: TLabel
+        Left = 194
+        Height = 26
+        Top = 64
+        Width = 22
+        Caption = '???'
+        ParentColor = False
+        ShowAccelChar = False
+      end
+      object lblSizeStr: TLabel
+        Left = 16
+        Height = 26
+        Top = 80
+        Width = 28
+        Caption = 'Size:'
+        ParentColor = False
+      end
+      object lblSize: TLabel
+        Left = 194
+        Height = 26
+        Top = 80
+        Width = 22
+        Caption = '???'
+        ParentColor = False
+        ShowAccelChar = False
+      end
+      object lblLastAccessStr: TLabel
+        Left = 16
+        Height = 26
+        Top = 112
+        Width = 68
+        Caption = 'Last access:'
+        ParentColor = False
+      end
+      object lblLastAccess: TLabel
+        Left = 214
+        Height = 26
+        Top = 112
+        Width = 22
+        Caption = '???'
+        ParentColor = False
+        ShowAccelChar = False
+      end
+      object lblLastModifStr: TLabel
+        Left = 16
+        Height = 26
+        Top = 128
+        Width = 96
+        Caption = 'Last modification:'
+        ParentColor = False
+      end
+      object lblLastModif: TLabel
+        Left = 214
+        Height = 26
+        Top = 128
+        Width = 22
+        Caption = '???'
+        ParentColor = False
+        ShowAccelChar = False
+      end
+      object lblLastStChangeStr: TLabel
+        Left = 16
+        Height = 26
+        Top = 144
+        Width = 106
+        Caption = 'Last status change:'
+        ParentColor = False
+      end
+      object lblLastStChange: TLabel
+        Left = 214
+        Height = 26
+        Top = 144
+        Width = 22
+        Caption = '???'
+        ParentColor = False
+        ShowAccelChar = False
+      end
+    end
+    object tsAttributes: TTabSheet
+      Caption = 'Attributes'
+      ClientHeight = 230
+      ClientWidth = 436
+      object lblFile: TLabel
+        Left = 8
+        Height = 26
+        Top = 11
+        Width = 55
+        Caption = 'File name'
+        ParentColor = False
+      end
+      object lblFileName1: TLabel
+        Left = 104
+        Height = 26
+        Top = 11
+        Width = 55
+        Caption = 'File name'
+        Font.Color = clBlack
+        ParentColor = False
+      end
+      object lblAttrOwnerStr: TLabel
+        Left = 8
+        Height = 26
+        Top = 54
+        Width = 37
+        Caption = 'Owner'
+        ParentColor = False
+      end
+      object lblWrite: TLabel
+        Left = 176
+        Height = 26
+        Top = 32
+        Width = 29
+        Caption = 'Write'
+        ParentColor = False
+      end
+      object lblRead: TLabel
+        Left = 104
+        Height = 26
+        Top = 32
+        Width = 31
+        Caption = 'Read'
+        ParentColor = False
+      end
+      object lblExec: TLabel
+        Left = 240
+        Height = 26
+        Top = 32
+        Width = 45
+        Caption = 'Execute'
+        ParentColor = False
+      end
+      object lblAttrGroupStr: TLabel
+        Left = 8
+        Height = 26
+        Top = 94
+        Width = 35
+        Caption = 'Group'
+        ParentColor = False
+      end
+      object lblAttrOtherStr: TLabel
+        Left = 8
+        Height = 26
+        Top = 134
+        Width = 31
+        Caption = 'Other'
+        ParentColor = False
+      end
+      object lblAttrTextStr: TLabel
+        Left = 8
+        Height = 26
+        Top = 203
+        Width = 123
+        Caption = 'Representation in text:'
+        ParentColor = False
+      end
+      object lblAttrText: TLabel
+        AnchorSideTop.Control = lblAttrTextStr
+        AnchorSideTop.Side = asrCenter
+        Left = 160
+        Height = 27
+        Top = 203
+        Width = 67
+        Caption = '-----------'
+        Font.Color = clBlack
+        Font.Height = 10
+        ParentColor = False
+      end
+      object lblAttrBitsStr: TLabel
+        Left = 8
+        Height = 26
+        Top = 175
+        Width = 24
+        Caption = 'Bits:'
+        ParentColor = False
+      end
+      object cbReadOwner: TCheckBox
+        Left = 112
+        Height = 23
+        Top = 48
+        Width = 22
+        AllowGrayed = True
+        TabOrder = 0
+      end
+      object cbWriteOwner: TCheckBox
+        Left = 184
+        Height = 23
+        Top = 48
+        Width = 22
+        AllowGrayed = True
+        TabOrder = 1
+      end
+      object cbExecOwner: TCheckBox
+        Left = 256
+        Height = 23
+        Top = 48
+        Width = 22
+        AllowGrayed = True
+        TabOrder = 2
+      end
+      object cbReadGroup: TCheckBox
+        Left = 112
+        Height = 23
+        Top = 88
+        Width = 22
+        AllowGrayed = True
+        TabOrder = 3
+      end
+      object cbWriteGroup: TCheckBox
+        Left = 184
+        Height = 23
+        Top = 88
+        Width = 22
+        AllowGrayed = True
+        TabOrder = 4
+      end
+      object cbExecGroup: TCheckBox
+        Left = 256
+        Height = 23
+        Top = 88
+        Width = 22
+        AllowGrayed = True
+        TabOrder = 5
+      end
+      object cbReadOther: TCheckBox
+        Left = 112
+        Height = 23
+        Top = 128
+        Width = 22
+        AllowGrayed = True
+        TabOrder = 6
+      end
+      object cbWriteOther: TCheckBox
+        Left = 184
+        Height = 23
+        Top = 128
+        Width = 22
+        AllowGrayed = True
+        TabOrder = 7
+      end
+      object cbExecOther: TCheckBox
+        Left = 256
+        Height = 23
+        Top = 128
+        Width = 22
+        AllowGrayed = True
+        TabOrder = 8
+      end
+      object cbSuid: TCheckBox
+        Left = 112
+        Height = 23
+        Top = 168
+        Width = 51
+        AllowGrayed = True
+        Caption = 'SUID'
+        TabOrder = 9
+      end
+      object cbSgid: TCheckBox
+        Left = 184
+        Height = 23
+        Top = 168
+        Width = 51
+        AllowGrayed = True
+        Caption = 'SGID'
+        TabOrder = 10
+      end
+      object cbSticky: TCheckBox
+        Left = 256
+        Height = 23
+        Top = 168
+        Width = 54
+        AllowGrayed = True
+        Caption = 'Sticky'
+        TabOrder = 11
+      end
+    end
+  end
+  object btnAll: TBitBtn
+    AnchorSideRight.Control = btnSkip
+    Left = 166
+    Height = 32
+    Top = 392
+    Width = 90
+    Anchors = [akTop, akRight]
+    BorderSpacing.Right = 6
+    Caption = '&All'
+    NumGlyphs = 0
+    OnClick = btnAllClick
+    TabOrder = 2
+  end
+  object btnOK: TBitBtn
+    AnchorSideRight.Control = btnAll
+    Left = 70
+    Height = 32
+    Top = 392
+    Width = 90
+    Anchors = [akTop, akRight]
+    BorderSpacing.Right = 6
+    Caption = '&OK'
+    Default = True
+    Kind = bkOK
+    NumGlyphs = 0
+    OnClick = btnOKClick
+    TabOrder = 3
+  end
+  object btnSkip: TBitBtn
+    AnchorSideRight.Control = btnClose
+    Left = 262
+    Height = 32
+    Top = 392
+    Width = 90
+    Anchors = [akTop, akRight]
+    BorderSpacing.Right = 6
+    Caption = 'Skip'
+    NumGlyphs = 0
+    OnClick = btnSkipClick
+    TabOrder = 4
+  end
+  object gbOwner: TGroupBox
+    Left = 8
+    Height = 105
+    Top = 280
+    Width = 440
+    Caption = 'Owner'
+    ClientHeight = 87
+    ClientWidth = 436
+    TabOrder = 5
+    object lblOwnerStr: TLabel
+      Left = 22
+      Height = 13
+      Top = 17
+      Width = 38
+      Caption = 'Owner'
+      ParentColor = False
+    end
+    object lblGroupStr: TLabel
+      Left = 22
+      Height = 13
+      Top = 49
+      Width = 35
+      Caption = 'Group'
+      ParentColor = False
+    end
+    object cbxUsers: TComboBox
+      Left = 135
+      Height = 21
+      Top = 9
+      Width = 227
+      AutoCompleteText = [cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 13
+      MaxLength = 0
+      ParentCtl3D = False
+      Sorted = True
+      TabOrder = 0
+    end
+    object cbxGroups: TComboBox
+      Left = 134
+      Height = 21
+      Top = 41
+      Width = 227
+      AutoCompleteText = [cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 13
+      MaxLength = 0
+      ParentCtl3D = False
+      Sorted = True
+      TabOrder = 1
+    end
+  end
+end

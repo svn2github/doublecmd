@@ -1,0 +1,1391 @@
+object frmMain: TfrmMain
+  Left = 256
+  Height = 398
+  Top = 166
+  Width = 676
+  HorzScrollBar.Page = 675
+  VertScrollBar.Page = 369
+  VertScrollBar.Range = 79
+  ActiveControl = nbRight
+  Caption = 'Double Commander'
+  ClientHeight = 370
+  ClientWidth = 676
+  Font.Color = clBlack
+  Font.Height = 13
+  Font.Name = 'Helvetica'
+  Font.Pitch = fpVariable
+  KeyPreview = True
+  Menu = mnuMain
+  OnActivate = FormActivate
+  OnClose = frmMainClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnKeyUp = frmMainKeyUp
+  OnResize = FormResize
+  OnShow = frmMainShow
+  Position = poDesktopCenter
+  ShowHint = True
+  object pnlSyncSize: TPanel
+    Height = 26
+    Top = 24
+    Width = 676
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 26
+    ClientWidth = 676
+    FullRepaint = False
+    TabOrder = 0
+    object pnlDisk: TPanel
+      Left = 151
+      Height = 26
+      Width = 525
+      Align = alRight
+      ClientHeight = 26
+      ClientWidth = 525
+      FullRepaint = False
+      ParentColor = False
+      TabOrder = 0
+      object dskLeft: TKAStoolBar
+        Left = 1
+        Height = 24
+        Top = 1
+        Width = 142
+        Align = alLeft
+        Alignment = taLeftJustify
+        ParentColor = False
+        TabOrder = 0
+        OnToolButtonClick = dskToolButtonClick
+        CheckToolButton = True
+        FlatButtons = True
+        IsDiskPanel = True
+        ButtonGlyphSize = 16
+      end
+      object dskRight: TKAStoolBar
+        Left = 143
+        Height = 24
+        Top = 1
+        Width = 381
+        Align = alClient
+        Alignment = taLeftJustify
+        Anchors = [akTop, akLeft, akBottom]
+        TabOrder = 1
+        OnToolButtonClick = dskToolButtonClick
+        OnChangeLineCount = dskRightChangeLineCount
+        CheckToolButton = True
+        FlatButtons = True
+        IsDiskPanel = True
+        ButtonGlyphSize = 16
+      end
+    end
+  end
+  object pnlNotebooks: TPanel
+    Height = 228
+    Top = 50
+    Width = 676
+    Align = alClient
+    ClientHeight = 228
+    ClientWidth = 676
+    FullRepaint = False
+    TabOrder = 1
+    TabStop = True
+    object MainSplitter: TSplitter
+      Left = 171
+      Height = 188
+      Top = 1
+      Width = 4
+      ResizeStyle = rsLine
+    end
+    object pnlLeft: TPanel
+      Left = 1
+      Height = 188
+      Top = 1
+      Width = 170
+      Align = alLeft
+      BevelOuter = bvNone
+      ClientHeight = 188
+      ClientWidth = 170
+      TabOrder = 0
+      object nbLeft: TNotebook
+        Height = 164
+        Top = 24
+        Width = 170
+        Align = alClient
+        OnCloseTabClicked = NoteBookCloseTabClicked
+        OnPageChanged = nbPageChanged
+        Options = [nboShowCloseButtons]
+        TabOrder = 0
+      end
+      object pnlLeftTools: TPanel
+        Height = 24
+        Width = 170
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 24
+        ClientWidth = 170
+        TabOrder = 1
+        object btnLeftDrive: TSpeedButton
+          Height = 24
+          Width = 48
+          Action = actLeftOpenDrives
+          Align = alLeft
+          Color = clBtnFace
+          NumGlyphs = 0
+        end
+        object btnLeftHome: TSpeedButton
+          Left = 147
+          Height = 24
+          Width = 23
+          Align = alRight
+          Caption = '~'
+          Color = clBtnFace
+          NumGlyphs = 0
+          OnClick = btnLeftClick
+        end
+        object btnLeftUp: TSpeedButton
+          Left = 124
+          Height = 24
+          Width = 23
+          Align = alRight
+          Caption = '..'
+          Color = clBtnFace
+          NumGlyphs = 0
+          OnClick = btnLeftClick
+        end
+        object btnLeftRoot: TSpeedButton
+          Left = 101
+          Height = 24
+          Width = 23
+          Align = alRight
+          Caption = '/'
+          Color = clBtnFace
+          NumGlyphs = 0
+          OnClick = btnLeftClick
+        end
+        object lblLeftDriveInfo: TLabel
+          Left = 48
+          Height = 24
+          Width = 53
+          Align = alClient
+          Alignment = taCenter
+          ParentColor = False
+          OnDblClick = lblDriveInfoDblClick
+        end
+      end
+    end
+    object pnlRight: TPanel
+      Left = 175
+      Height = 188
+      Top = 1
+      Width = 500
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 188
+      ClientWidth = 500
+      TabOrder = 1
+      object nbRight: TNotebook
+        Height = 164
+        Top = 24
+        Width = 500
+        Align = alClient
+        OnCloseTabClicked = NoteBookCloseTabClicked
+        OnPageChanged = nbPageChanged
+        Options = [nboShowCloseButtons]
+        TabOrder = 0
+      end
+      object pnlRightTools: TPanel
+        Height = 24
+        Width = 500
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 24
+        ClientWidth = 500
+        TabOrder = 1
+        object btnRightDrive: TSpeedButton
+          Height = 24
+          Width = 48
+          Action = actRightOpenDrives
+          Align = alLeft
+          Color = clBtnFace
+          NumGlyphs = 0
+        end
+        object btnRightHome: TSpeedButton
+          Left = 477
+          Height = 24
+          Width = 23
+          Align = alRight
+          Caption = '~'
+          Color = clBtnFace
+          NumGlyphs = 0
+          OnClick = btnRightClick
+        end
+        object btnRightUp: TSpeedButton
+          Left = 454
+          Height = 24
+          Width = 23
+          Align = alRight
+          Caption = '..'
+          Color = clBtnFace
+          NumGlyphs = 0
+          OnClick = btnRightClick
+        end
+        object btnRightRoot: TSpeedButton
+          Left = 431
+          Height = 24
+          Width = 23
+          Align = alRight
+          Caption = '/'
+          Color = clBtnFace
+          NumGlyphs = 0
+          OnClick = btnRightClick
+        end
+        object lblRightDriveInfo: TLabel
+          Left = 48
+          Height = 24
+          Width = 383
+          Align = alClient
+          Alignment = taCenter
+          ParentColor = False
+          OnDblClick = lblDriveInfoDblClick
+        end
+      end
+    end
+    object pnlCommand: TPanel
+      Left = 1
+      Height = 38
+      Top = 189
+      Width = 674
+      Align = alBottom
+      Anchors = [akLeft, akRight]
+      BevelOuter = bvLowered
+      ClientHeight = 38
+      ClientWidth = 674
+      FullRepaint = False
+      ParentColor = False
+      TabOrder = 2
+      object lblCommandPath: TLabel
+        AnchorSideTop.Control = edtCommand
+        AnchorSideTop.Side = asrCenter
+        Left = 1
+        Height = 19
+        Top = 13
+        Width = 32
+        Alignment = taRightJustify
+        Caption = 'Path'
+        ParentColor = False
+        ShowAccelChar = False
+      end
+      object edtCommand: TComboBox
+        Left = 56
+        Height = 28
+        Top = 8
+        Width = 607
+        TabStop = False
+        Anchors = [akTop, akLeft, akRight]
+        AutoCompleteText = [cbactEndOfLineComplete, cbactSearchAscending]
+        MaxLength = 0
+        ParentCtl3D = False
+        TabOrder = 0
+      end
+    end
+  end
+  object MainToolBar: TKAStoolBar
+    Height = 24
+    Width = 676
+    Align = alTop
+    TabOrder = 2
+    OnDragDrop = MainToolBarDragDrop
+    OnDragOver = MainToolBarDragOver
+    OnMouseUp = MainToolBarMouseUp
+    OnToolButtonClick = MainToolBarToolButtonClick
+    OnLoadButtonGlyph = MainToolBarLoadButtonGlyph
+    FlatButtons = True
+    ButtonGlyphSize = 16
+    EnvVar = '%commander_path%'
+  end
+  object pnlKeys: TPanel
+    Height = 27
+    Top = 343
+    Width = 676
+    Align = alBottom
+    Anchors = [akLeft, akRight]
+    BevelOuter = bvLowered
+    ClientHeight = 27
+    ClientWidth = 676
+    FullRepaint = False
+    TabOrder = 3
+    OnResize = pnlKeysResize
+    object btnF3: TSpeedButton
+      Left = 1
+      Height = 23
+      Top = 4
+      Width = 75
+      Action = actView
+      Color = clBtnFace
+      Flat = True
+      NumGlyphs = 0
+    end
+    object btnF4: TSpeedButton
+      Left = 76
+      Height = 23
+      Top = 4
+      Width = 75
+      Action = actEdit
+      Color = clBtnFace
+      Flat = True
+      NumGlyphs = 0
+    end
+    object btnF5: TSpeedButton
+      Left = 151
+      Height = 23
+      Top = 4
+      Width = 75
+      Action = actCopy
+      Color = clBtnFace
+      Flat = True
+      NumGlyphs = 0
+    end
+    object btnF6: TSpeedButton
+      Left = 226
+      Height = 23
+      Top = 4
+      Width = 75
+      Action = actRename
+      Color = clBtnFace
+      Flat = True
+      NumGlyphs = 0
+    end
+    object btnF7: TSpeedButton
+      Left = 301
+      Height = 23
+      Top = 4
+      Width = 75
+      Action = actMakeDir
+      Color = clBtnFace
+      Flat = True
+      NumGlyphs = 0
+    end
+    object btnF8: TSpeedButton
+      Left = 376
+      Height = 23
+      Top = 4
+      Width = 75
+      Action = actDelete
+      Color = clBtnFace
+      Flat = True
+      NumGlyphs = 0
+    end
+    object btnF10: TSpeedButton
+      Left = 539
+      Height = 23
+      Top = 4
+      Width = 75
+      Action = actExit
+      Color = clBtnFace
+      Flat = True
+      NumGlyphs = 0
+    end
+    object btnF9: TSpeedButton
+      Left = 448
+      Height = 22
+      Top = 4
+      Width = 89
+      Action = actShowMenu
+      Color = clBtnFace
+      Flat = True
+      NumGlyphs = 0
+    end
+  end
+  object seLogWindow: TSynEdit
+    Height = 61
+    Top = 282
+    Width = 676
+    Align = alBottom
+    Font.Height = -16
+    Font.Name = 'courier'
+    ParentColor = False
+    TabOrder = 4
+    Gutter.CodeFoldingWidth = 14
+    Keystrokes = <    
+      item
+        Command = 3
+        ShortCut = 38
+      end    
+      item
+        Command = 103
+        ShortCut = 8230
+      end    
+      item
+        Command = 211
+        ShortCut = 16422
+      end    
+      item
+        Command = 4
+        ShortCut = 40
+      end    
+      item
+        Command = 104
+        ShortCut = 8232
+      end    
+      item
+        Command = 212
+        ShortCut = 16424
+      end    
+      item
+        Command = 1
+        ShortCut = 37
+      end    
+      item
+        Command = 101
+        ShortCut = 8229
+      end    
+      item
+        Command = 5
+        ShortCut = 16421
+      end    
+      item
+        Command = 105
+        ShortCut = 24613
+      end    
+      item
+        Command = 2
+        ShortCut = 39
+      end    
+      item
+        Command = 102
+        ShortCut = 8231
+      end    
+      item
+        Command = 6
+        ShortCut = 16423
+      end    
+      item
+        Command = 106
+        ShortCut = 24615
+      end    
+      item
+        Command = 10
+        ShortCut = 34
+      end    
+      item
+        Command = 110
+        ShortCut = 8226
+      end    
+      item
+        Command = 14
+        ShortCut = 16418
+      end    
+      item
+        Command = 114
+        ShortCut = 24610
+      end    
+      item
+        Command = 9
+        ShortCut = 33
+      end    
+      item
+        Command = 109
+        ShortCut = 8225
+      end    
+      item
+        Command = 13
+        ShortCut = 16417
+      end    
+      item
+        Command = 113
+        ShortCut = 24609
+      end    
+      item
+        Command = 7
+        ShortCut = 36
+      end    
+      item
+        Command = 107
+        ShortCut = 8228
+      end    
+      item
+        Command = 15
+        ShortCut = 16420
+      end    
+      item
+        Command = 115
+        ShortCut = 24612
+      end    
+      item
+        Command = 8
+        ShortCut = 35
+      end    
+      item
+        Command = 108
+        ShortCut = 8227
+      end    
+      item
+        Command = 16
+        ShortCut = 16419
+      end    
+      item
+        Command = 116
+        ShortCut = 24611
+      end    
+      item
+        Command = 223
+        ShortCut = 45
+      end    
+      item
+        Command = 201
+        ShortCut = 16429
+      end    
+      item
+        Command = 604
+        ShortCut = 8237
+      end    
+      item
+        Command = 502
+        ShortCut = 46
+      end    
+      item
+        Command = 603
+        ShortCut = 8238
+      end    
+      item
+        Command = 501
+        ShortCut = 8
+      end    
+      item
+        Command = 501
+        ShortCut = 8200
+      end    
+      item
+        Command = 504
+        ShortCut = 16392
+      end    
+      item
+        Command = 601
+        ShortCut = 32776
+      end    
+      item
+        Command = 602
+        ShortCut = 40968
+      end    
+      item
+        Command = 509
+        ShortCut = 13
+      end    
+      item
+        Command = 199
+        ShortCut = 16449
+      end    
+      item
+        Command = 201
+        ShortCut = 16451
+      end    
+      item
+        Command = 610
+        ShortCut = 24649
+      end    
+      item
+        Command = 509
+        ShortCut = 16461
+      end    
+      item
+        Command = 510
+        ShortCut = 16462
+      end    
+      item
+        Command = 503
+        ShortCut = 16468
+      end    
+      item
+        Command = 611
+        ShortCut = 24661
+      end    
+      item
+        Command = 604
+        ShortCut = 16470
+      end    
+      item
+        Command = 603
+        ShortCut = 16472
+      end    
+      item
+        Command = 507
+        ShortCut = 16473
+      end    
+      item
+        Command = 506
+        ShortCut = 24665
+      end    
+      item
+        Command = 601
+        ShortCut = 16474
+      end    
+      item
+        Command = 602
+        ShortCut = 24666
+      end    
+      item
+        Command = 301
+        ShortCut = 16432
+      end    
+      item
+        Command = 302
+        ShortCut = 16433
+      end    
+      item
+        Command = 303
+        ShortCut = 16434
+      end    
+      item
+        Command = 304
+        ShortCut = 16435
+      end    
+      item
+        Command = 305
+        ShortCut = 16436
+      end    
+      item
+        Command = 306
+        ShortCut = 16437
+      end    
+      item
+        Command = 307
+        ShortCut = 16438
+      end    
+      item
+        Command = 308
+        ShortCut = 16439
+      end    
+      item
+        Command = 309
+        ShortCut = 16440
+      end    
+      item
+        Command = 310
+        ShortCut = 16441
+      end    
+      item
+        Command = 351
+        ShortCut = 24624
+      end    
+      item
+        Command = 352
+        ShortCut = 24625
+      end    
+      item
+        Command = 353
+        ShortCut = 24626
+      end    
+      item
+        Command = 354
+        ShortCut = 24627
+      end    
+      item
+        Command = 355
+        ShortCut = 24628
+      end    
+      item
+        Command = 356
+        ShortCut = 24629
+      end    
+      item
+        Command = 357
+        ShortCut = 24630
+      end    
+      item
+        Command = 358
+        ShortCut = 24631
+      end    
+      item
+        Command = 359
+        ShortCut = 24632
+      end    
+      item
+        Command = 360
+        ShortCut = 24633
+      end    
+      item
+        Command = 231
+        ShortCut = 24654
+      end    
+      item
+        Command = 232
+        ShortCut = 24643
+      end    
+      item
+        Command = 233
+        ShortCut = 24652
+      end    
+      item
+        Command = 612
+        ShortCut = 9
+      end    
+      item
+        Command = 613
+        ShortCut = 8201
+      end    
+      item
+        Command = 250
+        ShortCut = 24642
+      end>
+    ReadOnly = True
+    RightEdge = 0
+    ScrollBars = ssVertical
+    OnSpecialLineColors = seLogWindowSpecialLineColors
+  end
+  object LogSplitter: TSplitter
+    Cursor = crVSplit
+    Height = 4
+    Top = 278
+    Width = 676
+    Align = alBottom
+    ResizeStyle = rsLine
+    ResizeAnchor = akBottom
+  end
+  object mnuMain: TMainMenu
+    left = 283
+    top = 8
+    object mnuFiles: TMenuItem
+      Caption = 'Files'
+      object mnuFilesLink: TMenuItem
+        Action = actHardLink
+        OnClick = actHardLinkExecute
+      end
+      object mnuFilesSymLink: TMenuItem
+        Action = actSymLink
+        OnClick = actSymLinkExecute
+      end
+      object miLine1: TMenuItem
+        Caption = '-'
+      end
+      object mnuFilesProperties: TMenuItem
+        Action = actFileProperties
+        OnClick = actFilePropertiesExecute
+      end
+      object mnuFilesSpace: TMenuItem
+        Action = actCalculateSpace
+        OnClick = actCalculateSpaceExecute
+      end
+      object mnuFilesCmpCnt: TMenuItem
+        Action = actCompareContents
+        OnClick = actCompareContentsExecute
+      end
+      object miMultiRename: TMenuItem
+        Action = actMultiRename
+        OnClick = actMultiRenameExecute
+      end
+      object miLine2: TMenuItem
+        Caption = '-'
+      end
+      object mnuPackFiles: TMenuItem
+        Action = actPackFiles
+        OnClick = actPackFilesExecute
+      end
+      object mnuExtractFiles: TMenuItem
+        Action = actExtractFiles
+        OnClick = actExtractFilesExecute
+      end
+      object mnuFilesSplit: TMenuItem
+        Action = actFileSpliter
+        OnClick = actFileSpliterExecute
+      end
+      object mnuFilesCombine: TMenuItem
+        Action = actFileLinker
+        Caption = 'Combine Files'
+        OnClick = actFileLinkerExecute
+      end
+      object miLine3: TMenuItem
+        Caption = '-'
+      end
+      object mnuFilesShwSysFiles: TMenuItem
+        Action = actShowSysFiles
+        OnClick = actShowSysFilesExecute
+      end
+      object miLine4: TMenuItem
+        Caption = '-'
+      end
+      object miExit: TMenuItem
+        Action = actExit
+        OnClick = actExitExecute
+      end
+    end
+    object mnuMark: TMenuItem
+      Caption = '&Mark'
+      object mnuMarkSGroup: TMenuItem
+        Action = actMarkPlus
+        OnClick = actMarkPlusExecute
+      end
+      object mnuMarkUGroup: TMenuItem
+        Action = actMarkMinus
+        OnClick = actMarkMinusExecute
+      end
+      object mnuMarkSAll: TMenuItem
+        Action = actMarkMarkAll
+        OnClick = actMarkMarkAllExecute
+      end
+      object mnuMarkUAll: TMenuItem
+        Action = actMarkUnmarkAll
+        OnClick = actMarkUnmarkAllExecute
+      end
+      object mnuMarkInvert: TMenuItem
+        Action = actMarkInvert
+        OnClick = actMarkInvertExecute
+      end
+      object miLine5: TMenuItem
+        Caption = '-'
+      end
+      object mnuMarkCmpDir: TMenuItem
+        Caption = '&Compare Directories'
+        Enabled = False
+        ShortCut = 12337
+      end
+    end
+    object mnuCmd: TMenuItem
+      Caption = '&Commands'
+      object mnuCmdSearch: TMenuItem
+        Action = actSearch
+        OnClick = actSearchExecute
+      end
+      object mnuCmdDirHotlist: TMenuItem
+        Action = actDirHotList
+        OnClick = actDirHotListExecute
+      end
+      object miLine6: TMenuItem
+        Caption = '-'
+      end
+      object miRunTerm: TMenuItem
+        Action = actRunTerm
+        OnClick = actRunTermExecute
+      end
+      object miLine9: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem1: TMenuItem
+        Action = actOpenVFSList
+        OnClick = actOpenVFSListExecute
+      end
+      object mnuCmdSwapSourceTarget: TMenuItem
+        Caption = 'Source &<-> Target'
+        Enabled = False
+        ShortCut = 16469
+      end
+      object mnuCmdTargetIsSource: TMenuItem
+        Caption = 'Target &= Source'
+        Enabled = False
+      end
+    end
+    object mnuShow: TMenuItem
+      Caption = '&Show'
+      object mnuShowName: TMenuItem
+        Action = actSortByName
+        OnClick = actSortByNameExecute
+      end
+      object mnuShowExtension: TMenuItem
+        Action = actSortByExt
+        OnClick = actSortByExtExecute
+      end
+      object mnuShowSize: TMenuItem
+        Action = actSortBySize
+        OnClick = actSortBySizeExecute
+      end
+      object mnuShowTime: TMenuItem
+        Action = actSortByDate
+        OnClick = actSortByDateExecute
+      end
+      object mnuShowAttrib: TMenuItem
+        Action = actSortByAttr
+        OnClick = actSortByAttrExecute
+      end
+      object miLine7: TMenuItem
+        Caption = '-'
+      end
+      object mnuShowReverse: TMenuItem
+        Action = actReverseOrder
+        OnClick = actReverseOrderExecute
+      end
+      object mnuShowReread: TMenuItem
+        Action = actRefresh
+        OnClick = actRefreshExecute
+      end
+    end
+    object mnuConfig: TMenuItem
+      Caption = 'C&onfiguration'
+      object mnuConfigOptions: TMenuItem
+        Action = actOptions
+        OnClick = actOptionsExecute
+      end
+      object mnuFileAssoc: TMenuItem
+        Action = actFileAssoc
+        OnClick = actFileAssocExecute
+      end
+    end
+    object mnuHelp: TMenuItem
+      Caption = '&Help'
+      OnClick = mnuHelpClick
+      object mnuHelpAbout: TMenuItem
+        Action = actAbout
+        OnClick = actAboutExecute
+      end
+    end
+  end
+  object actionLst: TActionList
+    left = 312
+    top = 8
+    object actExit: TAction
+      Category = 'File'
+      Caption = 'Exit'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actExitExecute
+      ShortCut = 32856
+    end
+    object actView: TAction
+      Category = 'Classic'
+      Caption = 'View F3'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actViewExecute
+      ShortCut = 114
+    end
+    object actEdit: TAction
+      Category = 'Classic'
+      Caption = 'Edit F4'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actEditExecute
+      ShortCut = 115
+    end
+    object actCopy: TAction
+      Category = 'Classic'
+      Caption = 'Copy F5'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actCopyExecute
+      ShortCut = 116
+    end
+    object actRename: TAction
+      Category = 'Classic'
+      Caption = 'Move F6'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actRenameExecute
+      ShortCut = 117
+    end
+    object actMakeDir: TAction
+      Category = 'Classic'
+      Caption = 'MakeDir F7'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actMakeDirExecute
+      ShortCut = 118
+    end
+    object actDelete: TAction
+      Category = 'Classic'
+      Caption = 'Delete F8'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actDeleteExecute
+    end
+    object actAbout: TAction
+      Category = 'Help'
+      Caption = 'About'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actAboutExecute
+      ShortCut = 112
+    end
+    object actShowSysFiles: TAction
+      Category = 'File'
+      Caption = 'Show hidden/system files'
+      Checked = True
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actShowSysFilesExecute
+    end
+    object actOptions: TAction
+      Category = 'Config'
+      Caption = 'Options...'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actOptionsExecute
+    end
+    object actCompareContents: TAction
+      Category = 'File'
+      Caption = 'Compare by &Contents'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actCompareContentsExecute
+    end
+    object actShowMenu: TAction
+      Category = 'Classic'
+      Caption = 'Menu F9'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actShowMenuExecute
+      ShortCut = 120
+    end
+    object actRefresh: TAction
+      Category = 'Show'
+      Caption = '&Refresh'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actRefreshExecute
+      ShortCut = 16466
+    end
+    object actSearch: TAction
+      Category = 'Commands'
+      Caption = '&Search'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actSearchExecute
+      ShortCut = 32886
+    end
+    object actDirHotList: TAction
+      Category = 'Commands'
+      Caption = 'Directory &hotlist'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actDirHotListExecute
+      ShortCut = 16452
+    end
+    object actMarkMarkAll: TAction
+      Category = 'Mark'
+      Caption = '&Select All'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actMarkMarkAllExecute
+    end
+    object actMarkInvert: TAction
+      Category = 'Mark'
+      Caption = 'Invert Selections'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actMarkInvertExecute
+    end
+    object actMarkUnmarkAll: TAction
+      Category = 'Mark'
+      Caption = 'Unselect All'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actMarkUnmarkAllExecute
+    end
+    object actMarkPlus: TAction
+      Category = 'Mark'
+      Caption = 'Select a group'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actMarkPlusExecute
+    end
+    object actMarkMinus: TAction
+      Category = 'Mark'
+      Caption = 'Unselect a group'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actMarkMinusExecute
+    end
+    object actSymLink: TAction
+      Category = 'File'
+      Caption = 'Create symlink...'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actSymLinkExecute
+    end
+    object actHardLink: TAction
+      Category = 'File'
+      Caption = 'Create link...'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actHardLinkExecute
+    end
+    object actReverseOrder: TAction
+      Category = 'Show'
+      Caption = 'Reverse order'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actReverseOrderExecute
+    end
+    object actSortByName: TAction
+      Category = 'Show'
+      Caption = 'Sort by name'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actSortByNameExecute
+      ShortCut = 16498
+    end
+    object actSortByExt: TAction
+      Category = 'Show'
+      Caption = 'Sort by extension'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actSortByExtExecute
+      ShortCut = 16499
+    end
+    object actSortBySize: TAction
+      Category = 'Show'
+      Caption = 'Sort by size'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actSortBySizeExecute
+      ShortCut = 16501
+    end
+    object actSortByDate: TAction
+      Category = 'Show'
+      Caption = 'Sort by date'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actSortByDateExecute
+      ShortCut = 16500
+    end
+    object actSortByAttr: TAction
+      Category = 'Show'
+      Caption = 'Sort by attrib'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actSortByAttrExecute
+    end
+    object actMultiRename: TAction
+      Category = 'File'
+      Caption = 'Multi Rename Tool'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actMultiRenameExecute
+      ShortCut = 16461
+    end
+    object actCopySamePanel: TAction
+      Category = 'Commands'
+      Caption = 'Copy to same panel'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actCopySamePanelExecute
+      ShortCut = 8308
+    end
+    object actRenameOnly: TAction
+      Category = 'Commands'
+      Caption = 'Rename'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actRenameOnlyExecute
+      ShortCut = 8309
+    end
+    object actEditNew: TAction
+      Category = 'Commands'
+      Caption = 'Edit new file'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actEditNewExecute
+      ShortCut = 8307
+    end
+    object actDirHistory: TAction
+      Category = 'Commands'
+      Caption = 'Directory history'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actDirHistoryExecute
+      ShortCut = 16456
+    end
+    object actShowCmdLineHistory: TAction
+      Category = 'Commands'
+      Caption = 'Show command line history'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actShowCmdLineHistoryExecute
+      ShortCut = 20535
+    end
+    object actRunTerm: TAction
+      Category = 'Commands'
+      Caption = 'Run Term'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actRunTermExecute
+      ShortCut = 16472
+    end
+    object actCalculateSpace: TAction
+      Category = 'File'
+      Caption = 'Calculate &Occupied Space...'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actCalculateSpaceExecute
+      ShortCut = 16460
+    end
+    object actFileProperties: TAction
+      Category = 'File'
+      Caption = 'Show file properties'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actFilePropertiesExecute
+      ShortCut = 32781
+    end
+    object actFileLinker: TAction
+      Category = 'File'
+      Caption = 'Link files'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actFileLinkerExecute
+    end
+    object actFileSpliter: TAction
+      Category = 'File'
+      Caption = 'Split file'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actFileSpliterExecute
+    end
+    object actNewTab: TAction
+      Category = 'Tabs'
+      Caption = 'New tab'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actNewTabExecute
+      ShortCut = 16468
+    end
+    object actRemoveTab: TAction
+      Category = 'Tabs'
+      Caption = 'Remove tab'
+      DisableIfNoHandler = True
+      HelpType = htKeyword
+      OnExecute = actRemoveTabExecute
+      ShortCut = 16471
+    end
+    object actPackFiles: TAction
+      Category = 'File'
+      Caption = 'Pack files...'
+      DisableIfNoHandler = True
+      OnExecute = actPackFilesExecute
+      ShortCut = 32884
+    end
+    object actExtractFiles: TAction
+      Category = 'File'
+      Caption = 'Extract files...'
+      DisableIfNoHandler = True
+      OnExecute = actExtractFilesExecute
+      ShortCut = 32888
+    end
+    object actOpenVFSList: TAction
+      Category = 'Commands'
+      Caption = 'Open VFS List'
+      DisableIfNoHandler = True
+      OnExecute = actOpenVFSListExecute
+    end
+    object actLeftOpenDrives: TAction
+      Category = 'Commands'
+      Caption = 'Open left drive list'
+      DisableIfNoHandler = True
+      OnExecute = actLeftOpenDrivesExecute
+      ShortCut = 32880
+    end
+    object actRightOpenDrives: TAction
+      Category = 'Commands'
+      Caption = 'Open right drive list'
+      DisableIfNoHandler = True
+      OnExecute = actRightOpenDrivesExecute
+      ShortCut = 32881
+    end
+    object actAddPathToCmdLine: TAction
+      Category = 'Commands'
+      Caption = 'Copy path to command line'
+      DisableIfNoHandler = True
+      OnExecute = actAddPathToCmdLineExecute
+      ShortCut = 16464
+    end
+    object actFocusCmdLine: TAction
+      Category = 'Commands'
+      Caption = 'Focus command line'
+      DisableIfNoHandler = True
+      OnExecute = actFocusCmdLineExecute
+      ShortCut = 8305
+    end
+    object actTransferLeft: TAction
+      Category = 'Commands'
+      Caption = 'Transfer dir under cursor to left window'
+      DisableIfNoHandler = True
+      OnExecute = actTransferLeftExecute
+      ShortCut = 16421
+    end
+    object actTransferRight: TAction
+      Category = 'Commands'
+      Caption = 'Transfer dir under cursor to right window'
+      DisableIfNoHandler = True
+      OnExecute = actTransferRightExecute
+      ShortCut = 16423
+    end
+    object actContextMenu: TAction
+      Category = 'Commands'
+      Caption = 'Show context menu'
+      DisableIfNoHandler = True
+      OnExecute = actContextMenuExecute
+    end
+    object actOpenArchive: TAction
+      Category = 'File'
+      Caption = 'Try open archive'
+      DisableIfNoHandler = True
+      OnExecute = actOpenArchiveExecute
+      ShortCut = 16418
+    end
+    object actShowButtonMenu: TAction
+      Category = 'Commands'
+      Caption = 'Show button menu'
+      DisableIfNoHandler = True
+      OnExecute = actShowButtonMenuExecute
+    end
+    object actQuickSearch: TAction
+      Category = 'Commands'
+      Caption = 'Quick search'
+      DisableIfNoHandler = True
+      OnExecute = actQuickSearchExecute
+      ShortCut = 16467
+    end
+    object actFileAssoc: TAction
+      Category = 'Config'
+      Caption = 'File associations...'
+      DisableIfNoHandler = True
+      OnExecute = actFileAssocExecute
+    end
+    object actOpen: TAction
+      Category = 'File'
+      Caption = 'Open'
+      DisableIfNoHandler = True
+      OnExecute = actOpenExecute
+    end
+  end
+  object pmHotList: TPopupMenu
+    left = 152
+    top = 136
+  end
+  object pmDirHistory: TPopupMenu
+    AutoPopup = False
+    left = 184
+    top = 136
+  end
+  object pmToolBar: TPopupMenu
+    Tag = -1
+    left = 120
+    top = 136
+    object tbEdit: TMenuItem
+      Caption = 'Edit'
+      OnClick = tbEditClick
+    end
+    object tbDelete: TMenuItem
+      Caption = 'Delete'
+      OnClick = DeleteClick
+    end
+  end
+  object pmDrivesMenu: TPopupMenu
+    left = 80
+    top = 136
+    object MenuItem4: TMenuItem
+      Caption = 'New Item1'
+    end
+  end
+  object pmButtonMenu: TKASBarMenu
+    OnLoadButtonGlyph = pmButtonMenuLoadButtonGlyph
+    OnMenuButtonClick = pmButtonMenuMenuButtonClick
+    left = 220
+    top = 136
+  end
+  object pmColumnsMenu: TPopupMenu
+    left = 256
+    top = 136
+    object MenuItem2: TMenuItem
+      Caption = '-'
+    end
+  end
+end

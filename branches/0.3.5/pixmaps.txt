@@ -1,0 +1,7 @@
+rpm=rpm.png
+html=html.png
+htm=html.png
+mp3=sound.png
+mp2=sound.png
+txt=txt.png
+deb=deb.png

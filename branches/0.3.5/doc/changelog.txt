@@ -1,0 +1,28 @@
+﻿12.03.2008 FIX: Bug [ 1888653 ] панель файлов и копирование/перемещение
+06.03.2008 FIX: Bug [ 1860836 ] "Show" does not refresh
+05.03.2008 FIX: Bug [ 1860660 ] Non-translatable strings
+28.02.2008 FIX: The filedate of the copied file is <> to original file date (Windows)
+           unlike TotalCmd.
+17.02.2008 FIX: Bug [ 1880539 ] Контекстное меню каталога.
+04.02.2008 FIX: Bug [ 1886005 ] Быстрый поиск - завешивает.
+03.02.2008 FIX: Bug [ 1869787 ] Options -> Colors -> File types and attributes
+03.02.2008 ADD: Feature Request [1880515] Enhanced quick search
+03.02.2008 FIX: Bug [ 1870552 ] Alt quick search
+30.01.2008 FIX: Bug [ 1870808 ] Execute files under Linux
+27.01.2008 ADD: Options page "Configuration storage" 
+26.01.2008 ADD: UnRAR plugin (now it working under Windows and Linux)
+26.01.2008 ADD: Feature Request [ 1869250 ] Try to open archive by Ctrl+PageDown
+18.01.2008 FIX: Bug [ 1869790 ] Опции -> цвета файлов - нелогичность
+17.01.2007 FIX: Bug [ 1869784 ] Папки и diff
+17.01.2007 FIX: Bug [ 1870772 ] Навигация lynx, "вправо" на "уровень выше"
+13.01.2007 FIX: Bug [ 1869757 ] Внешний редактор
+13.01.2007 FIX: Bug [ 1869786 ] Внешний diff - дц не передает файлы.
+11.01.2008 FIX: Bug [ 1869243 ] Навигация lynx и вход в архивы.
+11.01.2008 FIX: Bug [ 1860652 ] "Run Term" Opens terminal in last accessed directory, not in current
+           panel's directory
+11.01.2008  FIX: Bug [ 1861911 ] must add version.inc
+10.01.2008  FIX: Bug [ 1860271 ] Навигация lynx и архивы
+--------------------------------------------------------------------------------
+26.12.2007  Release Double Commander 0.3 alpha
+
+
