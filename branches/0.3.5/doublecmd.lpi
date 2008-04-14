@@ -20,6 +20,7 @@
     </i18n>
     <PublishOptions>
       <Version Value="2"/>
+      <DestinationDirectory Value="$(TestDir)\publishedproject\"/>
       <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
       <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
     </PublishOptions>
@@ -31,22 +32,22 @@
     </RunParams>
     <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="KASComp"/>
-        <MinVersion Major="1" Release="1" Build="1" Valid="True"/>
+        <PackageName Value="imagesforlazarus"/>
       </Item1>
       <Item2>
-        <PackageName Value="LCL"/>
-        <MinVersion Major="1" Valid="True"/>
+        <PackageName Value="viewerpackage"/>
       </Item2>
       <Item3>
         <PackageName Value="SynEdit"/>
         <MinVersion Major="1" Valid="True"/>
       </Item3>
       <Item4>
-        <PackageName Value="viewerpackage"/>
+        <PackageName Value="LCL"/>
+        <MinVersion Major="1" Valid="True"/>
       </Item4>
       <Item5>
-        <PackageName Value="imagesforlazarus"/>
+        <PackageName Value="KASComp"/>
+        <MinVersion Major="1" Release="1" Build="1" Valid="True"/>
       </Item5>
     </RequiredPackages>
     <Units Count="31">
@@ -314,6 +315,11 @@
       <Debugging>
         <GenerateDebugInfo Value="True"/>
       </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
     </Linking>
     <Other>
       <CompilerPath Value="$(CompPath)"/>
