@@ -242,7 +242,12 @@ begin
     ViewerControl.PageDown;
     
   if (Key=VK_F3) or ((Key=VK_F) and (Shift=[ssCtrl])) then
+  begin
     DoSearch;
+    Key:=0;
+  end;
+// To prevent editor open on key F4 in viewer
+  if (Key=VK_F4) then  Key:=0;
 
   UpDateScrollBar;
 end;
