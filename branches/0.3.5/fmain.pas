@@ -837,7 +837,7 @@ end;
 
 procedure TfrmMain.actExitExecute(Sender: TObject);
 begin
-  Application.Terminate;
+  Close; // application.Terminate not save settings.
 end;
 
 procedure TfrmMain.actNewTabExecute(Sender: TObject);
