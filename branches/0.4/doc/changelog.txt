@@ -1,0 +1,67 @@
+﻿31.01.2009 FIX: Bug [ 2513089 ] panel
+18.01.2009 ADD: Drag&Drop to external applications under Windows
+18.01.2009 FIX: Bug [ 2513084 ] tabs
+12.01.2009 ADD: Pause/Start file operations
+11.01.2009 FIX: Bug [ 2496645 ] sort files
+05.01.2009 FIX: Bug [ 2403796 ] removing tabs
+25.12.2008 FIX: Bug [ 2434007 ] translate mistakes
+23.12.2008 FIX: Bug [ 2433957 ] hidden column
+13.12.2008 FIX: Bug [ 2421650 ] colors submenu
+13.12.2008 FIX: Bug [ 2423750 ] scrollbar in about window
+12.12.2008 FIX: Bug [ 2421607 ] different fonts
+12.12.2008 FIX: Bug [ 2421601 ] border
+09.12.2008 FIX: Bug [ 2403863 ] rubbish after copying
+07.12.2008 ADD: Feature Request [ 2404017 ] context menu for Drive button menu 
+05.12.2008 FIX: Bug [ 2383944 ] drive buttons
+03.12.2008 FIX: Bug [ 2379193 ] font at first line
+16.11.2008 FIX: Bug [ 1696012 ] Copying in Linux
+26.10.2008 FIX: Bug [ 1989488 ] Don't change interface language
+15.10.2008 FIX: Bug [ 1741043 ] Copying
+13.10.2008 FIX: Bug [ 1874281 ] "No enough free space" instead "Permition denied"
+07.09.2009 FIX: Bug [ 1971187 ] Don't work with user rights
+07.09.2008 FIX: Bug [ 1934572 ] Zip plugin is down on open read only archive
+21.08.2008 ADD: Feature Request [ 1938593 ] More suitable and powerful plugin configuration
+18.08.2008 ADD: Feature Request [ 1870517 ] Don't show not critical error messages
+09.07.2008 ADD: Feature Request [ 2014247 ] Drive context menu
+06.07.2008 ADD: Feature Request [ 1996336 ] Drag&Drop support
+06.07.2008 FIX: Bug [ 1947579 ] Quick search by letter and non-alpha characters
+03.07.2008 FIX: Bug [ 1945378 ] Crash on changing icon size
+17.05.2008 ADD: Feature Request [ 1951507 ] Wipe file
+02.05.2008 ADD: Feature Request [ 1880894 ]  Open in tab directory under cursor (Ctrl+Up)
+28.04.2008 FIX: Bug [ 1953396 ] Error if "Directory hotlist" (Ctrl+D) is empty
+--------------------------------------------------------------------------------
+15.04.2008 Release Double Commander 0.3.5 alpha
+--------------------------------------------------------------------------------
+12.04.2008 FIX: Bug [ 1938948 ] Drive chooser shortcuts missing
+08.04.2008 FIX: Bug [ 1870771 ] Remove plugin.
+04.04.2008 FIX: Bug [ 1934290 ] It is impossible reassign icons for some types.
+23.03.2008 FIX: Bug [ 1870551 ] F3 on directory.
+23.03.2008 FIX: Bug [ 1921004 ] Error with display drive name on drive menu button.
+12.03.2008 FIX: Bug [ 1888653 ] file panel and copy/move
+06.03.2008 FIX: Bug [ 1860836 ] "Show" does not refresh
+05.03.2008 FIX: Bug [ 1860660 ] Non-translatable strings
+28.02.2008 FIX: The filedate of the copied file is <> to original file date (Windows)
+           unlike TotalCmd.
+17.02.2008 FIX: Bug [ 1880539 ] Context menu for directory.
+04.02.2008 FIX: Bug [ 1886005 ] Быстрый поиск - завешивает.
+03.02.2008 FIX: Bug [ 1869787 ] Options -> Colors -> File types and attributes
+03.02.2008 ADD: Feature Request [1880515] Enhanced quick search
+03.02.2008 FIX: Bug [ 1870552 ] Alt quick search
+30.01.2008 FIX: Bug [ 1870808 ] Execute files under Linux
+27.01.2008 ADD: Options page "Configuration storage" 
+26.01.2008 ADD: UnRAR plugin (now it working under Windows and Linux)
+26.01.2008 ADD: Feature Request [ 1869250 ] Try to open archive by Ctrl+PageDown
+18.01.2008 FIX: Bug [ 1869790 ] Options -> File types colors - illogical
+17.01.2007 FIX: Bug [ 1869784 ] Directories and diff
+17.01.2007 FIX: Bug [ 1870772 ] lynx navigation, "right" for "up level"
+13.01.2007 FIX: Bug [ 1869757 ] External editor
+13.01.2007 FIX: Bug [ 1869786 ] External diff - DC not send file.
+11.01.2008 FIX: Bug [ 1869243 ] lynx navigation and enter in arhives.
+11.01.2008 FIX: Bug [ 1860652 ] "Run Term" Opens terminal in last accessed directory, not in current
+           panel's directory
+11.01.2008  FIX: Bug [ 1861911 ] must add version.inc
+10.01.2008  FIX: Bug [ 1860271 ] lynx navigation and archives
+--------------------------------------------------------------------------------
+26.12.2007  Release Double Commander 0.3 alpha
+
+

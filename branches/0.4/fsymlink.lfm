@@ -1,0 +1,102 @@
+object frmSymLink: TfrmSymLink
+  Left = 296
+  Height = 160
+  Top = 258
+  Width = 400
+  HorzScrollBar.Page = 399
+  HorzScrollBar.Range = 344
+  VertScrollBar.Page = 151
+  VertScrollBar.Range = 128
+  ActiveControl = edtDst
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Create symlink'
+  ChildSizing.LeftRightSpacing = 8
+  ChildSizing.TopBottomSpacing = 8
+  ClientHeight = 152
+  ClientWidth = 400
+  Constraints.MaxHeight = 160
+  Constraints.MaxWidth = 400
+  KeyPreview = True
+  Position = poScreenCenter
+  object lblNew: TLabel
+    AnchorSideTop.Control = edtDst
+    AnchorSideTop.Side = asrBottom
+    Left = 8
+    Height = 14
+    Top = 57
+    Width = 197
+    BorderSpacing.Top = 6
+    Caption = 'Existing destination (where will link point)'
+    ParentColor = False
+  end
+  object lblDst: TLabel
+    AnchorSideTop.Side = asrBottom
+    Left = 8
+    Height = 14
+    Top = 8
+    Width = 48
+    BorderSpacing.Top = 6
+    Caption = 'Link name'
+    ParentColor = False
+  end
+  object edtNew: TEdit
+    AnchorSideTop.Control = lblNew
+    AnchorSideTop.Side = asrBottom
+    Left = 8
+    Height = 23
+    Top = 77
+    Width = 384
+    BorderSpacing.Top = 6
+    TabOrder = 1
+  end
+  object edtDst: TEdit
+    AnchorSideTop.Control = lblDst
+    AnchorSideTop.Side = asrBottom
+    Left = 8
+    Height = 23
+    Top = 28
+    Width = 384
+    BorderSpacing.Top = 6
+    TabOrder = 3
+  end
+  object btnOK: TBitBtn
+    AnchorSideTop.Control = edtNew
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = btnCancel
+    Left = 236
+    Height = 32
+    Top = 112
+    Width = 90
+    Anchors = [akTop, akRight]
+    BorderSpacing.Top = 12
+    BorderSpacing.Right = 6
+    BorderSpacing.InnerBorder = 2
+    Caption = '&OK'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    NumGlyphs = 0
+    OnClick = btnOKClick
+    TabOrder = 0
+  end
+  object btnCancel: TBitBtn
+    AnchorSideTop.Control = edtNew
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = edtNew
+    AnchorSideRight.Side = asrBottom
+    Left = 317
+    Height = 32
+    Top = 112
+    Width = 90
+    Anchors = [akTop, akRight]
+    BorderSpacing.Top = 12
+    BorderSpacing.InnerBorder = 2
+    Cancel = True
+    Caption = 'Cancel'
+    Kind = bkCancel
+    ModalResult = 2
+    NumGlyphs = 0
+    TabOrder = 2
+  end
+end
