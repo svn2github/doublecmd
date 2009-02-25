@@ -3,7 +3,7 @@ program doublecmd;
 // uGlobs must be first in uses, uLng must be before any form;
 {%File 'doc/changelog.txt'}
 
-{.$APPTYPE GUI}
+{$APPTYPE GUI}
 uses
   {$IFDEF UNIX}
   cthreads,
