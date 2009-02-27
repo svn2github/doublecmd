@@ -774,14 +774,20 @@ end;
 
 procedure TfrmMain.MainToolBarDragDrop(Sender, Source: TObject; X, Y: Integer);
 var
-  sFileName : String;
+  sFileName: String;
+  IniBarFile: TIniFileEx;
 begin
   with ActiveFrame, ActiveFrame.GetActiveItem^ do
     begin
       sFileName := ActiveDir + sName;
       MainToolBar.AddButton('', sFileName, ExtractOnlyFileName(sName), sFileName);
       MainToolBar.AddX(sFileName, sFileName, '', sPath, ExtractOnlyFileName(sName));
-      MainToolBar.SaveToFile(gpIniDir + 'default.bar');
+      try
+        IniBarFile:= TIniFileEx.Create(gpIniDir + 'default.bar');
+        MainToolBar.SaveToIniFile(IniBarFile);
+      finally
+        FreeThenNil(IniBarFile);
+      end;   
     end;
 end;
 
