@@ -1,5 +1,9 @@
 library unbz2;
 
+{$IFDEF CPU64}
+{$FATAL This plugin don't work with 64 bit CPU}
+{$ENDIF}
+
 uses
   bz2func in 'bz2func.pas';
 
