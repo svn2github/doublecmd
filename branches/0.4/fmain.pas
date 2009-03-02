@@ -2309,6 +2309,7 @@ begin
       if Tag = 1 then
         begin
           CreatePanel(AddPage(TNoteBook((Sender as TPage).Parent)), ActiveFrame.PanelSelect, NewDir);
+          ActiveFrame.SetFocus;
           Result:= False;
         end;
 end;
