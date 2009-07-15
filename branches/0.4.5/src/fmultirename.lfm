@@ -1,0 +1,661 @@
+object frmMultiRename: TfrmMultiRename
+  Left = 277
+  Height = 465
+  Top = 253
+  Width = 744
+  ActiveControl = edName
+  Caption = 'MultiRename'
+  ClientHeight = 465
+  ClientWidth = 744
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  SessionProperties = 'Height;Width;WindowState;Left;Top'
+  ShowInTaskBar = stAlways
+  LCLVersion = '0.9.27'
+  object gbMaska: TGroupBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = lsvwFile
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 137
+    Top = 224
+    Width = 342
+    AutoSize = True
+    BorderSpacing.Left = 6
+    Caption = 'Mask'
+    ClientHeight = 118
+    ClientWidth = 338
+    TabOrder = 1
+    object lbName: TLabel
+      AnchorSideLeft.Control = gbMaska
+      AnchorSideTop.Control = gbMaska
+      Left = 6
+      Height = 18
+      Top = 1
+      Width = 73
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 1
+      Caption = 'File &Name'
+      FocusControl = edName
+      ParentColor = False
+    end
+    object lbExt: TLabel
+      AnchorSideLeft.Control = gbMaska
+      AnchorSideTop.Control = cmbNameStyle
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 18
+      Top = 58
+      Width = 74
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 10
+      Caption = '&Extension'
+      FocusControl = edExt
+      ParentColor = False
+    end
+    object edName: TEdit
+      AnchorSideLeft.Control = gbMaska
+      AnchorSideTop.Control = lbName
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 25
+      Top = 21
+      Width = 136
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 2
+      OnChange = cmbNameStyleChange
+      TabOrder = 0
+    end
+    object edExt: TEdit
+      Tag = 25
+      AnchorSideLeft.Control = gbMaska
+      AnchorSideTop.Control = lbExt
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 25
+      Top = 78
+      Width = 136
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 2
+      OnChange = cmbNameStyleChange
+      TabOrder = 3
+    end
+    object btnNameMenu: TButton
+      AnchorSideLeft.Control = edName
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = edName
+      AnchorSideBottom.Control = edName
+      AnchorSideBottom.Side = asrBottom
+      Left = 146
+      Height = 25
+      Top = 21
+      Width = 20
+      Anchors = [akTop, akLeft, akBottom]
+      BorderSpacing.Left = 4
+      BorderSpacing.InnerBorder = 4
+      Caption = '...'
+      OnClick = btnNameMenuClick
+      TabOrder = 1
+    end
+    object btnExtMenu: TButton
+      AnchorSideLeft.Control = edExt
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = edExt
+      AnchorSideBottom.Control = edExt
+      AnchorSideBottom.Side = asrBottom
+      Left = 146
+      Height = 25
+      Top = 78
+      Width = 20
+      Anchors = [akTop, akLeft, akBottom]
+      BorderSpacing.Left = 4
+      BorderSpacing.InnerBorder = 4
+      Caption = '...'
+      OnClick = btnExtMenuClick
+      TabOrder = 4
+    end
+    object cmbNameStyle: TComboBox
+      AnchorSideLeft.Control = btnNameMenu
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = btnNameMenu
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = gbMaska
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Left = 170
+      Height = 29
+      Top = 19
+      Width = 164
+      BorderSpacing.Left = 4
+      BorderSpacing.Right = 4
+      ItemHeight = 0
+      OnChange = cmbNameStyleChange
+      Style = csDropDownList
+      TabOrder = 2
+    end
+    object cmbExtensionStyle: TComboBox
+      AnchorSideLeft.Control = btnExtMenu
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = btnExtMenu
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = gbMaska
+      AnchorSideRight.Side = asrBottom
+      Left = 170
+      Height = 29
+      Top = 76
+      Width = 164
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 4
+      BorderSpacing.Right = 4
+      ItemHeight = 0
+      OnChange = cmbNameStyleChange
+      Style = csDropDownList
+      TabOrder = 5
+    end
+  end
+  object gbFindReplace: TGroupBox
+    AnchorSideLeft.Control = gbMaska
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = gbMaska
+    AnchorSideRight.Control = gbCounter
+    AnchorSideBottom.Side = asrBottom
+    Left = 354
+    Height = 193
+    Top = 224
+    Width = 218
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Bottom = 6
+    Caption = 'Find && Replace'
+    ChildSizing.TopBottomSpacing = 2
+    ClientHeight = 174
+    ClientWidth = 214
+    TabOrder = 2
+    object lbFind: TLabel
+      AnchorSideLeft.Control = gbFindReplace
+      AnchorSideTop.Control = gbFindReplace
+      Left = 6
+      Height = 18
+      Top = 6
+      Width = 47
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 6
+      Caption = '&Find...'
+      FocusControl = edFind
+      ParentColor = False
+    end
+    object lbReplace: TLabel
+      AnchorSideLeft.Control = gbFindReplace
+      AnchorSideTop.Control = edFind
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 18
+      Top = 57
+      Width = 71
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 6
+      Caption = 'Re&place...'
+      FocusControl = edReplace
+      ParentColor = False
+    end
+    object edFind: TEdit
+      AnchorSideLeft.Control = gbFindReplace
+      AnchorSideTop.Control = lbFind
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = gbFindReplace
+      AnchorSideRight.Side = asrBottom
+      Left = 4
+      Height = 25
+      Top = 26
+      Width = 206
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 2
+      BorderSpacing.Right = 4
+      OnChange = cmbNameStyleChange
+      TabOrder = 0
+    end
+    object edReplace: TEdit
+      AnchorSideLeft.Control = gbFindReplace
+      AnchorSideTop.Control = lbReplace
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = gbFindReplace
+      AnchorSideRight.Side = asrBottom
+      Left = 4
+      Height = 25
+      Top = 77
+      Width = 206
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 2
+      BorderSpacing.Right = 4
+      OnChange = cmbNameStyleChange
+      TabOrder = 1
+    end
+    object cbRegExp: TCheckBox
+      AnchorSideLeft.Control = gbFindReplace
+      AnchorSideTop.Control = edReplace
+      AnchorSideTop.Side = asrBottom
+      Left = 4
+      Height = 21
+      Top = 112
+      Width = 148
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 10
+      Caption = 'Regular e&xpressions'
+      OnChange = cbRegExpChange
+      TabOrder = 2
+    end
+    object cbUseSubs: TCheckBox
+      AnchorSideLeft.Control = gbFindReplace
+      AnchorSideTop.Control = cbRegExp
+      AnchorSideTop.Side = asrBottom
+      Left = 4
+      Height = 21
+      Top = 143
+      Width = 126
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 10
+      Caption = '&Use substitution'
+      Enabled = False
+      OnChange = cmbNameStyleChange
+      TabOrder = 3
+    end
+  end
+  object gbCounter: TGroupBox
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = gbFindReplace
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 578
+    Height = 119
+    Top = 224
+    Width = 160
+    Anchors = [akTop, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Right = 6
+    Caption = 'Counter'
+    ClientHeight = 100
+    ClientWidth = 156
+    TabOrder = 3
+    object lbStNb: TLabel
+      AnchorSideLeft.Control = gbCounter
+      AnchorSideTop.Control = edPoc
+      AnchorSideTop.Side = asrCenter
+      Left = 6
+      Height = 18
+      Top = 6
+      Width = 84
+      BorderSpacing.Left = 6
+      Caption = 'Start Number'
+      ParentColor = False
+    end
+    object lbInterval: TLabel
+      AnchorSideLeft.Control = gbCounter
+      AnchorSideTop.Control = edInterval
+      AnchorSideTop.Side = asrCenter
+      Left = 6
+      Height = 18
+      Top = 72
+      Width = 47
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
+      Caption = 'Interval'
+      ParentColor = False
+    end
+    object lbWidth: TLabel
+      AnchorSideLeft.Control = gbCounter
+      AnchorSideTop.Control = cmbxWidth
+      AnchorSideTop.Side = asrCenter
+      Left = 6
+      Height = 18
+      Top = 39
+      Width = 38
+      BorderSpacing.Left = 6
+      Caption = 'Width'
+      ParentColor = False
+    end
+    object edPoc: TEdit
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = gbCounter
+      AnchorSideRight.Control = gbCounter
+      AnchorSideRight.Side = asrBottom
+      Left = 100
+      Height = 25
+      Top = 3
+      Width = 50
+      Anchors = [akTop, akRight]
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 6
+      MaxLength = 5
+      OnChange = edPocChange
+      TabOrder = 0
+      Text = '1'
+    end
+    object edInterval: TEdit
+      AnchorSideTop.Control = cmbxWidth
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = gbCounter
+      AnchorSideRight.Side = asrBottom
+      Left = 100
+      Height = 25
+      Top = 69
+      Width = 50
+      Anchors = [akTop, akRight]
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 6
+      MaxLength = 5
+      OnChange = edIntervalChange
+      TabOrder = 2
+      Text = '1'
+    end
+    object cmbxWidth: TComboBox
+      AnchorSideTop.Control = edPoc
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = gbCounter
+      AnchorSideRight.Side = asrBottom
+      Left = 100
+      Height = 29
+      Top = 34
+      Width = 50
+      Anchors = [akTop, akRight]
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 6
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        '01'
+        '02'
+        '03'
+        '04'
+        '05'
+        '06'
+        '07'
+        '08'
+        '09'
+        '10'
+      )
+      OnChange = cmbNameStyleChange
+      Style = csDropDownList
+      TabOrder = 1
+      Text = '01'
+    end
+  end
+  object btnRename: TButton
+    AnchorSideLeft.Control = btnRestore
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = btnRestore
+    AnchorSideRight.Control = btnClose
+    Left = 460
+    Height = 32
+    Top = 424
+    Width = 172
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.InnerBorder = 4
+    Caption = '&Rename'
+    Default = True
+    OnClick = btnRenameClick
+    TabOrder = 6
+  end
+  object btnClose: TButton
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = btnRename
+    AnchorSideRight.Control = gbCounter
+    AnchorSideRight.Side = asrBottom
+    Left = 638
+    Height = 32
+    Top = 424
+    Width = 100
+    Anchors = [akTop, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.InnerBorder = 4
+    Cancel = True
+    Caption = '&Close'
+    OnClick = btnCloseClick
+    TabOrder = 7
+  end
+  object gbLog: TGroupBox
+    AnchorSideLeft.Control = gbCounter
+    AnchorSideTop.Control = gbCounter
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = gbCounter
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = gbFindReplace
+    AnchorSideBottom.Side = asrBottom
+    Left = 578
+    Height = 74
+    Top = 343
+    Width = 160
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Caption = 'Log Result'
+    ClientHeight = 55
+    ClientWidth = 156
+    TabOrder = 4
+    object edFile: TEdit
+      AnchorSideLeft.Control = gbLog
+      AnchorSideTop.Control = gbLog
+      AnchorSideRight.Control = gbLog
+      AnchorSideRight.Side = asrBottom
+      Left = 4
+      Height = 25
+      Top = 4
+      Width = 148
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 4
+      BorderSpacing.Right = 4
+      TabOrder = 0
+    end
+    object cbLog: TCheckBox
+      AnchorSideLeft.Control = gbLog
+      AnchorSideTop.Control = edFile
+      AnchorSideTop.Side = asrBottom
+      Left = 4
+      Height = 21
+      Top = 31
+      Width = 46
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 2
+      Caption = 'Log'
+      OnClick = cbLogClick
+      TabOrder = 1
+    end
+  end
+  object btnRestore: TButton
+    AnchorSideLeft.Control = gbFindReplace
+    Left = 354
+    Height = 32
+    Top = 424
+    Width = 100
+    Anchors = [akLeft]
+    BorderSpacing.InnerBorder = 4
+    Caption = 'Reset all'
+    OnClick = btnRestoreClick
+    TabOrder = 5
+  end
+  object lsvwFile: TListView
+    Left = 0
+    Height = 216
+    Top = 8
+    Width = 744
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Columns = <    
+      item
+        AutoSize = True
+        Caption = 'Old File Name'
+        Width = 98
+      end    
+      item
+        AutoSize = True
+        Caption = 'New File Name'
+        Width = 103
+      end    
+      item
+        AutoSize = True
+        Caption = 'File Path'
+        Width = 541
+      end>
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    TabStop = False
+    TabOrder = 0
+    ViewStyle = vsReport
+  end
+  object gbPresets: TGroupBox
+    AnchorSideLeft.Control = gbMaska
+    AnchorSideTop.Control = gbMaska
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = gbMaska
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 98
+    Top = 361
+    Width = 342
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'Presets'
+    ClientHeight = 79
+    ClientWidth = 338
+    TabOrder = 8
+    object cbPresets: TComboBox
+      AnchorSideLeft.Control = gbPresets
+      AnchorSideTop.Control = gbPresets
+      AnchorSideRight.Control = gbPresets
+      AnchorSideRight.Side = asrBottom
+      Left = 6
+      Height = 27
+      Top = 6
+      Width = 326
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 6
+      ItemHeight = 0
+      TabOrder = 0
+    end
+    object btnLoadPreset: TButton
+      AnchorSideLeft.Control = cbPresets
+      AnchorSideTop.Control = cbPresets
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 32
+      Top = 41
+      Width = 100
+      BorderSpacing.Top = 8
+      Caption = '&Load'
+      OnClick = btnLoadPresetClick
+      TabOrder = 1
+    end
+    object btnSavePreset: TButton
+      AnchorSideLeft.Control = cbPresets
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideTop.Control = btnLoadPreset
+      Left = 119
+      Height = 32
+      Top = 41
+      Width = 100
+      BorderSpacing.CellAlignHorizontal = ccaCenter
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = '&Save'
+      OnClick = btnSavePresetClick
+      TabOrder = 2
+    end
+    object btnDeletePreset: TButton
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = btnSavePreset
+      AnchorSideRight.Control = cbPresets
+      AnchorSideRight.Side = asrBottom
+      Left = 232
+      Height = 32
+      Top = 41
+      Width = 100
+      Anchors = [akTop, akRight]
+      Caption = '&Delete'
+      OnClick = btnDeletePresetClick
+      TabOrder = 3
+    end
+  end
+  object ppNameMenu: TPopupMenu
+    AutoPopup = False
+    OnPopup = ppNameMenuPopup
+    left = 784
+    top = 168
+    object miNextName: TMenuItem
+      Caption = 'Name...'
+      object miName: TMenuItem
+        Caption = '[N]ame'
+        OnClick = NameClick
+      end
+      object miNameX: TMenuItem
+        Caption = '[Nx]ame'
+        OnClick = NameXClick
+      end
+      object miNameXX: TMenuItem
+        Caption = '[Nx:x]ame'
+        OnClick = NameXXClick
+      end
+    end
+    object N1: TMenuItem
+      Caption = '-'
+    end
+    object miNextExtension: TMenuItem
+      Caption = 'Extension...'
+      object Extension: TMenuItem
+        Caption = '[E]xtension'
+        OnClick = ExtensionClick
+      end
+      object miExtensionX: TMenuItem
+        Caption = '[Ex]xtension'
+        OnClick = ExtensionXClick
+      end
+      object miExtensionXX: TMenuItem
+        Caption = '[Ex:x]xtension'
+        OnClick = ExtensionXXClick
+      end
+    end
+    object N2: TMenuItem
+      Caption = '-'
+    end
+    object miCounter: TMenuItem
+      Caption = '[C]ounter'
+      OnClick = CounterClick
+    end
+    object N3: TMenuItem
+      Caption = '-'
+    end
+    object miNext: TMenuItem
+      Caption = 'Time...'
+      object miYear: TMenuItem
+        Caption = '[Y]ear'
+        OnClick = miYearClick
+      end
+      object miMonth: TMenuItem
+        Caption = '[M]onth'
+        OnClick = miMonthClick
+      end
+      object miDay: TMenuItem
+        Caption = '[D]ay'
+        OnClick = miDayClick
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object miHour: TMenuItem
+        Caption = '[h]our'
+        OnClick = miHourClick
+      end
+      object miMinute: TMenuItem
+        Caption = 'Mi[n]ute'
+        OnClick = miMinuteClick
+      end
+      object miSecond: TMenuItem
+        Caption = '[s]econd'
+        OnClick = miSecondClick
+      end
+    end
+  end
+end

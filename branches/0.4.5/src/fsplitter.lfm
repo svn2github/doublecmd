@@ -1,0 +1,213 @@
+object frmSplitter: TfrmSplitter
+  Left = 297
+  Height = 302
+  Top = 179
+  Width = 465
+  HorzScrollBar.Page = 464
+  HorzScrollBar.Range = 369
+  VertScrollBar.Page = 301
+  VertScrollBar.Range = 227
+  ActiveControl = edFileSource
+  Caption = 'Splitter'
+  ClientHeight = 302
+  ClientWidth = 465
+  Position = poScreenCenter
+  object prgbrDoIt: TProgressBar
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 6
+    Height = 27
+    Top = 269
+    Width = 453
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Left = 6
+    BorderSpacing.Right = 6
+    BorderSpacing.Bottom = 6
+    Max = 100
+    TabOrder = 5
+  end
+  object grbxFile: TGroupBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideBottom.Control = grbxSize
+    Left = 6
+    Height = 185
+    Width = 280
+    Anchors = [akTop, akLeft, akBottom]
+    BorderSpacing.Left = 6
+    BorderSpacing.Bottom = 6
+    Caption = 'File name'
+    ClientHeight = 167
+    ClientWidth = 276
+    ParentCtl3D = False
+    TabOrder = 0
+    object lbFileSource: TLabel
+      Left = 6
+      Height = 14
+      Top = 9
+      Width = 52
+      Caption = 'File source'
+      ParentColor = False
+    end
+    object lbDirTarget: TLabel
+      AnchorSideTop.Control = edFileSource
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 14
+      Top = 70
+      Width = 78
+      BorderSpacing.Top = 18
+      Caption = 'Directory target'
+      ParentColor = False
+    end
+    object edFileSource: TEdit
+      AnchorSideTop.Control = lbFileSource
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 23
+      Top = 29
+      Width = 264
+      BorderSpacing.Top = 6
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object edDirTarget: TEdit
+      AnchorSideTop.Control = lbDirTarget
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = btnFTChoice
+      Left = 6
+      Height = 23
+      Top = 90
+      Width = 234
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 6
+      TabOrder = 1
+    end
+    object btnFTChoice: TButton
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = edDirTarget
+      AnchorSideRight.Control = edFileSource
+      AnchorSideRight.Side = asrBottom
+      Left = 246
+      Height = 23
+      Top = 90
+      Width = 24
+      Anchors = [akTop, akRight]
+      BorderSpacing.Left = 4
+      Caption = '...'
+      OnClick = btnFTChoiceClick
+      TabOrder = 2
+    end
+  end
+  object grbxSize: TGroupBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = grbxWatch
+    Left = 6
+    Height = 73
+    Top = 191
+    Width = 280
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Left = 6
+    BorderSpacing.Right = 6
+    Caption = 'File size'
+    ClientHeight = 55
+    ClientWidth = 276
+    ParentCtl3D = False
+    TabOrder = 1
+    object cmbxSize: TComboBox
+      Left = 6
+      Height = 21
+      Top = 12
+      Width = 252
+      Anchors = [akTop, akLeft, akRight]
+      AutoCompleteText = [cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 13
+      ItemIndex = 0
+      Items.Strings = (
+        '1457664B - 3.5"'
+        '98078KB - ZIP 100MB'
+        '650MB - CD 650MB'
+        '700MB - CD 700MB'
+      )
+      MaxLength = 0
+      ParentCtl3D = False
+      TabOrder = 0
+      Text = '1457664B - 3.5"'
+    end
+  end
+  object grbxWatch: TGroupBox
+    AnchorSideLeft.Control = grbxFile
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 292
+    Height = 224
+    Width = 167
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 6
+    BorderSpacing.Right = 6
+    Caption = 'Watchtower'
+    ClientHeight = 206
+    ClientWidth = 163
+    ParentCtl3D = False
+    TabOrder = 2
+    object memWatch: TMemo
+      AnchorSideLeft.Control = grbxWatch
+      AnchorSideTop.Control = grbxWatch
+      AnchorSideRight.Control = grbxWatch
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = grbxWatch
+      AnchorSideBottom.Side = asrBottom
+      Left = 4
+      Height = 194
+      Top = 6
+      Width = 155
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 4
+      BorderSpacing.Bottom = 6
+      Color = clBlack
+      Font.Color = clYellow
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 0
+      TabStop = False
+      WordWrap = False
+    end
+  end
+  object btnOK: TButton
+    AnchorSideRight.Control = btnCancel
+    Left = 303
+    Height = 32
+    Top = 232
+    Width = 75
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 6
+    Caption = 'OK'
+    Default = True
+    OnClick = btnOKClick
+    TabOrder = 3
+  end
+  object btnCancel: TButton
+    AnchorSideRight.Control = grbxWatch
+    AnchorSideRight.Side = asrBottom
+    Left = 384
+    Height = 32
+    Top = 232
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Cancel = True
+    Caption = 'Exit'
+    ModalResult = 2
+    TabOrder = 4
+  end
+end

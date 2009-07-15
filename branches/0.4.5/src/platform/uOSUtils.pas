@@ -1,0 +1,1708 @@
+{
+    Double Commander
+    -------------------------------------------------------------------------
+    This unit contains platform depended functions.
+
+    Copyright (C) 2006-2009  Koblov Alexander (Alexx2000@mail.ru)
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+}
+
+unit uOSUtils;
+ 
+{$mode delphi}{$H+}
+
+interface
+
+uses
+    SysUtils, Classes, LCLProc, uDCUtils, uClassesEx
+    {$IFDEF MSWINDOWS}
+    , Windows, ShellApi, uNTFSLinks, uMyWindows, JwaWinNetWk
+    {$ELSE}
+    , BaseUnix, Unix, UnixType, UnixUtil, dl, uMyUnix{$IFNDEF DARWIN}, libhal, dbus{$ENDIF}
+    {$ENDIF};
+    
+const
+  InvalidHandleValue = THandle(-1);
+  {$IFDEF MSWINDOWS}
+  faFolder = faDirectory;
+  faSymLink   = $00000400;
+  RunTerm = 'cmd.exe';  // default terminal
+  RunInTerm = 'cmd.exe /K'; // default run in terminal command
+  fmtRunInTerm = '%s "%s"';
+  fmtRunInShell = '%s /C "%s"';
+  ShieldChar = '/';
+  MonoSpaceFont = 'Fixedsys';
+  {$ELSE}
+  faFolder = S_IFDIR;
+  faSymLink   = $00000040;
+  RunTerm = 'xterm';  // default terminal
+  RunInTerm = 'xterm -e sh -c'; // default run in terminal command
+  fmtRunInTerm = '%s ''%s ; echo -n Press ENTER to exit... ; read''';
+  fmtRunInShell = '%s -c ''%s''';
+  ShieldChar = '\';
+  MonoSpaceFont = 'Monospace';
+  {$ENDIF}
+
+type
+   TDriveType = (dtUnknown, dtNoDrive, dtRemovable, dtFixed, dtNetwork, dtCDROM,
+                 dtRAM, dtFloppy, dtFlash);
+    
+  TDrive = record
+    Name,
+    Path,
+    DriveLabel :String;
+    DriveType : TDriveType;
+  end;
+  PDrive = ^TDrive;
+
+{$IFDEF MSWINDOWS}
+  FILETIME = Windows.FILETIME;
+{$ELSE}
+  FILETIME = record
+    dwLowDateTime : DWORD;
+    dwHighDateTime : DWORD;
+  end;
+{$ENDIF}
+  LPFILETIME = ^FILETIME;
+  _FILETIME = FILETIME;
+  TFILETIME = FILETIME;
+  PFILETIME = ^FILETIME;
+
+type
+  TFileMapRec = record
+    FileHandle : THandle;
+    FileSize : Int64;
+{$IFDEF MSWINDOWS}
+    MappingHandle : THandle;
+{$ENDIF}
+    MappedFile : PChar;
+  end;
+
+  TLibHandle = PtrInt;
+
+{en
+   Is file a directory
+   @param(iAttr File attributes)
+   @returns(@true if file is a directory, @false otherwise)
+}
+function FPS_ISDIR(iAttr:Cardinal) : Boolean;
+{en
+   Is file a symbolic link
+   @param(iAttr File attributes)
+   @returns(@true if file is a symbolic link, @false otherwise)
+}
+function FPS_ISLNK(iAttr:Cardinal) : Boolean;
+{en
+   Is file executable
+   @param(sFileName File name)
+   @returns(@true if file is executable, @false otherwise)
+}
+function FileIsExeLib(const sFileName : String) : Boolean;
+{en
+   Copies a file attributes (attributes, date/time, owner & group, permissions).
+   @param(sSrc String expression that specifies the name of the file to be copied)
+   @param(sDst String expression that specifies the target file name)
+   @param(bDropReadOnlyFlag Drop read only attribute if @true)
+   @returns(The function returns @true if successful, @false otherwise)
+}
+function FileIsReadOnly(iAttr:Cardinal): Boolean;
+function FileCopyAttr(const sSrc, sDst:String; bDropReadOnlyFlag : Boolean):Boolean;
+function ExecCmdFork(sCmdLine:String; bTerm : Boolean = False; sTerm : String = ''):Boolean;
+{en
+   Opens a file or URL in the user's preferred application
+   @param(URL File name or URL)
+   @returns(The function returns @true if successful, @false otherwise)
+}
+function ShellExecute(URL: String): Boolean;
+function GetDiskFreeSpace(Path : String; out FreeSize, TotalSize : Int64) : Boolean;
+{en
+   Create a hard link to a file
+   @param(Path Name of file)
+   @param(LinkName Name of hard link)
+   @returns(The function returns @true if successful, @false otherwise)
+}
+function CreateHardLink(Path, LinkName: String) : Boolean;
+{en
+   Create a symbolic link
+   @param(Path Name of file)
+   @param(LinkName Name of symbolic link)
+   @returns(The function returns @true if successful, @false otherwise)
+}
+function CreateSymLink(Path, LinkName: string) : Boolean;
+{en
+   Read destination of symbolic link
+   @param(LinkName Name of symbolic link)
+   @returns(The file the symbolic link name is pointing to)
+}
+function ReadSymLink(LinkName : String) : String;
+{en
+   Get the user home directory
+   @returns(The user home directory)
+}
+function GetHomeDir : String;
+{en
+   Get the appropriate directory for the application's configuration files
+   @returns(The directory for the application's configuration files)
+}
+function GetAppConfigDir: String;
+
+function IsAvailable(Path : String) : Boolean;
+function GetAllDrives : TList;
+{en
+   Destroys drives list created by GetAllDrives.
+}
+procedure DestroyDrivesList(var ADrivesList: TList);
+
+(* File mapping/unmapping routines *)
+{en
+   Create memory map of a file
+   @param(sFileName Name of file to mapping)
+   @param(FileMapRec TFileMapRec structure)
+   @returns(The function returns @true if successful, @false otherwise)
+}
+function MapFile(const sFileName : UTF8String; out FileMapRec : TFileMapRec) : Boolean;
+{en
+   Unmap previously mapped file
+   @param(FileMapRec TFileMapRec structure)
+}
+procedure UnMapFile(var FileMapRec : TFileMapRec);
+
+(* Date/Time routines *)
+{en
+   Converts a file time based on the Coordinated Universal Time (UTC) to a local file time
+   @param(lpFileTime TFileTime structure containing the UTC-based file time)
+   @param(lpLocalFileTime TFileTime structure to receive the converted local file time)
+   @returns(The function returns @true if successful, @false otherwise)
+}
+function FileTimeToLocalFileTimeEx(const lpFileTime: TFileTime; var lpLocalFileTime: TFileTime): LongBool;
+{en
+   Converts a local file time to a file time based on the Coordinated Universal Time (UTC)
+   @param(lpLocalFileTime TFileTime structure that specifies the local file time)
+   @param(lpFileTime TFileTime structure to receive the converted UTC-based file time)
+   @returns(The function returns @true if successful, @false otherwise)
+}
+function LocalFileTimeToFileTimeEx(const lpLocalFileTime: TFileTime; var lpFileTime: TFileTime): LongBool;
+{en
+   Converts a file time based on the Coordinated Universal Time (UTC) to a TDateTime format
+   @param(ft TFileTime structure containing the UTC-based file time)
+   @returns(File time in TDateTime format)
+}
+function FileTimeToDateTime(ft : TFileTime) : TDateTime;
+{en
+   Converts a file time in TDateTime format to a file time based on the Coordinated Universal Time (UTC)
+   @param(dt File time in TDateTime format)
+   @returns(UTC-based file time)
+}
+function DateTimeToFileTime(dt : TDateTime) : TFileTime;
+
+function GetShell : String;
+
+{ File handling functions}
+function mbFileOpen(const FileName: UTF8String; Mode: Integer): THandle;
+function mbFileCreate(const FileName: UTF8String): THandle; overload;
+function mbFileCreate(const FileName: UTF8String; Mode: Integer): THandle; overload;
+function mbFileAge(const FileName: UTF8String): LongInt;
+// On success returns non-zero value.
+function mbFileSetTime(const FileName: UTF8String; ModificationTime: Longint;
+                       CreationTime: Longint = 0; LastAccessTime: Longint = 0): Longint;
+function mbFileExists(const FileName: UTF8String): Boolean;
+function mbFileAccess(const FileName: UTF8String; Mode: Integer): Boolean;
+function mbFileGetAttr(const FileName: UTF8String): LongInt;
+function mbFileSetAttr (const FileName: UTF8String; Attr: LongInt) : LongInt;
+function mbFileSetReadOnly(const FileName: UTF8String; ReadOnly: Boolean): Boolean;
+function mbDeleteFile(const FileName: UTF8String): Boolean;
+
+// 30.04.2009 - this function move files and folders to trash can (Windows implemented).
+// 12.05.2009 - added implementation for Linux via gvfs-trash.
+function mbDeleteToTrash(const FileName: UTF8String): Boolean;
+// 14.05.2009 - this funtion checks 'gvfs-trash' BEFORE deleting. Need for various linux disributives.
+function mbCheckTrash: Boolean;
+// ----------------
+function mbRenameFile(const OldName, NewName : UTF8String): Boolean;
+function mbFileSize(const FileName: UTF8String): Int64;
+function FileFlush(Handle: Integer): Boolean;
+{ Directory handling functions}
+function mbGetCurrentDir: UTF8String;
+function mbSetCurrentDir(const NewDir: UTF8String): Boolean;
+function mbDirectoryExists(const Directory : UTF8String) : Boolean;
+function mbCreateDir(const NewDir: UTF8String): Boolean;
+function mbRemoveDir(const Dir: UTF8String): Boolean;
+{ Other functions }
+function mbCompareText(const s1, s2: UTF8String): PtrInt;
+function mbSetEnvironmentVariable(const sName, sValue: UTF8String): Boolean;
+function mbLoadLibrary(Name: UTF8String): TLibHandle;
+
+{$IF DEFINED(UNIX) AND NOT DEFINED(DARWIN)}
+// create all Hal object
+procedure CreateHal;
+// procedure where we get message add or remove
+procedure LibHalDeviceAdded(ctx: PLibHalContext; const udi: PChar);cdecl;
+procedure LibHalDeviceRemoved(ctx: PLibHalContext; const udi: PChar);cdecl;
+// dispach message and
+function CheckHalMsg: Boolean;
+// create all Hal object
+procedure FreeHal;
+
+var
+  DcDbus : PDBusConnection;
+  DcCtx : PLibHalContext;
+  DeviceWasChange : Boolean;
+  DeviceList : TStringList = nil;
+
+{$ENDIF}
+
+implementation
+
+uses
+  FileUtil
+  // 30.04.2009 - для удаления в корзину
+  {$IFDEF MSWINDOWS}
+  , Win32Int, InterfaceBase
+  {$ENDIF}
+  ;
+
+{$IFDEF UNIX}
+type
+  {en
+    Waits for a child process to finish and collects its exit status,
+    causing it to be released by the system (prevents defunct processes).
+
+    Instead of the wait-thread we could just ignore or handle SIGCHLD signal
+    for the process, but this way we don't interfere with the signal handling.
+    The downside is that there's a thread for every child process running.
+  }
+  TWaitForPidThread = class(TThread)
+  private
+    FPID: TPid;
+  protected
+    procedure Execute; override;
+  public
+    constructor Create(WaitForPid: TPid); overload;
+  end;
+
+  constructor TWaitForPidThread.Create(WaitForPid: TPid);
+  begin
+    inherited Create(True);
+    FPID := WaitForPid;
+    FreeOnTerminate := True;
+  end;
+
+  procedure TWaitForPidThread.Execute;
+  begin
+    FpWaitPid(FPID, nil, 0);
+  end;
+{$ENDIF}
+
+(*Is Directory*)
+
+function  FPS_ISDIR(iAttr:Cardinal) : Boolean;
+{$IFDEF MSWINDOWS}
+begin
+  Result := Boolean(iAttr and faDirectory);
+end;
+{$ELSE}
+begin
+  Result := BaseUnix.FPS_ISDIR(iAttr);
+end;
+{$ENDIF}
+
+(*Is Link*)
+
+function FPS_ISLNK(iAttr:Cardinal) : Boolean;
+{$IFDEF MSWINDOWS}
+begin
+  Result := Boolean(iAttr and faSymLink);
+end;
+{$ELSE}
+begin
+  Result := BaseUnix.FPS_ISLNK(iAttr);
+end;
+{$ENDIF}
+
+function FileIsExeLib(const sFileName : String) : Boolean;
+var
+  fsExeLib : TFileStreamEx;
+{$IFDEF MSWINDOWS}
+  wSign : Word;
+{$ELSE}
+  dwSign : DWord;
+{$ENDIF}
+begin
+  Result := False;
+  if mbFileExists(sFileName) then
+    begin
+      fsExeLib := TFileStreamEx.Create(sFileName, fmOpenRead or fmShareDenyNone);
+      {$IFDEF MSWINDOWS}
+      wSign := fsExeLib.ReadWord;
+      Result := (wSign = $5A4D);
+      {$ELSE}
+      dwSign := fsExeLib.ReadDWord;
+      Result := (dwSign = $464C457F);
+      {$ENDIF}
+      fsExeLib.Free;
+    end;
+end;
+
+function FileIsReadOnly(iAttr: Cardinal): Boolean;
+{$IFDEF MSWINDOWS}
+begin
+  Result:= Boolean(iAttr and faReadOnly);
+end;
+{$ELSE}
+begin
+  Result:= (((iAttr AND S_IRUSR) = S_IRUSR) and ((iAttr AND S_IWUSR) <> S_IWUSR));
+end;
+{$ENDIF}
+
+function FileCopyAttr(const sSrc, sDst:String; bDropReadOnlyFlag : Boolean):Boolean;
+{$IFDEF MSWINDOWS}
+var
+  iAttr : LongInt;
+  ft : TFileTime;
+  Handle: THandle;
+begin
+  iAttr := mbFileGetAttr(sSrc);
+  //---------------------------------------------------------
+  Handle:= mbFileOpen(sSrc, fmOpenRead or fmShareDenyNone);
+  GetFileTime(Handle,nil,nil,@ft);
+  FileClose(Handle);
+  //---------------------------------------------------------
+  if bDropReadOnlyFlag and Boolean(iAttr and faReadOnly) then
+    iAttr := (iAttr and not faReadOnly);
+  Result := (mbFileSetAttr(sDst, iAttr) = 0);
+  //---------------------------------------------------------
+  Handle:= mbFileOpen(sDst, fmOpenReadWrite or fmShareExclusive);
+  Result := SetFileTime(Handle, nil, nil, @ft);
+  FileClose(Handle);
+end;
+{$ELSE}  // *nix
+var
+  StatInfo : BaseUnix.Stat;
+  utb : BaseUnix.PUTimBuf;
+  mode : dword;
+begin
+  fpStat(PChar(sSrc), StatInfo);
+//  DebugLN(AttrToStr(stat.st_mode));  // file time
+  new(utb);
+  utb^.actime:=StatInfo.st_atime;  //last access time // maybe now
+  utb^.modtime:=StatInfo.st_mtime; // last modification time
+  fputime(PChar(sDst),utb);
+  dispose(utb);
+// end file
+
+// owner & group
+  if fpChown(PChar(sDst),StatInfo.st_uid, StatInfo.st_gid)=-1 then
+  begin
+    // development messages
+    DebugLN(Format('chown (%s) failed',[sSrc]));
+  end;
+  // mod
+  mode := StatInfo.st_mode;
+  if bDropReadOnlyFlag and ((mode AND S_IRUSR) = S_IRUSR) and ((mode AND S_IWUSR) <> S_IWUSR) then
+    mode := (mode or S_IWUSR);
+  if fpChmod(PChar(sDst), mode) = -1 then
+  begin
+    // development messages
+    DebugLN(Format('chmod (%s) failed',[sSrc]));
+  end;
+  Result:=True;
+end;
+{$ENDIF}
+
+(* Execute external commands *)
+
+function ExecCmdFork(sCmdLine:String; bTerm : Boolean; sTerm : String) : Boolean;
+{$IFDEF UNIX}
+var
+  sTempStr : String;
+  x, pid : LongInt;
+  Command : String;
+  Args : TOpenStringArray;
+  WaitForPidThread: TWaitForPidThread;
+begin
+  sTempStr := Trim(sCmdLine);
+
+  if bTerm then
+    begin
+      x := 1;
+      while x <= Length(sTempStr) do begin
+        if (sTempStr[x] in [{'"',} '''']) and ((x = 1) or (sTempStr[x - 1] <> ShieldChar)) then
+          Insert(ShieldChar, sTempStr, x);
+        Inc(x);
+      end;
+      if sTerm = '' then sTerm := RunInTerm;
+      sTempStr := Format(fmtRunInTerm, [sTerm, sTempStr]);
+    end;
+
+  SplitArgs(Args, sTempStr);
+
+  if Length(Args) = 0 then Exit;
+
+  Command := Args[0];
+
+  // remove command from args (0th element)
+  for x := 1 to Length(Args) - 1 do
+    Args[x-1] := RemoveQuotation(Args[x]);
+  SetLength(Args, Length(Args) - 1);
+
+  pid := fpFork;
+
+  if pid = 0 then
+    begin
+      { The child does the actual exec, and then exits }
+      FpExecLP(Command, Args);
+      { If the FpExecVP fails, we return an exitvalue of 127, to let it be known }
+      fpExit(127);
+    end
+  else if pid = -1 then         { Fork failed }
+    begin
+      raise Exception.Create('Fork failed: ' + sCmdLine);
+    end
+  else if pid > 0 then          { Parent }
+    begin
+      WaitForPidThread := TWaitForPidThread.Create(pid);
+      WaitForPidThread.Resume;
+    end;
+
+  Result := (pid > 0);
+end;
+{$ELSE}
+var
+  sFileName,
+  sParams: String;
+  wFileName,
+  wParams,
+  wWorkDir: WideString;  
+begin
+  wWorkDir:= UTF8Decode(mbGetCurrentDir);
+
+  if bTerm then
+    begin
+      if sTerm = '' then sTerm := RunInTerm;
+      sCmdLine := Format(fmtRunInTerm, [sTerm, sCmdLine]);
+    end;
+    
+  SplitCmdLine(sCmdLine, sFileName, sParams);
+  DebugLN('File: ' + sFileName + ' Params: ' + sParams + ' WorkDir: ' + wWorkDir);
+  wFileName:= UTF8Decode(sFileName);
+  wParams:= UTF8Decode(sParams);
+  Result := (ShellExecuteW(0, 'open', PWChar(wFileName), PWChar(wParams), PWChar(wWorkDir), SW_SHOW) > 32);
+end;
+{$ENDIF}
+
+function ShellExecute(URL: String): Boolean;
+{$IFDEF MSWINDOWS}
+begin
+  Result:= ExecCmdFork(Format('"%s"', [URL]));
+end;
+{$ELSE}
+var
+  DesktopEnv: Cardinal;
+  sCmdLine: String;
+begin
+  Result:= False;
+  sCmdLine:= '';
+  DesktopEnv:= GetDesktopEnvironment;
+  case DesktopEnv of
+  DE_UNKNOWN:
+    if FileIsExecutable(URL) then
+      sCmdLine:= Format('"%s"', [URL]);
+  DE_KDE:
+    sCmdLine:= 'kfmclient exec ' + QuoteStr(URL);
+  DE_GNOME:
+    sCmdLine:= 'gnome-open ' + QuoteStr(URL);
+  DE_XFCE:
+    sCmdLine:= 'exo-open ' + QuoteStr(URL);
+  end;
+  if sCmdLine <> '' then
+    Result:= ExecCmdFork(sCmdLine);
+end;
+{$ENDIF}
+
+(* Get Disk Free Space *)
+
+function GetDiskFreeSpace(Path : String; out FreeSize, TotalSize : Int64) : Boolean;
+{$IFDEF UNIX}
+var
+  sbfs: TStatFS;
+begin
+    Result:= (fpStatFS(PChar(Path), @sbfs) = 0);
+    if not Result then Exit;
+    FreeSize := (Int64(sbfs.bavail)*sbfs.bsize);
+{$IF DEFINED(CPU32) or (FPC_VERSION>2) or ((FPC_VERSION=2) and ((FPC_RELEASE>2) or ((FPC_RELEASE=2) and (FPC_PATCH>=3))))}
+    TotalSize := (Int64(sbfs.blocks)*sbfs.bsize);
+{$ENDIF}
+end;
+{$ELSE}
+var
+  wPath: WideString;
+begin
+  wPath:= UTF8Decode(Path);
+  Result:= GetDiskFreeSpaceExW(PWChar(wPath), FreeSize, TotalSize, nil);
+end;
+{$ENDIF}
+
+
+
+function CreateHardLink(Path, LinkName: String) : Boolean;
+{$IFDEF MSWINDOWS}
+var
+  wPath, wLinkName: WideString;
+begin
+  Result:= True;
+  try
+    wPath:= UTF8Decode(Path);
+    wLinkName:= UTF8Decode(LinkName);
+    uNTFSLinks.CreateHardlink(wPath, wLinkName);
+  except
+    Result:= False;
+  end;
+end;
+{$ELSE}
+begin
+  Result := (fplink(PChar(@Path[1]),PChar(@LinkName[1]))=0);
+end;
+{$ENDIF}
+
+function CreateSymLink(Path, LinkName: string) : Boolean;
+{$IFDEF MSWINDOWS}
+var
+  wPath, wLinkName: WideString;
+begin
+  Result := True;
+  try
+    wPath:= UTF8Decode(Path);
+    wLinkName:= UTF8Decode(LinkName);
+    uNTFSLinks.CreateSymlink(wPath, wLinkName);
+  except
+    Result := False;
+  end;
+end;
+{$ELSE}
+begin
+  Result := (fpsymlink(PChar(@Path[1]),PChar(@LinkName[1]))=0);
+end;
+{$ENDIF}
+
+(* Get symlink target *)
+
+function ReadSymLink(LinkName : String) : String;
+{$IFDEF MSWINDOWS}
+var
+  wLinkName,
+  wTarget: WideString;
+  LinkType: TReparsePointType;
+begin
+  try
+    wLinkName:= UTF8Decode(LinkName);
+    if uNTFSLinks.FGetSymlinkInfo(wLinkName, wTarget, LinkType) then
+      Result := UTF8Encode(wTarget)
+    else
+      Result := '';
+  except
+    Result := '';
+  end;
+end;
+{$ELSE}
+begin
+  Result := fpReadlink(LinkName);
+end;
+{$ENDIF}
+
+(* Return home directory*)
+
+function GetHomeDir : String;
+{$IFDEF MSWINDOWS}
+var
+  iSize: Integer;
+  wHomeDir: WideString;
+begin
+  iSize:= GetEnvironmentVariableW('USERPROFILE', nil, 0);
+  if iSize > 0 then
+    begin
+      SetLength(wHomeDir, iSize);
+      GetEnvironmentVariableW('USERPROFILE', PWChar(wHomeDir), iSize);
+    end;
+  Delete(wHomeDir, iSize, 1);
+  Result:= UTF8Encode(wHomeDir) + DirectorySeparator;
+end;
+{$ELSE}
+begin
+  Result:= GetEnvironmentVariable('HOME')+DirectorySeparator;
+end;
+{$ENDIF}
+
+function GetShell : String;
+{$IFDEF MSWINDOWS}
+var
+  iSize: Integer;
+  wShell: WideString;
+begin
+  iSize:= GetEnvironmentVariableW('ComSpec', nil, 0);
+  if iSize > 0 then
+    begin
+      SetLength(wShell, iSize);
+      GetEnvironmentVariableW('ComSpec', PWChar(wShell), iSize);
+    end;
+  Delete(wShell, iSize, 1);
+  Result:= UTF8Encode(wShell);
+end;
+{$ELSE}
+begin
+  Result:= GetEnvironmentVariable('SHELL');
+end;
+{$ENDIF}
+
+function GetAppConfigDir: String;
+{$IFDEF MSWINDOWS}
+var
+  iSize: Integer;
+  wDir: WideString;
+begin
+  iSize:= GetEnvironmentVariableW('APPDATA', nil, 0);
+  if iSize > 0 then
+    begin
+      SetLength(wDir, iSize);
+      GetEnvironmentVariableW('APPDATA', PWChar(wDir), iSize);
+    end;
+  Delete(wDir, iSize, 1);
+  Result:= UTF8Encode(wDir) + DirectorySeparator + ApplicationName;
+end;
+{$ELSE}
+var
+  uinfo: PPasswordRecord;
+begin
+  uinfo:= getpwuid(fpGetUID);
+  if (uinfo <> nil) and (uinfo^.pw_dir <> '') then
+    Result:= uinfo^.pw_dir + '/.config/' + ApplicationName
+  else
+    Result:= SysUtils.GetAppConfigDir(False);
+end;
+{$ENDIF}
+
+function IsAvailable(Path: String): Boolean;
+{$IFDEF MSWINDOWS}
+var
+  Drv: String;
+  DriveLabel: string;
+begin
+  Drv:= ExtractFileDrive(Path) + PathDelim;
+
+  { Close CD/DVD }
+  if (GetDriveType(PChar(Drv)) = DRIVE_CDROM) and
+     (not mbDriveReady(Drv)) then
+    begin
+       DriveLabel:= mbGetVolumeLabel(Drv, False);
+       mbCloseCD(Drv);
+       if mbDriveReady(Drv) then
+         mbWaitLabelChange(Drv, DriveLabel);
+    end;
+  Result:= mbDriveReady(Drv);
+end;
+{$ELSE}
+var
+  mtab: PIOFile;
+  pme: PMountEntry;
+begin
+  Result:= False;
+  mtab:= setmntent(_PATH_MOUNTED,'r');
+  if not Assigned(mtab) then exit;
+  pme:= getmntent(mtab);
+  while (pme <> nil) do
+  begin
+    if pme.mnt_dir = Path then
+    begin
+      Result:= True;
+      Break;
+    end;
+    pme:= getmntent(mtab);
+  end;
+  endmntent(mtab);
+end;
+{$ENDIF}
+
+(*Return a list of drives in system*)
+
+function GetAllDrives : TList;
+{$IFDEF MSWINDOWS}
+var
+  Drive : PDrive;
+  DriveNum: Integer;
+  DriveBits: set of 0..25;
+begin
+  Result := TList.Create;
+  { fill list }
+  Integer(DriveBits) := GetLogicalDrives;
+  for DriveNum := 0 to 25 do
+  begin
+    if not (DriveNum in DriveBits) then Continue;
+    New(Drive);
+    Result.Add(Drive);
+    with Drive^ do
+    begin
+     Name := Char(DriveNum + Ord('a')) + ':\';
+     Path := Name;
+     DriveType := TDriveType(GetDriveType(PChar(Name)));
+     if DriveType = dtRemovable then
+       begin
+         if (Path[1] in ['a'..'b']) or (Path[1] in ['A'..'B']) then
+           DriveType := dtFloppy
+         else
+           DriveType := dtFlash;
+       end;
+     if (DriveType <> dtFloppy) and (DriveType <> dtNetwork) then
+       DriveLabel := mbGetVolumeLabel(Name, True);
+    end;
+  end;
+
+end;
+
+{$ELSE}
+  function CheckMountEntry(DriveList: TList; MountEntry: PMountEntry): Boolean;
+  var
+    J: Integer;
+  begin
+    Result:= False;
+    with MountEntry^ do
+    begin
+      // check mount dir first
+      if (mnt_dir = '/') or (mnt_dir = 'none') or (mnt_fsname = 'none') or
+         (mnt_dir = 'swap') or (mnt_dir = '/proc') or
+         (mnt_dir = '/dev/pts') then Exit;
+      // check file system type
+      if (mnt_type = 'tmpfs') or (mnt_type = 'proc') or (mnt_type = 'sysfs') or
+         (mnt_type = 'devpts') or (mnt_type = 'fusectl') or (mnt_type = 'securityfs') or
+         (mnt_type = 'binfmt_misc') or (mnt_type = 'fuse.gvfs-fuse-daemon') or 
+         (mnt_type = 'fuse.truecrypt') or (mnt_type = 'nfsd') or
+		 (mnt_type = 'rpc_pipefs') then Exit;
+      // if already added
+      for J:= 0 to DriveList.Count - 1 do
+        if PDrive(DriveList.Items[J])^.Path = mnt_dir then
+          Exit;
+    end;
+    Result:= True;
+  end;
+var
+  Drive : PDrive;
+  fstab: PIOFile;
+  pme: PMountEntry;
+  MntEntFileList: array[1..2] of PChar = (_PATH_FSTAB, _PATH_MOUNTED);
+  I: Integer;
+begin
+  Result := TList.Create;
+  for I:= Low(MntEntFileList) to High(MntEntFileList) do
+  try
+  fstab:= setmntent(MntEntFileList[I],'r');
+  if not Assigned(fstab) then exit;
+  pme:= getmntent(fstab);
+  while (pme <> nil) do
+  begin
+    if CheckMountEntry(Result, pme) then
+       begin
+         New(Drive);
+         with Drive^ do
+         begin
+           Name := ExtractFileName(pme.mnt_dir);
+           Path := pme.mnt_dir;
+           // TODO more correct detect icons by drive type on Linux
+           if (Pos('ISO9660', UpperCase(pme.mnt_type)) > 0) or (Pos('CDROM', UpperCase(pme.mnt_dir)) > 0) or
+              (Pos('CDRW', UpperCase(pme.mnt_dir)) > 0) or (Pos('DVD', UpperCase(pme.mnt_dir)) > 0) then DriveType := dtCDROM else
+           if (Pos('FLOPPY', UpperCase(pme.mnt_dir)) > 0) then DriveType := dtFloppy else
+           if (Pos('ZIP', UpperCase(pme.mnt_type)) > 0) or (Pos('USB', UpperCase(pme.mnt_dir)) > 0) or
+              (Pos('CAMERA', UpperCase(pme.mnt_dir)) > 0) then DriveType := dtFlash else
+           if (Pos('NFS', UpperCase(pme.mnt_type)) > 0) or (Pos('SMB', UpperCase(pme.mnt_type)) > 0) or
+              (Pos('NETW', UpperCase(pme.mnt_dir)) > 0) then DriveType := dtNetwork else
+            DriveType := dtFixed;
+         end;
+         Result.Add(Drive);
+       end;
+    pme:= getmntent(fstab);
+  end;
+  endmntent(fstab);
+  except
+    DebugLn('Error with ', MntEntFileList[I]);
+  end;
+end;
+{$ENDIF}
+
+procedure DestroyDrivesList(var ADrivesList: TList);
+var
+  i : Integer;
+begin
+  if Assigned(ADrivesList) then
+  begin
+    for i := 0 to ADrivesList.Count - 1 do
+      if Assigned(ADrivesList.Items[i]) then
+        Dispose(PDrive(ADrivesList.Items[i]));
+    FreeAndNil(ADrivesList);
+  end;
+end;
+
+
+function MapFile(const sFileName : UTF8String; out FileMapRec : TFileMapRec) : Boolean;
+{$IFDEF MSWINDOWS}
+begin
+  Result := False;
+  with FileMapRec do
+    begin
+      MappedFile := nil;
+      MappingHandle := 0;
+      FileHandle := InvalidHandleValue;
+
+      FileSize := mbFileSize(sFileName);
+      if FileSize = 0 then Exit;   // Cannot map empty files
+
+      FileHandle := mbFileOpen(sFileName, fmOpenRead);
+      if FileHandle = InvalidHandleValue then Exit;
+
+      MappingHandle := CreateFileMapping(FileHandle, nil, PAGE_READONLY, 0, 0, nil);
+      if MappingHandle <> 0 then
+      begin
+        MappedFile := MapViewOfFile(MappingHandle, FILE_MAP_READ, 0, 0, 0);
+        if not Assigned(MappedFile) then
+        begin
+          UnMapFile(FileMapRec);
+          Exit;
+        end;
+      end
+      else
+        begin
+          UnMapFile(FileMapRec);
+          Exit;
+        end;
+    end;
+  Result := True;
+end;
+{$ELSE}
+var
+  StatInfo: BaseUnix.Stat;
+begin
+  Result:= False;
+  with FileMapRec do
+    begin
+      MappedFile := nil;
+      FileHandle:= fpOpen(PChar(sFileName), O_RDONLY);
+
+      if FileHandle = InvalidHandleValue then Exit;
+      if fpfstat(FileHandle, StatInfo) <> 0 then
+        begin
+          UnMapFile(FileMapRec);
+          Exit;
+        end;
+
+      FileSize := StatInfo.st_size;
+      if FileSize = 0 then // Cannot map empty files
+      begin
+        UnMapFile(FileMapRec);
+        Exit;
+      end;
+
+      MappedFile:= fpmmap(nil,FileSize,PROT_READ, MAP_PRIVATE{SHARED},FileHandle,0 );
+      if PtrInt(MappedFile) = -1 then
+        begin
+          MappedFile := nil;
+          UnMapFile(FileMapRec);
+          Exit;
+        end;
+    end;
+  Result := True;
+end;
+{$ENDIF}
+
+procedure UnMapFile(var FileMapRec : TFileMapRec);
+{$IFDEF MSWINDOWS}
+begin
+  with FileMapRec do
+    begin
+      if Assigned(MappedFile) then
+      begin
+        UnmapViewOfFile(MappedFile);
+        MappedFile := nil;
+      end;
+
+      if MappingHandle <> 0 then
+      begin
+        CloseHandle(MappingHandle);
+        MappingHandle := 0;
+      end;
+
+      if FileHandle <> InvalidHandleValue then
+      begin
+        FileClose(FileHandle);
+        FileHandle := InvalidHandleValue;
+      end;
+    end;
+end;
+{$ELSE}
+begin
+  with FileMapRec do
+    begin
+      if FileHandle <> InvalidHandleValue then
+      begin
+        fpClose(FileHandle);
+        FileHandle := InvalidHandleValue;
+      end;
+
+      if Assigned(MappedFile) then
+      begin
+        fpmunmap(MappedFile,FileSize);
+        MappedFile := nil;
+      end;
+    end;
+end;
+{$ENDIF}  
+
+(* Date/Time routines *)
+
+function FileTimeToLocalFileTimeEx(const lpFileTime: TFileTime; var lpLocalFileTime: TFileTime): LongBool;
+{$IFDEF MSWINDOWS}
+begin
+  Result := FileTimeToLocalFileTime(lpFileTime, lpLocalFileTime);
+end;
+{$ELSE}
+begin
+  Int64(lpLocalFileTime) := Int64(lpFileTime) + 10000000 * Int64(TZSeconds);
+  Result := True;
+end;
+{$ENDIF}
+
+function LocalFileTimeToFileTimeEx(const lpLocalFileTime: TFileTime; var lpFileTime: TFileTime): LongBool;
+{$IFDEF MSWINDOWS}
+begin
+  Result := LocalFileTimeToFileTime(lpLocalFileTime, lpFileTime);
+end;
+{$ELSE}
+begin
+  Int64(lpFileTime) := Int64(lpLocalFileTime) - 10000000 * Int64(TZSeconds);
+  Result := True;
+end;
+{$ENDIF}
+
+function FileTimeToDateTime(ft : TFileTime) : TDateTime;
+begin
+  FileTimeToLocalFileTimeEx(ft,ft);
+  Result := (Int64(ft) / 864000000000.0) - 109205.0;
+end;
+
+function DateTimeToFileTime(dt : TDateTime) : TFileTime;
+begin
+  Int64(Result) := Round((dt + 109205.0) * 864000000000.0);
+  LocalFileTimeToFileTimeEx(Result, Result);
+end;
+
+function mbFileOpen(const FileName: UTF8String; Mode: Integer): THandle;
+{$IFDEF MSWINDOWS}
+const
+  AccessMode: array[0..2] of DWORD  = (
+                GENERIC_READ,
+                GENERIC_WRITE,
+                GENERIC_READ or GENERIC_WRITE);
+  ShareMode: array[0..4] of DWORD = (
+               0,
+               0,
+               FILE_SHARE_READ,
+               FILE_SHARE_WRITE,
+               FILE_SHARE_READ or FILE_SHARE_WRITE);
+var
+  wFileName: WideString;
+begin
+  wFileName:= UTF8Decode(FileName);
+  Result:= CreateFileW(PWChar(wFileName), AccessMode[Mode and 3],
+                       ShareMode[(Mode and $F0) shr 4], nil, OPEN_EXISTING,
+                       FILE_ATTRIBUTE_NORMAL, 0);
+end;
+{$ELSE}
+const
+  AccessMode: array[0..2] of LongInt  = (
+                O_RdOnly,
+                O_WrOnly,
+                O_RdWr);
+begin
+  Result:= fpOpen(FileName, AccessMode[Mode and 3]);
+end;
+{$ENDIF}
+
+function mbFileCreate(const FileName: UTF8String): THandle;
+{$IFDEF MSWINDOWS}
+var
+  wFileName: WideString;
+begin
+  wFileName:= UTF8Decode(FileName);
+  Result:= CreateFileW(PWChar(wFileName), GENERIC_READ or GENERIC_WRITE,
+                       0, nil, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
+end;
+{$ELSE}
+begin
+  Result:= fpOpen(FileName, O_Creat or O_RdWr or O_Trunc);
+end;
+{$ENDIF}
+
+function mbFileCreate(const FileName: UTF8String; Mode: Integer): THandle;
+{$IFDEF MSWINDOWS}
+begin
+  Result:= mbFileCreate(FileName);
+end;
+{$ELSE}
+begin
+  Result:= fpOpen(FileName, O_Creat or O_RdWr or O_Trunc, Mode);
+end;
+{$ENDIF}
+
+function mbFileAge(const FileName: UTF8String): LongInt;
+{$IFDEF MSWINDOWS}
+var
+  Handle: THandle;
+  FindData: TWin32FindDataW;
+  wFileName: WideString;
+begin
+  wFileName:= UTF8Decode(FileName);
+  Handle := FindFirstFileW(PWChar(wFileName), FindData);
+  if Handle <> INVALID_HANDLE_VALUE then
+    begin
+      Windows.FindClose(Handle);
+      if (FindData.dwFileAttributes and FILE_ATTRIBUTE_DIRECTORY) = 0 then
+        If WinToDosTime(FindData.ftLastWriteTime,Result) then
+          Exit;
+    end;
+  Result:= -1;
+end;
+{$ELSE}
+var
+  Info: BaseUnix.Stat;
+begin
+  Result:= -1;
+  if fpStat(FileName, Info) >= 0 then
+    Result:=UnixToWinAge(Info.st_mtime);
+end;
+{$ENDIF}
+
+function mbFileSetTime(const FileName: UTF8String; ModificationTime, CreationTime, LastAccessTime: Longint): Longint;
+{$IFDEF MSWINDOWS}
+var
+  Handle: THandle;
+  wFileName: WideString;
+  WinModificationTime: TFileTime;
+  WinCreationTime: TFileTime;
+  WinLastAccessTime: TFileTime;
+  PWinModificationTime: PFileTime = nil;
+  PWinCreationTime: PFileTime = nil;
+  PWinLastAccessTime: PFileTime = nil;
+begin
+  wFileName:= UTF8Decode(FileName);
+  Handle := CreateFileW(PWChar(wFileName),
+                        FILE_WRITE_ATTRIBUTES,
+                        FILE_SHARE_READ or FILE_SHARE_WRITE,
+                        nil,
+                        OPEN_EXISTING,
+                        FILE_FLAG_BACKUP_SEMANTICS,  // needed for opening directories
+                        0);
+
+  if Handle <> INVALID_HANDLE_VALUE then
+    begin
+      if ModificationTime <> 0 then
+      begin
+        DosToWinTime(ModificationTime, WinModificationTime);
+        PWinModificationTime := @WinModificationTime;
+      end;
+      if CreationTime <> 0 then
+      begin
+        DosToWinTime(CreationTime, WinCreationTime);
+        PWinCreationTime := @WinCreationTime;
+      end;
+      if LastAccessTime <> 0 then
+      begin
+        DosToWinTime(LastAccessTime, WinLastAccessTime);
+        PWinLastAccessTime := @WinLastAccessTime;
+      end;
+
+      Result := Longint(Windows.SetFileTime(Handle,
+                                            PWinCreationTime,
+                                            PWinLastAccessTime,
+                                            PWinModificationTime));
+      CloseHandle(Handle);
+    end
+  else
+    Result := 0;
+end;
+{$ELSE}
+begin
+  Result := FileSetDate(FileName, ModificationTime);
+end;
+{$ENDIF}
+
+function mbFileExists(const FileName: UTF8String) : Boolean;
+{$IFDEF MSWINDOWS}
+var
+  Attr: Dword;
+  wFileName: WideString;
+begin
+  Result:=False;
+  wFileName:= UTF8Decode(FileName);
+  Attr:= GetFileAttributesW(PWChar(wFileName));
+  if Attr <> $ffffffff then
+    Result:= (Attr and FILE_ATTRIBUTE_DIRECTORY) = 0;
+end;
+{$ELSE}
+var
+  Info: BaseUnix.Stat;
+begin
+  Result:= False;
+  if fpStat(FileName, Info) >= 0 then
+    Result:= not (fpS_ISDIR(Info.st_mode) or FPS_ISLNK(Info.st_mode));
+end;
+{$ENDIF}
+
+function mbFileAccess(const FileName: UTF8String; Mode: Integer): Boolean;
+{$IFDEF MSWINDOWS}
+const
+  AccessMode: array[0..2] of DWORD  = (
+                GENERIC_READ,
+                GENERIC_WRITE,
+                GENERIC_READ or GENERIC_WRITE);
+var
+  hFile: THandle;
+  wFileName: WideString;
+begin
+  Result:= False;
+  wFileName:= UTF8Decode(FileName);
+  hFile:= CreateFileW(PWChar(wFileName), AccessMode[Mode and 3],
+                       0, nil, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
+  if hFile <> INVALID_HANDLE_VALUE then
+    begin
+      Result:= True;
+      FileClose(hFile);
+    end;
+end;
+{$ELSE}
+const
+  AccessMode: array[0..2] of LongInt  = (
+                R_OK,
+                W_OK,
+                R_OK or W_OK);
+begin
+  Result:= fpAccess(FileName, AccessMode[Mode and 3]) = 0;
+end;
+{$ENDIF}
+
+function mbFileGetAttr(const FileName: UTF8String): Longint;
+{$IFDEF MSWINDOWS}
+var
+  wFileName: WideString;
+begin
+  wFileName:= UTF8Decode(FileName);
+  Result:= GetFileAttributesW(PWChar(wFileName));
+end;
+{$ELSE}
+var
+  Info: BaseUnix.Stat;
+begin
+  Result:= -1;
+  if fpLStat(FileName, @Info) >= 0 then
+    Result:= Info.st_mode;
+end;
+{$ENDIF}
+
+function mbFileSetAttr(const FileName: UTF8String; Attr: LongInt): LongInt;
+{$IFDEF MSWINDOWS}
+var
+  wFileName: WideString;
+begin
+  Result:= 0;
+  wFileName:= UTF8Decode(FileName);
+  if not SetFileAttributesW(PWChar(wFileName), Attr) then
+    Result:= GetLastError;
+end;
+{$ELSE}
+begin
+  Result:= fpchmod(PChar(FileName), Attr);
+end;
+{$ENDIF}
+
+function mbFileSetReadOnly(const FileName: UTF8String; ReadOnly: Boolean): Boolean;
+{$IFDEF MSWINDOWS}
+var
+  iAttr: LongInt;
+begin
+  iAttr:= mbFileGetAttr(FileName);
+  if iAttr = -1 then Exit(False);
+  if ReadOnly then
+    iAttr:= iAttr and faReadOnly
+  else
+    iAttr:= iAttr and not faReadOnly;
+  Result:= mbFileSetAttr(FileName, iAttr) = 0;
+end;
+{$ELSE}
+var
+  StatInfo: BaseUnix.Stat;
+  mode: dword;
+begin
+  if fpStat(PChar(FileName), StatInfo) <> 0 then Exit(False);
+  mode:= StatInfo.st_mode;
+  if ReadOnly then
+    mode := mode and not (S_IWUSR or S_IWGRP or S_IWOTH)
+  else
+    mode:=  mode or (S_IWUSR or S_IWGRP or S_IWOTH);
+  Result:= fpchmod(PChar(FileName), mode) = 0;
+end;
+{$ENDIF}
+
+function mbDeleteFile(const FileName: UTF8String): Boolean;
+{$IFDEF MSWINDOWS}
+var
+  wFileName: WideString;
+begin
+  wFileName:= UTF8Decode(FileName);
+  Result:= Windows.DeleteFileW(PWChar(wFileName));
+end;
+{$ELSE}
+begin
+  Result:= fpUnLink(FileName) >= 0;
+end;
+{$ENDIF}
+
+// 30.04.2009 ---------------------------------------------------------------------
+function mbDeleteToTrash(const FileName: UTF8String): Boolean;
+{$IFDEF MSWINDOWS}
+var
+  wFileName: WideString;
+  FileOp: TSHFileOpStructW;
+begin
+  wFileName:= UTF8Decode(FileName);
+  wFileName:= wFileName + #0;
+  FillChar(FileOp, SizeOf(FileOp), 0);
+  FileOp.Wnd := TWin32Widgetset(Widgetset).AppHandle;
+  FileOp.wFunc := FO_DELETE;
+  FileOp.pFrom := PWideChar(wFileName);
+  // удаляем без подтвержения
+  FileOp.fFlags := FOF_ALLOWUNDO or FOF_NOERRORUI or FOF_SILENT or FOF_NOCONFIRMATION;
+  Result := (SHFileOperationW(@FileOp) = 0) and (not FileOp.fAnyOperationsAborted);
+end;
+{$ELSE}
+// 12.05.2009 - implementation via 'gvfs-trash' application
+var f: textfile;
+    s: string;
+begin
+  popen(f, _PATH_GVFS_TRASH + #32 + FileName, 'r');     // try to delete.
+  readln(f,s);
+  If (Pos('Error trashing',s) = 1) then Result := false // 17.05.2009 - return result from gvfs-trash;
+  else Result := true;
+  pclose(f);
+end;
+{$ENDIF}
+// --------------------------------------------------------------------------------
+
+// 14.05.2009 ---------------------------------------------------------------------
+function mbCheckTrash: Boolean;
+begin
+{$IFDEF UNIX}
+  // Checking gvfs-trash.
+  Result := mbFileExists(_PATH_GVFS_TRASH);
+{$ELSE}
+  // 14.05.2009
+  {
+   сюда можно поставить проверку на доступность корзины в Windows
+   конкретного способа пока не знаю. Предполагаю, для этого нужно лезть в реестр винды.
+  }
+  Result := true; {stub}
+{$ENDIF}
+end;
+// --------------------------------------------------------------------------------
+
+function mbRenameFile(const OldName, NewName: UTF8String): Boolean;
+{$IFDEF MSWINDOWS}
+var
+  wOldName,
+  wNewName: WideString;
+begin
+  wOldName:= UTF8Decode(OldName);
+  wNewName:= UTF8Decode(NewName);
+  Result:= MoveFileExW(PWChar(wOldName), PWChar(wNewName), MOVEFILE_REPLACE_EXISTING);
+end;
+{$ELSE}
+begin
+  Result:= BaseUnix.FpRename(OldNAme, NewName) >= 0;
+end;
+{$ENDIF}
+
+function mbFileSize(const FileName: UTF8String): Int64;
+{$IFDEF MSWINDOWS}
+var
+  Handle: THandle;
+  FindData: TWin32FindDataW;
+  wFileName: WideString;
+begin
+  Result:= 0;
+  wFileName:= UTF8Decode(FileName);
+  Handle := FindFirstFileW(PWChar(wFileName), FindData);
+  if Handle <> INVALID_HANDLE_VALUE then
+    begin
+      Windows.FindClose(Handle);
+      if (FindData.dwFileAttributes and FILE_ATTRIBUTE_DIRECTORY) = 0 then
+        Result:= (Int64(FindData.nFileSizeHigh) * MAXDWORD)+FindData.nFileSizeLow;
+    end;
+end;
+{$ELSE}
+var
+  Info: BaseUnix.Stat;
+begin
+  Result:= 0;
+  if fpStat(FileName, Info) >= 0 then
+    Result:= Info.st_size;
+end;
+{$ENDIF}
+
+function FileFlush(Handle: Integer): Boolean;  
+{$IFDEF MSWINDOWS}
+begin
+  Result:= FlushFileBuffers(Handle);
+end;
+{$ELSE}  
+begin
+  Result:= (fpfsync(Handle) = 0);
+end;  
+{$ENDIF}
+  
+function mbGetCurrentDir: UTF8String;
+{$IFDEF MSWINDOWS}
+var
+  iSize: Integer;
+  wsDir: WideString;
+begin
+  Result:= '';
+  iSize:= GetCurrentDirectoryW(0, nil);
+  if iSize > 0 then
+    begin
+      SetLength(wsDir, iSize);
+      GetCurrentDirectoryW(iSize, PWideChar(wsDir));
+      wsDir:= PWideChar(wsDir);
+      Result:= UTF8Encode(wsDir);
+    end;
+end;
+{$ELSE}
+begin
+  GetDir(0, Result);
+end;
+{$ENDIF}
+
+function mbSetCurrentDir(const NewDir: UTF8String): Boolean;
+{$IFDEF MSWINDOWS}
+var
+  wNewDir: WideString;
+  NetResource: TNetResourceW;
+begin
+  wNewDir:= UTF8Decode(NewDir);
+  if Pos('\\', wNewDir) = 1 then
+    begin
+      wNewDir:= ExcludeTrailingBackslash(wNewDir);
+      FillChar(NetResource, SizeOf(NetResource), #0);
+      NetResource.dwType:= RESOURCETYPE_ANY;
+      NetResource.lpRemoteName:= PWideChar(wNewDir);
+      WNetAddConnection2W(NetResource, nil, nil, CONNECT_INTERACTIVE);
+    end;
+  Result:= SetCurrentDirectoryW(PWChar(wNewDir));
+end;
+{$ELSE}
+begin
+  Result:= fpChDir(PChar(NewDir)) = 0;
+end;
+{$ENDIF}
+
+function mbDirectoryExists(const Directory: UTF8String) : Boolean;
+{$IFDEF MSWINDOWS}
+var
+  Attr:Dword;
+  wDirectory: WideString;
+begin
+  Result:= False;
+  wDirectory:= UTF8Decode(Directory);
+  Attr:= GetFileAttributesW(PWChar(wDirectory));
+  if Attr <> $ffffffff then
+    Result:= (Attr and FILE_ATTRIBUTE_DIRECTORY) > 0;
+end;
+{$ELSE}
+var
+  Info: BaseUnix.Stat;
+begin
+  Result:= False;
+  if fpStat(Directory, Info) >= 0 then
+    Result:= fpS_ISDIR(Info.st_mode);
+end;
+{$ENDIF}
+
+function mbCreateDir(const NewDir: UTF8String): Boolean;
+{$IFDEF MSWINDOWS}
+var
+  wNewDir: WideString;
+begin
+  wNewDir:= UTF8Decode(NewDir);
+  Result:= CreateDirectoryW(PWChar(wNewDir), nil);
+end;
+{$ELSE}
+begin
+  Result:= fpMkDir(PChar(NewDir), $FFF) = 0;
+end;
+{$ENDIF}
+
+function mbRemoveDir(const Dir: UTF8String): Boolean;
+{$IFDEF MSWINDOWS}
+var
+  wDir: WideString;
+begin
+  wDir:= UTF8Decode(Dir);
+  Result:= RemoveDirectoryW(PWChar(wDir));
+end;
+{$ELSE}
+begin
+  Result:= fpRmDir(PChar(Dir)) = 0;
+end;
+{$ENDIF}
+
+function mbCompareText(const s1, s2: UTF8String): PtrInt; inline;
+{$IFDEF MSWINDOWS}
+begin
+  Result:= WideCompareText(UTF8Decode(s1), UTF8Decode(s2));
+end;
+{$ELSE}
+begin
+  Result:= StrComp(PChar(UTF8LowerCase(s1)), PChar(UTF8LowerCase(s2)));
+end;
+{$ENDIF}
+
+function mbSetEnvironmentVariable(const sName, sValue: UTF8String): Boolean;
+{$IFDEF MSWINDOWS}
+var
+  wsName,
+  wsValue: WideString;
+begin
+  wsName:= UTF8Decode(sName);
+  wsValue:= UTF8Decode(sValue);
+  Result:= SetEnvironmentVariableW(PWideChar(wsName), PWideChar(wsValue));
+end;
+{$ELSE}
+begin
+  Result:= (setenv(PChar(sName), PChar(sValue), 1) = 0);
+end;
+{$ENDIF}
+
+function mbLoadLibrary(Name: UTF8String): TLibHandle;
+{$IFDEF MSWINDOWS}
+var
+  wsName: WideString;
+begin
+  wsName:= UTF8Decode(Name);
+  Result:= LoadLibraryW(PWideChar(wsName));
+end;
+{$ELSE}
+begin
+  Result:= TLibHandle(dlopen(PChar(Name), RTLD_LAZY));
+end;
+{$ENDIF}
+
+{$IF DEFINED(UNIX) AND NOT DEFINED(DARWIN)}
+// ************************** HAL section ***********************  //
+
+procedure CheckBlockDev(ctx: PLibHalContext; const udi: PChar; error: PDBusError; const CreateArray: boolean = False);
+var cap : PChar;
+var s : string;
+begin
+{  possible value what we can get (you can see that volume.label it will be mount point)
+               for more key see "hal-device | less"
+  volume.label = 'ATTID'  (string)
+  volume.mount_point = '/media/ATTID'  (string)
+  volume.is_mounted = true  (bool)
+  volume.is_mounted_read_only = false  (bool)
+  volume.linux.is_device_mapper = false  (bool)
+  volume.is_disc = false  (bool)
+  block.device = '/dev/sdc1'  (string)
+  volume.is_partition = true  (bool)
+  block.major = 8  (0x8)  (int)
+  volume.partition.number = 1  (0x1)  (int)
+  block.minor = 33  (0x21)  (int)
+  volume.block_size = 512  (0x200)  (int)
+  block.is_volume = true  (bool)
+}
+  // exit if bad udi
+  if udi = nil then exit;
+
+  // exit if not block dev
+  if(libhal_device_property_exists(ctx, udi, PChar('block.device'), nil) = 0) then
+    exit;
+
+  // it is our dev
+  if not CreateArray then
+  begin
+    DeviceWasChange := True;
+  end;
+  DebugLn(udi);
+  // add to array
+  DeviceList.Add(udi);
+
+  // get dev name
+  cap := libhal_device_get_property_string(ctx, udi, Pchar('block.device'), nil);
+  s := 'Dev '+cap;
+  libhal_free_string(cap);
+
+  // get mount point
+  if(libhal_device_property_exists(ctx, udi, PChar('volume.mount_point'), nil) <> 0) then
+  begin
+    cap := libhal_device_get_property_string(ctx, udi, Pchar('volume.mount_point'), nil);
+    s := s+' with mount point  '+cap;
+    libhal_free_string(cap);
+  end;
+
+//  if not CreateArray then
+    DebugLn('udi = ',udi,s);
+
+end;
+
+procedure CreateBlokDevArr;
+var  halDevices : PPChar;
+     numDevices,i : Integer;
+     udi : PChar;
+begin
+  // nil DeviceList;
+  DeviceList.Clear;
+
+  // Get List of all dev
+  halDevices := libhal_get_all_devices(DcCtx, @numDevices, nil);
+  if halDevices = nil then
+  begin
+    DebugLn('Cannot get device list');
+  end;
+//  DebugLn('Number of devices: ' + IntToStr(numDevices));
+
+  // show info for all dev
+  for i := 0 to numDevices do
+  begin
+    udi := (halDevices + i)^;
+    CheckBlockDev(DcCtx, udi, nil, True);
+  end;
+
+  // free mem
+  libhal_free_string_array(halDevices);
+end;
+
+procedure CreateHal;
+begin
+  // start program we must set global variable
+
+  // create new HAL
+  DcCtx := libhal_ctx_new;
+
+  if DcCtx = nil then
+  begin
+    DebugLn('Cannot initialize HAL context');
+    exit;
+  end;
+
+  // new error object
+  // dbus_error_init(@MyError);
+  // can do it if we will want new more aboute error
+
+  // new connect with D-Bus
+  DcDbus := dbus_bus_get_private(DBUS_BUS_SYSTEM, nil);
+
+  // say to HAL use our D-Bus
+  libhal_ctx_set_dbus_connection(DcCtx, DcDbus);
+
+  // init HAL
+  if (libhal_ctx_init(DcCtx, nil) = 0) then
+  begin
+    DebugLn('Cannot initialize HAL');
+    exit;
+    //warn ("libhal_ctx_init failed: %s", dbus_error.message);
+    //   dbus_error_free (&dbus_error);
+    //   libhal_ctx_free (ctx);
+    //   return 1;
+  end;
+
+
+
+  if libhal_ctx_set_device_added(DcCtx, @LibHalDeviceAdded) = 0 then
+    DebugLn('Cannot register LibHalDeviceAdded');
+
+  if libhal_ctx_set_device_removed(DcCtx, @LibHalDeviceRemoved) = 0 then
+    DebugLn('Cannot register LibHalDeviceRemoved');
+
+  DeviceList := TStringList.Create;
+  CreateBlokDevArr;
+end;
+
+procedure LibHalDeviceAdded(ctx: PLibHalContext; const udi: PChar); cdecl;
+begin
+  DebugLn('add dev  ',udi);
+//  sleep(1500); // if we dont do it we don`t see new dev
+  CheckBlockDev(ctx,udi,nil); // it return value 2 time on one flash like /dev/sda /dev/sda1
+end;
+
+procedure LibHalDeviceRemoved(ctx: PLibHalContext; const udi: PChar); cdecl;
+begin
+  // here we will when somebody remove flash or CD or may be other
+  // when it will CD it will one time
+  // when it will be flash it will 7 time or more
+
+  // here we can know only UDI
+  // UDI here don`t have mount point and dev name
+
+  DebugLn('remove dev  ', udi);
+//  ShowDevInfo(ctx,udi,@MyError); // don`t work
+  if DeviceList.IndexOf(udi) > -1 then
+  begin
+    DeviceWasChange := True;
+    DeviceList.Delete(DeviceList.IndexOf(udi));
+    //CreateBlokDevArr; or we can re create DeviceList
+  end;
+end;
+
+function CheckHalMsg: Boolean;
+begin
+  Result := False;
+  // for one disk i must dispatch ~9 msg try do it 3 times
+  dbus_connection_read_write_dispatch(DcDbus, 1);
+  dbus_connection_read_write_dispatch(DcDbus, 1);
+  dbus_connection_read_write_dispatch(DcDbus, 1);
+  if DeviceWasChange then
+  begin
+    Result := True;
+    DeviceWasChange := False;
+  end;
+end;
+
+procedure FreeHal;
+begin
+  libhal_ctx_free(DcCtx);
+//  dbus_connection_close(DcDbus);
+//  it not right becose wee don do dbus_connection_open
+//  how i must close dbus_bus_get_private i dont know
+
+  FreeAndNil(DeviceList);
+end;
+
+// ************************** HAL section End ***********************  //
+
+{$ENDIF}
+
+{$IF DEFINED(UNIX) AND NOT DEFINED(DARWIN)}
+
+initialization
+  CreateHal;
+
+finalization
+  FreeHal;
+
+{$ENDIF}
+
+end.

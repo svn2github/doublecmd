@@ -1,0 +1,268 @@
+object frmViewer: TfrmViewer
+  Left = 63
+  Height = 520
+  Top = 87
+  Width = 952
+  HorzScrollBar.Page = 951
+  VertScrollBar.Page = 491
+  ActiveControl = pnlLister
+  AutoScroll = False
+  Caption = 'Viewer'
+  ClientHeight = 492
+  ClientWidth = 952
+  Constraints.MinHeight = 100
+  Constraints.MinWidth = 200
+  Icon.Data = {
+    7E04000000000100010010100000010020006804000016000000280000001000
+    0000200000000100200000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000959595B4818181FF818181FF818181FF818181FF818181FF818181FF8181
+    81FF818181FF818181FF818181FF818181FF818181FF959595A8000000000000
+    0000818181FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFEDEDEDFFEDEDEDFFEEEEEEFFEFEFEFFFEFEFEFFFF0F0
+    F0FFF0F0F0FFF1F1F1FFF2F2F2FFF2F2F2FFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFEDEDEDFFCF9F72FFCF9F72FFCF9F72FFCF9F72FFCF9F
+    72FFCF9F72FFCF9F72FFCF9F72FFF2F2F2FFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFECECECFFCF9F72FF927A6DFF927B6EFF937B6EFF8F79
+    6DFF867469FF847368FFCF9F72FFF1F1F1FFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFECECECFFCF9F72FFAD9889FFAE9989FFAF9A8AFF948C
+    86FF948C86FFA29489FFCF9F72FFF0F0F0FFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFECECECFFCF9F72FFCCC2A8FFD6F1EDFFC4D4C0FFD8B8
+    9AFFD8B89AFFD8B89AFFCF9F72FFF0F0F0FFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFEBEBEBFFCF9F72FFCF9F72FFCF9F72FFCF9F72FFCF9F
+    72FFCF9F72FFCF9F72FFCF9F72FFF0F0F0FFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFEBEBEBFFEBEBEBFFECECECFFECECECFFEDEDEDFFEDED
+    EDFFE5EDEDFFECECECFFEEEEEEFFF0F0F0FFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFEBEBEBFFC5C5C5FFC6C6C6FFC6C6C6FFC6C6C6FFC6C6
+    C6FFC6C6C6FFC6C6C6FFC7C7C7FFF0F0F0FFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFEAEAEAFFEBEBEBFFEBEBEBFFECECECFFECECECFFECEC
+    ECFFEDEDEDFFEDEDEDFFEEEEEEFFF0F0F0FFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFEAEAEAFFC4C4C4FFC5C5C5FFC5C5C5FFC6C6C6FFC6C6
+    C6FFC6C6C6FFC6C6C6FFC7C7C7FFF0F0F0FFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFECECECFFEAEAEAFFEAEAEAFFEBEBEBFFEBEBEBFFEBEB
+    EBFFECECECFFECECECFFEDEDEDFFF0F0F0FFFFFFFFFF818181FF000000000000
+    0000818181FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF818181FF000000000000
+    0000999999AC818181FF818181FF818181FF818181FF818181FF818181FF8181
+    81FF818181FF818181FF818181FF818181FF818181FF81818156000000000000
+    0000FFFF00000003000000030000000300000003000000030000000300000003
+    0000000300000003000000030000000300000003000000030000000300000007
+    0000
+  }
+  KeyPreview = True
+  Menu = MainMenu
+  OnClose = frmViewerClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = frmViewerKeyDown
+  OnKeyPress = FormKeyPress
+  OnKeyUp = frmViewerKeyUp
+  Position = poDefault
+  ShowInTaskBar = stAlways
+  LCLVersion = '0.9.27'
+  object pnlLister: TPanel
+    Height = 470
+    Width = 952
+    Align = alClient
+    TabOrder = 2
+  end
+  object Status: TStatusBar
+    Height = 22
+    Top = 470
+    Width = 952
+    Panels = <    
+      item
+        Width = 200
+      end    
+      item
+        Width = 70
+      end    
+      item
+        Width = 150
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object nbPages: TNotebook
+    Height = 470
+    Width = 952
+    Align = alClient
+    PageIndex = 1
+    ShowTabs = False
+    TabOrder = 0
+    object pgText: TPage
+      ClientWidth = 950
+      ClientHeight = 442
+      object ScrollBarVert: TScrollBar
+        Left = 935
+        Height = 442
+        Width = 15
+        Align = alRight
+        Anchors = [akTop, akRight]
+        Kind = sbVertical
+        PageSize = 1
+        Position = 50
+        TabOrder = 0
+        OnScroll = ScrollBarVertScroll
+      end
+      object ViewerControl: TViewerControl
+        Cursor = crIBeam
+        Height = 442
+        Width = 935
+        Encoding = 'ansi'
+        ViewerMode = vmText
+        OnMouseUp = ViewerControlMouseUp
+        Font.Height = -14
+        Font.Name = 'fixed'
+        Font.Pitch = fpFixed
+        Align = alClient
+        OnMouseWheelDown = ViewerControlMouseWheelDown
+        OnMouseWheelUp = ViewerControlMouseWheelUp
+      end
+    end
+    object pgImage: TPage
+      Caption = 'pgImage'
+      ClientWidth = 950
+      ClientHeight = 468
+      object ScrollBox: TScrollBox
+        Height = 468
+        Width = 950
+        Align = alClient
+        TabOrder = 0
+        TabStop = True
+        OnResize = ScrollBoxResize
+        object Image: TImage
+          Height = 464
+          Width = 946
+          AutoSize = True
+          Center = True
+          Proportional = True
+        end
+      end
+    end
+  end
+  object MainMenu: TMainMenu
+    left = 88
+    top = 8
+    object miFile: TMenuItem
+      Caption = '&File'
+      object miPrev: TMenuItem
+        Caption = '&Previous'
+        ShortCut = 80
+        OnClick = miPrevClick
+      end
+      object miNext: TMenuItem
+        Caption = '&Next'
+        ShortCut = 78
+        OnClick = miNextClick
+      end
+      object miSeparator: TMenuItem
+        Caption = '-'
+      end
+      object miSavePos: TMenuItem
+        Caption = '&Save Position'
+        OnClick = miSavePosClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object miExit: TMenuItem
+        Caption = 'E&xit'
+        OnClick = miExitClick
+      end
+    end
+    object miEdit: TMenuItem
+      Caption = '&Edit'
+      object miCopyToClipboard: TMenuItem
+        Caption = 'Copy To Clipboard'
+        OnClick = miCopyToClipboardClick
+      end
+      object miSelectAll: TMenuItem
+        Caption = 'Select All'
+        OnClick = miSelectAllClick
+      end
+    end
+    object miView: TMenuItem
+      Caption = '&View'
+      object miText: TMenuItem
+        Caption = 'Show as &Text'
+        OnClick = miTextClick
+      end
+      object miBin: TMenuItem
+        Caption = 'Show as &Bin'
+        OnClick = miBinClick
+      end
+      object miHex: TMenuItem
+        Caption = 'Show as &Hex'
+        OnClick = miHexClick
+      end
+      object miWrapText: TMenuItem
+        Caption = 'Show as &Wrap text'
+        OnClick = miWrapTextClick
+      end
+      object miDiv2: TMenuItem
+        Caption = '-'
+      end
+      object miGraphics: TMenuItem
+        Caption = 'Graphics'
+        ShortCut = 54
+        OnClick = miGraphicsClick
+      end
+      object miDiv1: TMenuItem
+        Caption = '-'
+      end
+      object miPlugins: TMenuItem
+        Caption = 'Plugins'
+        ShortCut = 55
+        OnClick = miPluginsClick
+      end
+      object miDiv3: TMenuItem
+        Caption = '-'
+      end
+      object miEncoding: TMenuItem
+        Caption = 'En&coding'
+      end
+      object miDiv4: TMenuItem
+        Caption = '-'
+      end
+      object miSearch: TMenuItem
+        Caption = 'Search'
+        ShortCut = 114
+        OnClick = miSearchClick
+      end
+    end
+    object miImage: TMenuItem
+      Caption = '&Image'
+      object miStretch: TMenuItem
+        Caption = 'Stretch'
+        OnClick = miStretchClick
+      end
+    end
+    object miAbout: TMenuItem
+      Caption = 'About'
+      object miAbout2: TMenuItem
+        Caption = 'About Viewer...'
+        OnClick = miAbout2Click
+      end
+    end
+  end
+  object pmEditMenu: TPopupMenu
+    left = 126
+    top = 8
+    object pmiCopy: TMenuItem
+      Caption = 'Copy To Clipboard'
+      OnClick = miCopyToClipboardClick
+    end
+    object miDiv5: TMenuItem
+      Caption = '-'
+    end
+    object pmiSelectAll: TMenuItem
+      Caption = 'Select All'
+      OnClick = miSelectAllClick
+    end
+  end
+end

@@ -1,0 +1,169 @@
+object frmFileOp: TfrmFileOp
+  Left = 278
+  Height = 160
+  Top = 234
+  Width = 522
+  ActiveControl = btnCancel
+  Caption = 'Process file(s)'
+  ChildSizing.TopBottomSpacing = 4
+  ClientHeight = 160
+  ClientWidth = 522
+  Constraints.MaxHeight = 180
+  Constraints.MinWidth = 500
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  ShowInTaskBar = stAlways
+  LCLVersion = '0.9.27'
+  object lblFileNameFrom: TLabel
+    AnchorSideLeft.Control = lblFrom
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 55
+    Height = 18
+    Top = 8
+    Width = 455
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 8
+    BorderSpacing.Right = 12
+    Caption = 'File name from'
+    ParentColor = False
+  end
+  object lblEstimated: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = pbSecond
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 18
+    Top = 108
+    Width = 510
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 6
+    Caption = 'Estimated'
+    ParentColor = False
+  end
+  object lblFrom: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 10
+    Height = 18
+    Top = 8
+    Width = 39
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 8
+    Caption = 'From:'
+    ParentColor = False
+  end
+  object lblTo: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = lblFrom
+    AnchorSideTop.Side = asrBottom
+    Left = 10
+    Height = 18
+    Top = 28
+    Width = 20
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 2
+    Caption = 'To:'
+    ParentColor = False
+  end
+  object lblFileNameTo: TLabel
+    AnchorSideLeft.Control = lblFileNameFrom
+    AnchorSideTop.Control = lblFileNameFrom
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 55
+    Height = 18
+    Top = 28
+    Width = 457
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 2
+    BorderSpacing.Right = 10
+    Caption = 'File name to'
+    ParentColor = False
+  end
+  object pbSecond: TProgressBar
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = pbFirst
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 22
+    Top = 80
+    Width = 510
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 6
+    Smooth = True
+    TabOrder = 0
+    BarShowText = True
+  end
+  object pbFirst: TProgressBar
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = lblTo
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 22
+    Top = 52
+    Width = 510
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 6
+    Position = 20
+    Smooth = True
+    TabOrder = 1
+    BarShowText = True
+  end
+  object btnCancel: TBitBtn
+    AnchorSideTop.Control = lblEstimated
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = btnPauseStart
+    Left = 346
+    Height = 32
+    Top = 132
+    Width = 89
+    Anchors = [akTop, akRight]
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 6
+    BorderSpacing.InnerBorder = 2
+    Cancel = True
+    Caption = 'Cancel'
+    Kind = bkCancel
+    ModalResult = 2
+    NumGlyphs = 0
+    OnClick = btnCancelClick
+    TabOrder = 2
+  end
+  object btnPauseStart: TBitBtn
+    AnchorSideTop.Control = btnCancel
+    AnchorSideRight.Control = pbFirst
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = btnCancel
+    AnchorSideBottom.Side = asrBottom
+    Left = 441
+    Height = 32
+    Top = 132
+    Width = 75
+    Anchors = [akTop, akRight, akBottom]
+    Layout = blGlyphTop
+    NumGlyphs = 0
+    OnClick = btnPauseStartClick
+    Spacing = 0
+    TabOrder = 3
+    Visible = False
+  end
+end
