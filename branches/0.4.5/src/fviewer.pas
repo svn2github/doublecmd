@@ -45,7 +45,6 @@ type
     pmiCopy: TMenuItem;
     miDiv3: TMenuItem;
     miEncoding: TMenuItem;
-    miDiv4: TMenuItem;
     miPlugins: TMenuItem;
     miSeparator: TMenuItem;
     miSavePos: TMenuItem;
@@ -132,6 +131,7 @@ type
     procedure AdjustImageSize;
     procedure LoadGraphics(const sFileName:String);
     procedure DoSearch;
+    procedure ChooseEncoding(mnuMenuItem: TMenuItem; sEncoding: String);
   public
     procedure LoadFile(iIndex:Integer);
     procedure ReMmapIfNeed;
@@ -180,12 +180,14 @@ begin
 
         miImage.Visible:=False;
         miEdit.Visible:=True;
+        miEncoding.Visible:= True;
         bImage:=False;
         nbPages.ActivePageComponent:=pgText;
         ViewerControl.UnMapFile; // if any mapped
 //        miProcess.Click;
         ViewerControl.MapFile(FileList.Strings[iIndex]);     //handled by miProcess.Click
         UpDateScrollBar;
+        ChooseEncoding(miEncoding, ViewerControl.Encoding);
       end;
     Status.Panels[0].Text:=FileList.Strings[iIndex];
     Status.Panels[1].Text:=Format('%d/%d',[iIndex+1,FileList.Count]);
@@ -472,7 +474,9 @@ begin
     begin
       mi:= TMenuItem.Create(miEncoding);
       mi.Caption:= EncodingsList[I];
-      mi.Enabled:= True;
+      mi.AutoCheck:= True;
+      mi.RadioItem:= True;
+      mi.GroupIndex:= 1;
       mi.OnClick:= @miChangeEncodingClick;
       miEncoding.Add(mi);
     end;
@@ -537,8 +541,10 @@ begin
     ViewerControl.MapFile(FileList.Strings[iActiveFile]);
     miImage.Visible:=False;
     miEdit.Visible:=True;
+    miEncoding.Visible:= True;
     bImage:=False;
     nbPages.ActivePageComponent:=pgText;
+    ChooseEncoding(miEncoding, ViewerControl.Encoding);
     image.Picture:=nil;
     Status.Panels[2].Text:= '0 (0 %)';
   end;
@@ -558,7 +564,7 @@ begin
 
   if ViewerControl.FileSize > 0 then
     begin
-      iPercent:= (ViewerControl.Position * 100) div ViewerControl.FileSize;
+      iPercent:= ViewerControl.Percent;
       if (ScrollBarVert.Position <> iPercent) then
         begin
           ScrollBarVert.Position:= iPercent;
@@ -644,6 +650,7 @@ begin
   nbPages.ActivePageComponent:= pgImage;
   miImage.Visible:= True;
   miEdit.Visible:= False;
+  miEncoding.Visible:= False;
 end;
 
 procedure TfrmViewer.DoSearch;
@@ -676,6 +683,15 @@ begin
   SetFocus;
 end;
 
+procedure TfrmViewer.ChooseEncoding(mnuMenuItem: TMenuItem; sEncoding: String);
+var
+  I: Integer;
+begin
+  sEncoding:= NormalizeEncoding(sEncoding);
+  for I:= 0 to mnuMenuItem.Count - 1 do
+    if SameText(NormalizeEncoding(mnuMenuItem.Items[I].Caption), sEncoding) then
+      mnuMenuItem.Items[I].Checked:= True;
+end;
 
 procedure TfrmViewer.miCopyToClipboardClick(Sender: TObject);
 begin
@@ -703,32 +719,40 @@ begin
     scLineUp:
     begin
       ViewerControl.Up;
-      ScrollPos := ViewerControl.Position;
+      ScrollPos := ViewerControl.Percent;
     end;
     scLineDown:
     begin
       ViewerControl.Down;
-      ScrollPos := ViewerControl.Position;
+      ScrollPos := ViewerControl.Percent;
     end;
     scPageUp:
     begin
       ViewerControl.PageUp;
-      ScrollPos := ViewerControl.Position;
+      ScrollPos := ViewerControl.Percent;
     end;
     scPageDown:
     begin
       ViewerControl.PageDown;
-      ScrollPos := ViewerControl.Position;
+      ScrollPos := ViewerControl.Percent;
     end;
     scTop: ViewerControl.GoHome;
     scBottom: ViewerControl.GoEnd;
     scPosition:
     begin
-      ViewerControl.Position := ScrollPos;
-      if ViewerControl.UpLine then ViewerControl.DownLine;
-      ScrollPos := ViewerControl.Position;
+      if ScrollPos = 0 then
+        ViewerControl.GoHome
+      else if ScrollPos = 100 then
+        ViewerControl.GoEnd
+      else
+        begin
+          ViewerControl.Percent := ScrollPos;
+          if ViewerControl.UpLine then ViewerControl.DownLine;
+          ScrollPos := ViewerControl.Percent;
+        end;
     end;
   end;
+  Status.Panels[2].Text:= cnvFormatFileSize(ViewerControl.Position)+' ('+IntToStr(ScrollPos)+' %)';
 end;
 
 initialization

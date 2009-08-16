@@ -185,6 +185,14 @@ object frmViewer: TfrmViewer
         Caption = 'Select All'
         OnClick = miSelectAllClick
       end
+      object miDiv3: TMenuItem
+        Caption = '-'
+      end
+      object miSearch: TMenuItem
+        Caption = 'Search'
+        ShortCut = 114
+        OnClick = miSearchClick
+      end
     end
     object miView: TMenuItem
       Caption = '&View'
@@ -220,20 +228,9 @@ object frmViewer: TfrmViewer
         ShortCut = 55
         OnClick = miPluginsClick
       end
-      object miDiv3: TMenuItem
-        Caption = '-'
-      end
-      object miEncoding: TMenuItem
-        Caption = 'En&coding'
-      end
-      object miDiv4: TMenuItem
-        Caption = '-'
-      end
-      object miSearch: TMenuItem
-        Caption = 'Search'
-        ShortCut = 114
-        OnClick = miSearchClick
-      end
+    end
+    object miEncoding: TMenuItem
+      Caption = 'En&coding'
     end
     object miImage: TMenuItem
       Caption = '&Image'
