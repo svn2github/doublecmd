@@ -27,15 +27,14 @@ unit uOSUtils;
 interface
 
 uses
-    SysUtils, Classes, LCLProc, uDCUtils, uClassesEx
+    SysUtils, Classes, LCLProc, uDCUtils, uClassesEx, ufsplugin
     {$IFDEF MSWINDOWS}
     , Windows, ShellApi, uNTFSLinks, uMyWindows, JwaWinNetWk
     {$ELSE}
-    , BaseUnix, Unix, UnixType, UnixUtil, dl, uMyUnix{$IFNDEF DARWIN}, libhal, dbus{$ENDIF}
+    , BaseUnix, Unix, UnixType, UnixUtil, dl, uMyUnix{$IFNDEF DARWIN}, libhal, dbus{$ENDIF}, syscall
     {$ENDIF};
     
 const
-  InvalidHandleValue = THandle(-1);
   {$IFDEF MSWINDOWS}
   faFolder = faDirectory;
   faSymLink   = $00000400;
@@ -68,18 +67,8 @@ type
   end;
   PDrive = ^TDrive;
 
-{$IFDEF MSWINDOWS}
-  FILETIME = Windows.FILETIME;
-{$ELSE}
-  FILETIME = record
-    dwLowDateTime : DWORD;
-    dwHighDateTime : DWORD;
-  end;
-{$ENDIF}
-  LPFILETIME = ^FILETIME;
-  _FILETIME = FILETIME;
-  TFILETIME = FILETIME;
-  PFILETIME = ^FILETIME;
+  TFileTime = FILETIME;
+  PFileTime = ^FILETIME;
 
 type
   TFileMapRec = record
@@ -93,18 +82,23 @@ type
 
   TLibHandle = PtrInt;
 
+  TFileAttrs = Cardinal;  // file attributes type regardless of system
+
+const
+  faInvalidAttributes: TFileAttrs = TFileAttrs(-1);
+
 {en
    Is file a directory
    @param(iAttr File attributes)
    @returns(@true if file is a directory, @false otherwise)
 }
-function FPS_ISDIR(iAttr:Cardinal) : Boolean;
+function FPS_ISDIR(iAttr: TFileAttrs) : Boolean;
 {en
    Is file a symbolic link
    @param(iAttr File attributes)
    @returns(@true if file is a symbolic link, @false otherwise)
 }
-function FPS_ISLNK(iAttr:Cardinal) : Boolean;
+function FPS_ISLNK(iAttr: TFileAttrs) : Boolean;
 {en
    Is file executable
    @param(sFileName File name)
@@ -118,7 +112,7 @@ function FileIsExeLib(const sFileName : String) : Boolean;
    @param(bDropReadOnlyFlag Drop read only attribute if @true)
    @returns(The function returns @true if successful, @false otherwise)
 }
-function FileIsReadOnly(iAttr:Cardinal): Boolean;
+function FileIsReadOnly(iAttr: TFileAttrs): Boolean;
 function FileCopyAttr(const sSrc, sDst:String; bDropReadOnlyFlag : Boolean):Boolean;
 function ExecCmdFork(sCmdLine:String; bTerm : Boolean = False; sTerm : String = ''):Boolean;
 {en
@@ -145,9 +139,20 @@ function CreateSymLink(Path, LinkName: string) : Boolean;
 {en
    Read destination of symbolic link
    @param(LinkName Name of symbolic link)
-   @returns(The file the symbolic link name is pointing to)
+   @returns(The file name/path the symbolic link name is pointing to.
+            The path may be relative to link's location.)
 }
 function ReadSymLink(LinkName : String) : String;
+{en
+   Reads the concrete file's name that the link points to.
+   If the link points to a link then it's resolved recursively
+   until a valid file name that is not a link is found.
+   @param(LinkName Name of symbolic link (absolute path))
+   @returns(The absolute filename the symbolic link name is pointing to,
+            or an empty string when the link is invalid or
+            the file it points to does not exist.)
+}
+function mbReadAllLinks(PathToLink : String) : String;
 {en
    Get the user home directory
    @returns(The user home directory)
@@ -220,8 +225,13 @@ function mbFileSetTime(const FileName: UTF8String; ModificationTime: Longint;
                        CreationTime: Longint = 0; LastAccessTime: Longint = 0): Longint;
 function mbFileExists(const FileName: UTF8String): Boolean;
 function mbFileAccess(const FileName: UTF8String; Mode: Integer): Boolean;
-function mbFileGetAttr(const FileName: UTF8String): LongInt;
-function mbFileSetAttr (const FileName: UTF8String; Attr: LongInt) : LongInt;
+function mbFileGetAttr(const FileName: UTF8String): TFileAttrs;
+function mbFileSetAttr (const FileName: UTF8String; Attr: TFileAttrs) : LongInt;
+{en
+   Same as mbFileGetAttr, but dereferences any encountered links.
+}
+function mbFileGetAttrNoLinks(const FileName: UTF8String): TFileAttrs;
+// Returns True on success.
 function mbFileSetReadOnly(const FileName: UTF8String; ReadOnly: Boolean): Boolean;
 function mbDeleteFile(const FileName: UTF8String): Boolean;
 
@@ -233,7 +243,7 @@ function mbCheckTrash: Boolean;
 // ----------------
 function mbRenameFile(const OldName, NewName : UTF8String): Boolean;
 function mbFileSize(const FileName: UTF8String): Int64;
-function FileFlush(Handle: Integer): Boolean;
+function FileFlush(Handle: THandle): Boolean;
 { Directory handling functions}
 function mbGetCurrentDir: UTF8String;
 function mbSetCurrentDir(const NewDir: UTF8String): Boolean;
@@ -242,8 +252,10 @@ function mbCreateDir(const NewDir: UTF8String): Boolean;
 function mbRemoveDir(const Dir: UTF8String): Boolean;
 { Other functions }
 function mbCompareText(const s1, s2: UTF8String): PtrInt;
+function mbGetEnvironmentString(Index : Integer) : UTF8String;
 function mbSetEnvironmentVariable(const sName, sValue: UTF8String): Boolean;
 function mbLoadLibrary(Name: UTF8String): TLibHandle;
+function mbSysErrorMessage(ErrorCode: Integer): UTF8String;
 
 {$IF DEFINED(UNIX) AND NOT DEFINED(DARWIN)}
 // create all Hal object
@@ -304,14 +316,36 @@ type
   begin
     FpWaitPid(FPID, nil, 0);
   end;
+
+
+function SetModeReadOnly(mode: TMode; ReadOnly: Boolean): TMode;
+begin
+  mode := mode and not (S_IWUSR or S_IWGRP or S_IWOTH);
+  if ReadOnly = False then
+  begin
+    if (mode AND S_IRUSR) = S_IRUSR then
+      mode := mode or S_IWUSR;
+    if (mode AND S_IRGRP) = S_IRGRP then
+      mode := mode or S_IWGRP;
+    if (mode AND S_IROTH) = S_IROTH then
+      mode := mode or S_IWOTH;
+  end;
+  Result := mode;
+end;
+
+function fpLChown(path : pChar; owner : TUid; group : TGid): cInt;
+begin
+  fpLChown:=do_syscall(syscall_nr_lchown,TSysParam(path),TSysParam(owner),TSysParam(group));
+end;
+
 {$ENDIF}
 
 (*Is Directory*)
 
-function  FPS_ISDIR(iAttr:Cardinal) : Boolean;
+function  FPS_ISDIR(iAttr: TFileAttrs) : Boolean;
 {$IFDEF MSWINDOWS}
 begin
-  Result := Boolean(iAttr and faDirectory);
+  Result := (iAttr and faDirectory <> 0);
 end;
 {$ELSE}
 begin
@@ -321,10 +355,10 @@ end;
 
 (*Is Link*)
 
-function FPS_ISLNK(iAttr:Cardinal) : Boolean;
+function FPS_ISLNK(iAttr: TFileAttrs) : Boolean;
 {$IFDEF MSWINDOWS}
 begin
-  Result := Boolean(iAttr and faSymLink);
+  Result := (iAttr and faSymLink <> 0);
 end;
 {$ELSE}
 begin
@@ -356,10 +390,10 @@ begin
     end;
 end;
 
-function FileIsReadOnly(iAttr: Cardinal): Boolean;
+function FileIsReadOnly(iAttr: TFileAttrs): Boolean;
 {$IFDEF MSWINDOWS}
 begin
-  Result:= Boolean(iAttr and faReadOnly);
+  Result:= (iAttr and faReadOnly) <> 0;
 end;
 {$ELSE}
 begin
@@ -370,7 +404,7 @@ end;
 function FileCopyAttr(const sSrc, sDst:String; bDropReadOnlyFlag : Boolean):Boolean;
 {$IFDEF MSWINDOWS}
 var
-  iAttr : LongInt;
+  iAttr : TFileAttrs;
   ft : TFileTime;
   Handle: THandle;
 begin
@@ -380,7 +414,7 @@ begin
   GetFileTime(Handle,nil,nil,@ft);
   FileClose(Handle);
   //---------------------------------------------------------
-  if bDropReadOnlyFlag and Boolean(iAttr and faReadOnly) then
+  if bDropReadOnlyFlag and ((iAttr and faReadOnly) <> 0) then
     iAttr := (iAttr and not faReadOnly);
   Result := (mbFileSetAttr(sDst, iAttr) = 0);
   //---------------------------------------------------------
@@ -392,32 +426,45 @@ end;
 var
   StatInfo : BaseUnix.Stat;
   utb : BaseUnix.PUTimBuf;
-  mode : dword;
+  mode : TMode;
 begin
-  fpStat(PChar(sSrc), StatInfo);
-//  DebugLN(AttrToStr(stat.st_mode));  // file time
-  new(utb);
-  utb^.actime:=StatInfo.st_atime;  //last access time // maybe now
-  utb^.modtime:=StatInfo.st_mtime; // last modification time
-  fputime(PChar(sDst),utb);
-  dispose(utb);
-// end file
+  fpLStat(PChar(sSrc), StatInfo);
 
-// owner & group
-  if fpChown(PChar(sDst),StatInfo.st_uid, StatInfo.st_gid)=-1 then
+  if FPS_ISLNK(StatInfo.st_mode) then
   begin
-    // development messages
-    DebugLN(Format('chown (%s) failed',[sSrc]));
-  end;
-  // mod
-  mode := StatInfo.st_mode;
-  if bDropReadOnlyFlag and ((mode AND S_IRUSR) = S_IRUSR) and ((mode AND S_IWUSR) <> S_IWUSR) then
-    mode := (mode or S_IWUSR);
-  if fpChmod(PChar(sDst), mode) = -1 then
+    // Can only set group/owner for links.
+    if fpLChown(PChar(sDst),StatInfo.st_uid, StatInfo.st_gid)=-1 then
+    begin
+      // development messages
+      DebugLN(Format('chown (%s) failed',[sDst]));
+    end;
+  end
+  else
   begin
-    // development messages
-    DebugLN(Format('chmod (%s) failed',[sSrc]));
+  // file time
+    new(utb);
+    utb^.actime:=StatInfo.st_atime;  // last access time
+    utb^.modtime:=StatInfo.st_mtime; // last modification time
+    fputime(PChar(sDst),utb);
+    dispose(utb);
+
+  // owner & group
+    if fpChown(PChar(sDst),StatInfo.st_uid, StatInfo.st_gid)=-1 then
+    begin
+      // development messages
+      DebugLN(Format('chown (%s) failed',[sDst]));
+    end;
+    // mod
+    mode := StatInfo.st_mode;
+    if bDropReadOnlyFlag then
+      mode := SetModeReadOnly(mode, False);
+    if fpChmod(PChar(sDst), mode) = -1 then
+    begin
+      // development messages
+      DebugLN(Format('chmod (%s) failed',[sDst]));
+    end;
   end;
+
   Result:=True;
 end;
 {$ENDIF}
@@ -496,7 +543,7 @@ begin
     end;
     
   SplitCmdLine(sCmdLine, sFileName, sParams);
-  DebugLN('File: ' + sFileName + ' Params: ' + sParams + ' WorkDir: ' + wWorkDir);
+  DebugLn('File: ' + sFileName + ' Params: ' + sParams + ' WorkDir: ' + wWorkDir);
   wFileName:= UTF8Decode(sFileName);
   wParams:= UTF8Decode(sParams);
   Result := (ShellExecuteW(0, 'open', PWChar(wFileName), PWChar(wParams), PWChar(wWorkDir), SW_SHOW) > 32);
@@ -507,6 +554,8 @@ function ShellExecute(URL: String): Boolean;
 {$IFDEF MSWINDOWS}
 begin
   Result:= ExecCmdFork(Format('"%s"', [URL]));
+  if Result = False then
+      Result:= ExecCmdFork('rundll32 shell32.dll OpenAs_RunDLL ' + URL);
 end;
 {$ELSE}
 var
@@ -518,8 +567,16 @@ begin
   DesktopEnv:= GetDesktopEnvironment;
   case DesktopEnv of
   DE_UNKNOWN:
-    if FileIsExecutable(URL) then
-      sCmdLine:= Format('"%s"', [URL]);
+    begin
+      if FileIsExecutable(URL) then
+      begin
+        if GetPathType(URL) <> ptAbsolute then
+          sCmdLine := './';
+        sCmdLine:= sCmdLine + QuoteStr(URL);
+      end
+      else
+        sCmdLine:= 'xdg-open ' + QuoteStr(URL);
+    end;
   DE_KDE:
     sCmdLine:= 'kfmclient exec ' + QuoteStr(URL);
   DE_GNOME:
@@ -621,6 +678,59 @@ begin
   Result := fpReadlink(LinkName);
 end;
 {$ENDIF}
+
+function mbReadAllLinks(PathToLink: String) : String;
+var
+  Attrs: TFileAttrs;
+  LinkTargets: TStringList;  // A list of encountered filenames (for detecting cycles)
+
+  function mbReadAllLinksRec(PathToLink: String): String;
+  begin
+    Result := ReadSymLink(PathToLink);
+    if Result <> '' then
+    begin
+      if GetPathType(Result) <> ptAbsolute then
+        Result := GetAbsoluteFileName(ExtractFilePath(PathToLink), Result);
+
+      if LinkTargets.IndexOf(Result) >= 0 then
+      begin
+        // Link already encountered - links form a cycle.
+        Result := '';
+{$IFDEF UNIX}
+        fpseterrno(ESysELOOP);
+{$ENDIF}
+        Exit;
+      end;
+
+      Attrs := mbFileGetAttr(Result);
+      if (Attrs <> faInvalidAttributes) then
+      begin
+        if FPS_ISLNK(Attrs) then
+        begin
+          // Points to a link - read recursively.
+          LinkTargets.Add(Result);
+          Result := mbReadAllLinksRec(Result);
+        end;
+        // else points to a file/dir
+      end
+      else
+      begin
+        Result := '';  // Target of link doesn't exist
+{$IFDEF UNIX}
+        fpseterrno(ESysENOENT);
+{$ENDIF}
+      end;
+    end;
+  end;
+
+begin
+  LinkTargets := TStringList.Create;
+  try
+    Result := mbReadAllLinksRec(PathToLink);
+  finally
+    FreeAndNil(LinkTargets);
+  end;
+end;
 
 (* Return home directory*)
 
@@ -860,13 +970,13 @@ begin
     begin
       MappedFile := nil;
       MappingHandle := 0;
-      FileHandle := InvalidHandleValue;
+      FileHandle := feInvalidHandle;
 
       FileSize := mbFileSize(sFileName);
       if FileSize = 0 then Exit;   // Cannot map empty files
 
       FileHandle := mbFileOpen(sFileName, fmOpenRead);
-      if FileHandle = InvalidHandleValue then Exit;
+      if FileHandle = feInvalidHandle then Exit;
 
       MappingHandle := CreateFileMapping(FileHandle, nil, PAGE_READONLY, 0, 0, nil);
       if MappingHandle <> 0 then
@@ -896,7 +1006,7 @@ begin
       MappedFile := nil;
       FileHandle:= fpOpen(PChar(sFileName), O_RDONLY);
 
-      if FileHandle = InvalidHandleValue then Exit;
+      if FileHandle = feInvalidHandle then Exit;
       if fpfstat(FileHandle, StatInfo) <> 0 then
         begin
           UnMapFile(FileMapRec);
@@ -939,10 +1049,10 @@ begin
         MappingHandle := 0;
       end;
 
-      if FileHandle <> InvalidHandleValue then
+      if FileHandle <> feInvalidHandle then
       begin
         FileClose(FileHandle);
-        FileHandle := InvalidHandleValue;
+        FileHandle := feInvalidHandle;
       end;
     end;
 end;
@@ -950,10 +1060,10 @@ end;
 begin
   with FileMapRec do
     begin
-      if FileHandle <> InvalidHandleValue then
+      if FileHandle <> feInvalidHandle then
       begin
         fpClose(FileHandle);
-        FileHandle := InvalidHandleValue;
+        FileHandle := feInvalidHandle;
       end;
 
       if Assigned(MappedFile) then
@@ -1152,7 +1262,7 @@ begin
   Result:=False;
   wFileName:= UTF8Decode(FileName);
   Attr:= GetFileAttributesW(PWChar(wFileName));
-  if Attr <> $ffffffff then
+  if Attr <> DWORD(-1) then
     Result:= (Attr and FILE_ATTRIBUTE_DIRECTORY) = 0;
 end;
 {$ELSE}
@@ -1160,8 +1270,8 @@ var
   Info: BaseUnix.Stat;
 begin
   Result:= False;
-  if fpStat(FileName, Info) >= 0 then
-    Result:= not (fpS_ISDIR(Info.st_mode) or FPS_ISLNK(Info.st_mode));
+  if fpLStat(FileName, Info) >= 0 then
+    Result:= not fpS_ISDIR(Info.st_mode);
 end;
 {$ENDIF}
 
@@ -1197,13 +1307,18 @@ begin
 end;
 {$ENDIF}
 
-function mbFileGetAttr(const FileName: UTF8String): Longint;
+{$IFOPT R+}
+{$DEFINE uOSUtilsRangeCheckOn}
+{$R-}
+{$ENDIF}
+
+function mbFileGetAttr(const FileName: UTF8String): TFileAttrs;
 {$IFDEF MSWINDOWS}
 var
   wFileName: WideString;
 begin
   wFileName:= UTF8Decode(FileName);
-  Result:= GetFileAttributesW(PWChar(wFileName));
+  Result := GetFileAttributesW(PWChar(wFileName));
 end;
 {$ELSE}
 var
@@ -1215,7 +1330,7 @@ begin
 end;
 {$ENDIF}
 
-function mbFileSetAttr(const FileName: UTF8String; Attr: LongInt): LongInt;
+function mbFileSetAttr(const FileName: UTF8String; Attr: TFileAttrs): LongInt;
 {$IFDEF MSWINDOWS}
 var
   wFileName: WideString;
@@ -1231,30 +1346,55 @@ begin
 end;
 {$ENDIF}
 
+function mbFileGetAttrNoLinks(const FileName: UTF8String): TFileAttrs;
+{$IFDEF UNIX}
+var
+  Info: BaseUnix.Stat;
+begin
+  if fpStat(FileName, Info) >= 0 then
+    Result := Info.st_mode
+  else
+    Result := faInvalidAttributes;
+end;
+{$ELSE}
+var
+  LinkTarget: UTF8String;
+begin
+  LinkTarget := mbReadAllLinks(FileName);
+  if LinkTarget <> '' then
+    Result := mbFileGetAttr(LinkTarget)
+  else
+    Result := faInvalidAttributes;
+end;
+{$ENDIF}
+
+{$IFDEF uOSUtilsRangeCheckOn}
+{$R+}
+{$UNDEF uOSUtilsRangeCheckOn}
+{$ENDIF}
+
 function mbFileSetReadOnly(const FileName: UTF8String; ReadOnly: Boolean): Boolean;
 {$IFDEF MSWINDOWS}
 var
-  iAttr: LongInt;
+  iAttr: DWORD;
+  wFileName: WideString;
 begin
-  iAttr:= mbFileGetAttr(FileName);
-  if iAttr = -1 then Exit(False);
+  wFileName:= UTF8Decode(FileName);
+  iAttr := GetFileAttributesW(PWChar(wFileName));
+  if iAttr = DWORD(-1) then Exit(False);
   if ReadOnly then
-    iAttr:= iAttr and faReadOnly
+    iAttr:= iAttr or faReadOnly
   else
     iAttr:= iAttr and not faReadOnly;
-  Result:= mbFileSetAttr(FileName, iAttr) = 0;
+  Result:= SetFileAttributesW(PWChar(wFileName), iAttr) = True;
 end;
 {$ELSE}
 var
   StatInfo: BaseUnix.Stat;
-  mode: dword;
+  mode: TMode;
 begin
   if fpStat(PChar(FileName), StatInfo) <> 0 then Exit(False);
-  mode:= StatInfo.st_mode;
-  if ReadOnly then
-    mode := mode and not (S_IWUSR or S_IWGRP or S_IWOTH)
-  else
-    mode:=  mode or (S_IWUSR or S_IWGRP or S_IWOTH);
+  mode := SetModeReadOnly(StatInfo.st_mode, ReadOnly);
   Result:= fpchmod(PChar(FileName), mode) = 0;
 end;
 {$ENDIF}
@@ -1364,7 +1504,7 @@ begin
 end;
 {$ENDIF}
 
-function FileFlush(Handle: Integer): Boolean;  
+function FileFlush(Handle: THandle): Boolean;  
 {$IFDEF MSWINDOWS}
 begin
   Result:= FlushFileBuffers(Handle);
@@ -1429,7 +1569,7 @@ begin
   Result:= False;
   wDirectory:= UTF8Decode(Directory);
   Attr:= GetFileAttributesW(PWChar(wDirectory));
-  if Attr <> $ffffffff then
+  if Attr <> DWORD(-1) then
     Result:= (Attr and FILE_ATTRIBUTE_DIRECTORY) > 0;
 end;
 {$ELSE}
@@ -1437,7 +1577,7 @@ var
   Info: BaseUnix.Stat;
 begin
   Result:= False;
-  if fpStat(Directory, Info) >= 0 then
+  if fpLStat(Directory, Info) >= 0 then
     Result:= fpS_ISDIR(Info.st_mode);
 end;
 {$ENDIF}
@@ -1481,6 +1621,32 @@ begin
 end;
 {$ENDIF}
 
+function mbGetEnvironmentString(Index: Integer): UTF8String;
+{$IFDEF MSWINDOWS}
+var
+  hp, p: PWideChar;
+begin
+  Result:= '';
+  p:= GetEnvironmentStringsW;
+  hp:= p;
+  if (hp <> nil) then
+    begin
+      while (hp^ <> #0) and (Index > 1) do
+        begin
+          Dec(Index);
+          hp:= hp + lstrlenW(hp) + 1;
+        end;
+      if (hp^ <> #0) then
+        Result:= UTF8Encode(hp);
+    end;
+  FreeEnvironmentStringsW(p);
+end;
+{$ELSE}
+begin
+  Result:= GetEnvironmentString(Index);
+end;
+{$ENDIF}
+
 function mbSetEnvironmentVariable(const sName, sValue: UTF8String): Boolean;
 {$IFDEF MSWINDOWS}
 var
@@ -1510,6 +1676,16 @@ begin
   Result:= TLibHandle(dlopen(PChar(Name), RTLD_LAZY));
 end;
 {$ENDIF}
+
+function mbSysErrorMessage(ErrorCode: Integer): UTF8String;
+begin
+  Result :=
+{$IFDEF WINDOWS}
+            UTF8Encode(SysErrorMessage(ErrorCode));
+{$ELSE}
+            SysErrorMessage(ErrorCode);
+{$ENDIF}
+end;
 
 {$IF DEFINED(UNIX) AND NOT DEFINED(DARWIN)}
 // ************************** HAL section ***********************  //
