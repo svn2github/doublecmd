@@ -3313,6 +3313,10 @@ msgstr "Funkce není podporována!"
 msgid "Syntax error in regular expression!"
 msgstr ""
 
+#: ulng.rsmsgerrrename
+msgid "Cannot rename file %s to %s"
+msgstr ""
+
 #: ulng.rsmsgerrsmallbuf
 msgid "Buffer too small"
 msgstr "Buffer je příliš malý"

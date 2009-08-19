@@ -3289,6 +3289,10 @@ msgstr "不支持的功能!"
 msgid "Syntax error in regular expression!"
 msgstr ""
 
+#: ulng.rsmsgerrrename
+msgid "Cannot rename file %s to %s"
+msgstr ""
+
 #: ulng.rsmsgerrsmallbuf
 msgid "Buffer too small"
 msgstr "缓冲区太小"

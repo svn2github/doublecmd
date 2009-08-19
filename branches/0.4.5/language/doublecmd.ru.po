@@ -3285,6 +3285,10 @@ msgstr "Функция не поддерживается!"
 msgid "Syntax error in regular expression!"
 msgstr "Ошибка синтаксиса в регулярном выражении!"
 
+#: ulng.rsmsgerrrename
+msgid "Cannot rename file %s to %s"
+msgstr ""
+
 #: ulng.rsmsgerrsmallbuf
 msgid "Buffer too small"
 msgstr "Буфер слишком маленький"
