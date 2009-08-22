@@ -42,18 +42,21 @@ type
 implementation
 
 uses
-  LCLProc;
+  LCLProc, uDCUtils;
 
 procedure TfrmFindView.FormShow(Sender: TObject);
 begin
-  inherited;
+  if cbDataToFind.Text = EmptyStr then
+    begin
+      if cbDataToFind.Items.Count > 0 then
+        cbDataToFind.Text:= cbDataToFind.Items[0];
+    end;
   cbDataToFind.SelectAll;
 end;
 
 procedure TfrmFindView.btnFindClick(Sender: TObject);
 begin
-  inherited;
-  cbDataToFind.Items.Add(cbDataToFind.Text);
+  InsertFirstItem(cbDataToFind.Text, cbDataToFind.Items);
   ModalResult:= mrOk;
 end;
 

@@ -83,6 +83,7 @@ type
     rgSearchDirection: TRadioGroup;
     procedure btnOKClick(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormShow(Sender: TObject);
   private
     function GetSearchBackwards: boolean;
     function GetSearchCaseSensitive: boolean;
@@ -129,47 +130,31 @@ type
 implementation
 
 uses
-  uLng;
+  uLng, uDCUtils;
 
 { TfrmEditSearchReplace }
 
 procedure TfrmEditSearchReplace.btnOKClick(Sender: TObject);
-var
-  s: string;
-  i: integer;
 begin
-  s := cbSearchText.Text;
-  if s <> '' then begin
-    i := cbSearchText.Items.IndexOf(s);
-    if i > -1 then begin
-      cbSearchText.Items.Delete(i);
-      cbSearchText.Items.Insert(0, s);
-      cbSearchText.Text := s;
-    end else
-      cbSearchText.Items.Insert(0, s);
-  end;
+  InsertFirstItem(cbSearchText.Text, cbSearchText.Items);
   ModalResult := mrOK
 end;
 
 procedure TfrmEditSearchReplace.FormCloseQuery(Sender: TObject;
   var CanClose: boolean);
-var
-  s: string;
-  i: integer;
 begin
-  inherited;
-  if ModalResult = mrOK then begin
-    s := cbReplaceText.Text;
-    if s <> '' then begin
-      i := cbReplaceText.Items.IndexOf(s);
-      if i > -1 then begin
-        cbReplaceText.Items.Delete(i);
-        cbReplaceText.Items.Insert(0, s);
-        cbReplaceText.Text := s;
-      end else
-        cbReplaceText.Items.Insert(0, s);
+  if ModalResult = mrOK then
+    InsertFirstItem(cbReplaceText.Text, cbReplaceText.Items);
+end;
+
+procedure TfrmEditSearchReplace.FormShow(Sender: TObject);
+begin
+  if cbSearchText.Text = EmptyStr then
+    begin
+      if cbSearchText.Items.Count > 0 then
+        cbSearchText.Text:= cbSearchText.Items[0];
     end;
-  end;
+  cbSearchText.SelectAll;
 end;
 
 function TfrmEditSearchReplace.GetSearchBackwards: boolean;

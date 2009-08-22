@@ -67,13 +67,14 @@ type
     cbEncoding: TComboBox;
     cbSearchDepth: TComboBox;
     cbRegExp: TCheckBox;
+    cmbReplaceText: TComboBox;
+    cmbFindText: TComboBox;
     deDateFrom: TDateEdit;
     deDateTo: TDateEdit;
     edtFindPathStart: TDirectoryEdit;
     edtAttrib: TEdit;
     edtTimeFrom: TEdit;
     edtTimeTo: TEdit;
-    edtReplaceText: TEdit;
     gbAttributes: TGroupBox;
     btnSearchDelete: TButton;
     btnSearchLoad: TButton;
@@ -98,7 +99,6 @@ type
     cmbFindFileMask: TComboBox;
     gbFindData: TGroupBox;
     cbCaseSens: TCheckBox;
-    edtFindText: TEdit;
     tsAdvanced: TTabSheet;
     Panel1: TPanel;
     Panel3: TPanel;
@@ -171,7 +171,7 @@ implementation
 
 uses
   LCLProc, LCLType, LConvEncoding, DateUtils, fViewer, uLng, uGlobs, uShowForm, fMain,
-  uTypes, uFileOp, uOSUtils, uSearchTemplate;
+  uTypes, uFileOp, uOSUtils, uSearchTemplate, uDCUtils;
 
 procedure SAddFileProc(PlugNr:integer; FoundFile:pchar); stdcall;
 var s:string;
@@ -285,10 +285,10 @@ procedure TfrmFindDlg.cbFindInFileChange(Sender: TObject);
 begin
   gbFindData.Enabled:=cbFindInFile.Checked;
 
-  if edtFindText.Enabled and edtFindText.CanFocus then
+  if cmbFindText.Enabled and cmbFindText.CanFocus then
   begin
-    edtFindText.SetFocus;
-    edtFindText.SelectAll;
+    cmbFindText.SetFocus;
+    cmbFindText.SelectAll;
   end;
 end;
 
@@ -382,14 +382,14 @@ begin
     cbNoThisText.Checked:= rIsNoThisText;
     cbFindInFile.Checked:= rFindInFiles;
     cbCaseSens.Checked:= rCaseSens;
-    edtFindText.Text:= '';
+    cmbFindText.Text:= '';
     if rFindInFiles then
-      edtFindText.Text:= rFindData;
+      cmbFindText.Text:= rFindData;
     // replace text
     cbReplaceText.Checked:= rReplaceInFiles;
-    edtReplaceText.Text:= '';
+    cmbReplaceText.Text:= '';
     if rReplaceInFiles then
-      edtReplaceText.Text:= rReplaceData;
+      cmbReplaceText.Text:= rReplaceData;
   end;
 end;
 
@@ -471,10 +471,10 @@ begin
       SearchDepth:= cbSearchDepth.ItemIndex - 1;
       IsNoThisText:= cbNoThisText.Checked;
       FindInFiles:= cbFindInFile.Checked;
-      FindData:= ConvertEncoding(edtFindText.Text, EncodingUTF8, cbEncoding.Text);
+      FindData:= ConvertEncoding(cmbFindText.Text, EncodingUTF8, cbEncoding.Text);
       CaseSensitive:= cbCaseSens.Checked;
       ReplaceInFiles:= cbReplaceText.Checked;
-      ReplaceData:= edtReplaceText.Text;
+      ReplaceData:= cmbReplaceText.Text;
       (* Date search *)
       if cbDateFrom.Checked then
          begin
@@ -602,15 +602,21 @@ procedure TfrmFindDlg.btnStartClick(Sender: TObject);
 var
   sr:TSearchAttrRecord;
 begin
-  if cmbFindFileMask.Items.IndexOf(cmbFindFileMask.Text) < 0 then
-    cmbFindFileMask.Items.Add(cmbFindFileMask.Text);
-            
   if not mbDirectoryExists(edtFindPathStart.Text) then
   begin
     ShowMessage(Format(rsFindDirNoEx,[edtFindPathStart.Text]));
     Exit;
   end;
-  
+
+  // add to find mask history
+  InsertFirstItem(cmbFindFileMask.Text, cmbFindFileMask.Items);
+  // add to search text history
+  if cbFindInFile.Checked then
+    InsertFirstItem(cmbFindText.Text, cmbFindText.Items);
+  // add to replace text history
+  if cbReplaceText.Checked then
+    InsertFirstItem(cmbReplaceText.Text, cmbReplaceText.Items);
+
   Panel1.Visible := True;
   Splitter1.Visible := True;
   Height := (Screen.Height * 4) div 5;
@@ -747,14 +753,14 @@ end;
 
 procedure TfrmFindDlg.cbReplaceTextChange(Sender: TObject);
 begin
-  edtReplaceText.Enabled := cbReplaceText.Checked;
+  cmbReplaceText.Enabled := cbReplaceText.Checked;
   cbNoThisText.Checked := False;
   cbNoThisText.Enabled := not cbReplaceText.Checked;
 
-  if edtReplaceText.Enabled and edtReplaceText.CanFocus then
+  if cmbReplaceText.Enabled and cmbReplaceText.CanFocus then
   begin
-    edtReplaceText.SetFocus;
-    edtReplaceText.SelectAll;
+    cmbReplaceText.SetFocus;
+    cmbReplaceText.SelectAll;
   end;
 end;
 
@@ -832,17 +838,27 @@ begin
 end;
 
 procedure TfrmFindDlg.frmFindDlgShow(Sender: TObject);
-var i:integer;
+var
+  I: Integer;
 begin
   if cmbFindFileMask.Visible then
     cmbFindFileMask.SelectAll;
 
   cmbFindFileMask.Items.Assign(glsMaskHistory);
+  cmbFindText.Items.Assign(glsSearchHistory);
+  // if we already search text then use last searched text
+  if not gFirstTextSearch then
+    begin
+      if glsSearchHistory.Count > 0 then
+        cmbFindText.Text:= glsSearchHistory[0];
+    end;
+  cmbReplaceText.Items.Assign(glsReplaceHistory);
+
   DSL.Load(gini);
   cbbSPlugins.Clear;
-  for i:=0 to DSL.Count-1 do
+  for I:= 0 to DSL.Count-1 do
     begin
-      cbbSPlugins.AddItem(DSL.GetDSXModule(i).Name+' ('+DSL.GetDSXModule(i).Descr+' )',nil);
+      cbbSPlugins.AddItem(DSL.GetDSXModule(i).Name+' ('+DSL.GetDSXModule(I).Descr+' )',nil);
     end;
   if (cbbSPlugins.Items.Count>0) then cbbSPlugins.ItemIndex:=0;
 end;

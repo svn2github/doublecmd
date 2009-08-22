@@ -213,6 +213,7 @@ function RemoveQuotation(const Str: String): String;
 procedure SplitArgs(var Args: TOpenStringArray; CmdLine: String);
 
 procedure ParseLineToList(sLine: String; ssItems: TStrings);
+procedure InsertFirstItem(sLine: String; ssItems: TStrings);
 
 function StrNewW(const mbString: UTF8String): PWideChar;
 procedure StrDisposeW(var pStr : PWideChar);
@@ -229,10 +230,14 @@ function OctToDec(Value: String): LongInt;
 }
 function DecToOct(Value: LongInt): String;
 
+function EstimateRemainingTime(StartValue, CurrentValue, EndValue: Int64;
+                               StartTime: TDateTime; CurrentTime: TDateTime;
+                               out SpeedPerSecond: Int64): TDateTime;
+
 implementation
 
 uses
-   FileUtil, uOSUtils, uGlobs, uGlobsPaths;
+   FileUtil, uOSUtils, uGlobs, uGlobsPaths, dateutils;
 
 function GetCmdDirFromEnvVar(sPath: String): String;
 begin
@@ -258,19 +263,18 @@ var
   EnvVarList: TStringList;
 begin
   if sFileName = EmptyStr then Exit(EmptyStr);
-  Result:= UTF8ToSys(sFileName);
+  Result:= sFileName;
   X:= GetEnvironmentVariableCount;
   if X = 0 then Exit;
   EnvVarList:= TStringList.Create;
   for I:= 1 to X do
     begin
-      EnvVarList.Add(GetEnvironmentString(I));
+      EnvVarList.Add(mbGetEnvironmentString(I));
       Result:= StringReplace(Result, '%'+EnvVarList.Names[I-1]+'%', EnvVarList.ValueFromIndex[I-1], [rfReplaceAll, rfIgnoreCase]);
     end;
   FreeAndNil(EnvVarList);
   if Pos(PathDelim, Result) <> 0 then
     Result:= ExpandFileName(Result);
-  Result:= SysToUTF8(Result);
 end;
 
 function GetTempFolder: String;
@@ -360,29 +364,17 @@ begin
 end;
 
 function GetAbsoluteFileName(sPath, sRelativeFileName : String) : String;
-var
-  iPos : Integer;
-  sDir : String;
 begin
-  sDir := '';
-  if (Pos(PathDelim, sRelativeFileName)  <> 0) and (Pos(DriveDelim, sRelativeFileName) = 0) then
-    begin
-      iPos := Pos('..' + PathDelim, sRelativeFileName);
-      if iPos <> 0 then
-        sDir := sPath;
-      while iPos <> 0 do
-        begin
-          sDir := GetParentDir(sDir);
-          Delete(sRelativeFileName, iPos, 3);
-          iPos := Pos('..' + PathDelim, sRelativeFileName);
-        end;
-      Result := sDir + sRelativeFileName;
-    end
-  else
-    if Pos(DriveDelim, sRelativeFileName) = 0 then
-      Result := sPath + sRelativeFileName
-    else
+  case GetPathType(sRelativeFileName) of
+    ptNone:
+      Result := sPath + sRelativeFileName;
+
+    ptRelative:
+      Result := ExpandAbsolutePath(sPath + sRelativeFileName);
+
+    ptAbsolute:
       Result := sRelativeFileName;
+  end;
 end;
 
 function GetPathType(sPath : String): TPathType;
@@ -775,6 +767,21 @@ begin
     end;
 end;
 
+procedure InsertFirstItem(sLine: String; ssItems: TStrings);
+var
+  I: Integer;
+begin
+  if sLine = EmptyStr then Exit;
+  I:= ssItems.IndexOf(sLine);
+  if I < 0 then
+    ssItems.Insert(0, sLine)
+  else
+    begin
+      ssItems.Delete(I);
+      ssItems.Insert(0, sLine);
+    end;
+end;
+
 function StrNewW(const mbString: UTF8String): PWideChar;
 var
   wsString: WideString;
@@ -814,6 +821,23 @@ begin
       Result:= IntToStr(iMod) + Result;
     end;
   Result:= IntToStr(Value) + Result;
+end;
+
+function EstimateRemainingTime(StartValue, CurrentValue, EndValue: Int64;
+                               StartTime: TDateTime; CurrentTime: TDateTime;
+                               out SpeedPerSecond: Int64): TDateTime;
+var
+  Speed: Double;
+begin
+  SpeedPerSecond := 0;
+  Result := 0;
+
+  if (CurrentValue > StartValue) and (CurrentTime > StartTime) then
+    begin
+      Speed := Double(CurrentValue - StartValue) / (CurrentTime - StartTime);
+      Result := Double(EndValue - CurrentValue) / Speed;
+      SpeedPerSecond := Trunc(Speed) div SecsPerDay;
+    end;
 end;
 
 end.

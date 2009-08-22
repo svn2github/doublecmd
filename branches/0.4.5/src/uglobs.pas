@@ -95,6 +95,7 @@ var
   gCaseSensitiveSort:Boolean=True;
   gLynxLike:Boolean=True;
   gDirSelect:Boolean=True;
+  gFirstTextSearch: Boolean = True;
 
   gMouseSelectionEnabled: Boolean = True;
   gMouseSelectionButton: Integer = 0;
@@ -102,6 +103,8 @@ var
   glsHotDir:TStringListEx;
   glsDirHistory:TStringListEx;
   glsMaskHistory : TStringListEx;
+  glsSearchHistory : TStringListEx;
+  glsReplaceHistory : TStringListEx;
   gCutTextToColWidth : Boolean;
   gSpaceMovesDown: Boolean;
   gScrollMode: Integer;
@@ -410,6 +413,8 @@ begin
   glsHotDir := TStringListEx.Create;
   glsDirHistory := TStringListEx.Create;
   glsMaskHistory := TStringListEx.Create;
+  glsSearchHistory := TStringListEx.Create;
+  glsReplaceHistory := TStringListEx.Create;
   
   HotMan:=THotKeyManager.Create;
   Actions:=TActs.Create;
@@ -425,6 +430,10 @@ begin
     FreeAndNil(glsHotDir);
   if Assigned(glsMaskHistory) then
     FreeAndNil(glsMaskHistory);
+  if Assigned(glsSearchHistory) then
+    FreeAndNil(glsSearchHistory);
+  if Assigned(glsReplaceHistory) then
+    FreeAndNil(glsReplaceHistory);
   if Assigned(gExts) then
     FreeAndNil(gExts);
   if Assigned(gIni) then
@@ -585,6 +594,12 @@ begin
   if mbFileExists(gpIniDir + 'maskhistory.txt') then
     LoadStringsFromFile(glsMaskHistory, gpIniDir + 'maskhistory.txt');
 
+  if mbFileExists(gpIniDir + 'searchhistory.txt') then
+    LoadStringsFromFile(glsSearchHistory, gpIniDir + 'searchhistory.txt');
+
+  if mbFileExists(gpIniDir + 'replacehistory.txt') then
+    LoadStringsFromFile(glsReplaceHistory, gpIniDir + 'replacehistory.txt');
+
   gColorExt.Load;
 
   DebugLn('Loading viewer position...');
@@ -656,6 +671,9 @@ begin
     glsDirHistory.SaveToFile(gpIniDir + 'dirhistory.txt');
   if gSaveFileMaskHistory then
     glsMaskHistory.SaveToFile(gpIniDir + 'maskhistory.txt');
+	
+  glsSearchHistory.SaveToFile(gpIniDir + 'searchhistory.txt');
+  glsReplaceHistory.SaveToFile(gpIniDir + 'replacehistory.txt');
 	
   { Layout page }
 

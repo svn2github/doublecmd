@@ -146,7 +146,6 @@ type
     bSearchWholeWords:Boolean;
     bSearchRegExp:Boolean;
     sSearchText, sReplaceText:String;
-    sReplaceTextHistory, sSearchTextHistory:String;
     sEncodingIn,
     sEncodingOut,
     sOriginalText: String;
@@ -154,10 +153,10 @@ type
   public
     { Public declarations }
     SynEditSearch: TSynEditSearch;
-    procedure LoadFromIni;
-    procedure SaveToIni;
-{    Function CreateNewTab:Integer; // return tab number
-    Function OpenFileNewTab(const sFileName:String):Integer;}
+    {
+    Function CreateNewTab:Integer; // return tab number
+    Function OpenFileNewTab(const sFileName:String):Integer;
+    }
     procedure OpenFile(const sFileName:String);
     procedure UpdateStatus;
     procedure SetEncodingIn(Sender:TObject);
@@ -184,7 +183,7 @@ begin
   gEditorPos.Restore(editor);
   try
     LoadAttrFromFile(gpIniDir + csDefaultName);
-    if sFileName='' then
+    if sFileName = '' then
       editor.actFileNew.Execute
     else
       editor.OpenFile(sFileName);
@@ -200,7 +199,6 @@ var
   mi:TMenuItem;
   EncodingsList: TStringList;
 begin
-  LoadFromIni;
   Editor.Font.Name:=gEditorFontName;
   Editor.Font.Size:=gEditorFontSize;
   Editor.Font.Style:=gEditorFontStyle;
@@ -244,15 +242,26 @@ begin
       miEncodingOut.Add(mi);
     end;
   EncodingsList.Free;
+  // if we already search text then use last searched text
+  if not gFirstTextSearch then
+    begin
+      if glsSearchHistory.Count > 0 then
+        sSearchText:= glsSearchHistory[0];
+    end;
 end;
 
 procedure TfrmEditor.actEditFindNextExecute(Sender: TObject);
 begin
+  if gFirstTextSearch then
+    begin
+      ShowSearchReplaceDialog(False);
+      Exit;
+    end;
   if sSearchText <> '' then
     begin
       DoSearchReplaceText(False, bSearchBackwards);
       bSearchFromCaret:= True;
-  end;
+    end;
 end;
 
 procedure TfrmEditor.OpenFile(const sFileName:String);
@@ -682,10 +691,10 @@ begin
       else
         SearchText := Editor.GetWordAtRowCol(Editor.CaretXY);
 //    end;
-    SearchTextHistory := sSearchTextHistory;
+    SearchTextHistory := glsSearchHistory.CommaText;
     if AReplace then with dlg as TfrmEditSearchReplace do begin
       ReplaceText := sReplaceText;
-      ReplaceTextHistory := sReplaceTextHistory;
+      ReplaceTextHistory := glsReplaceHistory.CommaText;
     end;
     SearchWholeWords := bSearchWholeWords;
     if ShowModal = mrOK then begin
@@ -696,15 +705,17 @@ begin
       bSearchWholeWords := SearchWholeWords;
       bSearchRegExp := SearchRegExp;
       sSearchText := SearchText;
-      sSearchTextHistory := SearchTextHistory;
+      glsSearchHistory.CommaText := SearchTextHistory;
       if AReplace then with dlg as TfrmEditSearchReplace do begin
         sReplaceText := ReplaceText;
-        sReplaceTextHistory := ReplaceTextHistory;
+        glsReplaceHistory.CommaText := ReplaceTextHistory;
       end;
 //      bSearchFromCaret := gbSearchFromCaret;
-      if sSearchText <> '' then begin
+      if sSearchText <> '' then
+      begin
         DoSearchReplaceText(AReplace, bSearchBackwards);
-        bSearchFromCaret := TRUE;
+        bSearchFromCaret:= True;
+        gFirstTextSearch:= False;
       end;
     end;
   finally
@@ -722,55 +733,9 @@ begin
   ShowSearchReplaceDialog(True);
 end;
 
-procedure TfrmEditor.LoadFromIni;
-var
-  hFile: Integer;
-begin
-  if mbFileExists(gpIniDir+'edithistory.txt') then
-  begin
-    hFile:= mbFileOpen(gpIniDir+'edithistory.txt', fmOpenRead);
-    try
-      FileReadLn(hFile, sSearchTextHistory);
-      FileReadLn(hFile, sReplaceTextHistory);
-    finally
-      FileClose(hFile);
-    end;
-  end
-  else
-  begin
-    sSearchTextHistory:='';
-    sReplaceTextHistory:='';
-  end;
-end;
-
-procedure TfrmEditor.SaveToIni;
-var
-  hFile: Integer;
-begin
-  if mbFileExists(gpIniDir+'edithistory.txt') then
-    begin
-      hFile:= mbFileOpen(gpIniDir+'edithistory.txt', fmOpenReadWrite);
-      FileTruncate(hFile, 0);
-    end
-  else
-    begin
-      hFile:= mbFileCreate(gpIniDir+'edithistory.txt');
-    end;
-
-  try
-    FileWriteLn(hFile, sSearchTextHistory);
-    FileWriteLn(hFile, sReplaceTextHistory);
-  finally
-    FileClose(hFile);
-  end;
-  
-  gEditorPos.Save(Self);
-end;
-
-
 procedure TfrmEditor.FormDestroy(Sender: TObject);
 begin
-  SaveToIni;
+  gEditorPos.Save(Self);;
   inherited;
 end;
 
