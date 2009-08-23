@@ -202,6 +202,7 @@ function InsertMenuItemEx(hMenu, SubMenu: HMENU; Caption: PWChar;
 var
   mi: TMenuItemInfoW;
 begin
+   FillChar(mi, SizeOf(mi), 0);
    with mi do
    begin
       cbSize := SizeOf(mi);
@@ -598,11 +599,14 @@ procedure ShowDriveContextMenu(Owner: TWinControl; sPath: String; X, Y : Integer
 var
   fri: TFileRecItem;
   FileList: TFileList;
+  OldErrorMode: Word;
 begin
   fri.sName:= sPath;
   FileList:= TFileList.Create; // free in ShowContextMenu
   FileList.AddItem(@fri);
+  OldErrorMode:= SetErrorMode(SEM_FAILCRITICALERRORS or SEM_NOOPENFILEERRORBOX);
   ShowContextMenu(Owner, FileList, X, Y);
+  SetErrorMode(OldErrorMode);
 end;
 {$ELSE}
 var
