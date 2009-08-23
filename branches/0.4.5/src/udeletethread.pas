@@ -55,25 +55,33 @@ var
   pr:PFileRecItem;
   xIndex:Integer;
   iCopied:Int64;
+  FileList: TFileList;
 begin
   iCopied:=0;
   FFileOpDlg.iProgress1Max:= 1;
   FFileOpDlg.iProgress1Pos:= 1; // in delete use only 1 progress
 
+  if FRecycle then
+    FileList:= FFileList
+  else
+    FileList:= NewFileList;
+
+  FFileOpDlg.iProgress2Max:= FileList.Count;
+  FFileOpDlg.iProgress2Pos:= 0;
+
   Synchronize(@FFileOpDlg.UpdateDlg);
 
-  for xIndex:=NewFileList.Count-1 downto 0 do // deleting
+  for xIndex:= FileList.Count - 1 downto 0 do // deleting
   begin
     if Terminated then Exit;
     if Paused then Suspend;
-    pr:=NewFileList.GetItem(xIndex);
+    pr:= FileList.GetItem(xIndex);
     FFileOpDlg.sFileNameFrom:= pr^.sName;
     Synchronize(@FFileOpDlg.UpdateDlg);
-    inc(iCopied,pr^.iSize);
+    Inc(iCopied,pr^.iSize);
     EstimateTime(iCopied);
     DeleteFile(pr);
-    if FFilesSize <> 0 then
-      FFileOpDlg.iProgress2Pos:= (iCopied * 100) div FFilesSize;
+    Inc(FFileOpDlg.iProgress2Pos);
     Synchronize(@FFileOpDlg.UpdateDlg);
   end;
 end;
