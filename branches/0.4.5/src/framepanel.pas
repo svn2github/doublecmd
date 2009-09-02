@@ -1156,6 +1156,7 @@ var
 
       if gCutTextToColWidth then
       begin
+        if Rect.Left + TitleX > Rect.Right then Exit;
         while Canvas.TextWidth(s) - ((Rect.Right - Rect.Left) - TitleX) > 0 do
           UTF8Delete(s, UTF8Length(s), 1);
       end;
