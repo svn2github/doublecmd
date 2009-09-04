@@ -52,24 +52,20 @@ end;
 
 procedure TDeleteThread.MainExecute;
 var
-  pr:PFileRecItem;
-  xIndex:Integer;
-  iCopied:Int64;
+  pr: PFileRecItem;
+  xIndex: Integer;
+  iCopied: Int64;
   FileList: TFileList;
 begin
-  iCopied:=0;
+  iCopied:= 0;
   FFileOpDlg.iProgress1Max:= 1;
   FFileOpDlg.iProgress1Pos:= 1; // in delete use only 1 progress
-
+  Synchronize(@FFileOpDlg.UpdateDlg);
+  
   if FRecycle then
     FileList:= FFileList
   else
     FileList:= NewFileList;
-
-  FFileOpDlg.iProgress2Max:= FileList.Count;
-  FFileOpDlg.iProgress2Pos:= 0;
-
-  Synchronize(@FFileOpDlg.UpdateDlg);
 
   for xIndex:= FileList.Count - 1 downto 0 do // deleting
   begin
@@ -78,10 +74,10 @@ begin
     pr:= FileList.GetItem(xIndex);
     FFileOpDlg.sFileNameFrom:= pr^.sName;
     Synchronize(@FFileOpDlg.UpdateDlg);
-    Inc(iCopied,pr^.iSize);
+    Inc(iCopied, pr^.iSize);
     EstimateTime(iCopied);
     DeleteFile(pr);
-    Inc(FFileOpDlg.iProgress2Pos);
+    FFileOpDlg.iProgress2Pos:= ((FileList.Count - xIndex) * 100) div FileList.Count;
     Synchronize(@FFileOpDlg.UpdateDlg);
   end;
 end;
