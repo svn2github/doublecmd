@@ -423,6 +423,7 @@ type
     DrivesList : TList;
     MainSplitterHintWnd: THintWindow;
     HiddenToTray: Boolean;
+    HidingTrayIcon: Boolean; // @true if the icon is in the process of hiding
 
     // frost_asm begin
     // mainsplitter
@@ -439,6 +440,7 @@ type
     procedure HideToTray;
     procedure RestoreFromTray;
     procedure ShowTrayIcon(bShow: Boolean);
+    procedure HideTrayIconDelayed(Data: PtrInt);
 
   public
     function HandleActionHotKeys(var Key: Word; Shift: TShiftState):Boolean; // handled
@@ -534,6 +536,7 @@ var
   i: Integer;
 begin
   HiddenToTray := False;
+  HidingTrayIcon := False;
 
   inherited;
   // frost_asm begin
@@ -931,14 +934,18 @@ end;
 
 procedure TfrmMain.MainTrayIconClick(Sender: TObject);
 begin
-  if WindowState = wsMinimized then
+  // Only react to clicks if the icon is not scheduled to be hidden.
+  if not HidingTrayIcon then
   begin
-    RestoreFromTray;
-  end
-  else
-  begin
-    MinimizeWindow;
-    HideToTray;
+    if WindowState = wsMinimized then
+    begin
+      RestoreFromTray;
+    end
+    else
+    begin
+      MinimizeWindow;
+      HideToTray;
+    end;
   end;
 end;
 
@@ -3685,10 +3692,28 @@ end;
 
 procedure TfrmMain.ShowTrayIcon(bShow: Boolean);
 begin
-  if bShow <> MainTrayIcon.Visible then
+  if (bShow <> MainTrayIcon.Visible) and (HidingTrayIcon = False) then
   begin
-    MainTrayIcon.Visible := bShow;
+    if bShow then
+    begin
+      MainTrayIcon.Visible := True;
+    end
+    else
+    begin
+      // ShowTrayIcon might be called from within OnClick event of the icon
+      // (MainTrayIconClick->RestoreFromTray->ShowTrayIcon), so the MainTrayIcon
+      // cannot be hidden here, because it would be destroyed causing A/V.
+      // Hiding it must be delayed until after the mouse click handler of the icon is finished.
+      HidingTrayIcon := True;
+      Application.QueueAsyncCall(@HideTrayIconDelayed, 0);
+    end;
   end;
+end;
+
+procedure TfrmMain.HideTrayIconDelayed(Data: PtrInt);
+begin
+  MainTrayIcon.Visible := False;
+  HidingTrayIcon := False;
 end;
 
 procedure TfrmMain.EnableHotkeys(Enable: Boolean);
