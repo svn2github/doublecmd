@@ -202,11 +202,13 @@ begin
     end;
   end;
 
-  fPanel.RowCount:=fRefList.Count+fPanel.FixedRows; // one is header
+  I:= fPanel.FixedRows; // save fixed rows count
+  fPanel.RowCount:= fRefList.Count + I; // plus header
+  fPanel.FixedRows:= I; // restore fixed rows count
   UpdatePrompt;
   if bAnyRow then
   begin
-    if (LastActive<>'') then // find correct cursor position in Panel (drawgrid)
+    if (LastActive <> '') then // find correct cursor position in Panel (drawgrid)
       Select(LastActive);
   end;
 
