@@ -141,7 +141,6 @@ object frmMain: TfrmMain
         OnMouseDown = nbPageMouseDown
         OnMouseUp = nbPageMouseUp
         OnPageChanged = nbPageChanged
-        Options = [nboShowCloseButtons]
         TabOrder = 0
       end
       object pnlLeftTools: TPanel
@@ -260,7 +259,6 @@ object frmMain: TfrmMain
         OnMouseDown = nbPageMouseDown
         OnMouseUp = nbPageMouseUp
         OnPageChanged = nbPageChanged
-        Options = [nboShowCloseButtons]
         TabOrder = 0
       end
       object pnlRightTools: TPanel
