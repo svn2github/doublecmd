@@ -64,7 +64,7 @@ function MsgBox(const sMsg: String; const Buttons: array of TMyMsgButton; ButDef
 function MsgBox(Thread: TThread;const sMsg: String; const Buttons: array of TMyMsgButton; ButDefault, ButEscape: TMyMsgButton): TMyMsgResult; overload;
 
 function MsgTest:TMyMsgResult;
-function ShowInputComboBox(const sCaption, sPrompt : String; var slValueList : TStringList;
+function ShowInputComboBox(const sCaption, sPrompt : String; slValueList : TStringList;
                            var sValue : String) : Boolean;
 procedure msgLoadLng;
 
@@ -291,7 +291,7 @@ begin
     end;
 end;
 
-function ShowInputComboBox(const sCaption, sPrompt : String; var slValueList : TStringList;
+function ShowInputComboBox(const sCaption, sPrompt : String; slValueList : TStringList;
                            var sValue : String) : Boolean;
 var
   frmDialog : TForm;
