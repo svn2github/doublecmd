@@ -477,7 +477,7 @@ type
     procedure DrivesMenuClick(Sender: TObject);
     procedure CreateDiskPanel(dskPanel : TKASToolBar);
     procedure CreatePanel(AOwner:TWinControl; APanel:TFilePanelSelect; sPath : String);
-    function AddPage(ANoteBook:TNoteBook; bSetActive: Boolean = True):TPage;
+    function AddPage(ANoteBook:TNoteBook; bSetActive: Boolean = True; ACaption: String = ''):TPage;
     function RemovePage(ANoteBook:TNoteBook; iPageIndex:Integer): LongInt;
     procedure LoadTabs(ANoteBook:TNoteBook);
     procedure SaveTabs(ANoteBook:TNoteBook);
@@ -2829,15 +2829,18 @@ begin
 
 end;
 
-function TfrmMain.AddPage(ANoteBook: TNoteBook; bSetActive: Boolean):TPage;
+function TfrmMain.AddPage(ANoteBook: TNoteBook; bSetActive: Boolean; ACaption: String):TPage;
 var
   x:Integer;
 begin
   x:=ANotebook.PageCount;
 
-  ANoteBook.Pages.Add(IntToStr(x));
+  if ACaption = '' then
+    ACaption := IntToStr(x);
+
+  ANoteBook.Pages.Add(ACaption);
   if bSetActive then
-    ANoteBook.ActivePage:= IntToStr(x);
+    ANoteBook.ActivePage:= ACaption;
   Result:=ANoteBook.Page[x];
 
   ANoteBook.ShowTabs:= ((ANoteBook.PageCount > 1) or (tb_always_visible in gDirTabOptions)) and gDirectoryTabs;
@@ -2948,7 +2951,11 @@ begin
           sCaption:= GetLastDir(ExcludeTrailingPathDelimiter(sPath));
         end;
 
-      CreatePanel(AddPage(ANoteBook), fpsPanel, sPath);
+      if sCaption <> '' then
+        if (tb_text_length_limit in gDirTabOptions) and (Length(sCaption) > gDirTabLimit) then
+          sCaption := Copy(sCaption, 1, gDirTabLimit) + '...';
+
+      CreatePanel(AddPage(ANoteBook, False, sCaption), fpsPanel, sPath);
 
       FrameFilePanel := TFrameFilePanel(ANoteBook.Page[ANoteBook.PageCount - 1].Components[0]);
 
@@ -2956,12 +2963,6 @@ begin
       if ANoteBook.Page[ANoteBook.PageCount - 1].Tag = 2 then // if locked tab with directory change
         ANoteBook.Page[ANoteBook.PageCount - 1].Hint:= sPath; // save in hint real path
 
-      if sCaption <> '' then
-        if (tb_text_length_limit in gDirTabOptions) and (Length(sCaption) > gDirTabLimit) then
-          ANoteBook.Page[ANoteBook.PageCount - 1].Caption:= Copy(sCaption, 1, gDirTabLimit) + '...'
-        else
-          ANoteBook.Page[ANoteBook.PageCount - 1].Caption:= sCaption;
-          
       sColumnSet:= gIni.ReadString(TabsSection, sIndex + '_columnsset', 'Default');
 
       // Load sorting options.
