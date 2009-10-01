@@ -1578,16 +1578,18 @@ end;
 
 function TfrmMain.FrameLeft: TFrameFilePanel;
 begin
-//  DebugLn(nbLeft.Page[nbLeft.PageIndex].Components[0].ClassName);
   if nbLeft.PageIndex <> -1 then
-    Result:=TFrameFilePanel(nbLeft.Page[nbLeft.PageIndex].Components[0]);
+    Result:=TFrameFilePanel(nbLeft.Page[nbLeft.PageIndex].Components[0])
+  else
+    raise Exception.Create('No active pages');
 end;
 
 function TfrmMain.FrameRight: TFrameFilePanel;
 begin
-//  DebugLn(nbRight.Page[nbRight.PageIndex].Components[0].ClassName);
   if nbRight.PageIndex <> -1 then
-    Result:=TFrameFilePanel(nbRight.Page[nbRight.PageIndex].Components[0]);
+    Result:=TFrameFilePanel(nbRight.Page[nbRight.PageIndex].Components[0])
+  else
+    raise Exception.Create('No active pages');
 end;
 
 Function TfrmMain.IsAltPanel:Boolean;
@@ -2868,6 +2870,18 @@ begin
         mmrCancel, mmrNone:
           Exit(2);
       end;
+
+{$IFDEF LCLGTK2}
+    // If removing currently active page, switch to another page first.
+    // Otherwise there can be no page selected.
+    if iPageIndex = ANoteBook.PageIndex then
+    begin
+      if iPageIndex = ANoteBook.PageCount - 1 then
+        ANoteBook.PageIndex := iPageIndex - 1
+      else
+        ANoteBook.PageIndex := iPageIndex + 1;
+    end;
+{$ENDIF}
 
     ANoteBook.Pages.Delete(iPageIndex);
 
