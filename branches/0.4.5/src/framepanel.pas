@@ -873,40 +873,40 @@ begin
   if fSearchDirect then
     begin
       if fNext then
-        I := edtSearch.Tag + 1; // begin search from next file
+        I := I + 1; // begin search from next file
       iEnd := dgPanel.RowCount;
     end
   else
     begin
       if fPrevious then
-        I := edtSearch.Tag - 1; // begin search from previous file
-      iEnd := dgPanel.FixedRows;
+        I := I - 1; // begin search from previous file
+      iEnd := dgPanel.FixedRows - 1;
     end;
-  if I < 1 then I := 1;
-  
+
   try
     while I <> iEnd do
       begin
-        Result := MatchesMask(AnsiLowerCase(pnlFile.GetReferenceItemPtr(I-1)^.sName), sSearchName);
+        Result := MatchesMask(AnsiLowerCase(pnlFile.GetReferenceItemPtr(I - dgPanel.FixedRows)^.sName), sSearchName);
 
         if Result then
           begin
             dgPanel.Row := I;
             MakeVisible(I);
-            edtSearch.Tag := I;
             Exit;
           end;
+
         if fSearchDirect then
           Inc(I)
         else
           Dec(I);
+
         // if not Next or Previous then search from beginning of list
         // to cursor position
         if (not(fNext or fPrevious)) and (I = iEnd) then
           begin
-            I := 1;
+            I := dgPanel.FixedRows;
             iEnd := iPos;
-  		  iPos := 1;
+            iPos := I;
           end;
       end; // while
   except
