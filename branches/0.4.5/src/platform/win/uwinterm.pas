@@ -35,6 +35,7 @@ type
 
    TWinTerm = class(TTerminal)
    private
+     FConsoleWindow: HWND;
      FSecurityAttributes: TSecurityAttributes;
      FStartupInfo: TStartupInfo;
      FProcessInformation: TProcessInformation;
@@ -72,7 +73,7 @@ type
 implementation
 
 uses
-  FileUtil, uOSUtils;
+  FileUtil, JwaWinCon, uOSUtils;
 
 function ConsoleToUTF8(const Str: AnsiString): UTF8String;
 {$ifdef MSWindows}
@@ -93,12 +94,19 @@ end;
 
 constructor TWinTerm.Create;
 begin
-
+  if not isConsole then
+    begin
+      AllocConsole();
+      FConsoleWindow:= GetConsoleWindow();
+      ShowWindow(FConsoleWindow, SW_HIDE);
+    end;
 end;
 
 destructor TWinTerm.Destroy;
 begin
   KillShell;
+  if not isConsole then
+    FreeConsole();
   inherited Destroy;
 end;
 
@@ -204,12 +212,13 @@ end;
 
 function TWinTerm.SendBreak_pty(): Boolean;
 begin
-  Result:= False;
+  Result:= SendSignal_pty(CTRL_C_EVENT);
 end;
 
 function TWinTerm.SendSignal_pty(Sig: Cint): Boolean;
 begin
-  Result:= False;
+  SetConsoleCtrlHandler(nil, True);
+  Result:= GenerateConsoleCtrlEvent(Sig, 0);
 end;
 
 function TWinTerm.SetScreenSize(ColCount, RowCount: Integer): Boolean;

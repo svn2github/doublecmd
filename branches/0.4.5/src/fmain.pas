@@ -3355,6 +3355,14 @@ begin
           Key := 0;
         end;
 
+      VK_PAUSE:
+        begin
+          {$IF NOT DEFINED(DARWIN)}
+          if gTermWindow and Assigned(Cons) then
+            Cons.Terminal.SendBreak_pty();
+          {$ENDIF}
+        end;
+
       else
         edtCommand.Tag:= 1;
     end;
