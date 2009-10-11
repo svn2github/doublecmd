@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.45 alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 12:50+0300\n"
+"POT-Creation-Date: 2009-10-11 10:50+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vacon <vacon@users.sourceforge.net>\n"
 "Language-Team: \n"
@@ -454,7 +454,7 @@ msgstr ""
 
 #: TFRMEDITSEARCHREPLACE.LBLREPLACEWITH.CAPTION
 msgid "&Replace with:"
-msgstr "&Erstezen mit:"
+msgstr "&Ersetzen mit:"
 
 #: TFRMEDITSEARCHREPLACE.LBLSEARCHFOR.CAPTION
 msgid "&Search for:"
@@ -657,19 +657,19 @@ msgstr "Geschätzt"
 #| msgid "File name"
 msgctxt "TFRMFILEOP.LBLFILENAMEFROM.CAPTION"
 msgid "File name from"
-msgstr "Dateiname"
+msgstr "Dateiname von"
 
 #: TFRMFILEOP.LBLFILENAMETO.CAPTION
 msgid "File name to"
-msgstr ""
+msgstr "Dateiname nach"
 
 #: TFRMFILEOP.LBLFROM.CAPTION
 msgid "From:"
-msgstr ""
+msgstr "Von:"
 
 #: TFRMFILEOP.LBLTO.CAPTION
 msgid "To:"
-msgstr ""
+msgstr "Nach"
 
 #: TFRMFILEPROPERTIES.BTNALL.CAPTION
 msgid "&All"
@@ -1068,11 +1068,11 @@ msgstr "&Über"
 
 #: TFRMMAIN.ACTADDFILENAMETOCMDLINE.CAPTION
 msgid "Add file name to command line"
-msgstr ""
+msgstr "Dateiname in Kommandozeile eintragen"
 
 #: TFRMMAIN.ACTADDPATHANDFILENAMETOCMDLINE.CAPTION
 msgid "Add path and file name to command line"
-msgstr ""
+msgstr "Pfad und Dateinamen in Kommandozeile eintragen"
 
 #: TFRMMAIN.ACTADDPATHTOCMDLINE.CAPTION
 msgid "Copy path to command line"
@@ -1084,7 +1084,7 @@ msgstr "Berechne belegten Platz"
 
 #: TFRMMAIN.ACTCHANGEDIR.CAPTION
 msgid "Change directory"
-msgstr ""
+msgstr "Verzeichnis wechseln"
 
 #: TFRMMAIN.ACTCHANGEDIRTOROOT.CAPTION
 msgid "Change directory to root"
@@ -1102,11 +1102,11 @@ msgstr "Verifiziere Prüfsumme..."
 
 #: TFRMMAIN.ACTCLEARLOGFILE.CAPTION
 msgid "Clear log file"
-msgstr ""
+msgstr "Log-Datei löschen"
 
 #: TFRMMAIN.ACTCLEARLOGWINDOW.CAPTION
 msgid "Clear log window"
-msgstr ""
+msgstr "Log-Fenster löschen"
 
 #: TFRMMAIN.ACTCOMPARECONTENTS.CAPTION
 msgid "Compare by &Contents"
@@ -1159,7 +1159,7 @@ msgstr "Verzeichnis-Favoriten"
 
 #: TFRMMAIN.ACTDRIVECONTEXTMENU.CAPTION
 msgid "Drive context menu"
-msgstr ""
+msgstr "Laufwerks-Kontextmenü"
 
 #: TFRMMAIN.ACTEDIT.CAPTION
 msgid "Edit F4"
@@ -1257,7 +1257,7 @@ msgstr "Alles abwählen"
 
 #: TFRMMAIN.ACTMINIMIZE.CAPTION
 msgid "Minimize window"
-msgstr ""
+msgstr "Minimiere das Fenster"
 
 #: TFRMMAIN.ACTMULTIRENAME.CAPTION
 msgid "Multi Rename Tool"
@@ -1269,7 +1269,7 @@ msgstr "Ne&uer Reiter"
 
 #: TFRMMAIN.ACTNEXTTAB.CAPTION
 msgid "Switch to next tab"
-msgstr "Zum nächsten Tab wechseln"
+msgstr "Zum nächsten Reiter wechseln"
 
 #: TFRMMAIN.ACTOPEN.CAPTION
 msgctxt "TFRMMAIN.ACTOPEN.CAPTION"
@@ -1298,7 +1298,7 @@ msgstr "&Packe Dateien"
 
 #: TFRMMAIN.ACTPANELSSPLITTERPERPOS.CAPTION
 msgid "Set splitter position"
-msgstr ""
+msgstr "Position des Fenster-Teilers"
 
 #: TFRMMAIN.ACTPASTEFROMCLIPBOARD.CAPTION
 msgid "&Paste"
@@ -1377,7 +1377,7 @@ msgstr "Attribute"
 
 #: TFRMMAIN.ACTSORTBYCOLUMN.CAPTION
 msgid "Sort by column"
-msgstr ""
+msgstr "Nach Spalten sortieren"
 
 #: TFRMMAIN.ACTSORTBYDATE.CAPTION
 msgid "Sort by date"
@@ -1663,7 +1663,7 @@ msgstr "-"
 
 #: TFRMMAIN.MILOGCLEAR.CAPTION
 msgid "Clear"
-msgstr ""
+msgstr "Log löschen"
 
 #: TFRMMAIN.MILOGCOPY.CAPTION
 msgctxt "TFRMMAIN.MILOGCOPY.CAPTION"
@@ -1672,7 +1672,7 @@ msgstr "Kopieren"
 
 #: TFRMMAIN.MILOGHIDE.CAPTION
 msgid "Hide"
-msgstr ""
+msgstr "Verstecken"
 
 #: TFRMMAIN.MILOGSELECTALL.CAPTION
 msgctxt "TFRMMAIN.MILOGSELECTALL.CAPTION"
@@ -1695,7 +1695,7 @@ msgstr "Beenden"
 
 #: TFRMMAIN.MITRAYICONRESTORE.CAPTION
 msgid "Restore"
-msgstr ""
+msgstr "Wiederherstellen"
 
 #: TFRMMAIN.MNUCMD.CAPTION
 msgid "&Commands"
@@ -1728,7 +1728,7 @@ msgstr "Verzeichnisse &vergleichen"
 
 #: TFRMMAIN.MNUSHOW.CAPTION
 msgid "&Show"
-msgstr "&Zeigen"
+msgstr "&Ansicht"
 
 #: TFRMMAIN.MNUTABS.CAPTION
 msgid "&Tabs"
@@ -2087,7 +2087,7 @@ msgstr "Hintergrund:"
 
 #: TFRMOPTIONS.CBALWAYSSHOWTRAYICON.CAPTION
 msgid "Always show tray icon"
-msgstr ""
+msgstr "Immer Tray-Icon zeigen (neben der Uhr)"
 
 #: TFRMOPTIONS.CBBFILESYSTEM.TEXT
 msgid "General"
@@ -2252,7 +2252,7 @@ msgstr "Kommandozeile anzeigen"
 
 #: TFRMOPTIONS.CBSHOWCOPYTABSELECTPANEL.CAPTION
 msgid "Show tab select panel in copy/move dialog"
-msgstr "Zeige Auswahldialog für Tabs im Kopieren/Verschieben-Dialog"
+msgstr "Zeige Auswahldialog für Reiter im Kopieren/Verschieben-Dialog"
 
 #: TFRMOPTIONS.CBSHOWCURDIR.CAPTION
 msgid "Show &current directory"
@@ -2301,7 +2301,7 @@ msgstr "Warnungen anzeigen (nur mit \"OK\" Schalter)"
 
 #: TFRMOPTIONS.CBSKIPFILEOPERROR.CAPTION
 msgid "Skip file operations errors and write them to log window"
-msgstr ""
+msgstr "Dateisystemfehler überspringen und im Log-Fenster anzeigen"
 
 #: TFRMOPTIONS.CBSPACEMOVESDOWN.CAPTION
 msgid "When selecting files with <SPACEBAR>, move down to next file (as with <INSERT>)"
@@ -2309,7 +2309,7 @@ msgstr "Wenn Dateien mit der <Leertaste> ausgewählt werden, zur nächsten Datei
 
 #: TFRMOPTIONS.CBTABSACTIVATEONCLICK.CAPTION
 msgid "Activate target &panel when clicking on one of its Tabs"
-msgstr "Ziel-Panel auswählen, wenn eines seiner Tabs angeklickt wird"
+msgstr "Ziel-Panel auswählen, wenn einer seiner Reiter angeklickt wird"
 
 #: TFRMOPTIONS.CBTABSALWAYSVISIBLE.CAPTION
 msgid "&Show tab header also when there is only one tab"
@@ -2337,7 +2337,7 @@ msgstr "Strg+Pf&eil hoch öffnet einen neuen Reiter im Vordergrund"
 
 #: TFRMOPTIONS.CBTABSSHOWCLOSEBUTTON.CAPTION
 msgid "Show tab close button"
-msgstr ""
+msgstr "Zeige Schalter um Reiter zu schliessen"
 
 #: TFRMOPTIONS.CBTERMWINDOW.CAPTION
 msgid "Show terminal window"
@@ -3179,11 +3179,11 @@ msgstr "Verzeichniswechsel nach [%s] fehlgeschlagen"
 
 #: ulng.rsmsgcloseallinactivetabs
 msgid "Remove all inactive tabs?"
-msgstr "Alle in-aktiven Tabs entfernen?"
+msgstr "Alle in-aktiven Reiter entfernen?"
 
 #: ulng.rsmsgcloselockedtab
 msgid "This tab (%s) is locked! Close anyway?"
-msgstr "Dieser Tab ist gesperrt! Trotzdem schliessen?"
+msgstr "Dieser Reiter ist gesperrt! Trotzdem schliessen?"
 
 #: ulng.rsmsgcpfldr
 msgid "Copy %d selected files/directories?"
@@ -3283,7 +3283,7 @@ msgstr "Syntax-fehler im regulären Ausdruck!"
 
 #: ulng.rsmsgerrrename
 msgid "Cannot rename file %s to %s"
-msgstr ""
+msgstr "Kann Datei %s nicht in %s umbennen"
 
 #: ulng.rsmsgerrsmallbuf
 msgid "Buffer too small"
@@ -3411,7 +3411,7 @@ msgstr "&Lösche %s"
 
 #: ulng.rsmsgpresetalreadyexists
 msgid "Preset \"%s\" already exists. Overwrite?"
-msgstr ""
+msgstr "Voreinstellung \"%s\" besteht bereits. Überschreiben?"
 
 #: ulng.rsmsgrenfldr
 msgid "Rename/move %d selected files/directories?"
