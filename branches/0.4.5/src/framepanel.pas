@@ -1577,6 +1577,7 @@ end;
 procedure TFrameFilePanel.pnlHeaderResize(Sender: TObject);
 begin
   lblLPath.Width:=pnlHeader.Width - 4;
+  pnlFile.UpdatePathLabel;
 end;
 
 function TFrameFilePanel.GetGridHorzLine: Boolean;
