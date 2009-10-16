@@ -523,6 +523,7 @@ var
   AllDirsList, ExistsDirList : TStringHashList;
   I : Integer;
   NameLength: Integer;
+  AnsiName: String;
 begin
   FArchiveName := sName;
   DebugLN('FArchiveName = ' + FArchiveName);
@@ -543,7 +544,8 @@ begin
 
   (*Open Archive*)
   FillChar(ArcFile, SizeOf(ArcFile), #0);
-  ArcFile.ArcName := PChar(UTF8ToSys(sName));
+  AnsiName := UTF8ToSys(sName);
+  ArcFile.ArcName := PChar(AnsiName); // Pointer to local variable.
   ArcFile.OpenMode := PK_OM_LIST;
 
   try
@@ -699,11 +701,13 @@ var
   TargetFileName: String;
   FileMask: String;
   CreatedPaths: TStringHashList;
+  AnsiName: String;
 begin
   FPercent := 0;
 
   FillChar(ArcFile, SizeOf(ArcFile), #0);
-  ArcFile.ArcName := PChar(UTF8ToSys(FArchiveName));
+  AnsiName := UTF8ToSys(FArchiveName);
+  ArcFile.ArcName := PChar(AnsiName); // Pointer to local variable.
   ArcFile.OpenMode := PK_OM_EXTRACT;
   ArcHandle := OpenArchive(ArcFile);
 
