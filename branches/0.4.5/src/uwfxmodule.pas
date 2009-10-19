@@ -183,7 +183,7 @@ var
 procedure FillAndCountRec(const srcPath, dstPath:String);
 var
   FindData : TWIN32FINDDATA;
-  Handle:THandle;
+  Handle:System.THandle;
   fr:TFileRecItem;
 
 begin
@@ -888,7 +888,7 @@ end;
 function TWFXModule.VFSList(const sDir: String; var fl: TFileList): Boolean;
 var
   FindData : TWIN32FINDDATA;
-  Handle:THandle;
+  Handle:System.THandle;
   fr : TFileRecItem;
   CurrFileName : String;  // Current file name
 begin
