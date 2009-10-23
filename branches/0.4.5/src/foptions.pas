@@ -1087,6 +1087,7 @@ var
   iPluginIndex: Integer;
 begin
   iPluginIndex:= stgPlugins.Row - 1;
+  if iPluginIndex < 0 then Exit;
   if pcPluginsTypes.ActivePage.Name = 'tsDSX' then
     ptPluginType:= ptDSX
   else if pcPluginsTypes.ActivePage.Name = 'tsWCX' then
