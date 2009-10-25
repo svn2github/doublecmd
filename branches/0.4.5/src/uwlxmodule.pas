@@ -267,12 +267,12 @@ function TWLXModule.CallListLoadNext(ParentWin: HWND;
 begin
   if assigned(ListLoadNext) then
   {$IFDEF LCLQT}
-   Result:=ListLoadNext(PtrInt(TQtWidget(ParentWin).GetContainerWidget),FPluginWindow, pChar(UTF8ToSys(FileToLoad)), ShowFlags);
+   Result:=ListLoadNext(PtrInt(TQtWidget(ParentWin).GetContainerWidget),FPluginWindow, pChar(UTF8ToSys(FileToLoad)), ShowFlags)
   {$ENDIF}
   {$IFNDEF LCLQT}
    Result:=ListLoadNext(ParentWin,FPluginWindow,PChar(UTF8ToSys(FileToLoad)),ShowFlags)
   {$ENDIF}
-  //else Result:=LISTPLUGIN_ERROR;
+  else Result:=LISTPLUGIN_ERROR;
 end;
 
 procedure TWLXModule.CallListCloseWindow;
