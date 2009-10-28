@@ -315,6 +315,7 @@ begin
               if Assigned(bmStandartBitmap) then
                 FreeAndNil(bmStandartBitmap);
               DebugLn(Format('Error: Cannot load pixmap [%s] : %s',[sFileName, e.Message]));
+              Exit;
             end;
         end;
         {$ENDIF}
