@@ -37,9 +37,11 @@ type
   TDialogBox = class(TForm)
     DialogButton: TButton;
     DialogComboBox: TComboBox;
+    DialogListBox: TListBox;
+    DialogCheckBox: TCheckBox;    
     DialogGroupBox: TGroupBox;
     DialogLabel: TLabel;
-    DialogListBox: TListBox;
+    DialogEdit: TEdit;
     // Dialog events
     procedure DialogBoxShow(Sender: TObject);
     // Button events
@@ -72,71 +74,80 @@ type
     procedure ListBoxExit(Sender: TObject);
     procedure ListBoxKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure ListBoxKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    // CheckBox events
+    procedure CheckBoxChange(Sender: TObject);
   private
     fDlgProc: TDlgProc;
   public
     { public declarations }
   end; 
 
-function InputBox(Caption, Prompt, DefaultText : PWideChar): PWideChar;stdcall;
-function MessageBox(Text, Caption: PWideChar; Flags: Longint): Integer;stdcall;
-function DialogBox(DlgData: PWideChar; DlgProc: TDlgProc): PtrUInt;stdcall;
-function DialogBoxEx(lfmFileName: PWideChar; DlgProc: TDlgProc): PtrUInt;stdcall;
+function InputBox(Caption, Prompt: PWideChar; MaskInput: Boolean; Value: PWideChar; ValueMaxLen: Integer): Boolean; stdcall;
+function MessageBox(Text, Caption: PWideChar; Flags: Longint): Integer; stdcall;
+function DialogBox(DlgData: PWideChar; DlgProc: TDlgProc): Boolean; stdcall;
+function DialogBoxEx(lfmFileName: PWideChar; DlgProc: TDlgProc): Boolean; stdcall;
 function SendDlgMsg(pDlg: PtrUInt; DlgItemName: PChar; Msg, wParam, lParam: PtrInt): PtrInt; stdcall;
 
 implementation
 
 uses
-  uClassesEx;
+  uClassesEx, uDCUtils;
 
-function InputBox(Caption, Prompt, DefaultText: PWideChar): PWideChar;stdcall;
+function InputBox(Caption, Prompt: PWideChar; MaskInput: Boolean; Value: PWideChar; ValueMaxLen: Integer): Boolean; stdcall;
 var
   sCaption,
   sPrompt,
-  sDefaultText: UTF8String;
-  wResult: WideString;
+  sValue: UTF8String;
 begin
-  sCaption:= UTF8Encode(Caption);
-  sPrompt:= UTF8Encode(Prompt);
-  sDefaultText:= UTF8Encode(DefaultText);
-  wResult:= Dialogs.InputBox(sCaption, sPrompt, sDefaultText);
-  Result:= PWideChar(UTF8Decode(wResult));
+  Result:= False;
+  sCaption:= UTF8Encode(WideString(Caption));
+  sPrompt:= UTF8Encode(WideString(Prompt));
+  sValue:= UTF8Encode(WideString(Value));
+  if Dialogs.InputQuery(sCaption, sPrompt, MaskInput, sValue) then
+    begin
+      StrLCopyW(Value, PWideChar(UTF8Decode(sValue)), ValueMaxLen);
+      Result:= True;
+    end;
 end;
 
-function MessageBox(Text, Caption: PWideChar; Flags: Longint): Integer;stdcall;
+function MessageBox(Text, Caption: PWideChar; Flags: Longint): Integer; stdcall;
 var
   sText,
   sCaption: String;
 begin
-  sText:= UTF8Encode(Text);
-  sCaption:= UTF8Encode(Caption);
+  sText:= UTF8Encode(WideString(Text));
+  sCaption:= UTF8Encode(WideString(Caption));
   Result:= Application.MessageBox(PChar(sText), PChar(sCaption), Flags);
 end;
 
-function DialogBox(DlgData: PWideChar; DlgProc: TDlgProc): PtrUInt;stdcall;
+function DialogBox(DlgData: PWideChar; DlgProc: TDlgProc): Boolean;stdcall;
 var
   DataString: UTF8String;
   LFMStream: TStringStream = nil;
   BinStream: TStringStream = nil;
+  LResource: TLResource = nil;
   Dialog: TDialogBox = nil;
 begin
   try
-    DataString:= UTF8Encode(DlgData);
+    DataString:= UTF8Encode(WideString(DlgData));
 
     LFMStream:= TStringStream.Create(DataString);
     BinStream:= TStringStream.Create('');
     LRSObjectTextToBinary(LFMStream, BinStream);
 
-    LazarusResources.Add('TDialogBox','FORMDATA', BinStream.DataString);
+    LResource:= LazarusResources.Find('TDialogBox','FORMDATA');
+    if Assigned(LResource) then
+      LResource.Value:= BinStream.DataString
+    else
+      LazarusResources.Add('TDialogBox','FORMDATA', BinStream.DataString);
 
     Dialog:= TDialogBox.Create(nil);
     with Dialog do
     begin
       fDlgProc:= DlgProc;
-      ShowModal;
+      Result:= (ShowModal = mrOK);
     end;
-    Result:= PtrUInt(Dialog.DialogButton);
-    
+
   finally
     if Assigned(Dialog) then
       FreeAndNil(Dialog);
@@ -147,14 +158,14 @@ begin
   end;
 end;
 
-function DialogBoxEx(lfmFileName: PWideChar; DlgProc: TDlgProc): PtrUInt;stdcall;
+function DialogBoxEx(lfmFileName: PWideChar; DlgProc: TDlgProc): Boolean;stdcall;
 var
   lfmStringList: TStringListEx;
   wDlgData: WideString;
 begin
   try
     lfmStringList:= TStringListEx.Create;
-    lfmStringList.LoadFromFile(UTF8Encode(lfmFileName));
+    lfmStringList.LoadFromFile(UTF8Encode(WideString(lfmFileName)));
     wDlgData:= lfmStringList.Text;
     Result:= DialogBox(PWideChar(wDlgData), DlgProc);
   finally
@@ -184,6 +195,8 @@ begin
   DM_CLOSE:
     begin
       DialogBox.Close;
+      if wParam <> -1 then
+        DialogBox.ModalResult:= wParam;
     end;
   DM_ENABLE:
     begin
@@ -252,7 +265,7 @@ begin
     end;
   DM_LISTINDEXOF:
     begin
-      sText:= UTF8Encode(PWideChar(lParam));
+      sText:= UTF8Encode(WideString(PWideChar(lParam)));
       if Control is TComboBox then
         Result:= (Control as TComboBox).Items.IndexOf(sText);
       if Control is TListBox then
@@ -260,7 +273,7 @@ begin
     end;
   DM_LISTINSERT:
     begin
-      sText:= UTF8Encode(PWideChar(lParam));
+      sText:= UTF8Encode(WideString(PWideChar(lParam)));
       if Control is TComboBox then
         (Control as TComboBox).Items.Insert(wParam, sText);
       if Control is TListBox then
@@ -306,7 +319,7 @@ begin
     end;
   DM_LISTUPDATE :
     begin
-      sText:= UTF8Encode(PWideChar(lParam));
+      sText:= UTF8Encode(WideString(PWideChar(lParam)));
       if Control is TComboBox then
         (Control as TComboBox).Items[wParam]:= sText;
       if Control is TListBox then
@@ -414,7 +427,7 @@ begin
     end;
   DM_SETTEXT:
     begin
-      sText:= UTF8Encode(PWideChar(wParam));
+      sText:= UTF8Encode(WideString(PWideChar(wParam)));
       if Control is TButton then
         (Control as TButton).Caption:= sText;
       if Control is TComboBox then
@@ -623,6 +636,14 @@ procedure TDialogBox.ListBoxKeyUp(Sender: TObject; var Key: Word;
 begin
   if Assigned(fDlgProc) then
     fDlgProc(PtrUInt(Pointer(Self)), PChar((Sender as TControl).Name), DN_KEYUP,Key,0);
+end;
+
+procedure TDialogBox.CheckBoxChange(Sender: TObject);
+begin
+  if Assigned(fDlgProc) then
+    begin
+      fDlgProc(PtrUInt(Pointer(Self)), PChar((Sender as TControl).Name), DN_CHANGE, PtrInt((Sender as TCheckBox).Checked),0);
+    end;
 end;
 
 initialization
