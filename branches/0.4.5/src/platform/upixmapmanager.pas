@@ -201,6 +201,8 @@ var
   {$ENDIF}
 begin
   sFileName:= mbExpandFileName(sFileName);
+  Result := nil;
+
 {$IFDEF MSWINDOWS}
   iIconIndex := -1;
   iPos :=Pos(',', sFileName);
@@ -264,48 +266,57 @@ begin
       if (Pos(sExtFilter, sGraphicFilter) <> 0) and (mbFileExists(sFileName)) then
       begin
         {$IFDEF LCLGTK2}
-        bmStandartBitmap := TBitMap.Create;
         pbPicture := gdk_pixbuf_new_from_file(PChar(sFileName), nil);
         if pbPicture <> nil then
         begin
           iPixbufWidth := gdk_pixbuf_get_width(pbPicture);
           iPixbufHeight := gdk_pixbuf_get_height(pbPicture);
 
+          bmStandartBitmap := TBitMap.Create;
           bmStandartBitmap.SetSize(iPixbufWidth, iPixbufHeight);
           bmStandartBitmap.Canvas.Brush.Color := clBackColor;
           bmStandartBitmap.Canvas.FillRect(0, 0, iPixbufWidth, iPixbufHeight);
 
           DrawPixbufAtCanvas(bmStandartBitmap.Canvas, pbPicture, 0, 0, 0, 0, iPixbufWidth, iPixbufHeight);
           gdk_pixmap_unref(pbPicture);
-        end;
+        end else
         {$ELSE}
-        if CompareFileExt(sFileName, 'png', false) = 0 then
-          begin
-            PNG := TPortableNetworkGraphic.Create;
-            try
-              PNG.LoadFromFile(sFileName);
-              bmStandartBitmap := Graphics.TBitmap.Create;
-              bmStandartBitmap.Assign(PNG);
-            finally
-              FreeAndNil(PNG);
+        try
+          if CompareFileExt(sFileName, 'png', false) = 0 then
+            begin
+              PNG := TPortableNetworkGraphic.Create;
+              try
+                PNG.LoadFromFile(sFileName);
+                bmStandartBitmap := Graphics.TBitmap.Create;
+                bmStandartBitmap.Assign(PNG);
+              finally
+                FreeAndNil(PNG);
+              end;
+            end
+          else if CompareFileExt(sFileName, 'ico', false) = 0 then
+            begin
+              Icon := TIcon.Create;
+              try
+                Icon.LoadFromFile(sFileName);
+                bmStandartBitmap := Graphics.TBitmap.Create;
+                bmStandartBitmap.Assign(Icon);
+              finally
+                FreeAndNil(Icon);
+              end;
+            end
+          else
+            begin
+              bmStandartBitmap := Graphics.TBitMap.Create;
+              bmStandartBitmap.LoadFromFile(sFileName);
             end;
-          end
-        else if CompareFileExt(sFileName, 'ico', false) = 0 then
-          begin
-            Icon := TIcon.Create;
-            try
-              Icon.LoadFromFile(sFileName);
-              bmStandartBitmap := Graphics.TBitmap.Create;
-              bmStandartBitmap.Assign(Icon);
-            finally
-              FreeAndNil(Icon);
+        except
+          on e: Exception do
+            begin
+              if Assigned(bmStandartBitmap) then
+                FreeAndNil(bmStandartBitmap);
+              DebugLn(Format('Error: Cannot load pixmap [%s] : %s',[sFileName, e.Message]));
             end;
-          end
-        else
-          begin
-            bmStandartBitmap := Graphics.TBitMap.Create;
-            bmStandartBitmap.LoadFromFile(sFileName);
-          end
+        end;
         {$ENDIF}
       end
       else // get file icon by ext
@@ -357,11 +368,23 @@ begin
     Exit;
   end;
   png:=TPortableNetworkGraphic.Create;
-  png.LoadFromFile(sFileName);
-  png.Transparent:=True;
-  Result := Graphics.TBitmap.Create;
-  Result.Assign(png);
-  FreeAndNil(png);
+  try
+    try
+      png.LoadFromFile(sFileName);
+      png.Transparent:=True;
+      Result := Graphics.TBitmap.Create;
+      Result.Assign(png);
+    except
+      on e: Exception do
+        begin
+          if Assigned(Result) then
+            FreeAndNil(Result);
+          DebugLn(Format('Error: Cannot load pixmap [%s] : %s',[sFileName, e.Message]));
+        end;
+    end;
+  finally
+    FreeAndNil(png);
+  end;
 end;
 
 function TPixMapManager.CheckAddPixmap(const sName: String; bUsePixmapPath : Boolean = True): Integer;
@@ -370,7 +393,7 @@ var
   {$IFDEF LCLGTK2}
   pbPicture : PGdkPixbuf;
   {$ELSE}
-  bmp: Graphics.TBitmap;
+  bmp: Graphics.TBitmap = nil;
   png: TPortableNetworkGraphic;
   {$ENDIF}
 begin
@@ -403,24 +426,33 @@ begin
   Result:= FPixmapList.IndexOf(sName);
   if Result < 0 then // no
     begin
-      if CompareFileExt(sFileName, 'png', False) = 0 then
-        begin
-          png := TPortableNetworkGraphic.Create;
-          try
-            png.LoadFromFile(sFileName);
-            png.Transparent:=True;
-            bmp := Graphics.TBitmap.Create;
-            bmp.Assign(png);
-          finally
-            FreeAndNil(png);
+      try
+        if CompareFileExt(sFileName, 'png', False) = 0 then
+          begin
+            png := TPortableNetworkGraphic.Create;
+            try
+              png.LoadFromFile(sFileName);
+              png.Transparent:=True;
+              bmp := Graphics.TBitmap.Create;
+              bmp.Assign(png);
+            finally
+              FreeAndNil(png);
+            end;
+          end
+        else
+          begin
+            bmp := Graphics.TBitMap.Create;
+            bmp.LoadFromFile(sFileName);
           end;
-        end
-      else
-        begin
-          bmp := Graphics.TBitMap.Create;
-          bmp.LoadFromFile(sFileName);
-        end;
-      Result:= FPixmapList.AddObject(sName, bmp); // add to list
+        Result:= FPixmapList.AddObject(sName, bmp); // add to list
+      except
+        on e: Exception do
+          begin
+            if Assigned(bmp) then
+              FreeAndNil(bmp);
+            DebugLn(Format('Error: Cannot load pixmap [%s] : %s',[sFileName, e.Message]));
+          end;
+      end;
     end;
   {$ENDIF}
 end;
