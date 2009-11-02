@@ -138,18 +138,17 @@ var
 
   function BuildName(fileName: String): String;
   begin
-    Result := state.prefix;
     case state.funct of
       ftName:
-        Result := Result + QuoteStr(ExtractFileName(fileName));
+        Result := ExtractFileName(fileName);
       ftDir, ftSingleDir:
-        Result := Result + QuoteStr(ExcludeTrailingPathDelimiter(state.dir));
+        Result := ExcludeTrailingPathDelimiter(state.dir);
       ftPath:
-        Result := Result + QuoteStr(state.dir + ExtractFileName(fileName));
+        Result := state.dir + ExtractFileName(fileName);
       else
         Exit('');
     end;
-    Result := Result + state.postfix;
+    Result := state.prefix + {$IFDEF UNIX}QuoteStr{$ENDIF}(Result) + state.postfix;
   end;
 
   function BuildAllNames: String;
