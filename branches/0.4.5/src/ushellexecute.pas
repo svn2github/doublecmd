@@ -239,8 +239,6 @@ var
   end;
 
 begin
-  sCmd:= GetCmdDirFromEnvVar(sCmd);
-
   try
     leftFiles := TStringList.Create;
     rightFiles := TStringList.Create;
