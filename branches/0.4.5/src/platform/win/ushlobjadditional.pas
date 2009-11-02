@@ -1867,14 +1867,14 @@ begin
       BufW := UTF8Decode(FileName);
       Result := SHChangeIconW(hOwner, BufW, SizeOf(BufW), IconIndex) = 1;
       if Result then
-        FileName := UTF8Encode(BufW);
+        FileName := UTF8Encode(WideString(BufW));
     end
     else if Assigned(SHChangeIcon) then
     begin
       Buf := UTF8ToAnsi(FileName);
       Result := SHChangeIcon(hOwner, Buf, SizeOf(Buf), IconIndex) = 1;
       if Result then
-        FileName := AnsiToUTF8(Buf);
+        FileName := AnsiToUTF8(StrPas(Buf));
     end
     else
       begin
