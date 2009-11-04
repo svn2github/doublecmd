@@ -2170,7 +2170,7 @@ begin
           begin
             // Ask the user what he would like to do by displaying a menu.
             // Returns immediately after showing menu.
-            frmMain.pmDropMenu.PopUp(DropParams);
+            frmMain.PopupDragDropMenu(DropParams);
           end;
 
         else
