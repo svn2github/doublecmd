@@ -67,6 +67,7 @@ type
     cbCursorText: TColorBox;
     cbMarkColor: TColorBox;
     cbTextColor: TColorBox;
+    chkUseCustomView: TCheckBox;
     dlgcolor: TColorDialog;
     ComboBox1: TComboBox;
     cTextLabel: TLabel;
@@ -88,6 +89,7 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
+    pnlCustomView: TPanel;
     pnlGlobalSettings: TPanel;
     pnlCustCont: TPanel;
     pnlCustHead: TPanel;
@@ -127,6 +129,7 @@ type
     procedure cbCursorBorderChange(Sender: TObject);
     procedure cbCursorBorderColorChange(Sender: TObject);
     procedure cbOvercolorChange(Sender: TObject);
+    procedure chkUseCustomViewChange(Sender: TObject);
     procedure ResFontClick(Sender: TObject);
     procedure ResBack2Click(Sender: TObject);
     procedure ResBackClick(Sender: TObject);
@@ -210,7 +213,7 @@ implementation
 uses uLng, uOSUtils;
 
 const
-  pnlCustHeight: Integer = 130;
+  pnlCustHeight: Integer = 154;
   PnlContHeight: Integer = 180;
 
 procedure SetColorBoxColor(ColorBox: TColorBox; Color: TColor);
@@ -275,6 +278,7 @@ var i,indx:integer;
        ColumnClass.SetColumnPrm(Indx,TColPrm(stgColumns.Objects[6,i]));
      end;
 
+  ColumnClass.CustomView:= chkUseCustomView.Checked;
   ColumnClass.SetCursorBorder(cbCursorBorder.Checked);
   ColumnClass.SetCursorBorderColor(cbCursorBorderColor.Color);
 
@@ -603,6 +607,7 @@ begin
     PreviewPan.SetColWidths;
     PreviewPan.UpdateColumnsView;
 
+    chkUseCustomView.Checked:= ColumnClass.CustomView;
     cbCursorBorder.Checked := ColumnClass.GetCursorBorder;
     SetColorInColorBox(cbCursorBorderColor, ColumnClass.GetCursorBorderColor);
 
@@ -739,6 +744,11 @@ procedure TfColumnsSetConf.cbOvercolorChange(Sender: TObject);
 begin
   TColPrm(stgColumns.Objects[6,IndexRaw+1]).Overcolor:=cbOvercolor.Checked;
     EditorSaveResult(nil);
+end;
+
+procedure TfColumnsSetConf.chkUseCustomViewChange(Sender: TObject);
+begin
+  pnlCustomView.Enabled:= chkUseCustomView.Checked;
 end;
 
 procedure TfColumnsSetConf.ResFontClick(Sender: TObject);
