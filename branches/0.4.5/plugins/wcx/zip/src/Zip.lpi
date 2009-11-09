@@ -20,7 +20,7 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
-        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+        <LaunchingApplication PathPlusParams="\usr\X11R6\bin\xterm -T 'Lazarus Run Output' -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
     <Units Count="1">
@@ -35,11 +35,9 @@
     <SearchPaths>
       <OtherUnitFiles Value="../fparchive/;../../../../sdk/"/>
       <UnitOutputDirectory Value="../lib"/>
-      <SrcPath Value="$(FPCSrcDir)/rtl/objpas/"/>
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>
-        <SyntaxMode Value="Delphi"/>
         <UseAnsiStrings Value="True"/>
       </SyntaxOptions>
     </Parsing>
@@ -47,10 +45,10 @@
       <SmartLinkUnit Value="True"/>
     </CodeGeneration>
     <Linking>
-      <LinkSmart Value="True"/>
       <Debugging>
         <GenerateDebugInfo Value="True"/>
       </Debugging>
+      <LinkSmart Value="True"/>
       <Options>
         <ExecutableType Value="Library"/>
       </Options>

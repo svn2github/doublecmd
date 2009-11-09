@@ -25,8 +25,10 @@
 unit ZipFunc;
 
 interface
-uses uWCXhead, AbZipKit, AbArcTyp, AbZipTyp, DialogAPI, IniFiles,
-     AbExcept, AbUtils;
+
+uses
+  uWCXhead, AbZipKit, AbArcTyp, AbZipTyp, DialogAPI,
+  AbExcept, AbUtils;
 
 type
   TAbZipKitEx = class (TAbZipKit)
@@ -55,18 +57,20 @@ procedure ConfigurePacker (Parent: THandle;  DllInstance: THandle);stdcall;
 {Dialog API function}
 procedure SetDlgProc(var SetDlgProcInfo: TSetDlgProcInfo);stdcall;
 
+const
+  IniFileName = 'zip.ini';
+
 var
   gProcessDataProc : TProcessDataProc;
   gSetDlgProcInfo: TSetDlgProcInfo;
   gCompressionMethodToUse : TAbZipSupportedMethod;
   gDeflationOption : TAbZipDeflationOption;
-  gIni: TIniFile;
   gPluginDir: UTF8String;
   gPluginConfDir: UTF8String;
   
 implementation
 
-uses SysUtils, Classes, ZipConfDlg
+uses SysUtils, Classes, ZipConfDlg, IniFiles
 {$IFDEF MSWINDOWS}
 , Windows
 {$ENDIF}
@@ -155,16 +159,16 @@ begin
   end;
 end;
 
-function OpenArchive (var ArchiveData : tOpenArchiveData) : TArcHandle;
+function OpenArchive (var ArchiveData : tOpenArchiveData) : TArcHandle;stdcall;
 var
   Arc : TAbZipKitEx;
 begin
   Result := 0;
   Arc := TAbZipKitEx.Create(nil);
   //MessageBox(0,ArchiveData.ArcName,'OpenArchive',16);
-  Arc.OnArchiveItemProgress := Arc.AbArchiveItemProgressEvent;
-  Arc.OnArchiveProgress := Arc.AbArchiveProgressEvent;
-  Arc.OnProcessItemFailure := Arc.AbProcessItemFailureEvent;
+  Arc.OnArchiveItemProgress := @Arc.AbArchiveItemProgressEvent;
+  Arc.OnArchiveProgress := @Arc.AbArchiveProgressEvent;
+  Arc.OnProcessItemFailure := @Arc.AbProcessItemFailureEvent;
 
   try
     Arc.TarAutoHandle:=true;
@@ -180,7 +184,7 @@ begin
     Arc.Free;
 end;
 
-function ReadHeader (hArcData : TArcHandle; var HeaderData : THeaderData) : Integer;
+function ReadHeader (hArcData : TArcHandle; var HeaderData : THeaderData) : Integer;stdcall;
 var
   Arc : TAbZipKitEx;
   sFileName : String;
@@ -217,7 +221,7 @@ begin
 
 end;
 
-function ProcessFile (hArcData : TArcHandle; Operation : Integer; DestPath, DestName : PChar) : Integer;
+function ProcessFile (hArcData : TArcHandle; Operation : Integer; DestPath, DestName : PChar) : Integer;stdcall;
 var
   Arc : TAbZipKitEx;
 begin
@@ -264,7 +268,7 @@ begin
   Arc.Tag := Arc.Tag + 1;
 end;
 
-function CloseArchive (hArcData : TArcHandle) : Integer;
+function CloseArchive (hArcData : TArcHandle) : Integer;stdcall;
 var
  Arc : TAbZipKitEx;
 begin
@@ -274,11 +278,11 @@ begin
   Result := 0;
 end;
 
-procedure SetChangeVolProc (hArcData : TArcHandle; pChangeVolProc1 : PChangeVolProc);
+procedure SetChangeVolProc (hArcData : TArcHandle; pChangeVolProc1 : PChangeVolProc);stdcall;
 begin
 end;
 
-procedure SetProcessDataProc (hArcData : TArcHandle; pProcessDataProc1 : TProcessDataProc);
+procedure SetProcessDataProc (hArcData : TArcHandle; pProcessDataProc1 : TProcessDataProc);stdcall;
 var
  Arc : TAbZipKitEx;
 begin
@@ -299,7 +303,7 @@ end;
 
 {Optional functions}
 
-function PackFiles(PackedFile: pchar;  SubPath: pchar;  SrcPath: pchar;  AddList: pchar;  Flags: integer): integer;
+function PackFiles(PackedFile: pchar;  SubPath: pchar;  SrcPath: pchar;  AddList: pchar;  Flags: integer): integer;stdcall;
 var
  Arc : TAbZipKitEx;
 begin
@@ -310,13 +314,14 @@ begin
       Arc.CompressionMethodToUse:= gCompressionMethodToUse;
       Arc.DeflationOption:= gDeflationOption;
       Arc.FProcessDataProc := gProcessDataProc;
-      Arc.OnProcessItemFailure := Arc.AbProcessItemFailureEvent;
+      Arc.OnProcessItemFailure := @Arc.AbProcessItemFailureEvent;
+      Arc.StoreOptions := Arc.StoreOptions + [soReplace];
 
       Arc.TarAutoHandle:=True;
       Arc.OpenArchive(PackedFile);
 
-      Arc.OnArchiveItemProgress := Arc.AbArchiveItemProgressEvent;
-      Arc.OnArchiveProgress := Arc.AbArchiveProgressEvent;
+      Arc.OnArchiveItemProgress := @Arc.AbArchiveItemProgressEvent;
+      Arc.OnArchiveProgress := @Arc.AbArchiveProgressEvent;
 
       Arc.BaseDirectory := SrcPath;
       Arc.AddEntries(MakeFileList(AddList), SubPath);
@@ -330,6 +335,8 @@ begin
         Result := E_EABORTED;
       on EAbFileNotFound do
         Result := E_EOPEN;
+      on EAbUnhandledType do
+        Result := E_NOT_SUPPORTED;
       else
         begin
           Result := E_BAD_DATA;
@@ -341,7 +348,7 @@ begin
   end;
 end;
 
-function DeleteFiles (PackedFile, DeleteList : PChar) : Integer;
+function DeleteFiles (PackedFile, DeleteList : PChar) : Integer;stdcall;
 
   function StrEndsWith(S : String; SearchPhrase : String) : Boolean;
   begin
@@ -357,14 +364,14 @@ begin
     try
       Arc := TAbZipKitEx.Create(nil);
       Arc.FProcessDataProc := gProcessDataProc;
-      Arc.OnProcessItemFailure := Arc.AbProcessItemFailureEvent;
+      Arc.OnProcessItemFailure := @Arc.AbProcessItemFailureEvent;
 
       Arc.TarAutoHandle:=True;
       Arc.OpenArchive(PackedFile);
 
       // Set this after opening archive, to get only progress of deleting.
-      Arc.OnArchiveItemProgress := Arc.AbArchiveItemProgressEvent;
-      Arc.OnArchiveProgress := Arc.AbArchiveProgressEvent;
+      Arc.OnArchiveItemProgress := @Arc.AbArchiveItemProgressEvent;
+      Arc.OnArchiveProgress := @Arc.AbArchiveProgressEvent;
 
       // Parse file list.
       pFileName := DeleteList;
@@ -399,32 +406,38 @@ begin
   end;
 end;
 
-function GetPackerCaps : Integer;
+function GetPackerCaps : Integer;stdcall;
 begin
   Result := PK_CAPS_NEW      or PK_CAPS_DELETE  or PK_CAPS_MODIFY
          or PK_CAPS_MULTIPLE or PK_CAPS_OPTIONS or PK_CAPS_BY_CONTENT;
   //     or PK_CAPS_MEMPACK  or PK_CAPS_ENCRYPT
 end;
 
-procedure ConfigurePacker(Parent: THandle; DllInstance: THandle);
+procedure ConfigurePacker(Parent: THandle; DllInstance: THandle);stdcall;
 begin
   CreateZipConfDlg;
 end;
 
-procedure SetDlgProc(var SetDlgProcInfo: TSetDlgProcInfo);
+procedure SetDlgProc(var SetDlgProcInfo: TSetDlgProcInfo);stdcall;
+var
+  gIni: TIniFile;
 begin
   gSetDlgProcInfo:= SetDlgProcInfo;
 
-  gPluginDir := UTF8Encode(gSetDlgProcInfo.PluginDir);
-  gPluginConfDir := UTF8Encode(gSetDlgProcInfo.PluginConfDir);
+  gPluginDir := UTF8Encode(WideString(gSetDlgProcInfo.PluginDir));
+  gPluginConfDir := UTF8Encode(WideString(gSetDlgProcInfo.PluginConfDir));
 
   // Clear so they are not used anymore.
   gSetDlgProcInfo.PluginDir := nil;
   gSetDlgProcInfo.PluginConfDir := nil;
 
   // load configuration from ini file
-  gIni:= TIniFile.Create(gPluginConfDir + 'zip.ini');
-  LoadConfig;
+  gIni:= TIniFile.Create(gPluginConfDir + IniFileName);
+  try
+    LoadConfig;
+  finally
+    gIni.Free;
+  end;
 end;
 
 
@@ -452,7 +465,5 @@ begin
   end;
 end;
 
-finalization
-  gIni.Free;
 end.
 
