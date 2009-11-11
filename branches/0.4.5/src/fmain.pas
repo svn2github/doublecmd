@@ -1615,25 +1615,24 @@ begin
   end;
 end;
 
-
 procedure TfrmMain.miHotAddClick(Sender: TObject);
+var
+  sName: UTF8String;
 begin
-  inherited;
-  glsHotDir.Add(ActiveFrame.ActiveDir);
-//  pmHotList.Items.Add();
-// OnClick:=HotDirSelected;
+  sName:= ExtractFileName(ExcludeTrailingBackSlash(ActiveFrame.ActiveDir));
+  glsHotDir.Add(sName + '=' + ActiveFrame.ActiveDir);
 end;
 
 procedure TfrmMain.miHotDeleteClick(Sender: TObject);
-var i : integer;
+var
+  I: Integer;
 begin
-  i:= glsHotDir.IndexOf(ActiveFrame.ActiveDir);
-  if i > 0 then glsHotDir.Delete(i);
+  I:= glsHotDir.IndexOfValue(ActiveFrame.ActiveDir);
+  if I > 0 then glsHotDir.Delete(I);
 end;
 
 procedure TfrmMain.miHotConfClick(Sender: TObject);
 begin
-  inherited;
   with TfrmHotDir.Create(Application) do
   begin
     try
@@ -1661,9 +1660,10 @@ begin
 
   for i:=0 to glsDirHistory.Count-1 do
   begin
-    mi:=TMenuItem.Create(pmDirHistory);
-    mi.Caption:=glsDirHistory.Strings[i];
-    mi.OnClick:=@HotDirSelected;
+    mi:= TMenuItem.Create(pmDirHistory);
+    mi.Caption:= glsDirHistory[I];
+    mi.Hint:= mi.Caption;
+    mi.OnClick:= @HotDirSelected;
     pmDirHistory.Items.Add(mi);
   end;
 
@@ -1680,7 +1680,9 @@ begin
   for i:=0 to glsHotDir.Count-1 do
   begin
     mi:=TMenuItem.Create(pmHotList);
-    mi.Caption:=glsHotDir.Strings[i];
+    mi.Caption:= glsHotDir.Names[I];
+    mi.Hint:= glsHotDir.ValueFromIndex[I];
+    mi.ShortCut:= TextToShortCut(Copy(mi.Caption, 1, 1));
     mi.OnClick:=@HotDirSelected;
     pmHotList.Items.Add(mi);
   end;
@@ -1691,7 +1693,7 @@ begin
   // now add ADD or DELETE item
 
   mi:=TMenuItem.Create(pmHotList);
-  if glsHotDir.IndexOf(ActiveFrame.ActiveDir)>0 then
+  if glsHotDir.IndexOfValue(ActiveFrame.ActiveDir)>0 then
   begin
     mi.Caption:=Format(rsMsgPopUpHotDelete,[ActiveFrame.ActiveDir]);
     mi.OnClick:=@miHotDeleteClick;
@@ -1715,9 +1717,7 @@ var
   sDummy:String;
 begin
  // this handler is used by HotDir and DirHistory
- // must extract & from Caption
-  sDummy:=(Sender As TMenuItem).Caption;
-  SDummy:=StringReplace(sDummy,'&','',[rfReplaceAll]);
+  sDummy:= (Sender as TMenuItem).Hint;
   ActiveFrame.pnlFile.ActiveDir:=sDummy;
 
   with ActiveFrame.dgPanel do
