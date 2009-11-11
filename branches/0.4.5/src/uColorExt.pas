@@ -136,9 +136,10 @@ begin
                Exit;
              end;
          end;
+
      // get color by extension and attribute
-     if (MatchesMaskList(sExt,MaskItem.sExt,';')) and
-        (MatchesMaskList(sModeStr, MaskItem.sModeStr,';') or (MaskItem.sModeStr='')) then
+     if ((MaskItem.sExt     = '') or MatchesMaskList(sName, MaskItem.sExt, ';')) and
+        ((MaskItem.sModeStr = '') or MatchesMaskList(sModeStr, MaskItem.sModeStr, ';')) then
        begin
          Result:= MaskItem.cColor;
          Exit;
