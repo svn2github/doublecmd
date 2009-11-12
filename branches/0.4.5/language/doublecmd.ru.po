@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.3.5 alpha\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2009-11-12 15:00+0300\n"
+"PO-Revision-Date: 2009-11-12 17:50+0300\n"
 "Last-Translator: Alexander Koblov <Alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -456,6 +456,11 @@ msgctxt "TFRMDESCREDIT.LBLENCODING.CAPTION"
 msgid "Encoding:"
 msgstr "Кодировка:"
 
+#: TFRMEDITOR.ACTABOUT.CAPTION
+msgctxt "TFRMEDITOR.ACTABOUT.CAPTION"
+msgid "About"
+msgstr "О программе..."
+
 #: TFRMEDITOR.ACTCONFHIGH.CAPTION
 msgid "&Configuration"
 msgstr "Настройка"
@@ -468,6 +473,11 @@ msgstr "&Копировать"
 #: TFRMEDITOR.ACTEDITCUT.CAPTION
 msgid "Cut"
 msgstr "В&ырезать"
+
+#: TFRMEDITOR.ACTEDITDELETE.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITDELETE.CAPTION"
+msgid "Delete"
+msgstr "Удалить"
 
 #: TFRMEDITOR.ACTEDITFIND.CAPTION
 msgid "&Find"
@@ -497,6 +507,11 @@ msgstr "Выделить &всё"
 msgid "Undo"
 msgstr "Отменить"
 
+#: TFRMEDITOR.ACTFILECLOSE.CAPTION
+msgctxt "TFRMEDITOR.ACTFILECLOSE.CAPTION"
+msgid "&Close"
+msgstr "Закрыть"
+
 #: TFRMEDITOR.ACTFILEEXIT.CAPTION
 msgctxt "TFRMEDITOR.ACTFILEEXIT.CAPTION"
 msgid "E&xit"
@@ -512,6 +527,7 @@ msgid "&Open"
 msgstr "&Открыть"
 
 #: TFRMEDITOR.ACTFILESAVE.CAPTION
+msgctxt "TFRMEDITOR.ACTFILESAVE.CAPTION"
 msgid "&Save"
 msgstr "&Сохранить"
 
@@ -532,6 +548,11 @@ msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
 msgstr "Помощь"
 
+#: TFRMEDITOR.MIDIV.CAPTION
+msgctxt "TFRMEDITOR.MIDIV.CAPTION"
+msgid "-"
+msgstr ""
+
 #: TFRMEDITOR.MIEDIT.CAPTION
 msgctxt "TFRMEDITOR.MIEDIT.CAPTION"
 msgid "&Edit"
@@ -542,6 +563,14 @@ msgctxt "TFRMEDITOR.MIENCODING.CAPTION"
 msgid "En&coding"
 msgstr "&Кодировка"
 
+#: TFRMEDITOR.MIENCODINGIN.CAPTION
+msgid "Open as"
+msgstr "Открыть как"
+
+#: TFRMEDITOR.MIENCODINGOUT.CAPTION
+msgid "Save as"
+msgstr "Сохранить как"
+
 #: TFRMEDITOR.MIFILE.CAPTION
 msgctxt "TFRMEDITOR.MIFILE.CAPTION"
 msgid "&File"
@@ -550,6 +579,31 @@ msgstr "&Файл"
 #: TFRMEDITOR.MIHIGHLIGHT.CAPTION
 msgid "Syntax highlight"
 msgstr "&Подсветка синтаксиса"
+
+#: TFRMEDITOR.MISEPARATOR1.CAPTION
+msgctxt "TFRMEDITOR.MISEPARATOR1.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.MISEPARATOR2.CAPTION
+msgctxt "TFRMEDITOR.MISEPARATOR2.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.N1.CAPTION
+msgctxt "TFRMEDITOR.N1.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.N3.CAPTION
+msgctxt "TFRMEDITOR.N3.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.N4.CAPTION
+msgctxt "TFRMEDITOR.N4.CAPTION"
+msgid "-"
+msgstr ""
 
 #: TFRMEDITOR.TBSEPARATOR1.CAPTION
 msgid "tbSeparator1"
@@ -979,6 +1033,7 @@ msgid "Attributes"
 msgstr "Атрибуты"
 
 #: TFRMFINDDLG.BTNCLOSE.CAPTION
+msgctxt "TFRMFINDDLG.BTNCLOSE.CAPTION"
 msgid "&Close"
 msgstr "Закрыть"
 
@@ -1966,19 +2021,44 @@ msgstr "Только типа:"
 msgid "Move %s:"
 msgstr "Переместить %s:"
 
-#: TFRMMULTIRENAME.BTNCANCEL.CAPTION
-msgctxt "TFRMMULTIRENAME.BTNCANCEL.CAPTION"
-msgid "Cancel"
-msgstr "Отмена"
+#: TFRMMULTIRENAME.BTNCLOSE.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNCLOSE.CAPTION"
+msgid "&Close"
+msgstr "Закрыть"
 
-#: TFRMMULTIRENAME.BTNOK.CAPTION
-msgctxt "TFRMMULTIRENAME.BTNOK.CAPTION"
-msgid "OK"
+#: TFRMMULTIRENAME.BTNDELETEPRESET.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNDELETEPRESET.CAPTION"
+msgid "&Delete"
+msgstr "Удалить"
+
+#: TFRMMULTIRENAME.BTNEXTMENU.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNEXTMENU.CAPTION"
+msgid "..."
 msgstr ""
 
+#: TFRMMULTIRENAME.BTNLOADPRESET.CAPTION
+msgid "&Load"
+msgstr "&Загрузить"
+
+#: TFRMMULTIRENAME.BTNNAMEMENU.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNNAMEMENU.CAPTION"
+msgid "..."
+msgstr ""
+
+#: TFRMMULTIRENAME.BTNRENAME.CAPTION
+msgid "&Rename"
+msgstr "&Переименовать"
+
 #: TFRMMULTIRENAME.BTNRESTORE.CAPTION
-msgid "Restore All"
+#, fuzzy
+#| msgid "Restore All"
+msgid "Reset all"
 msgstr "Восстановить всё"
+
+#: TFRMMULTIRENAME.BTNSAVEPRESET.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNSAVEPRESET.CAPTION"
+msgid "&Save"
+msgstr "&Сохранить"
 
 #: TFRMMULTIRENAME.CAPTION
 msgid "MultiRename"
@@ -1990,19 +2070,29 @@ msgid "Log"
 msgstr "Протокол"
 
 #: TFRMMULTIRENAME.CBREGEXP.CAPTION
+#, fuzzy
+#| msgid "&Regular expressions"
 msgctxt "TFRMMULTIRENAME.CBREGEXP.CAPTION"
-msgid "&Regular expressions"
+msgid "Regular e&xpressions"
 msgstr "&Регулярные выражения"
 
 #: TFRMMULTIRENAME.CBUSESUBS.CAPTION
-msgid "Use substitution"
+#, fuzzy
+#| msgid "Use substitution"
+msgid "&Use substitution"
 msgstr "Подстановка"
 
 #: TFRMMULTIRENAME.CMBXWIDTH.TEXT
 msgid "01"
 msgstr ""
 
+#: TFRMMULTIRENAME.EDINTERVAL.TEXT
+msgctxt "TFRMMULTIRENAME.EDINTERVAL.TEXT"
+msgid "1"
+msgstr ""
+
 #: TFRMMULTIRENAME.EDPOC.TEXT
+msgctxt "TFRMMULTIRENAME.EDPOC.TEXT"
 msgid "1"
 msgstr ""
 
@@ -2018,10 +2108,6 @@ msgstr "Счётчик"
 msgid "Find && Replace"
 msgstr "Найти и заменить"
 
-#: TFRMMULTIRENAME.GBFONTSTYLE.CAPTION
-msgid "File Name Style"
-msgstr "Стиль имени файла"
-
 #: TFRMMULTIRENAME.GBLOG.CAPTION
 msgid "Log Result"
 msgstr "Результат"
@@ -2030,12 +2116,20 @@ msgstr "Результат"
 msgid "Mask"
 msgstr "Маска"
 
+#: TFRMMULTIRENAME.GBPRESETS.CAPTION
+msgid "Presets"
+msgstr "Предустановки"
+
 #: TFRMMULTIRENAME.LBEXT.CAPTION
-msgid "Extension"
+#, fuzzy
+#| msgid "Extension"
+msgid "&Extension"
 msgstr "Расширение"
 
 #: TFRMMULTIRENAME.LBFIND.CAPTION
-msgid "Find..."
+#, fuzzy
+#| msgid "Find..."
+msgid "&Find..."
 msgstr "Найти..."
 
 #: TFRMMULTIRENAME.LBINTERVAL.CAPTION
@@ -2043,11 +2137,15 @@ msgid "Interval"
 msgstr "Интервал"
 
 #: TFRMMULTIRENAME.LBNAME.CAPTION
-msgid "File Name"
+#, fuzzy
+#| msgid "File Name"
+msgid "File &Name"
 msgstr "Имя файла"
 
 #: TFRMMULTIRENAME.LBREPLACE.CAPTION
-msgid "Replace..."
+#, fuzzy
+#| msgid "Replace..."
+msgid "Re&place..."
 msgstr "Заменить..."
 
 #: TFRMMULTIRENAME.LBSTNB.CAPTION
@@ -2133,6 +2231,21 @@ msgstr "[Г]од"
 
 #: TFRMMULTIRENAME.N1.CAPTION
 msgctxt "TFRMMULTIRENAME.N1.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMMULTIRENAME.N2.CAPTION
+msgctxt "TFRMMULTIRENAME.N2.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMMULTIRENAME.N3.CAPTION
+msgctxt "TFRMMULTIRENAME.N3.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMMULTIRENAME.N4.CAPTION
+msgctxt "TFRMMULTIRENAME.N4.CAPTION"
 msgid "-"
 msgstr ""
 
@@ -2257,7 +2370,7 @@ msgstr "Удалить"
 #: TFRMOPTIONS.BTNSEARCHTEMPLATE.HINT
 msgctxt "TFRMOPTIONS.BTNSEARCHTEMPLATE.HINT"
 msgid "Template..."
-msgstr ""
+msgstr "Шаблон..."
 
 #: TFRMOPTIONS.BTNSELEDITFNT.CAPTION
 msgctxt "TFRMOPTIONS.BTNSELEDITFNT.CAPTION"
@@ -3658,11 +3771,11 @@ msgstr "Создание символьной ссылки %s"
 
 #: ulng.rsmsgmanualaddhotdir
 msgid "Manually add hot path"
-msgstr ""
+msgstr "Добавить избранный каталог"
 
 #: ulng.rsmsgmanualedithotdir
 msgid "Manualy edit hot path"
-msgstr ""
+msgstr "Редактировать избранный каталог"
 
 #: ulng.rsmsgmanualhotdirquery
 msgid "Enter name and path (format name=path):"

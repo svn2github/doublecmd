@@ -457,6 +457,11 @@ msgctxt "TFRMDESCREDIT.LBLENCODING.CAPTION"
 msgid "Encoding:"
 msgstr ""
 
+#: TFRMEDITOR.ACTABOUT.CAPTION
+msgctxt "TFRMEDITOR.ACTABOUT.CAPTION"
+msgid "About"
+msgstr ""
+
 #: TFRMEDITOR.ACTCONFHIGH.CAPTION
 msgid "&Configuration"
 msgstr ""
@@ -468,6 +473,11 @@ msgstr ""
 
 #: TFRMEDITOR.ACTEDITCUT.CAPTION
 msgid "Cut"
+msgstr ""
+
+#: TFRMEDITOR.ACTEDITDELETE.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITDELETE.CAPTION"
+msgid "Delete"
 msgstr ""
 
 #: TFRMEDITOR.ACTEDITFIND.CAPTION
@@ -498,6 +508,11 @@ msgstr ""
 msgid "Undo"
 msgstr ""
 
+#: TFRMEDITOR.ACTFILECLOSE.CAPTION
+msgctxt "TFRMEDITOR.ACTFILECLOSE.CAPTION"
+msgid "&Close"
+msgstr ""
+
 #: TFRMEDITOR.ACTFILEEXIT.CAPTION
 msgctxt "TFRMEDITOR.ACTFILEEXIT.CAPTION"
 msgid "E&xit"
@@ -513,6 +528,7 @@ msgid "&Open"
 msgstr ""
 
 #: TFRMEDITOR.ACTFILESAVE.CAPTION
+msgctxt "TFRMEDITOR.ACTFILESAVE.CAPTION"
 msgid "&Save"
 msgstr ""
 
@@ -533,6 +549,11 @@ msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
 msgstr ""
 
+#: TFRMEDITOR.MIDIV.CAPTION
+msgctxt "TFRMEDITOR.MIDIV.CAPTION"
+msgid "-"
+msgstr ""
+
 #: TFRMEDITOR.MIEDIT.CAPTION
 msgctxt "TFRMEDITOR.MIEDIT.CAPTION"
 msgid "&Edit"
@@ -543,6 +564,14 @@ msgctxt "TFRMEDITOR.MIENCODING.CAPTION"
 msgid "En&coding"
 msgstr ""
 
+#: TFRMEDITOR.MIENCODINGIN.CAPTION
+msgid "Open as"
+msgstr ""
+
+#: TFRMEDITOR.MIENCODINGOUT.CAPTION
+msgid "Save as"
+msgstr ""
+
 #: TFRMEDITOR.MIFILE.CAPTION
 msgctxt "TFRMEDITOR.MIFILE.CAPTION"
 msgid "&File"
@@ -550,6 +579,31 @@ msgstr ""
 
 #: TFRMEDITOR.MIHIGHLIGHT.CAPTION
 msgid "Syntax highlight"
+msgstr ""
+
+#: TFRMEDITOR.MISEPARATOR1.CAPTION
+msgctxt "TFRMEDITOR.MISEPARATOR1.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.MISEPARATOR2.CAPTION
+msgctxt "TFRMEDITOR.MISEPARATOR2.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.N1.CAPTION
+msgctxt "TFRMEDITOR.N1.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.N3.CAPTION
+msgctxt "TFRMEDITOR.N3.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.N4.CAPTION
+msgctxt "TFRMEDITOR.N4.CAPTION"
+msgid "-"
 msgstr ""
 
 #: TFRMEDITOR.TBSEPARATOR1.CAPTION
@@ -978,6 +1032,7 @@ msgid "Attributes"
 msgstr ""
 
 #: TFRMFINDDLG.BTNCLOSE.CAPTION
+msgctxt "TFRMFINDDLG.BTNCLOSE.CAPTION"
 msgid "&Close"
 msgstr ""
 
@@ -1971,18 +2026,41 @@ msgstr ""
 msgid "Move %s:"
 msgstr ""
 
-#: TFRMMULTIRENAME.BTNCANCEL.CAPTION
-msgctxt "TFRMMULTIRENAME.BTNCANCEL.CAPTION"
-msgid "Cancel"
+#: TFRMMULTIRENAME.BTNCLOSE.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNCLOSE.CAPTION"
+msgid "&Close"
 msgstr ""
 
-#: TFRMMULTIRENAME.BTNOK.CAPTION
-msgctxt "TFRMMULTIRENAME.BTNOK.CAPTION"
-msgid "OK"
+#: TFRMMULTIRENAME.BTNDELETEPRESET.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNDELETEPRESET.CAPTION"
+msgid "&Delete"
+msgstr ""
+
+#: TFRMMULTIRENAME.BTNEXTMENU.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNEXTMENU.CAPTION"
+msgid "..."
+msgstr ""
+
+#: TFRMMULTIRENAME.BTNLOADPRESET.CAPTION
+msgid "&Load"
+msgstr ""
+
+#: TFRMMULTIRENAME.BTNNAMEMENU.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNNAMEMENU.CAPTION"
+msgid "..."
+msgstr ""
+
+#: TFRMMULTIRENAME.BTNRENAME.CAPTION
+msgid "&Rename"
 msgstr ""
 
 #: TFRMMULTIRENAME.BTNRESTORE.CAPTION
-msgid "Restore All"
+msgid "Reset all"
+msgstr ""
+
+#: TFRMMULTIRENAME.BTNSAVEPRESET.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNSAVEPRESET.CAPTION"
+msgid "&Save"
 msgstr ""
 
 #: TFRMMULTIRENAME.CAPTION
@@ -1996,18 +2074,24 @@ msgstr ""
 
 #: TFRMMULTIRENAME.CBREGEXP.CAPTION
 msgctxt "TFRMMULTIRENAME.CBREGEXP.CAPTION"
-msgid "&Regular expressions"
+msgid "Regular e&xpressions"
 msgstr ""
 
 #: TFRMMULTIRENAME.CBUSESUBS.CAPTION
-msgid "Use substitution"
+msgid "&Use substitution"
 msgstr ""
 
 #: TFRMMULTIRENAME.CMBXWIDTH.TEXT
 msgid "01"
 msgstr ""
 
+#: TFRMMULTIRENAME.EDINTERVAL.TEXT
+msgctxt "TFRMMULTIRENAME.EDINTERVAL.TEXT"
+msgid "1"
+msgstr ""
+
 #: TFRMMULTIRENAME.EDPOC.TEXT
+msgctxt "TFRMMULTIRENAME.EDPOC.TEXT"
 msgid "1"
 msgstr ""
 
@@ -2023,10 +2107,6 @@ msgstr ""
 msgid "Find && Replace"
 msgstr ""
 
-#: TFRMMULTIRENAME.GBFONTSTYLE.CAPTION
-msgid "File Name Style"
-msgstr ""
-
 #: TFRMMULTIRENAME.GBLOG.CAPTION
 msgid "Log Result"
 msgstr ""
@@ -2035,12 +2115,16 @@ msgstr ""
 msgid "Mask"
 msgstr ""
 
+#: TFRMMULTIRENAME.GBPRESETS.CAPTION
+msgid "Presets"
+msgstr ""
+
 #: TFRMMULTIRENAME.LBEXT.CAPTION
-msgid "Extension"
+msgid "&Extension"
 msgstr ""
 
 #: TFRMMULTIRENAME.LBFIND.CAPTION
-msgid "Find..."
+msgid "&Find..."
 msgstr ""
 
 #: TFRMMULTIRENAME.LBINTERVAL.CAPTION
@@ -2048,11 +2132,11 @@ msgid "Interval"
 msgstr ""
 
 #: TFRMMULTIRENAME.LBNAME.CAPTION
-msgid "File Name"
+msgid "File &Name"
 msgstr ""
 
 #: TFRMMULTIRENAME.LBREPLACE.CAPTION
-msgid "Replace..."
+msgid "Re&place..."
 msgstr ""
 
 #: TFRMMULTIRENAME.LBSTNB.CAPTION
@@ -2138,6 +2222,21 @@ msgstr ""
 
 #: TFRMMULTIRENAME.N1.CAPTION
 msgctxt "TFRMMULTIRENAME.N1.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMMULTIRENAME.N2.CAPTION
+msgctxt "TFRMMULTIRENAME.N2.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMMULTIRENAME.N3.CAPTION
+msgctxt "TFRMMULTIRENAME.N3.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMMULTIRENAME.N4.CAPTION
+msgctxt "TFRMMULTIRENAME.N4.CAPTION"
 msgid "-"
 msgstr ""
 

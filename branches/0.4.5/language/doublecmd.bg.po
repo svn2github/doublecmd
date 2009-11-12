@@ -457,6 +457,11 @@ msgctxt "TFRMDESCREDIT.LBLENCODING.CAPTION"
 msgid "Encoding:"
 msgstr "Знаков набор:"
 
+#: TFRMEDITOR.ACTABOUT.CAPTION
+msgctxt "TFRMEDITOR.ACTABOUT.CAPTION"
+msgid "About"
+msgstr "За"
+
 #: TFRMEDITOR.ACTCONFHIGH.CAPTION
 msgid "&Configuration"
 msgstr "&Настройка"
@@ -469,6 +474,11 @@ msgstr "Запомняне"
 #: TFRMEDITOR.ACTEDITCUT.CAPTION
 msgid "Cut"
 msgstr "Изрязване"
+
+#: TFRMEDITOR.ACTEDITDELETE.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITDELETE.CAPTION"
+msgid "Delete"
+msgstr "Изтриване"
 
 #: TFRMEDITOR.ACTEDITFIND.CAPTION
 msgid "&Find"
@@ -498,6 +508,11 @@ msgstr "Избор на вси&чки"
 msgid "Undo"
 msgstr "Отмяна"
 
+#: TFRMEDITOR.ACTFILECLOSE.CAPTION
+msgctxt "TFRMEDITOR.ACTFILECLOSE.CAPTION"
+msgid "&Close"
+msgstr "&Затваряне"
+
 #: TFRMEDITOR.ACTFILEEXIT.CAPTION
 msgctxt "TFRMEDITOR.ACTFILEEXIT.CAPTION"
 msgid "E&xit"
@@ -513,6 +528,7 @@ msgid "&Open"
 msgstr "&Отваряне"
 
 #: TFRMEDITOR.ACTFILESAVE.CAPTION
+msgctxt "TFRMEDITOR.ACTFILESAVE.CAPTION"
 msgid "&Save"
 msgstr "&Съхраняване"
 
@@ -533,6 +549,11 @@ msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
 msgstr "Помо&щ"
 
+#: TFRMEDITOR.MIDIV.CAPTION
+msgctxt "TFRMEDITOR.MIDIV.CAPTION"
+msgid "-"
+msgstr ""
+
 #: TFRMEDITOR.MIEDIT.CAPTION
 msgctxt "TFRMEDITOR.MIEDIT.CAPTION"
 msgid "&Edit"
@@ -543,6 +564,14 @@ msgctxt "TFRMEDITOR.MIENCODING.CAPTION"
 msgid "En&coding"
 msgstr "&Знаков набор"
 
+#: TFRMEDITOR.MIENCODINGIN.CAPTION
+msgid "Open as"
+msgstr ""
+
+#: TFRMEDITOR.MIENCODINGOUT.CAPTION
+msgid "Save as"
+msgstr ""
+
 #: TFRMEDITOR.MIFILE.CAPTION
 msgctxt "TFRMEDITOR.MIFILE.CAPTION"
 msgid "&File"
@@ -551,6 +580,31 @@ msgstr "&Файл"
 #: TFRMEDITOR.MIHIGHLIGHT.CAPTION
 msgid "Syntax highlight"
 msgstr "Синтактично подчертаване"
+
+#: TFRMEDITOR.MISEPARATOR1.CAPTION
+msgctxt "TFRMEDITOR.MISEPARATOR1.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.MISEPARATOR2.CAPTION
+msgctxt "TFRMEDITOR.MISEPARATOR2.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.N1.CAPTION
+msgctxt "TFRMEDITOR.N1.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.N3.CAPTION
+msgctxt "TFRMEDITOR.N3.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMEDITOR.N4.CAPTION
+msgctxt "TFRMEDITOR.N4.CAPTION"
+msgid "-"
+msgstr ""
 
 #: TFRMEDITOR.TBSEPARATOR1.CAPTION
 msgid "tbSeparator1"
@@ -981,6 +1035,7 @@ msgid "Attributes"
 msgstr "Принадлежности"
 
 #: TFRMFINDDLG.BTNCLOSE.CAPTION
+msgctxt "TFRMFINDDLG.BTNCLOSE.CAPTION"
 msgid "&Close"
 msgstr "&Затваряне"
 
@@ -1970,19 +2025,44 @@ msgstr "Само на файлове от вид:"
 msgid "Move %s:"
 msgstr "Преместване на %s:"
 
-#: TFRMMULTIRENAME.BTNCANCEL.CAPTION
-msgctxt "TFRMMULTIRENAME.BTNCANCEL.CAPTION"
-msgid "Cancel"
-msgstr "Отказ"
+#: TFRMMULTIRENAME.BTNCLOSE.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNCLOSE.CAPTION"
+msgid "&Close"
+msgstr "&Затваряне"
 
-#: TFRMMULTIRENAME.BTNOK.CAPTION
-msgctxt "TFRMMULTIRENAME.BTNOK.CAPTION"
-msgid "OK"
-msgstr "Добре"
+#: TFRMMULTIRENAME.BTNDELETEPRESET.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNDELETEPRESET.CAPTION"
+msgid "&Delete"
+msgstr "Из&триване"
+
+#: TFRMMULTIRENAME.BTNEXTMENU.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNEXTMENU.CAPTION"
+msgid "..."
+msgstr ""
+
+#: TFRMMULTIRENAME.BTNLOADPRESET.CAPTION
+msgid "&Load"
+msgstr ""
+
+#: TFRMMULTIRENAME.BTNNAMEMENU.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNNAMEMENU.CAPTION"
+msgid "..."
+msgstr ""
+
+#: TFRMMULTIRENAME.BTNRENAME.CAPTION
+msgid "&Rename"
+msgstr ""
 
 #: TFRMMULTIRENAME.BTNRESTORE.CAPTION
-msgid "Restore All"
+#, fuzzy
+#| msgid "Restore All"
+msgid "Reset all"
 msgstr "Връщане на всички"
+
+#: TFRMMULTIRENAME.BTNSAVEPRESET.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNSAVEPRESET.CAPTION"
+msgid "&Save"
+msgstr "&Съхраняване"
 
 #: TFRMMULTIRENAME.CAPTION
 msgid "MultiRename"
@@ -1994,19 +2074,29 @@ msgid "Log"
 msgstr "Дневник"
 
 #: TFRMMULTIRENAME.CBREGEXP.CAPTION
+#, fuzzy
+#| msgid "&Regular expressions"
 msgctxt "TFRMMULTIRENAME.CBREGEXP.CAPTION"
-msgid "&Regular expressions"
+msgid "Regular e&xpressions"
 msgstr "&Обичайни изрази"
 
 #: TFRMMULTIRENAME.CBUSESUBS.CAPTION
-msgid "Use substitution"
+#, fuzzy
+#| msgid "Use substitution"
+msgid "&Use substitution"
 msgstr "Използване на заместване"
 
 #: TFRMMULTIRENAME.CMBXWIDTH.TEXT
 msgid "01"
 msgstr "01"
 
+#: TFRMMULTIRENAME.EDINTERVAL.TEXT
+msgctxt "TFRMMULTIRENAME.EDINTERVAL.TEXT"
+msgid "1"
+msgstr "1"
+
 #: TFRMMULTIRENAME.EDPOC.TEXT
+msgctxt "TFRMMULTIRENAME.EDPOC.TEXT"
 msgid "1"
 msgstr "1"
 
@@ -2022,10 +2112,6 @@ msgstr "Брояч"
 msgid "Find && Replace"
 msgstr "Търсене  &и замяна"
 
-#: TFRMMULTIRENAME.GBFONTSTYLE.CAPTION
-msgid "File Name Style"
-msgstr "ГлАВноСт на имената"
-
 #: TFRMMULTIRENAME.GBLOG.CAPTION
 msgid "Log Result"
 msgstr "Име на дневника"
@@ -2034,12 +2120,20 @@ msgstr "Име на дневника"
 msgid "Mask"
 msgstr "Имена"
 
+#: TFRMMULTIRENAME.GBPRESETS.CAPTION
+msgid "Presets"
+msgstr ""
+
 #: TFRMMULTIRENAME.LBEXT.CAPTION
-msgid "Extension"
+#, fuzzy
+#| msgid "Extension"
+msgid "&Extension"
 msgstr "Разширение"
 
 #: TFRMMULTIRENAME.LBFIND.CAPTION
-msgid "Find..."
+#, fuzzy
+#| msgid "Find..."
+msgid "&Find..."
 msgstr "Търсене..."
 
 #: TFRMMULTIRENAME.LBINTERVAL.CAPTION
@@ -2047,11 +2141,15 @@ msgid "Interval"
 msgstr "Промеждутък"
 
 #: TFRMMULTIRENAME.LBNAME.CAPTION
-msgid "File Name"
+#, fuzzy
+#| msgid "File Name"
+msgid "File &Name"
 msgstr "Файлово име"
 
 #: TFRMMULTIRENAME.LBREPLACE.CAPTION
-msgid "Replace..."
+#, fuzzy
+#| msgid "Replace..."
+msgid "Re&place..."
 msgstr "Замяна..."
 
 #: TFRMMULTIRENAME.LBSTNB.CAPTION
@@ -2139,6 +2237,21 @@ msgstr "[Y] Година"
 msgctxt "TFRMMULTIRENAME.N1.CAPTION"
 msgid "-"
 msgstr "-"
+
+#: TFRMMULTIRENAME.N2.CAPTION
+msgctxt "TFRMMULTIRENAME.N2.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMMULTIRENAME.N3.CAPTION
+msgctxt "TFRMMULTIRENAME.N3.CAPTION"
+msgid "-"
+msgstr ""
+
+#: TFRMMULTIRENAME.N4.CAPTION
+msgctxt "TFRMMULTIRENAME.N4.CAPTION"
+msgid "-"
+msgstr ""
 
 #: TFRMOPTIONS.BBTNADDCATEGORY.CAPTION
 msgctxt "TFRMOPTIONS.BBTNADDCATEGORY.CAPTION"
