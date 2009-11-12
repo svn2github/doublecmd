@@ -1219,6 +1219,26 @@ msgstr "Добавяне"
 msgid "Add manually"
 msgstr "Ръчно добавяне"
 
+#: TFRMHOTDIR.BTNCANCEL.CAPTION
+msgctxt "TFRMHOTDIR.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Отказ"
+
+#: TFRMHOTDIR.BTNDELETE.CAPTION
+msgctxt "TFRMHOTDIR.BTNDELETE.CAPTION"
+msgid "Delete"
+msgstr "Изтриване"
+
+#: TFRMHOTDIR.BTNEDIT.CAPTION
+msgctxt "TFRMHOTDIR.BTNEDIT.CAPTION"
+msgid "Edit"
+msgstr "Обработка"
+
+#: TFRMHOTDIR.BTNOK.CAPTION
+msgctxt "TFRMHOTDIR.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&Добре"
+
 #: TFRMHOTDIR.CAPTION
 msgid "Directory Hotlist"
 msgstr "Бързодостъпни папки"
@@ -3639,6 +3659,18 @@ msgstr "Готово:"
 #: ulng.rsmsglogsymlink
 msgid "Create symlink %s"
 msgstr "Създаване на мека връзка %s"
+
+#: ulng.rsmsgmanualaddhotdir
+msgid "Manually add hot path"
+msgstr ""
+
+#: ulng.rsmsgmanualedithotdir
+msgid "Manualy edit hot path"
+msgstr ""
+
+#: ulng.rsmsgmanualhotdirquery
+msgid "Enter name and path (format name=path):"
+msgstr ""
 
 #: ulng.rsmsgnewfile
 msgid "New file"

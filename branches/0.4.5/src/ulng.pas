@@ -80,6 +80,9 @@ resourcestring
   rsMsgInvalidFilename = 'Invalid filename';
   rsMsgSelectOnlyCheckSumFiles = 'Please select only check sum files!';
   rsMsgPresetAlreadyExists = 'Preset "%s" already exists. Overwrite?';
+  rsMsgManualAddHotDir = 'Manually add hot path';
+  rsMsgManualEditHotDir = 'Manualy edit hot path';
+  rsMsgManualHotDirQuery = 'Enter name and path (format name=path):';
   // for context menu
   rsMnuActions = 'Actions';
   rsMnuMount = 'Mount';

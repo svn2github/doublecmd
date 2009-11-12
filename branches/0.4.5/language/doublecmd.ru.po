@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.3.5 alpha\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2009-07-09 00:31+0300\n"
+"PO-Revision-Date: 2009-11-12 15:00+0300\n"
 "Last-Translator: Alexander Koblov <Alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -118,11 +118,11 @@ msgstr ""
 
 #: TFCOLUMNSSETCONF.CBOVERCOLOR.CAPTION
 msgid "Allow Overcolor"
-msgstr ""
+msgstr "Раскраска файлов"
 
 #: TFCOLUMNSSETCONF.CHKUSECUSTOMVIEW.CAPTION
 msgid "Use custom font and color"
-msgstr ""
+msgstr "Использовать шрифты и цвета"
 
 #: TFCOLUMNSSETCONF.COMBOBOX1.TEXT
 msgctxt "TFCOLUMNSSETCONF.COMBOBOX1.TEXT"
@@ -1215,6 +1215,26 @@ msgstr "Добавить"
 msgid "Add manually"
 msgstr "Добавить вручную"
 
+#: TFRMHOTDIR.BTNCANCEL.CAPTION
+msgctxt "TFRMHOTDIR.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Отмена"
+
+#: TFRMHOTDIR.BTNDELETE.CAPTION
+msgctxt "TFRMHOTDIR.BTNDELETE.CAPTION"
+msgid "Delete"
+msgstr "Удалить"
+
+#: TFRMHOTDIR.BTNEDIT.CAPTION
+msgctxt "TFRMHOTDIR.BTNEDIT.CAPTION"
+msgid "Edit"
+msgstr "Редактировать"
+
+#: TFRMHOTDIR.BTNOK.CAPTION
+msgctxt "TFRMHOTDIR.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&ОК"
+
 #: TFRMHOTDIR.CAPTION
 msgid "Directory Hotlist"
 msgstr "Избранные каталоги"
@@ -1483,7 +1503,7 @@ msgstr "Упаковать..."
 
 #: TFRMMAIN.ACTPANELSSPLITTERPERPOS.CAPTION
 msgid "Set splitter position"
-msgstr ""
+msgstr "Установить позицию разделителя"
 
 #: TFRMMAIN.ACTPASTEFROMCLIPBOARD.CAPTION
 msgid "&Paste"
@@ -1562,7 +1582,7 @@ msgstr "&Атрибуты"
 
 #: TFRMMAIN.ACTSORTBYCOLUMN.CAPTION
 msgid "Sort by column"
-msgstr ""
+msgstr "Сортировать по колонке"
 
 #: TFRMMAIN.ACTSORTBYDATE.CAPTION
 msgid "Sort by date"
@@ -1632,7 +1652,7 @@ msgstr ""
 
 #: TFRMMAIN.BTNLEFTDIRECTORYHOTLIST.HINT
 msgid "Directory hotlist"
-msgstr ""
+msgstr "Избранные каталоги"
 
 #: TFRMMAIN.BTNLEFTHOME.CAPTION
 msgctxt "TFRMMAIN.BTNLEFTHOME.CAPTION"
@@ -3173,7 +3193,7 @@ msgstr "&Найти..."
 
 #: TFRMVIEWER.MISEARCHNEXT.CAPTION
 msgid "Search next"
-msgstr ""
+msgstr "Найти далее"
 
 #: TFRMVIEWER.MISELECTALL.CAPTION
 msgctxt "TFRMVIEWER.MISELECTALL.CAPTION"
@@ -3385,7 +3405,7 @@ msgstr "Просмотрено: %d"
 
 #: ulng.rsfindscanning
 msgid "Scanning"
-msgstr ""
+msgstr "Сканирование"
 
 #: ulng.rsfindwherebeg
 msgid "Begin at"
@@ -3636,6 +3656,18 @@ msgstr "Выполнено: "
 msgid "Create symlink %s"
 msgstr "Создание символьной ссылки %s"
 
+#: ulng.rsmsgmanualaddhotdir
+msgid "Manually add hot path"
+msgstr ""
+
+#: ulng.rsmsgmanualedithotdir
+msgid "Manualy edit hot path"
+msgstr ""
+
+#: ulng.rsmsgmanualhotdirquery
+msgid "Enter name and path (format name=path):"
+msgstr "Введите имя и путь (формат имя=путь):"
+
 #: ulng.rsmsgnewfile
 msgid "New file"
 msgstr "Новый файл"
@@ -3678,7 +3710,7 @@ msgstr "Удалить %s"
 
 #: ulng.rsmsgpresetalreadyexists
 msgid "Preset \"%s\" already exists. Overwrite?"
-msgstr ""
+msgstr "Шаблон \"%s\" существует. Перезаписать?"
 
 #: ulng.rsmsgrenfldr
 msgid "Rename/move %d selected files/directories?"
