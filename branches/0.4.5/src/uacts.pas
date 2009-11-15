@@ -782,14 +782,14 @@ begin
   begin
     if PanelMode = pmDirectory then
       Screen.Cursor:= crHourGlass;
-    if IsItemValid(GetActiveItem) then
+    if Assigned(GetActiveItem) then
     try
       ChooseFile(GetActiveItem);
       ActiveFrame.UpDatelblInfo;
     finally
       ActiveFrame.dgPanel.Invalidate;
-      Screen.Cursor:= crDefault;
     end;
+    Screen.Cursor:= crDefault;
   end;
 end;
 
