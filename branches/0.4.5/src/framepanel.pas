@@ -803,13 +803,7 @@ begin
             Execute/open selected file/directory
             if the user press ENTER during QuickSearch
         }
-        try
-           pnlFile.ChooseFile(pnlFile.GetActiveItem);
-           UpDatelblInfo;
-        finally
-           dgPanel.Invalidate;
-           Screen.Cursor:=crDefault;
-        end;
+        Actions.cm_Open();
         {LaBero end}
       end;
   end;
@@ -1410,15 +1404,7 @@ begin
      (Point.Y >= dgPanel.GridHeight) or
      IsEmpty then Exit;
 
-  if pnlFile.PanelMode = pmDirectory then
-    Screen.Cursor:=crHourGlass;
-  try
-    pnlFile.ChooseFile(pnlFile.GetActiveItem);
-    UpDatelblInfo;
-  finally
-    dgPanel.Invalidate;
-    Screen.Cursor:=crDefault;
-  end;
+  Actions.cm_Open();
 
 {$IFDEF LCLGTK2}
   dgPanel.fLastDoubleClickTime := Now;

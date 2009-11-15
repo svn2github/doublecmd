@@ -778,10 +778,18 @@ end;
 
 procedure TActs.cm_Open(param:string);
 begin
-  with frmMain.ActiveFrame.pnlFile do
+  with frmMain, frmMain.ActiveFrame.pnlFile do
   begin
+    if PanelMode = pmDirectory then
+      Screen.Cursor:= crHourGlass;
     if IsItemValid(GetActiveItem) then
+    try
       ChooseFile(GetActiveItem);
+      ActiveFrame.UpDatelblInfo;
+    finally
+      ActiveFrame.dgPanel.Invalidate;
+      Screen.Cursor:= crDefault;
+    end;
   end;
 end;
 
