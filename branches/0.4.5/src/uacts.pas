@@ -2373,7 +2373,7 @@ begin
         uClipboard.ClipboardCut:
         begin
           if ActiveFrame.pnlFile.PanelMode in [pmArchive, pmVFS] then
-            RenameFile(FileList, ActiveFrame, ActiveFrame.ActiveDir)
+            RenameFile(FileList, ActiveFrame, ActiveFrame.ActiveDir, True)
           else if ActiveFrame.pnlFile.PanelMode = pmDirectory then
             RunRenameThread(FileList, ActiveFrame.ActiveDir, '*.*');
         end;
@@ -2381,7 +2381,7 @@ begin
         uClipboard.ClipboardCopy:
         begin
           if ActiveFrame.pnlFile.PanelMode in [pmArchive, pmVFS] then
-            CopyFile(FileList, ActiveFrame, ActiveFrame.ActiveDir)
+            CopyFile(FileList, ActiveFrame, ActiveFrame.ActiveDir, True)
           else if ActiveFrame.pnlFile.PanelMode = pmDirectory then
             RunCopyThread(FileList, ActiveFrame.ActiveDir, '*.*', False);
         end

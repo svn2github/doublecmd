@@ -460,8 +460,8 @@ type
     procedure RunRenameThread(srcFileList: TFileList; sDestPath: String; sDestMask: String);
     procedure RunCopyThread(srcFileList: TFileList; sDestPath: String; sDestMask: String;
                             bDropReadOnlyFlag: Boolean);
-    procedure RenameFile(srcFileList: TFileList; dstFramePanel: TFrameFilePanel; sDestPath: String);
-    procedure CopyFile(srcFileList: TFileList; dstFramePanel: TFrameFilePanel; sDestPath: String);
+    procedure RenameFile(srcFileList: TFileList; dstFramePanel: TFrameFilePanel; sDestPath: String; bShowDialog: Boolean);
+    procedure CopyFile(srcFileList: TFileList; dstFramePanel: TFrameFilePanel; sDestPath: String; bShowDialog: Boolean);
     procedure RenameFile(sDestPath:String; bShowDialog: Boolean); // this is for F6 and Shift+F6
     procedure CopyFile(sDestPath:String; bShowDialog: Boolean); //  this is for F5 and Shift+F5
     procedure GetDestinationPathAndMask(EnteredPath: String; BaseDir: String;
@@ -1851,7 +1851,7 @@ end;
 
 (* Used for drag&drop move from external application *)
 // Frees srcFileList automatically.
-procedure TfrmMain.RenameFile(srcFileList: TFileList; dstFramePanel: TFrameFilePanel; sDestPath: String);
+procedure TfrmMain.RenameFile(srcFileList: TFileList; dstFramePanel: TFrameFilePanel; sDestPath: String; bShowDialog: Boolean);
 var
   sDstMaskTemp: String;
   sCopyQuest: String;
@@ -1867,23 +1867,28 @@ begin
       sDestPath:= sDestPath + '*.*';
     end;
 
-  with TfrmMoveDlg.Create(Application) do
+  if bShowDialog then
   begin
-    try
-      edtDst.Text:= sDestPath;
-      lblMoveSrc.Caption:= sCopyQuest;
-      if ShowModal = mrCancel then
-      begin
-         FreeAndNil(srcFileList);
-         Exit; // throught finally
+    with TfrmMoveDlg.Create(Application) do
+    begin
+      try
+        edtDst.Text:= sDestPath;
+        lblMoveSrc.Caption:= sCopyQuest;
+        if ShowModal = mrCancel then
+        begin
+           FreeAndNil(srcFileList);
+           Exit; // throught finally
+        end;
+
+        sDestPath := edtDst.Text;
+
+      finally
+        Free;
       end;
-
-      GetDestinationPathAndMask(edtDst.Text, dstFramePanel.ActiveDir, sDestPath, sDstMaskTemp);
-
-    finally
-      Free;
     end;
   end;
+
+  GetDestinationPathAndMask(sDestPath, dstFramePanel.ActiveDir, sDestPath, sDstMaskTemp);
 
   (* Move files *)
 
@@ -1893,7 +1898,7 @@ end;
 
 (* Used for drag&drop copy from external application *)
 // Frees srcFileList automatically.
-procedure TfrmMain.CopyFile(srcFileList: TFileList; dstFramePanel: TFrameFilePanel; sDestPath: String);
+procedure TfrmMain.CopyFile(srcFileList: TFileList; dstFramePanel: TFrameFilePanel; sDestPath: String; bShowDialog: Boolean);
 var
   sCopyQuest,
   sDstMaskTemp: String;
@@ -1927,26 +1932,32 @@ begin
       sDestPath:= sDestPath + '*.*';
     end;
 
-  with TfrmCopyDlg.Create(Application) do
+  blDropReadOnlyFlag := gDropReadOnlyFlag;
+
+  if bShowDialog then
   begin
-    try
-      edtDst.Text:=sDestPath;
-      lblCopySrc.Caption := sCopyQuest;
-      cbDropReadOnlyFlag.Checked := gDropReadOnlyFlag;
-      cbDropReadOnlyFlag.Visible := (dstFramePanel.pnlFile.PanelMode = pmDirectory);
-      if ShowModal = mrCancel then
-      begin
-        FreeAndNil(srcFileList);
-        Exit; // throught finally
+    with TfrmCopyDlg.Create(Application) do
+    begin
+      try
+        edtDst.Text:=sDestPath;
+        lblCopySrc.Caption := sCopyQuest;
+        cbDropReadOnlyFlag.Checked := gDropReadOnlyFlag;
+        cbDropReadOnlyFlag.Visible := (dstFramePanel.pnlFile.PanelMode = pmDirectory);
+        if ShowModal = mrCancel then
+        begin
+          FreeAndNil(srcFileList);
+          Exit; // throught finally
+        end;
+
+        sDestPath := edtDst.Text;
+        blDropReadOnlyFlag := cbDropReadOnlyFlag.Checked;
+      finally
+        Free;
       end;
+    end; //with
+  end;
 
-      GetDestinationPathAndMask(edtDst.Text, dstFramePanel.ActiveDir, sDestPath, sDstMaskTemp);
-
-      blDropReadOnlyFlag := cbDropReadOnlyFlag.Checked;
-    finally
-      Free;
-    end;
-  end; //with
+  GetDestinationPathAndMask(sDestPath, dstFramePanel.ActiveDir, sDestPath, sDstMaskTemp);
 
   (* Copy files between VFS and real file system *)
 

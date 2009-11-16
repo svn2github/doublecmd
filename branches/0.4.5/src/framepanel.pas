@@ -2223,19 +2223,21 @@ begin
 
         ddoMove:
           if GetDragDropType = ddtInternal then
-            frmMain.RenameFile(TargetDir, True)
+            frmMain.RenameFile(TargetDir, gShowDialogOnDragDrop)
           else
           begin
-            frmMain.RenameFile(FileList, TargetPanel, TargetDir); // will free FileList
+            frmMain.RenameFile(FileList, TargetPanel, TargetDir,
+                               gShowDialogOnDragDrop); // will free FileList
             FileList := nil;
           end;
 
         ddoCopy:
           if GetDragDropType = ddtInternal then
-            frmMain.CopyFile(TargetDir, True)
+            frmMain.CopyFile(TargetDir, gShowDialogOnDragDrop)
           else
           begin
-            frmMain.CopyFile(FileList, TargetPanel, TargetDir);   // will free FileList
+            frmMain.CopyFile(FileList, TargetPanel, TargetDir,
+                             gShowDialogOnDragDrop);   // will free FileList
             FileList := nil;
           end;
 
