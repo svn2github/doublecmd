@@ -141,12 +141,14 @@ const cf_Null=0;
    procedure cm_ToggleLockTab(param: string='');
    procedure cm_ToggleLockDcaTab(param: string='');
    procedure cm_Copy(param: string='');
+   procedure cm_CopyNoAsk(param: string='');
    procedure cm_Delete(param: string='');
    procedure cm_CheckSumCalc(param:string);
    procedure cm_CheckSumVerify(param:string);
    procedure cm_Edit(param: string='');
    procedure cm_MakeDir(param: string='');
    procedure cm_Rename(param: string='');
+   procedure cm_RenameNoAsk(param: string='');
    procedure cm_View(param: string='');
    procedure cm_CopyNamesToClip(param: string='');
    procedure cm_FocusCmdLine(param: string='');
@@ -1283,13 +1285,25 @@ end;
 procedure TActs.cm_Copy(param:string);
 begin
   // Selection validation in CopyFile.
-  frmMain.CopyFile(frmMain.NotActiveFrame.ActiveDir);
+  frmMain.CopyFile(frmMain.NotActiveFrame.ActiveDir, True);
+end;
+
+procedure TActs.cm_CopyNoAsk(param:string);
+begin
+  // Selection validation in CopyFile.
+  frmMain.CopyFile(frmMain.NotActiveFrame.ActiveDir, False);
 end;
 
 procedure TActs.cm_Rename(param:string);
 begin
   // Selection validation in RenameFile.
-  frmMain.RenameFile(frmMain.NotActiveFrame.ActiveDir);
+  frmMain.RenameFile(frmMain.NotActiveFrame.ActiveDir, True);
+end;
+
+procedure TActs.cm_RenameNoAsk(param:string);
+begin
+  // Selection validation in RenameFile.
+  frmMain.RenameFile(frmMain.NotActiveFrame.ActiveDir, False);
 end;
 
 procedure TActs.cm_MakeDir(param:string);
@@ -2043,13 +2057,13 @@ end;
 procedure TActs.cm_CopySamePanel(param:string);
 begin
   // Selection validation in CopyFile.
-  frmMain.CopyFile('');
+  frmMain.CopyFile('', True);
 end;
 
 procedure TActs.cm_RenameOnly(param:string);
 begin
   // Selection validation in RenameFile.
-  frmMain.RenameFile('');
+  frmMain.RenameFile('', True);
 end;
 
 procedure TActs.cm_EditNew(param:string);
