@@ -86,11 +86,8 @@ begin
           // if in archive
           if ActiveFrame.pnlFile.PanelMode = pmArchive then
             begin
-              if CurrentVFS.FindModule(CurrentVFS.ArcFullName) then
-              begin
-                CurrentVFS.VFSmodule.VFSCopyOutEx(fl, sDestPath, 0);
-                fl := nil; // VFSCopyOutEx handles freeing it
-              end;
+              CurrentVFS.VFSmodule.VFSCopyOutEx(fl, sDestPath, 0);
+              fl := nil; // VFSCopyOutEx handles freeing it
             end
           else
           // if in real directory
