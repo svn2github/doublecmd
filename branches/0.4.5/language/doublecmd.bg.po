@@ -1392,6 +1392,10 @@ msgstr "Запомняне на файловото/ите име/на и пъл�
 msgid "Copy &Filename(s) to Clipboard"
 msgstr "Запомняне на &файловото/ите име/на в кошницата"
 
+#: TFRMMAIN.ACTCOPYNOASK.CAPTION
+msgid "Copy files without asking for confirmation"
+msgstr ""
+
 #: TFRMMAIN.ACTCOPYSAMEPANEL.CAPTION
 msgid "Copy to same panel"
 msgstr "Презапис в същото крило"
@@ -1592,6 +1596,10 @@ msgstr "Премахване на подпрозореца"
 #: TFRMMAIN.ACTRENAME.CAPTION
 msgid "Move F6"
 msgstr "Местене F6"
+
+#: TFRMMAIN.ACTRENAMENOASK.CAPTION
+msgid "Move/Rename files without asking for confirmation"
+msgstr ""
 
 #: TFRMMAIN.ACTRENAMEONLY.CAPTION
 msgctxt "TFRMMAIN.ACTRENAMEONLY.CAPTION"

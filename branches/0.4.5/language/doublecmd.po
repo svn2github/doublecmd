@@ -1388,6 +1388,10 @@ msgstr ""
 msgid "Copy &Filename(s) to Clipboard"
 msgstr ""
 
+#: TFRMMAIN.ACTCOPYNOASK.CAPTION
+msgid "Copy files without asking for confirmation"
+msgstr ""
+
 #: TFRMMAIN.ACTCOPYSAMEPANEL.CAPTION
 msgid "Copy to same panel"
 msgstr ""
@@ -1587,6 +1591,10 @@ msgstr ""
 
 #: TFRMMAIN.ACTRENAME.CAPTION
 msgid "Move F6"
+msgstr ""
+
+#: TFRMMAIN.ACTRENAMENOASK.CAPTION
+msgid "Move/Rename files without asking for confirmation"
 msgstr ""
 
 #: TFRMMAIN.ACTRENAMEONLY.CAPTION

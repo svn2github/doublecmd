@@ -1396,6 +1396,10 @@ msgstr "Копіювати ім'я файла разом з повним шля�
 msgid "Copy &Filename(s) to Clipboard"
 msgstr "Копіювати ім'я файла(ів) в буфер"
 
+#: TFRMMAIN.ACTCOPYNOASK.CAPTION
+msgid "Copy files without asking for confirmation"
+msgstr ""
+
 #: TFRMMAIN.ACTCOPYSAMEPANEL.CAPTION
 msgid "Copy to same panel"
 msgstr "Копіювати в ту ж панель"
@@ -1596,6 +1600,10 @@ msgstr "Видалити вкладку"
 #: TFRMMAIN.ACTRENAME.CAPTION
 msgid "Move F6"
 msgstr "Перемістити F6"
+
+#: TFRMMAIN.ACTRENAMENOASK.CAPTION
+msgid "Move/Rename files without asking for confirmation"
+msgstr ""
 
 #: TFRMMAIN.ACTRENAMEONLY.CAPTION
 msgctxt "TFRMMAIN.ACTRENAMEONLY.CAPTION"

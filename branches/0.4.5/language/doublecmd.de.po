@@ -1384,6 +1384,10 @@ msgstr "Kopiere Dateinamen mit komplettem Pfad"
 msgid "Copy &Filename(s) to Clipboard"
 msgstr "Kopiere Dateinamen in die Zwischenablage"
 
+#: TFRMMAIN.ACTCOPYNOASK.CAPTION
+msgid "Copy files without asking for confirmation"
+msgstr ""
+
 #: TFRMMAIN.ACTCOPYSAMEPANEL.CAPTION
 msgid "Copy to same panel"
 msgstr "Kopiere in gleichen Ordner"
@@ -1584,6 +1588,10 @@ msgstr "&Entferne Reiter"
 #: TFRMMAIN.ACTRENAME.CAPTION
 msgid "Move F6"
 msgstr "Verschieben F6"
+
+#: TFRMMAIN.ACTRENAMENOASK.CAPTION
+msgid "Move/Rename files without asking for confirmation"
+msgstr ""
 
 #: TFRMMAIN.ACTRENAMEONLY.CAPTION
 msgctxt "TFRMMAIN.ACTRENAMEONLY.CAPTION"
