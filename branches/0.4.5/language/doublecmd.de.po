@@ -115,7 +115,7 @@ msgstr "Hintergrund:"
 
 #: TFCOLUMNSSETCONF.CBCURSORBORDER.CAPTION
 msgid "Cursor border"
-msgstr ""
+msgstr "Cursor-Begrenzung"
 
 #: TFCOLUMNSSETCONF.CBOVERCOLOR.CAPTION
 msgid "Allow Overcolor"
@@ -123,7 +123,7 @@ msgstr "Erlaube Farb-Überschneidung"
 
 #: TFCOLUMNSSETCONF.CHKUSECUSTOMVIEW.CAPTION
 msgid "Use custom font and color"
-msgstr ""
+msgstr "Benutzer-definierte Schriftart und -farbe"
 
 #: TFCOLUMNSSETCONF.COMBOBOX1.TEXT
 msgctxt "TFCOLUMNSSETCONF.COMBOBOX1.TEXT"
@@ -566,11 +566,11 @@ msgstr "&Kodiere"
 
 #: TFRMEDITOR.MIENCODINGIN.CAPTION
 msgid "Open as"
-msgstr ""
+msgstr "Öffne als"
 
 #: TFRMEDITOR.MIENCODINGOUT.CAPTION
 msgid "Save as"
-msgstr ""
+msgstr "Speichern unter"
 
 #: TFRMEDITOR.MIFILE.CAPTION
 msgctxt "TFRMEDITOR.MIFILE.CAPTION"
@@ -1120,7 +1120,7 @@ msgstr "Mehr"
 
 #: TFRMFINDDLG.CBNOTHISTEXT.CAPTION
 msgid "Find files N&OT containing the text"
-msgstr "Suche Datei die NICHT den Text enthalten"
+msgstr "Suche Datei(en) die NICHT den Text enthalten"
 
 #: TFRMFINDDLG.CBNOTOLDERTHAN.CAPTION
 msgid "Not older than:"
@@ -1583,7 +1583,7 @@ msgstr "&Entferne Reiter"
 
 #: TFRMMAIN.ACTRENAME.CAPTION
 msgid "Move F6"
-msgstr "Umbenennen F6"
+msgstr "Verschieben F6"
 
 #: TFRMMAIN.ACTRENAMEONLY.CAPTION
 msgctxt "TFRMMAIN.ACTRENAMEONLY.CAPTION"
@@ -2034,7 +2034,7 @@ msgstr ""
 
 #: TFRMMULTIRENAME.BTNLOADPRESET.CAPTION
 msgid "&Load"
-msgstr ""
+msgstr "&Laden"
 
 #: TFRMMULTIRENAME.BTNNAMEMENU.CAPTION
 msgctxt "TFRMMULTIRENAME.BTNNAMEMENU.CAPTION"
@@ -2043,7 +2043,7 @@ msgstr ""
 
 #: TFRMMULTIRENAME.BTNRENAME.CAPTION
 msgid "&Rename"
-msgstr ""
+msgstr "&Umbenennen"
 
 #: TFRMMULTIRENAME.BTNRESTORE.CAPTION
 #, fuzzy
@@ -2114,7 +2114,7 @@ msgstr "Maske"
 
 #: TFRMMULTIRENAME.GBPRESETS.CAPTION
 msgid "Presets"
-msgstr ""
+msgstr "Voreinstellungen"
 
 #: TFRMMULTIRENAME.LBEXT.CAPTION
 #, fuzzy
@@ -2877,7 +2877,7 @@ msgstr "Dateisystem-PlugIns erlauben auf Dateisysteme oder externe Laufwerke zuz
 
 #: TFRMOPTIONS.LBLWIPEPASSNUMBER.CAPTION
 msgid "Number of wipe pass:"
-msgstr "Anzahl der Reinigungsdurchgänge"
+msgstr "Anzahl der Löschdurchgänge"
 
 #: TFRMOPTIONS.LBLWLXDESCRIPTION.CAPTION
 msgid "Viewer plugins allow to display file formats like images, spreadsheets, databases etc. in Viewer (F3, Ctrl+Q)"
@@ -3127,7 +3127,7 @@ msgstr "Entfernen"
 
 #: TFRMTWEAKPLUGIN.CAPTION
 msgid "Tweak plugin"
-msgstr "Anpass-PlugIn"
+msgstr "PlugIn anpassen"
 
 #: TFRMTWEAKPLUGIN.CBPK_CAPS_BY_CONTENT.CAPTION
 msgid "Detect archive type by content"
@@ -3302,7 +3302,7 @@ msgstr "Suchen"
 
 #: TFRMVIEWER.MISEARCHNEXT.CAPTION
 msgid "Search next"
-msgstr ""
+msgstr "Suche nächste(s)"
 
 #: TFRMVIEWER.MISELECTALL.CAPTION
 msgctxt "TFRMVIEWER.MISELECTALL.CAPTION"
@@ -3767,15 +3767,15 @@ msgstr "Erstelle symb. Link für %s"
 
 #: ulng.rsmsgmanualaddhotdir
 msgid "Manually add hot path"
-msgstr ""
+msgstr "Manuelles Hinzufügen eines bevorzugten Pfades"
 
 #: ulng.rsmsgmanualedithotdir
 msgid "Manualy edit hot path"
-msgstr ""
+msgstr "Manuelles Bearbeiten eines bevorzugten Pfades"
 
 #: ulng.rsmsgmanualhotdirquery
 msgid "Enter name and path (format name=path):"
-msgstr ""
+msgstr "Name und Pfad eingeben (in der Form NAME=PFAD)"
 
 #: ulng.rsmsgnewfile
 msgid "New file"
