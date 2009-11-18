@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.3.5 alpha\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2009-11-12 17:50+0300\n"
+"PO-Revision-Date: 2009-11-18 18:49+0300\n"
 "Last-Translator: Alexander Koblov <Alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1211,7 +1211,7 @@ msgstr "В каталоге:"
 
 #: TFRMFINDDLG.LBLFOUND.CAPTION
 msgid "Found"
-msgstr ""
+msgstr "Найден"
 
 #: TFRMFINDDLG.LBLINFO.CAPTION
 msgid "Windows: 'rahs' Unix: 'rwxrwxrwx'"
@@ -1390,7 +1390,7 @@ msgstr "Копировать имена &файлов в буфер"
 
 #: TFRMMAIN.ACTCOPYNOASK.CAPTION
 msgid "Copy files without asking for confirmation"
-msgstr ""
+msgstr "Копирует файлы без запроса подтверждения"
 
 #: TFRMMAIN.ACTCOPYSAMEPANEL.CAPTION
 msgid "Copy to same panel"
@@ -1485,7 +1485,7 @@ msgstr "Горячие клавиши"
 
 #: TFRMMAIN.ACTLEFTEQUALRIGHT.CAPTION
 msgid "Left &= Right"
-msgstr ""
+msgstr "Левая &= Правая"
 
 #: TFRMMAIN.ACTLEFTOPENDRIVES.CAPTION
 msgid "Open left drive list"
@@ -1542,7 +1542,7 @@ msgstr "Открыть"
 
 #: TFRMMAIN.ACTOPENARCHIVE.CAPTION
 msgid "Try open archive"
-msgstr ""
+msgstr "Попробовать открыть архив"
 
 #: TFRMMAIN.ACTOPENDIRINNEWTAB.CAPTION
 msgid "Open folder in new tab"
@@ -1595,7 +1595,7 @@ msgstr "Переместить F6"
 
 #: TFRMMAIN.ACTRENAMENOASK.CAPTION
 msgid "Move/Rename files without asking for confirmation"
-msgstr ""
+msgstr "Перемещает файлы без запроса подтверждения"
 
 #: TFRMMAIN.ACTRENAMEONLY.CAPTION
 msgctxt "TFRMMAIN.ACTRENAMEONLY.CAPTION"
@@ -1608,7 +1608,7 @@ msgstr "Обратный п&орядок"
 
 #: TFRMMAIN.ACTRIGHTEQUALLEFT.CAPTION
 msgid "Right &= Left"
-msgstr ""
+msgstr "Правая &= Левая"
 
 #: TFRMMAIN.ACTRIGHTOPENDRIVES.CAPTION
 msgid "Open right drive list"
@@ -1742,7 +1742,7 @@ msgstr ""
 
 #: TFRMMAIN.BTNLEFTTARGETEQUALSOURCE.HINT
 msgid "Show same directory in opposite panel"
-msgstr ""
+msgstr "Открыть текущий каталог в противоположной панели"
 
 #: TFRMMAIN.BTNLEFTUP.CAPTION
 msgctxt "TFRMMAIN.BTNLEFTUP.CAPTION"
@@ -1751,7 +1751,7 @@ msgstr ""
 
 #: TFRMMAIN.BTNLEFTUP.HINT
 msgid "Go to parent directory"
-msgstr ""
+msgstr "Перейти в вышестоящий диалог"
 
 #: TFRMMAIN.BTNRIGHTDIRECTORYHOTLIST.CAPTION
 msgctxt "TFRMMAIN.BTNRIGHTDIRECTORYHOTLIST.CAPTION"
@@ -2587,7 +2587,7 @@ msgstr "Имя &текущего каталога"
 
 #: TFRMOPTIONS.CBSHOWDIALOGONDRAGDROP.CAPTION
 msgid "Show confirmation dialog on drag&&drop operations"
-msgstr ""
+msgstr "Показывать диалог подтверждения при операциях Drag&&Drop"
 
 #: TFRMOPTIONS.CBSHOWDISKPANEL.CAPTION
 msgid "Show &drive buttons"
@@ -2781,7 +2781,7 @@ msgstr "Фильтр"
 
 #: TFRMOPTIONS.LBHOTKEYS.CAPTION
 msgid "Hot Keys"
-msgstr ""
+msgstr "Горячие клавиши"
 
 #: TFRMOPTIONS.LBLBACKGROUND2.CAPTION
 msgctxt "TFRMOPTIONS.LBLBACKGROUND2.CAPTION"
@@ -3518,7 +3518,7 @@ msgstr "Найдено: %d"
 
 #: ulng.rsfindsavetemplatecaption
 msgid "Save search template"
-msgstr ""
+msgstr "Сохранить поисковый шаблон"
 
 #: ulng.rsfindsavetemplatetitle
 msgid "Template name:"
@@ -3695,7 +3695,7 @@ msgstr "Ошибка синтаксиса в регулярном выражен
 
 #: ulng.rsmsgerrrename
 msgid "Cannot rename file %s to %s"
-msgstr ""
+msgstr "Невозможно переименовать файл %s в %s"
 
 #: ulng.rsmsgerrsmallbuf
 msgid "Buffer too small"
@@ -3867,7 +3867,7 @@ msgstr "Изменение метки диска"
 
 #: ulng.rsmsgtoomanyfilesselected
 msgid "Too many files selected."
-msgstr ""
+msgstr "Выделено слишком много файлов"
 
 #: ulng.rsmsgvolumelabel
 msgid "Volume label:"
