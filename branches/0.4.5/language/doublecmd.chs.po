@@ -2589,6 +2589,10 @@ msgstr ""
 msgid "Show &current directory"
 msgstr "显示当前目录(&C)"
 
+#: TFRMOPTIONS.CBSHOWDIALOGONDRAGDROP.CAPTION
+msgid "Show confirmation dialog on drag&&drop operations"
+msgstr ""
+
 #: TFRMOPTIONS.CBSHOWDISKPANEL.CAPTION
 msgid "Show &drive buttons"
 msgstr "显示驱动器栏(&D)"
