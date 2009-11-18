@@ -1386,7 +1386,7 @@ msgstr "Kopiere Dateinamen in die Zwischenablage"
 
 #: TFRMMAIN.ACTCOPYNOASK.CAPTION
 msgid "Copy files without asking for confirmation"
-msgstr ""
+msgstr "Kopiere Datei(en) ohne Bestätigung einzufordern"
 
 #: TFRMMAIN.ACTCOPYSAMEPANEL.CAPTION
 msgid "Copy to same panel"
@@ -1591,7 +1591,7 @@ msgstr "Verschieben F6"
 
 #: TFRMMAIN.ACTRENAMENOASK.CAPTION
 msgid "Move/Rename files without asking for confirmation"
-msgstr ""
+msgstr "Verschiebe / Benenne Datei(en) um ohne Bestätigung einzufordern"
 
 #: TFRMMAIN.ACTRENAMEONLY.CAPTION
 msgctxt "TFRMMAIN.ACTRENAMEONLY.CAPTION"
