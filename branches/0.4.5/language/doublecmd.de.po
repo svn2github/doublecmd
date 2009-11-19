@@ -272,7 +272,7 @@ msgstr "DoubleCommander"
 
 #: TFRMABOUT.LBLVERSION.CAPTION
 msgid "Version %s"
-msgstr "Version %s, deutsch by Vacon"
+msgstr "Version %s, \ndeutsch by Vacon"
 
 #: TFRMABOUT.OKBUTTON.CAPTION
 msgctxt "TFRMABOUT.OKBUTTON.CAPTION"
@@ -1464,7 +1464,7 @@ msgstr "Tei&le Datei"
 
 #: TFRMMAIN.ACTFOCUSCMDLINE.CAPTION
 msgid "Focus command line"
-msgstr "Focus auf die Kommandoze&ile"
+msgstr "Fokus auf die Kommandoze&ile"
 
 #: TFRMMAIN.ACTHARDLINK.CAPTION
 msgctxt "TFRMMAIN.ACTHARDLINK.CAPTION"
@@ -1489,7 +1489,7 @@ msgstr "Öffne linke Laufwerksliste"
 
 #: TFRMMAIN.ACTMAKEDIR.CAPTION
 msgid "MakeDir F7"
-msgstr "Verzeichnis erstellen F7"
+msgstr "Ordner erstellen F7"
 
 #: TFRMMAIN.ACTMARKCURRENTEXTENSION.CAPTION
 msgid "Select all with same extension"
@@ -2583,7 +2583,7 @@ msgstr "Zeige aktuelles Verzeichnis"
 
 #: TFRMOPTIONS.CBSHOWDIALOGONDRAGDROP.CAPTION
 msgid "Show confirmation dialog on drag&&drop operations"
-msgstr ""
+msgstr "Zeige Bestätigungs-Dialog bei Drag&&Drop-Vorgängen"
 
 #: TFRMOPTIONS.CBSHOWDISKPANEL.CAPTION
 msgid "Show &drive buttons"
@@ -3449,7 +3449,7 @@ msgstr "Entpacke..."
 
 #: ulng.rsdlgmv
 msgid "Move file(s)"
-msgstr "Datei(en) verschieben"
+msgstr "Datei(en) verschieben / umbenennen"
 
 #: ulng.rsdlgpack
 msgid "Packing..."
