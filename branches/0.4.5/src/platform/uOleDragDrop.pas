@@ -1147,6 +1147,7 @@ begin
         FileNames := GetDropFilenames(Medium.hGlobal);
 
         if Assigned(FileNames) then
+        begin
 
           for i := 0 to FileNames.Count - 1 do
 
@@ -1156,6 +1157,8 @@ begin
 
           end;
 
+          FreeAndNil(FileNames);
+        end;
 
         { Если указан обработчик, вызываем его }
 
