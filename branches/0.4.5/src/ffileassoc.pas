@@ -232,16 +232,17 @@ end;
 procedure TfrmFileAssoc.btnAddNewTypeClick(Sender: TObject);
 var
   ExtAction : TExtAction;
-  s:string;
+  s: string;
 begin
-  s:=InputBox(Caption, rsMsgEnterName, '');
+  s:= InputBox(Caption, rsMsgEnterName, '');
   if s='' then exit;
   ExtAction := TExtAction.Create;
+  ExtAction.IconIndex:= -1;
   ExtAction.IsChanged := True;
   with lbFileTypes do
   begin
-    ExtAction.Name :=s;
-    Items.AddObject(ExtAction.Name, ExtAction);
+    ExtAction.Name := s;
+    Items.AddObject(ExtAction.Name, nil);
     // add file type to TExts object
     Exts.AddItem(ExtAction);
     ItemIndex := Items.Count - 1;
@@ -480,7 +481,7 @@ begin
     FreeIcon(ItemIndex);
     Exts.Items[ItemIndex].Icon:= '';
     // and set IconIndex
-    Exts.Items[ItemIndex].IconIndex:= 0;
+    Exts.Items[ItemIndex].IconIndex:= -1;
     Exts.Items[ItemIndex].IsChanged:= True;
     Repaint;
   end;
