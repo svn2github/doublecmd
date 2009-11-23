@@ -53,6 +53,7 @@ const cf_Null=0;
    function GetList:TStrings;
    procedure EnableAction(ActionState: PActionState; Enabled: Boolean);
    class function Methods(AClass:TClass) : TStringList;
+   procedure ShowException(e: Exception);
   public
    FActionsState: TStringHashList;
    constructor Create;
@@ -498,6 +499,11 @@ begin
     EnableAction(PActionState(FActionsState.List[i]^.Data), Enable);
 end;
 
+procedure TActs.ShowException(e: Exception);
+begin
+  MessageDlg(Application.Title, rsMsgLogError + LineEnding + e.Message, mtError, [mbOK], 0);
+end;
+
 //------------------------------------------------------
 
 procedure TActs.DoRemoveTab(Notebook: TNotebook; PageIndex: Integer);
@@ -624,17 +630,23 @@ with frmMain, ActiveFrame do
     fl := TFileList.Create;  // ShowContextMenu frees 'fl'.
     CopyListSelectedExpandNames(pnlFile.FileList, fl, ActiveDir, False);
 
-    if param  = 'OnMouseClick' then
-      ShowContextMenu(frmMain, fl, Mouse.CursorPos.x, Mouse.CursorPos.y)
-    else
-      begin
-        Rect:= dgPanel.CellRect(0, dgPanel.Row);
-        Point.X:= Rect.Left + ((Rect.Right - Rect.Left) div 2);
-        Point.Y:= Rect.Top + ((Rect.Bottom - Rect.Top) div 2);
-        Point:= dgPanel.ClientToScreen(Point);
-        ShowContextMenu(frmMain, fl, Point.X, Point.Y)
-      end;
-    ActiveFrame.UnMarkAll;
+    try
+      if param  = 'OnMouseClick' then
+        ShowContextMenu(frmMain, fl, Mouse.CursorPos.x, Mouse.CursorPos.y)
+      else
+        begin
+          Rect:= dgPanel.CellRect(0, dgPanel.Row);
+          Point.X:= Rect.Left + ((Rect.Right - Rect.Left) div 2);
+          Point.Y:= Rect.Top + ((Rect.Bottom - Rect.Top) div 2);
+          Point:= dgPanel.ClientToScreen(Point);
+          ShowContextMenu(frmMain, fl, Point.X, Point.Y)
+        end;
+      ActiveFrame.UnMarkAll;
+
+    except
+      on e: EContextMenuException do
+        ShowException(e);
+    end;
   end;
 end;
 
