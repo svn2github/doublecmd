@@ -224,50 +224,54 @@ end;
 
 function GetIContextMenu(Handle : THandle; FileList : TFileList): IContextMenu;
 type
-  TPIDLArray = array[0..0] of PItemIDList;
-  PPIDLArray = ^TPIDLArray;
+  PPIDLArray = ^PItemIDList;
 
 var
   Folder,
   DesktopFolder: IShellFolder;
-  PathPIDL,
-  tmpPIDL: PItemIDList;
-  malloc: IMalloc;
+  PathPIDL: PItemIDList = nil;
+  tmpPIDL: PItemIDList = nil;
   S: WideString;
-  List: PPIDLArray;
+  List: PPIDLArray = nil;
   I : Integer;
-  pchEaten,
-  dwAttributes: ULONG;
+  pchEaten: ULONG;
+  dwAttributes: ULONG = 0;
 begin
   Result := nil;
-  if not Succeeded(SHGetMalloc(malloc)) then Exit;
-  if not Succeeded(SHGetDesktopFolder(DeskTopFolder)) then Exit;
 
+  OleCheck(SHGetDesktopFolder(DeskTopFolder));
   try
-    List := malloc.Alloc(SizeOf(PItemIDList)*FileList.Count);
+    List := CoTaskMemAlloc(SizeOf(PItemIDList)*FileList.Count);
+    ZeroMemory(List, SizeOf(PItemIDList)*FileList.Count);
+
     for I := 0 to FileList.Count - 1 do
       begin
-      //**********   if s <> sPath then
         S := UTF8Decode(FileList.GetItem(I)^.sPath);
-        
+
         OleCheck(DeskTopFolder.ParseDisplayName(Handle, nil, PWideChar(S), pchEaten, PathPIDL, dwAttributes));
         try
           OleCheck(DeskTopFolder.BindToObject(PathPIDL, nil, IID_IShellFolder, Folder));
         finally
-          malloc.Free(PathPIDL);
+          CoTaskMemFree(PathPIDL);
         end;
-      //*****************
 
-        S:=UTF8Decode(FileList.GetItem(I)^.sName);
+        S := UTF8Decode(FileList.GetItem(I)^.sName);
         OleCheck(Folder.ParseDisplayName(Handle, nil, PWideChar(S), pchEaten, tmpPIDL, dwAttributes));
-        List^[i] := tmpPIDL;
+        (List + i)^ := tmpPIDL;
       end;
 
     Folder.GetUIObjectOf(Handle, FileList.Count, PItemIDList(List^), IID_IContextMenu, nil, Result);
+
   finally
-    for I := 0 to FileList.Count - 1 do
-      malloc.Free(List^[i]);
-    malloc.Free(List);
+    if Assigned(List) then
+    begin
+      for I := 0 to FileList.Count - 1 do
+        if Assigned((List + i)^) then
+          CoTaskMemFree((List + i)^);
+      CoTaskMemFree(List);
+    end;
+
+    DesktopFolder._Release;
   end;
 end;
 {$ENDIF}
@@ -284,9 +288,8 @@ var
   hActionsSubMenu: HMENU = 0;
   cmd: UINT = 0;
   iCmd: Integer;
-  HR: HResult;
   cmici: TCMINVOKECOMMANDINFO;
-  bHandled : Boolean;
+  bHandled : Boolean = False;
   ZVerb: array[0..255] of char;
   sVerb : String;
 begin
@@ -295,9 +298,10 @@ begin
     if FileList.Count = 0 then Exit;
 
     contMenu := GetIContextMenu(Owner.Handle, FileList);
-    menu := CreatePopupMenu;
+    if Assigned(contMenu) then
     try
-      OleCheck( contMenu.QueryContextMenu(menu, 0, 1, $7FFF, CMF_EXPLORE or CMF_CANRENAME) );
+      menu := CreatePopupMenu;
+      OleCheck(contMenu.QueryContextMenu(menu, 0, 1, $7FFF, CMF_EXPLORE or CMF_CANRENAME));
       contMenu.QueryInterface(IID_IContextMenu2, ICM2); // to handle submenus.
       //------------------------------------------------------------------------------
       { Actions submenu }
@@ -357,9 +361,8 @@ begin
     if (cmd > 0) and (cmd < $1000) then
       begin
         iCmd := LongInt(Cmd) - 1;
-        HR := contMenu.GetCommandString(iCmd, GCS_VERBA, nil, ZVerb, SizeOf(ZVerb));
+        OleCheck(contMenu.GetCommandString(iCmd, GCS_VERBA, nil, ZVerb, SizeOf(ZVerb)));
         sVerb := StrPas(ZVerb);
-        bHandled := False;
 
         if SameText(sVerb, sCmdVerbDelete) then
           begin
@@ -676,17 +679,19 @@ begin
   try
     CopyListSelectedExpandNames(FileList, fl, aPath, False);
     contMenu := GetIContextMenu(frmMain.Handle, fl);
+    if Assigned(contMenu) then
+    begin
+      FillChar(cmici, sizeof(cmici), #0);
+      with cmici do
+        begin
+          cbSize := sizeof(cmici);
+          hwnd := frmMain.Handle;
+          lpVerb := 'properties';
+          nShow := SW_SHOWNORMAL;
+        end;
 
-    FillChar(cmici, sizeof(cmici), #0);
-    with cmici do
-      begin
-        cbSize := sizeof(cmici);
-        hwnd := frmMain.Handle;
-        lpVerb := 'properties';
-        nShow := SW_SHOWNORMAL;
-      end;
-
-    OleCheck(contMenu.InvokeCommand(cmici));
+      OleCheck(contMenu.InvokeCommand(cmici));
+    end;
 
   finally
     fl.Free;
