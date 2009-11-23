@@ -1339,7 +1339,7 @@ var
   I, J: Integer;
   WFXmodule : TWFXmodule;
   s,sPluginName : String;
-  tmpPc:Cardinal;
+  tmpPc: PtrUInt;
 begin
   odOpenDialog.Filter := 'File system plugins (*.wfx)|*.wfx';
   if odOpenDialog.Execute then
@@ -1350,14 +1350,14 @@ begin
     if WFXmodule.LoadModule(odOpenDialog.FileName) then
      begin
        DebugLn('WFXModule Loaded');
-       tmpPc:=WFXmodule.VFSMisc;
-       if (tmpPc)>0 then
+       tmpPc:= WFXmodule.VFSMisc;
+       if tmpPc > 0 then
         sPluginName := PChar(Pointer(tmpPc)) + '=' + SetCmdDirAsEnvVar(odOpenDialog.FileName)
        else
          begin
            DebugLn('WFX alternate name');
-           s:=ExtractFileName(odOpenDialog.FileName);
-           s:=copy(s,1,pos('.',s)-1);
+           s:= ExtractFileName(odOpenDialog.FileName);
+           s:= Copy(s,1,pos('.',s)-1);
            sPluginName := s + '=' + SetCmdDirAsEnvVar(odOpenDialog.FileName)
          end;
      end
