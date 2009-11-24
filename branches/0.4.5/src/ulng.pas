@@ -328,4 +328,8 @@ begin
   lngLoadLng(gPOFileName);
 end;
 
+finalization
+  if Assigned(LRSTranslator) then
+    FreeAndNil(LRSTranslator);
+
 end.
