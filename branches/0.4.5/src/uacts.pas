@@ -2223,7 +2223,13 @@ begin
         pmDirectory:
           try
             if SelectFileIfNoSelected(GetActiveItem) = True then
-              ShowFilePropertiesDialog(pnlFile.FileList, ActiveDir);
+              try
+                ShowFilePropertiesDialog(pnlFile.FileList, ActiveDir);
+              except
+                on e: EContextMenuException do
+                  ShowException(e);
+              end;
+
           finally
             frameLeft.RefreshPanel;
             frameRight.RefreshPanel;
