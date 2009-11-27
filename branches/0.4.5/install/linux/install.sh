@@ -64,7 +64,7 @@ cp -a plugins/dsx/DSXLocate/lib/DSXLocate.dsx  $DC_INSTALL_DIR/plugins/dsx/DSXLo
 if [ -z $1 ]
   then
     # Copy libraries
-    if [ "$(fpc -iTP)" = "x86_64" ]
+    if [ "$CPU_TARGET" = "x86_64" ]
       then
         install -m 644 *.so           /usr/lib64/
       else
