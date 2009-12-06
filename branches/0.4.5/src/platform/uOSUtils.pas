@@ -891,13 +891,17 @@ begin
          else
            DriveType := dtFlash;
        end;
-     if (DriveType <> dtFloppy) and (DriveType <> dtNetwork) then
-       DriveLabel := mbGetVolumeLabel(Name, True);
+    case DriveType of
+     dtFloppy:
+       DriveLabel:= Path;
+     dtNetwork:
+       DriveLabel:= mbGetRemoteFileName(Path);
+     else
+       DriveLabel:= mbGetVolumeLabel(Name, True);
+     end;
     end;
   end;
-
 end;
-
 {$ELSE}
   function CheckMountEntry(DriveList: TList; MountEntry: PMountEntry): Boolean;
   var
@@ -963,6 +967,7 @@ begin
          begin
            Path := StrPas(pme.mnt_dir);
            Path := ExcludeTrailingPathDelimiter(Path);
+           DriveLabel := Path;
            Name := ExtractFileName(Path);
            if Name = '' then
              Name := Path;
