@@ -1,0 +1,1225 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: sstpr@narod.ru <sstpr@narod.ru>\n"
+"Language-Team:  <sstpr@narod.ru>\n"
+"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Country: BULGARIA\n"
+
+#: lclstrconsts.hhshelpbrowsernotexecutable
+msgid "Browser %s%s%s not executable."
+msgstr ""
+
+#: lclstrconsts.hhshelpbrowsernotfound
+msgid "Browser %s%s%s not found."
+msgstr ""
+
+#: lclstrconsts.hhshelperrorwhileexecuting
+msgid "Error while executing %s%s%s:%s%s"
+msgstr ""
+
+#: lclstrconsts.hhshelpnohtmlbrowserfound
+msgid "Unable to find a HTML browser."
+msgstr ""
+
+#: lclstrconsts.hhshelpnohtmlbrowserfoundpleasedefineoneinhelpconfigurehe
+msgid "No HTML Browser found.%sPlease define one in Help -> Configure Help -> Viewers"
+msgstr ""
+
+#: lclstrconsts.hhshelpthehelpdatabasewasunabletofindfile
+msgid "The help database %s%s%s was unable to find file %s%s%s."
+msgstr ""
+
+#: lclstrconsts.hhshelpthemacrosinbrowserparamswillbereplacedbytheurl
+msgid "The macro %s in BrowserParams will be replaced by the URL."
+msgstr ""
+
+#: lclstrconsts.ifsalt
+msgid "Alt"
+msgstr "Alt"
+
+#: lclstrconsts.ifsctrl
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: lclstrconsts.ifsvk_accept
+msgid "Accept"
+msgstr "Приемане"
+
+#: lclstrconsts.ifsvk_apps
+msgid "application key"
+msgstr ""
+
+#: lclstrconsts.ifsvk_back
+msgid "Backspace"
+msgstr ""
+
+#: lclstrconsts.ifsvk_cancel
+msgctxt "lclstrconsts.ifsvk_cancel"
+msgid "Cancel"
+msgstr "Отказ"
+
+#: lclstrconsts.ifsvk_capital
+msgid "Capital"
+msgstr ""
+
+#: lclstrconsts.ifsvk_clear
+msgid "Clear"
+msgstr "Изчистване"
+
+#: lclstrconsts.ifsvk_control
+msgid "Control"
+msgstr ""
+
+#: lclstrconsts.ifsvk_convert
+msgid "Convert"
+msgstr ""
+
+#: lclstrconsts.ifsvk_delete
+msgctxt "lclstrconsts.ifsvk_delete"
+msgid "Delete"
+msgstr "Изтриване"
+
+#: lclstrconsts.ifsvk_down
+msgid "Down"
+msgstr "Надолу"
+
+#: lclstrconsts.ifsvk_end
+msgid "End"
+msgstr "Край"
+
+#: lclstrconsts.ifsvk_escape
+msgid "Escape"
+msgstr "Escape"
+
+#: lclstrconsts.ifsvk_execute
+msgid "Execute"
+msgstr "Изпълнение"
+
+#: lclstrconsts.ifsvk_final
+msgid "Final"
+msgstr ""
+
+#: lclstrconsts.ifsvk_hanja
+msgid "Hanja"
+msgstr "Ханджа"
+
+#: lclstrconsts.ifsvk_help
+msgid "Help"
+msgstr "Помощ"
+
+#: lclstrconsts.ifsvk_home
+msgid "Home"
+msgstr ""
+
+#: lclstrconsts.ifsvk_insert
+msgctxt "lclstrconsts.ifsvk_insert"
+msgid "Insert"
+msgstr ""
+
+#: lclstrconsts.ifsvk_junja
+msgid "Junja"
+msgstr ""
+
+#: lclstrconsts.ifsvk_kana
+msgid "Kana"
+msgstr ""
+
+#: lclstrconsts.ifsvk_lbutton
+msgid "Mouse Button Left"
+msgstr "Ляво цъкало на мишката"
+
+#: lclstrconsts.ifsvk_left
+msgid "Left"
+msgstr ""
+
+#: lclstrconsts.ifsvk_lwin
+msgid "left windows key"
+msgstr ""
+
+#: lclstrconsts.ifsvk_mbutton
+msgid "Mouse Button Middle"
+msgstr "Средно цъкало на мишката"
+
+#: lclstrconsts.ifsvk_menu
+msgctxt "lclstrconsts.ifsvk_menu"
+msgid "Menu"
+msgstr "Изборник"
+
+#: lclstrconsts.ifsvk_modechange
+msgid "Mode Change"
+msgstr "Смяна на режима"
+
+#: lclstrconsts.ifsvk_next
+msgctxt "lclstrconsts.ifsvk_next"
+msgid "Next"
+msgstr "Напред"
+
+#: lclstrconsts.ifsvk_nonconvert
+msgid "Nonconvert"
+msgstr ""
+
+#: lclstrconsts.ifsvk_numlock
+msgid "Numlock"
+msgstr ""
+
+#: lclstrconsts.ifsvk_numpad
+msgid "Numpad %d"
+msgstr "Цифреник (numpad) %d"
+
+#: lclstrconsts.ifsvk_pause
+msgid "Pause key"
+msgstr "Клавиш „Pause“"
+
+#: lclstrconsts.ifsvk_print
+msgid "Print"
+msgstr "Отпечатване"
+
+#: lclstrconsts.ifsvk_prior
+msgctxt "lclstrconsts.ifsvk_prior"
+msgid "Prior"
+msgstr ""
+
+#: lclstrconsts.ifsvk_rbutton
+msgid "Mouse Button Right"
+msgstr "Дясно цъкало на мишката"
+
+#: lclstrconsts.ifsvk_return
+msgid "Return"
+msgstr ""
+
+#: lclstrconsts.ifsvk_right
+msgid "Right"
+msgstr ""
+
+#: lclstrconsts.ifsvk_rwin
+msgid "right windows key"
+msgstr ""
+
+#: lclstrconsts.ifsvk_scroll
+msgid "Scroll"
+msgstr "Превъртане"
+
+#: lclstrconsts.ifsvk_select
+msgid "Select"
+msgstr "Отбелязване"
+
+#: lclstrconsts.ifsvk_shift
+msgid "Shift"
+msgstr ""
+
+#: lclstrconsts.ifsvk_snapshot
+msgid "Snapshot"
+msgstr "Снимка"
+
+#: lclstrconsts.ifsvk_space
+msgid "Space key"
+msgstr "Интервал"
+
+#: lclstrconsts.ifsvk_tab
+msgid "Tab"
+msgstr "Табулация"
+
+#: lclstrconsts.ifsvk_unknown
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: lclstrconsts.ifsvk_up
+msgid "Up"
+msgstr "Нагоре"
+
+#: lclstrconsts.lislclresourcesnotfound
+msgctxt "lclstrconsts.lislclresourcesnotfound"
+msgid "Resource %s not found"
+msgstr ""
+
+#: lclstrconsts.rs3ddkshadowcolorcaption
+msgid "3D Dark Shadow"
+msgstr "3М тъмна сянка"
+
+#: lclstrconsts.rs3dlightcolorcaption
+msgid "3D Light"
+msgstr "3М светлина"
+
+#: lclstrconsts.rsacontrolcannothaveitselfasparent
+msgid "A control can't have itself as parent"
+msgstr "Управлението не може да си бъде родител"
+
+#: lclstrconsts.rsactivebordercolorcaption
+msgid "Active Border"
+msgstr "Дейна рамка"
+
+#: lclstrconsts.rsactivecaptioncolorcaption
+msgid "Active Caption"
+msgstr "Дейно надписване"
+
+#: lclstrconsts.rsallfiles
+msgid "All files (%s)|%s|%s"
+msgstr "Всички файлове (%s)|%s|%s"
+
+#: lclstrconsts.rsappworkspacecolorcaption
+msgid "Application Workspace"
+msgstr "Работно пространство на приложението"
+
+#: lclstrconsts.rsaquacolorcaption
+msgid "Aqua"
+msgstr "Воден"
+
+#: lclstrconsts.rsbackgroundcolorcaption
+msgid "Desktop"
+msgstr "Работна площ"
+
+#: lclstrconsts.rsbackward
+msgid "Backward"
+msgstr "Назад"
+
+#: lclstrconsts.rsbitmaps
+msgid "Bitmaps"
+msgstr ""
+
+#: lclstrconsts.rsblackcolorcaption
+msgid "Black"
+msgstr "Черен"
+
+#: lclstrconsts.rsblank
+msgid "Blank"
+msgstr "Празно"
+
+#: lclstrconsts.rsbluecolorcaption
+msgid "Blue"
+msgstr "Син"
+
+#: lclstrconsts.rsbtnfacecolorcaption
+msgid "Button Face"
+msgstr "Лице на бутон"
+
+#: lclstrconsts.rsbtnhighlightcolorcaption
+msgid "Button Highlight"
+msgstr "Изтъкнат бутон"
+
+#: lclstrconsts.rsbtnshadowcolorcaption
+msgid "Button Shadow"
+msgstr "Сянка на бутон"
+
+#: lclstrconsts.rsbtntextcolorcaption
+msgid "Button Text"
+msgstr "Текст на бутон"
+
+#: lclstrconsts.rscalculator
+msgid "Calculator"
+msgstr "Елка"
+
+#: lclstrconsts.rscancelrecordhint
+msgctxt "lclstrconsts.rscancelrecordhint"
+msgid "Cancel"
+msgstr "Отказ"
+
+#: lclstrconsts.rscannotfocus
+msgid "Can not focus"
+msgstr "Невъзможно фокусиране"
+
+#: lclstrconsts.rscanvasdoesnotallowdrawing
+msgid "Canvas does not allow drawing"
+msgstr "Платното не позволява рисуване"
+
+#: lclstrconsts.rscaptiontextcolorcaption
+msgid "Caption Text"
+msgstr "Текст в надписване"
+
+#: lclstrconsts.rscasesensitive
+msgid "Case sensitive"
+msgstr "Отчитане на глаВНостТа"
+
+#: lclstrconsts.rscreamcolorcaption
+msgid "Cream"
+msgstr "Сметанен"
+
+#: lclstrconsts.rscreatinggdbcatchableerror
+msgid "Creating gdb catchable error:"
+msgstr ""
+
+#: lclstrconsts.rscursor
+msgid "Cursor"
+msgstr "Показалец"
+
+#: lclstrconsts.rscustomcolorcaption
+msgid "Custom ..."
+msgstr "Нагласяне..."
+
+#: lclstrconsts.rsdefaultcolorcaption
+msgid "Default"
+msgstr "Подразбирано"
+
+#: lclstrconsts.rsdefaultfileinfovalue
+msgid "permissions user group size date time"
+msgstr ""
+
+#: lclstrconsts.rsdeleterecord
+msgid "Delete record?"
+msgstr "Изтриване на запис?"
+
+#: lclstrconsts.rsdeleterecordhint
+msgctxt "lclstrconsts.rsdeleterecordhint"
+msgid "Delete"
+msgstr "Изтриване"
+
+#: lclstrconsts.rsdirection
+msgid "Direction"
+msgstr "Посока"
+
+#: lclstrconsts.rsdirectory
+msgid "&Directory"
+msgstr "&Папка"
+
+#: lclstrconsts.rsdocking
+msgid "Docking"
+msgstr ""
+
+#: lclstrconsts.rsduplicateiconformat
+msgid "Duplicate icon format."
+msgstr ""
+
+#: lclstrconsts.rseditrecordhint
+msgid "Edit"
+msgstr "Обработка"
+
+#: lclstrconsts.rsentirescope
+msgid "Search entire file"
+msgstr "Претърсване на целия файл"
+
+#: lclstrconsts.rserror
+msgctxt "lclstrconsts.rserror"
+msgid "Error"
+msgstr "Грешка"
+
+#: lclstrconsts.rserrorcreatingdevicecontext
+msgid "Error creating device context for %s.%s"
+msgstr ""
+
+#: lclstrconsts.rserrorinlcl
+msgid "ERROR in LCL: "
+msgstr ""
+
+#: lclstrconsts.rserroroccurredinataddressframe
+msgid "Error occurred in %s at %sAddress %s%s Frame %s"
+msgstr ""
+
+#: lclstrconsts.rserrorreadingproperty
+msgid "Error reading %s%s%s: %s"
+msgstr ""
+
+#: lclstrconsts.rserrorwhilesavingbitmap
+msgid "Error while saving bitmap."
+msgstr ""
+
+#: lclstrconsts.rsexception
+msgid "Exception"
+msgstr "Изключение"
+
+#: lclstrconsts.rsfddirectorymustexist
+msgid "Directory must exist"
+msgstr "Папката трябва да съществува"
+
+#: lclstrconsts.rsfddirectorynotexist
+msgid "The directory \"%s\" does not exist."
+msgstr "Не съществува папка \"%s'\"!"
+
+#: lclstrconsts.rsfdfilealreadyexists
+msgid "The file \"%s\" already exists. Overwrite ?"
+msgstr "Файлът \"%s\" вече съществува.Замяна?"
+
+#: lclstrconsts.rsfdfilemustexist
+msgid "File must exist"
+msgstr "Файлът трябва да съществува"
+
+#: lclstrconsts.rsfdfilenotexist
+msgid "The file \"%s\" does not exist."
+msgstr "Файлът \"%s\" не съществува."
+
+#: lclstrconsts.rsfdfilereadonly
+msgid "The file \"%s\" is not writable."
+msgstr "Върху файл \"%s\" не може да се записва."
+
+#: lclstrconsts.rsfdfilereadonlytitle
+msgid "File is not writable"
+msgstr "Върху файла не може да се записва."
+
+#: lclstrconsts.rsfdfilesaveas
+msgid "Save file as"
+msgstr "Съхраняване на файла като"
+
+#: lclstrconsts.rsfdopenfile
+msgid "Open existing file"
+msgstr "Отваряне на съществуващ файл"
+
+#: lclstrconsts.rsfdoverwritefile
+msgid "Overwrite file ?"
+msgstr "Замяна на файл?"
+
+#: lclstrconsts.rsfdpathmustexist
+msgid "Path must exist"
+msgstr "Пътят трябва да съществува"
+
+#: lclstrconsts.rsfdpathnoexist
+msgid "The path \"%s\" does not exist."
+msgstr "Пътят \"%s\" не съществува."
+
+#: lclstrconsts.rsfdselectdirectory
+msgid "Select Directory"
+msgstr "Избор на папка"
+
+#: lclstrconsts.rsfileinfofilenotfound
+msgid "(file not found: \"%s\")"
+msgstr ""
+
+#: lclstrconsts.rsfileinformation
+msgid "File information"
+msgstr ""
+
+#: lclstrconsts.rsfind
+msgid "Find"
+msgstr "Търсене"
+
+#: lclstrconsts.rsfindmore
+msgid "Find more"
+msgstr ""
+
+#: lclstrconsts.rsfirstrecordhint
+msgid "First"
+msgstr ""
+
+#: lclstrconsts.rsfixedcolstoobig
+msgid "FixedCols can't be >= ColCount"
+msgstr ""
+
+#: lclstrconsts.rsfixedrowstoobig
+msgid "FixedRows can't be >= RowCount"
+msgstr ""
+
+#: lclstrconsts.rsformcolorcaption
+msgid "Form"
+msgstr "Формуляр"
+
+#: lclstrconsts.rsformstreamingerror
+msgid "Form streaming \"%s\" error: %s"
+msgstr ""
+
+#: lclstrconsts.rsforward
+msgid "Forward"
+msgstr "Напред"
+
+#: lclstrconsts.rsfuchsiacolorcaption
+msgid "Fuchsia"
+msgstr "Цикламен"
+
+#: lclstrconsts.rsgdkoptiondebug
+msgid "--gdk-debug flags     Turn on specific GDK trace/debug messages."
+msgstr ""
+
+#: lclstrconsts.rsgdkoptionnodebug
+msgid "--gdk-no-debug flags  Turn off specific GDK trace/debug messages."
+msgstr ""
+
+#: lclstrconsts.rsgoptionfatalwarnings
+msgid "--g-fatal-warnings    Warnings and errors generated by Gtk+/GDK will halt the application."
+msgstr ""
+
+#: lclstrconsts.rsgradientactivecaptioncolorcaption
+msgid "Gradient Active Caption"
+msgstr "Преливащо дейно надписване"
+
+#: lclstrconsts.rsgradientinactivecaptioncolorcaption
+msgid "Gradient Inactive Caption"
+msgstr "Преливащо бездейно надписване"
+
+#: lclstrconsts.rsgraycolorcaption
+msgid "Gray"
+msgstr "Сив"
+
+#: lclstrconsts.rsgraytextcolorcaption
+msgid "Gray Text"
+msgstr "Сив текст"
+
+#: lclstrconsts.rsgreencolorcaption
+msgid "Green"
+msgstr "Зелен"
+
+#: lclstrconsts.rsgridfiledoesnotexists
+msgid "Grid file doesn't exists"
+msgstr ""
+
+#: lclstrconsts.rsgridindexoutofrange
+msgid "Grid index out of range."
+msgstr ""
+
+#: lclstrconsts.rsgroupindexcannotbelessthanprevious
+msgid "GroupIndex cannot be less than a previous menu item's GroupIndex"
+msgstr ""
+
+#: lclstrconsts.rsgtkfilter
+msgid "Filter:"
+msgstr "Пресяване:"
+
+#: lclstrconsts.rsgtkhistory
+msgid "History:"
+msgstr ""
+
+#: lclstrconsts.rsgtkoptionclass
+msgid "--class classname     Following Xt conventions, the class of a program is the program name with the initial character capitalized. For example, the classname for gimp is \"Gimp\". If --class is specified, the class of the program will be set to \"classname\"."
+msgstr ""
+
+#: lclstrconsts.rsgtkoptiondebug
+msgid "--gtk-debug flags     Turn on specific Gtk+ trace/debug messages."
+msgstr ""
+
+#: lclstrconsts.rsgtkoptiondisplay
+msgid "--display h:s:d       Connect to the specified X server, where \"h\" is the hostname, \"s\" is the server number (usually 0), and \"d\" is the display number (typically omitted). If --display is not specified, the DISPLAY environment variable is used."
+msgstr ""
+
+#: lclstrconsts.rsgtkoptionmodule
+msgid "--gtk-module module   Load the specified module at startup."
+msgstr ""
+
+#: lclstrconsts.rsgtkoptionname
+msgid "--name programe       Set program name to \"progname\". If not specified, program name will be set to ParamStrUTF8(0)."
+msgstr ""
+
+#: lclstrconsts.rsgtkoptionnodebug
+msgid "--gtk-no-debug flags  Turn off specific Gtk+ trace/debug messages."
+msgstr ""
+
+#: lclstrconsts.rsgtkoptionnotransient
+msgid "--lcl-no-transient    Do not set transient order for modal forms"
+msgstr ""
+
+#: lclstrconsts.rsgtkoptionnoxshm
+msgid "--no-xshm             Disable use of the X Shared Memory Extension."
+msgstr ""
+
+#: lclstrconsts.rsgtkoptionsync
+msgid "--sync                Call XSynchronize (display, True) after the Xserver connection has been established. This makes debugging X protocol errors easier, because X request buffering will be disabled and X errors will be received immediatey after the protocol request that generated the error has been processed by the X server."
+msgstr ""
+
+#: lclstrconsts.rshelpalreadyregistered
+msgid "%s: Already registered"
+msgstr ""
+
+#: lclstrconsts.rshelpcontextnotfound
+msgid "Help Context not found"
+msgstr ""
+
+#: lclstrconsts.rshelpdatabasenotfound
+msgid "Help Database not found"
+msgstr ""
+
+#: lclstrconsts.rshelperror
+msgid "Help Error"
+msgstr ""
+
+#: lclstrconsts.rshelphelpcontextnotfound
+msgid "Help context %s not found."
+msgstr ""
+
+#: lclstrconsts.rshelphelpcontextnotfoundindatabase
+msgid "Help context %s not found in Database %s%s%s."
+msgstr ""
+
+#: lclstrconsts.rshelphelpdatabasedidnotfoundaviewerforahelppageoftype
+msgid "Help Database %s%s%s did not found a viewer for a help page of type %s"
+msgstr ""
+
+#: lclstrconsts.rshelphelpdatabasenotfound
+msgid "Help Database %s%s%s not found"
+msgstr ""
+
+#: lclstrconsts.rshelphelpkeywordnotfound
+msgid "Help keyword %s%s%s not found."
+msgstr ""
+
+#: lclstrconsts.rshelphelpkeywordnotfoundindatabase
+msgid "Help keyword %s%s%s not found in Database %s%s%s."
+msgstr ""
+
+#: lclstrconsts.rshelphelpnodehasnohelpdatabase
+msgid "Help node %s%s%s has no Help Database"
+msgstr ""
+
+#: lclstrconsts.rshelpnohelpfoundforsource
+msgid "No help found for line %d, column %d of %s."
+msgstr ""
+
+#: lclstrconsts.rshelpnohelpnodesavailable
+msgid "No help nodes available"
+msgstr ""
+
+#: lclstrconsts.rshelpnotfound
+msgid "Help not found"
+msgstr ""
+
+#: lclstrconsts.rshelpnotregistered
+msgid "%s: Not registered"
+msgstr ""
+
+#: lclstrconsts.rshelpselectorerror
+msgid "Help Selector Error"
+msgstr ""
+
+#: lclstrconsts.rshelpthereisnoviewerforhelptype
+msgid "There is no viewer for help type %s%s%s"
+msgstr ""
+
+#: lclstrconsts.rshelpviewererror
+msgid "Help Viewer Error"
+msgstr ""
+
+#: lclstrconsts.rshelpviewernotfound
+msgid "Help Viewer not found"
+msgstr ""
+
+#: lclstrconsts.rshighlightcolorcaption
+msgid "Highlight"
+msgstr "Изтъкване"
+
+#: lclstrconsts.rshighlighttextcolorcaption
+msgid "Highlight Text"
+msgstr "Текст в изтъкване"
+
+#: lclstrconsts.rshotlightcolorcaption
+msgid "Hot Light"
+msgstr "Гореща светлина"
+
+#: lclstrconsts.rsicns
+msgid "OSX Icon Resource"
+msgstr ""
+
+#: lclstrconsts.rsicon
+msgid "Icon"
+msgstr "Значе"
+
+#: lclstrconsts.rsiconimageempty
+msgid "Icon image cannot be empty"
+msgstr ""
+
+#: lclstrconsts.rsiconimageformat
+msgid "Icon image must have the same format"
+msgstr ""
+
+#: lclstrconsts.rsiconimageformatchange
+msgid "Cannot change format of icon image"
+msgstr ""
+
+#: lclstrconsts.rsiconimagesize
+msgid "Icon image must have the same size"
+msgstr ""
+
+#: lclstrconsts.rsiconimagesizechange
+msgid "Cannot change size of icon image"
+msgstr ""
+
+#: lclstrconsts.rsiconnocurrent
+msgid "Icon has no current image"
+msgstr ""
+
+#: lclstrconsts.rsinactivebordercolorcaption
+msgid "Inactive Border"
+msgstr "Бездейна рамка"
+
+#: lclstrconsts.rsinactivecaptioncolorcaption
+msgctxt "lclstrconsts.rsinactivecaptioncolorcaption"
+msgid "Inactive Caption"
+msgstr "Бездейно надписване"
+
+#: lclstrconsts.rsinactivecaptiontext
+msgctxt "lclstrconsts.rsinactivecaptiontext"
+msgid "Inactive Caption"
+msgstr "Бездейно надписване"
+
+#: lclstrconsts.rsindexoutofbounds
+msgid "%s Index %d out of bounds 0 .. %d"
+msgstr ""
+
+#: lclstrconsts.rsindexoutofrange
+msgid "Index Out of range Cell[Col=%d Row=%d]"
+msgstr ""
+
+#: lclstrconsts.rsinfobkcolorcaption
+msgid "Info Background"
+msgstr "Осведомителна подцветка"
+
+#: lclstrconsts.rsinfotextcolorcaption
+msgid "Info Text"
+msgstr "Осведомителен текст"
+
+#: lclstrconsts.rsinsertrecordhint
+msgctxt "lclstrconsts.rsinsertrecordhint"
+msgid "Insert"
+msgstr ""
+
+#: lclstrconsts.rsinvaliddate
+msgid "Invalid Date : %s"
+msgstr ""
+
+#: lclstrconsts.rsinvaliddaterangehint
+msgid "Invalid Date: %s. Must be between %s and %s"
+msgstr ""
+
+#: lclstrconsts.rsinvalidformobjectstream
+msgid "invalid Form object stream"
+msgstr ""
+
+#: lclstrconsts.rsinvalidpropertyvalue
+msgid "Invalid property value"
+msgstr ""
+
+#: lclstrconsts.rsinvalidstreamformat
+msgid "Invalid stream format"
+msgstr ""
+
+#: lclstrconsts.rsisalreadyassociatedwith
+msgid "%s is already associated with %s"
+msgstr ""
+
+#: lclstrconsts.rsjpeg
+msgid "Joint Picture Expert Group"
+msgstr ""
+
+#: lclstrconsts.rslastrecordhint
+msgid "Last"
+msgstr ""
+
+#: lclstrconsts.rslimecolorcaption
+msgid "Lime"
+msgstr "Яркозелен"
+
+#: lclstrconsts.rslistindexexceedsbounds
+msgid "List index exceeds bounds (%d)"
+msgstr ""
+
+#: lclstrconsts.rslistmustbeempty
+msgid "List must be empty"
+msgstr ""
+
+#: lclstrconsts.rsmarooncolorcaption
+msgid "Maroon"
+msgstr "Кестеняв"
+
+#: lclstrconsts.rsmbabort
+msgid "Abort"
+msgstr "Прекъсване"
+
+#: lclstrconsts.rsmball
+msgid "&All"
+msgstr "&Всички"
+
+#: lclstrconsts.rsmbcancel
+msgctxt "lclstrconsts.rsmbcancel"
+msgid "Cancel"
+msgstr "Отказ"
+
+#: lclstrconsts.rsmbclose
+msgid "&Close"
+msgstr "&Затваряне"
+
+#: lclstrconsts.rsmbhelp
+msgid "&Help"
+msgstr "Помо&щ"
+
+#: lclstrconsts.rsmbignore
+msgid "&Ignore"
+msgstr "&Пренебрегване"
+
+#: lclstrconsts.rsmbno
+msgid "&No"
+msgstr "&Не"
+
+#: lclstrconsts.rsmbnotoall
+msgid "No to all"
+msgstr "Не на всички"
+
+#: lclstrconsts.rsmbok
+msgid "&OK"
+msgstr "&Добре"
+
+#: lclstrconsts.rsmbopen
+msgid "&Open"
+msgstr "&Отваряне"
+
+#: lclstrconsts.rsmbretry
+msgid "&Retry"
+msgstr "&Нов опит"
+
+#: lclstrconsts.rsmbsave
+msgid "&Save"
+msgstr "&Съхраняване"
+
+#: lclstrconsts.rsmbunlock
+msgid "&Unlock"
+msgstr "&Отключване"
+
+#: lclstrconsts.rsmbyes
+msgid "&Yes"
+msgstr "&Да"
+
+#: lclstrconsts.rsmbyestoall
+msgid "Yes to &All"
+msgstr "Да за вси&чки"
+
+#: lclstrconsts.rsmedgraycolorcaption
+msgid "Medium Gray"
+msgstr "Сивкав"
+
+#: lclstrconsts.rsmenubarcolorcaption
+msgid "Menu Bar"
+msgstr "Изборна лента"
+
+#: lclstrconsts.rsmenucolorcaption
+msgctxt "lclstrconsts.rsmenucolorcaption"
+msgid "Menu"
+msgstr "Изборник"
+
+#: lclstrconsts.rsmenuhighlightcolorcaption
+msgid "Menu Highlight"
+msgstr "Изтъкнат изборник"
+
+#: lclstrconsts.rsmenutextcolorcaption
+msgid "Menu Text"
+msgstr "Текст на изборник"
+
+#: lclstrconsts.rsmodified
+msgid "  modified "
+msgstr " изменен"
+
+#: lclstrconsts.rsmoneygreencolorcaption
+msgid "Money Green"
+msgstr "Светлозелен"
+
+#: lclstrconsts.rsmtauthentication
+msgid "Authentication"
+msgstr "Удостоверяване"
+
+#: lclstrconsts.rsmtconfirmation
+msgid "Confirmation"
+msgstr "Потвърждение"
+
+#: lclstrconsts.rsmtcustom
+msgid "Custom"
+msgstr "Нагласено"
+
+#: lclstrconsts.rsmterror
+msgctxt "lclstrconsts.rsmterror"
+msgid "Error"
+msgstr "Грешка"
+
+#: lclstrconsts.rsmtinformation
+msgid "Information"
+msgstr "Сведение"
+
+#: lclstrconsts.rsmtwarning
+msgid "Warning"
+msgstr "Предупреждение"
+
+#: lclstrconsts.rsnavycolorcaption
+msgid "Navy"
+msgstr "Морскосин"
+
+#: lclstrconsts.rsnextrecordhint
+msgctxt "lclstrconsts.rsnextrecordhint"
+msgid "Next"
+msgstr "Напред"
+
+#: lclstrconsts.rsnonecolorcaption
+msgid "None"
+msgstr "Няма"
+
+#: lclstrconsts.rsnotavalidgridfile
+msgid "Not a valid grid file"
+msgstr ""
+
+#: lclstrconsts.rsnowidgetset
+msgid "No widgetset object. Please check if the unit \"interfaces\" was added to the programs uses clause."
+msgstr ""
+
+#: lclstrconsts.rsolivecolorcaption
+msgid "Olive"
+msgstr "Маслинен"
+
+#: lclstrconsts.rspickdate
+msgid "Select a date"
+msgstr ""
+
+#: lclstrconsts.rspixmap
+msgid "Pixmap"
+msgstr ""
+
+#: lclstrconsts.rsportablebitmap
+msgid "Portable BitMap"
+msgstr ""
+
+#: lclstrconsts.rsportablegraymap
+msgid "Portable GrayMap"
+msgstr ""
+
+#: lclstrconsts.rsportablenetworkgraphic
+msgid "Portable Network Graphic"
+msgstr ""
+
+#: lclstrconsts.rsportablepixmap
+msgid "Portable PixMap"
+msgstr ""
+
+#: lclstrconsts.rspostrecordhint
+msgid "Post"
+msgstr ""
+
+#: lclstrconsts.rspressoktoignoreandriskdatacorruptionpresscanceltok
+msgid "%s%sPress OK to ignore and risk data corruption.%sPress Cancel to kill the program."
+msgstr ""
+
+#: lclstrconsts.rspriorrecordhint
+msgctxt "lclstrconsts.rspriorrecordhint"
+msgid "Prior"
+msgstr ""
+
+#: lclstrconsts.rspropertydoesnotexist
+msgid "Property %s does not exist"
+msgstr "Свойството %s не съществува"
+
+#: lclstrconsts.rspurplecolorcaption
+msgid "Purple"
+msgstr "Морав"
+
+#: lclstrconsts.rsrasterimageendupdate
+msgid "Endupdate while no update in progress"
+msgstr ""
+
+#: lclstrconsts.rsrasterimagesaveinupdate
+msgid "Cannot save image while update in progress"
+msgstr ""
+
+#: lclstrconsts.rsrasterimageupdateall
+msgid "Cannot begin update all when canvas only update in progress"
+msgstr ""
+
+#: lclstrconsts.rsredcolorcaption
+msgid "Red"
+msgstr "Червен"
+
+#: lclstrconsts.rsrefreshrecordshint
+msgid "Refresh"
+msgstr "Опресняване"
+
+#: lclstrconsts.rsreplace
+msgid "Replace"
+msgstr "Замяна"
+
+#: lclstrconsts.rsreplaceall
+msgid "Replace all"
+msgstr "Замяна на всички"
+
+#: lclstrconsts.rsresourcenotfound
+msgctxt "lclstrconsts.rsresourcenotfound"
+msgid "Resource %s not found"
+msgstr ""
+
+#: lclstrconsts.rsscrollbarcolorcaption
+msgid "ScrollBar"
+msgstr "Плъзгач"
+
+#: lclstrconsts.rsscrollbaroutofrange
+msgid "ScrollBar property out of range"
+msgstr "Свойството на плъзгача е извън обхвата"
+
+#: lclstrconsts.rsselectcolortitle
+msgid "Select color"
+msgstr "Избор на цвят"
+
+#: lclstrconsts.rsselectfonttitle
+msgid "Select a font"
+msgstr "Избор на шрифт"
+
+#: lclstrconsts.rssilvercolorcaption
+msgid "Silver"
+msgstr "Сребрист"
+
+#: lclstrconsts.rssize
+msgid "  size "
+msgstr " размер"
+
+#: lclstrconsts.rsskybluecolorcaption
+msgid "Sky Blue"
+msgstr "Небесносин"
+
+#: lclstrconsts.rstealcolorcaption
+#, fuzzy
+msgid "Teal"
+msgstr "Патладжанено"
+
+#: lclstrconsts.rstext
+msgid "Text"
+msgstr "Текст"
+
+#: lclstrconsts.rsunabletoloaddefaultfont
+msgid "Unable to load default font"
+msgstr "Зареждането на подразбирания шрифт е невъзможно"
+
+#: lclstrconsts.rsunknownerrorpleasereportthisbug
+msgid "Unknown Error, please report this bug"
+msgstr "Неизвестна грешка, моля докладвайте топзи недъг"
+
+#: lclstrconsts.rsunknownpictureextension
+msgid "Unknown picture extension"
+msgstr "Непознато разширение за изображения"
+
+#: lclstrconsts.rsunsupportedbitmapformat
+msgid "Unsupported bitmap format."
+msgstr ""
+
+#: lclstrconsts.rsunsupportedclipboardformat
+msgid "Unsupported clipboard format: %s"
+msgstr ""
+
+#: lclstrconsts.rswarningunreleaseddcsdump
+msgid " WARNING: There are %d unreleased DCs, a detailed dump follows:"
+msgstr ""
+
+#: lclstrconsts.rswarningunreleasedgdiobjectsdump
+msgid " WARNING: There are %d unreleased GDIObjects, a detailed dump follows:"
+msgstr ""
+
+#: lclstrconsts.rswarningunreleasedmessagesinqueue
+msgid " WARNING: There are %d messages left in the queue! I'll free them"
+msgstr ""
+
+#: lclstrconsts.rswarningunreleasedtimerinfos
+msgid " WARNING: There are %d TimerInfo structures left, I'll free them"
+msgstr ""
+
+#: lclstrconsts.rswarningunremovedpaintmessages
+msgid " WARNING: There are %s unremoved LM_PAINT/LM_GtkPAINT message links left."
+msgstr ""
+
+#: lclstrconsts.rswhitecolorcaption
+msgid "White"
+msgstr "Бял"
+
+#: lclstrconsts.rswholewordsonly
+msgid "Whole words only"
+msgstr "Само цели думи"
+
+#: lclstrconsts.rswin32error
+msgid "Error:"
+msgstr "Грешка:"
+
+#: lclstrconsts.rswin32warning
+msgid "Warning:"
+msgstr "Предупреждение:"
+
+#: lclstrconsts.rswindowcolorcaption
+msgid "Window"
+msgstr "Прозорец"
+
+#: lclstrconsts.rswindowframecolorcaption
+msgid "Window Frame"
+msgstr "Рамка на прозорец"
+
+#: lclstrconsts.rswindowtextcolorcaption
+msgid "Window Text"
+msgstr "Текст в прозорец"
+
+#: lclstrconsts.rsyellowcolorcaption
+msgid "Yellow"
+msgstr "Жълт"
+
+#: lclstrconsts.scannotfocus
+msgid "Cannot focus a disabled or invisible window"
+msgstr ""
+
+#: lclstrconsts.sduplicatemenus
+msgid "Duplicate menus"
+msgstr ""
+
+#: lclstrconsts.sinvalidactioncreation
+msgid "Invalid action creation"
+msgstr ""
+
+#: lclstrconsts.sinvalidactionenumeration
+msgid "Invalid action enumeration"
+msgstr ""
+
+#: lclstrconsts.sinvalidactionregistration
+msgid "Invalid action registration"
+msgstr ""
+
+#: lclstrconsts.sinvalidactionunregistration
+msgid "Invalid action unregistration"
+msgstr ""
+
+#: lclstrconsts.sinvalidcharset
+msgid "The char set in mask \"%s\" is not valid!"
+msgstr ""
+
+#: lclstrconsts.sinvalidimagesize
+msgid "Invalid image size"
+msgstr ""
+
+#: lclstrconsts.sinvalidindex
+msgid "Invalid ImageList Index"
+msgstr ""
+
+#: lclstrconsts.smenuindexerror
+msgid "Menu index out of range"
+msgstr ""
+
+#: lclstrconsts.smenuitemisnil
+msgid "MenuItem is nil"
+msgstr ""
+
+#: lclstrconsts.smenunotfound
+msgid "Sub-menu is not in menu"
+msgstr ""
+
+#: lclstrconsts.snomdiform
+msgid "No MDI form present."
+msgstr ""
+
+#: lclstrconsts.snotimers
+msgid "No timers available"
+msgstr ""
+
+#: lclstrconsts.sparexpected
+msgid "Wrong token type: %s expected"
+msgstr ""
+
+#: lclstrconsts.sparinvalidfloat
+msgid "Invalid floating point number: %s"
+msgstr ""
+
+#: lclstrconsts.sparinvalidinteger
+msgid "Invalid integer number: %s"
+msgstr ""
+
+#: lclstrconsts.sparlocinfo
+msgid " (at %d,%d, stream offset %.8x)"
+msgstr ""
+
+#: lclstrconsts.sparunterminatedbinvalue
+msgid "Unterminated byte value"
+msgstr "Недовършена байтова стойност"
+
+#: lclstrconsts.sparunterminatedstring
+msgid "Unterminated string"
+msgstr "Недовършен низ"
+
+#: lclstrconsts.sparwrongtokensymbol
+msgid "Wrong token symbol: %s expected but %s found"
+msgstr ""
+
+#: lclstrconsts.sparwrongtokentype
+msgid "Wrong token type: %s expected but %s found"
+msgstr ""
+

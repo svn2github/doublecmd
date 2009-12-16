@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Double Commander 0.4.0 alpha\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-17 23:08+0300\n"
-"PO-Revision-Date: 2009-12-05 21:59+0200\n"
+"PO-Revision-Date: 2009-12-13 11:27+0200\n"
 "Last-Translator: sstpr@narod.ru <sstpr@narod.ru>\n"
 "Language-Team: Language <sstpr@narod.ru>\n"
 "MIME-Version: 1.0\n"
@@ -133,7 +133,7 @@ msgstr "ComboBox1"
 #: TFCOLUMNSSETCONF.CTEXTLABEL.CAPTION
 msgctxt "TFCOLUMNSSETCONF.CTEXTLABEL.CAPTION"
 msgid "Text Color:"
-msgstr "Цявят на текста:"
+msgstr "Цвят на текста:"
 
 #: TFCOLUMNSSETCONF.LABEL1.CAPTION
 msgctxt "TFCOLUMNSSETCONF.LABEL1.CAPTION"
@@ -703,7 +703,7 @@ msgstr "&Търсене от:"
 #: TFRMEDITSEARCHREPLACE.RGSEARCHDIRECTION.CAPTION
 msgctxt "TFRMEDITSEARCHREPLACE.RGSEARCHDIRECTION.CAPTION"
 msgid "Direction"
-msgstr "Подока"
+msgstr "Посока"
 
 #: TFRMEXTRACTDLG.BTNCANCEL.CAPTION
 msgctxt "TFRMEXTRACTDLG.BTNCANCEL.CAPTION"
