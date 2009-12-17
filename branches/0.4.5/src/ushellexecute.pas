@@ -51,7 +51,7 @@ uses
   %D - current path in active or chosen panel
 
   Choosing panel (if not given, active panel is used):
-    %X[l|r] - where X is function (l - left, r - right)
+    %X[l|r|s|t] - where X is function (l - left, r - right, s - source, t - target)
 
   Choosing selected files (only for %f, %d, %p):
     %X[<nr>] - where X is function
@@ -67,7 +67,7 @@ uses
   Above parameters can be combined together.
   Order of params:
   - %function
-  - left or right panel (optional)
+  - left or right or source or target panel (optional)
   - nr of file (optional)
   - prefix, postfix (optional)
 
@@ -110,7 +110,9 @@ var
   leftFiles: TStringList = nil;
   rightFiles: TStringList = nil;
   activeFiles: TStringList;
+  inactiveFiles: TStringList;
   activeDir: String;
+  inactiveDir: String;
   state: Tstate;
   sOutput: String = '';
   parseStartIndex: Integer;
@@ -252,11 +254,15 @@ begin
     begin
       activeFiles := leftFiles;
       activeDir := leftPanel.ActiveDir;
+      inactiveFiles := rightFiles;
+      inactiveDir := rightPanel.ActiveDir;
     end
     else
     begin
       activeFiles := rightFiles;
       activeDir := rightPanel.ActiveDir;
+      inactiveFiles := leftFiles;
+      inactiveDir := leftPanel.ActiveDir;
     end;
 
     index := 1;
@@ -313,6 +319,20 @@ begin
               begin
                 state.files := rightFiles;
                 state.dir := rightPanel.ActiveDir;
+                state.pos := spSide;
+              end;
+
+            's':
+              begin
+                state.files := activeFiles;
+                state.dir := activeDir;
+                state.pos := spSide;
+              end;
+
+            't':
+              begin
+                state.files := inactiveFiles;
+                state.dir := inactiveDir;
                 state.pos := spSide;
               end;
 
