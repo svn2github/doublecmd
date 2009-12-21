@@ -231,6 +231,11 @@ resourcestring
   rsOptEnable = 'Enable';
   rsOptDisable = 'Disable';
   rsOptMouseSelectionButton = 'Left button;Right button;';
+  //-------------------------------
+  rsOptExampleMark = 'Mark';
+  rsOptExampleText = 'Text';
+  rsOptExampleCursor = 'Cursor';
+  rsOptExampleMarkCursor = 'Mark + Cursor';
   //Columns Menu
   rsMenuConfigureCustomColumns= 'Configure custom columns';
   rsMenuConfigureThisCustomColumn= 'Configure this custom columns view';
