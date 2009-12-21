@@ -193,10 +193,10 @@ object frmConfigToolBar: TfrmConfigToolBar
     AnchorSideLeft.Side = asrCenter
     AnchorSideTop.Control = lblLabel
     AnchorSideTop.Side = asrBottom
-    Left = 489
+    Left = 469
     Height = 28
     Top = 137
-    Width = 109
+    Width = 148
     BorderSpacing.Top = 6
     BorderSpacing.Bottom = 21
     BorderSpacing.InnerBorder = 4
