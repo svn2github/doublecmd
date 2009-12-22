@@ -1,7 +1,7 @@
 object frmFileAssoc: TfrmFileAssoc
   Left = 298
   Height = 345
-  Top = 126
+  Top = 189
   Width = 554
   ActiveControl = btnAddExt
   Caption = 'File associations'
@@ -111,6 +111,7 @@ object frmFileAssoc: TfrmFileAssoc
       Top = 6
       Width = 145
       ItemHeight = 0
+      OnSelectionChange = lbExtsSelectionChange
       TabOrder = 0
       TabStop = False
       TopIndex = -1
