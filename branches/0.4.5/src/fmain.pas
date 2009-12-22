@@ -2551,6 +2551,11 @@ begin
           Actions.cm_ContextMenu('OnMouseClick');
           //actContextMenu.Execute;
         end;
+    end
+  else if (Sender is TDrawGridEx) and (Button = mbMiddle)
+           and (Y > (Sender as TDrawGridEx).GetHeaderHeight) then
+    begin
+      Actions.cm_OpenDirInNewTab();
     end;
 end;
 
