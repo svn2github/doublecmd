@@ -201,6 +201,7 @@ object frmConfigToolBar: TfrmConfigToolBar
     BorderSpacing.Bottom = 21
     BorderSpacing.InnerBorder = 4
     Caption = 'Add S&ubbar >>'
+    Enabled = False
     TabOrder = 6
   end
   object edtParams: TEdit
