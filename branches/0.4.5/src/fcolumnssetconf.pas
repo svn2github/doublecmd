@@ -345,6 +345,7 @@ begin
              Left:=(Sender as TStringGrid).CellRect(aCol,aRow).Right-Width;
              Top:=(Sender as TStringGrid).CellRect(aCol,aRow).Top;
              Height:=(Sender as TStringGrid).RowHeights[aRow];
+             Tag:=aRow;
              Show;
            end;
 
