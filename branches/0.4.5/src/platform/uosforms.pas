@@ -275,7 +275,7 @@ begin
       CoTaskMemFree(List);
     end;
 
-    DesktopFolder._Release;
+    DesktopFolder:= nil;
   end;
 end;
 {$ENDIF}
