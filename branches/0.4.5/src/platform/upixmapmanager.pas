@@ -1025,7 +1025,7 @@ end;
 function TPixMapManager.GetDriveIcon(Drive : PDrive; IconSize : Integer; clBackColor : TColor) : Graphics.TBitmap;
 {$IFDEF MSWINDOWS}
 var
-  SFI: TSHFileInfo;
+  SFI: TSHFileInfoW;
   Icon: TIcon = nil;
   IntfImage: TLazIntfImage = nil;
   _para5 : UINT;
@@ -1046,7 +1046,8 @@ begin
           else
             _para5 := SHGFI_LARGEICON;
 
-          if (SHGetFileInfo(PChar(Drive^.Path), 0, SFI, SizeOf(SFI), _para5 or SHGFI_ICON) <> 0) and
+          if (SHGetFileInfoW(PWideChar(UTF8Decode(Drive^.Path)), 0, SFI,
+                             SizeOf(SFI), _para5 or SHGFI_ICON) <> 0) and
              (SFI.hIcon <> 0) then
             try
               Icon := CreateIconFromHandle(SFI.hIcon);
@@ -1062,7 +1063,8 @@ begin
         end;
       else  // for non standart icon size we Convert HIcon to TBitMap
         begin
-          if (SHGetFileInfo(PChar(Drive^.Path), 0, SFI, SizeOf(SFI), SHGFI_ICON) <> 0) and
+          if (SHGetFileInfoW(PWideChar(UTF8Decode(Drive^.Path)), 0, SFI,
+                             SizeOf(SFI), SHGFI_ICON) <> 0) and
              (SFI.hIcon <> 0) then
           try
             Result.Width := GetSystemMetrics(SM_CXICON);
