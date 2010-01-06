@@ -1001,17 +1001,27 @@ begin
 
     //WriteLN('Icon for file == ' + sName);
           
-    SHGetFileInfoW(PWideChar(UTF8Decode(sFileName)),
-                           _para2,
-                           FileInfo,
-                           SizeOf(FileInfo),
-                           _para5);
-    Result:= FileInfo.iIcon + $1000;
-       
-       //WriteLN('FileInfo.iIcon == ' + IntToStr(FileInfo.iIcon));
-       
-       if (FExtList.IndexOf(Ext) < 0) and (Ext <> 'exe') and (Ext <> 'ico') and (Ext <> 'lnk')  and (not FPS_ISDIR(iMode)) then
+    if (SHGetFileInfoW(PWideChar(UTF8Decode(sFileName)),
+                       _para2,
+                       FileInfo,
+                       SizeOf(FileInfo),
+                       _para5) = 0) then
+    begin
+      // Could not retrieve icon.
+      if FPS_ISDIR(iMode) then
+        Result := FiDirIconID
+      else
+        Result := FiDefaultIconID;
+    end
+    else
+    begin
+      Result:= FileInfo.iIcon + $1000;
+
+      //WriteLN('FileInfo.iIcon == ' + IntToStr(FileInfo.iIcon));
+
+      if (FExtList.IndexOf(Ext) < 0) and (Ext <> 'exe') and (Ext <> 'ico') and (Ext <> 'lnk')  and (not FPS_ISDIR(iMode)) then
         FExtList.AddObject(Ext, TObject(Result));
+    end;
     {$ELSE}
       Result:= FiDefaultIconID;
     {$ENDIF}
