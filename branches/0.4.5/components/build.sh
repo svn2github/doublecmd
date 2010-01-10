@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Compiling components
 
 # This script run from _make.bat

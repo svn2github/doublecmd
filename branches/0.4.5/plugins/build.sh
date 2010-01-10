@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Build all plugins
 
 # This script run from _make.sh
