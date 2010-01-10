@@ -46,7 +46,10 @@
       </Options>
     </Linking>
     <Other>
-      <CustomOptions Value="-fPIC"/>
+      <ConfigFile>
+        <CustomConfigFile Value="True"/>
+        <ConfigFilePath Value="fpc-extra.cfg"/>
+      </ConfigFile>    
       <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>
