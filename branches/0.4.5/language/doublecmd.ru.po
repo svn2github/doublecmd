@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.3.5 alpha\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2009-12-21 22:19+0300\n"
+"PO-Revision-Date: 2010-01-10 22:11+0300\n"
 "Last-Translator: Alexander Koblov <Alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1412,11 +1412,11 @@ msgstr "Показать контекстное меню"
 
 #: TFRMMAIN.ACTCOPY.CAPTION
 msgid "Copy F5"
-msgstr "Копир F5"
+msgstr "Копировать F5"
 
 #: TFRMMAIN.ACTCOPYFULLNAMESTOCLIP.CAPTION
 msgid "Copy Filename(s) with Full &Path"
-msgstr "Копировать по&лные имена файлов"
+msgstr "Копировать по&лные имена файлов в буфер"
 
 #: TFRMMAIN.ACTCOPYNAMESTOCLIP.CAPTION
 msgid "Copy &Filename(s) to Clipboard"
@@ -2485,7 +2485,7 @@ msgstr "История каталогов"
 
 #: TFRMOPTIONS.CBDIRSELECT.CAPTION
 msgid "Select directory with keypad"
-msgstr "Выбрать кат-г на цифр. кл-ре"
+msgstr "Навигация на цифровой клавиатуре"
 
 #: TFRMOPTIONS.CBDROPREADONLYFLAG.CAPTION
 msgctxt "TFRMOPTIONS.CBDROPREADONLYFLAG.CAPTION"
