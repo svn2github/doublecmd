@@ -42,7 +42,8 @@ uses
   math,
   WLXPlugin;
   
-
+type
+  THandle = type PtrUInt;
 
 type
 { TExProcess }
