@@ -99,8 +99,8 @@ begin
         if mbFileExists(sDstPath+pr^.sPath+sDstNew) and not FReplaceAll then
         begin
           if FSkipAll then
-            Exit;
-          if not DlgFileExist(Format(rsMsgFileExistsRwrt,[sDstPath+pr^.sPath+sDstNew, pr^.sName])) then
+            bProceed := False
+          else if not DlgFileExist(Format(rsMsgFileExistsRwrt,[sDstPath+pr^.sPath+sDstNew, pr^.sName])) then
             bProceed := False;
         end;
 
