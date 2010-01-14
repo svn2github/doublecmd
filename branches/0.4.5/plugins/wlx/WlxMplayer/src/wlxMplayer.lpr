@@ -26,7 +26,9 @@ library wlxMplayer;
 
 {$mode objfpc}{$H+}
 
+{$IF NOT (DEFINED(LCLGTK) or DEFINED(LCLGTK2) or DEFINED(LCLQT))}
 {$DEFINE LCLGTK2}
+{$ENDIF}
 
 uses
    {$IFDEF UNIX}
@@ -42,8 +44,7 @@ uses
   math,
   WLXPlugin;
   
-type
-  THandle = type PtrUInt;
+
 
 type
 { TExProcess }
