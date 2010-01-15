@@ -841,12 +841,12 @@ var
   Result : Boolean;
   sSearchName,
   sSearchNameNoExt,
-  sSearchExt : String;
+  sSearchExt : UTF8String;
 begin
   if edtSearch.Text='' then Exit;
   //DebugLn('edSearchChange: '+ edSearch.Text);
 
-  sSearchName := AnsiLowerCase(edtSearch.Text);
+  sSearchName := UTF8LowerCase(edtSearch.Text);
 
   if Pos('.', sSearchName) <> 0 then
     begin
@@ -886,7 +886,7 @@ begin
   try
     while I <> iEnd do
       begin
-        Result := MatchesMask(AnsiLowerCase(pnlFile.GetReferenceItemPtr(I - dgPanel.FixedRows)^.sName), sSearchName);
+        Result := MatchesMask(UTF8LowerCase(pnlFile.GetReferenceItemPtr(I - dgPanel.FixedRows)^.sName), sSearchName);
 
         if Result then
           begin
