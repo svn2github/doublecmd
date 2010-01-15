@@ -1600,6 +1600,7 @@ end;
 procedure TfrmOptions.lbxHotkeysSelectionChange(Sender: TObject; User: boolean);
 //< select hotkey
 begin
+  if lbxHotkeys.ItemIndex < 0 then Exit;
   vShortCut :=TextToShortCutEx(lbxHotkeys.Items[lbxHotkeys.ItemIndex]);
   edHotKey.Text := lbxHotkeys.Items[lbxHotkeys.ItemIndex];
   btSetHotKey.Enabled := true;
