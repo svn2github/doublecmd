@@ -223,7 +223,7 @@ function LoadStringsFromFile(var list:TStringListEx; const sFileName:String):boo
 
 procedure LoadDefaultHotkeyBindings;
 
-procedure MinimizeToScreen(Form: TCustomForm; Width: Integer = 1024; Height: Integer = 768);
+procedure MinimizeToScreen(Form: TCustomForm);
 function InitPropStorage(Owner: TComponent): TIniPropStorageEx;
 
 // for debugging only, can be removed
@@ -302,27 +302,17 @@ begin
     end;
 end;
 
-procedure MinimizeToScreen(Form: TCustomForm; Width: Integer = 1024; Height: Integer = 768);
+procedure MinimizeToScreen(Form: TCustomForm);
 var
-  mWidth, mHeight,
-  PersW, PersH,
-  NewW, NewH: Integer;
+  mWidth, mHeight: Integer;
 begin
   mWidth:= Form.Monitor.Width;
   mHeight:= Form.Monitor.Height;
 
-  if (mWidth = Width) and (mHeight = Height) then exit;
-
-  if (mWidth > Form.Width) and (mHeight > Form.Height) then Exit;
-
-  PersW:= (mWidth * 100) div Width;
-  PersH:= (mHeight * 100) div Height;
-
-  NewW:= (Form.Width * PersW) div 100;
-  NewH:= (Form.Height * PersH) div 100;
-
-  Form.Width:= NewW;
-  Form.Height:= NewH;
+  if Form.Width > mWidth then
+   Form.Width := mWidth;
+  if Form.Height > mHeight then
+   Form.Height := mHeight;
 end;
 
 function InitPropStorage(Owner: TComponent): TIniPropStorageEx;
@@ -823,4 +813,4 @@ initialization
 
 finalization
   DeInitGlobs;
-end.
+end.
