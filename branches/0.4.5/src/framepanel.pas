@@ -1463,12 +1463,14 @@ begin
         dgPanel.Row:=dgPanel.Row+1;
       MakeSelectedVisible;
     end;
+    Key := 0;
     Exit;
   end;
 
   if Key=VK_MULTIPLY then
   begin
     InvertAllFiles;
+    Key := 0;
     Exit;
   end;
 
@@ -1480,6 +1482,7 @@ begin
       MarkPlus;
     if shift=[ssShift] then
       MarkShiftPlus;
+    Key := 0;
     Exit;
   end;
 
@@ -1492,6 +1495,8 @@ begin
       MarkMinus;
     if shift=[ssShift] then
       MarkShiftMinus;
+
+    Key := 0;
     Exit;
   end;
 
@@ -2467,4 +2472,4 @@ begin
 end;
 
 end.
-
+
