@@ -140,6 +140,7 @@ constructor TExtAction.Create;
 begin
   Extensions := TStringList.Create;
   Actions := TStringList.Create;
+  Actions.CaseSensitive:= False;
 end;
 
 destructor TExtAction.Destroy;
@@ -471,7 +472,7 @@ begin
     begin
       if Extensions.IndexOf(sMask) >= 0 then
       begin
-        Result:= Actions.Values[UpperCase(sActionName)];
+        Result:= Actions.Values[sActionName];
         Exit;
       end;
     end;
@@ -481,7 +482,7 @@ begin
     begin
       if Extensions.IndexOf(cMaskDefault) >= 0 then
       begin
-        Result:=Actions.Values[UpperCase(sActionName)];
+        Result:=Actions.Values[sActionName];
         Break;
       end;
     end;
