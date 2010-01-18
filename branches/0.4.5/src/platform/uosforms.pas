@@ -286,7 +286,7 @@ var
   fri : TFileRecItem;
   sl: TStringList = nil;
   i:Integer;
-  sCmd:String;  
+  sAct, sCmd: UTF8String;
   contMenu: IContextMenu;
   menu: HMENU = 0;
   hActionsSubMenu: HMENU = 0;
@@ -321,14 +321,11 @@ begin
               begin
               //founded any commands
                 InsertMenuItemEx(menu, hActionsSubMenu, PWChar(UTF8Decode(rsMnuActions)), 0, 333, MFT_STRING);
-                for i:=0 to sl.Count-1 do
+                for I:= 0 to sl.Count - 1 do
                   begin
-                    sCmd:=sl.Strings[i];
-                    if pos('VIEW=',sCmd)>0 then Continue;  // view command is only for viewer
-                    ReplaceExtCommand(sCmd, @fri, frmMain.ActiveFrame.pnlFile.ActiveDir);
-
-                    sCmd:= RemoveQuotation(sCmd);
-                    InsertMenuItemEx(hActionsSubMenu,0, PWChar(UTF8Decode(sCmd)), 0, I + $1000, MFT_STRING);
+                    sAct:= sl.Names[I];
+                    if (Pos('VIEW', sAct) > 0) or (Pos('EDIT', sAct) > 0) then Continue;
+                    InsertMenuItemEx(hActionsSubMenu,0, PWChar(UTF8Decode(sAct)), 0, I + $1000, MFT_STRING);
                   end;
               end;
 
@@ -341,14 +338,14 @@ begin
                   InsertMenuItemEx(hActionsSubMenu,0, nil, 0, 0, MFT_SEPARATOR);
 
                 // now add VIEW item
-                sCmd:= '{!VIEWER}' + fri.sPath + fri.sName;
+                sCmd:= '{!VIEWER} ' + fri.sPath + fri.sName;
                 I := sl.Add(sCmd);
-                InsertMenuItemEx(hActionsSubMenu,0, PWChar(UTF8Decode(sCmd)), 1, I + $1000, MFT_STRING);
+                InsertMenuItemEx(hActionsSubMenu,0, PWChar(UTF8Decode(rsMnuView)), 1, I + $1000, MFT_STRING);
 
-                // now add EDITconfigure item
-                sCmd:= '{!EDITOR}' + fri.sPath + fri.sName;
+                // now add EDIT item
+                sCmd:= '{!EDITOR} ' + fri.sPath + fri.sName;
                 I := sl.Add(sCmd);
-                InsertMenuItemEx(hActionsSubMenu,0, PWChar(UTF8Decode(sCmd)), 1, I + $1000, MFT_STRING);
+                InsertMenuItemEx(hActionsSubMenu,0, PWChar(UTF8Decode(rsMnuEdit)), 1, I + $1000, MFT_STRING);
               end;
           end;
         { /Actions submenu }
@@ -444,8 +441,8 @@ begin
       else if (cmd >= $1000) then // actions sub menu
         begin
           sCmd:= sl.Strings[cmd - $1000];
+          sCmd:= Copy(sCmd, Pos('=', sCmd) + 1, Length(sCmd));
           ReplaceExtCommand(sCmd, @fri, frmMain.ActiveFrame.pnlFile.ActiveDir);
-          sCmd:= Copy(sCmd, pos('=',sCmd)+1, length(sCmd));
           try
             with frmMain.ActiveFrame do
             begin
@@ -478,7 +475,7 @@ var
   fri: TFileRecItem;
   sl: TStringList;
   i: Integer;
-  sCmd: String;
+  sAct, sCmd: UTF8String;
   mi, miActions: TMenuItem;
 begin
   if FileList.Count = 0 then
@@ -517,13 +514,13 @@ begin
             CM.Items.Add(miActions);
             for i:=0 to sl.Count-1 do
               begin
-                sCmd:=sl.Strings[i];
-                if pos('VIEW=',sCmd)>0 then Continue;  // view command is only for viewer
+                sAct:= sl.Names[I];
+                if (Pos('VIEW', sAct) > 0) or (Pos('EDIT', sAct) > 0) then Continue;
+                sCmd:= sl.ValueFromIndex[I];
                 ReplaceExtCommand(sCmd, @fri, frmMain.ActiveFrame.pnlFile.ActiveDir);
                 mi:=TMenuItem.Create(miActions);
-                mi.Caption:=RemoveQuotation(sCmd);
-                mi.Hint:=Copy(sCmd, pos('=',sCmd)+1, length(sCmd));
-                // length is bad, but in Copy is corrected
+                mi.Caption:= sAct;
+                mi.Hint:= sCmd;
                 mi.OnClick:=TContextMenu.ContextMenuSelect; // handler
                 miActions.Add(mi);
               end;
@@ -542,15 +539,15 @@ begin
 
             // now add VIEW item
             mi:=TMenuItem.Create(miActions);
-            mi.Caption:='{!VIEWER}' + fri.sPath + fri.sName;
-            mi.Hint:=mi.Caption;
+            mi.Caption:= rsMnuView;
+            mi.Hint:= '{!VIEWER} ' + fri.sPath + fri.sName;
             mi.OnClick:=TContextMenu.ContextMenuSelect; // handler
             miActions.Add(mi);
 
             // now add EDITconfigure item
             mi:=TMenuItem.Create(miActions);
-            mi.Caption:='{!EDITOR}' + fri.sPath + fri.sName;
-            mi.Hint:=mi.Caption;
+            mi.Caption:= rsMnuEdit;
+            mi.Hint:= '{!EDITOR} ' + fri.sPath + fri.sName;
             mi.OnClick:=TContextMenu.ContextMenuSelect; // handler
             miActions.Add(mi);
           end;

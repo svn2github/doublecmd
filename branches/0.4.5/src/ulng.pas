@@ -85,6 +85,8 @@ resourcestring
   rsMsgManualHotDirQuery = 'Enter name and path (format name=path):';
   // for context menu
   rsMnuActions = 'Actions';
+  rsMnuView = 'View';
+  rsMnuEdit = 'Edit';
   rsMnuMount = 'Mount';
   rsMnuUmount = 'Umount';
   rsMnuEject = 'Eject';
