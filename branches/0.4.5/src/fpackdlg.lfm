@@ -17,7 +17,7 @@ object frmPackDlg: TfrmPackDlg
   Constraints.MinWidth = 482
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '0.9.29'
+  LCLVersion = '0.9.28.3'
   object lblPrompt: TLabel
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
@@ -90,7 +90,6 @@ object frmPackDlg: TfrmPackDlg
     NumGlyphs = 1
     Anchors = [akTop, akLeft, akRight]
     AutoSize = False
-    MaxLength = 0
     TabOrder = 0
   end
   object rgPacker: TRadioGroup
@@ -203,6 +202,8 @@ object frmPackDlg: TfrmPackDlg
       Top = 0
       Width = 260
       Caption = 'Also &pack path names (only recursed)'
+      Checked = True
+      State = cbChecked
       TabOrder = 0
     end
     object cbRecurse: TCheckBox
