@@ -232,7 +232,7 @@ Type
 function IsBlocked : Boolean;
 
 implementation
-uses Forms, SysUtils, Masks, uFileOp, uGlobs, uLog, uOSUtils, LCLProc,
+uses Forms, SysUtils, Masks, uFileOp, uGlobs, uLog, uOSUtils, LCLProc, uShowMsg,
      uDCUtils, uLng, Controls, fPackInfoDlg, fDialogBox, uGlobsPaths, FileUtil;
 
 const
@@ -385,12 +385,22 @@ begin
 end;
 
 function ChangeVolProc(ArcName : Pchar; Mode:Longint):Longint; stdcall;
+var
+  sArcName: UTF8String;
 begin
+  Result:= 1;
+  sArcName:= SysToUTF8(ArcName);
   case Mode of
   PK_VOL_ASK:
-    ArcName := PChar(UTF8ToSys(Dialogs.InputBox ('Double Commander', rsMsgSelLocNextVol, SysToUTF8(ArcName))));
+    begin
+      if ShowInputQuery('Double Commander', rsMsgSelLocNextVol, sArcName) then
+        StrPLCopy(ArcName, UTF8ToSys(sArcName), MAX_PATH)
+      else
+        Result := 0; // Abort operation
+    end;
   PK_VOL_NOTIFY:
-    ShowMessage(rsMsgNextVolUnpack);
+    if log_arc_op in gLogOptions then
+      LogWrite(rsMsgNextVolUnpack + #32 + sArcName);
   end;
 end;
 
