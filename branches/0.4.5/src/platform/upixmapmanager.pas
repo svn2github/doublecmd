@@ -413,7 +413,7 @@ begin
   Result:= FPixbufList.IndexOf(sName);
   if Result < 0 then
   begin
-    pbPicture := gdk_pixbuf_new_from_file(PChar(sFileName), nil);
+    pbPicture := gdk_pixbuf_new_from_file_at_size(PChar(sFileName), gIconsSize, gIconsSize, nil);
     if pbPicture = nil then
     begin
       DebugLn(Format('Error: pixmap [%s] not loaded!', [sFileName]));
@@ -865,12 +865,14 @@ function TPixMapManager.DrawBitmap(iIndex: Integer; Canvas: TCanvas; Rect: TRect
 var
   hicn: HICON;
   {$ENDIF}
-
-  {$IFDEF LCLGTK2}
+  {$IF DEFINED(LCLGTK2)}
 var
   pbPicture : PGdkPixbuf;
   iPixbufWidth : Integer;
   iPixbufHeight : Integer;
+  {$ELSE}
+var
+  aRect: TRect;
   {$ENDIF}
 begin
   Result := True;
@@ -886,7 +888,13 @@ begin
   else
   {$ELSE}
   if (iIndex >= 0) and (iIndex < FPixmapList.Count) then
-    Canvas.Draw(Rect.Left, Rect.Top ,Graphics.TBitmap(FPixmapList.Objects[iIndex]))
+    begin
+      aRect.Left:= Rect.Left;
+      aRect.Top:= Rect.Top;
+      aRect.Right:= Rect.Left + gIconsSize;
+      aRect.Bottom:= Rect.Top + gIconsSize;
+      Canvas.StretchDraw(aRect, Graphics.TBitmap(FPixmapList.Objects[iIndex]))
+    end
   else
   {$ENDIF}
 {$IFDEF MSWINDOWS}
