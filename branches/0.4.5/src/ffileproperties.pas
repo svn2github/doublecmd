@@ -90,9 +90,6 @@ type
     lblWrite: TLabel;
     pnlCaption: TPanel;
     pnlData: TPanel;
-    pnlData: TPanel;
-    pnlCaption: TPanel;
-    pnlData: TPanel;
     pcPageControl: TPageControl;
     tsProperties: TTabSheet;
     tsAttributes: TTabSheet;
