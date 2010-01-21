@@ -1358,7 +1358,10 @@ begin
        DebugLn('WFXModule Loaded');
        tmpPc:= WFXmodule.VFSMisc;
        if tmpPc > 0 then
-        sPluginName := PChar(Pointer(tmpPc)) + '=' + SetCmdDirAsEnvVar(odOpenDialog.FileName)
+        begin
+          sPluginName := PChar(Pointer(tmpPc)) + '=' + SetCmdDirAsEnvVar(odOpenDialog.FileName);
+          FreeMem(PChar(Pointer(tmpPc)));
+        end
        else
          begin
            DebugLn('WFX alternate name');

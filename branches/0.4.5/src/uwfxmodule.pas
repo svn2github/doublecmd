@@ -936,16 +936,17 @@ end;
 
 function TWFXModule.VFSMisc: PtrUInt;
 var
-  pPlgName : PChar;
+  pcRootName : PAnsiChar;
 begin
-  New(pPlgName);
+  Result:= 0;
   if Assigned(FsGetDefRootName) then
-    begin
-      FsGetDefRootName(pPlgName, 256);
-      Result := PtrUInt(pPlgName);
-    end
-  else
-    Result:=0;
+    try
+      pcRootName:= GetMem(MAX_PATH);
+      FsGetDefRootName(pcRootName, MAX_PATH);
+      Result := PtrUInt(pcRootName);
+    except
+      FreeMem(pcRootName);
+    end;
 end;
 
 { TWFXCopyThread }
