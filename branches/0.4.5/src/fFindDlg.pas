@@ -4,7 +4,7 @@
    Find dialog, with searching in thread
 
    Copyright (C) 2003-2004 Radek Cervinka (radek.cervinka@centrum.cz)
-   Copyright (C) 2006-2009  Koblov Alexander (Alexx2000@mail.ru)
+   Copyright (C) 2006-2010  Koblov Alexander (Alexx2000@mail.ru)
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -39,12 +39,14 @@ type
   { TfrmFindDlg }
 
   TfrmFindDlg = class(TForm)
+    Bevel2: TBevel;
+    Bevel3: TBevel;
     btnClose: TButton;
+    btnGoToPath: TButton;
+    btnNewSearch: TButton;
     btnStart: TButton;
     btnStop: TButton;
     btnView: TButton;
-    btnNewSearch: TButton;
-    btnGoToPath: TButton;
     btnWorkWithFound: TButton;
     cbFindInFile: TCheckBox;
     cbNoThisText: TCheckBox;
@@ -78,6 +80,9 @@ type
     gbAttributes: TGroupBox;
     btnSearchDelete: TButton;
     btnSearchLoad: TButton;
+    lblCurrent: TLabel;
+    lblFound: TLabel;
+    lblStatus: TLabel;
     lblTemplateHeader: TLabel;
     lbSearchTemplates: TListBox;
     btnSearchSave: TButton;
@@ -85,13 +90,16 @@ type
     lblSearchDepth: TLabel;
     lblEncoding: TLabel;
     lblInfo: TLabel;
-    Panel4: TPanel;
+    lsFoundedFiles: TListBox;
+    pnlResults: TPanel;
+    pnlStatus: TPanel;
+    pnlResultsButtons: TPanel;
     seNotOlderThan: TSpinEdit;
     seFileSizeFrom: TSpinEdit;
     seFileSizeTo: TSpinEdit;
-    Splitter1: TSplitter;
-    Panel2: TPanel;
+    pnlFindFile: TPanel;
     pgcSearch: TPageControl;
+    tsResults: TTabSheet;
     tsLoadSave: TTabSheet;
     tsStandard: TTabSheet;
     lblFindPathStart: TLabel;
@@ -100,12 +108,6 @@ type
     gbFindData: TGroupBox;
     cbCaseSens: TCheckBox;
     tsAdvanced: TTabSheet;
-    Panel1: TPanel;
-    Panel3: TPanel;
-    lsFoundedFiles: TListBox;
-    lblStatus: TLabel;
-    lblCurrent: TLabel;
-    lblFound: TLabel;
     PopupMenuFind: TPopupMenu;
     miShowInViewer: TMenuItem;
     procedure btnSearchDeleteClick(Sender: TObject);
@@ -233,9 +235,7 @@ begin
   lblCurrent.Caption:= '';
   lblStatus.Caption:= '';
   lblFound.Caption:= '';
-  Panel1.Visible:= False;
-  Splitter1.Visible:= False;
-  Height:= Panel2.Height + 22;
+  Height:= pnlFindFile.Height + 22;
   DSL:= TDSXModuleList.Create;
   // fill search depth combobox
   cbSearchDepth.Items.Add(rsFindDepthAll);
@@ -444,10 +444,11 @@ end;
 procedure TfrmFindDlg.btnNewSearchClick(Sender: TObject);
 begin
   btnStopClick(Sender);
-  Panel1.Visible := False;
-  Splitter1.Visible := False;
-  Height := Panel2.Height + 22;
-
+  pgcSearch.PageIndex:= 0;
+  lsFoundedFiles.Clear;
+  lblStatus.Caption:= EmptyStr;
+  lblCurrent.Caption:= EmptyStr;
+  lblFound.Caption:= EmptyStr;
   if pgcSearch.ActivePage = tsStandard then
     cmbFindFileMask.SetFocus;
 end;
@@ -620,7 +621,6 @@ begin
 
   // add to find mask history
   InsertFirstItem(cmbFindFileMask.Text, cmbFindFileMask);
-//  cmbFindFileMask.item
   // add to search text history
   if cbFindInFile.Checked then
     InsertFirstItem(cmbFindText.Text, cmbFindText);
@@ -628,9 +628,8 @@ begin
   if cbReplaceText.Checked then
     InsertFirstItem(cmbReplaceText.Text, cmbReplaceText);
 
-  Panel1.Visible := True;
-  Splitter1.Visible := True;
-  Height := (Screen.Height * 4) div 5;
+  // Show search results page
+  pgcSearch.ActivePageIndex:= pgcSearch.PageCount - 1;
 
   if lsFoundedFiles.CanFocus then
     lsFoundedFiles.SetFocus;
@@ -843,8 +842,6 @@ end;
 procedure TfrmFindDlg.frmFindDlgClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
-  Panel1.Visible := False;
-  Height := Panel2.Height + 22;
   glsMaskHistory.Assign(cmbFindFileMask.Items);
 end;
 
@@ -852,6 +849,8 @@ procedure TfrmFindDlg.frmFindDlgShow(Sender: TObject);
 var
   I: Integer;
 begin
+  pgcSearch.PageIndex:= 0;
+
   if cmbFindFileMask.Visible then
     cmbFindFileMask.SelectAll;
 
