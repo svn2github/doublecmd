@@ -27,7 +27,7 @@ uses
 
 const
   dcBuildDate = {$I %DATE%};
-  dcVersion = '0.4.5 beta';
+  dcVersion = '0.4.5.1 beta';
   lazVersion = {$I version.inc};
   fpcVersion = {$I %FPCVERSION%};
   TargetCPU = {$I %FPCTARGETCPU%};

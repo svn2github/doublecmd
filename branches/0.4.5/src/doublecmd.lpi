@@ -23,10 +23,11 @@
       <UseVersionInfo Value="True"/>
       <CurrentMajorRevNr Value="4"/>
       <CurrentMinorRevNr Value="5"/>
-      <ProjectVersion Value="0.4.5.0"/>
+      <CurrentBuildNr Value="1"/>
+      <ProjectVersion Value="0.4.5.1"/>
       <FileDescription Value="Double Commander is a cross platform open source file manager with two panels side by side"/>
       <InternalName Value="DOUBLECMD"/>
-      <LegalCopyright Value="Copyright (C) 2006-2009  Koblov Alexander"/>
+      <LegalCopyright Value="Copyright (C) 2006-2010  Koblov Alexander"/>
       <ProductName Value="Double Commander"/>
     </VersionInfo>
     <PublishOptions>
@@ -254,6 +255,7 @@
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmFileProperties"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="fFileProperties"/>
       </Unit26>
       <Unit27>
