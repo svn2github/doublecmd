@@ -366,10 +366,44 @@ msgstr "&Připojit"
 msgid "Add S&ubbar >>"
 msgstr "Přidat \"&Podlištu\" >>"
 
+#: TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
 #: TFRMCONFIGTOOLBAR.BTNDELETEBUTTON.CAPTION
 msgctxt "TFRMCONFIGTOOLBAR.BTNDELETEBUTTON.CAPTION"
 msgid "&Delete"
 msgstr "&Vymazat"
+
+#: TFRMCONFIGTOOLBAR.BTNHELP.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNHELP.CAPTION"
+msgid "&Help"
+msgstr "&Nápověda"
+
+#: TFRMCONFIGTOOLBAR.BTNINSERTBUTTON.CAPTION
+msgid "Insert"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.BTNOK.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMCONFIGTOOLBAR.BTNOPENBARFILE.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOPENBARFILE.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMCONFIGTOOLBAR.BTNOPENFILE.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOPENFILE.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMCONFIGTOOLBAR.BTNOPENICONFILE.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOPENICONFILE.CAPTION"
+msgid ">>"
+msgstr ">>"
 
 #: TFRMCONFIGTOOLBAR.CAPTION
 msgid "Change button bar"
@@ -878,6 +912,7 @@ msgid "Open in VFS"
 msgstr "Otevřív v VFS"
 
 #: TFRMFILEASSOC.MIVIEW.CAPTION
+msgctxt "TFRMFILEASSOC.MIVIEW.CAPTION"
 msgid "View"
 msgstr "Zobrazit"
 
@@ -1245,6 +1280,10 @@ msgstr "Rozžířené"
 #: TFRMFINDDLG.TSLOADSAVE.CAPTION
 msgid "Load/Save"
 msgstr "Načíst/Uložit"
+
+#: TFRMFINDDLG.TSRESULTS.CAPTION
+msgid "Results"
+msgstr ""
 
 #: TFRMFINDDLG.TSSTANDARD.CAPTION
 msgid "Standard"
@@ -3571,6 +3610,11 @@ msgctxt "ulng.rsmnuactions"
 msgid "Actions"
 msgstr "Akce"
 
+#: ulng.rsmnuedit
+msgctxt "ulng.rsmnuedit"
+msgid "Edit"
+msgstr "Upravit"
+
 #: ulng.rsmnueject
 msgid "Eject"
 msgstr "Vysunout"
@@ -3582,6 +3626,11 @@ msgstr "Připojit"
 #: ulng.rsmnuumount
 msgid "Umount"
 msgstr "Odpojit"
+
+#: ulng.rsmnuview
+msgctxt "ulng.rsmnuview"
+msgid "View"
+msgstr "Zobrazit"
 
 #: ulng.rsmsgchdirfailed
 msgid "ChDir to [%s] failed!"
@@ -3920,6 +3969,22 @@ msgstr "Povolit"
 #: ulng.rsoptenterext
 msgid "Enter extension"
 msgstr "Zadej výraz"
+
+#: ulng.rsoptexamplecursor
+msgid "Cursor"
+msgstr ""
+
+#: ulng.rsoptexamplemark
+msgid "Mark"
+msgstr ""
+
+#: ulng.rsoptexamplemarkcursor
+msgid "Mark + Cursor"
+msgstr ""
+
+#: ulng.rsoptexampletext
+msgid "Text"
+msgstr ""
 
 #: ulng.rsoptfileop
 msgid "File operations"

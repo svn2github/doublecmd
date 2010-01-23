@@ -907,6 +907,7 @@ msgid "Open in VFS"
 msgstr ""
 
 #: TFRMFILEASSOC.MIVIEW.CAPTION
+msgctxt "TFRMFILEASSOC.MIVIEW.CAPTION"
 msgid "View"
 msgstr ""
 
@@ -1273,6 +1274,10 @@ msgstr ""
 
 #: TFRMFINDDLG.TSLOADSAVE.CAPTION
 msgid "Load/Save"
+msgstr ""
+
+#: TFRMFINDDLG.TSRESULTS.CAPTION
+msgid "Results"
 msgstr ""
 
 #: TFRMFINDDLG.TSSTANDARD.CAPTION
@@ -3600,6 +3605,11 @@ msgctxt "ulng.rsmnuactions"
 msgid "Actions"
 msgstr ""
 
+#: ulng.rsmnuedit
+msgctxt "ulng.rsmnuedit"
+msgid "Edit"
+msgstr ""
+
 #: ulng.rsmnueject
 msgid "Eject"
 msgstr ""
@@ -3610,6 +3620,11 @@ msgstr ""
 
 #: ulng.rsmnuumount
 msgid "Umount"
+msgstr ""
+
+#: ulng.rsmnuview
+msgctxt "ulng.rsmnuview"
+msgid "View"
 msgstr ""
 
 #: ulng.rsmsgchdirfailed

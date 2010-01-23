@@ -361,10 +361,44 @@ msgstr "&Añadir"
 msgid "Add S&ubbar >>"
 msgstr "Añadir S&ubbarra >>"
 
+#: TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Cancelar"
+
 #: TFRMCONFIGTOOLBAR.BTNDELETEBUTTON.CAPTION
 msgctxt "TFRMCONFIGTOOLBAR.BTNDELETEBUTTON.CAPTION"
 msgid "&Delete"
 msgstr "&Borrar"
+
+#: TFRMCONFIGTOOLBAR.BTNHELP.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNHELP.CAPTION"
+msgid "&Help"
+msgstr "A&yuda"
+
+#: TFRMCONFIGTOOLBAR.BTNINSERTBUTTON.CAPTION
+msgid "Insert"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.BTNOK.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOK.CAPTION"
+msgid "OK"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.BTNOPENBARFILE.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOPENBARFILE.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMCONFIGTOOLBAR.BTNOPENFILE.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOPENFILE.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMCONFIGTOOLBAR.BTNOPENICONFILE.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOPENICONFILE.CAPTION"
+msgid ">>"
+msgstr ">>"
 
 #: TFRMCONFIGTOOLBAR.CAPTION
 msgid "Change button bar"
@@ -873,6 +907,7 @@ msgid "Open in VFS"
 msgstr ""
 
 #: TFRMFILEASSOC.MIVIEW.CAPTION
+msgctxt "TFRMFILEASSOC.MIVIEW.CAPTION"
 msgid "View"
 msgstr ""
 
@@ -1243,6 +1278,10 @@ msgstr "Avanzado"
 
 #: TFRMFINDDLG.TSLOADSAVE.CAPTION
 msgid "Load/Save"
+msgstr ""
+
+#: TFRMFINDDLG.TSRESULTS.CAPTION
+msgid "Results"
 msgstr ""
 
 #: TFRMFINDDLG.TSSTANDARD.CAPTION
@@ -3573,6 +3612,11 @@ msgctxt "ulng.rsmnuactions"
 msgid "Actions"
 msgstr "Acciones"
 
+#: ulng.rsmnuedit
+msgctxt "ulng.rsmnuedit"
+msgid "Edit"
+msgstr "Editar"
+
 #: ulng.rsmnueject
 msgid "Eject"
 msgstr ""
@@ -3583,6 +3627,11 @@ msgstr ""
 
 #: ulng.rsmnuumount
 msgid "Umount"
+msgstr ""
+
+#: ulng.rsmnuview
+msgctxt "ulng.rsmnuview"
+msgid "View"
 msgstr ""
 
 #: ulng.rsmsgchdirfailed
@@ -3922,6 +3971,22 @@ msgstr ""
 
 #: ulng.rsoptenterext
 msgid "Enter extension"
+msgstr ""
+
+#: ulng.rsoptexamplecursor
+msgid "Cursor"
+msgstr ""
+
+#: ulng.rsoptexamplemark
+msgid "Mark"
+msgstr ""
+
+#: ulng.rsoptexamplemarkcursor
+msgid "Mark + Cursor"
+msgstr ""
+
+#: ulng.rsoptexampletext
+msgid "Text"
 msgstr ""
 
 #: ulng.rsoptfileop

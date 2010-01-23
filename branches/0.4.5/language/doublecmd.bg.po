@@ -907,6 +907,7 @@ msgid "Open in VFS"
 msgstr "Отваряне във VFS"
 
 #: TFRMFILEASSOC.MIVIEW.CAPTION
+msgctxt "TFRMFILEASSOC.MIVIEW.CAPTION"
 msgid "View"
 msgstr "Преглед"
 
@@ -1274,6 +1275,10 @@ msgstr "Разширени"
 #: TFRMFINDDLG.TSLOADSAVE.CAPTION
 msgid "Load/Save"
 msgstr "Зареждане/Съхраняване"
+
+#: TFRMFINDDLG.TSRESULTS.CAPTION
+msgid "Results"
+msgstr ""
 
 #: TFRMFINDDLG.TSSTANDARD.CAPTION
 msgid "Standard"
@@ -3602,6 +3607,11 @@ msgctxt "ulng.rsmnuactions"
 msgid "Actions"
 msgstr "Действия"
 
+#: ulng.rsmnuedit
+msgctxt "ulng.rsmnuedit"
+msgid "Edit"
+msgstr "Обработка"
+
 #: ulng.rsmnueject
 msgid "Eject"
 msgstr "Изваждане"
@@ -3613,6 +3623,11 @@ msgstr "Прикачане"
 #: ulng.rsmnuumount
 msgid "Umount"
 msgstr "Разкачане"
+
+#: ulng.rsmnuview
+msgctxt "ulng.rsmnuview"
+msgid "View"
+msgstr "Преглед"
 
 #: ulng.rsmsgchdirfailed
 msgid "ChDir to [%s] failed!"
