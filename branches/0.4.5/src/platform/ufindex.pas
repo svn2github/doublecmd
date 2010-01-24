@@ -47,7 +47,9 @@ procedure FindCloseEx(var Rslt: TSearchRec);
 function CheckAttrMask(DefaultAttr : Cardinal; sAttr : String; Attr : Cardinal) : Boolean;
 
 implementation
-uses LCLProc, uFileOp;
+
+uses
+  LCLProc, Masks, uFileOp;
 
 function mbFindMatchingFile(var Rslt: TSearchRec): Integer;
 {$IFDEF MSWINDOWS}
@@ -79,7 +81,7 @@ begin
   Result:= -1;
   UnixFindData:= PUnixFindData(Rslt.FindHandle);
   if UnixFindData = nil then Exit;
-  if FNMatch(UnixFindData^.sMask, Rslt.Name) then
+  if MatchesMask(UTF8UpperCase(Rslt.Name), UnixFindData^.sMask) then
     begin
       if fpLStat(UnixFindData^.sPath + Rslt.Name, @UnixFindData^.StatRec) >= 0 then
         with UnixFindData^.StatRec do
@@ -129,6 +131,7 @@ begin
     iAttr:= Attr;
     sPath:= ExtractFileDir(Path);
     sMask:= ExtractFileName(Path);
+    sMask:= UTF8UpperCase(sMask);
     if sPath = '' then
       GetDir(0, sPath);
     if sMask = '' then
