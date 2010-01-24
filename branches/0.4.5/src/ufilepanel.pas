@@ -714,7 +714,12 @@ begin
     AutoSize:=True;
     Left:=1;
   end;
-  
+
+{$IF NOT DEFINED(DARWIN)}
+  if gTermWindow and Assigned(Cons) then
+    Cons.Terminal.SetCurrentDir(ActiveDir);
+{$ENDIF}
+
   fedtCommand.Left:= flblCurPath.Width+5;
   fedtCommand.Width:= TControl(fedtCommand.Parent).Width-fedtCommand.Left;
   if not fUpdateDiskFreeSpace then Exit;
@@ -754,7 +759,7 @@ begin
 
           {$IF NOT DEFINED(DARWIN)}
           if gTermWindow and Assigned(Cons) then
-            Cons.Terminal.Write_pty('cd "'+fActiveDir+'"'+#13#10);
+            Cons.Terminal.SetCurrentDir(fActiveDir);
           {$ENDIF}
 
           LoadPanel;

@@ -2689,7 +2689,7 @@ begin
   ActiveFrame.SetFocus;
   {$IF NOT DEFINED(DARWIN)}
   if gTermWindow and Assigned(Cons) then
-    Cons.Terminal.Write_pty(' cd "'+ActiveFrame.ActiveDir+'"'+#13+#10);
+    Cons.Terminal.SetCurrentDir(ActiveFrame.ActiveDir);
   {$ENDIF}
 end;
 
@@ -3495,7 +3495,7 @@ begin
         DebugLn(sDir);
 {$IF NOT DEFINED(DARWIN)}
         if gTermWindow and Assigned(Cons) then
-          Cons.Terminal.Write_pty(' cd "'+sDir+'"'+#13#10);
+          Cons.Terminal.SetCurrentDir(sDir);
 {$ENDIF}
       end;
     end;
@@ -3507,7 +3507,7 @@ begin
 
 {$IF NOT DEFINED(DARWIN)}
     if gTermWindow and Assigned(Cons) then
-      Cons.Terminal.Write_pty(sCmd+#13#10)
+      Cons.Terminal.Write_pty(sCmd + #13#10)
     else
 {$ENDIF}
     if bRunInTerm then

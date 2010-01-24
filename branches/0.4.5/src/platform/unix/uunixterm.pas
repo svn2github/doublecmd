@@ -32,8 +32,10 @@ uses
    {libc,}ExtCtrls, LCLProc, cwstring,
    LCLType, Graphics, TermInfo, termio, uTerminal, uOSUtils;
 
-//линковка с либой libutil.a содержащей функции forkpty и тд.
-{$L libutil.a}
+{$IF DEFINED(LINUX)}
+{$L libutil.a} // under Linux forkpty is situated in libutil.a library
+{$ENDIF}
+
 const clib = 'c';
       C_stdin   = 0;
       C_stdout  = 1;
@@ -158,6 +160,7 @@ type
       function SendBreak_pty():boolean; override; // ^C
       function SendSignal_pty(Sig:Cint):boolean; override;
       function SetScreenSize(aCols,aRows:integer):boolean; override;
+      function SetCurrentDir(const NewDir: UTF8String): Boolean; override;
       //---------------------
       function KillShell:LongInt; override;
       function CSI_GetTaskId(const buf:UTF8string):integer; override; //get index of sequence in CSILast list
@@ -548,6 +551,10 @@ begin
   else Result:=false;
 end;
 
+function TUnixTerm.SetCurrentDir(const NewDir: UTF8String): Boolean;
+begin
+  Result:= Write_pty(' cd "' + NewDir + '"' + #13#10);
+end;
 
 function TUnixTerm.KillShell: LongInt;
 begin
@@ -581,7 +588,9 @@ begin
  tio.c_cc[VEOF]:=CEOF;
  tio.c_cc[VEOL]:=CEOL;
  tio.c_cc[VEOL2]:=CEOL2;
+{$IF NOT DEFINED(DARWIN)}
  tio.c_cc[VSWTC]:=CSWTC;
+{$ENDIF}
  tio.c_cc[VMIN]:=CMIN;
  tio.c_cc[VTIME]:=CTIME;
 
