@@ -671,7 +671,7 @@ begin
       if pnlFile.FileList.GetItem(I)^.bSelected then
         sl.Add(ActiveDir + pnlFile.FileList.GetItem(I)^.sName);
     Clipboard.Clear;   // prevent multiple formats in Clipboard (specially synedit)
-    Clipboard.AsText:= sl.Text;
+    Clipboard.AsText:= TrimRightLineEnding(sl.Text, sl.TextLineBreakStyle);
     UnMarkAll;
   end;
   FreeAndNil(sl);
@@ -690,7 +690,7 @@ begin
       if pnlFile.FileList.GetItem(I)^.bSelected then
         sl.Add(pnlFile.FileList.GetItem(I)^.sName);
     Clipboard.Clear;   // prevent multiple formats in Clipboard (specially synedit)
-    Clipboard.AsText:= sl.Text;
+    Clipboard.AsText:= TrimRightLineEnding(sl.Text, sl.TextLineBreakStyle);
     UnMarkAll;
   end;
   FreeAndNil(sl);
