@@ -29,13 +29,15 @@ interface
 uses
    SysUtils {$IFDEF UNIX}, BaseUnix, UnixUtil, uMyUnix{$ELSE}, Windows{$ENDIF};
 
+const
+  faSpecial = faVolumeID or faDirectory;
+
 {$IFDEF UNIX}
 type
   TUnixFindData = record
     DirPtr: PDir;   //en> directory pointer for reading directory
     sPath: String;  //en> file name path
     sMask: String;  //en> file name mask
-    iAttr: LongInt; //en> attribute we are searching for
     StatRec: Stat;
   end;
   PUnixFindData = ^TUnixFindData;
@@ -87,7 +89,7 @@ begin
         with UnixFindData^.StatRec do
         begin
           WinAttr:= LinuxToWinAttr(PChar(Rslt.Name), UnixFindData^.StatRec);
-          if (WinAttr and UnixFindData^.iAttr) = 0 then Exit;
+          if (WinAttr and Rslt.ExcludeAttr) <> 0 then Exit;
           Rslt.Size:= st_size;
           Rslt.Time:= UnixToWinAge(st_mtime);
           Rslt.Attr:= st_mode;
@@ -99,8 +101,6 @@ end;
 
 function FindFirstEx (const Path : UTF8String; Attr : Longint; out Rslt : TSearchRec) : Longint;
 {$IFDEF MSWINDOWS}
-const
-  faSpecial = faVolumeID or faDirectory;
 var
   wPath: WideString;
   wFindData: TWin32FindDataW;
@@ -125,10 +125,10 @@ begin
   New(UnixFindData);
   FillChar(UnixFindData^, SizeOf(UnixFindData^), 0);
   Rslt.FindHandle:= UnixFindData;
+  Rslt.ExcludeAttr:= not Attr and faSpecial;
 
   with UnixFindData^ do
   begin
-    iAttr:= Attr;
     sPath:= ExtractFileDir(Path);
     sMask:= ExtractFileName(Path);
     sMask:= UTF8UpperCase(sMask);
