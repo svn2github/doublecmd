@@ -100,7 +100,7 @@ end;
 function FindFirstEx (const Path : UTF8String; Attr : Longint; out Rslt : TSearchRec) : Longint;
 {$IFDEF MSWINDOWS}
 const
-  faSpecial = faHidden or faSysFile or faVolumeID or faDirectory;
+  faSpecial = faVolumeID or faDirectory;
 var
   wPath: WideString;
   wFindData: TWin32FindDataW;
