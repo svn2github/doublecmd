@@ -754,6 +754,8 @@ begin
  if i=-1 then exit;
  Sinfo:=TObjInfoClass(FFormsList.Objects[i]);
 
+ // Don't execute hotkeys that coincide with quick search combination
+ if not ((Shift = gQuickSearchMode) and (Key in [$21..$7E])) then
 {$IFDEF MSWINDOWS}
   // Don't execute hotkeys with AltGr on Windows.
   if not (GetKeyShiftStateEx = [ssAltGr]) then
