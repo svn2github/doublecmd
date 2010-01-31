@@ -45,6 +45,7 @@ type
     SearchRecord: TSearchAttrRecord;
 
     constructor Create;
+    destructor Destroy; override;
     function CheckFile(const FileRecItem: TFileRecItem): Boolean;
     property TemplateName: UTF8String read FTemplateName write FTemplateName;
     property StartPath: UTF8String read FStartPath write FStartPath;
@@ -58,6 +59,7 @@ type
   private
     function GetTemplate(Index: Integer): TSearchTemplate;
   public
+    procedure Clear; override;
     function Add(SearchTemplate: TSearchTemplate): Integer;
     procedure DeleteTemplate(Index: Integer);
     procedure LoadToStringList(StringList: TStrings);
@@ -166,6 +168,18 @@ begin
   FillByte(SearchRecord, SizeOf(SearchRecord), 0);
 end;
 
+destructor TSearchTemplate.Destroy;
+begin
+  with SearchRecord do
+  begin
+    StrDispose(rFileMask);
+    StrDispose(rAttribStr);
+    StrDispose(rFindData);
+    StrDispose(rReplaceData);
+  end;
+  inherited Destroy;
+end;
+
 function TSearchTemplate.CheckFile(const FileRecItem: TFileRecItem): Boolean;
 begin
   Result:= True;
@@ -184,6 +198,15 @@ end;
 function TSearchTemplateList.GetTemplate(Index: Integer): TSearchTemplate;
 begin
   Result:= TSearchTemplate(Items[Index]);
+end;
+
+procedure TSearchTemplateList.Clear;
+var
+  i: Integer;
+begin
+  for i := 0 to Count - 1 do
+    Templates[i].Free;
+  inherited Clear;
 end;
 
 function TSearchTemplateList.Add(SearchTemplate: TSearchTemplate): Integer;
