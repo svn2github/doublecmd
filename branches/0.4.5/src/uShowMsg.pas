@@ -22,12 +22,12 @@ uses
 
 type
   TMyMsgResult=(mmrOK, mmrNo, mmrYes, mmrCancel, mmrNone,
-                mmrAppend, mmrCopyInto, mmrRewrite, mmrRewriteAll, mmrSkip, mmrSkipAll,
-                mmrAll, mmrRetry, mmrAbort);
+                mmrAppend, mmrRewrite, mmrRewriteAll, mmrSkip, mmrSkipAll,
+                mmrAll, mmrCopyInto, mmrRetry, mmrAbort);
 
   TMyMsgButton=(msmbOK, msmbNo, msmbYes, msmbCancel, msmbNone,
-                msmbAppend, msmbCopyInto, msmbRewrite, msmbRewriteAll, msmbSkip, msmbSkipAll,
-                msmbAll, msmbRetry, msmbAbort);
+                msmbAppend, msmbRewrite, msmbRewriteAll, msmbSkip, msmbSkipAll,
+                msmbAll, msmbCopyInto, msmbRetry, msmbAbort);
 
 
   { TDialogMainThread }
