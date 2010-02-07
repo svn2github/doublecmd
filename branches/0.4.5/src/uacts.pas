@@ -1320,7 +1320,8 @@ end;
 
 procedure TActs.cm_MakeDir(param:string);
 var
-  sPath:String;
+  sPath: UTF8String;
+  aFile: PFileRecItem = nil;
 begin
 with frmMain do
 begin
@@ -1336,9 +1337,14 @@ begin
             end;
         end; // in VFS
 
-      sPath:=pnlFile.GetActiveItem^.sNameNoExt;     // 21.05.2009 - pass name from cursor to makedir form
+      aFile:= pnlFile.GetActiveItem;
+      if pnlFile.IsItemValid(aFile) then
+        sPath:= aFile^.sNameNoExt // 21.05.2009 - pass name from cursor to makedir form
+      else
+        sPath:= EmptyStr;
+
       if not frmMkDir.ShowMkDir(sPath) then Exit;   // show makedir dialog
-      if (sPath='') then Exit;
+      if (sPath = EmptyStr) then Exit;
 
       { Create directory in VFS }
         if  ActiveFrame.pnlFile.PanelMode in [pmArchive, pmVFS] then
