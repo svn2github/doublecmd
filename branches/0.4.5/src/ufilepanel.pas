@@ -631,8 +631,9 @@ begin
     end
   else // if VFS
     begin
-      LastActive:= ExtractFileName(ExcludeTrailingPathDelimiter(fActiveDir));
+      PreviousSubDirectory:= ExtractFileName(ExcludeTrailingPathDelimiter(fActiveDir));
       LoadPanelVFS(fFileList.GetItem(0)); // get '..' item
+      Select(PreviousSubDirectory);
       fPanel.Invalidate;
     end;
 end;
