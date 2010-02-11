@@ -767,6 +767,7 @@ begin
       FrameLeft.pnlFile.ActiveDir:= ExtractFilePath(FrameRight.pnlFile.VFS.ArcFullName)
     else
       FrameLeft.pnlFile.ActiveDir:= FrameRight.pnlFile.ActiveDir;
+    ActiveFrame.SetFocus;
   end;
 end;
 
@@ -778,6 +779,7 @@ begin
       FrameRight.pnlFile.ActiveDir:= ExtractFilePath(FrameLeft.pnlFile.VFS.ArcFullName)
     else
       FrameRight.pnlFile.ActiveDir:= FrameLeft.pnlFile.ActiveDir;
+    ActiveFrame.SetFocus;
   end;
 end;
 
