@@ -362,63 +362,65 @@ begin
       if (cmd > 0) and (cmd < $1000) then
         begin
           iCmd := LongInt(Cmd) - 1;
-          OleCheckUTF8(contMenu.GetCommandString(iCmd, GCS_VERBA, nil, ZVerb, SizeOf(ZVerb)));
-          sVerb := StrPas(ZVerb);
+          if Succeeded(contMenu.GetCommandString(iCmd, GCS_VERBA, nil, ZVerb, SizeOf(ZVerb))) then
+            begin
+              sVerb := StrPas(ZVerb);
 
-          if SameText(sVerb, sCmdVerbDelete) then
-            begin
-              frmMain.actDelete.Execute;
-              bHandled := True;
-            end
-          else if SameText(sVerb, sCmdVerbRename) then
-            begin
-              if FileList.Count = 1 then
-                with FileList.GetItem(0)^ do
-                  begin
-                    DebugLn(sNAme);
-                    DebugLn(ExtractFileDrive(sName));
-                    if sName <> (ExtractFileDrive(sName)+PathDelim) then
-                      frmMain.RenameFile('', True)
-                    else  // change drive label
-                      begin
-                        sCmd:= mbGetVolumeLabel(sName, True);
-                        if InputQuery(rsMsgSetVolumeLabel, rsMsgVolumeLabel, sCmd) then
-                          mbSetVolumeLabel(sName, sCmd);
-                      end;
-                  end
-              else
-                frmMain.actRename.Execute;
-              bHandled := True;
-            end
-          else if SameText(sVerb, sCmdVerbOpen) then
-            begin
-              if FileList.Count = 1 then
-                with FileList.GetItem(0)^ do
-                  begin
-                    if FPS_ISDIR(iMode) or (bLinkIsDir) then
-                      begin
-                        if sName = '..' then
-                          frmMain.ActiveFrame.pnlFile.cdUpLevel
-                        else
-                          frmMain.ActiveFrame.pnlFile.cdDownLevel(FileList.GetItem(0));
-                        bHandled := True;
-                      end; // is dir
-                  end; // with
-            end
-          else if SameText(sVerb, sCmdVerbCut) then
-            begin
-              frmMain.actCutToClipboard.Execute;
-              bHandled := True;
-            end
-          else if SameText(sVerb, sCmdVerbCopy) then
-            begin
-              frmMain.actCopyToClipboard.Execute;
-              bHandled := True;
-            end
-          else if SameText(sVerb, sCmdVerbPaste) then
-            begin
-              frmMain.actPasteFromClipboard.Execute;
-              bHandled := True;
+              if SameText(sVerb, sCmdVerbDelete) then
+                begin
+                  frmMain.actDelete.Execute;
+                  bHandled := True;
+                end
+              else if SameText(sVerb, sCmdVerbRename) then
+                begin
+                  if FileList.Count = 1 then
+                    with FileList.GetItem(0)^ do
+                    begin
+                      DebugLn(sNAme);
+                      DebugLn(ExtractFileDrive(sName));
+                      if sName <> (ExtractFileDrive(sName)+PathDelim) then
+                        frmMain.RenameFile('', True)
+                      else  // change drive label
+                        begin
+                          sCmd:= mbGetVolumeLabel(sName, True);
+                          if InputQuery(rsMsgSetVolumeLabel, rsMsgVolumeLabel, sCmd) then
+                            mbSetVolumeLabel(sName, sCmd);
+                        end;
+                    end
+                  else
+                    frmMain.actRename.Execute;
+                  bHandled := True;
+                end
+              else if SameText(sVerb, sCmdVerbOpen) then
+                begin
+                  if FileList.Count = 1 then
+                    with FileList.GetItem(0)^ do
+                    begin
+                      if FPS_ISDIR(iMode) or (bLinkIsDir) then
+                        begin
+                          if sName = '..' then
+                            frmMain.ActiveFrame.pnlFile.cdUpLevel
+                          else
+                            frmMain.ActiveFrame.pnlFile.cdDownLevel(FileList.GetItem(0));
+                          bHandled := True;
+                        end; // is dir
+                    end; // with
+                end
+              else if SameText(sVerb, sCmdVerbCut) then
+                begin
+                  frmMain.actCutToClipboard.Execute;
+                  bHandled := True;
+                end
+              else if SameText(sVerb, sCmdVerbCopy) then
+                begin
+                  frmMain.actCopyToClipboard.Execute;
+                  bHandled := True;
+                end
+              else if SameText(sVerb, sCmdVerbPaste) then
+                begin
+                  frmMain.actPasteFromClipboard.Execute;
+                  bHandled := True;
+                end;
             end;
 
           if not bHandled then
