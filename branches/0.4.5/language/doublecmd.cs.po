@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Double Commander 0.3 alpha\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-17 23:08+0300\n"
-"PO-Revision-Date: 2009-12-10 20:58+0100\n"
-"Last-Translator: Petr Stasiak <translate@pestasoft.com>\n"
+"PO-Revision-Date: 2010-02-13 17:51+0100\n"
+"Last-Translator: Petr Stasiak <info@pestasoft.com>\n"
 "Language-Team: pestasoft.com <info@pestasoft.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -366,44 +366,10 @@ msgstr "&Připojit"
 msgid "Add S&ubbar >>"
 msgstr "Přidat \"&Podlištu\" >>"
 
-#: TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION
-msgctxt "TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION"
-msgid "Cancel"
-msgstr "Zrušit"
-
 #: TFRMCONFIGTOOLBAR.BTNDELETEBUTTON.CAPTION
 msgctxt "TFRMCONFIGTOOLBAR.BTNDELETEBUTTON.CAPTION"
 msgid "&Delete"
 msgstr "&Vymazat"
-
-#: TFRMCONFIGTOOLBAR.BTNHELP.CAPTION
-msgctxt "TFRMCONFIGTOOLBAR.BTNHELP.CAPTION"
-msgid "&Help"
-msgstr "&Nápověda"
-
-#: TFRMCONFIGTOOLBAR.BTNINSERTBUTTON.CAPTION
-msgid "Insert"
-msgstr ""
-
-#: TFRMCONFIGTOOLBAR.BTNOK.CAPTION
-msgctxt "TFRMCONFIGTOOLBAR.BTNOK.CAPTION"
-msgid "OK"
-msgstr "OK"
-
-#: TFRMCONFIGTOOLBAR.BTNOPENBARFILE.CAPTION
-msgctxt "TFRMCONFIGTOOLBAR.BTNOPENBARFILE.CAPTION"
-msgid ">>"
-msgstr ">>"
-
-#: TFRMCONFIGTOOLBAR.BTNOPENFILE.CAPTION
-msgctxt "TFRMCONFIGTOOLBAR.BTNOPENFILE.CAPTION"
-msgid ">>"
-msgstr ">>"
-
-#: TFRMCONFIGTOOLBAR.BTNOPENICONFILE.CAPTION
-msgctxt "TFRMCONFIGTOOLBAR.BTNOPENICONFILE.CAPTION"
-msgid ">>"
-msgstr ">>"
 
 #: TFRMCONFIGTOOLBAR.CAPTION
 msgid "Change button bar"
@@ -912,7 +878,6 @@ msgid "Open in VFS"
 msgstr "Otevřív v VFS"
 
 #: TFRMFILEASSOC.MIVIEW.CAPTION
-msgctxt "TFRMFILEASSOC.MIVIEW.CAPTION"
 msgid "View"
 msgstr "Zobrazit"
 
@@ -1281,10 +1246,6 @@ msgstr "Rozžířené"
 msgid "Load/Save"
 msgstr "Načíst/Uložit"
 
-#: TFRMFINDDLG.TSRESULTS.CAPTION
-msgid "Results"
-msgstr ""
-
 #: TFRMFINDDLG.TSSTANDARD.CAPTION
 msgid "Standard"
 msgstr "Standard"
@@ -1459,7 +1420,7 @@ msgstr "Vymazat F8"
 #: TFRMMAIN.ACTDIRHISTORY.CAPTION
 msgctxt "TFRMMAIN.ACTDIRHISTORY.CAPTION"
 msgid "Directory history"
-msgstr "Hystorie adresářů"
+msgstr "Historie adresářů"
 
 #: TFRMMAIN.ACTDIRHOTLIST.CAPTION
 msgid "Directory &hotlist"
@@ -1761,14 +1722,6 @@ msgstr "*"
 msgid "Directory hotlist"
 msgstr "Uložené cesty"
 
-#: TFRMMAIN.BTNLEFTEQUALRIGHT.CAPTION
-msgid "<"
-msgstr ""
-
-#: TFRMMAIN.BTNLEFTEQUALRIGHT.HINT
-msgid "Show current directory of the right panel in the left panel"
-msgstr ""
-
 #: TFRMMAIN.BTNLEFTHOME.CAPTION
 msgctxt "TFRMMAIN.BTNLEFTHOME.CAPTION"
 msgid "~"
@@ -1787,6 +1740,15 @@ msgstr "/"
 msgid "Go to root directory"
 msgstr "Jdi na začátek složky"
 
+#: TFRMMAIN.BTNLEFTTARGETEQUALSOURCE.CAPTION
+msgctxt "TFRMMAIN.BTNLEFTTARGETEQUALSOURCE.CAPTION"
+msgid "="
+msgstr "="
+
+#: TFRMMAIN.BTNLEFTTARGETEQUALSOURCE.HINT
+msgid "Show same directory in opposite panel"
+msgstr "Zobrazit totéž ve 2. panelu"
+
 #: TFRMMAIN.BTNLEFTUP.CAPTION
 msgctxt "TFRMMAIN.BTNLEFTUP.CAPTION"
 msgid ".."
@@ -1801,14 +1763,6 @@ msgctxt "TFRMMAIN.BTNRIGHTDIRECTORYHOTLIST.CAPTION"
 msgid "*"
 msgstr "*"
 
-#: TFRMMAIN.BTNRIGHTEQUALLEFT.CAPTION
-msgid ">"
-msgstr ""
-
-#: TFRMMAIN.BTNRIGHTEQUALLEFT.HINT
-msgid "Show current directory of the left panel in the right panel"
-msgstr ""
-
 #: TFRMMAIN.BTNRIGHTHOME.CAPTION
 msgctxt "TFRMMAIN.BTNRIGHTHOME.CAPTION"
 msgid "~"
@@ -1818,6 +1772,11 @@ msgstr "~"
 msgctxt "TFRMMAIN.BTNRIGHTROOT.CAPTION"
 msgid "/"
 msgstr "/"
+
+#: TFRMMAIN.BTNRIGHTTARGETEQUALSOURCE.CAPTION
+msgctxt "TFRMMAIN.BTNRIGHTTARGETEQUALSOURCE.CAPTION"
+msgid "="
+msgstr "="
 
 #: TFRMMAIN.BTNRIGHTUP.CAPTION
 msgctxt "TFRMMAIN.BTNRIGHTUP.CAPTION"
@@ -2469,7 +2428,7 @@ msgstr "Třídění rozlišuje velká/malá"
 
 #: TFRMOPTIONS.CBCMDLINEHISTORY.CAPTION
 msgid "Command line history"
-msgstr "Hystorie příkazového řádku"
+msgstr "Historie příkazového řádku"
 
 #: TFRMOPTIONS.CBCUTTEXTTOCOLWIDTH.CAPTION
 msgid "Cut text to column width"
@@ -2486,7 +2445,7 @@ msgstr "Zobrazit hranaté závorky kolem názvu adresářů"
 #: TFRMOPTIONS.CBDIRHISTORY.CAPTION
 msgctxt "TFRMOPTIONS.CBDIRHISTORY.CAPTION"
 msgid "Directory history"
-msgstr "Hystorie adresářů"
+msgstr "Historie adresářů"
 
 #: TFRMOPTIONS.CBDIRSELECT.CAPTION
 msgid "Select directory with keypad"
@@ -2519,7 +2478,7 @@ msgstr "Externí prohlížeč"
 
 #: TFRMOPTIONS.CBFILEMASKHISTORY.CAPTION
 msgid "File mask history"
-msgstr "Hystorie použitých masek"
+msgstr "Historie použitých masek"
 
 #: TFRMOPTIONS.CBFLATDISKPANEL.CAPTION
 msgctxt "TFRMOPTIONS.CBFLATDISKPANEL.CAPTION"
@@ -3612,11 +3571,6 @@ msgctxt "ulng.rsmnuactions"
 msgid "Actions"
 msgstr "Akce"
 
-#: ulng.rsmnuedit
-msgctxt "ulng.rsmnuedit"
-msgid "Edit"
-msgstr "Upravit"
-
 #: ulng.rsmnueject
 msgid "Eject"
 msgstr "Vysunout"
@@ -3628,11 +3582,6 @@ msgstr "Připojit"
 #: ulng.rsmnuumount
 msgid "Umount"
 msgstr "Odpojit"
-
-#: ulng.rsmnuview
-msgctxt "ulng.rsmnuview"
-msgid "View"
-msgstr "Zobrazit"
 
 #: ulng.rsmsgchdirfailed
 msgid "ChDir to [%s] failed!"
@@ -3971,22 +3920,6 @@ msgstr "Povolit"
 #: ulng.rsoptenterext
 msgid "Enter extension"
 msgstr "Zadej výraz"
-
-#: ulng.rsoptexamplecursor
-msgid "Cursor"
-msgstr ""
-
-#: ulng.rsoptexamplemark
-msgid "Mark"
-msgstr ""
-
-#: ulng.rsoptexamplemarkcursor
-msgid "Mark + Cursor"
-msgstr ""
-
-#: ulng.rsoptexampletext
-msgid "Text"
-msgstr ""
 
 #: ulng.rsoptfileop
 msgid "File operations"
