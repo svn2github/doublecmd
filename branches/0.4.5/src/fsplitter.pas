@@ -51,7 +51,7 @@ type
 implementation
 
 uses
-  uLng, uClassesEx, uOSUtils;
+  LCLProc, uLng, uClassesEx, uOSUtils;
 
 function ShowSplitterFileForm(const sFile: TStringList; const sTargetDir: String): Boolean;
 begin
@@ -106,9 +106,11 @@ end;
 
 
 procedure TfrmSplitter.btnOKClick(Sender: TObject);
-var iFileSize:int64;
-    i,num:integer;
-    fSource,fDest:TStream;
+var
+  iFileSize:int64;
+  i,num:integer;
+  fSource: TFileStreamEx = nil;
+  fDest: TFileStreamEx = nil;
 begin
   memWatch.Clear;
   prgbrDoIt.Position:=0;
@@ -131,7 +133,21 @@ begin
   if edDirTarget.Text[Length(edDirTarget.Text)]<>PathDelim then
      edDirTarget.Text:=edDirTarget.Text+PathDelim;
 
-  fSource:=TFileStreamEx.Create(edFileSource.Text,fmOpenRead);
+  try
+    fSource:= TFileStreamEx.Create(edFileSource.Text,fmOpenRead);
+  except
+    on E: EFOpenError do
+      begin
+        MessageDlg(Caption, rsMsgErrEOpen + ': ' + E.Message, mtError, [mbOK], 0);
+        Exit;
+      end;
+    on E: EReadError do
+      begin
+        MessageDlg(Caption, rsMsgErrERead + ': ' + E.Message, mtError, [mbOK], 0);
+        Exit;
+      end;
+  end;
+
   try
     prgbrDoIt.Max:=(fSource.Size div iFileSize);
     if prgbrDoIt.Max=0 then
@@ -158,7 +174,7 @@ begin
     end;
     i:=0;
     while i<=prgbrDoIt.Max-1 do
-    begin
+    try
       fDest:=TFileStreamEx.Create(
         edDirTarget.Text+ExtractFileName(edFileSource.Text)+
         '.'+Format('%.*d',[num+1,i])+'.split'
@@ -173,12 +189,23 @@ begin
         IntToStr(iFileSize)+'b');
         prgbrDoIt.Position:=prgbrDoIt.Position+1;
       finally
-        fDest.Free;
+        FreeThenNil(fDest);
       end;
       inc(i);
+    except
+      on E: EFCreateError do
+        begin
+          MessageDlg(Caption, rsMsgErrECreate + ': ' + E.Message, mtError, [mbOK], 0);
+          Exit;
+        end;
+      on E: EWriteError do
+        begin
+          MessageDlg(Caption, rsMsgErrEWrite + ': ' + E.Message, mtError, [mbOK], 0);
+          Exit;
+        end;
     end;
     if (fSource.Position)<fSource.Size then
-    begin
+    try
       fDest:=TFileStreamEx.Create(
         edDirTarget.Text+ExtractFileName(edFileSource.Text)+
         '.'+Format('%.*d',[num+1,i])+'.split'
@@ -192,11 +219,22 @@ begin
         IntToStr(fSource.Size-(iFileSize*i))+'b');
         prgbrDoIt.Position:=prgbrDoIt.Position+1;
       finally
-        fDest.Free;
+        FreeThenNil(fDest);
       end;
+    except
+      on E: EFCreateError do
+        begin
+          MessageDlg(Caption, rsMsgErrECreate + ': ' + E.Message, mtError, [mbOK], 0);
+          Exit;
+        end;
+      on E: EWriteError do
+        begin
+          MessageDlg(Caption, rsMsgErrEWrite + ': ' + E.Message, mtError, [mbOK], 0);
+          Exit;
+        end;
     end;
   finally
-    fSource.Free;
+    FreeThenNil(fSource);
   end;
 end;
 

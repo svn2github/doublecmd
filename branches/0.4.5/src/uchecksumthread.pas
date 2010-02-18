@@ -61,7 +61,7 @@ type
 implementation
 
 uses
-  FileUtil, StrUtils, uLng, uGlobs, fCheckSumVerify, uOSUtils;
+  FileUtil, StrUtils, uLng, uGlobs, fCheckSumVerify, uShowMsg, uOSUtils;
 
 { TCheckSumThread }
 
@@ -113,7 +113,14 @@ begin
   case FCheckSumOp of
     checksum_calc:
       if FOneFile then
-        FCheckSumFile.SaveToFile(sDstMask);
+        try
+          FCheckSumFile.SaveToFile(sDstMask);
+        except
+          on E: EFCreateError do
+            msgError(Self, rsMsgErrECreate + ' ' + sDstMask + ': ' + E.Message);
+          on E: EWriteError do
+            msgError(Self, rsMsgErrEWrite + ' ' + sDstMask + ': ' + E.Message);
+        end;
     checksum_verify:
       begin
         Synchronize(@FFileOpDlg.Hide);
@@ -142,7 +149,16 @@ begin
         sCheckSum1:= CheckSumCalc(pr);
         FCheckSumFile.Add(sCheckSum1 + ' *' + ExtractFileName(pr^.sName));
         if not FOneFile then
-          FCheckSumFile.SaveToFile(pr^.sName + '.' + HashFileExt[FAlgorithm]);
+          try
+            FCheckSumFile.SaveToFile(pr^.sName + '.' + HashFileExt[FAlgorithm]);
+          except
+            on E: EFCreateError do
+              msgError(Self, rsMsgErrECreate + ' ' + pr^.sName + '.' +
+                       HashFileExt[FAlgorithm] + ': ' + E.Message);
+            on E: EWriteError do
+              msgError(Self, rsMsgErrEWrite + ' ' + pr^.sName + '.' +
+                       HashFileExt[FAlgorithm] + ': ' + E.Message);
+          end;
       end;
     checksum_verify: // verify check sum
       begin

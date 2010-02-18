@@ -42,9 +42,8 @@ type
   private
     { Private declarations }
   public
-    sDirectory: String;
-    procedure LoadLng;
     { Public declarations }
+    sDirectory: String;    
   end;
 
 function ShowLinkerFilesForm(const lsFiles:TStringList):Boolean;
@@ -54,19 +53,10 @@ implementation
 uses
   LCLProc, uLng, uFileProcs, uClassesEx;
 
-//var gDirectory:string;
-
-procedure TfrmLinker.LoadLng;
-begin
-  //Caption:= StringReplace(lngGetString(clngMnuFileCombine),'&','',[rfReplaceAll]);
-  //dlgSaveAll.Title:=lngGetString(clngLinkDialogSave);
-end;
-
 function ShowLinkerFilesForm(const lsFiles:TStringList):Boolean;
 var
   c:Integer;
 begin
-
   With TfrmLinker.Create(Application) do
   begin
     try
@@ -76,7 +66,6 @@ begin
         DebugLn(ExtractFileName(lsFiles[c]));
         Add(ExtractFileName(lsFiles[c]));
       end;
-      LoadLng;
       prbrWork.Max:=lsFiles.Count;
       prbrWork.Position:=0;
       prbrWork.Min:=0;
@@ -143,32 +132,54 @@ end;
 
 procedure TfrmLinker.btnOKClick(Sender: TObject);
 var
-  c:integer;
-  fTarget,fSource:TFileStreamEx;
-
+  c: Integer;
+  fTarget: TFileStreamEx = nil;
+  fSource: TFileStreamEx = nil;
 begin
   if ForceDirectory(ExtractFileDir(edSave.Text)) then
-  begin
+  try
     fTarget:=TFileStreamEx.Create(edSave.Text,fmCreate);
     try
       prbrWork.Max:=lstFile.Items.Count;
       prbrWork.Position:=0;
       for c:=0 to lstFile.Items.Count-1 do
-      begin
+      try
         fSource:=TFileStreamEx.Create(sDirectory+PathDelim
               +lstFile.Items[c],fmOpenRead);
         try
           fTarget.CopyFrom(fSource,fSource.Size);
           prbrWork.Position:=prbrWork.Position+1;
         finally
-          FreeAndNil(fSource);
+          FreeThenNil(fSource);
         end;
+      except
+        on E: EFOpenError do
+          begin
+            MessageDlg(Caption, rsMsgErrEOpen + ': ' + E.Message, mtError, [mbOK], 0);
+            Exit;
+          end;
+        on E: EReadError do
+          begin
+            MessageDlg(Caption, rsMsgErrERead + ': ' + E.Message, mtError, [mbOK], 0);
+            Exit;
+          end;
       end;
       ShowMessage(rsLinkMsgOK);
     finally
-      FreeAndNil(fTarget);
+      FreeThenNil(fTarget);
       prbrWork.Position:=0;
     end;
+  except
+    on E: EFCreateError do
+      begin
+        MessageDlg(Caption, rsMsgErrECreate + ': ' + E.Message, mtError, [mbOK], 0);
+        Exit;
+      end;
+    on E: EWriteError do
+      begin
+        MessageDlg(Caption, rsMsgErrEWrite + ': ' + E.Message, mtError, [mbOK], 0);
+        Exit;
+      end;
   end;
 end;
 
