@@ -4213,10 +4213,18 @@ msgstr "Невірний розмір файла"
 msgid "Unable to split the file!"
 msgstr "Не можу розрізати файл!"
 
+#: ulng.rsspliterrtoomanyparts
+msgid "Too many parts!"
+msgstr ""
+
 #: ulng.rssplitmsgcreated
 msgctxt "ulng.rssplitmsgcreated"
 msgid "Created:"
 msgstr "Створено:"
+
+#: ulng.rssplitmsgmanyparts
+msgid "The number of parts is more than 100! Continue?"
+msgstr ""
 
 #: ulng.rssplitmsgsize
 msgid "size:"

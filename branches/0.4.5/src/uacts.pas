@@ -2295,7 +2295,7 @@ begin
           if pnlFile.GetFileItem(i).bSelected then
             sl.Add(ActiveDir+pnlFile.GetFileItem(i).sName);
         if sl.Count>0 then
-          Result:= ShowSplitterFileForm(sl);
+          Result:= ShowSplitterFileForm(sl, NotActiveFrame.ActiveDir);
       finally
         FreeAndNil(sl);
         if Result then

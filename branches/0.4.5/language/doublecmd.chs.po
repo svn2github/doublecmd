@@ -3470,7 +3470,9 @@ msgid "Customize column"
 msgstr "自定义列"
 
 #: ulng.rsdlgbuttons
-msgid "&OK;&No;&Yes;&Cancel;Non&e;A&ppend;&Rewrite;Rewrite &All;&Skip;S&kip All;A&ll;"
+#, fuzzy
+#| msgid "&OK;&No;&Yes;&Cancel;Non&e;A&ppend;&Rewrite;Rewrite &All;&Skip;S&kip All;A&ll;"
+msgid "&OK;&No;&Yes;&Cancel;Non&e;A&ppend;&Rewrite;Rewrite &All;&Skip;S&kip All;A&ll;Copy &Into;Re&try;Ab&ort;"
 msgstr "确定(&O);否(&N);是(&Y);取消(&C);无(&N);添加(&A);覆盖(&R);覆盖全部(&A);略过(&S);略过全部(&K);全部;"
 
 #: ulng.rsdlgchecksumcalc
@@ -4140,9 +4142,17 @@ msgstr "无效的文件大小格式!"
 msgid "Unable to split the file!"
 msgstr "不能分割文件!"
 
+#: ulng.rsspliterrtoomanyparts
+msgid "Too many parts!"
+msgstr ""
+
 #: ulng.rssplitmsgcreated
 msgid "Created:"
 msgstr "创建日期:"
+
+#: ulng.rssplitmsgmanyparts
+msgid "The number of parts is more than 100! Continue?"
+msgstr ""
 
 #: ulng.rssplitmsgsize
 msgid "size:"

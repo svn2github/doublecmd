@@ -3466,7 +3466,9 @@ msgid "Customize column"
 msgstr ""
 
 #: ulng.rsdlgbuttons
-msgid "&OK;&No;&Yes;&Cancel;Non&e;A&ppend;&Rewrite;Rewrite &All;&Skip;S&kip All;A&ll;"
+#, fuzzy
+#| msgid "&OK;&No;&Yes;&Cancel;Non&e;A&ppend;&Rewrite;Rewrite &All;&Skip;S&kip All;A&ll;"
+msgid "&OK;&No;&Yes;&Cancel;Non&e;A&ppend;&Rewrite;Rewrite &All;&Skip;S&kip All;A&ll;Copy &Into;Re&try;Ab&ort;"
 msgstr "&Aceptar;&No;&Sí;&Cancelar;&Ninguno;&Añadir;&Reescribir;Reescribir &Todo;&Saltar;S&altar todos;Todos;"
 
 #: ulng.rsdlgchecksumcalc
@@ -4136,9 +4138,17 @@ msgstr "Formato de tamaño incorrecto!"
 msgid "Unable to split the file!"
 msgstr "Imposible partir el fichero!"
 
+#: ulng.rsspliterrtoomanyparts
+msgid "Too many parts!"
+msgstr ""
+
 #: ulng.rssplitmsgcreated
 msgid "Created:"
 msgstr "Creado:"
+
+#: ulng.rssplitmsgmanyparts
+msgid "The number of parts is more than 100! Continue?"
+msgstr ""
 
 #: ulng.rssplitmsgsize
 msgid "size:"

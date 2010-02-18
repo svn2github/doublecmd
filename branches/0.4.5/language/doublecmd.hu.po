@@ -3481,8 +3481,8 @@ msgstr "Oszlop személyreszabása:"
 
 #: ulng.rsdlgbuttons
 #, fuzzy
-#| msgid "&OK;&No;&Yes;&Cancel;&None;&Append;&Rewrite;Rewrite &All;&Skip;S&kip All;All;"
-msgid "&OK;&No;&Yes;&Cancel;Non&e;A&ppend;&Rewrite;Rewrite &All;&Skip;S&kip All;A&ll;"
+#| msgid "&OK;&No;&Yes;&Cancel;Non&e;A&ppend;&Rewrite;Rewrite &All;&Skip;S&kip All;A&ll;"
+msgid "&OK;&No;&Yes;&Cancel;Non&e;A&ppend;&Rewrite;Rewrite &All;&Skip;S&kip All;A&ll;Copy &Into;Re&try;Ab&ort;"
 msgstr "&Oké;&Nem;&Igen;&Mégsem;&Egyik sem;&Hozzáfűz;&Felülír;Min&det felülír;&Kihagy;Minde&t kihagy;Mind;"
 
 #: ulng.rsdlgchecksumcalc
@@ -4155,9 +4155,17 @@ msgstr "Hibás fájlméret formátum!"
 msgid "Unable to split the file!"
 msgstr "Nem lehet darabolni a fájlt!"
 
+#: ulng.rsspliterrtoomanyparts
+msgid "Too many parts!"
+msgstr ""
+
 #: ulng.rssplitmsgcreated
 msgid "Created:"
 msgstr "Elkészült:"
+
+#: ulng.rssplitmsgmanyparts
+msgid "The number of parts is more than 100! Continue?"
+msgstr ""
 
 #: ulng.rssplitmsgsize
 msgid "size:"
