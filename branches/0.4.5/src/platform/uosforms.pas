@@ -319,8 +319,6 @@ begin
 
             if gExts.GetExtActions(fri, sl) then
               begin
-              //founded any commands
-                InsertMenuItemEx(menu, hActionsSubMenu, PWChar(UTF8Decode(rsMnuActions)), 0, 333, MFT_STRING);
                 for I:= 0 to sl.Count - 1 do
                   begin
                     sAct:= sl.Names[I];
@@ -331,10 +329,8 @@ begin
 
             if not (FPS_ISDIR(fri.iMode) or (fri.bLinkIsDir)) then
               begin
-                if sl.Count = 0 then
-                  InsertMenuItemEx(menu, hActionsSubMenu, PWChar(UTF8Decode(rsMnuActions)), 0, 333, MFT_STRING)
-                else
-                  // now add delimiter
+                // Add separator if needed.
+                if GetMenuItemCount(hActionsSubMenu) > 0 then
                   InsertMenuItemEx(hActionsSubMenu,0, nil, 0, 0, MFT_SEPARATOR);
 
                 // now add VIEW item
@@ -347,6 +343,10 @@ begin
                 I := sl.Add(sCmd);
                 InsertMenuItemEx(hActionsSubMenu,0, PWChar(UTF8Decode(rsMnuEdit)), 1, I + $1000, MFT_STRING);
               end;
+
+            // Add Actions submenu if not empty.
+            if GetMenuItemCount(hActionsSubMenu) > 0 then
+              InsertMenuItemEx(menu, hActionsSubMenu, PWChar(UTF8Decode(rsMnuActions)), 0, 333, MFT_STRING)
           end;
         { /Actions submenu }
         //------------------------------------------------------------------------------
