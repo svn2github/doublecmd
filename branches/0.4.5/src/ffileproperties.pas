@@ -107,8 +107,7 @@ type
     fFileList:TFileList;
 
     procedure ShowAttr(iMode:Integer);
-    procedure ChangeMod;
-    procedure ChangeOwner;
+    function ChangeProperties: Boolean;
     function GetModeFromForm:Integer;
   public
     szPath:String;
@@ -160,15 +159,21 @@ begin
   if cbSticky.Checked then Result:=(Result OR S_ISVTX);
 end;
 
-procedure TfrmFileProperties.ChangeMod;
+function TfrmFileProperties.ChangeProperties: Boolean;
 begin
-  fpchmod(PChar(szPath + ffileList.GetItem(iCurrent)^.sName),GetModeFromForm);
-end;
-
-procedure TfrmFileProperties.ChangeOwner;
-begin
-  fpchown(PChar(ffileList.GetItem(iCurrent)^.sName),StrToUID(cbxUsers.Text),
-               StrToGID(cbxGroups.Text));
+  Result:= True;
+  if fpchmod(PChar(szPath + ffileList.GetItem(iCurrent)^.sName),GetModeFromForm) <> 0 then
+    begin
+      if MessageDlg(Caption, Format(rsPropsErrChMod, [ffileList.GetItem(iCurrent)^.sName]), mtError, mbOKCancel, 0) = mrCancel then
+        Exit(False);
+    end;
+  if not bPerm then Exit;
+  if fpchown(PChar(ffileList.GetItem(iCurrent)^.sName),StrToUID(cbxUsers.Text),
+               StrToGID(cbxGroups.Text)) <> 0 then
+    begin
+      if MessageDlg(Caption, Format(rsPropsErrChOwn, [ffileList.GetItem(iCurrent)^.sName]), mtError, mbOKCancel, 0) = mrCancel then
+        Exit(False);
+    end;
 end;
 
 procedure TfrmFileProperties.btnCloseClick(Sender: TObject);
@@ -196,9 +201,7 @@ end;
 procedure TfrmFileProperties.btnAllClick(Sender: TObject);
 begin
   repeat
-    ChangeMod;
-    if(bPerm) then
-      ChangeOwner;
+    if not ChangeProperties then Exit;
     inc (iCurrent);
   until not FindNextSelected;
   Close;
@@ -334,9 +337,7 @@ end;
 
 procedure TfrmFileProperties.btnOKClick(Sender: TObject);
 begin
-  ChangeMod;
-  if (bPerm) then
-    ChangeOwner;
+  if not ChangeProperties then Exit;
   btnSkipClick(Self);
 end;
 
