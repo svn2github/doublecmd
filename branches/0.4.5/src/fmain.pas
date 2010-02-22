@@ -522,6 +522,9 @@ uses
   {$IFDEF LCLQT}
     , qtwidgets, qtobjects
   {$ENDIF}
+  {$IFDEF LINUX}
+    , uHal
+  {$ENDIF}
   ;
 
 {$IF DEFINED(LCLGTK2) or DEFINED(LCLQT)}
@@ -1138,8 +1141,11 @@ procedure TfrmMain.frmMainShow(Sender: TObject);
 begin
   DebugLn('frmMain.frmMainShow');
   Application.QueueAsyncCall(@frmMainAfterShow, 0);
+
   {$IFDEF LINUX}
-  tmHAL.Enabled := True;
+  tmHAL.Enabled := IsHal;
+  if not IsHal then
+    DebugLn('HAL is not enabled. Device changes will not be detected.');
   {$ENDIF}
 end;
 
