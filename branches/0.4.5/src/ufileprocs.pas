@@ -55,7 +55,7 @@ procedure FileWriteLn(hFile: Integer; S: String);
 
 implementation
 uses
-  LCLProc, SysUtils, uGlobs, uShowMsg, Classes, uClassesEx, uDCUtils,
+  LCLProc, Dialogs, SysUtils, uLng, uGlobs, Classes, uClassesEx, uDCUtils,
   uOSUtils, uDeleteThread, uFileList;
 
 const
@@ -105,21 +105,19 @@ begin
         dst.WriteBuffer(Buffer^, src.Size+iDstBeg-dst.size);
       end;
       Result := FileCopyAttr(sSrc, sDst, gDropReadOnlyFlag); // chmod, chgrp
-    finally
-      if assigned(src) then
-        FreeAndNil(src);
-      if assigned(dst) then
-        FreeAndNil(dst);
-      if assigned(Buffer) then
-        FreeMem(Buffer);
+
+    except
+      on EStreamError do
+        MessageDlg('Error', Format(rsMsgErrCannotCopyFile, [sSrc, sDst]), mtError, [mbOK], 0);
     end;
-  except
-    on EFCreateError do
-      msgError('!!!!EFCreateError');
-    on EFOpenError do
-      msgError('!!!!EFOpenError');
-    on EWriteError do
-      msgError('!!!!EFWriteError');
+
+  finally
+    if assigned(src) then
+      FreeAndNil(src);
+    if assigned(dst) then
+      FreeAndNil(dst);
+    if assigned(Buffer) then
+      FreeMem(Buffer);
   end;
 end;
 
