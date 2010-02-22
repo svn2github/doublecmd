@@ -3709,6 +3709,10 @@ msgstr "CRC hiba az archívumban"
 msgid "Data is bad"
 msgstr "Hibás adat"
 
+#: ulng.rsmsgerrcannotcopyfile
+msgid "Cannot copy file %s to %s"
+msgstr ""
+
 #: ulng.rsmsgerrdirexists
 msgid "Directory %s exists!"
 msgstr "A %s könyvtár létezik!"
@@ -4083,6 +4087,14 @@ msgstr "Eszközök"
 #: ulng.rspositionsaved
 msgid "Position saved."
 msgstr "Pozíció mentve."
+
+#: ulng.rspropserrchmod
+msgid "Can not change access rights for \"%s\""
+msgstr ""
+
+#: ulng.rspropserrchown
+msgid "Can not change owner for \"%s\""
+msgstr ""
 
 #: ulng.rspropsfile
 msgid "File"

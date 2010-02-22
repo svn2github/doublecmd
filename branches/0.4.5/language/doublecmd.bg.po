@@ -3689,6 +3689,10 @@ msgstr "Грешка CRC в данните на сбивката"
 msgid "Data is bad"
 msgstr "Данните са лоши"
 
+#: ulng.rsmsgerrcannotcopyfile
+msgid "Cannot copy file %s to %s"
+msgstr ""
+
 #: ulng.rsmsgerrdirexists
 msgid "Directory %s exists!"
 msgstr "Папка %s съществува!"
@@ -4062,6 +4066,14 @@ msgstr "Средства"
 #: ulng.rspositionsaved
 msgid "Position saved."
 msgstr "Положението е записано"
+
+#: ulng.rspropserrchmod
+msgid "Can not change access rights for \"%s\""
+msgstr ""
+
+#: ulng.rspropserrchown
+msgid "Can not change owner for \"%s\""
+msgstr ""
 
 #: ulng.rspropsfile
 msgid "File"

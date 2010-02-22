@@ -3698,6 +3698,10 @@ msgstr "CRC fout in archief gegevens"
 msgid "Data is bad"
 msgstr "Gegevens zijn niet goed"
 
+#: ulng.rsmsgerrcannotcopyfile
+msgid "Cannot copy file %s to %s"
+msgstr ""
+
 #: ulng.rsmsgerrdirexists
 msgid "Directory %s exists!"
 msgstr "Directory %s bestaat!"
@@ -4072,6 +4076,14 @@ msgstr "Tools"
 #: ulng.rspositionsaved
 msgid "Position saved."
 msgstr "Positie opgeslagen"
+
+#: ulng.rspropserrchmod
+msgid "Can not change access rights for \"%s\""
+msgstr ""
+
+#: ulng.rspropserrchown
+msgid "Can not change owner for \"%s\""
+msgstr ""
 
 #: ulng.rspropsfile
 msgid "File"

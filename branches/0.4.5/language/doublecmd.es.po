@@ -3694,6 +3694,10 @@ msgstr "Error de CRC en los datos"
 msgid "Data is bad"
 msgstr "Datos corrompidos"
 
+#: ulng.rsmsgerrcannotcopyfile
+msgid "Cannot copy file %s to %s"
+msgstr ""
+
 #: ulng.rsmsgerrdirexists
 msgid "Directory %s exists!"
 msgstr "El directorio %s existe!"
@@ -4068,6 +4072,14 @@ msgstr "Herramientas"
 #: ulng.rspositionsaved
 msgid "Position saved."
 msgstr "Posición guardada."
+
+#: ulng.rspropserrchmod
+msgid "Can not change access rights for \"%s\""
+msgstr ""
+
+#: ulng.rspropserrchown
+msgid "Can not change owner for \"%s\""
+msgstr ""
 
 #: ulng.rspropsfile
 msgid "File"

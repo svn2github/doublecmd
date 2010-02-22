@@ -3692,6 +3692,10 @@ msgstr "CRC chyba (kontrolní součet nesouhlasí)"
 msgid "Data is bad"
 msgstr "Data jsou špatná"
 
+#: ulng.rsmsgerrcannotcopyfile
+msgid "Cannot copy file %s to %s"
+msgstr ""
+
 #: ulng.rsmsgerrdirexists
 msgid "Directory %s exists!"
 msgstr "Adresář %s existuje!"
@@ -4065,6 +4069,14 @@ msgstr "Nástroje"
 #: ulng.rspositionsaved
 msgid "Position saved."
 msgstr "Pozice uložena."
+
+#: ulng.rspropserrchmod
+msgid "Can not change access rights for \"%s\""
+msgstr ""
+
+#: ulng.rspropserrchown
+msgid "Can not change owner for \"%s\""
+msgstr ""
 
 #: ulng.rspropsfile
 msgid "File"

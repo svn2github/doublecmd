@@ -3698,6 +3698,10 @@ msgstr "压缩文件CRC错误"
 msgid "Data is bad"
 msgstr "数据损坏"
 
+#: ulng.rsmsgerrcannotcopyfile
+msgid "Cannot copy file %s to %s"
+msgstr ""
+
 #: ulng.rsmsgerrdirexists
 msgid "Directory %s exists!"
 msgstr "目录 %s 已存在!"
@@ -4072,6 +4076,14 @@ msgstr "工具栏"
 #: ulng.rspositionsaved
 msgid "Position saved."
 msgstr "位置已保存."
+
+#: ulng.rspropserrchmod
+msgid "Can not change access rights for \"%s\""
+msgstr ""
+
+#: ulng.rspropserrchown
+msgid "Can not change owner for \"%s\""
+msgstr ""
 
 #: ulng.rspropsfile
 msgid "File"
