@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.3.5 alpha\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2010-01-23 22:07+0300\n"
+"PO-Revision-Date: 2010-02-22 15:41+0300\n"
 "Last-Translator: Alexander Koblov <Alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1764,7 +1764,7 @@ msgstr ""
 
 #: TFRMMAIN.BTNLEFTEQUALRIGHT.HINT
 msgid "Show current directory of the right panel in the left panel"
-msgstr ""
+msgstr "Открыть в левой панели каталог правой панели"
 
 #: TFRMMAIN.BTNLEFTHOME.CAPTION
 msgctxt "TFRMMAIN.BTNLEFTHOME.CAPTION"
@@ -1804,7 +1804,7 @@ msgstr ""
 
 #: TFRMMAIN.BTNRIGHTEQUALLEFT.HINT
 msgid "Show current directory of the left panel in the right panel"
-msgstr ""
+msgstr "Открыть в правой панели каталог левой панели"
 
 #: TFRMMAIN.BTNRIGHTHOME.CAPTION
 msgctxt "TFRMMAIN.BTNRIGHTHOME.CAPTION"
@@ -2101,7 +2101,6 @@ msgid "&Rename"
 msgstr "&Переименовать"
 
 #: TFRMMULTIRENAME.BTNRESTORE.CAPTION
-#, fuzzy
 #| msgid "Restore All"
 msgid "Reset all"
 msgstr "Восстановить всё"
@@ -2121,7 +2120,6 @@ msgid "Log"
 msgstr "Протокол"
 
 #: TFRMMULTIRENAME.CBREGEXP.CAPTION
-#, fuzzy
 #| msgid "&Regular expressions"
 msgctxt "TFRMMULTIRENAME.CBREGEXP.CAPTION"
 msgid "Regular e&xpressions"
@@ -2178,7 +2176,6 @@ msgid "&Extension"
 msgstr "Расширение"
 
 #: TFRMMULTIRENAME.LBFIND.CAPTION
-#, fuzzy
 #| msgid "Find..."
 msgid "&Find..."
 msgstr "Найти..."
@@ -2188,13 +2185,11 @@ msgid "Interval"
 msgstr "Интервал"
 
 #: TFRMMULTIRENAME.LBNAME.CAPTION
-#, fuzzy
 #| msgid "File Name"
 msgid "File &Name"
 msgstr "Имя файла"
 
 #: TFRMMULTIRENAME.LBREPLACE.CAPTION
-#, fuzzy
 #| msgid "Replace..."
 msgid "Re&place..."
 msgstr "Заменить..."
@@ -3698,7 +3693,7 @@ msgstr "Данные повреждены"
 
 #: ulng.rsmsgerrcannotcopyfile
 msgid "Cannot copy file %s to %s"
-msgstr ""
+msgstr "Не могу копировать файл из %s в %s"
 
 #: ulng.rsmsgerrdirexists
 msgid "Directory %s exists!"
@@ -4076,11 +4071,11 @@ msgstr "Позиция сохранена"
 
 #: ulng.rspropserrchmod
 msgid "Can not change access rights for \"%s\""
-msgstr ""
+msgstr "Не могу сменить права доступа для \"%s\""
 
 #: ulng.rspropserrchown
 msgid "Can not change owner for \"%s\""
-msgstr ""
+msgstr "Не могу сменить владельца для \"%s\""
 
 #: ulng.rspropsfile
 msgid "File"
@@ -4153,7 +4148,7 @@ msgstr "Не могу разрезать файл!"
 
 #: ulng.rsspliterrtoomanyparts
 msgid "Too many parts!"
-msgstr ""
+msgstr "Слишком много частей!"
 
 #: ulng.rssplitmsgcreated
 msgid "Created:"
@@ -4161,7 +4156,7 @@ msgstr "Создан:"
 
 #: ulng.rssplitmsgmanyparts
 msgid "The number of parts is more than 100! Continue?"
-msgstr ""
+msgstr "Количество частей больше 100! Продолжить?"
 
 #: ulng.rssplitmsgsize
 msgid "size:"
