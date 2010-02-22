@@ -1,6 +1,10 @@
 ﻿--------------------------------------------------------------------------------
-xx.01.2009 Release Double Commander 0.4.5.1 beta
+22.02.2009 Release Double Commander 0.4.5.1 beta
 --------------------------------------------------------------------------------
+22.02.2010 UPD: Better error message when error in CopyFile.
+22.02.2010 FIX: Crash in CopyFile when cannot read file.
+21.02.2010 FIX: Bug [2955066] Split file
+19.02.2010 FIX: Unneeded separator in Actions submenu if no actions were added.
 19.02.2010 FIX: Some fixes for bug [2954358] error with write permissions
 17.02.2010 UPD: Ukrainian language file by Ma$terok
 17.02.2010 UPD: English help files by Rod J
