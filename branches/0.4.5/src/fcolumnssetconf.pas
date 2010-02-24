@@ -878,6 +878,7 @@ end;
 
 procedure TfColumnsSetConf.btnCursorColorClick(Sender: TObject);
 begin
+  dlgcolor.Color:= cbCursorColor.Color;
   if dlgcolor.Execute then
     begin
       SetColorInColorBox(cbCursorColor,dlgcolor.Color);
@@ -888,6 +889,7 @@ end;
 
 procedure TfColumnsSetConf.btnCursorTextClick(Sender: TObject);
 begin
+  dlgcolor.Color:= cbCursorText.Color;
   if dlgcolor.Execute then
     begin
       SetColorInColorBox(cbCursorText,dlgcolor.Color);
@@ -898,6 +900,7 @@ end;
 
 procedure TfColumnsSetConf.btnCursorBorderColorClick(Sender: TObject);
 begin
+  dlgcolor.Color:= cbCursorBorderColor.Color;
   if dlgcolor.Execute then
     begin
       SetColorInColorBox(cbCursorBorderColor,dlgcolor.Color);
@@ -907,6 +910,7 @@ end;
 
 procedure TfColumnsSetConf.btnBackColorClick(Sender: TObject);
 begin
+  dlgcolor.Color:= cbBackColor.Color;
   if dlgcolor.Execute then
     begin
     SetColorInColorBox(cbBackColor,dlgcolor.Color);
@@ -917,6 +921,7 @@ end;
 
 procedure TfColumnsSetConf.btnBackColor2Click(Sender: TObject);
 begin
+  dlgcolor.Color:= cbBackColor2.Color;
   if dlgcolor.Execute then
     begin
       SetColorInColorBox(cbBackColor2,dlgcolor.Color);
@@ -979,6 +984,7 @@ end;
 
 procedure TfColumnsSetConf.btnForeColorClick(Sender: TObject);
 begin
+  dlgcolor.Color:= cbTextColor.Color;
   if dlgcolor.Execute then
     begin
      SetColorInColorBox(cbTextColor,dlgcolor.Color);
@@ -990,6 +996,7 @@ end;
 
 procedure TfColumnsSetConf.btnMarkColorClick(Sender: TObject);
 begin
+  dlgcolor.Color:= cbMarkColor.Color;
   if dlgcolor.Execute then
     begin
       SetColorInColorBox(cbMarkColor,dlgcolor.Color);
