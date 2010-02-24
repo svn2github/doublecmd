@@ -1687,7 +1687,10 @@ begin
   for i:=0 to glsHotDir.Count-1 do
   begin
     mi:=TMenuItem.Create(pmHotList);
-    mi.Caption:= '&' + glsHotDir.Names[I];
+    if Pos('&', glsHotDir.Names[I]) = 0 then
+      mi.Caption:= '&' + glsHotDir.Names[I]
+    else
+      mi.Caption:= glsHotDir.Names[I];
     mi.Hint:= glsHotDir.ValueFromIndex[I];
     mi.OnClick:=@HotDirSelected;
     pmHotList.Items.Add(mi);
@@ -3856,4 +3859,4 @@ end;
 
 initialization
  {$I fmain.lrs}
-end.
+end.
