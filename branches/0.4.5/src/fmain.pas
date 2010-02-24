@@ -1626,7 +1626,7 @@ procedure TfrmMain.miHotAddClick(Sender: TObject);
 var
   sName: UTF8String;
 begin
-  sName:= GetLastDir(ActiveFrame.ActiveDir);
+  sName:= StringReplace(GetLastDir(ActiveFrame.ActiveDir), '&', '&&', [rfReplaceAll]);
   glsHotDir.Add(sName + '=' + ActiveFrame.ActiveDir);
 end;
 
