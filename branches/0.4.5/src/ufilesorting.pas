@@ -261,7 +261,7 @@ end;
 
 function ICompareBySize(item1, item2:PFileRecItem; bSortNegative: Boolean):Integer;
 
-  function GetSize(pFile: PFileRecItem): Cardinal;
+  function GetSize(pFile: PFileRecItem): Int64;
   begin
     if FPS_ISDIR(pFile^.iMode) or pFile^.bLinkIsDir then
     begin
@@ -275,8 +275,8 @@ function ICompareBySize(item1, item2:PFileRecItem; bSortNegative: Boolean):Integ
   end;
 
 var
-  iSize1 : Cardinal;
-  iSize2 : Cardinal;
+  iSize1 : Int64;
+  iSize2 : Int64;
 begin
 {> 0 (positive)   Item1 is less than Item2
   0              Item1 is equal to Item2
