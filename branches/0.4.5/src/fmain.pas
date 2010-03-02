@@ -3396,7 +3396,10 @@ begin
     case Key of
       VK_ESCAPE:
         begin
-          edtCommand.Text := '';
+          if edtCommand.Text <> '' then
+            edtCommand.Text := ''
+          else
+            ActiveFrame.SetFocus;
           Key := 0;
         end;
 
@@ -3859,4 +3862,4 @@ end;
 
 initialization
  {$I fmain.lrs}
-end.
+end.
