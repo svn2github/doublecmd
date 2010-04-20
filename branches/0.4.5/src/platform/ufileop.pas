@@ -73,8 +73,11 @@ begin
     iSize:= SearchRec.Size;
     iMode:= SearchRec.Attr;
     bSysFile:= Boolean(SearchRec.Attr and faSysFile) or Boolean(SearchRec.Attr and faHidden);
-    fTimeI:= FileDateToDateTime(SearchRec.Time);
-
+    try
+      fTimeI:= FileDateToDateTime(SearchRec.Time);
+    except
+      fTimeI:= 0;
+    end;
     if FPS_ISDIR(iMode) or (SearchRec.Name[1]='.') then //!!!!!
       sExt:= ''
     else
