@@ -178,7 +178,7 @@ begin
             //------------------------------------
             sCheckSum1:= CheckSumCalc(@fri);
             sCheckSum2:= FCheckSumFile.Names[I];
-            bResult:= (StrComp(PChar(sCheckSum1), PChar(sCheckSum2)) = 0);
+            bResult:= (CompareText(sCheckSum1, sCheckSum2) = 0);
             FResult.Add(PChar(FCheckSumFile.ValueFromIndex[I])+1 + ': ' + IfThen(bResult, 'True', 'False'));
           end;
       end;
