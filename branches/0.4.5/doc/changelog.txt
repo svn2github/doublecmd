@@ -1,4 +1,7 @@
-﻿15.08.2010 FIX: Use case insensitive compare for verify checksum operation
+﻿--------------------------------------------------------------------------------
+21.08.2010 Release Double Commander 0.4.5.2 beta
+--------------------------------------------------------------------------------
+15.08.2010 FIX: Use case insensitive compare for verify checksum operation
 20.04.2010 FIX: Bug [2989234] Does not work with icloud
 10.04.2010 ADD: Korean language file by Lee, Cheon-Pung
 02.03.2010 UPD: Use Escape key to leave editing command line and focus files panel when command line is empty [2961106].
@@ -13,7 +16,7 @@
 24.02.2010 FIX: ContentGetDetectString function
 23.02.2010 FIX: Cross compiling unrar plugin from Linux 32 to 64
 --------------------------------------------------------------------------------
-22.02.2009 Release Double Commander 0.4.5.1 beta
+22.02.2010 Release Double Commander 0.4.5.1 beta
 --------------------------------------------------------------------------------
 22.02.2010 UPD: Better error message when error in CopyFile.
 22.02.2010 FIX: Crash in CopyFile when cannot read file.
