@@ -1,4 +1,18 @@
-﻿--------------------------------------------------------------------------------
+﻿15.08.2010 FIX: Use case insensitive compare for verify checksum operation
+20.04.2010 FIX: Bug [2989234] Does not work with icloud
+10.04.2010 ADD: Korean language file by Lee, Cheon-Pung
+02.03.2010 UPD: Use Escape key to leave editing command line and focus files panel when command line is empty [2961106].
+01.03.2010 UPD: Ukrainian language file by Ma$terok
+01.03.2010 UPD: Polish language file by Krzysztof Modelski
+01.03.2010 FIX: Sorting files by size if size > 4GB (bug [2960850]).
+25.02.2010 FIX: Bug [2957145] Directory hotlist hotkey issue
+25.02.2010 FIX: Bug [2957145] Directory hotlist hotkey issue
+25.02.2010 FIX: Bug [2957159] File type color dialog color selection
+24.02.2010 ADD: Polish language file by Krzysztof Modelski
+24.02.2010 FIX: Get content plugin name
+24.02.2010 FIX: ContentGetDetectString function
+23.02.2010 FIX: Cross compiling unrar plugin from Linux 32 to 64
+--------------------------------------------------------------------------------
 22.02.2009 Release Double Commander 0.4.5.1 beta
 --------------------------------------------------------------------------------
 22.02.2010 UPD: Better error message when error in CopyFile.
