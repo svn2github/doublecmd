@@ -27,7 +27,7 @@ uses
 
 const
   dcBuildDate = {$I %DATE%};
-  dcVersion = '0.4.5.1 beta';
+  dcVersion = '0.4.5.2 beta';
   lazVersion = {$I version.inc};
   fpcVersion = {$I %FPCVERSION%};
   TargetCPU = {$I %FPCTARGETCPU%};
@@ -51,7 +51,7 @@ begin
   DebugLn('Free Pascal: ' + fpcVersion);
   DebugLn('Platform: ' + TargetCPU + '-' + TargetOS + '-' + LCLPlatform[WidgetSet.LCLPlatform]);
   DebugLn('This program is free software released under terms of GNU GPL 2');
-  DebugLn('(C)opyright 2006-2009 Koblov Alexander (Alexx2000@mail.ru)');
+  DebugLn('(C)opyright 2006-2010 Koblov Alexander (Alexx2000@mail.ru)');
   DebugLn('   and contributors (see about dialog)');
 
   fAbout.dcBuildDate := dcBuildDate;
