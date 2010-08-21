@@ -50,7 +50,7 @@ cd $BUILD_DC_TMP_DIR
 ./_make.sh all
 
 # Export variables for checkinstall
-export MAINTAINER="Alexander Koblov <Alexx2000@mail>"
+export MAINTAINER="Alexander Koblov <Alexx2000@mail.ru>"
 
 # Create *.rpm package
 

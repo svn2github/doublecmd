@@ -51,7 +51,6 @@ build_all()
   components/build.sh
   plugins/build.sh
   build_default
-  build_doublecmd
 }
 
 
