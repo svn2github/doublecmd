@@ -2676,8 +2676,8 @@ begin
       if (Sender as TPage).Tag = 0 then // if not locked tab
         begin
           sCaption := GetLastDir(ExcludeTrailingPathDelimiter(NewDir));
-          if (tb_text_length_limit in gDirTabOptions) and (Length(sCaption) > gDirTabLimit) then
-            ANoteBook.Page[(Sender as TPage).PageIndex].Caption:= Copy(sCaption, 1, gDirTabLimit) + '...'
+          if (tb_text_length_limit in gDirTabOptions) and (UTF8Length(sCaption) > gDirTabLimit) then
+            ANoteBook.Page[(Sender as TPage).PageIndex].Caption:= UTF8Copy(sCaption, 1, gDirTabLimit) + '...'
           else
             ANoteBook.Page[(Sender as TPage).PageIndex].Caption := sCaption;
         end;
@@ -3862,4 +3862,4 @@ end;
 
 initialization
  {$I fmain.lrs}
-end.
+end.
