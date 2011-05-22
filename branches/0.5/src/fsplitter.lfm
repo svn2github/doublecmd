@@ -1,0 +1,240 @@
+object frmSplitter: TfrmSplitter
+  Left = 283
+  Height = 240
+  Top = 122
+  Width = 399
+  HorzScrollBar.Page = 464
+  HorzScrollBar.Range = 369
+  VertScrollBar.Page = 301
+  VertScrollBar.Range = 227
+  ActiveControl = cmbxSize
+  AutoSize = True
+  Caption = 'Splitter'
+  ChildSizing.LeftRightSpacing = 6
+  ChildSizing.TopBottomSpacing = 6
+  ClientHeight = 240
+  ClientWidth = 399
+  Position = poScreenCenter
+  LCLVersion = '0.9.29'
+  object grbxFile: TGroupBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = btnCancel
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 118
+    Top = 6
+    Width = 385
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Left = 6
+    BorderSpacing.Bottom = 6
+    Caption = 'File name'
+    ChildSizing.LeftRightSpacing = 10
+    ChildSizing.TopBottomSpacing = 4
+    ClientHeight = 100
+    ClientWidth = 381
+    TabOrder = 0
+    object lbFileSource: TLabel
+      Left = 10
+      Height = 14
+      Top = 4
+      Width = 52
+      Caption = 'File source'
+      ParentColor = False
+    end
+    object lbDirTarget: TLabel
+      AnchorSideTop.Control = edFileSource
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 14
+      Top = 55
+      Width = 78
+      BorderSpacing.Top = 12
+      Caption = 'Directory target'
+      ParentColor = False
+    end
+    object edFileSource: TEdit
+      AnchorSideTop.Control = lbFileSource
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Side = asrBottom
+      Left = 10
+      Height = 21
+      Top = 22
+      Width = 360
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 4
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object edDirTarget: TEdit
+      AnchorSideTop.Control = lbDirTarget
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = btnFTChoice
+      Left = 10
+      Height = 21
+      Top = 73
+      Width = 330
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 4
+      BorderSpacing.Right = 6
+      TabOrder = 1
+    end
+    object btnFTChoice: TButton
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = edDirTarget
+      AnchorSideRight.Control = edFileSource
+      AnchorSideRight.Side = asrBottom
+      Left = 346
+      Height = 23
+      Top = 73
+      Width = 24
+      Anchors = [akTop, akRight]
+      BorderSpacing.Left = 4
+      Caption = '...'
+      OnClick = btnFTChoiceClick
+      TabOrder = 2
+    end
+  end
+  object grbxSize: TGroupBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = grbxFile
+    AnchorSideTop.Side = asrBottom
+    Left = 6
+    Height = 103
+    Top = 130
+    Width = 300
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Left = 6
+    BorderSpacing.Right = 6
+    Caption = 'Size and number of parts'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ClientHeight = 85
+    ClientWidth = 296
+    Constraints.MinWidth = 300
+    TabOrder = 1
+    object cmbxSize: TComboBox
+      AnchorSideLeft.Control = grbxSize
+      AnchorSideTop.Control = grbxSize
+      AnchorSideRight.Side = asrBottom
+      Left = 6
+      Height = 21
+      Top = 6
+      Width = 276
+      Anchors = [akTop, akLeft, akRight]
+      ItemHeight = 13
+      ItemIndex = 0
+      Items.Strings = (
+        '1457664B - 3.5"'
+        '98078KB - ZIP 100MB'
+        '650MB - CD 650MB'
+        '700MB - CD 700MB'
+        '4482MB - DVD+R'
+      )
+      OnCloseUp = cmbxSizeCloseUp
+      OnKeyPress = cmbxSizeKeyPress
+      OnKeyUp = cmbxSizeKeyUp
+      TabOrder = 0
+      Text = '1457664B - 3.5"'
+    end
+    object rbtnKiloB: TRadioButton
+      AnchorSideLeft.Control = cmbxSize
+      AnchorSideTop.Control = cmbxSize
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 17
+      Top = 33
+      Width = 61
+      BorderSpacing.Top = 6
+      Caption = 'Kilobytes'
+      OnChange = rbtnKiloBChange
+      TabOrder = 1
+    end
+    object rbtnMegaB: TRadioButton
+      AnchorSideLeft.Control = rbtnKiloB
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = rbtnKiloB
+      Left = 69
+      Height = 17
+      Top = 33
+      Width = 71
+      BorderSpacing.Left = 2
+      Caption = 'Megabytes'
+      OnChange = rbtnKiloBChange
+      TabOrder = 2
+    end
+    object rbtnGigaB: TRadioButton
+      AnchorSideLeft.Control = rbtnMegaB
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = rbtnMegaB
+      Left = 142
+      Height = 17
+      Top = 33
+      Width = 66
+      BorderSpacing.Left = 2
+      Caption = 'Gigabytes'
+      OnChange = rbtnKiloBChange
+      TabOrder = 3
+    end
+    object teNumberParts: TEdit
+      AnchorSideLeft.Control = lblNumberParts
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = rbtnMegaB
+      AnchorSideTop.Side = asrBottom
+      Left = 89
+      Height = 21
+      Top = 58
+      Width = 72
+      BorderSpacing.Left = 4
+      BorderSpacing.Top = 8
+      OnKeyPress = teNumberPartsKeyPress
+      OnKeyUp = teNumberPartsKeyUp
+      TabOrder = 4
+    end
+    object lblNumberParts: TLabel
+      AnchorSideLeft.Control = rbtnKiloB
+      AnchorSideTop.Control = teNumberParts
+      AnchorSideTop.Side = asrCenter
+      Left = 6
+      Height = 14
+      Top = 61
+      Width = 79
+      Caption = 'Number of parts'
+      ParentColor = False
+    end
+  end
+  object btnOK: TButton
+    AnchorSideRight.Control = btnCancel
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = btnCancel
+    Left = 316
+    Height = 32
+    Top = 163
+    Width = 75
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Bottom = 6
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 2
+  end
+  object btnCancel: TButton
+    AnchorSideLeft.Control = grbxSize
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = grbxSize
+    AnchorSideBottom.Side = asrBottom
+    Left = 316
+    Height = 32
+    Top = 201
+    Width = 75
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 10
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 3
+  end
+end

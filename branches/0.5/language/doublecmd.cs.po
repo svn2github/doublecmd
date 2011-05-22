@@ -1,0 +1,6897 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Double Commander 0.3 alpha\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-01-17 23:08+0300\n"
+"PO-Revision-Date: 2009-09-21 17:06+0100\n"
+"Last-Translator: Petr Stasiak <translate@pestasoft.com>\n"
+"Language-Team: pestasoft.com <info@pestasoft.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: -1,-1,-1,-1,-1,-1,-1,444,-1,-1\n"
+
+#: TFCOLUMNSSETCONF.BTNALLBACK.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLBACK.CAPTION"
+msgid "All"
+msgstr "Vše"
+
+#: TFCOLUMNSSETCONF.BTNALLBACK2.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLBACK2.CAPTION"
+msgid "All"
+msgstr "Vše"
+
+#: TFCOLUMNSSETCONF.BTNALLCURCOL.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLCURCOL.CAPTION"
+msgid "All"
+msgstr "Vše"
+
+#: TFCOLUMNSSETCONF.BTNALLCURTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLCURTEXT.CAPTION"
+msgid "All"
+msgstr "Vše"
+
+#: TFCOLUMNSSETCONF.BTNALLFONT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLFONT.CAPTION"
+msgid "All"
+msgstr "Vše"
+
+#: TFCOLUMNSSETCONF.BTNALLMARC.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLMARC.CAPTION"
+msgid "All"
+msgstr "Vše"
+
+#: TFCOLUMNSSETCONF.BTNALLTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLTEXT.CAPTION"
+msgid "All"
+msgstr "Vše"
+
+#: TFCOLUMNSSETCONF.BTNBACKCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNBACKCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNBACKCOLOR2.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNBACKCOLOR2.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNCANCEL.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFCOLUMNSSETCONF.BTNCURSORBORDERCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNCURSORBORDERCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNCURSORCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNCURSORCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNCURSORTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNCURSORTEXT.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNFONTSELECT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNFONTSELECT.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFCOLUMNSSETCONF.BTNFORECOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNFORECOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNMARKCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNMARKCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNNEXT.CAPTION
+msgid "->"
+msgstr "->"
+
+#: TFCOLUMNSSETCONF.BTNOK.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFCOLUMNSSETCONF.BTNPREV.CAPTION
+#, fuzzy
+msgid "<-"
+msgstr "<-"
+
+#: TFCOLUMNSSETCONF.CAPTION
+#, fuzzy
+msgid "Configure custom columns view"
+msgstr "Konfigurovat vlastní pohled (sloupce)"
+
+#: TFCOLUMNSSETCONF.CBACKGRNDLABEL.CAPTION
+msgctxt "TFCOLUMNSSETCONF.CBACKGRNDLABEL.CAPTION"
+msgid "BackGround:"
+msgstr "Pozadí:"
+
+#: TFCOLUMNSSETCONF.CBCURSORBORDER.CAPTION
+msgid "Cursor border"
+msgstr ""
+
+#: TFCOLUMNSSETCONF.CBOVERCOLOR.CAPTION
+#, fuzzy
+msgid "Allow Overcolor"
+msgstr "Povolit Overcolor"
+
+#: TFCOLUMNSSETCONF.CHKUSECUSTOMVIEW.CAPTION
+msgid "Use custom font and color"
+msgstr ""
+
+#: TFCOLUMNSSETCONF.CTEXTLABEL.CAPTION
+msgctxt "TFCOLUMNSSETCONF.CTEXTLABEL.CAPTION"
+msgid "Text Color:"
+msgstr "Barva písma:"
+
+#: TFCOLUMNSSETCONF.LABEL3.CAPTION
+#, fuzzy
+#| msgid "Configure view nr:"
+msgctxt "TFCOLUMNSSETCONF.LABEL3.CAPTION"
+msgid "Font:"
+msgstr "Konfigurace pohledu č.:"
+
+#: TFCOLUMNSSETCONF.LABEL4.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LABEL4.CAPTION"
+msgid "Size:"
+msgstr "Velikost:"
+
+#: TFCOLUMNSSETCONF.LBLBACKGROUND2.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBLBACKGROUND2.CAPTION"
+msgid "Background 2:"
+msgstr "Pozadí 2:"
+
+#: TFCOLUMNSSETCONF.LBLCONFIGVIEWNR.CAPTION
+#, fuzzy
+#| msgid "Configure view nr:"
+msgctxt "TFCOLUMNSSETCONF.LBLCONFIGVIEWNR.CAPTION"
+msgid "Configure view nr:"
+msgstr "Konfigurace pohledu č.:"
+
+#: TFCOLUMNSSETCONF.LBLCURSORCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBLCURSORCOLOR.CAPTION"
+msgid "Cursor Color:"
+msgstr "Barva kursoru:"
+
+#: TFCOLUMNSSETCONF.LBLCURSORTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBLCURSORTEXT.CAPTION"
+msgid "Cursor Text:"
+msgstr "Text kursoru:"
+
+#: TFCOLUMNSSETCONF.LBLMARKCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBLMARKCOLOR.CAPTION"
+msgid "Mark Color:"
+msgstr "Barva označených:"
+
+#: TFCOLUMNSSETCONF.LBLNAME.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBLNAME.CAPTION"
+msgid "Name:"
+msgstr "Jméno:"
+
+#: TFCOLUMNSSETCONF.LBNROFCOLUMNSSET.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBNROFCOLUMNSSET.CAPTION"
+msgid "0"
+msgstr "0"
+
+#: TFCOLUMNSSETCONF.MIADDCOLUMN.CAPTION
+msgid "Add column"
+msgstr "Přidat sloupec"
+
+#: TFCOLUMNSSETCONF.PNLCUSTHEAD.CAPTION
+msgid "Customize column:"
+msgstr "Nastavení sloupců:"
+
+#: TFCOLUMNSSETCONF.PNLPREVIEWHEAD.CAPTION
+msgctxt "TFCOLUMNSSETCONF.PNLPREVIEWHEAD.CAPTION"
+msgid "Preview"
+msgstr "Náhled"
+
+#: TFCOLUMNSSETCONF.RESBACK.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESBACK.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESBACK2.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESBACK2.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESCURCOL.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESCURCOL.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESCURTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESCURTEXT.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESFONT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESFONT.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESMARK.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESMARK.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESTEXT.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.CBCHECKFREESPACE.CAPTION
+msgid "Check free space"
+msgstr ""
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.CBCORRECTLINKS.CAPTION
+msgid "Correct links"
+msgstr ""
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.CBDROPREADONLYFLAG.CAPTION
+msgctxt "TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.CBDROPREADONLYFLAG.CAPTION"
+msgid "Drop readonly flag"
+msgstr "Zrušit příznak jen pro čtení"
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.CBFOLLOWLINKS.CAPTION
+msgid "Follow links"
+msgstr ""
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.LBLDIRECTORYEXISTS.CAPTION
+msgid "When directory exists"
+msgstr ""
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.LBLFILEEXISTS.CAPTION
+msgctxt "TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.LBLFILEEXISTS.CAPTION"
+msgid "When file exists"
+msgstr ""
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.LBLFILETYPE.CAPTION
+msgctxt "TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.LBLFILETYPE.CAPTION"
+msgid "Only type:"
+msgstr "Pouze typy"
+
+#: TFRMABOUT.CAPTION
+msgctxt "TFRMABOUT.CAPTION"
+msgid "About"
+msgstr "O programu"
+
+#: TFRMABOUT.LBLBUILD.CAPTION
+msgid "Build"
+msgstr "Build"
+
+#: TFRMABOUT.LBLFREEPASCALVER.CAPTION
+msgid "Free Pascal"
+msgstr "Free Pascal"
+
+#: TFRMABOUT.LBLHOMEPAGE.CAPTION
+msgid "Home Page:"
+msgstr "Domovská stránka:"
+
+#: TFRMABOUT.LBLHOMEPAGEADDRESS.CAPTION
+msgid "http://doublecmd.sourceforge.net"
+msgstr "http://doublecmd.sourceforge.net"
+
+#: TFRMABOUT.LBLLAZARUSVER.CAPTION
+msgid "Lazarus"
+msgstr "Lazarus"
+
+#: TFRMABOUT.LBLREVISION.CAPTION
+msgctxt "TFRMABOUT.LBLREVISION.CAPTION"
+msgid "Revision"
+msgstr "Revize"
+
+#: TFRMABOUT.LBLTITLE.CAPTION
+msgctxt "TFRMABOUT.LBLTITLE.CAPTION"
+msgid "Double Commander"
+msgstr "Double Commander"
+
+#: TFRMABOUT.LBLVERSION.CAPTION
+msgid "Version %s"
+msgstr "Verze %s"
+
+#: TFRMABOUT.OKBUTTON.CAPTION
+msgctxt "TFRMABOUT.OKBUTTON.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMATTRIBUTESEDIT.BTNCANCEL.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.BTNCANCEL.CAPTION"
+msgid "&Cancel"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.BTNOK.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMATTRIBUTESEDIT.BTNRESET.CAPTION
+msgid "&Reset"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CAPTION
+msgid "Choose attributes"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CBARCHIVE.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBARCHIVE.CAPTION"
+msgid "Archive"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CBCOMPRESSED.CAPTION
+msgid "Compressed"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CBDIRECTORY.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBDIRECTORY.CAPTION"
+msgid "Directory"
+msgstr "Adresář"
+
+#: TFRMATTRIBUTESEDIT.CBENCRYPTED.CAPTION
+msgid "Encrypted"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CBHIDDEN.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBHIDDEN.CAPTION"
+msgid "Hidden"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CBREADONLY.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBREADONLY.CAPTION"
+msgid "Read only"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CBSGID.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBSGID.CAPTION"
+msgid "SGID"
+msgstr "SGID"
+
+#: TFRMATTRIBUTESEDIT.CBSPARSE.CAPTION
+msgid "Sparse"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CBSTICKY.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBSTICKY.CAPTION"
+msgid "Sticky"
+msgstr "Sticky"
+
+#: TFRMATTRIBUTESEDIT.CBSUID.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBSUID.CAPTION"
+msgid "SUID"
+msgstr "SUID"
+
+#: TFRMATTRIBUTESEDIT.CBSYMLINK.CAPTION
+msgid "Symlink"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CBSYSTEM.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBSYSTEM.CAPTION"
+msgid "System"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CBTEMPORARY.CAPTION
+msgid "Temporary"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.GBNTFSATTRIBUTES.CAPTION
+msgid "NTFS attributes"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.GBWINGENERAL.CAPTION
+msgid "General attributes"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.LBLATTRBITSSTR.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLATTRBITSSTR.CAPTION"
+msgid "Bits:"
+msgstr "Bitů:"
+
+#: TFRMATTRIBUTESEDIT.LBLATTRGROUPSTR.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLATTRGROUPSTR.CAPTION"
+msgid "Group"
+msgstr "Skupina"
+
+#: TFRMATTRIBUTESEDIT.LBLATTROTHERSTR.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLATTROTHERSTR.CAPTION"
+msgid "Other"
+msgstr "Ostatní"
+
+#: TFRMATTRIBUTESEDIT.LBLATTROWNERSTR.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLATTROWNERSTR.CAPTION"
+msgid "Owner"
+msgstr "Vlastník"
+
+#: TFRMATTRIBUTESEDIT.LBLEXEC.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLEXEC.CAPTION"
+msgid "Execute"
+msgstr "Spustit"
+
+#: TFRMATTRIBUTESEDIT.LBLREAD.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLREAD.CAPTION"
+msgid "Read"
+msgstr "Čtení"
+
+#: TFRMATTRIBUTESEDIT.LBLTEXTATTRS.CAPTION
+msgid "As text:"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.LBLWRITE.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLWRITE.CAPTION"
+msgid "Write"
+msgstr "Zápis"
+
+#: TFRMCALENDAR.CAPTION
+msgid "Calendar"
+msgstr ""
+
+#: TFRMCHECKSUMCALC.BTNCANCEL.CAPTION
+msgctxt "TFRMCHECKSUMCALC.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMCHECKSUMCALC.BTNOK.CAPTION
+msgctxt "TFRMCHECKSUMCALC.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMCHECKSUMCALC.CBSEPARATEFILE.CAPTION
+#, fuzzy
+#| msgid "Create separate MD5 files for each file"
+msgid "Create separate checksum file for each file"
+msgstr "Vytvořit samostatný MD5/SHA1 pro každý soubor"
+
+#: TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT
+msgctxt "TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT"
+msgid "MD5"
+msgstr ""
+
+#: TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION
+msgctxt "TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION"
+msgid "Calculate check sum..."
+msgstr "Spočítat kontrolní součet..."
+
+#: TFRMCHECKSUMCALC.LBLSAVETO.CAPTION
+msgid "Save check sum file(s) to:"
+msgstr "Uložit soubor(y) s kontrolním součtem do:"
+
+#: TFRMCHECKSUMVERIFY.BTNCLOSE.CAPTION
+msgctxt "TFRMCHECKSUMVERIFY.BTNCLOSE.CAPTION"
+msgid "&Close"
+msgstr "&Zavřít"
+
+#: TFRMCHECKSUMVERIFY.CAPTION
+msgctxt "TFRMCHECKSUMVERIFY.CAPTION"
+msgid "Verify check sum..."
+msgstr "Kontrola kontrolního součtu..."
+
+#: TFRMCOLUMSPROPS.BITBTN1.CAPTION
+msgid "&ОК"
+msgstr "&ОК"
+
+#: TFRMCOMPAREFILES.BTNCLOSE.CAPTION
+msgctxt "TFRMCOMPAREFILES.BTNCLOSE.CAPTION"
+msgid "Close"
+msgstr "Zavřít"
+
+#: TFRMCOMPAREFILES.BTNCOMPARE.CAPTION
+msgctxt "TFRMCOMPAREFILES.BTNCOMPARE.CAPTION"
+msgid "Compare files"
+msgstr "Porovnat soubory"
+
+#: TFRMCOMPAREFILES.BTNNEXTDIFF.CAPTION
+msgid "Next difference"
+msgstr "Další rozdíl"
+
+#: TFRMCOMPAREFILES.BTNPREVDIFF.CAPTION
+msgid "Previous difference"
+msgstr "Předešlý rozdíl"
+
+#: TFRMCOMPAREFILES.CAPTION
+msgctxt "TFRMCOMPAREFILES.CAPTION"
+msgid "Compare files"
+msgstr "Porovnat soubory"
+
+#: TFRMCOMPAREFILES.CHBBINMODE.CAPTION
+msgid "Binary mode"
+msgstr "Binární režim"
+
+#: TFRMCOMPAREFILES.CHBKEEPSCROLLING.CAPTION
+msgid "Keep scrolling"
+msgstr "Zachovat skrolování"
+
+#: TFRMCONFIGTOOLBAR.BTNAPPENDBUTTON.CAPTION
+msgid "&Insert new button"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.BTNAPPENDMORE.CAPTION
+msgid "A&ppend >>"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMCONFIGTOOLBAR.BTNCLEARHOTKEY.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNCLEARHOTKEY.CAPTION"
+msgid "X"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.BTNCLONEBUTTON.CAPTION
+msgid "Clo&ne button"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.BTNDELETEBUTTON.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNDELETEBUTTON.CAPTION"
+msgid "&Delete"
+msgstr "&Vymazat"
+
+#: TFRMCONFIGTOOLBAR.BTNHELP.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNHELP.CAPTION"
+msgid "&Help"
+msgstr "&Nápověda"
+
+#: TFRMCONFIGTOOLBAR.BTNOK.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMCONFIGTOOLBAR.BTNOPENBARFILE.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOPENBARFILE.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMCONFIGTOOLBAR.BTNOPENFILE.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOPENFILE.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMCONFIGTOOLBAR.CBFLATBUTTONS.CAPTION
+msgid "Flat b&uttons"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.CBISSEPARATOR.CAPTION
+msgid "S&eparator"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.FRMCONFIGTOOLBAR.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.FRMCONFIGTOOLBAR.CAPTION"
+msgid "Change button bar"
+msgstr "Změna tlačítkové lišty"
+
+#: TFRMCONFIGTOOLBAR.GBGROUPBOX.CAPTION
+msgid "Appearance"
+msgstr "Vzhled"
+
+#: TFRMCONFIGTOOLBAR.LBLBARSIZE.CAPTION
+msgid "Ba&r size:"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.LBLBARSIZEVALUE.CAPTION
+msgid "36"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.LBLBUTTONBAR.CAPTION
+msgid "&Button bar:"
+msgstr "&Tlačítková lišta:"
+
+#: TFRMCONFIGTOOLBAR.LBLCOMMAND.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.LBLCOMMAND.CAPTION"
+msgid "&Command:"
+msgstr "&Příkaz:"
+
+#: TFRMCONFIGTOOLBAR.LBLHOTKEYS.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.LBLHOTKEYS.CAPTION"
+msgid "Hot Key:"
+msgstr "Horká klávesa:"
+
+#: TFRMCONFIGTOOLBAR.LBLICONFILE.CAPTION
+msgid "Icon &file:"
+msgstr "&Ikona:"
+
+#: TFRMCONFIGTOOLBAR.LBLICONSIZE.CAPTION
+msgid "Ic&on size:"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.LBLICONSIZEVALUE.CAPTION
+msgid "32"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.LBLPARAMETERS.CAPTION
+msgid "&Parameters:"
+msgstr "&Parametry:"
+
+#: TFRMCONFIGTOOLBAR.LBLSTARTPATH.CAPTION
+msgid "&Start path:"
+msgstr "&Výchozí cesta:"
+
+#: TFRMCONFIGTOOLBAR.LBLTOOLTIP.CAPTION
+msgid "&Tooltip:"
+msgstr "&Nápovědný text"
+
+#: TFRMCONFIGTOOLBAR.MIADDSUBBAR.CAPTION
+#, fuzzy
+#| msgid "Add S&ubbar >>"
+msgctxt "TFRMCONFIGTOOLBAR.MIADDSUBBAR.CAPTION"
+msgid "S&ubbar >>"
+msgstr "Přidat \"&Podlištu\" >>"
+
+#: TFRMCONFIGTOOLBAR.MIADDSUBMENU.CAPTION
+msgid "Sub&menu >>"
+msgstr ""
+
+#: TFRMCONNECTIONMANAGER.BTNADD.CAPTION
+msgctxt "TFRMCONNECTIONMANAGER.BTNADD.CAPTION"
+msgid "Add"
+msgstr "Přidat"
+
+#: TFRMCONNECTIONMANAGER.BTNCANCEL.CAPTION
+msgctxt "TFRMCONNECTIONMANAGER.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMCONNECTIONMANAGER.BTNCONNECT.CAPTION
+msgid "Connect"
+msgstr ""
+
+#: TFRMCONNECTIONMANAGER.BTNDELETE.CAPTION
+msgctxt "TFRMCONNECTIONMANAGER.BTNDELETE.CAPTION"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMCONNECTIONMANAGER.BTNEDIT.CAPTION
+msgctxt "TFRMCONNECTIONMANAGER.BTNEDIT.CAPTION"
+msgid "Edit"
+msgstr "Upravit"
+
+#: TFRMCONNECTIONMANAGER.CAPTION
+msgid "Connection manager"
+msgstr ""
+
+#: TFRMCONNECTIONMANAGER.GBCONNECTTO.CAPTION
+msgid "Connect to:"
+msgstr ""
+
+#: TFRMCOPYDLG.BTNCANCEL.CAPTION
+msgctxt "TFRMCOPYDLG.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMCOPYDLG.BTNOPTIONS.CAPTION
+msgid "O&ptions"
+msgstr ""
+
+#: TFRMCOPYDLG.BTNSAVEOPTIONS.CAPTION
+msgid "Save these options as default"
+msgstr ""
+
+#: TFRMCOPYDLG.CAPTION
+msgctxt "TFRMCOPYDLG.CAPTION"
+msgid "Copy file(s)"
+msgstr "Kopírovat soubor(y)"
+
+#: TFRMCOPYDLG.LBLCOPYSRC.CAPTION
+msgid "Copy %s:"
+msgstr "Kopírovat %s:"
+
+#: TFRMDESCREDIT.BTNCANCEL.CAPTION
+msgctxt "TFRMDESCREDIT.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMDESCREDIT.BTNOK.CAPTION
+msgctxt "TFRMDESCREDIT.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMDESCREDIT.CAPTION
+msgid "File/folder comment"
+msgstr "Komentář souboru/adresáře"
+
+#: TFRMDESCREDIT.LBLEDITCOMMENTFOR.CAPTION
+msgid "Edit comment for:"
+msgstr "Upravit komentář pro:"
+
+#: TFRMDESCREDIT.LBLENCODING.CAPTION
+msgctxt "TFRMDESCREDIT.LBLENCODING.CAPTION"
+msgid "Encoding:"
+msgstr "Kódování:"
+
+#: TFRMDESCREDIT.LBLFILENAME.CAPTION
+msgctxt "TFRMDESCREDIT.LBLFILENAME.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMDIFFER.ACTABOUT.CAPTION
+msgctxt "TFRMDIFFER.ACTABOUT.CAPTION"
+msgid "About"
+msgstr "O programu"
+
+#: TFRMDIFFER.ACTAUTOCOMPARE.CAPTION
+msgid "Auto Compare"
+msgstr ""
+
+#: TFRMDIFFER.ACTBINARYCOMPARE.CAPTION
+msgid "Binary Mode"
+msgstr ""
+
+#: TFRMDIFFER.ACTCANCELCOMPARE.CAPTION
+msgctxt "TFRMDIFFER.ACTCANCELCOMPARE.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMDIFFER.ACTCLOSE.CAPTION
+msgctxt "TFRMDIFFER.ACTCLOSE.CAPTION"
+msgid "Close"
+msgstr "Zavřít"
+
+#: TFRMDIFFER.ACTCOPYLEFTTORIGHT.CAPTION
+msgid "Copy Block Right"
+msgstr ""
+
+#: TFRMDIFFER.ACTCOPYRIGHTTOLEFT.CAPTION
+msgid "Copy Block Left"
+msgstr ""
+
+#: TFRMDIFFER.ACTEDITCOPY.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITCOPY.CAPTION"
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: TFRMDIFFER.ACTEDITCUT.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITCUT.CAPTION"
+msgid "Cut"
+msgstr "Vyjmout"
+
+#: TFRMDIFFER.ACTEDITDELETE.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITDELETE.CAPTION"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMDIFFER.ACTEDITPASTE.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITPASTE.CAPTION"
+msgid "Paste"
+msgstr "Vložiit"
+
+#: TFRMDIFFER.ACTEDITREDO.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITREDO.CAPTION"
+msgid "Redo"
+msgstr "Opakovat"
+
+#: TFRMDIFFER.ACTEDITSELECTALL.CAPTION
+msgid "Select &All"
+msgstr ""
+
+#: TFRMDIFFER.ACTEDITUNDO.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITUNDO.CAPTION"
+msgid "Undo"
+msgstr "Zpět"
+
+#: TFRMDIFFER.ACTFIRSTDIFF.CAPTION
+msgid "First Difference"
+msgstr ""
+
+#: TFRMDIFFER.ACTIGNORECASE.CAPTION
+msgid "Ignore Case"
+msgstr ""
+
+#: TFRMDIFFER.ACTIGNOREWHITESPACE.CAPTION
+msgid "Ignore Blanks"
+msgstr ""
+
+#: TFRMDIFFER.ACTKEEPSCROLLING.CAPTION
+msgid "Keep Scrolling"
+msgstr ""
+
+#: TFRMDIFFER.ACTLASTDIFF.CAPTION
+msgid "Last Difference"
+msgstr ""
+
+#: TFRMDIFFER.ACTLINEDIFFERENCES.CAPTION
+msgid "Line Differences"
+msgstr ""
+
+#: TFRMDIFFER.ACTNEXTDIFF.CAPTION
+msgid "Next Difference"
+msgstr ""
+
+#: TFRMDIFFER.ACTOPENLEFT.CAPTION
+msgid "Open Left..."
+msgstr ""
+
+#: TFRMDIFFER.ACTOPENRIGHT.CAPTION
+msgid "Open Right..."
+msgstr ""
+
+#: TFRMDIFFER.ACTPAINTBACKGROUND.CAPTION
+msgid "Paint Background"
+msgstr ""
+
+#: TFRMDIFFER.ACTPREVDIFF.CAPTION
+msgid "Previous Difference"
+msgstr ""
+
+#: TFRMDIFFER.ACTRELOAD.CAPTION
+msgctxt "TFRMDIFFER.ACTRELOAD.CAPTION"
+msgid "Reload"
+msgstr ""
+
+#: TFRMDIFFER.ACTSAVE.CAPTION
+msgctxt "TFRMDIFFER.ACTSAVE.CAPTION"
+msgid "Save"
+msgstr ""
+
+#: TFRMDIFFER.ACTSAVEAS.CAPTION
+msgid "Save as..."
+msgstr ""
+
+#: TFRMDIFFER.ACTSAVELEFT.CAPTION
+msgid "Save Left"
+msgstr ""
+
+#: TFRMDIFFER.ACTSAVELEFTAS.CAPTION
+msgid "Save Left As..."
+msgstr ""
+
+#: TFRMDIFFER.ACTSAVERIGHT.CAPTION
+msgid "Save Right"
+msgstr ""
+
+#: TFRMDIFFER.ACTSAVERIGHTAS.CAPTION
+msgid "Save Right As..."
+msgstr ""
+
+#: TFRMDIFFER.ACTSTARTCOMPARE.CAPTION
+msgid "Compare"
+msgstr ""
+
+#: TFRMDIFFER.FRMDIFFER.CAPTION
+msgctxt "TFRMDIFFER.FRMDIFFER.CAPTION"
+msgid "Compare files"
+msgstr "Porovnat soubory"
+
+#: TFRMDIFFER.MIDIVIDER1.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER10.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER10.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER2.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER3.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER3.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER4.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER4.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER5.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER5.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER6.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER6.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER7.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER7.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER8.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER8.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER9.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER9.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIENCODINGLEFT.CAPTION
+msgid "Left"
+msgstr ""
+
+#: TFRMDIFFER.MIENCODINGRIGHT.CAPTION
+msgid "Right"
+msgstr ""
+
+#: TFRMDIFFER.MISEPARATOR1.CAPTION
+msgctxt "TFRMDIFFER.MISEPARATOR1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MISEPARATOR2.CAPTION
+msgctxt "TFRMDIFFER.MISEPARATOR2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MNUACTIONS.CAPTION
+msgid "&Actions"
+msgstr ""
+
+#: TFRMDIFFER.MNUEDIT.CAPTION
+msgctxt "TFRMDIFFER.MNUEDIT.CAPTION"
+msgid "Edit"
+msgstr "Upravit"
+
+#: TFRMDIFFER.MNUENCODING.CAPTION
+msgctxt "TFRMDIFFER.MNUENCODING.CAPTION"
+msgid "Encoding"
+msgstr ""
+
+#: TFRMDIFFER.MNUFILE.CAPTION
+msgctxt "TFRMDIFFER.MNUFILE.CAPTION"
+msgid "File"
+msgstr "Soubor"
+
+#: TFRMDIFFER.MNUOPTIONS.CAPTION
+#, fuzzy
+#| msgid "Options"
+msgctxt "TFRMDIFFER.MNUOPTIONS.CAPTION"
+msgid "&Options"
+msgstr "Nastavení"
+
+#: TFRMEDITOR.ACTABOUT.CAPTION
+msgctxt "TFRMEDITOR.ACTABOUT.CAPTION"
+msgid "About"
+msgstr "O programu"
+
+#: TFRMEDITOR.ACTCONFHIGH.CAPTION
+msgid "&Configuration"
+msgstr "&Konfigurace"
+
+#: TFRMEDITOR.ACTEDITCOPY.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITCOPY.CAPTION"
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: TFRMEDITOR.ACTEDITCUT.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITCUT.CAPTION"
+msgid "Cut"
+msgstr "Vyjmout"
+
+#: TFRMEDITOR.ACTEDITDELETE.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITDELETE.CAPTION"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMEDITOR.ACTEDITFIND.CAPTION
+msgid "&Find"
+msgstr "&Hledat"
+
+#: TFRMEDITOR.ACTEDITFINDNEXT.CAPTION
+msgid "Find next"
+msgstr "Hledat další"
+
+#: TFRMEDITOR.ACTEDITPASTE.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITPASTE.CAPTION"
+msgid "Paste"
+msgstr "Vložiit"
+
+#: TFRMEDITOR.ACTEDITREDO.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITREDO.CAPTION"
+msgid "Redo"
+msgstr "Opakovat"
+
+#: TFRMEDITOR.ACTEDITRPLC.CAPTION
+msgid "&Replace"
+msgstr "&Nahradit"
+
+#: TFRMEDITOR.ACTEDITSELECTALL.CAPTION
+msgid "Select&All"
+msgstr "Vybrat &vše"
+
+#: TFRMEDITOR.ACTEDITUNDO.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITUNDO.CAPTION"
+msgid "Undo"
+msgstr "Zpět"
+
+#: TFRMEDITOR.ACTFILECLOSE.CAPTION
+msgctxt "TFRMEDITOR.ACTFILECLOSE.CAPTION"
+msgid "&Close"
+msgstr "&Zavřít"
+
+#: TFRMEDITOR.ACTFILEEXIT.CAPTION
+msgctxt "TFRMEDITOR.ACTFILEEXIT.CAPTION"
+msgid "E&xit"
+msgstr "&Konec"
+
+#: TFRMEDITOR.ACTFILENEW.CAPTION
+msgctxt "TFRMEDITOR.ACTFILENEW.CAPTION"
+msgid "&New"
+msgstr "&Nový"
+
+#: TFRMEDITOR.ACTFILEOPEN.CAPTION
+msgid "&Open"
+msgstr "&Otevřít"
+
+#: TFRMEDITOR.ACTFILESAVE.CAPTION
+#, fuzzy
+msgctxt "TFRMEDITOR.ACTFILESAVE.CAPTION"
+msgid "&Save"
+msgstr "&Uložit"
+
+#: TFRMEDITOR.ACTFILESAVEAS.CAPTION
+msgid "Save &As.."
+msgstr "Uložit &jako.."
+
+#: TFRMEDITOR.ACTSAVEALL.CAPTION
+msgid "Sa&ve All"
+msgstr "&Uložit vše"
+
+#: TFRMEDITOR.CAPTION
+msgctxt "TFRMEDITOR.CAPTION"
+msgid "Editor"
+msgstr "Editor"
+
+#: TFRMEDITOR.HELP1.CAPTION
+msgctxt "TFRMEDITOR.HELP1.CAPTION"
+msgid "&Help"
+msgstr "&Nápověda"
+
+#: TFRMEDITOR.MIDIV.CAPTION
+msgctxt "TFRMEDITOR.MIDIV.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITOR.MIEDIT.CAPTION
+msgctxt "TFRMEDITOR.MIEDIT.CAPTION"
+msgid "&Edit"
+msgstr "&Edit"
+
+#: TFRMEDITOR.MIENCODING.CAPTION
+msgctxt "TFRMEDITOR.MIENCODING.CAPTION"
+msgid "En&coding"
+msgstr "Kó&dování"
+
+#: TFRMEDITOR.MIENCODINGIN.CAPTION
+msgid "Open as"
+msgstr ""
+
+#: TFRMEDITOR.MIENCODINGOUT.CAPTION
+msgid "Save as"
+msgstr ""
+
+#: TFRMEDITOR.MIFILE.CAPTION
+msgctxt "TFRMEDITOR.MIFILE.CAPTION"
+msgid "&File"
+msgstr "&Soubor"
+
+#: TFRMEDITOR.MIHIGHLIGHT.CAPTION
+msgid "Syntax highlight"
+msgstr "Zvýrazňování synaxe"
+
+#: TFRMEDITOR.MISEPARATOR1.CAPTION
+msgctxt "TFRMEDITOR.MISEPARATOR1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITOR.MISEPARATOR2.CAPTION
+msgctxt "TFRMEDITOR.MISEPARATOR2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITOR.N1.CAPTION
+msgctxt "TFRMEDITOR.N1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITOR.N3.CAPTION
+msgctxt "TFRMEDITOR.N3.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITOR.N4.CAPTION
+msgctxt "TFRMEDITOR.N4.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITORCONF.BTNCANCEL.CAPTION
+msgctxt "TFRMEDITORCONF.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMEDITORCONF.BTNOK.CAPTION
+msgctxt "TFRMEDITORCONF.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMEDITORCONF.CAPTION
+msgid "Editor configuration"
+msgstr "Konfigurace editoru"
+
+#: TFRMEDITORCONF.CBBOLD.CAPTION
+msgid "&Bold"
+msgstr "&Tučné"
+
+#: TFRMEDITORCONF.CBITALIC.CAPTION
+msgid "&Italic"
+msgstr "&Zkosené"
+
+#: TFRMEDITORCONF.CBSTRIKEOUT.CAPTION
+msgid "&StrikeOut"
+msgstr "Přeš&krtnuté"
+
+#: TFRMEDITORCONF.CBUNDERLINE.CAPTION
+msgid "&Underline"
+msgstr "&Podtržené"
+
+#: TFRMEDITORCONF.LBPREDEFINED.CAPTION
+msgid "Predefined"
+msgstr "Předvoleno"
+
+#: TFRMEDITORCONF.LBSAMPLE.CAPTION
+msgid "Sample"
+msgstr "Ukázka"
+
+#: TFRMEDITSEARCHREPLACE.BTNCANCEL.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMEDITSEARCHREPLACE.BTNOK.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMEDITSEARCHREPLACE.CAPTION
+msgid "frmEditSearchReplace"
+msgstr ""
+
+#: TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION"
+msgid "C&ase sensitivity"
+msgstr "&Rozlišovat velikost"
+
+#: TFRMEDITSEARCHREPLACE.CBSEARCHFROMCURSOR.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHFROMCURSOR.CAPTION"
+msgid "Search from &caret"
+msgstr "Hledat od &stříšky"
+
+#: TFRMEDITSEARCHREPLACE.CBSEARCHREGEXP.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHREGEXP.CAPTION"
+msgid "&Regular expressions"
+msgstr "&Regulární výrazy"
+
+#: TFRMEDITSEARCHREPLACE.CBSEARCHSELECTEDONLY.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHSELECTEDONLY.CAPTION"
+msgid "Selected &text only"
+msgstr "Pouze vybraný &text"
+
+#: TFRMEDITSEARCHREPLACE.CBSEARCHWHOLEWORDS.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHWHOLEWORDS.CAPTION"
+msgid "&Whole words only"
+msgstr "&Pouze celá slova"
+
+#: TFRMEDITSEARCHREPLACE.GBSEARCHOPTIONS.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.GBSEARCHOPTIONS.CAPTION"
+msgid "Option"
+msgstr "Volba"
+
+#: TFRMEDITSEARCHREPLACE.LBLREPLACEWITH.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.LBLREPLACEWITH.CAPTION"
+msgid "&Replace with:"
+msgstr "&Nahradit čím:"
+
+#: TFRMEDITSEARCHREPLACE.LBLSEARCHFOR.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.LBLSEARCHFOR.CAPTION"
+msgid "&Search for:"
+msgstr "&Vyhledat:"
+
+#: TFRMEDITSEARCHREPLACE.RGSEARCHDIRECTION.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.RGSEARCHDIRECTION.CAPTION"
+msgid "Direction"
+msgstr "Směr"
+
+#: TFRMEXTRACTDLG.BTNCANCEL.CAPTION
+msgctxt "TFRMEXTRACTDLG.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMEXTRACTDLG.BTNHELP.CAPTION
+msgctxt "TFRMEXTRACTDLG.BTNHELP.CAPTION"
+msgid "Help"
+msgstr "Nápověda"
+
+#: TFRMEXTRACTDLG.BTNOK.CAPTION
+msgctxt "TFRMEXTRACTDLG.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMEXTRACTDLG.CBEXTRACTPATH.CAPTION
+msgid "&Unpack path names if stored with files"
+msgstr "&Rozbalit i s cestou, pokud je uložena"
+
+#: TFRMEXTRACTDLG.CBFILEMASK.TEXT
+msgid "*.*"
+msgstr "*.*"
+
+#: TFRMEXTRACTDLG.CBINSEPARATEFOLDER.CAPTION
+msgid "Unpack each archive to a &separate subdir (name of the archive)"
+msgstr "Rozbalit do oddělených po&dadresářů (podle názvu archívu)"
+
+#: TFRMEXTRACTDLG.CBOVERWRITE.CAPTION
+msgid "&Overwrite existing files"
+msgstr "&Přepsat existující soubory"
+
+#: TFRMEXTRACTDLG.FRMEXTRACTDLG.CAPTION
+msgctxt "TFRMEXTRACTDLG.FRMEXTRACTDLG.CAPTION"
+msgid "Unpack files"
+msgstr "Dekomprese souborů"
+
+#: TFRMEXTRACTDLG.LBLEXTRACTTO.CAPTION
+#, fuzzy
+#| msgid "Unpack file to:"
+msgid "To the directory:"
+msgstr "Rozbalit soubory do:"
+
+#: TFRMEXTRACTDLG.LBLFILEMASK.CAPTION
+#, fuzzy
+#| msgid "&Files to unpack:"
+msgid "Extract files matching file mask:"
+msgstr "&Soubory pro rozbalení:"
+
+#: TFRMEXTRACTDLG.LBLPASSWORD.CAPTION
+msgid "Password for encrypted files:"
+msgstr ""
+
+#: TFRMFILEASSOC.BTNADDACT.CAPTION
+#, fuzzy
+msgctxt "TFRMFILEASSOC.BTNADDACT.CAPTION"
+msgid "Add"
+msgstr "Přidat"
+
+#: TFRMFILEASSOC.BTNADDEXT.CAPTION
+msgctxt "TFRMFILEASSOC.BTNADDEXT.CAPTION"
+msgid "Add"
+msgstr "Přidat"
+
+#: TFRMFILEASSOC.BTNADDNEWTYPE.CAPTION
+msgctxt "TFRMFILEASSOC.BTNADDNEWTYPE.CAPTION"
+msgid "Add"
+msgstr "Přidat"
+
+#: TFRMFILEASSOC.BTNCANCEL.CAPTION
+#, fuzzy
+msgctxt "TFRMFILEASSOC.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMFILEASSOC.BTNDOWNACT.CAPTION
+msgctxt "TFRMFILEASSOC.BTNDOWNACT.CAPTION"
+msgid "Down"
+msgstr "Dolů"
+
+#: TFRMFILEASSOC.BTNOK.CAPTION
+msgctxt "TFRMFILEASSOC.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMFILEASSOC.BTNREMOVEACT.CAPTION
+msgctxt "TFRMFILEASSOC.BTNREMOVEACT.CAPTION"
+msgid "Remove"
+msgstr "Smazat"
+
+#: TFRMFILEASSOC.BTNREMOVEEXT.CAPTION
+msgctxt "TFRMFILEASSOC.BTNREMOVEEXT.CAPTION"
+msgid "Remove"
+msgstr "Smazat"
+
+#: TFRMFILEASSOC.BTNREMOVEICON.CAPTION
+msgctxt "TFRMFILEASSOC.BTNREMOVEICON.CAPTION"
+msgid "X"
+msgstr ""
+
+#: TFRMFILEASSOC.BTNREMOVETYPE.CAPTION
+msgctxt "TFRMFILEASSOC.BTNREMOVETYPE.CAPTION"
+msgid "Remove"
+msgstr "Smazat"
+
+#: TFRMFILEASSOC.BTNRENAMETYPE.CAPTION
+msgctxt "TFRMFILEASSOC.BTNRENAMETYPE.CAPTION"
+msgid "Rename"
+msgstr "Smazat"
+
+#: TFRMFILEASSOC.BTNUPACT.CAPTION
+msgctxt "TFRMFILEASSOC.BTNUPACT.CAPTION"
+msgid "Up"
+msgstr "Nahoru"
+
+#: TFRMFILEASSOC.CAPTION
+msgid "File associations"
+msgstr "Asociace souborů"
+
+#: TFRMFILEASSOC.GBACTIONS.CAPTION
+msgctxt "TFRMFILEASSOC.GBACTIONS.CAPTION"
+msgid "Actions"
+msgstr "Akce"
+
+#: TFRMFILEASSOC.GBEXTS.CAPTION
+msgid "Extensions"
+msgstr "Přípony"
+
+#: TFRMFILEASSOC.GBFILETYPES.CAPTION
+msgctxt "TFRMFILEASSOC.GBFILETYPES.CAPTION"
+msgid "File types"
+msgstr "Typy souborů"
+
+#: TFRMFILEASSOC.GBICON.CAPTION
+msgid "Icon"
+msgstr "Ikona"
+
+#: TFRMFILEASSOC.LBLACTION.CAPTION
+msgid "Action:"
+msgstr "Akce:"
+
+#: TFRMFILEASSOC.LBLCOMMAND.CAPTION
+msgctxt "TFRMFILEASSOC.LBLCOMMAND.CAPTION"
+msgid "&Command:"
+msgstr "&Příkaz:"
+
+#: TFRMFILEASSOC.MIEDIT.CAPTION
+msgctxt "TFRMFILEASSOC.MIEDIT.CAPTION"
+msgid "Edit"
+msgstr "Edit"
+
+#: TFRMFILEASSOC.MIEDITOR.CAPTION
+msgid "Open in Editor"
+msgstr "Otevřít v editoru"
+
+#: TFRMFILEASSOC.MIFILENAME.CAPTION
+msgctxt "TFRMFILEASSOC.MIFILENAME.CAPTION"
+msgid "File name"
+msgstr "Název souboru"
+
+#: TFRMFILEASSOC.MIFILEPATH.CAPTION
+msgid "File path"
+msgstr "Cesta k souboru"
+
+#: TFRMFILEASSOC.MIFULLPATH.CAPTION
+msgid "Full path"
+msgstr "Úplná cesta"
+
+#: TFRMFILEASSOC.MIGETOUTPUTFROMCOMMAND.CAPTION
+msgid "Get output from command"
+msgstr "Získat výstup příkazu"
+
+#: TFRMFILEASSOC.MIOPEN.CAPTION
+msgctxt "TFRMFILEASSOC.MIOPEN.CAPTION"
+msgid "Open"
+msgstr "Otevřít"
+
+#: TFRMFILEASSOC.MISHELL.CAPTION
+msgid "Run in terminal"
+msgstr "Spustit v terminálu"
+
+#: TFRMFILEASSOC.MIVFS.CAPTION
+msgid "Open in VFS"
+msgstr "Otevřív v VFS"
+
+#: TFRMFILEASSOC.MIVIEW.CAPTION
+msgctxt "TFRMFILEASSOC.MIVIEW.CAPTION"
+msgid "View"
+msgstr "Zobrazit"
+
+#: TFRMFILEASSOC.MIVIEWER.CAPTION
+msgid "Open in Viewer"
+msgstr "Otevřít v prohlížeči"
+
+#: TFRMFILEEXECUTEYOURSELF.BTNCLOSE.CAPTION
+msgctxt "TFRMFILEEXECUTEYOURSELF.BTNCLOSE.CAPTION"
+msgid "&Close"
+msgstr "&Zavřít"
+
+#: TFRMFILEEXECUTEYOURSELF.FRMFILEEXECUTEYOURSELF.CAPTION
+msgctxt "TFRMFILEEXECUTEYOURSELF.FRMFILEEXECUTEYOURSELF.CAPTION"
+msgid "Wait..."
+msgstr ""
+
+#: TFRMFILEEXECUTEYOURSELF.LBLFILENAME.CAPTION
+msgid "File name:"
+msgstr ""
+
+#: TFRMFILEEXECUTEYOURSELF.LBLFROMPATH.CAPTION
+msgctxt "TFRMFILEEXECUTEYOURSELF.LBLFROMPATH.CAPTION"
+msgid "From:"
+msgstr "Od:"
+
+#: TFRMFILEEXECUTEYOURSELF.LBLPROMPT.CAPTION
+msgid "Click on Close when the temporary file can be deleted!"
+msgstr ""
+
+#: TFRMFILEOP.BTHOPEND.CAPTION
+msgid "End"
+msgstr ""
+
+#: TFRMFILEOP.BTNCANCEL.CAPTION
+msgctxt "TFRMFILEOP.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMFILEOP.BTNOPHOME.CAPTION
+msgid "Home"
+msgstr ""
+
+#: TFRMFILEOP.BTNTOQUEUE.CAPTION
+msgid "To Queue"
+msgstr ""
+
+#: TFRMFILEOP.BTNWORKINBACKGROUND.CAPTION
+msgid "Work in &background"
+msgstr "Pracovat na &pozadí"
+
+#: TFRMFILEOP.CAPTION
+msgid "Process file(s)"
+msgstr "Zpracovat soubor(y)"
+
+#: TFRMFILEOP.LBLFILENAMEFROM.CAPTION
+#, fuzzy
+#| msgid "File name"
+msgctxt "TFRMFILEOP.LBLFILENAMEFROM.CAPTION"
+msgid "File name from"
+msgstr "Název souboru"
+
+#: TFRMFILEOP.LBLFILENAMETO.CAPTION
+msgid "File name to"
+msgstr "Jméno souboru na"
+
+#: TFRMFILEOP.LBLFROM.CAPTION
+msgctxt "TFRMFILEOP.LBLFROM.CAPTION"
+msgid "From:"
+msgstr "Od:"
+
+#: TFRMFILEOP.LBLTO.CAPTION
+msgid "To:"
+msgstr "Komu:"
+
+#: TFRMFILEPROPERTIES.BTNALL.CAPTION
+msgctxt "TFRMFILEPROPERTIES.BTNALL.CAPTION"
+msgid "&All"
+msgstr "&Vše"
+
+#: TFRMFILEPROPERTIES.BTNCLOSE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.BTNCLOSE.CAPTION"
+msgid "Close"
+msgstr "Zavřít"
+
+#: TFRMFILEPROPERTIES.BTNOK.CAPTION
+msgctxt "TFRMFILEPROPERTIES.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMFILEPROPERTIES.BTNSKIP.CAPTION
+msgid "Skip"
+msgstr "Přeskočit"
+
+#: TFRMFILEPROPERTIES.CBSGID.CAPTION
+msgctxt "TFRMFILEPROPERTIES.CBSGID.CAPTION"
+msgid "SGID"
+msgstr "SGID"
+
+#: TFRMFILEPROPERTIES.CBSTICKY.CAPTION
+msgctxt "TFRMFILEPROPERTIES.CBSTICKY.CAPTION"
+msgid "Sticky"
+msgstr "Sticky"
+
+#: TFRMFILEPROPERTIES.CBSUID.CAPTION
+msgctxt "TFRMFILEPROPERTIES.CBSUID.CAPTION"
+msgid "SUID"
+msgstr "SUID"
+
+#: TFRMFILEPROPERTIES.FRMFILEPROPERTIES.CAPTION
+msgctxt "TFRMFILEPROPERTIES.FRMFILEPROPERTIES.CAPTION"
+msgid "Properties"
+msgstr "Vlastnosti"
+
+#: TFRMFILEPROPERTIES.GBOWNER.CAPTION
+msgctxt "TFRMFILEPROPERTIES.GBOWNER.CAPTION"
+msgid "Owner"
+msgstr "Vlastník"
+
+#: TFRMFILEPROPERTIES.LBLATTRBITSSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLATTRBITSSTR.CAPTION"
+msgid "Bits:"
+msgstr "Bitů:"
+
+#: TFRMFILEPROPERTIES.LBLATTRGROUPSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLATTRGROUPSTR.CAPTION"
+msgid "Group"
+msgstr "Skupina"
+
+#: TFRMFILEPROPERTIES.LBLATTROTHERSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLATTROTHERSTR.CAPTION"
+msgid "Other"
+msgstr "Ostatní"
+
+#: TFRMFILEPROPERTIES.LBLATTROWNERSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLATTROWNERSTR.CAPTION"
+msgid "Owner"
+msgstr "Vlastník"
+
+#: TFRMFILEPROPERTIES.LBLATTRTEXT.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLATTRTEXT.CAPTION"
+msgid "-----------"
+msgstr "-----------"
+
+#: TFRMFILEPROPERTIES.LBLATTRTEXTSTR.CAPTION
+#, fuzzy
+#| msgid "Representation in text:"
+msgctxt "TFRMFILEPROPERTIES.LBLATTRTEXTSTR.CAPTION"
+msgid "Text:"
+msgstr "Reprezentováno v textu:"
+
+#: TFRMFILEPROPERTIES.LBLEXEC.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLEXEC.CAPTION"
+msgid "Execute"
+msgstr "Spustit"
+
+#: TFRMFILEPROPERTIES.LBLFILE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLFILE.CAPTION"
+msgid "File name"
+msgstr "Název souboru"
+
+#: TFRMFILEPROPERTIES.LBLFILENAME.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLFILENAME.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLFILENAMESTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLFILENAMESTR.CAPTION"
+msgid "Name:"
+msgstr "Jméno:"
+
+#: TFRMFILEPROPERTIES.LBLFILESTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLFILESTR.CAPTION"
+msgid "File name"
+msgstr "Název souboru"
+
+#: TFRMFILEPROPERTIES.LBLFOLDER.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLFOLDER.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLFOLDERSTR.CAPTION
+msgid "Path:"
+msgstr "Cesta:"
+
+#: TFRMFILEPROPERTIES.LBLGROUPSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLGROUPSTR.CAPTION"
+msgid "Group"
+msgstr "Skupina"
+
+#: TFRMFILEPROPERTIES.LBLLASTACCESS.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLLASTACCESS.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLLASTACCESSSTR.CAPTION
+msgid "Last access:"
+msgstr "Poslední přístup:"
+
+#: TFRMFILEPROPERTIES.LBLLASTMODIF.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLLASTMODIF.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLLASTMODIFSTR.CAPTION
+msgid "Last modification:"
+msgstr "Poslední změna:"
+
+#: TFRMFILEPROPERTIES.LBLLASTSTCHANGE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLLASTSTCHANGE.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLLASTSTCHANGESTR.CAPTION
+msgid "Last status change:"
+msgstr "Poslední změna stavu:"
+
+#: TFRMFILEPROPERTIES.LBLOCTAL.CAPTION
+#, fuzzy
+msgctxt "TFRMFILEPROPERTIES.LBLOCTAL.CAPTION"
+msgid "Octal:"
+msgstr "Tečka:"
+
+#: TFRMFILEPROPERTIES.LBLOWNERSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLOWNERSTR.CAPTION"
+msgid "Owner"
+msgstr "Vlastník"
+
+#: TFRMFILEPROPERTIES.LBLREAD.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLREAD.CAPTION"
+msgid "Read"
+msgstr "Čtení"
+
+#: TFRMFILEPROPERTIES.LBLSIZE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLSIZE.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLSIZESTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLSIZESTR.CAPTION"
+msgid "Size:"
+msgstr "Velikost:"
+
+#: TFRMFILEPROPERTIES.LBLSYMLINK.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLSYMLINK.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLSYMLINKSTR.CAPTION
+#, fuzzy
+#| msgid "Symlink:"
+msgid "Symlink to:"
+msgstr "Zástupce:"
+
+#: TFRMFILEPROPERTIES.LBLTYPE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLTYPE.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLTYPESTR.CAPTION
+#, fuzzy
+msgid "Type:"
+msgstr "Typ:"
+
+#: TFRMFILEPROPERTIES.LBLWRITE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLWRITE.CAPTION"
+msgid "Write"
+msgstr "Zápis"
+
+#: TFRMFILEPROPERTIES.TSATTRIBUTES.CAPTION
+msgctxt "TFRMFILEPROPERTIES.TSATTRIBUTES.CAPTION"
+msgid "Attributes"
+msgstr "Atributy"
+
+#: TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION
+msgctxt "TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION"
+msgid "Properties"
+msgstr "Vlastnosti"
+
+#: TFRMFINDDLG.BTNADDATTRIBUTE.CAPTION
+msgid "&Add"
+msgstr ""
+
+#: TFRMFINDDLG.BTNATTRSHELP.CAPTION
+msgctxt "TFRMFINDDLG.BTNATTRSHELP.CAPTION"
+msgid "&Help"
+msgstr "&Nápověda"
+
+#: TFRMFINDDLG.BTNCLOSE.CAPTION
+msgctxt "TFRMFINDDLG.BTNCLOSE.CAPTION"
+msgid "&Close"
+msgstr "&Zavřít"
+
+#: TFRMFINDDLG.BTNGOTOPATH.CAPTION
+msgid "&Go to file"
+msgstr "&Jdi k souboru"
+
+#: TFRMFINDDLG.BTNNEWSEARCH.CAPTION
+msgid "&New search"
+msgstr "&Nové hledání"
+
+#: TFRMFINDDLG.BTNSAVETEMPLATE.CAPTION
+msgctxt "TFRMFINDDLG.BTNSAVETEMPLATE.CAPTION"
+msgid "Save"
+msgstr ""
+
+#: TFRMFINDDLG.BTNSEARCHDELETE.CAPTION
+msgctxt "TFRMFINDDLG.BTNSEARCHDELETE.CAPTION"
+msgid "&Delete"
+msgstr "&Vymazat"
+
+#: TFRMFINDDLG.BTNSEARCHLOAD.CAPTION
+msgid "L&oad"
+msgstr "&Načíst"
+
+#: TFRMFINDDLG.BTNSEARCHSAVE.CAPTION
+msgid "S&ave"
+msgstr "&Uložit"
+
+#: TFRMFINDDLG.BTNSTART.CAPTION
+msgid "&Start"
+msgstr "&Start"
+
+#: TFRMFINDDLG.BTNSTOP.CAPTION
+msgctxt "TFRMFINDDLG.BTNSTOP.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMFINDDLG.BTNVIEW.CAPTION
+msgctxt "TFRMFINDDLG.BTNVIEW.CAPTION"
+msgid "&View"
+msgstr "&Zobrazit"
+
+#: TFRMFINDDLG.BTNWORKWITHFOUND.CAPTION
+msgid "Feed to &listbox"
+msgstr "Výsledek do &okna"
+
+#: TFRMFINDDLG.CBCASESENS.CAPTION
+msgid "Case sens&itive"
+msgstr "Rozlišovat velikost"
+
+#: TFRMFINDDLG.CBDATEFROM.CAPTION
+msgid "Date From:"
+msgstr "Datum od:"
+
+#: TFRMFINDDLG.CBDATETO.CAPTION
+msgid "Date To:"
+msgstr "Datum do:"
+
+#: TFRMFINDDLG.CBFILESIZEFROM.CAPTION
+#, fuzzy
+#| msgid "File Size From:"
+msgid "Size from:"
+msgstr "Velikost od:"
+
+#: TFRMFINDDLG.CBFILESIZETO.CAPTION
+#, fuzzy
+#| msgid "File Size To:"
+msgid "Size to:"
+msgstr "Velikost do:"
+
+#: TFRMFINDDLG.CBFINDTEXT.CAPTION
+msgctxt "TFRMFINDDLG.CBFINDTEXT.CAPTION"
+msgid "Find &text in file"
+msgstr "Vyhledat soubor"
+
+#: TFRMFINDDLG.CBNOTCONTAININGTEXT.CAPTION
+msgctxt "TFRMFINDDLG.CBNOTCONTAININGTEXT.CAPTION"
+msgid "Find files N&OT containing the text"
+msgstr "Hledat soubory NEobsahující text"
+
+#: TFRMFINDDLG.CBNOTOLDERTHAN.CAPTION
+msgid "Not older than:"
+msgstr "Není starší, než:"
+
+#: TFRMFINDDLG.CBPARTIALNAMESEARCH.CAPTION
+msgid "Search for part of file name "
+msgstr ""
+
+#: TFRMFINDDLG.CBREGEXP.CAPTION
+msgctxt "TFRMFINDDLG.CBREGEXP.CAPTION"
+msgid "&Regular expressions"
+msgstr "&Regulární výrazy"
+
+#: TFRMFINDDLG.CBREPLACETEXT.CAPTION
+#, fuzzy
+#| msgid "Re&place text"
+msgid "Re&place by"
+msgstr "Nahradit text"
+
+#: TFRMFINDDLG.CBTIMEFROM.CAPTION
+msgid "Time from:"
+msgstr "Čas od:"
+
+#: TFRMFINDDLG.CBTIMETO.CAPTION
+msgid "Time to:"
+msgstr "Čas do:"
+
+#: TFRMFINDDLG.CBUSEPLUGIN.CAPTION
+msgid "&Use search plugin:"
+msgstr "Použit vyhledávací zásuvný modul:"
+
+#: TFRMFINDDLG.CMBFINDFILEMASK.TEXT
+msgctxt "TFRMFINDDLG.CMBFINDFILEMASK.TEXT"
+msgid "*"
+msgstr "*"
+
+#: TFRMFINDDLG.CMBFOLLOWSYMLINKS.CAPTION
+msgctxt "TFRMFINDDLG.CMBFOLLOWSYMLINKS.CAPTION"
+msgid "Follow symlinks"
+msgstr ""
+
+#: TFRMFINDDLG.FRMFINDDLG.CAPTION
+msgctxt "TFRMFINDDLG.FRMFINDDLG.CAPTION"
+msgid "Find files"
+msgstr "Hledat soubory"
+
+#: TFRMFINDDLG.GBATTRIBUTES.CAPTION
+msgid "&Attributes"
+msgstr ""
+
+#: TFRMFINDDLG.GBFINDDATA.CAPTION
+msgid "Find Data"
+msgstr "Hledat data"
+
+#: TFRMFINDDLG.GBFINDOPTIONS.CAPTION
+msgctxt "TFRMFINDDLG.GBFINDOPTIONS.CAPTION"
+msgid "Options"
+msgstr "Nastavení"
+
+#: TFRMFINDDLG.LBLCURRENT.CAPTION
+msgid "Current"
+msgstr "Aktuální"
+
+#: TFRMFINDDLG.LBLENCODING.CAPTION
+msgctxt "TFRMFINDDLG.LBLENCODING.CAPTION"
+msgid "Encoding:"
+msgstr "Kódování:"
+
+#: TFRMFINDDLG.LBLFINDFILEMASK.CAPTION
+msgid "&File mask"
+msgstr "Souborová maska"
+
+#: TFRMFINDDLG.LBLFINDPATHSTART.CAPTION
+msgid "&Directory"
+msgstr "Adresářová maska"
+
+#: TFRMFINDDLG.LBLFOUND.CAPTION
+msgid "Found"
+msgstr "Existuje"
+
+#: TFRMFINDDLG.LBLSEARCHDEPTH.CAPTION
+msgid "Search su&bdirectories:"
+msgstr "Prohledat po&dadresáře:"
+
+#: TFRMFINDDLG.LBLSTATUS.CAPTION
+msgid "Status"
+msgstr "Stav"
+
+#: TFRMFINDDLG.LBLTEMPLATEHEADER.CAPTION
+msgid "&Previous searches:"
+msgstr "&Minulá hledání:"
+
+#: TFRMFINDDLG.MIREMOVEFROMLLIST.CAPTION
+msgid "Remove from list"
+msgstr ""
+
+#: TFRMFINDDLG.MISHOWALLFOUND.CAPTION
+msgid "Show all found items"
+msgstr ""
+
+#: TFRMFINDDLG.MISHOWINVIEWER.CAPTION
+msgid "Show In Viewer"
+msgstr "Zobrazit v prohlížeči"
+
+#: TFRMFINDDLG.TSADVANCED.CAPTION
+msgid "Advanced"
+msgstr "Rozžířené"
+
+#: TFRMFINDDLG.TSLOADSAVE.CAPTION
+msgid "Load/Save"
+msgstr "Načist/uložit"
+
+#: TFRMFINDDLG.TSRESULTS.CAPTION
+msgid "Results"
+msgstr ""
+
+#: TFRMFINDDLG.TSSTANDARD.CAPTION
+msgid "Standard"
+msgstr "Standard"
+
+#: TFRMFINDVIEW.BTNCLOSE.CAPTION
+#, fuzzy
+msgctxt "TFRMFINDVIEW.BTNCLOSE.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMFINDVIEW.BTNFIND.CAPTION
+msgctxt "TFRMFINDVIEW.BTNFIND.CAPTION"
+msgid "Find"
+msgstr "Hledat"
+
+#: TFRMFINDVIEW.CAPTION
+msgctxt "TFRMFINDVIEW.CAPTION"
+msgid "Find"
+msgstr "Hledat"
+
+#: TFRMFINDVIEW.CBCASESENS.CAPTION
+msgid "Case sensitive"
+msgstr ""
+
+#: TFRMHARDLINK.BTNCANCEL.CAPTION
+msgctxt "TFRMHARDLINK.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMHARDLINK.BTNOK.CAPTION
+msgctxt "TFRMHARDLINK.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMHARDLINK.CAPTION
+#, fuzzy
+#| msgid "Create hardlink"
+msgid "Create hard link"
+msgstr "Vytvořit hardlink"
+
+#: TFRMHARDLINK.LBLEXISTINGFILE.CAPTION
+#, fuzzy
+#| msgid "Existing destination (where will link point)"
+msgctxt "TFRMHARDLINK.LBLEXISTINGFILE.CAPTION"
+msgid "Destination that the link will point to"
+msgstr "Existující cíl (where will link point)"
+
+#: TFRMHARDLINK.LBLLINKTOCREATE.CAPTION
+msgctxt "TFRMHARDLINK.LBLLINKTOCREATE.CAPTION"
+msgid "Link name"
+msgstr "Název odkazu"
+
+#: TFRMHOTDIR.BTNADD.CAPTION
+msgctxt "TFRMHOTDIR.BTNADD.CAPTION"
+msgid "Add"
+msgstr "Přidat"
+
+#: TFRMHOTDIR.BTNADDMAN.CAPTION
+msgid "Add manually"
+msgstr "Přidat ručně"
+
+#: TFRMHOTDIR.BTNCANCEL.CAPTION
+msgctxt "TFRMHOTDIR.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMHOTDIR.BTNDELETE.CAPTION
+msgctxt "TFRMHOTDIR.BTNDELETE.CAPTION"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMHOTDIR.BTNEDIT.CAPTION
+msgctxt "TFRMHOTDIR.BTNEDIT.CAPTION"
+msgid "Edit"
+msgstr "Upravit"
+
+#: TFRMHOTDIR.BTNOK.CAPTION
+msgctxt "TFRMHOTDIR.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMHOTDIR.CAPTION
+msgid "Directory Hotlist"
+msgstr "Rychlé adresáře"
+
+#: TFRMLINKER.BTNEXIT.CAPTION
+#, fuzzy
+#| msgid "Exit"
+msgctxt "TFRMLINKER.BTNEXIT.CAPTION"
+msgid "Cancel"
+msgstr "Konec"
+
+#: TFRMLINKER.BTNOK.CAPTION
+msgctxt "TFRMLINKER.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMLINKER.BTNSAVE.CAPTION
+msgctxt "TFRMLINKER.BTNSAVE.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMLINKER.FRMLINKER.CAPTION
+msgctxt "TFRMLINKER.FRMLINKER.CAPTION"
+msgid "Linker"
+msgstr "Spojování souborů"
+
+#: TFRMLINKER.GBSAVETO.CAPTION
+msgid "Save to..."
+msgstr "Uložit do..."
+
+#: TFRMLINKER.GRBXCONTROL.CAPTION
+msgid "Item"
+msgstr "Položka"
+
+#: TFRMLINKER.LBLFILENAME.CAPTION
+msgctxt "TFRMLINKER.LBLFILENAME.CAPTION"
+msgid "File name"
+msgstr "Název souboru"
+
+#: TFRMLINKER.SPBTNDEL.CAPTION
+msgctxt "TFRMLINKER.SPBTNDEL.CAPTION"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMLINKER.SPBTNDEL.HINT
+msgctxt "TFRMLINKER.SPBTNDEL.HINT"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMLINKER.SPBTNDOWN.CAPTION
+msgctxt "TFRMLINKER.SPBTNDOWN.CAPTION"
+msgid "Down"
+msgstr "Dolů"
+
+#: TFRMLINKER.SPBTNDOWN.HINT
+msgctxt "TFRMLINKER.SPBTNDOWN.HINT"
+msgid "Down"
+msgstr "Dolů"
+
+#: TFRMLINKER.SPBTNUP.CAPTION
+msgctxt "TFRMLINKER.SPBTNUP.CAPTION"
+msgid "Up"
+msgstr "Nahoru"
+
+#: TFRMLINKER.SPBTNUP.HINT
+msgctxt "TFRMLINKER.SPBTNUP.HINT"
+msgid "Up"
+msgstr "Nahoru"
+
+#: TFRMMAIN.ACTABOUT.CAPTION
+#, fuzzy
+#| msgid "About"
+msgctxt "TFRMMAIN.ACTABOUT.CAPTION"
+msgid "&About"
+msgstr "O programu"
+
+#: TFRMMAIN.ACTADDFILENAMETOCMDLINE.CAPTION
+msgid "Add file name to command line"
+msgstr "Přidat název souboru do příkazového řádku"
+
+#: TFRMMAIN.ACTADDPATHANDFILENAMETOCMDLINE.CAPTION
+msgid "Add path and file name to command line"
+msgstr "Uložit cestu a název souboru do příkazového řádku"
+
+#: TFRMMAIN.ACTADDPATHTOCMDLINE.CAPTION
+msgid "Copy path to command line"
+msgstr "Kopírovat cestu do příkazového řádku"
+
+#: TFRMMAIN.ACTCALCULATESPACE.CAPTION
+msgid "Calculate &Occupied Space..."
+msgstr "Vypočítat &obsazené místo..."
+
+#: TFRMMAIN.ACTCHANGEDIR.CAPTION
+msgid "Change directory"
+msgstr "Změnit adresář"
+
+#: TFRMMAIN.ACTCHANGEDIRTOPARENT.CAPTION
+msgid "Change Directory To Parent"
+msgstr ""
+
+#: TFRMMAIN.ACTCHANGEDIRTOROOT.CAPTION
+msgid "Change directory to root"
+msgstr "Jít do kořenového adresáře disku"
+
+#: TFRMMAIN.ACTCHECKSUMCALC.CAPTION
+msgctxt "TFRMMAIN.ACTCHECKSUMCALC.CAPTION"
+msgid "Calculate check sum..."
+msgstr "Spočítat kontrolní součet..."
+
+#: TFRMMAIN.ACTCHECKSUMVERIFY.CAPTION
+msgctxt "TFRMMAIN.ACTCHECKSUMVERIFY.CAPTION"
+msgid "Verify check sum..."
+msgstr "Ověřit kontrolní součet..."
+
+#: TFRMMAIN.ACTCLEARLOGFILE.CAPTION
+msgid "Clear log file"
+msgstr "Vymazat log soubor"
+
+#: TFRMMAIN.ACTCLEARLOGWINDOW.CAPTION
+msgid "Clear log window"
+msgstr "Vymazat okno logu"
+
+#: TFRMMAIN.ACTCOMPARECONTENTS.CAPTION
+msgid "Compare by &Contents"
+msgstr "Porovnat pod&le obsahu"
+
+#: TFRMMAIN.ACTCONTEXTMENU.CAPTION
+msgid "Show context menu"
+msgstr "Zobrazit kontektové menu"
+
+#: TFRMMAIN.ACTCOPY.CAPTION
+msgid "Copy F5"
+msgstr "Kopírovat F5"
+
+#: TFRMMAIN.ACTCOPYFULLNAMESTOCLIP.CAPTION
+msgid "Copy Filename(s) with Full &Path"
+msgstr "Kpírovat název(y) souboru(ů) s úplnou &cestou"
+
+#: TFRMMAIN.ACTCOPYNAMESTOCLIP.CAPTION
+msgid "Copy &Filename(s) to Clipboard"
+msgstr "Kpírovat název(y) souboru(ů) do schránky"
+
+#: TFRMMAIN.ACTCOPYNOASK.CAPTION
+msgid "Copy files without asking for confirmation"
+msgstr ""
+
+#: TFRMMAIN.ACTCOPYSAMEPANEL.CAPTION
+msgid "Copy to same panel"
+msgstr "Kopírovat do stejného panelu"
+
+#: TFRMMAIN.ACTCOPYTOCLIPBOARD.CAPTION
+msgid "&Copy"
+msgstr "Kopírovat"
+
+#: TFRMMAIN.ACTCOUNTDIRCONTENT.CAPTION
+msgid "Sho&w occupied space"
+msgstr "Zo&brazit obsazené místo"
+
+#: TFRMMAIN.ACTCUTTOCLIPBOARD.CAPTION
+msgid "Cu&t"
+msgstr "Vyjmout"
+
+#: TFRMMAIN.ACTDELETE.CAPTION
+msgid "Delete F8"
+msgstr "Vymazat F8"
+
+#: TFRMMAIN.ACTDIRHISTORY.CAPTION
+msgctxt "TFRMMAIN.ACTDIRHISTORY.CAPTION"
+msgid "Directory history"
+msgstr "Hystorie adresářů"
+
+#: TFRMMAIN.ACTDIRHOTLIST.CAPTION
+msgid "Directory &hotlist"
+msgstr "&Rychlé adresáře"
+
+#: TFRMMAIN.ACTEDIT.CAPTION
+msgid "Edit F4"
+msgstr "Uprav F4"
+
+#: TFRMMAIN.ACTEDITCOMMENT.CAPTION
+msgid "Edit comment..."
+msgstr "Upravit komentář..."
+
+#: TFRMMAIN.ACTEDITNEW.CAPTION
+msgid "Edit new file"
+msgstr "Editovat nový soubor"
+
+#: TFRMMAIN.ACTEDITPATH.CAPTION
+msgid "Edit path field above file list"
+msgstr ""
+
+#: TFRMMAIN.ACTEXCHANGE.CAPTION
+msgid "Swap &Panels"
+msgstr "Zaměnit &panely"
+
+#: TFRMMAIN.ACTEXIT.CAPTION
+#, fuzzy
+#| msgid "Exit"
+msgctxt "TFRMMAIN.ACTEXIT.CAPTION"
+msgid "E&xit"
+msgstr "Konec"
+
+#: TFRMMAIN.ACTEXTRACTFILES.CAPTION
+msgid "Extract files..."
+msgstr "Rozbalit soubory..."
+
+#: TFRMMAIN.ACTFILEASSOC.CAPTION
+#, fuzzy
+#| msgid "File associations..."
+msgid "File &associations..."
+msgstr "Asociace souborů..."
+
+#: TFRMMAIN.ACTFILELINKER.CAPTION
+msgid "Link files"
+msgstr "Spojit soubory"
+
+#: TFRMMAIN.ACTFILEPROPERTIES.CAPTION
+msgid "Show file properties"
+msgstr "Zobrazit vlastnosti souboru"
+
+#: TFRMMAIN.ACTFILESPLITER.CAPTION
+msgctxt "TFRMMAIN.ACTFILESPLITER.CAPTION"
+msgid "Split file"
+msgstr "Dělení souborů"
+
+#: TFRMMAIN.ACTFOCUSCMDLINE.CAPTION
+msgid "Focus command line"
+msgstr "Aktivovat příkazový řádek"
+
+#: TFRMMAIN.ACTGOTOFIRSTFILE.CAPTION
+msgid "Place cursor on first file in list"
+msgstr ""
+
+#: TFRMMAIN.ACTGOTOLASTFILE.CAPTION
+msgid "Place cursor on last file in list"
+msgstr ""
+
+#: TFRMMAIN.ACTHARDLINK.CAPTION
+#, fuzzy
+#| msgid "Create link..."
+msgctxt "TFRMMAIN.ACTHARDLINK.CAPTION"
+msgid "Create hard link..."
+msgstr "Vytvořit odkaz..."
+
+#: TFRMMAIN.ACTHELPINDEX.CAPTION
+#, fuzzy
+#| msgid "Contents"
+msgid "&Contents"
+msgstr "Obsah"
+
+#: TFRMMAIN.ACTHORIZONTALFILEPANELS.CAPTION
+msgid "Horizontal file panels"
+msgstr ""
+
+#: TFRMMAIN.ACTKEYBOARD.CAPTION
+#, fuzzy
+#| msgid "Keyboard"
+msgid "&Keyboard"
+msgstr "Klávesnice"
+
+#: TFRMMAIN.ACTLEFTEQUALRIGHT.CAPTION
+msgid "Left &= Right"
+msgstr "Levý &= Pravý"
+
+#: TFRMMAIN.ACTLEFTOPENDRIVES.CAPTION
+msgid "Open left drive list"
+msgstr "Otevřít levý seznam disků"
+
+#: TFRMMAIN.ACTLOADSELECTIONFROMCLIP.CAPTION
+msgid "Load Selection From Clipboard"
+msgstr ""
+
+#: TFRMMAIN.ACTLOADSELECTIONFROMFILE.CAPTION
+msgid "Load Selection From File"
+msgstr ""
+
+#: TFRMMAIN.ACTMAKEDIR.CAPTION
+msgid "MakeDir F7"
+msgstr "Nový adr. F7"
+
+#: TFRMMAIN.ACTMARKCURRENTEXTENSION.CAPTION
+msgid "Select all with same extension"
+msgstr "Vybrat vše se stejnou příponou"
+
+#: TFRMMAIN.ACTMARKINVERT.CAPTION
+msgid "Invert Selections"
+msgstr "Invertovat výběr"
+
+#: TFRMMAIN.ACTMARKMARKALL.CAPTION
+msgid "&Select All"
+msgstr "&Vybrav vše"
+
+#: TFRMMAIN.ACTMARKMINUS.CAPTION
+msgid "Unselect a group"
+msgstr "Zrušit výběr skupiny"
+
+#: TFRMMAIN.ACTMARKPLUS.CAPTION
+msgid "Select a group"
+msgstr "Výběr skupiny"
+
+#: TFRMMAIN.ACTMARKUNMARKALL.CAPTION
+msgid "Unselect All"
+msgstr "Zrušit výběr"
+
+#: TFRMMAIN.ACTMINIMIZE.CAPTION
+msgid "Minimize window"
+msgstr "Minimalizovat okno"
+
+#: TFRMMAIN.ACTMULTIRENAME.CAPTION
+msgid "Multi Rename Tool"
+msgstr "Nástroj pro hromadné přejmenování"
+
+#: TFRMMAIN.ACTNETWORKCONNECT.CAPTION
+msgid "Network Connect..."
+msgstr ""
+
+#: TFRMMAIN.ACTNETWORKDISCONNECT.CAPTION
+msgid "Network Disconnect"
+msgstr ""
+
+#: TFRMMAIN.ACTNETWORKQUICKCONNECT.CAPTION
+msgid "Network Quick Connect..."
+msgstr ""
+
+#: TFRMMAIN.ACTNEWTAB.CAPTION
+#, fuzzy
+#| msgid "New tab"
+msgid "&New tab"
+msgstr "Nová záložka"
+
+#: TFRMMAIN.ACTNEXTTAB.CAPTION
+#, fuzzy
+#| msgid "Switch to next tab"
+msgid "Switch to nex&t tab"
+msgstr "Přepnout do nové záložky"
+
+#: TFRMMAIN.ACTOPEN.CAPTION
+msgctxt "TFRMMAIN.ACTOPEN.CAPTION"
+msgid "Open"
+msgstr "Otevřít"
+
+#: TFRMMAIN.ACTOPENARCHIVE.CAPTION
+msgid "Try open archive"
+msgstr "Zkusit otevřít archív"
+
+#: TFRMMAIN.ACTOPENBAR.CAPTION
+msgid "Open bar file"
+msgstr ""
+
+#: TFRMMAIN.ACTOPENDIRINNEWTAB.CAPTION
+#, fuzzy
+#| msgid "Open folder in new tab"
+msgid "Open &folder in new tab"
+msgstr "Otevřít adresář v nové záložce"
+
+#: TFRMMAIN.ACTOPENVIRTUALFILESYSTEMLIST.CAPTION
+#, fuzzy
+#| msgid "Open VFS List"
+msgctxt "TFRMMAIN.ACTOPENVIRTUALFILESYSTEMLIST.CAPTION"
+msgid "Open &VFS List"
+msgstr "Otevřít VFS seznam"
+
+#: TFRMMAIN.ACTOPTIONS.CAPTION
+#, fuzzy
+#| msgid "Options..."
+msgid "&Options..."
+msgstr "Nastavení..."
+
+#: TFRMMAIN.ACTPACKFILES.CAPTION
+msgid "Pack files..."
+msgstr "Zabalit zoubory..."
+
+#: TFRMMAIN.ACTPANELSSPLITTERPERPOS.CAPTION
+#, fuzzy
+msgid "Set splitter position"
+msgstr "Nastavit pozici dělící čáry"
+
+#: TFRMMAIN.ACTPASTEFROMCLIPBOARD.CAPTION
+msgid "&Paste"
+msgstr "Vložiit"
+
+#: TFRMMAIN.ACTPREVTAB.CAPTION
+#, fuzzy
+#| msgid "Switch to previous tab"
+msgid "Switch to &previous tab"
+msgstr "Přepnout do předešlé záložky"
+
+#: TFRMMAIN.ACTQUICKFILTER.CAPTION
+msgid "Quick filter"
+msgstr ""
+
+#: TFRMMAIN.ACTQUICKSEARCH.CAPTION
+msgctxt "TFRMMAIN.ACTQUICKSEARCH.CAPTION"
+msgid "Quick search"
+msgstr "Rychlé hledání"
+
+#: TFRMMAIN.ACTQUICKVIEW.CAPTION
+msgid "Quick View Panel"
+msgstr ""
+
+#: TFRMMAIN.ACTREFRESH.CAPTION
+msgid "&Refresh"
+msgstr "&Obnovit"
+
+#: TFRMMAIN.ACTREMOVEALLTABS.CAPTION
+#, fuzzy
+#| msgid "Remove all tabs"
+msgid "Remove &all tabs"
+msgstr "Vymazat záložky"
+
+#: TFRMMAIN.ACTREMOVETAB.CAPTION
+#, fuzzy
+#| msgid "Remove tab"
+msgid "&Remove tab"
+msgstr "Vymazat záložku"
+
+#: TFRMMAIN.ACTRENAME.CAPTION
+msgid "Move F6"
+msgstr "Přesun F6"
+
+#: TFRMMAIN.ACTRENAMENOASK.CAPTION
+msgid "Move/Rename files without asking for confirmation"
+msgstr ""
+
+#: TFRMMAIN.ACTRENAMEONLY.CAPTION
+msgctxt "TFRMMAIN.ACTRENAMEONLY.CAPTION"
+msgid "Rename"
+msgstr "Přejmenovat"
+
+#: TFRMMAIN.ACTRESTORESELECTION.CAPTION
+msgid "Restore Selection"
+msgstr ""
+
+#: TFRMMAIN.ACTREVERSEORDER.CAPTION
+#, fuzzy
+msgid "Reverse order"
+msgstr "Obrácené třídění"
+
+#: TFRMMAIN.ACTRIGHTEQUALLEFT.CAPTION
+msgid "Right &= Left"
+msgstr "Pravý &= Levý"
+
+#: TFRMMAIN.ACTRIGHTOPENDRIVES.CAPTION
+msgid "Open right drive list"
+msgstr "Otevřít pravý seznam disků"
+
+#: TFRMMAIN.ACTRUNTERM.CAPTION
+msgid "Run Term"
+msgstr "Spustit terminál"
+
+#: TFRMMAIN.ACTSAVESELECTION.CAPTION
+msgid "Save Selection"
+msgstr ""
+
+#: TFRMMAIN.ACTSAVESELECTIONTOFILE.CAPTION
+msgid "Save Selection To File"
+msgstr ""
+
+#: TFRMMAIN.ACTSEARCH.CAPTION
+msgid "&Search"
+msgstr "&Hledat"
+
+#: TFRMMAIN.ACTSETFILEPROPERTIES.CAPTION
+msgctxt "TFRMMAIN.ACTSETFILEPROPERTIES.CAPTION"
+msgid "Change attributes"
+msgstr ""
+
+#: TFRMMAIN.ACTSETTABOPTIONDIRSINNEWTAB.CAPTION
+msgid "Directories are opened in new &tabs"
+msgstr ""
+
+#: TFRMMAIN.ACTSETTABOPTIONNORMAL.CAPTION
+msgid "&Normal"
+msgstr ""
+
+#: TFRMMAIN.ACTSETTABOPTIONPATHLOCKED.CAPTION
+msgid "&Locked"
+msgstr ""
+
+#: TFRMMAIN.ACTSETTABOPTIONPATHRESETS.CAPTION
+#, fuzzy
+#| msgid "Locked, but directory changes allowed"
+msgctxt "TFRMMAIN.ACTSETTABOPTIONPATHRESETS.CAPTION"
+msgid "Locked, but &directory changes allowed"
+msgstr "Uzamčeno, ale změna složky povolena"
+
+#: TFRMMAIN.ACTSHOWBUTTONMENU.CAPTION
+msgid "Show button menu"
+msgstr "Zobrazit menu tlačítek"
+
+#: TFRMMAIN.ACTSHOWCMDLINEHISTORY.CAPTION
+msgid "Show command line history"
+msgstr "Zobrazit hystorii příkazového řádku"
+
+#: TFRMMAIN.ACTSHOWMAINMENU.CAPTION
+msgctxt "TFRMMAIN.ACTSHOWMAINMENU.CAPTION"
+msgid "Menu F9"
+msgstr "Menu F9"
+
+#: TFRMMAIN.ACTSHOWSYSFILES.CAPTION
+msgctxt "TFRMMAIN.ACTSHOWSYSFILES.CAPTION"
+msgid "Show hidden/system files"
+msgstr "Zobrazit skryté/systémové soubory"
+
+#: TFRMMAIN.ACTSORTBYATTR.CAPTION
+msgid "Sort by attrib"
+msgstr "Třídit podle atributů"
+
+#: TFRMMAIN.ACTSORTBYDATE.CAPTION
+msgid "Sort by date"
+msgstr "Třídit podle data"
+
+#: TFRMMAIN.ACTSORTBYEXT.CAPTION
+msgid "Sort by extension"
+msgstr "Třídit podle přípony"
+
+#: TFRMMAIN.ACTSORTBYNAME.CAPTION
+msgid "Sort by name"
+msgstr "Třídit podle názvu"
+
+#: TFRMMAIN.ACTSORTBYSIZE.CAPTION
+msgid "Sort by size"
+msgstr "Třídit podle velikosti"
+
+#: TFRMMAIN.ACTSWITCHIGNORELIST.CAPTION
+msgid "Enable/disable ignore list file to not show file names"
+msgstr ""
+
+#: TFRMMAIN.ACTSYMLINK.CAPTION
+#, fuzzy
+#| msgid "Create symlink..."
+msgctxt "TFRMMAIN.ACTSYMLINK.CAPTION"
+msgid "Create symbolic link..."
+msgstr "Vytvořit symbolický odkaz..."
+
+#: TFRMMAIN.ACTTARGETEQUALSOURCE.CAPTION
+msgid "Target &= Source"
+msgstr "Cíl &= Zdroj"
+
+#: TFRMMAIN.ACTTESTARCHIVE.CAPTION
+msgid "Test Archive(s)"
+msgstr ""
+
+#: TFRMMAIN.ACTTRANSFERLEFT.CAPTION
+msgid "Transfer dir under cursor to left window"
+msgstr "Přenést adresář pod kursorem do levého okna"
+
+#: TFRMMAIN.ACTTRANSFERRIGHT.CAPTION
+msgid "Transfer dir under cursor to right window"
+msgstr "Přenést adresář pod kursorem do pravého okna"
+
+#: TFRMMAIN.ACTUNMARKCURRENTEXTENSION.CAPTION
+msgid "Unselect all with same extension"
+msgstr "Zrušit označení všech se stejnou příponou"
+
+#: TFRMMAIN.ACTVIEW.CAPTION
+msgid "View F3"
+msgstr "Zobraz F3"
+
+#: TFRMMAIN.ACTVIEWHISTORY.CAPTION
+msgid "Show history of visited paths for active view"
+msgstr ""
+
+#: TFRMMAIN.ACTVIEWHISTORYNEXT.CAPTION
+msgid "Go to next entry in history"
+msgstr ""
+
+#: TFRMMAIN.ACTVIEWHISTORYPREV.CAPTION
+msgid "Go to previous entry in history"
+msgstr ""
+
+#: TFRMMAIN.ACTVISITHOMEPAGE.CAPTION
+#, fuzzy
+#| msgid "Visit Double Commander Web Site"
+msgid "&Visit Double Commander Web Site"
+msgstr "Navštívit domovskou stránku"
+
+#: TFRMMAIN.ACTWIPE.CAPTION
+msgid "Wipe"
+msgstr "Otřete"
+
+#: TFRMMAIN.ALLOPCANCEL.CAPTION
+msgctxt "TFRMMAIN.ALLOPCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMMAIN.ALLOPPAUSE.CAPTION
+msgctxt "TFRMMAIN.ALLOPPAUSE.CAPTION"
+msgid "||"
+msgstr ""
+
+#: TFRMMAIN.ALLOPPCT.CAPTION
+msgid "%"
+msgstr ""
+
+#: TFRMMAIN.ALLOPPROGRESSIND.CAPTION
+msgid "||||||||||||||||||||"
+msgstr ""
+
+#: TFRMMAIN.ALLOPSTART.CAPTION
+msgctxt "TFRMMAIN.ALLOPSTART.CAPTION"
+msgid "Start"
+msgstr ""
+
+#: TFRMMAIN.BTNF10.CAPTION
+msgid "Exit F10"
+msgstr ""
+
+#: TFRMMAIN.BTNF9.CAPTION
+msgid "Terminal F9"
+msgstr "Terminál F9"
+
+#: TFRMMAIN.BTNLEFTDIRECTORYHOTLIST.CAPTION
+msgctxt "TFRMMAIN.BTNLEFTDIRECTORYHOTLIST.CAPTION"
+msgid "*"
+msgstr "*"
+
+#: TFRMMAIN.BTNLEFTDIRECTORYHOTLIST.HINT
+#, fuzzy
+msgid "Directory hotlist"
+msgstr "Hotlist adresářů"
+
+#: TFRMMAIN.BTNLEFTEQUALRIGHT.CAPTION
+msgid "<"
+msgstr ""
+
+#: TFRMMAIN.BTNLEFTEQUALRIGHT.HINT
+msgid "Show current directory of the right panel in the left panel"
+msgstr ""
+
+#: TFRMMAIN.BTNLEFTHOME.CAPTION
+msgctxt "TFRMMAIN.BTNLEFTHOME.CAPTION"
+msgid "~"
+msgstr "~"
+
+#: TFRMMAIN.BTNLEFTHOME.HINT
+msgid "Go to home directory"
+msgstr "Jít do domovského adresáře"
+
+#: TFRMMAIN.BTNLEFTROOT.CAPTION
+msgctxt "TFRMMAIN.BTNLEFTROOT.CAPTION"
+msgid "/"
+msgstr "/"
+
+#: TFRMMAIN.BTNLEFTROOT.HINT
+msgid "Go to root directory"
+msgstr "Jít do kořenového adresáře"
+
+#: TFRMMAIN.BTNLEFTUP.CAPTION
+msgctxt "TFRMMAIN.BTNLEFTUP.CAPTION"
+msgid ".."
+msgstr ".."
+
+#: TFRMMAIN.BTNLEFTUP.HINT
+msgid "Go to parent directory"
+msgstr "Jít do nadřízeného adresáře"
+
+#: TFRMMAIN.BTNRIGHTDIRECTORYHOTLIST.CAPTION
+msgctxt "TFRMMAIN.BTNRIGHTDIRECTORYHOTLIST.CAPTION"
+msgid "*"
+msgstr "*"
+
+#: TFRMMAIN.BTNRIGHTEQUALLEFT.CAPTION
+msgid ">"
+msgstr ""
+
+#: TFRMMAIN.BTNRIGHTEQUALLEFT.HINT
+msgid "Show current directory of the left panel in the right panel"
+msgstr ""
+
+#: TFRMMAIN.BTNRIGHTHOME.CAPTION
+msgctxt "TFRMMAIN.BTNRIGHTHOME.CAPTION"
+msgid "~"
+msgstr "~"
+
+#: TFRMMAIN.BTNRIGHTROOT.CAPTION
+msgctxt "TFRMMAIN.BTNRIGHTROOT.CAPTION"
+msgid "/"
+msgstr "/"
+
+#: TFRMMAIN.BTNRIGHTUP.CAPTION
+msgctxt "TFRMMAIN.BTNRIGHTUP.CAPTION"
+msgid ".."
+msgstr ".."
+
+#: TFRMMAIN.FRMMAIN.CAPTION
+msgctxt "TFRMMAIN.FRMMAIN.CAPTION"
+msgid "Double Commander"
+msgstr "Double Commander"
+
+#: TFRMMAIN.LBLCOMMANDPATH.CAPTION
+msgctxt "TFRMMAIN.LBLCOMMANDPATH.CAPTION"
+msgid "Path"
+msgstr "Cesta"
+
+#: TFRMMAIN.MENUITEM2.CAPTION
+msgctxt "TFRMMAIN.MENUITEM2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MI2080.CAPTION
+msgid "&20/80"
+msgstr "&20/80"
+
+#: TFRMMAIN.MI3070.CAPTION
+msgid "&30/70"
+msgstr "&30/70"
+
+#: TFRMMAIN.MI4060.CAPTION
+msgid "&40/60"
+msgstr "&40/60"
+
+#: TFRMMAIN.MI5050.CAPTION
+msgid "&50/50"
+msgstr "&50/50"
+
+#: TFRMMAIN.MI6040.CAPTION
+msgid "&60/40"
+msgstr "&60/40"
+
+#: TFRMMAIN.MI7030.CAPTION
+msgid "&70/30"
+msgstr "&70/30"
+
+#: TFRMMAIN.MI8020.CAPTION
+msgid "&80/20"
+msgstr "&80/20"
+
+#: TFRMMAIN.MICANCEL.CAPTION
+msgctxt "TFRMMAIN.MICANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMMAIN.MICOPY.CAPTION
+msgid "Copy..."
+msgstr "Kopírovat..."
+
+#: TFRMMAIN.MIHARDLINK.CAPTION
+msgctxt "TFRMMAIN.MIHARDLINK.CAPTION"
+msgid "Create link..."
+msgstr "Vytvořit odkaz..."
+
+#: TFRMMAIN.MILINE1.CAPTION
+msgctxt "TFRMMAIN.MILINE1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE10.CAPTION
+msgctxt "TFRMMAIN.MILINE10.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE12.CAPTION
+msgctxt "TFRMMAIN.MILINE12.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE13.CAPTION
+msgctxt "TFRMMAIN.MILINE13.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE14.CAPTION
+msgctxt "TFRMMAIN.MILINE14.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE15.CAPTION
+msgctxt "TFRMMAIN.MILINE15.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE16.CAPTION
+msgctxt "TFRMMAIN.MILINE16.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE17.CAPTION
+msgctxt "TFRMMAIN.MILINE17.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE18.CAPTION
+msgctxt "TFRMMAIN.MILINE18.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE19.CAPTION
+msgctxt "TFRMMAIN.MILINE19.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE2.CAPTION
+msgctxt "TFRMMAIN.MILINE2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE20.CAPTION
+msgctxt "TFRMMAIN.MILINE20.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE22.CAPTION
+msgctxt "TFRMMAIN.MILINE22.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE24.CAPTION
+msgctxt "TFRMMAIN.MILINE24.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE25.CAPTION
+msgctxt "TFRMMAIN.MILINE25.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE3.CAPTION
+msgctxt "TFRMMAIN.MILINE3.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE32.CAPTION
+msgctxt "TFRMMAIN.MILINE32.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE4.CAPTION
+msgctxt "TFRMMAIN.MILINE4.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE47.CAPTION
+msgctxt "TFRMMAIN.MILINE47.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE5.CAPTION
+msgctxt "TFRMMAIN.MILINE5.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE6.CAPTION
+msgctxt "TFRMMAIN.MILINE6.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE7.CAPTION
+msgctxt "TFRMMAIN.MILINE7.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE8.CAPTION
+msgctxt "TFRMMAIN.MILINE8.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE9.CAPTION
+msgctxt "TFRMMAIN.MILINE9.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILOGCLEAR.CAPTION
+msgid "Clear"
+msgstr "Vymazat"
+
+#: TFRMMAIN.MILOGCOPY.CAPTION
+msgctxt "TFRMMAIN.MILOGCOPY.CAPTION"
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: TFRMMAIN.MILOGHIDE.CAPTION
+msgid "Hide"
+msgstr "Skrýt"
+
+#: TFRMMAIN.MILOGSELECTALL.CAPTION
+msgctxt "TFRMMAIN.MILOGSELECTALL.CAPTION"
+msgid "Select All"
+msgstr "Vybrat vše"
+
+#: TFRMMAIN.MIMOVE.CAPTION
+#, fuzzy
+msgid "Move..."
+msgstr "Přesunout..."
+
+#: TFRMMAIN.MISYMLINK.CAPTION
+msgctxt "TFRMMAIN.MISYMLINK.CAPTION"
+msgid "Create symlink..."
+msgstr "Vytvořit symbolický odkaz..."
+
+#: TFRMMAIN.MITABOPTIONS.CAPTION
+msgid "Tab options"
+msgstr ""
+
+#: TFRMMAIN.MITRAYICONEXIT.CAPTION
+#, fuzzy
+#| msgid "Exit"
+msgctxt "TFRMMAIN.MITRAYICONEXIT.CAPTION"
+msgid "E&xit"
+msgstr "Konec"
+
+#: TFRMMAIN.MITRAYICONRESTORE.CAPTION
+msgid "Restore"
+msgstr "Obnovit"
+
+#: TFRMMAIN.MNUCMD.CAPTION
+msgid "&Commands"
+msgstr "&Příkazy"
+
+#: TFRMMAIN.MNUCONFIG.CAPTION
+msgid "C&onfiguration"
+msgstr "&Konfigurace"
+
+#: TFRMMAIN.MNUFILES.CAPTION
+#, fuzzy
+#| msgid "Files"
+msgid "&Files"
+msgstr "Soubor"
+
+#: TFRMMAIN.MNUFILESCOMBINE.CAPTION
+msgid "Combine Files"
+msgstr "Spojování souborů"
+
+#: TFRMMAIN.MNUHELP.CAPTION
+msgctxt "TFRMMAIN.MNUHELP.CAPTION"
+msgid "&Help"
+msgstr "&Nápověda"
+
+#: TFRMMAIN.MNUMARK.CAPTION
+msgid "&Mark"
+msgstr "&Označit"
+
+#: TFRMMAIN.MNUMARKCMPDIR.CAPTION
+msgid "&Compare Directories"
+msgstr "Po&rovnat adresáře"
+
+#: TFRMMAIN.MNUNETWORK.CAPTION
+msgid "Network"
+msgstr ""
+
+#: TFRMMAIN.MNUSHOW.CAPTION
+msgid "&Show"
+msgstr "&Zobrazit"
+
+#: TFRMMAIN.MNUSHOWOPERATIONS.CAPTION
+msgid "Operations viewer"
+msgstr ""
+
+#: TFRMMAIN.MNUTABOPTIONS.CAPTION
+#, fuzzy
+#| msgid "Options"
+msgctxt "TFRMMAIN.MNUTABOPTIONS.CAPTION"
+msgid "&Options"
+msgstr "Nastavení"
+
+#: TFRMMAIN.MNUTABS.CAPTION
+msgid "&Tabs"
+msgstr "&Záložky"
+
+#: TFRMMAIN.TBCHANGEDIR.CAPTION
+msgid "CD"
+msgstr ""
+
+#: TFRMMAIN.TBCOPY.CAPTION
+msgctxt "TFRMMAIN.TBCOPY.CAPTION"
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: TFRMMAIN.TBCUT.CAPTION
+msgctxt "TFRMMAIN.TBCUT.CAPTION"
+msgid "Cut"
+msgstr "Vyjmout"
+
+#: TFRMMAIN.TBDELETE.CAPTION
+msgctxt "TFRMMAIN.TBDELETE.CAPTION"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMMAIN.TBEDIT.CAPTION
+msgctxt "TFRMMAIN.TBEDIT.CAPTION"
+msgid "Edit"
+msgstr "Upravit"
+
+#: TFRMMAIN.TBPASTE.CAPTION
+msgctxt "TFRMMAIN.TBPASTE.CAPTION"
+msgid "Paste"
+msgstr "Vložiit"
+
+#: TFRMMAIN.TBSEPARATOR.CAPTION
+msgctxt "TFRMMAIN.TBSEPARATOR.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMASKINPUTDLG.BTNCANCEL.CAPTION
+msgctxt "TFRMMASKINPUTDLG.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMMASKINPUTDLG.BTNDEFINETEMPLATE.CAPTION
+msgid "Define..."
+msgstr ""
+
+#: TFRMMASKINPUTDLG.BTNOK.CAPTION
+msgctxt "TFRMMASKINPUTDLG.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMMASKINPUTDLG.LBLSEARCHTEMPLATE.CAPTION
+msgid "Or select predefined selection type:"
+msgstr ""
+
+#: TFRMMKDIR.BTNCANCEL.CAPTION
+msgctxt "TFRMMKDIR.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMMKDIR.BTNOK.CAPTION
+msgctxt "TFRMMKDIR.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMMKDIR.CAPTION
+msgid "Create new directory"
+msgstr "Vytvořit nový adresář"
+
+#: TFRMMKDIR.LBLMAKEDIR.CAPTION
+msgid "Input new directory name:"
+msgstr "Zadejte nový název adresáře:"
+
+#: TFRMMODVIEW.BTNCANCEL.CAPTION
+msgctxt "TFRMMODVIEW.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMMODVIEW.BTNOK.CAPTION
+msgid "Ok"
+msgstr ""
+
+#: TFRMMODVIEW.BTNPATH1.CAPTION
+msgctxt "TFRMMODVIEW.BTNPATH1.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMODVIEW.BTNPATH2.CAPTION
+msgctxt "TFRMMODVIEW.BTNPATH2.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMODVIEW.BTNPATH3.CAPTION
+msgctxt "TFRMMODVIEW.BTNPATH3.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMODVIEW.BTNPATH4.CAPTION
+msgctxt "TFRMMODVIEW.BTNPATH4.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMODVIEW.BTNPATH5.CAPTION
+msgctxt "TFRMMODVIEW.BTNPATH5.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMODVIEW.BTNPROPORTION.CAPTION
+msgid "Pr"
+msgstr ""
+
+#: TFRMMODVIEW.FRMMODVIEW.CAPTION
+msgid "New Size"
+msgstr ""
+
+#: TFRMMODVIEW.LBLHEIGHT.CAPTION
+msgid "Height :"
+msgstr ""
+
+#: TFRMMODVIEW.LBLPATH1.CAPTION
+msgctxt "TFRMMODVIEW.LBLPATH1.CAPTION"
+msgid "1"
+msgstr "1"
+
+#: TFRMMODVIEW.LBLPATH2.CAPTION
+msgid "2"
+msgstr ""
+
+#: TFRMMODVIEW.LBLPATH3.CAPTION
+msgid "3"
+msgstr ""
+
+#: TFRMMODVIEW.LBLPATH4.CAPTION
+msgid "4"
+msgstr ""
+
+#: TFRMMODVIEW.LBLPATH5.CAPTION
+msgid "5"
+msgstr ""
+
+#: TFRMMODVIEW.LBLQUALITY.CAPTION
+msgid "Quality of compress to Jpg"
+msgstr ""
+
+#: TFRMMODVIEW.LBLWIDTH.CAPTION
+msgid "Width :"
+msgstr ""
+
+#: TFRMMODVIEW.RBBMP.CAPTION
+msgid "BMP"
+msgstr ""
+
+#: TFRMMODVIEW.RBICO.CAPTION
+msgid "ICO"
+msgstr ""
+
+#: TFRMMODVIEW.RBJPG.CAPTION
+msgid "JPG"
+msgstr ""
+
+#: TFRMMODVIEW.RBPNG.CAPTION
+msgid "PNG"
+msgstr ""
+
+#: TFRMMODVIEW.RBPNM.CAPTION
+msgid "PNM"
+msgstr ""
+
+#: TFRMMODVIEW.TEHEIGHT.TEXT
+msgid "Height"
+msgstr ""
+
+#: TFRMMODVIEW.TEQUALITY.TEXT
+msgid "80"
+msgstr ""
+
+#: TFRMMODVIEW.TEWIDTH.TEXT
+msgctxt "TFRMMODVIEW.TEWIDTH.TEXT"
+msgid "Width"
+msgstr "Šířka"
+
+#: TFRMMOVEDLG.LBLFILETYPE.CAPTION
+msgctxt "TFRMMOVEDLG.LBLFILETYPE.CAPTION"
+msgid "Only type:"
+msgstr "Pouze typy"
+
+#: TFRMMOVEDLG.LBLMOVESRC.CAPTION
+msgid "Move %s:"
+msgstr "Přesun %s:"
+
+#: TFRMMULTIRENAME.BTNCLOSE.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNCLOSE.CAPTION"
+msgid "&Close"
+msgstr "&Zavřít"
+
+#: TFRMMULTIRENAME.BTNDELETEPRESET.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNDELETEPRESET.CAPTION"
+msgid "&Delete"
+msgstr "&Vymazat"
+
+#: TFRMMULTIRENAME.BTNEXTMENU.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNEXTMENU.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMULTIRENAME.BTNLOADPRESET.CAPTION
+msgid "&Load"
+msgstr ""
+
+#: TFRMMULTIRENAME.BTNNAMEMENU.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNNAMEMENU.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMULTIRENAME.BTNRENAME.CAPTION
+msgid "&Rename"
+msgstr ""
+
+#: TFRMMULTIRENAME.BTNRESTORE.CAPTION
+#, fuzzy
+#| msgid "Restore All"
+msgid "Reset all"
+msgstr "Obnovit vše"
+
+#: TFRMMULTIRENAME.BTNSAVEPRESET.CAPTION
+#, fuzzy
+msgctxt "TFRMMULTIRENAME.BTNSAVEPRESET.CAPTION"
+msgid "&Save"
+msgstr "&Uložit"
+
+#: TFRMMULTIRENAME.CBLOG.CAPTION
+#, fuzzy
+#| msgid "Log"
+msgctxt "TFRMMULTIRENAME.CBLOG.CAPTION"
+msgid "Enable"
+msgstr "Log"
+
+#: TFRMMULTIRENAME.CBREGEXP.CAPTION
+#, fuzzy
+#| msgid "&Regular expressions"
+msgctxt "TFRMMULTIRENAME.CBREGEXP.CAPTION"
+msgid "Regular e&xpressions"
+msgstr "&Regulární výrazy"
+
+#: TFRMMULTIRENAME.CBUSESUBS.CAPTION
+#, fuzzy
+#| msgid "Use substitution"
+msgid "&Use substitution"
+msgstr "Použití substituce"
+
+#: TFRMMULTIRENAME.CMBXWIDTH.TEXT
+msgid "01"
+msgstr "01"
+
+#: TFRMMULTIRENAME.EDINTERVAL.TEXT
+msgctxt "TFRMMULTIRENAME.EDINTERVAL.TEXT"
+msgid "1"
+msgstr "1"
+
+#: TFRMMULTIRENAME.EDPOC.TEXT
+msgctxt "TFRMMULTIRENAME.EDPOC.TEXT"
+msgid "1"
+msgstr "1"
+
+#: TFRMMULTIRENAME.EXTENSION.CAPTION
+#, fuzzy
+#| msgid "[E]xtension"
+msgid "[E] Extension"
+msgstr "[E]Přípona"
+
+#: TFRMMULTIRENAME.FRMMULTIRENAME.CAPTION
+msgctxt "TFRMMULTIRENAME.FRMMULTIRENAME.CAPTION"
+msgid "MultiRename"
+msgstr "Hromadné přejmenování"
+
+#: TFRMMULTIRENAME.GBCOUNTER.CAPTION
+msgid "Counter"
+msgstr "Počítadlo"
+
+#: TFRMMULTIRENAME.GBFINDREPLACE.CAPTION
+msgid "Find && Replace"
+msgstr "Vyhledat && Nahradit"
+
+#: TFRMMULTIRENAME.GBLOG.CAPTION
+msgid "Log Result"
+msgstr "Log výsledku"
+
+#: TFRMMULTIRENAME.GBMASKA.CAPTION
+msgid "Mask"
+msgstr "Maska"
+
+#: TFRMMULTIRENAME.GBPRESETS.CAPTION
+msgid "Presets"
+msgstr ""
+
+#: TFRMMULTIRENAME.LBEXT.CAPTION
+#, fuzzy
+#| msgid "Extension"
+msgid "&Extension"
+msgstr "Přípona"
+
+#: TFRMMULTIRENAME.LBFIND.CAPTION
+#, fuzzy
+#| msgid "Find..."
+msgid "&Find..."
+msgstr "Hledat..."
+
+#: TFRMMULTIRENAME.LBINTERVAL.CAPTION
+msgid "Interval"
+msgstr "Interval"
+
+#: TFRMMULTIRENAME.LBNAME.CAPTION
+#, fuzzy
+#| msgid "File Name"
+msgid "File &Name"
+msgstr "Název souboru"
+
+#: TFRMMULTIRENAME.LBREPLACE.CAPTION
+#, fuzzy
+#| msgid "Replace..."
+msgid "Re&place..."
+msgstr "Nahradit..."
+
+#: TFRMMULTIRENAME.LBSTNB.CAPTION
+msgid "Start Number"
+msgstr "Číslovat od"
+
+#: TFRMMULTIRENAME.LBWIDTH.CAPTION
+msgctxt "TFRMMULTIRENAME.LBWIDTH.CAPTION"
+msgid "Width"
+msgstr "Šířka"
+
+#: TFRMMULTIRENAME.LSVWFILE.COLUMNS[0].CAPTION
+msgid "Old File Name"
+msgstr ""
+
+#: TFRMMULTIRENAME.LSVWFILE.COLUMNS[1].CAPTION
+msgid "New File Name"
+msgstr ""
+
+#: TFRMMULTIRENAME.LSVWFILE.COLUMNS[2].CAPTION
+msgctxt "TFRMMULTIRENAME.LSVWFILE.COLUMNS[2].CAPTION"
+msgid "File Path"
+msgstr "Cesta k souboru"
+
+#: TFRMMULTIRENAME.MICOUNTER.CAPTION
+#, fuzzy
+#| msgid "[C]ounter"
+msgid "[C] Counter"
+msgstr "[C]Počítadlo"
+
+#: TFRMMULTIRENAME.MIDAY.CAPTION
+#, fuzzy
+#| msgid "[D]ay"
+msgid "[D] Day"
+msgstr "[D]Den"
+
+#: TFRMMULTIRENAME.MIDAY1.CAPTION
+msgid "[DD] Day (2 digits)"
+msgstr ""
+
+#: TFRMMULTIRENAME.MIDAY2.CAPTION
+msgid "[DDD] Day of the week (short, e.g., \"mon\")"
+msgstr ""
+
+#: TFRMMULTIRENAME.MIDAY3.CAPTION
+msgid "[DDDD] Day of the week (long, e.g., \"monday\")"
+msgstr ""
+
+#: TFRMMULTIRENAME.MIEXTENSIONX.CAPTION
+#, fuzzy
+#| msgid "[Ex]xtension"
+msgid "[Ex] Character at position x"
+msgstr "[Ex]Přípona"
+
+#: TFRMMULTIRENAME.MIEXTENSIONXX.CAPTION
+#, fuzzy
+#| msgid "[Ex:x]xtension"
+msgid "[Ex:y] Characters from position x to y"
+msgstr "[Ex:x]Přípona"
+
+#: TFRMMULTIRENAME.MIHOUR.CAPTION
+#, fuzzy
+#| msgid "[h]our"
+msgid "[h] Hour"
+msgstr "[H]Hodina"
+
+#: TFRMMULTIRENAME.MIHOUR1.CAPTION
+msgid "[hh] Hour (2 digits)"
+msgstr ""
+
+#: TFRMMULTIRENAME.MIMINUTE.CAPTION
+#, fuzzy
+#| msgid "Mi[n]ute"
+msgid "[n] Minute"
+msgstr "[Mi]Minuta"
+
+#: TFRMMULTIRENAME.MIMINUTE1.CAPTION
+msgid "[nn] Minute (2 digits)"
+msgstr ""
+
+#: TFRMMULTIRENAME.MIMONTH.CAPTION
+#, fuzzy
+#| msgid "[M]onth"
+msgid "[M] Month"
+msgstr "[Mo]Měsíc"
+
+#: TFRMMULTIRENAME.MIMONTH1.CAPTION
+msgid "[MM] Month (2 digits)"
+msgstr ""
+
+#: TFRMMULTIRENAME.MIMONTH2.CAPTION
+msgid "[MMM] Month name (short, e.g., \"jan\")"
+msgstr ""
+
+#: TFRMMULTIRENAME.MIMONTH3.CAPTION
+msgid "[MMMM] Month name (long, e.g. \"january\")"
+msgstr ""
+
+#: TFRMMULTIRENAME.MINAME.CAPTION
+#, fuzzy
+#| msgid "[N]ame"
+msgid "[N] Name"
+msgstr "[N]Název"
+
+#: TFRMMULTIRENAME.MINAMEX.CAPTION
+#, fuzzy
+#| msgid "[Nx]ame"
+msgid "[Nx] Character at position x"
+msgstr "[Nx]Název"
+
+#: TFRMMULTIRENAME.MINAMEXX.CAPTION
+#, fuzzy
+#| msgid "[Nx:x]ame"
+msgid "[Nx:y] Characters from position x to y"
+msgstr "[Nx:x]Název"
+
+#: TFRMMULTIRENAME.MINEXT.CAPTION
+msgid "Time..."
+msgstr "Čas..."
+
+#: TFRMMULTIRENAME.MINEXTEXTENSION.CAPTION
+msgid "Extension..."
+msgstr "Přípona..."
+
+#: TFRMMULTIRENAME.MINEXTNAME.CAPTION
+msgid "Name..."
+msgstr "Název..."
+
+#: TFRMMULTIRENAME.MIPLUGIN.CAPTION
+msgctxt "TFRMMULTIRENAME.MIPLUGIN.CAPTION"
+msgid "Plugin"
+msgstr ""
+
+#: TFRMMULTIRENAME.MISECOND.CAPTION
+#, fuzzy
+#| msgid "[s]econd"
+msgid "[s] Second"
+msgstr "[S]Sekunda"
+
+#: TFRMMULTIRENAME.MISECOND1.CAPTION
+msgid "[ss] Second (2 digits)"
+msgstr ""
+
+#: TFRMMULTIRENAME.MIYEAR.CAPTION
+#, fuzzy
+#| msgid "[Y] Year"
+msgid "[Y] Year (2 digits)"
+msgstr "[Y]Rok"
+
+#: TFRMMULTIRENAME.MIYEAR1.CAPTION
+msgid "[YYYY] Year (4 digits)"
+msgstr ""
+
+#: TFRMMULTIRENAME.N1.CAPTION
+msgctxt "TFRMMULTIRENAME.N1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMULTIRENAME.N2.CAPTION
+msgctxt "TFRMMULTIRENAME.N2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMULTIRENAME.N3.CAPTION
+msgctxt "TFRMMULTIRENAME.N3.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMULTIRENAME.N4.CAPTION
+msgctxt "TFRMMULTIRENAME.N4.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMULTIRENAME.N5.CAPTION
+msgctxt "TFRMMULTIRENAME.N5.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMOPTIONS.BTCLEARHOTKEY.CAPTION
+msgid "Clear HotKey"
+msgstr "Vymazat seznam"
+
+#: TFRMOPTIONS.BTNADDSEL.CAPTION
+msgid "&Add selected names"
+msgstr ""
+
+#: TFRMOPTIONS.BTNADDSELWITHPATH.CAPTION
+msgid "Add selected names with &full path"
+msgstr ""
+
+#: TFRMOPTIONS.BTNAPPLY.CAPTION
+msgctxt "TFRMOPTIONS.BTNAPPLY.CAPTION"
+msgid "Apply"
+msgstr "Použít"
+
+#: TFRMOPTIONS.BTNAUTOCONFIG.CAPTION
+msgid "Auto Configure"
+msgstr ""
+
+#: TFRMOPTIONS.BTNBACKVIEWERCOLOR.CAPTION
+msgctxt "TFRMOPTIONS.BTNBACKVIEWERCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONS.BTNCANCEL.CAPTION
+msgctxt "TFRMOPTIONS.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMOPTIONS.BTNCONFIGAPPLY.CAPTION
+msgctxt "TFRMOPTIONS.BTNCONFIGAPPLY.CAPTION"
+msgid "Apply"
+msgstr "Použít"
+
+#: TFRMOPTIONS.BTNCONFIGEDIT.CAPTION
+msgctxt "TFRMOPTIONS.BTNCONFIGEDIT.CAPTION"
+msgid "Edit"
+msgstr "Upravit"
+
+#: TFRMOPTIONS.BTNCOPYCOLUMNSSET.CAPTION
+msgctxt "TFRMOPTIONS.BTNCOPYCOLUMNSSET.CAPTION"
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: TFRMOPTIONS.BTNDELCOLUMNSSET.CAPTION
+msgctxt "TFRMOPTIONS.BTNDELCOLUMNSSET.CAPTION"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMOPTIONS.BTNEDITCOLUMNSSET.CAPTION
+msgctxt "TFRMOPTIONS.BTNEDITCOLUMNSSET.CAPTION"
+msgid "Edit"
+msgstr "Upravit"
+
+#: TFRMOPTIONS.BTNFONTVIEWERCOLOR.CAPTION
+msgctxt "TFRMOPTIONS.BTNFONTVIEWERCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONS.BTNMULTIARCADD.CAPTION
+msgctxt "TFRMOPTIONS.BTNMULTIARCADD.CAPTION"
+msgid "Add"
+msgstr "Přidat"
+
+#: TFRMOPTIONS.BTNMULTIARCAPPLY.CAPTION
+msgctxt "TFRMOPTIONS.BTNMULTIARCAPPLY.CAPTION"
+msgid "Apply"
+msgstr "Použít"
+
+#: TFRMOPTIONS.BTNMULTIARCDELETE.CAPTION
+msgctxt "TFRMOPTIONS.BTNMULTIARCDELETE.CAPTION"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMOPTIONS.BTNMULTIARCRENAME.CAPTION
+msgctxt "TFRMOPTIONS.BTNMULTIARCRENAME.CAPTION"
+msgid "Rename"
+msgstr "Smazat"
+
+#: TFRMOPTIONS.BTNNEWCOLUMNSSET.CAPTION
+msgctxt "TFRMOPTIONS.BTNNEWCOLUMNSSET.CAPTION"
+msgid "&New"
+msgstr "&Nový"
+
+#: TFRMOPTIONS.BTNOK.CAPTION
+msgctxt "TFRMOPTIONS.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMOPTIONS.BTNSELEDITFNT.CAPTION
+msgctxt "TFRMOPTIONS.BTNSELEDITFNT.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMOPTIONS.BTNSELLOGFNT.CAPTION
+msgctxt "TFRMOPTIONS.BTNSELLOGFNT.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMOPTIONS.BTNSELMAINFNT.CAPTION
+msgctxt "TFRMOPTIONS.BTNSELMAINFNT.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMOPTIONS.BTNSELVIEWERBOOKFNT.CAPTION
+msgctxt "TFRMOPTIONS.BTNSELVIEWERBOOKFNT.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMOPTIONS.BTNSELVIEWFNT.CAPTION
+msgctxt "TFRMOPTIONS.BTNSELVIEWFNT.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMOPTIONS.BTSETHOTKEY.CAPTION
+msgid "Set HotKey"
+msgstr "Nastavit hokré klávesy"
+
+#: TFRMOPTIONS.CBALWAYSSHOWTRAYICON.CAPTION
+msgid "Always show tray icon"
+msgstr "Vždy zobrazit \"tray\" ikonu"
+
+#: TFRMOPTIONS.CBBFILESYSTEM.TEXT
+msgctxt "TFRMOPTIONS.CBBFILESYSTEM.TEXT"
+msgid "General"
+msgstr "Hlavní"
+
+#: TFRMOPTIONS.CBCMDLINEHISTORY.CAPTION
+msgid "Command line history"
+msgstr "Hystorie příkazového řádku"
+
+#: TFRMOPTIONS.CBCUTTEXTTOCOLWIDTH.CAPTION
+msgid "Cut text to column width"
+msgstr "Oříznout text na šířku sloupce"
+
+#: TFRMOPTIONS.CBDELETETOTRASH.CAPTION
+#, fuzzy
+#| msgid "&F8/Del deletes to recycle bin (Shift=directly)"
+msgid "Delete to recycle bin (Shift key reverses this setting)"
+msgstr "&F8/Del přesouvá do koše (Shift=smazat ihned)"
+
+#: TFRMOPTIONS.CBDIRBRACKETS.CAPTION
+msgid "Show square brackets around directories"
+msgstr "Názvy adresářů v hranatých závorkách"
+
+#: TFRMOPTIONS.CBDIRHISTORY.CAPTION
+msgctxt "TFRMOPTIONS.CBDIRHISTORY.CAPTION"
+msgid "Directory history"
+msgstr "Hystorie adresářů"
+
+#: TFRMOPTIONS.CBDROPREADONLYFLAG.CAPTION
+msgctxt "TFRMOPTIONS.CBDROPREADONLYFLAG.CAPTION"
+msgid "Drop readonly flag"
+msgstr "Zrušit příznak jen pro čtení"
+
+#: TFRMOPTIONS.CBEXACTBEGINNING.CAPTION
+msgid "&Beginning (name must start with first typed character)"
+msgstr "&Začátek (jméno musí začínat zadaným znakem)"
+
+#: TFRMOPTIONS.CBEXACTENDING.CAPTION
+msgid "En&ding (last character before a typed dot . must match)"
+msgstr "&Konec (poslední znak před . musí odpovídat zadanému)"
+
+#: TFRMOPTIONS.CBFILEMASKHISTORY.CAPTION
+msgid "File mask history"
+msgstr "Hystorie použitých masek"
+
+#: TFRMOPTIONS.CBFLATDISKPANEL.CAPTION
+msgctxt "TFRMOPTIONS.CBFLATDISKPANEL.CAPTION"
+msgid "Flat buttons"
+msgstr "Plochá tlačítka"
+
+#: TFRMOPTIONS.CBFLATINTERFACE.CAPTION
+msgid "Flat interface"
+msgstr "Ploché rozhraní"
+
+#: TFRMOPTIONS.CBFLATTOOLBAR.CAPTION
+msgctxt "TFRMOPTIONS.CBFLATTOOLBAR.CAPTION"
+msgid "Flat buttons"
+msgstr "Plochá tlačítka"
+
+#: TFRMOPTIONS.CBFREESPACEIND.CAPTION
+msgid "Show free space indicator on drive label"
+msgstr ""
+
+#: TFRMOPTIONS.CBGRIDHORZLINE.CAPTION
+msgid "Horizontal lines"
+msgstr "Horizontální linky"
+
+#: TFRMOPTIONS.CBGRIDVERTLINE.CAPTION
+msgid "Vertical lines"
+msgstr "Vertikální linky"
+
+#: TFRMOPTIONS.CBICONSSHOWOVERLAY.CAPTION
+msgid "Show overlay i&cons, e.g. for links"
+msgstr "Zobrazit překryvné i&kony"
+
+#: TFRMOPTIONS.CBICONSSIZE.TEXT
+msgid "16x16"
+msgstr "16x16"
+
+#: TFRMOPTIONS.CBLISTFILESINTHREAD.CAPTION
+msgid "Load file list in separate thread"
+msgstr ""
+
+#: TFRMOPTIONS.CBLOADICONSSEPARATELY.CAPTION
+msgid "Load icons after file list"
+msgstr ""
+
+#: TFRMOPTIONS.CBLOGARCOP.CAPTION
+msgid "Pack/Unpack"
+msgstr "Komprese/Dekomprese"
+
+#: TFRMOPTIONS.CBLOGCPMVLN.CAPTION
+msgid "Copy/Move/Create link/symlink"
+msgstr "Kopírování/přesun/Create link/symlink"
+
+#: TFRMOPTIONS.CBLOGDELETE.CAPTION
+msgctxt "TFRMOPTIONS.CBLOGDELETE.CAPTION"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMOPTIONS.CBLOGDIROP.CAPTION
+msgid "Create/Delete directories"
+msgstr "Tvorba/Mazání adresářů"
+
+#: TFRMOPTIONS.CBLOGERRORS.CAPTION
+msgid "Log &errors"
+msgstr "Log &chyb"
+
+#: TFRMOPTIONS.CBLOGFILE.CAPTION
+msgid "&Create a log file:"
+msgstr "&Vytvořit log:"
+
+#: TFRMOPTIONS.CBLOGINFO.CAPTION
+msgid "Log information messages"
+msgstr "Log informačních zpráv"
+
+#: TFRMOPTIONS.CBLOGSUCCESS.CAPTION
+msgid "Log &successful operations"
+msgstr "Log &dokončených operací"
+
+#: TFRMOPTIONS.CBLOGVFS.CAPTION
+msgid "File system plugins"
+msgstr "Pluginy souborového systému"
+
+#: TFRMOPTIONS.CBLOGWINDOW.CAPTION
+msgid "Show log window"
+msgstr "Log"
+
+#: TFRMOPTIONS.CBLYNXLIKE.CAPTION
+#, fuzzy
+#| msgid "Lynx like movement"
+msgid "Lynx-like movement"
+msgstr "Lynx like movement"
+
+#: TFRMOPTIONS.CBMINIMIZETOTRAY.CAPTION
+msgid "Mo&ve icon to system tray when minimized"
+msgstr "Minimalizovat do \"SystemTray\""
+
+#: TFRMOPTIONS.CBONLYONCE.CAPTION
+msgid "Allow only one copy of DC at a time"
+msgstr ""
+
+#: TFRMOPTIONS.CBPANELOFOPERATIONS.CAPTION
+msgid "Show panel of operation in background"
+msgstr ""
+
+#: TFRMOPTIONS.CBPARTIALNAMESEARCH.CAPTION
+msgid "Search for part of file name"
+msgstr ""
+
+#: TFRMOPTIONS.CBPROCESSCOMMENTS.CAPTION
+msgid "Process comments with files/folders"
+msgstr "Zpracovat komentáře složek/souborů"
+
+#: TFRMOPTIONS.CBPROGINMENUBAR.CAPTION
+msgid "Show common progress in menu bar"
+msgstr ""
+
+#: TFRMOPTIONS.CBRENAMESELONLYNAME.CAPTION
+#, fuzzy
+#| msgid "Select only the file name then renaming (not the extension)"
+msgid "Select only the file name when renaming (not the extension)"
+msgstr "Při přejmenování vybrat pouze název souboru (bez přípony)"
+
+#: TFRMOPTIONS.CBSAVETHUBNAILS.CAPTION
+msgid "Save thubnails in cache"
+msgstr ""
+
+#: TFRMOPTIONS.CBSELECTIONBYMOUSE.CAPTION
+msgid "Selection by mouse"
+msgstr "Výběr myší"
+
+#: TFRMOPTIONS.CBSHORTFILESIZEFORMAT.CAPTION
+#, fuzzy
+#| msgid "Short Filesize format"
+msgid "Short file size format"
+msgstr "Krátký formát velikosti souborů"
+
+#: TFRMOPTIONS.CBSHOWCMDLINE.CAPTION
+msgid "Show command &line"
+msgstr "Zobrazit příkazový řá&dek"
+
+#: TFRMOPTIONS.CBSHOWCOPYTABSELECTPANEL.CAPTION
+msgid "Show tab select panel in copy/move dialog"
+msgstr "Zobrazit výběr záložky v dialogu \"kopírovat/přesunout\""
+
+#: TFRMOPTIONS.CBSHOWCURDIR.CAPTION
+msgid "Show &current directory"
+msgstr "Zobrazit &aktuální adresář"
+
+#: TFRMOPTIONS.CBSHOWDIALOGONDRAGDROP.CAPTION
+msgid "Show confirmation dialog on drag&&drop operations"
+msgstr ""
+
+#: TFRMOPTIONS.CBSHOWDISKPANEL.CAPTION
+msgid "Show &drive buttons"
+msgstr "Zobrazit &tlačitka disků"
+
+#: TFRMOPTIONS.CBSHOWDRIVEFREESPACE.CAPTION
+msgid "Show free space label"
+msgstr ""
+
+#: TFRMOPTIONS.CBSHOWDRIVEMENUBUTTON.CAPTION
+msgid "Show d&rive menu button"
+msgstr "Zobrazit se&znam disků"
+
+#: TFRMOPTIONS.CBSHOWKEYSPANEL.CAPTION
+msgid "Show &function key buttons"
+msgstr "Zobrazit &funkční tlačítka"
+
+#: TFRMOPTIONS.CBSHOWMAINMENU.CAPTION
+msgid "Show main menu"
+msgstr ""
+
+#: TFRMOPTIONS.CBSHOWMAINTOOLBAR.CAPTION
+msgid "Show &button bar"
+msgstr "Zobrazit &tlačitkovou lištu"
+
+#: TFRMOPTIONS.CBSHOWSTATUSBAR.CAPTION
+msgid "Show &status bar"
+msgstr "Zobrazit &stavový řádek"
+
+#: TFRMOPTIONS.CBSHOWSYSTEMFILES.CAPTION
+#, fuzzy
+#| msgid "Show hidden/system files"
+msgctxt "TFRMOPTIONS.CBSHOWSYSTEMFILES.CAPTION"
+msgid "Show system and hidden files"
+msgstr "Zobrazit skryté/systémové soubory"
+
+#: TFRMOPTIONS.CBSHOWTABHEADER.CAPTION
+msgid "Show &tabstop header"
+msgstr "Zobrazit &tabstop záhlaví"
+
+#: TFRMOPTIONS.CBSHOWTABS.CAPTION
+msgid "Sho&w folder tabs"
+msgstr "Zobrazit &záložky adresářů"
+
+#: TFRMOPTIONS.CBSHOWWARNINGMESSAGES.CAPTION
+msgid "Show warning messages (\"OK\" button only)"
+msgstr "Zobrazit varovné zprávy (pouze tlačítko \"OK\")"
+
+#: TFRMOPTIONS.CBSKIPFILEOPERROR.CAPTION
+msgid "Skip file operations errors and write them to log window"
+msgstr "Přeskočit chyby a zapsat je do okna logů"
+
+#: TFRMOPTIONS.CBSORTCASESENSITIVE.CAPTION
+#, fuzzy
+#| msgid "Case sensitive sorting"
+msgctxt "TFRMOPTIONS.CBSORTCASESENSITIVE.CAPTION"
+msgid "Case-sensitive sorting"
+msgstr "Třídění rozlišuje velká/malá"
+
+#: TFRMOPTIONS.CBSORTMETHOD.TEXT
+msgid "Alphabetical, considering accents"
+msgstr ""
+
+#: TFRMOPTIONS.CBSPACEMOVESDOWN.CAPTION
+msgid "When selecting files with <SPACEBAR>, move down to next file (as with <INSERT>)"
+msgstr "Při výběru mezerníkem posunout kursor dolů, jako při výběru klávesou Insert"
+
+#: TFRMOPTIONS.CBTABSACTIVATEONCLICK.CAPTION
+msgid "Activate target &panel when clicking on one of its Tabs"
+msgstr "Aktivovat cílový &panel při kliknutí na jeho libovolnou záložku"
+
+#: TFRMOPTIONS.CBTABSALWAYSVISIBLE.CAPTION
+msgid "&Show tab header also when there is only one tab"
+msgstr "&Zobrazit záložku i když bude pouze 1"
+
+#: TFRMOPTIONS.CBTABSCONFIRMCLOSEALL.CAPTION
+msgid "&Confirm close all tabs"
+msgstr "&Potvrdit uzavření všech záložek"
+
+#: TFRMOPTIONS.CBTABSLIMITOPTION.CAPTION
+msgid "&Limit tab title length to:"
+msgstr "&Limitovat šířku záložky na:"
+
+#: TFRMOPTIONS.CBTABSLOCKEDASTERISK.CAPTION
+msgid "Show locked tabs &with an asterisk *"
+msgstr "Zobrazit uzamčené záložky se znakem *"
+
+#: TFRMOPTIONS.CBTABSMULTILINES.CAPTION
+msgid "&Tabs on multiple lines"
+msgstr "&Záložky na více řádků"
+
+#: TFRMOPTIONS.CBTABSOPENFOREGROUND.CAPTION
+msgid "Ctrl+&Up opens new tab in foreground"
+msgstr "Ctrl+&Nahoru otevře novou záložku na pozadí"
+
+#: TFRMOPTIONS.CBTABSOPENNEARCURRENT.CAPTION
+msgid "Open &new tabs near current tab"
+msgstr ""
+
+#: TFRMOPTIONS.CBTABSSHOWCLOSEBUTTON.CAPTION
+msgid "Show tab close button"
+msgstr "Na záložkách i tlačítko zavřít"
+
+#: TFRMOPTIONS.CBTERMWINDOW.CAPTION
+msgid "Show terminal window"
+msgstr "Zobrazit okno terminálu"
+
+#: TFRMOPTIONS.CBTOOLSKEEPTERMINALOPEN.CAPTION
+msgid "Keep terminal window open after executing program"
+msgstr ""
+
+#: TFRMOPTIONS.CBTOOLSRUNINTERMINAL.CAPTION
+msgid "Execute in terminal"
+msgstr ""
+
+#: TFRMOPTIONS.CBTOOLSUSEEXTERNALPROGRAM.CAPTION
+msgid "Use external program"
+msgstr ""
+
+#: TFRMOPTIONS.CBTWODISKPANELS.CAPTION
+msgid "Show two drive button bars (fixed width, above file windows)"
+msgstr "Zobrazit 2 seznamy disků (fixed width, above file windows)"
+
+#: TFRMOPTIONS.CBWATCHATTRIBUTESCHANGE.CAPTION
+#, fuzzy
+#| msgid "Also when &size, date, or attributes change"
+msgid "When &size, date or attributes change"
+msgstr "Také při změně &velikosti, data, nebo atributů"
+
+#: TFRMOPTIONS.CBWATCHEXCLUDEDIRS.CAPTION
+msgid "For the following &paths and their subdirectories:"
+msgstr ""
+
+#: TFRMOPTIONS.CBWATCHFILENAMECHANGE.CAPTION
+#, fuzzy
+#| msgid "Refresh when files are &created, deleted and renamed"
+msgid "When files are &created, deleted or renamed"
+msgstr "Aktualizovat seznam při vy&tvoření, smazání, nebo přejmenování"
+
+#: TFRMOPTIONS.CBWATCHONLYFOREGROUND.CAPTION
+#, fuzzy
+#| msgid "Don't &react to updates while in the background"
+msgid "When application is in the &background"
+msgstr "Nep&rovádět aktualizace, pokud je na pozadí"
+
+#: TFRMOPTIONS.CHKAUTOFILLCOLUMNS.CAPTION
+msgid "Auto fill columns"
+msgstr ""
+
+#: TFRMOPTIONS.CHKIGNOREENABLE.CAPTION
+msgid "&Ignore (don't show) the following files and folders:"
+msgstr ""
+
+#: TFRMOPTIONS.CHKMULTIARCDEBUG.CAPTION
+msgid "Debug mode"
+msgstr ""
+
+#: TFRMOPTIONS.CHKMULTIARCENABLED.CAPTION
+msgid "Enabled"
+msgstr ""
+
+#: TFRMOPTIONS.CHKMULTIARCOUTPUT.CAPTION
+msgctxt "TFRMOPTIONS.CHKMULTIARCOUTPUT.CAPTION"
+msgid "Show console output"
+msgstr ""
+
+#: TFRMOPTIONS.CHKSAVECONFIGURATION.CAPTION
+msgid "Save configuration"
+msgstr ""
+
+#: TFRMOPTIONS.CHKSEARCHREPLACEHISTORY.CAPTION
+msgid "Search/Replace history"
+msgstr ""
+
+#: TFRMOPTIONS.FRMOPTIONS.CAPTION
+msgctxt "TFRMOPTIONS.FRMOPTIONS.CAPTION"
+msgid "Options"
+msgstr "Nastavení"
+
+#: TFRMOPTIONS.GBARCHIVEROPTIONS.CAPTION
+msgctxt "TFRMOPTIONS.GBARCHIVEROPTIONS.CAPTION"
+msgid "Options"
+msgstr "Nastavení"
+
+#: TFRMOPTIONS.GBAUTOREFRESHDISABLE.CAPTION
+msgid "Disable auto-refresh"
+msgstr ""
+
+#: TFRMOPTIONS.GBAUTOREFRESHENABLE.CAPTION
+msgid "Refresh file list"
+msgstr ""
+
+#: TFRMOPTIONS.GBCOPYBUFFERSIZE.CAPTION
+msgid "&Buffer size for files:"
+msgstr "&Velikost buferu pro soubory:"
+
+#: TFRMOPTIONS.GBDATETIMEFORMAT.CAPTION
+msgid "Date and time"
+msgstr "Datum a čas"
+
+#: TFRMOPTIONS.GBEXACTNAMEMATCH.CAPTION
+#, fuzzy
+#| msgid "Exact &name match:"
+msgid "Exact name match:"
+msgstr "Upřesnění rychlého hledání"
+
+#: TFRMOPTIONS.GBFILESEARCH.CAPTION
+msgid "File search"
+msgstr "Hledání souborů"
+
+#: TFRMOPTIONS.GBGENERALOPTIONS.CAPTION
+msgid "General options"
+msgstr "Hlavní volby"
+
+#: TFRMOPTIONS.GBICONSSIZE.CAPTION
+msgid " Icon &size "
+msgstr "Velikost i&kon"
+
+#: TFRMOPTIONS.GBLOCCONFIGFILES.CAPTION
+msgid "Location of configuration files"
+msgstr "Umístění konfiguračních souborů"
+
+#: TFRMOPTIONS.GBLOGFILE.CAPTION
+msgid "File operation log file"
+msgstr "Log souborových operací"
+
+#: TFRMOPTIONS.GBLOGFILEOP.CAPTION
+msgid "Log operations:"
+msgstr "Log operací:"
+
+#: TFRMOPTIONS.GBLOGFILESTATUS.CAPTION
+msgid "Operation status:"
+msgstr "Stav operace:"
+
+#: TFRMOPTIONS.GBSAVEONEXIT.CAPTION
+msgid "Save on exit"
+msgstr "Uložit při ukončení"
+
+#: TFRMOPTIONS.GBSCREENLAYOUT.CAPTION
+msgid " Screen layout "
+msgstr "Vzhled obrazovky"
+
+#: TFRMOPTIONS.GBSCROLLING.CAPTION
+msgctxt "TFRMOPTIONS.GBSCROLLING.CAPTION"
+msgid "Scrolling"
+msgstr "Skrolování"
+
+#: TFRMOPTIONS.GBSHOWGRID.CAPTION
+msgid "Show grid in file panel"
+msgstr "Zobrazit mřížku v panelu souborů"
+
+#: TFRMOPTIONS.GBSHOWICONSMODE.CAPTION
+msgid " Show icons to the left of the filename "
+msgstr "Zobrazit ikony nalevo od názvu souboru"
+
+#: TFRMOPTIONS.GBSORTING.CAPTION
+msgid "Sorting"
+msgstr ""
+
+#: TFRMOPTIONS.GBTABS.CAPTION
+msgid "Folder tabs headers"
+msgstr "Záhlaví záložek"
+
+#: TFRMOPTIONS.GBVIEWERBOOKMODE.CAPTION
+msgid "Viewer Book Mode"
+msgstr ""
+
+#: TFRMOPTIONS.GBVIEWEREXAMPLE.CAPTION
+msgctxt "TFRMOPTIONS.GBVIEWEREXAMPLE.CAPTION"
+msgid "Example"
+msgstr "Ukázka"
+
+#: TFRMOPTIONS.GRPQUICKSEARCHFILTERKEYS.CAPTION
+msgid "Keys settings"
+msgstr ""
+
+#: TFRMOPTIONS.LBCOMMANDS.CAPTION
+msgid "Commands:"
+msgstr "Příkazy:"
+
+#: TFRMOPTIONS.LBFILTER.CAPTION
+msgid "Filter"
+msgstr "Filtr"
+
+#: TFRMOPTIONS.LBLARCHIVEADD.CAPTION
+msgid "Add:"
+msgstr ""
+
+#: TFRMOPTIONS.LBLARCHIVEEXTENSION.CAPTION
+msgctxt "TFRMOPTIONS.LBLARCHIVEEXTENSION.CAPTION"
+msgid "Extension:"
+msgstr "Přípona:"
+
+#: TFRMOPTIONS.LBLARCHIVEEXTRACT.CAPTION
+msgid "Extract:"
+msgstr ""
+
+#: TFRMOPTIONS.LBLARCHIVELIST.CAPTION
+msgid "List:"
+msgstr ""
+
+#: TFRMOPTIONS.LBLARCHIVELISTEND.CAPTION
+msgid "Listing finish (optional):"
+msgstr ""
+
+#: TFRMOPTIONS.LBLARCHIVELISTFORMAT.CAPTION
+msgid "Listing format:"
+msgstr ""
+
+#: TFRMOPTIONS.LBLARCHIVELISTSTART.CAPTION
+msgid "Listing start (optional):"
+msgstr ""
+
+#: TFRMOPTIONS.LBLARCHIVER.CAPTION
+msgid "Archiver:"
+msgstr ""
+
+#: TFRMOPTIONS.LBLAUTOSIZECOLUMN.CAPTION
+msgid "Auto size column:"
+msgstr ""
+
+#: TFRMOPTIONS.LBLBACKGROUNDCOLORVIEWERBOOK.CAPTION
+msgid "Background color in book viewer"
+msgstr ""
+
+#: TFRMOPTIONS.LBLCHAR.CAPTION
+msgid "characters"
+msgstr "znaky"
+
+#: TFRMOPTIONS.LBLCMDLINECONFIGDIR.CAPTION
+msgid "Set on command line"
+msgstr ""
+
+#: TFRMOPTIONS.LBLCONFIGCOLUMNS.CAPTION
+msgid "Configure columns for file system:"
+msgstr "Konfigurace sloupců pro systém souborů:"
+
+#: TFRMOPTIONS.LBLCOPYBUFFERSIZE.CAPTION
+msgid "Buffer size (Kb):"
+msgstr "Velikost buferu (Kb):"
+
+#: TFRMOPTIONS.LBLDATETIMEFORMAT.CAPTION
+msgid "Date and time format:"
+msgstr "Formát data a času:"
+
+#: TFRMOPTIONS.LBLDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONS.LBLDESCRIPTION.CAPTION"
+msgid "Description:"
+msgstr "Popis:"
+
+#: TFRMOPTIONS.LBLEDITORFONT.CAPTION
+msgid "Editor font"
+msgstr "Písmo editoru"
+
+#: TFRMOPTIONS.LBLFONTCOLORVIEWERBOOK.CAPTION
+msgid "Font color in book viewer"
+msgstr ""
+
+#: TFRMOPTIONS.LBLHOTKEY.CAPTION
+msgctxt "TFRMOPTIONS.LBLHOTKEY.CAPTION"
+msgid "Hot Key:"
+msgstr "Horká klávesa:"
+
+#: TFRMOPTIONS.LBLLOGFONT.CAPTION
+msgid "Log font"
+msgstr ""
+
+#: TFRMOPTIONS.LBLMAINFONT.CAPTION
+msgid "Main font"
+msgstr "Hlavní písmo"
+
+#: TFRMOPTIONS.LBLMOUSEMODE.CAPTION
+msgid "Mode:"
+msgstr "Mód:"
+
+#: TFRMOPTIONS.LBLNUMBERCOLUMNSVIEWER.CAPTION
+msgid "Number of columns in book viewer"
+msgstr ""
+
+#: TFRMOPTIONS.LBLPARAM.CAPTION
+msgid "Param:"
+msgstr "Parametr:"
+
+#: TFRMOPTIONS.LBLQUICKFILTER.CAPTION
+msgid "Quick &filter:"
+msgstr ""
+
+#: TFRMOPTIONS.LBLQUICKSEARCH.CAPTION
+msgid "Quick &search:"
+msgstr ""
+
+#: TFRMOPTIONS.LBLRUNINTERM.CAPTION
+msgid "Run in terminal:"
+msgstr "Spustit v terminálu:"
+
+#: TFRMOPTIONS.LBLRUNTERM.CAPTION
+msgid "Run terminal:"
+msgstr "Spustit terminál:"
+
+#: TFRMOPTIONS.LBLSAVEIN.CAPTION
+msgid "&Save in:"
+msgstr ""
+
+#: TFRMOPTIONS.LBLSCFILES.CAPTION
+msgid "Shortcut files:"
+msgstr ""
+
+#: TFRMOPTIONS.LBLSORTMETHOD.CAPTION
+msgid "Sort &method:"
+msgstr ""
+
+#: TFRMOPTIONS.LBLTABSPOSITION.CAPTION
+msgid "Tabs position:"
+msgstr "Pozice \"oušek\":"
+
+#: TFRMOPTIONS.LBLTOOLSPARAMETERS.CAPTION
+msgid "Additional parameters"
+msgstr ""
+
+#: TFRMOPTIONS.LBLTOOLSPATH.CAPTION
+msgid "Path to program to execute"
+msgstr ""
+
+#: TFRMOPTIONS.LBLVIEWERBOOKFONT.CAPTION
+msgid "Viewer Book Font"
+msgstr ""
+
+#: TFRMOPTIONS.LBLVIEWERFONT.CAPTION
+msgid "Viewer font"
+msgstr "Písmo prohlížeče"
+
+#: TFRMOPTIONS.LBLWIPEPASSNUMBER.CAPTION
+msgid "Number of wipe pass:"
+msgstr "Počet WIPE průchodů:"
+
+#: TFRMOPTIONS.LBTYPES.CAPTION
+msgid "Categories:"
+msgstr "Kategorie:"
+
+#: TFRMOPTIONS.LEDDRIVEBLACKLIST.HINT
+msgid "Here you can enter one or more drives, separated by \";\"."
+msgstr "Sem zadejte jeden, nebo více disků oddělených \";\"."
+
+#: TFRMOPTIONS.RBALTLETTERQS.CAPTION
+#, fuzzy
+#| msgid "Al&t+Letters"
+msgid "Alt+Letters"
+msgstr "Al&t+Písmenko"
+
+#: TFRMOPTIONS.RBCTRLALTLETTERQS.CAPTION
+#, fuzzy
+#| msgid "&Ctrl+Alt+Letters"
+msgid "Ctrl+Alt+Letters"
+msgstr "&Ctrl+Alt+Písmenko"
+
+#: TFRMOPTIONS.RBICONSSHOWALL.CAPTION
+msgctxt "TFRMOPTIONS.RBICONSSHOWALL.CAPTION"
+msgid "&All"
+msgstr "&Vše"
+
+#: TFRMOPTIONS.RBICONSSHOWALLANDEXE.CAPTION
+msgid "All associated + &EXE/LNK (slow)"
+msgstr "Všechny přidružení + &EXE/LNK (pomalé)"
+
+#: TFRMOPTIONS.RBICONSSHOWNONE.CAPTION
+msgid "&No icons"
+msgstr "Bez &ikon"
+
+#: TFRMOPTIONS.RBICONSSHOWSTANDARD.CAPTION
+msgid "&Only standard icons"
+msgstr "P&ouze standardní ikony"
+
+#: TFRMOPTIONS.RBLETTERQS.CAPTION
+#, fuzzy
+#| msgid "L&etter only"
+msgid "Letter only"
+msgstr "&Pouze písmena"
+
+#: TFRMOPTIONS.RBNONEQS.CAPTION
+#, fuzzy
+#| msgid "Di&sabled"
+msgid "Disabled"
+msgstr "&Zakázáno"
+
+#: TFRMOPTIONS.RBPROGRAMDIR.CAPTION
+msgid "Program directory (portable version)"
+msgstr "Adresář programu (\"portable\" verze)"
+
+#: TFRMOPTIONS.RBSCROLLLINEBYLINE.CAPTION
+msgctxt "TFRMOPTIONS.RBSCROLLLINEBYLINE.CAPTION"
+msgid "Line by line"
+msgstr "Řádek po řádku"
+
+#: TFRMOPTIONS.RBSCROLLLINEBYLINECURSOR.CAPTION
+msgctxt "TFRMOPTIONS.RBSCROLLLINEBYLINECURSOR.CAPTION"
+msgid "Line by line with cursor movement"
+msgstr "Řádek po řádku s posuvem kursoru"
+
+#: TFRMOPTIONS.RBSCROLLPAGEBYPAGE.CAPTION
+msgctxt "TFRMOPTIONS.RBSCROLLPAGEBYPAGE.CAPTION"
+msgid "Page by page"
+msgstr "Stranu po straně"
+
+#: TFRMOPTIONS.RBUSEMMAPINSEARCH.CAPTION
+msgid "Use memory mapping for search text in files"
+msgstr "Použít mapování paměti pro hledání textu v souborech"
+
+#: TFRMOPTIONS.RBUSERHOMEDIR.CAPTION
+msgid "User home directory"
+msgstr "Domovský adresář uživatele"
+
+#: TFRMOPTIONS.RBUSESTREAMINSEARCH.CAPTION
+msgid "Use stream for search text in files"
+msgstr "Použit stream pro hledání textu v souborech"
+
+#: TFRMOPTIONS.STGHOTKEYS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONS.STGHOTKEYS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Hotkey"
+msgstr ""
+
+#: TFRMOPTIONS.STGHOTKEYS.COLUMNS[1].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONS.STGHOTKEYS.COLUMNS[1].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Parameters"
+msgstr ""
+
+#: TFRMOPTIONS.STGTOOLS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONS.STGTOOLS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Tool"
+msgstr ""
+
+#: TFRMOPTIONS.SUBLABEL.CAPTION
+msgctxt "TFRMOPTIONS.SUBLABEL.CAPTION"
+msgid "Drive blacklist:"
+msgstr ""
+
+#: TFRMOPTIONS.TBARCHIVERADDITIONAL.CAPTION
+msgctxt "TFRMOPTIONS.TBARCHIVERADDITIONAL.CAPTION"
+msgid "Additional"
+msgstr ""
+
+#: TFRMOPTIONS.TBARCHIVERGENERAL.CAPTION
+msgctxt "TFRMOPTIONS.TBARCHIVERGENERAL.CAPTION"
+msgid "General"
+msgstr "Hlavní"
+
+#: TFRMOPTIONSCOLORS.BBTNADDCATEGORY.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BBTNADDCATEGORY.CAPTION"
+msgid "Add"
+msgstr "Přidat"
+
+#: TFRMOPTIONSCOLORS.BBTNAPPLYCATEGORY.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BBTNAPPLYCATEGORY.CAPTION"
+msgid "Apply"
+msgstr "Použít"
+
+#: TFRMOPTIONSCOLORS.BBTNDELETECATEGORY.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BBTNDELETECATEGORY.CAPTION"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMOPTIONSCOLORS.BTNBACKCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNBACKCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNBACKCOLOR2.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNBACKCOLOR2.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNCATEGORYCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNCATEGORYCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNCURSORCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNCURSORCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNCURSORTEXT.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNCURSORTEXT.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNFORECOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNFORECOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNMARKCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNMARKCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNSEARCHTEMPLATE.HINT
+msgctxt "TFRMOPTIONSCOLORS.BTNSEARCHTEMPLATE.HINT"
+msgid "Template..."
+msgstr "Šablony..."
+
+#: TFRMOPTIONSCOLORS.CBACKGRNDLABEL.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.CBACKGRNDLABEL.CAPTION"
+msgid "BackGround:"
+msgstr "Pozadí:"
+
+#: TFRMOPTIONSCOLORS.CBBUSEFRAMECURSOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.CBBUSEFRAMECURSOR.CAPTION"
+msgid "Use Frame Cursor"
+msgstr ""
+
+#: TFRMOPTIONSCOLORS.CBBUSEINVERTEDSELECTION.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.CBBUSEINVERTEDSELECTION.CAPTION"
+msgid "Use Inverted Selection"
+msgstr "Použít obrácený výběr"
+
+#: TFRMOPTIONSCOLORS.CTEXTLABEL.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.CTEXTLABEL.CAPTION"
+msgid "Text Color:"
+msgstr "Barva písma:"
+
+#: TFRMOPTIONSCOLORS.GBEXAMPLE.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.GBEXAMPLE.CAPTION"
+msgid "Example"
+msgstr "Ukázka"
+
+#: TFRMOPTIONSCOLORS.GBFILETYPESCOLORS.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.GBFILETYPESCOLORS.CAPTION"
+msgid "File types colors"
+msgstr "Obarvování souborů dle typu"
+
+#: TFRMOPTIONSCOLORS.LBLBACKGROUND2.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLBACKGROUND2.CAPTION"
+msgid "Background 2:"
+msgstr "Pozadí 2:"
+
+#: TFRMOPTIONSCOLORS.LBLCATEGORYATTR.CAPTION
+#, fuzzy
+msgctxt "TFRMOPTIONSCOLORS.LBLCATEGORYATTR.CAPTION"
+msgid "Category attributes:"
+msgstr "Atributy kategorií:"
+
+#: TFRMOPTIONSCOLORS.LBLCATEGORYCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLCATEGORYCOLOR.CAPTION"
+msgid "Category color:"
+msgstr "Barva kategorie:"
+
+#: TFRMOPTIONSCOLORS.LBLCATEGORYMASK.CAPTION
+#, fuzzy
+msgctxt "TFRMOPTIONSCOLORS.LBLCATEGORYMASK.CAPTION"
+msgid "Category mask:"
+msgstr "Maska kategorie:"
+
+#: TFRMOPTIONSCOLORS.LBLCATEGORYNAME.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLCATEGORYNAME.CAPTION"
+msgid "Category name:"
+msgstr "Název kategore:"
+
+#: TFRMOPTIONSCOLORS.LBLCURSORCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLCURSORCOLOR.CAPTION"
+msgid "Cursor Color:"
+msgstr "Barva kursoru:"
+
+#: TFRMOPTIONSCOLORS.LBLCURSORTEXT.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLCURSORTEXT.CAPTION"
+msgid "Cursor Text:"
+msgstr "Text kursoru:"
+
+#: TFRMOPTIONSCOLORS.LBLINACTIVEPANELBRIGHTNESS.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLINACTIVEPANELBRIGHTNESS.CAPTION"
+msgid "Brightness level of inactive panel"
+msgstr ""
+
+#: TFRMOPTIONSCOLORS.LBLMARKCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLMARKCOLOR.CAPTION"
+msgid "Mark Color:"
+msgstr "Barva označených:"
+
+#: TFRMOPTIONSCOLORS.TSFILEPANELS.CAPTION
+#, fuzzy
+msgctxt "TFRMOPTIONSCOLORS.TSFILEPANELS.CAPTION"
+msgid "File panels"
+msgstr "Panely souborů"
+
+#: TFRMOPTIONSCOLORS.TSFILETYPES.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.TSFILETYPES.CAPTION"
+msgid "File types"
+msgstr "Typy souborů"
+
+#: TFRMOPTIONSPLUGINS.BTNADDPLUGIN.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.BTNADDPLUGIN.CAPTION"
+msgid "Add"
+msgstr "Přidat"
+
+#: TFRMOPTIONSPLUGINS.BTNCONFIGPLUGIN.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.BTNCONFIGPLUGIN.CAPTION"
+msgid "Configure"
+msgstr "Konfigurovat"
+
+#: TFRMOPTIONSPLUGINS.BTNENABLEPLUGIN.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.BTNENABLEPLUGIN.CAPTION"
+msgid "Enable"
+msgstr "Povolit"
+
+#: TFRMOPTIONSPLUGINS.BTNREMOVEPLUGIN.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.BTNREMOVEPLUGIN.CAPTION"
+msgid "Remove"
+msgstr "Smazat"
+
+#: TFRMOPTIONSPLUGINS.BTNTWEAKPLUGIN.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.BTNTWEAKPLUGIN.CAPTION"
+msgid "Tweak"
+msgstr "Ladění"
+
+#: TFRMOPTIONSPLUGINS.LBLDSXDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.LBLDSXDESCRIPTION.CAPTION"
+msgid "Search plugins allow to use alternative search algorithms or external tools (like \"locate\", etc.)"
+msgstr "Vyhledávací pluginy umožňují použití při hledání alternativních vyhledávacích algoritmů nebo externích nástrojů (např. \"najít \", atd.)"
+
+#: TFRMOPTIONSPLUGINS.LBLWCXDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.LBLWCXDESCRIPTION.CAPTION"
+msgid "Packer plugins are used to work with archives."
+msgstr "Komprimační zásuvný modul pro práci s archívy."
+
+#: TFRMOPTIONSPLUGINS.LBLWDXDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.LBLWDXDESCRIPTION.CAPTION"
+msgid "Content plugins allow to display extended file details like mp3 tags or image attributes in file lists, or use them in search and multi-rename tool"
+msgstr "Obsahové zásuvné moduly umožňují zobrazit rozšířené informace jako jsou MP3 tagy nebo atributy obrázků v seznamu souborů, nebo je používat k vyhledávání a \"multi-přejmenování\""
+
+#: TFRMOPTIONSPLUGINS.LBLWFXDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.LBLWFXDESCRIPTION.CAPTION"
+msgid "File system plugins allow access to disks inaccessible by operating system or to external devices like Palm/PocketPC."
+msgstr "Zásuvné moduly souborovýcch systémů umožní přístup na běžně nedostupná média jako jsou například externí zařízení (Palm/PocketPC)."
+
+#: TFRMOPTIONSPLUGINS.LBLWLXDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.LBLWLXDESCRIPTION.CAPTION"
+msgid "Viewer plugins allow to display file formats like images, spreadsheets, databases etc. in Viewer (F3, Ctrl+Q)"
+msgstr "Zobrazovací zásuvné moduly umožňují prohlížení souborů jako jsou například obrázky, databáze a podobně v prohlížeči (F3, nebo Ctrl+Q)"
+
+#: TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Active"
+msgstr "Aktivní"
+
+#: TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[1].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[1].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Plugin"
+msgstr ""
+
+#: TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[2].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[2].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Registered for"
+msgstr "Registrováno pro"
+
+#: TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[3].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[3].TGRIDCOLUMNTITLE.CAPTION"
+msgid "File name"
+msgstr "Název souboru"
+
+#: TFRMOPTIONSPLUGINS.TSDSX.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.TSDSX.CAPTION"
+msgid "Search plugins (.DSX)"
+msgstr "Vyhledávací pluginy (.DSX)"
+
+#: TFRMOPTIONSPLUGINS.TSWCX.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.TSWCX.CAPTION"
+msgid "Packer plugins (.WCX)"
+msgstr "Komprimační pluginy (.WCX)"
+
+#: TFRMOPTIONSPLUGINS.TSWDX.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.TSWDX.CAPTION"
+msgid "Content plugins (.WDX)"
+msgstr "Content plugins (.WDX)"
+
+#: TFRMOPTIONSPLUGINS.TSWFX.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.TSWFX.CAPTION"
+msgid "File system plugins (.WFX)"
+msgstr "Pluginy souborových systémů (.WFX)"
+
+#: TFRMOPTIONSPLUGINS.TSWLX.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.TSWLX.CAPTION"
+msgid "Viewer plugins (.WLX)"
+msgstr "Zobrazovací pluginy (.WLX)"
+
+#: TFRMOPTIONSTOOLTIPS.BTNADDFIELDS.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.BTNADDFIELDS.CAPTION"
+msgid "Add"
+msgstr "Přidat"
+
+#: TFRMOPTIONSTOOLTIPS.BTNAPPLYFIELDS.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.BTNAPPLYFIELDS.CAPTION"
+msgid "Apply"
+msgstr "Použít"
+
+#: TFRMOPTIONSTOOLTIPS.BTNDELETEFIELDS.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.BTNDELETEFIELDS.CAPTION"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMOPTIONSTOOLTIPS.BTNFIELDSLIST.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.BTNFIELDSLIST.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSTOOLTIPS.BTNFIELDSSEARCHTEMPLATE.HINT
+msgctxt "TFRMOPTIONSTOOLTIPS.BTNFIELDSSEARCHTEMPLATE.HINT"
+msgid "Template..."
+msgstr "Šablony..."
+
+#: TFRMOPTIONSTOOLTIPS.GBCUSTOMFIELDS.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.GBCUSTOMFIELDS.CAPTION"
+msgid "Custom fields by file type"
+msgstr ""
+
+#: TFRMOPTIONSTOOLTIPS.GBSHOWTOOLTIP.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.GBSHOWTOOLTIP.CAPTION"
+msgid "Show tool tip"
+msgstr ""
+
+#: TFRMOPTIONSTOOLTIPS.LBLFIELDSLIST.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.LBLFIELDSLIST.CAPTION"
+msgid "Category hint:"
+msgstr ""
+
+#: TFRMOPTIONSTOOLTIPS.LBLFIELDSMASK.CAPTION
+#, fuzzy
+msgctxt "TFRMOPTIONSTOOLTIPS.LBLFIELDSMASK.CAPTION"
+msgid "Category mask:"
+msgstr "Maska kategorie:"
+
+#: TFRMOPTIONSTOOLTIPS.LBLFIELDSNAME.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.LBLFIELDSNAME.CAPTION"
+msgid "Category name:"
+msgstr "Název kategore:"
+
+#: TFRMOPTIONSTOOLTIPS.RBTOOLTIPALLFILES.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.RBTOOLTIPALLFILES.CAPTION"
+msgid "Show tool tip for all files in file panel"
+msgstr ""
+
+#: TFRMOPTIONSTOOLTIPS.RBTOOLTIPNONE.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.RBTOOLTIPNONE.CAPTION"
+msgid "Don't show"
+msgstr ""
+
+#: TFRMOPTIONSTOOLTIPS.RBTOOLTIPONLYLARGE.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.RBTOOLTIPONLYLARGE.CAPTION"
+msgid "Show tool tip for files in file panel if truncated"
+msgstr ""
+
+#: TFRMPACKDLG.BTNCANCEL.CAPTION
+msgctxt "TFRMPACKDLG.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMPACKDLG.BTNCONFIG.CAPTION
+msgctxt "TFRMPACKDLG.BTNCONFIG.CAPTION"
+msgid "&Configure"
+msgstr "&Konfigurovat"
+
+#: TFRMPACKDLG.BTNHELP.CAPTION
+msgctxt "TFRMPACKDLG.BTNHELP.CAPTION"
+msgid "Help"
+msgstr "Nápověda"
+
+#: TFRMPACKDLG.BTNOK.CAPTION
+msgctxt "TFRMPACKDLG.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMPACKDLG.CAPTION
+msgid "Pack files"
+msgstr "Komprimovat soubory"
+
+#: TFRMPACKDLG.CBCREATESEPARATEARCHIVES.CAPTION
+msgid "Create separate archives, o&ne per selected file/dir"
+msgstr "Create separate archives, o&ne per selected file/dir"
+
+#: TFRMPACKDLG.CBCREATESFX.CAPTION
+msgid "Create self e&xtracting archive"
+msgstr "Sa&morozbalovací archív"
+
+#: TFRMPACKDLG.CBENCRYPT.CAPTION
+msgid "Encr&ypt"
+msgstr "&Zakódovat"
+
+#: TFRMPACKDLG.CBMOVETOARCHIVE.CAPTION
+msgid "M&ove to archive"
+msgstr "Pře&sunout do archívu"
+
+#: TFRMPACKDLG.CBMULTIVOLUME.CAPTION
+msgid "&Multiple disk archive"
+msgstr "&Vícesvazkový archív"
+
+#: TFRMPACKDLG.CBOTHERPLUGINS.CAPTION
+msgid "=>"
+msgstr "=>"
+
+#: TFRMPACKDLG.CBRECURSE.CAPTION
+msgid "Recursively pack &subdirectories"
+msgstr "Recursively pack &podadresáře"
+
+#: TFRMPACKDLG.CBSTOREDIR.CAPTION
+msgid "Also &pack path names (only recursed)"
+msgstr "Kom&primovat s cestou (only recursed)"
+
+#: TFRMPACKDLG.LBLPROMPT.CAPTION
+msgid "Pack file(s) to the file:"
+msgstr "Komprimovat soubor(y) do souboru:"
+
+#: TFRMPACKDLG.RGPACKER.CAPTION
+msgid "Packer"
+msgstr "Komprimátor"
+
+#: TFRMPACKINFODLG.BTNCLOSE.CAPTION
+msgctxt "TFRMPACKINFODLG.BTNCLOSE.CAPTION"
+msgid "Close"
+msgstr "Zavřít"
+
+#: TFRMPACKINFODLG.BTNUNPACKALLANDEXEC.CAPTION
+msgid "Unpack &all and execute"
+msgstr "Rozbalit &vše a spustit"
+
+#: TFRMPACKINFODLG.BTNUNPACKANDEXEC.CAPTION
+msgid "&Unpack and execute"
+msgstr "&Rozbalit a spustit"
+
+#: TFRMPACKINFODLG.FRMPACKINFODLG.CAPTION
+msgctxt "TFRMPACKINFODLG.FRMPACKINFODLG.CAPTION"
+msgid "Properties of packed file"
+msgstr "Vlastnosti komprimovaného souboru"
+
+#: TFRMPACKINFODLG.LBLATTRIBUTES.CAPTION
+msgid "Attributes:"
+msgstr "Atributy:"
+
+#: TFRMPACKINFODLG.LBLCOMPRESSIONRATIO.CAPTION
+#, fuzzy
+msgid "Compression ratio:"
+msgstr "Kompresní poměr:"
+
+#: TFRMPACKINFODLG.LBLDATE.CAPTION
+msgid "Date:"
+msgstr "Datum:"
+
+#: TFRMPACKINFODLG.LBLMETHOD.CAPTION
+msgid "Method:"
+msgstr "Metoda:"
+
+#: TFRMPACKINFODLG.LBLORIGINALSIZE.CAPTION
+msgid "Original size:"
+msgstr "Původní velikost:"
+
+#: TFRMPACKINFODLG.LBLPACKEDFILE.CAPTION
+msgid "File:"
+msgstr "Soubor:"
+
+#: TFRMPACKINFODLG.LBLPACKEDSIZE.CAPTION
+msgid "Packed size:"
+msgstr "Zkomprimovaná velikost:"
+
+#: TFRMPACKINFODLG.LBLPACKER.CAPTION
+msgid "Packer:"
+msgstr "Komprimátor:"
+
+#: TFRMPACKINFODLG.LBLTIME.CAPTION
+msgid "Time:"
+msgstr "Čas:"
+
+#: TFRMSETFILEPROPERTIES.BTNCANCEL.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMSETFILEPROPERTIES.BTNOK.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMSETFILEPROPERTIES.CBSGID.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CBSGID.CAPTION"
+msgid "SGID"
+msgstr "SGID"
+
+#: TFRMSETFILEPROPERTIES.CBSTICKY.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CBSTICKY.CAPTION"
+msgid "Sticky"
+msgstr "Sticky"
+
+#: TFRMSETFILEPROPERTIES.CBSUID.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CBSUID.CAPTION"
+msgid "SUID"
+msgstr "SUID"
+
+#: TFRMSETFILEPROPERTIES.CHKARCHIVE.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CHKARCHIVE.CAPTION"
+msgid "Archive"
+msgstr ""
+
+#: TFRMSETFILEPROPERTIES.CHKCREATIONTIME.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CHKCREATIONTIME.CAPTION"
+msgid "Created:"
+msgstr "Vytvořeno:"
+
+#: TFRMSETFILEPROPERTIES.CHKHIDDEN.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CHKHIDDEN.CAPTION"
+msgid "Hidden"
+msgstr ""
+
+#: TFRMSETFILEPROPERTIES.CHKLASTACCESSTIME.CAPTION
+msgid "Accessed:"
+msgstr ""
+
+#: TFRMSETFILEPROPERTIES.CHKLASTWRITETIME.CAPTION
+msgid "Modified:"
+msgstr ""
+
+#: TFRMSETFILEPROPERTIES.CHKREADONLY.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CHKREADONLY.CAPTION"
+msgid "Read only"
+msgstr ""
+
+#: TFRMSETFILEPROPERTIES.CHKRECURSIVE.CAPTION
+msgid "Recursive"
+msgstr ""
+
+#: TFRMSETFILEPROPERTIES.CHKSYSTEM.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CHKSYSTEM.CAPTION"
+msgid "System"
+msgstr ""
+
+#: TFRMSETFILEPROPERTIES.FRMSETFILEPROPERTIES.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.FRMSETFILEPROPERTIES.CAPTION"
+msgid "Change attributes"
+msgstr ""
+
+#: TFRMSETFILEPROPERTIES.GBTIMESAMP.CAPTION
+msgid "Timestamp properties"
+msgstr ""
+
+#: TFRMSETFILEPROPERTIES.GBUNIXATTRIBUTES.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.GBUNIXATTRIBUTES.CAPTION"
+msgid "Attributes"
+msgstr "Atributy"
+
+#: TFRMSETFILEPROPERTIES.GBWINATTRIBUTES.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.GBWINATTRIBUTES.CAPTION"
+msgid "Attributes"
+msgstr "Atributy"
+
+#: TFRMSETFILEPROPERTIES.LBLATTRBITSSTR.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTRBITSSTR.CAPTION"
+msgid "Bits:"
+msgstr "Bitů:"
+
+#: TFRMSETFILEPROPERTIES.LBLATTRGROUPSTR.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTRGROUPSTR.CAPTION"
+msgid "Group"
+msgstr "Skupina"
+
+#: TFRMSETFILEPROPERTIES.LBLATTRINFO.CAPTION
+msgid "(gray field means unchanged value)"
+msgstr ""
+
+#: TFRMSETFILEPROPERTIES.LBLATTROTHERSTR.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTROTHERSTR.CAPTION"
+msgid "Other"
+msgstr "Ostatní"
+
+#: TFRMSETFILEPROPERTIES.LBLATTROWNERSTR.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTROWNERSTR.CAPTION"
+msgid "Owner"
+msgstr "Vlastník"
+
+#: TFRMSETFILEPROPERTIES.LBLATTRTEXT.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTRTEXT.CAPTION"
+msgid "-----------"
+msgstr "-----------"
+
+#: TFRMSETFILEPROPERTIES.LBLATTRTEXTSTR.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTRTEXTSTR.CAPTION"
+msgid "Text:"
+msgstr "Reprezentováno v textu:"
+
+#: TFRMSETFILEPROPERTIES.LBLEXEC.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLEXEC.CAPTION"
+msgid "Execute"
+msgstr "Spustit"
+
+#: TFRMSETFILEPROPERTIES.LBLOCTAL.CAPTION
+#, fuzzy
+msgctxt "TFRMSETFILEPROPERTIES.LBLOCTAL.CAPTION"
+msgid "Octal:"
+msgstr "Tečka:"
+
+#: TFRMSETFILEPROPERTIES.LBLREAD.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLREAD.CAPTION"
+msgid "Read"
+msgstr "Čtení"
+
+#: TFRMSETFILEPROPERTIES.LBLWRITE.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLWRITE.CAPTION"
+msgid "Write"
+msgstr "Zápis"
+
+#: TFRMSPLITTER.BTNCANCEL.CAPTION
+#, fuzzy
+#| msgid "Exit"
+msgctxt "TFRMSPLITTER.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Konec"
+
+#: TFRMSPLITTER.BTNFTCHOICE.CAPTION
+msgctxt "TFRMSPLITTER.BTNFTCHOICE.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMSPLITTER.BTNOK.CAPTION
+msgctxt "TFRMSPLITTER.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMSPLITTER.CMBXSIZE.TEXT
+msgid "1457664B - 3.5\""
+msgstr "1457664B - 3.5\""
+
+#: TFRMSPLITTER.FRMSPLITTER.CAPTION
+msgctxt "TFRMSPLITTER.FRMSPLITTER.CAPTION"
+msgid "Splitter"
+msgstr "Dělení souborů"
+
+#: TFRMSPLITTER.GRBXFILE.CAPTION
+msgctxt "TFRMSPLITTER.GRBXFILE.CAPTION"
+msgid "File name"
+msgstr "Název souboru"
+
+#: TFRMSPLITTER.GRBXSIZE.CAPTION
+#, fuzzy
+#| msgid "File size"
+msgid "Size and number of parts"
+msgstr "Velikost souboru"
+
+#: TFRMSPLITTER.LBDIRTARGET.CAPTION
+msgid "Directory target"
+msgstr "Cílový adresář"
+
+#: TFRMSPLITTER.LBFILESOURCE.CAPTION
+msgid "File source"
+msgstr "Zdroj souboru"
+
+#: TFRMSPLITTER.LBLNUMBERPARTS.CAPTION
+msgid "Number of parts"
+msgstr ""
+
+#: TFRMSPLITTER.RBTNGIGAB.CAPTION
+msgctxt "TFRMSPLITTER.RBTNGIGAB.CAPTION"
+msgid "Gigabytes"
+msgstr ""
+
+#: TFRMSPLITTER.RBTNKILOB.CAPTION
+msgctxt "TFRMSPLITTER.RBTNKILOB.CAPTION"
+msgid "Kilobytes"
+msgstr ""
+
+#: TFRMSPLITTER.RBTNMEGAB.CAPTION
+msgctxt "TFRMSPLITTER.RBTNMEGAB.CAPTION"
+msgid "Megabytes"
+msgstr ""
+
+#: TFRMSYMLINK.BTNCANCEL.CAPTION
+msgctxt "TFRMSYMLINK.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMSYMLINK.BTNOK.CAPTION
+msgctxt "TFRMSYMLINK.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMSYMLINK.CAPTION
+#, fuzzy
+#| msgid "Create symlink"
+msgid "Create symbolic link"
+msgstr "Vytvořit symbolický odkaz"
+
+#: TFRMSYMLINK.LBLEXISTINGFILE.CAPTION
+#, fuzzy
+#| msgid "Existing destination (where will link point)"
+msgctxt "TFRMSYMLINK.LBLEXISTINGFILE.CAPTION"
+msgid "Destination that the link will point to"
+msgstr "Existující cíl (where will link point)"
+
+#: TFRMSYMLINK.LBLLINKTOCREATE.CAPTION
+msgctxt "TFRMSYMLINK.LBLLINKTOCREATE.CAPTION"
+msgid "Link name"
+msgstr "Název odkazu"
+
+#: TFRMTWEAKPLUGIN.BTNADD.CAPTION
+msgid "Add new"
+msgstr "Přidat nový"
+
+#: TFRMTWEAKPLUGIN.BTNCANCEL.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMTWEAKPLUGIN.BTNCHANGE.CAPTION
+msgid "Change"
+msgstr "Změnit"
+
+#: TFRMTWEAKPLUGIN.BTNDEFAULT.CAPTION
+msgid "Default"
+msgstr "Výchozí"
+
+#: TFRMTWEAKPLUGIN.BTNOK.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMTWEAKPLUGIN.BTNREMOVE.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.BTNREMOVE.CAPTION"
+msgid "Remove"
+msgstr "Vymazat"
+
+#: TFRMTWEAKPLUGIN.CAPTION
+msgid "Tweak plugin"
+msgstr "Vylepšovací plugin"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_BY_CONTENT.CAPTION
+msgid "Detect archive type by content"
+msgstr "Detekovat typ archívu podle obsahu"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_DELETE.CAPTION
+msgid "Can delete files"
+msgstr "Můžete mazat soubory"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_ENCRYPT.CAPTION
+msgid "Supports encryption"
+msgstr "Podporuje kódování"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_HIDE.CAPTION
+msgid "Show as normal files (hide packer icon)"
+msgstr "Zobrazit jako normální soubory (skrýt ikonu kompresoru)"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_MEMPACK.CAPTION
+msgid "Supports packing in memory"
+msgstr "Podporuje komprimaci v paměti"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_MODIFY.CAPTION
+msgid "Can modify exisiting archives"
+msgstr "Můžete měnit stávající archívy"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_MULTIPLE.CAPTION
+msgid "Archive can contain multiple files"
+msgstr "Archiv může obsahovat více souborů"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_NEW.CAPTION
+msgid "Can create new archives"
+msgstr "Můžete vytvářet nové archívy"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_OPTIONS.CAPTION
+msgid "Supports the options dialogbox"
+msgstr "Podporuje dialog s nastavením"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_SEARCHTEXT.CAPTION
+msgid "Allow searching for text in archives"
+msgstr "Podporuje vyhledávání textu v archívu"
+
+#: TFRMTWEAKPLUGIN.LBLDESCRIPTION.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.LBLDESCRIPTION.CAPTION"
+msgid "Description:"
+msgstr "Popis:"
+
+#: TFRMTWEAKPLUGIN.LBLDETECTSTR.CAPTION
+msgid "Detect string:"
+msgstr "Detekovaný text:"
+
+#: TFRMTWEAKPLUGIN.LBLEXTENSION.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.LBLEXTENSION.CAPTION"
+msgid "Extension:"
+msgstr "Přípona:"
+
+#: TFRMTWEAKPLUGIN.LBLFLAGS.CAPTION
+msgid "Flags:"
+msgstr "Vlajky:"
+
+#: TFRMTWEAKPLUGIN.LBLNAME.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.LBLNAME.CAPTION"
+msgid "Name:"
+msgstr "Jméno:"
+
+#: TFRMTWEAKPLUGIN.LBLPLUGIN.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.LBLPLUGIN.CAPTION"
+msgid "Plugin:"
+msgstr "Zásuvný modul:"
+
+#: TFRMTWEAKPLUGIN.LBLPLUGIN1.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.LBLPLUGIN1.CAPTION"
+msgid "Plugin:"
+msgstr "Zásuvný modul:"
+
+#: TFRMVIEWER.BTN270.HINT
+msgctxt "TFRMVIEWER.BTN270.HINT"
+msgid "- 90"
+msgstr ""
+
+#: TFRMVIEWER.BTN90.HINT
+msgctxt "TFRMVIEWER.BTN90.HINT"
+msgid "+ 90"
+msgstr ""
+
+#: TFRMVIEWER.BTNCOPYFILE.HINT
+msgctxt "TFRMVIEWER.BTNCOPYFILE.HINT"
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: TFRMVIEWER.BTNCOPYFILE1.HINT
+msgctxt "TFRMVIEWER.BTNCOPYFILE1.HINT"
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: TFRMVIEWER.BTNCUTTUIMAGE.HINT
+msgctxt "TFRMVIEWER.BTNCUTTUIMAGE.HINT"
+msgid "Crop"
+msgstr ""
+
+#: TFRMVIEWER.BTNDELETEFILE.HINT
+msgctxt "TFRMVIEWER.BTNDELETEFILE.HINT"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMVIEWER.BTNDELETEFILE1.HINT
+msgctxt "TFRMVIEWER.BTNDELETEFILE1.HINT"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: TFRMVIEWER.BTNFULLSCREEN.HINT
+msgctxt "TFRMVIEWER.BTNFULLSCREEN.HINT"
+msgid "Full Screen"
+msgstr ""
+
+#: TFRMVIEWER.BTNGIFMOVE.CAPTION
+msgctxt "TFRMVIEWER.BTNGIFMOVE.CAPTION"
+msgid "||"
+msgstr ""
+
+#: TFRMVIEWER.BTNGIFTOBMP.CAPTION
+msgid "S"
+msgstr ""
+
+#: TFRMVIEWER.BTNHIGHTLIGHT.HINT
+msgctxt "TFRMVIEWER.BTNHIGHTLIGHT.HINT"
+msgid "Highlight"
+msgstr ""
+
+#: TFRMVIEWER.BTNMIRROR.HINT
+msgctxt "TFRMVIEWER.BTNMIRROR.HINT"
+msgid "Mirror"
+msgstr ""
+
+#: TFRMVIEWER.BTNMOVEFILE.HINT
+msgctxt "TFRMVIEWER.BTNMOVEFILE.HINT"
+msgid "Move"
+msgstr "Přesunout"
+
+#: TFRMVIEWER.BTNMOVEFILE1.HINT
+msgctxt "TFRMVIEWER.BTNMOVEFILE1.HINT"
+msgid "Move"
+msgstr "Přesunout"
+
+#: TFRMVIEWER.BTNNEXT.HINT
+msgctxt "TFRMVIEWER.BTNNEXT.HINT"
+msgid "Next"
+msgstr ""
+
+#: TFRMVIEWER.BTNNEXT1.HINT
+msgctxt "TFRMVIEWER.BTNNEXT1.HINT"
+msgid "Next"
+msgstr ""
+
+#: TFRMVIEWER.BTNNEXTGIFFRAME.CAPTION
+msgid "||>"
+msgstr ""
+
+#: TFRMVIEWER.BTNPAINT.HINT
+msgctxt "TFRMVIEWER.BTNPAINT.HINT"
+msgid "Paint"
+msgstr ""
+
+#: TFRMVIEWER.BTNPREV.HINT
+msgctxt "TFRMVIEWER.BTNPREV.HINT"
+msgid "Previous"
+msgstr ""
+
+#: TFRMVIEWER.BTNPREV1.HINT
+msgctxt "TFRMVIEWER.BTNPREV1.HINT"
+msgid "Previous"
+msgstr ""
+
+#: TFRMVIEWER.BTNPREVGIFFRAME.CAPTION
+msgid "<||"
+msgstr ""
+
+#: TFRMVIEWER.BTNREDEYE.HINT
+msgid "Red Eyes"
+msgstr ""
+
+#: TFRMVIEWER.BTNRELOAD.HINT
+msgctxt "TFRMVIEWER.BTNRELOAD.HINT"
+msgid "Reload"
+msgstr ""
+
+#: TFRMVIEWER.BTNRELOAD1.HINT
+msgctxt "TFRMVIEWER.BTNRELOAD1.HINT"
+msgid "Reload"
+msgstr ""
+
+#: TFRMVIEWER.BTNRESIZE.HINT
+msgctxt "TFRMVIEWER.BTNRESIZE.HINT"
+msgid "Resize"
+msgstr ""
+
+#: TFRMVIEWER.BTNUNDO.HINT
+msgctxt "TFRMVIEWER.BTNUNDO.HINT"
+msgid "Undo"
+msgstr "Zpět"
+
+#: TFRMVIEWER.BTNZOOMIN.HINT
+msgctxt "TFRMVIEWER.BTNZOOMIN.HINT"
+msgid "Zoom In"
+msgstr ""
+
+#: TFRMVIEWER.BTNZOOMOUT.HINT
+msgctxt "TFRMVIEWER.BTNZOOMOUT.HINT"
+msgid "Zoom Out"
+msgstr ""
+
+#: TFRMVIEWER.CBSLIDESHOW.CAPTION
+msgctxt "TFRMVIEWER.CBSLIDESHOW.CAPTION"
+msgid "Slide Show"
+msgstr ""
+
+#: TFRMVIEWER.COMBOBOXPAINT.TEXT
+msgid "Pen"
+msgstr ""
+
+#: TFRMVIEWER.COMBOBOXWIDTH.TEXT
+msgctxt "TFRMVIEWER.COMBOBOXWIDTH.TEXT"
+msgid "1"
+msgstr "1"
+
+#: TFRMVIEWER.FRMVIEWER.CAPTION
+msgctxt "TFRMVIEWER.FRMVIEWER.CAPTION"
+msgid "Viewer"
+msgstr "Prohlížeč"
+
+#: TFRMVIEWER.GBOXHIGHTLIGHT.CAPTION
+msgctxt "TFRMVIEWER.GBOXHIGHTLIGHT.CAPTION"
+msgid "Highlight"
+msgstr ""
+
+#: TFRMVIEWER.GBOXPAINT.CAPTION
+msgctxt "TFRMVIEWER.GBOXPAINT.CAPTION"
+msgid "Paint"
+msgstr ""
+
+#: TFRMVIEWER.GBOXSLIDESHOW.CAPTION
+msgctxt "TFRMVIEWER.GBOXSLIDESHOW.CAPTION"
+msgid "Slide Show"
+msgstr ""
+
+#: TFRMVIEWER.GBOXVIEW.CAPTION
+msgctxt "TFRMVIEWER.GBOXVIEW.CAPTION"
+msgid "View"
+msgstr "Zobrazit"
+
+#: TFRMVIEWER.LBLHIGHTLIGHT.CAPTION
+msgid "0x0"
+msgstr ""
+
+#: TFRMVIEWER.MI180.CAPTION
+msgid "+ 180"
+msgstr ""
+
+#: TFRMVIEWER.MI270.CAPTION
+msgctxt "TFRMVIEWER.MI270.CAPTION"
+msgid "- 90"
+msgstr ""
+
+#: TFRMVIEWER.MI90.CAPTION
+msgctxt "TFRMVIEWER.MI90.CAPTION"
+msgid "+ 90"
+msgstr ""
+
+#: TFRMVIEWER.MIABOUT.CAPTION
+msgctxt "TFRMVIEWER.MIABOUT.CAPTION"
+msgid "About"
+msgstr "O programu"
+
+#: TFRMVIEWER.MIABOUT2.CAPTION
+msgid "About Viewer..."
+msgstr "O prohlížeči..."
+
+#: TFRMVIEWER.MIBIN.CAPTION
+msgid "Show as &Bin"
+msgstr "Zobrazit &binárně"
+
+#: TFRMVIEWER.MICOPYTOCLIPBOARD.CAPTION
+msgctxt "TFRMVIEWER.MICOPYTOCLIPBOARD.CAPTION"
+msgid "Copy To Clipboard"
+msgstr "Kopírovat do schránky"
+
+#: TFRMVIEWER.MIDIV1.CAPTION
+msgctxt "TFRMVIEWER.MIDIV1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MIDIV2.CAPTION
+msgctxt "TFRMVIEWER.MIDIV2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MIDIV3.CAPTION
+msgctxt "TFRMVIEWER.MIDIV3.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MIDIV4.CAPTION
+msgctxt "TFRMVIEWER.MIDIV4.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MIDIV5.CAPTION
+msgctxt "TFRMVIEWER.MIDIV5.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MIEDIT.CAPTION
+msgctxt "TFRMVIEWER.MIEDIT.CAPTION"
+msgid "&Edit"
+msgstr "&Edit"
+
+#: TFRMVIEWER.MIENCODING.CAPTION
+msgctxt "TFRMVIEWER.MIENCODING.CAPTION"
+msgid "En&coding"
+msgstr "Kó&dování"
+
+#: TFRMVIEWER.MIEXIT.CAPTION
+msgctxt "TFRMVIEWER.MIEXIT.CAPTION"
+msgid "E&xit"
+msgstr "&Konec"
+
+#: TFRMVIEWER.MIFILE.CAPTION
+msgctxt "TFRMVIEWER.MIFILE.CAPTION"
+msgid "&File"
+msgstr "&Soubor"
+
+#: TFRMVIEWER.MIFULLSCREEN.CAPTION
+msgctxt "TFRMVIEWER.MIFULLSCREEN.CAPTION"
+msgid "Full Screen"
+msgstr ""
+
+#: TFRMVIEWER.MIGRAPHICS.CAPTION
+msgid "Graphics"
+msgstr "Grafika"
+
+#: TFRMVIEWER.MIHEX.CAPTION
+msgid "Show as &Hex"
+msgstr "Zobrazit &hexadecimálně"
+
+#: TFRMVIEWER.MIIMAGE.CAPTION
+msgid "&Image"
+msgstr "&Obrázek"
+
+#: TFRMVIEWER.MILOOKBOOK.CAPTION
+msgid "Show as B&ook"
+msgstr ""
+
+#: TFRMVIEWER.MIMIRROR.CAPTION
+msgctxt "TFRMVIEWER.MIMIRROR.CAPTION"
+msgid "Mirror"
+msgstr ""
+
+#: TFRMVIEWER.MINEXT.CAPTION
+msgid "&Next"
+msgstr "&Další"
+
+#: TFRMVIEWER.MIPLUGINS.CAPTION
+msgctxt "TFRMVIEWER.MIPLUGINS.CAPTION"
+msgid "Plugins"
+msgstr "Zásuvné moduly"
+
+#: TFRMVIEWER.MIPREV.CAPTION
+msgid "&Previous"
+msgstr "&Předešlý"
+
+#: TFRMVIEWER.MIPREVIEW.CAPTION
+msgctxt "TFRMVIEWER.MIPREVIEW.CAPTION"
+msgid "Preview"
+msgstr "Náhled"
+
+#: TFRMVIEWER.MIPRINT.CAPTION
+msgid "Print..."
+msgstr ""
+
+#: TFRMVIEWER.MIROTATE.CAPTION
+msgid "Rotate"
+msgstr ""
+
+#: TFRMVIEWER.MISAVE.CAPTION
+msgctxt "TFRMVIEWER.MISAVE.CAPTION"
+msgid "Save"
+msgstr ""
+
+#: TFRMVIEWER.MISAVEAS.CAPTION
+msgid "Save As..."
+msgstr ""
+
+#: TFRMVIEWER.MISCREENSHOT.CAPTION
+msgctxt "TFRMVIEWER.MISCREENSHOT.CAPTION"
+msgid "Screenshot"
+msgstr ""
+
+#: TFRMVIEWER.MISEARCH.CAPTION
+msgctxt "TFRMVIEWER.MISEARCH.CAPTION"
+msgid "Search"
+msgstr "Hledání"
+
+#: TFRMVIEWER.MISEARCHNEXT.CAPTION
+msgid "Search next"
+msgstr ""
+
+#: TFRMVIEWER.MISEARCHPREV.CAPTION
+msgid "Search prev"
+msgstr ""
+
+#: TFRMVIEWER.MISELECTALL.CAPTION
+msgctxt "TFRMVIEWER.MISELECTALL.CAPTION"
+msgid "Select All"
+msgstr "Vybrat vše"
+
+#: TFRMVIEWER.MISEPARATOR.CAPTION
+msgctxt "TFRMVIEWER.MISEPARATOR.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MISTRETCH.CAPTION
+msgid "Stretch"
+msgstr "Přizpůsobit"
+
+#: TFRMVIEWER.MITEXT.CAPTION
+msgid "Show as &Text"
+msgstr "Zobrazit jako &text"
+
+#: TFRMVIEWER.MIVIEW.CAPTION
+msgctxt "TFRMVIEWER.MIVIEW.CAPTION"
+msgid "&View"
+msgstr "&Zobrazit"
+
+#: TFRMVIEWER.MIWRAPTEXT.CAPTION
+msgid "Show as &Wrap text"
+msgstr "Zobrazit &jako zalamovaný text"
+
+#: TFRMVIEWER.MIZOOMIN.CAPTION
+msgctxt "TFRMVIEWER.MIZOOMIN.CAPTION"
+msgid "Zoom In"
+msgstr ""
+
+#: TFRMVIEWER.MIZOOMOUT.CAPTION
+msgctxt "TFRMVIEWER.MIZOOMOUT.CAPTION"
+msgid "Zoom Out"
+msgstr ""
+
+#: TFRMVIEWER.PMICOPY.CAPTION
+msgctxt "TFRMVIEWER.PMICOPY.CAPTION"
+msgid "Copy To Clipboard"
+msgstr "Kopírovat do schránky"
+
+#: TFRMVIEWER.PMISELECTALL.CAPTION
+msgctxt "TFRMVIEWER.PMISELECTALL.CAPTION"
+msgid "Select All"
+msgstr "Vybrat vše"
+
+#: TFRMVIEWOPERATIONS.BTNALLCANCEL.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNALLCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMVIEWOPERATIONS.BTNALLINQUEUE.CAPTION
+msgid "Queue In"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNALLPAUSE.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNALLPAUSE.CAPTION"
+msgid "Pause"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNALLSTART.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNALLSTART.CAPTION"
+msgid "Start"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNCANCELCUROP.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNCANCELCUROP.CAPTION"
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: TFRMVIEWOPERATIONS.BTNCUROPQUEUEINOUT.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNCUROPQUEUEINOUT.CAPTION"
+msgid "In"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNDNCUROP.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNDNCUROP.CAPTION"
+msgid "Down"
+msgstr "Dolů"
+
+#: TFRMVIEWOPERATIONS.BTNRUNALLPAUSE.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNRUNALLPAUSE.CAPTION"
+msgid "Pause"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNRUNALLSTART.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNRUNALLSTART.CAPTION"
+msgid "Start"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNSTARTPAUSECUROP.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNSTARTPAUSECUROP.CAPTION"
+msgid "Start"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNSTARTQUEUE.CAPTION
+msgid "Start queue"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNUPCUROP.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNUPCUROP.CAPTION"
+msgid "Up"
+msgstr "Nahoru"
+
+#: TFRMVIEWOPERATIONS.CHKQUEUE.CAPTION
+msgid "Enable queue"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.FRMVIEWOPERATIONS.CAPTION
+#, fuzzy
+msgctxt "TFRMVIEWOPERATIONS.FRMVIEWOPERATIONS.CAPTION"
+msgid "File operations"
+msgstr "Souborové operace"
+
+#: TFRMVIEWOPERATIONS.GRPALLOPERATION.CAPTION
+msgid "Operations control"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.LBLALL.CAPTION
+msgid "for all"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.LBLALLPROGRESS.CAPTION
+msgid "Progress"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.LBLCOUNT.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.LBLCOUNT.CAPTION"
+msgid "0"
+msgstr "0"
+
+#: TFRMVIEWOPERATIONS.LBLCURRENTOPERATION.CAPTION
+msgid "Current operation"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.LBLOPERATIONSCOUNT.CAPTION
+msgid "Active operations:"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.LBLQUEUE.CAPTION
+msgid "Queue:"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.LBLRUNNING.CAPTION
+msgid "for running"
+msgstr ""
+
+#: TWFXPLUGINCOPYMOVEOPERATIONOPTIONSUI.LBLFILEEXISTS.CAPTION
+msgctxt "TWFXPLUGINCOPYMOVEOPERATIONOPTIONSUI.LBLFILEEXISTS.CAPTION"
+msgid "When file exists"
+msgstr ""
+
+#: ulng.rscolattr
+msgid "Attr"
+msgstr "Atr."
+
+#: ulng.rscoldate
+msgid "Date"
+msgstr "Datum"
+
+#: ulng.rscolext
+msgid "Ext"
+msgstr "Přípona"
+
+#: ulng.rscolname
+msgctxt "ulng.rscolname"
+msgid "Name"
+msgstr "Jméno"
+
+#: ulng.rscolsize
+msgctxt "ulng.rscolsize"
+msgid "Size"
+msgstr "Velikost"
+
+#: ulng.rscomparediffs
+msgid "Number of changes:"
+msgstr "Počet změn:"
+
+#: ulng.rsconfcolalign
+msgid "Align"
+msgstr "Zarovnat"
+
+#: ulng.rsconfcolcaption
+msgid "Caption"
+msgstr "Nadpis"
+
+#: ulng.rsconfcolconfig
+msgid "Config"
+msgstr "Konfigurace"
+
+#: ulng.rsconfcoldelete
+msgctxt "ulng.rsconfcoldelete"
+msgid "Delete"
+msgstr "Vymazat"
+
+#: ulng.rsconfcolfieldcont
+msgid "Field contents"
+msgstr "Detaily položky"
+
+#: ulng.rsconfcolmove
+msgctxt "ulng.rsconfcolmove"
+msgid "Move"
+msgstr "Přesunout"
+
+#: ulng.rsconfcolwidth
+msgctxt "ulng.rsconfcolwidth"
+msgid "Width"
+msgstr "Šířka"
+
+#: ulng.rsconfcustheader
+msgid "Customize column"
+msgstr "Nastavení sloupců:"
+
+#: ulng.rscopynametemplate
+msgid "Copy (%d) %s"
+msgstr ""
+
+#: ulng.rsdlgallopcomplete
+msgid "All operations is complete"
+msgstr ""
+
+#: ulng.rsdlgallopprogress
+msgid "Progress of all operations %d %%"
+msgstr ""
+
+#: ulng.rsdlgbuttonabort
+msgid "Ab&ort"
+msgstr ""
+
+#: ulng.rsdlgbuttonall
+msgid "A&ll"
+msgstr "Vše"
+
+#: ulng.rsdlgbuttonappend
+msgid "A&ppend"
+msgstr "&Připojit"
+
+#: ulng.rsdlgbuttoncancel
+msgctxt "ulng.rsdlgbuttoncancel"
+msgid "&Cancel"
+msgstr "&Zrušit"
+
+#: ulng.rsdlgbuttoncopyinto
+msgid "Copy &Into"
+msgstr ""
+
+#: ulng.rsdlgbuttonno
+msgid "&No"
+msgstr "&Ne"
+
+#: ulng.rsdlgbuttonnone
+msgid "Non&e"
+msgstr "&Není"
+
+#: ulng.rsdlgbuttonok
+msgctxt "ulng.rsdlgbuttonok"
+msgid "&OK"
+msgstr "&OK"
+
+#: ulng.rsdlgbuttonoverwrite
+msgid "&Overwrite"
+msgstr "&Přepsat"
+
+#: ulng.rsdlgbuttonoverwriteall
+msgid "Overwrite &All"
+msgstr "Přepsat &Vše"
+
+#: ulng.rsdlgbuttonretry
+msgid "Re&try"
+msgstr ""
+
+#: ulng.rsdlgbuttonskip
+msgid "&Skip"
+msgstr "Pře&skočit"
+
+#: ulng.rsdlgbuttonskipall
+msgid "S&kip All"
+msgstr "Přes&kočit vše"
+
+#: ulng.rsdlgbuttonyes
+msgid "&Yes"
+msgstr "&Ano"
+
+#: ulng.rsdlgchecksumcalc
+msgctxt "ulng.rsdlgchecksumcalc"
+msgid "Calculate check sum..."
+msgstr "Výpočet kontrolního součtu..."
+
+#: ulng.rsdlgchecksumverify
+msgctxt "ulng.rsdlgchecksumverify"
+msgid "Verify check sum..."
+msgstr "Kontrola kontrolního součtu..."
+
+#: ulng.rsdlgcombine
+msgid "Combine"
+msgstr ""
+
+#: ulng.rsdlgcp
+msgctxt "ulng.rsdlgcp"
+msgid "Copy file(s)"
+msgstr "Kopírovat soubor(y)"
+
+#: ulng.rsdlgdel
+msgid "Delete file(s)"
+msgstr "Smazat soubor(y)"
+
+#: ulng.rsdlgdeleting
+msgid "Deleting"
+msgstr "Mazání"
+
+#: ulng.rsdlgextract
+msgid "Extracting..."
+msgstr "Dekomprese..."
+
+#: ulng.rsdlgmv
+msgid "Move file(s)"
+msgstr "Přesunout soubor(y)"
+
+#: ulng.rsdlgopcaption
+msgid "Caption of operation"
+msgstr ""
+
+#: ulng.rsdlgoppause
+msgctxt "ulng.rsdlgoppause"
+msgid "Pause"
+msgstr ""
+
+#: ulng.rsdlgopstart
+msgctxt "ulng.rsdlgopstart"
+msgid "Start"
+msgstr ""
+
+#: ulng.rsdlgpack
+msgid "Packing..."
+msgstr "Komprese..."
+
+#: ulng.rsdlgqueuein
+msgctxt "ulng.rsdlgqueuein"
+msgid "In"
+msgstr ""
+
+#: ulng.rsdlgqueueout
+msgid "Out"
+msgstr ""
+
+#: ulng.rsdlgspeedtime
+#, fuzzy
+#| msgid "Speed %s/s, remaining time %s"
+msgid "Speed %s/s, time remaining %s"
+msgstr "Rychlost %s/s, zbývající čas %s"
+
+#: ulng.rsdlgsplit
+#, fuzzy
+#| msgid "Split file"
+msgctxt "ulng.rsdlgsplit"
+msgid "Split"
+msgstr "Dělení souborů"
+
+#: ulng.rsdlgtest
+msgid "Testing..."
+msgstr ""
+
+#: ulng.rsdlgunknownoperation
+msgid "Unknown operation"
+msgstr ""
+
+#: ulng.rsdlgwipe
+#, fuzzy
+msgid "Wipe file(s)"
+msgstr "Očistit soubor(y)"
+
+#: ulng.rseditabouttext
+msgid "Internal Editor of Double Commander."
+msgstr "Interní editor Double Commanderu."
+
+#: ulng.rseditnewfile
+msgid "new.txt"
+msgstr "nový.txt"
+
+#: ulng.rseditnewfilename
+msgid "Filename:"
+msgstr "Jméno souboru:"
+
+#: ulng.rseditnewopen
+msgid "Open file"
+msgstr "Otevřít soubor"
+
+#: ulng.rseditsearchback
+msgid "&Backward"
+msgstr "&Vzad"
+
+#: ulng.rseditsearchcaption
+msgctxt "ulng.rseditsearchcaption"
+msgid "Search"
+msgstr "Hledání"
+
+#: ulng.rseditsearchfrw
+msgid "&Forward"
+msgstr "V&před"
+
+#: ulng.rseditsearchreplace
+msgid "Replace"
+msgstr "Nahradit"
+
+#: ulng.rsfinddefinetemplate
+msgid "Define template"
+msgstr ""
+
+#: ulng.rsfinddepth
+msgid "%s level(s)"
+msgstr "%s úrovní"
+
+#: ulng.rsfinddepthall
+msgid "all (unlimited depth)"
+msgstr "vše (nelimitovaná hloubka)"
+
+#: ulng.rsfinddepthcurdir
+msgid "current dir only"
+msgstr "pouze aktuální adresář"
+
+#: ulng.rsfinddirnoex
+msgid "Directory %s does not exist!"
+msgstr "Adreář %s neexistuje!"
+
+#: ulng.rsfindfound
+msgid "Found: %d"
+msgstr "Nalezeno: %d"
+
+#: ulng.rsfindsavetemplatecaption
+msgid "Save search template"
+msgstr "Uložit vyhledávací šablonu"
+
+#: ulng.rsfindsavetemplatetitle
+msgid "Template name:"
+msgstr "Název šablony:"
+
+#: ulng.rsfindscanned
+msgid "Scanned: %d"
+msgstr "Prohledáno: %d"
+
+#: ulng.rsfindscanning
+msgid "Scanning"
+msgstr "Prohledávám"
+
+#: ulng.rsfindsearchfiles
+msgctxt "ulng.rsfindsearchfiles"
+msgid "Find files"
+msgstr "Hledat soubory"
+
+#: ulng.rsfindwherebeg
+msgid "Begin at"
+msgstr "Začít v"
+
+#: ulng.rsfreemsg
+msgid "Free %s from %s bytes"
+msgstr "Volno %s z %s bytů"
+
+#: ulng.rsfreemsgshort
+msgid "%s bytes free"
+msgstr ""
+
+#: ulng.rsfuncatime
+msgid "Access date/time"
+msgstr ""
+
+#: ulng.rsfuncattr
+msgctxt "ulng.rsfuncattr"
+msgid "Attributes"
+msgstr "Atributy"
+
+#: ulng.rsfunccomment
+msgid "Comment"
+msgstr ""
+
+#: ulng.rsfuncctime
+msgid "Creation date/time"
+msgstr ""
+
+#: ulng.rsfuncext
+msgid "Extension"
+msgstr ""
+
+#: ulng.rsfuncgroup
+msgctxt "ulng.rsfuncgroup"
+msgid "Group"
+msgstr "Skupina"
+
+#: ulng.rsfunclinkto
+msgid "Link to"
+msgstr ""
+
+#: ulng.rsfuncmtime
+msgid "Modification date/time"
+msgstr ""
+
+#: ulng.rsfuncname
+msgctxt "ulng.rsfuncname"
+msgid "Name"
+msgstr "Jméno"
+
+#: ulng.rsfuncnamenoext
+msgid "Name without extension"
+msgstr ""
+
+#: ulng.rsfuncowner
+msgctxt "ulng.rsfuncowner"
+msgid "Owner"
+msgstr "Vlastník"
+
+#: ulng.rsfuncpath
+msgctxt "ulng.rsfuncpath"
+msgid "Path"
+msgstr "Cesta"
+
+#: ulng.rsfuncsize
+msgctxt "ulng.rsfuncsize"
+msgid "Size"
+msgstr "Velikost"
+
+#: ulng.rsfunctype
+msgid "Type"
+msgstr ""
+
+#: ulng.rsharderrcreate
+msgid "Error creating hardlink."
+msgstr "Chyba při vytváření hardlinku."
+
+#: ulng.rslinkmsgok
+msgid "Linker complete"
+msgstr "Spojování dokončeno"
+
+#: ulng.rsmarkminus
+msgid "Unselect mask"
+msgstr "Maska zrušení výběru"
+
+#: ulng.rsmarkplus
+msgid "Select mask"
+msgstr "Maska výběru"
+
+#: ulng.rsmaskinput
+msgid "Input mask:"
+msgstr "Vstupní maska:"
+
+#: ulng.rsmenuconfigurecustomcolumns
+msgid "Configure custom columns"
+msgstr "Konfigurovat uživatelské sloupce"
+
+#: ulng.rsmenuconfigurethiscustomcolumn
+msgid "Configure this custom columns view"
+msgstr "Konfigurovat tento vlastní pohled"
+
+#: ulng.rsmnuactions
+msgctxt "ulng.rsmnuactions"
+msgid "Actions"
+msgstr "Akce"
+
+#: ulng.rsmnuedit
+msgctxt "ulng.rsmnuedit"
+msgid "Edit"
+msgstr "Upravit"
+
+#: ulng.rsmnueject
+msgid "Eject"
+msgstr "Vysunout"
+
+#: ulng.rsmnumount
+msgid "Mount"
+msgstr "Připojit"
+
+#: ulng.rsmnunew
+msgid "New"
+msgstr ""
+
+#: ulng.rsmnunomedia
+msgid "No media available"
+msgstr ""
+
+#: ulng.rsmnuopenwith
+msgid "Open with ..."
+msgstr "otevřít v ..."
+
+#: ulng.rsmnusortby
+msgid "Sort by"
+msgstr ""
+
+#: ulng.rsmnuumount
+#, fuzzy
+#| msgid "Umount"
+msgid "Unmount"
+msgstr "Odpojit"
+
+#: ulng.rsmnuview
+msgctxt "ulng.rsmnuview"
+msgid "View"
+msgstr "Zobrazit"
+
+#: ulng.rsmsgaccount
+msgid "Account:"
+msgstr ""
+
+#: ulng.rsmsgarchivercustomparams
+msgid "Additional parameters for archiver command-line:"
+msgstr ""
+
+#: ulng.rsmsgcannotcopymoveitself
+msgid "You can not copy/move a file \"%s\" to itself!"
+msgstr ""
+
+#: ulng.rsmsgchdirfailed
+msgid "ChDir to [%s] failed!"
+msgstr "Změna adresáře na [%s] selhala!"
+
+#: ulng.rsmsgcloseallinactivetabs
+msgid "Remove all inactive tabs?"
+msgstr "Odstranit neaktivní záložky?"
+
+#: ulng.rsmsgcloselockedtab
+msgid "This tab (%s) is locked! Close anyway?"
+msgstr "Záložka (%s) je uzamčena! Přesto zavřít?"
+
+#: ulng.rsmsgconfirmquit
+msgid "Are you sure you want to quit?"
+msgstr ""
+
+#: ulng.rsmsgcpfldr
+msgid "Copy %d selected files/directories?"
+msgstr "Copy %d selected files/directories?"
+
+#: ulng.rsmsgcpsel
+msgid "Copy selected \"%s\"?"
+msgstr "Kopírovat vybrané \"%s\"?"
+
+#: ulng.rsmsgdelfldr
+msgid "Delete %d selected files/directories?"
+msgstr "Vymazat %d vybrané soubory / adresáře?"
+
+#: ulng.rsmsgdelfldrt
+msgid "Delete %d selected files/directories into trash can?"
+msgstr "Vymazat %d vybraných souborů/adresářů do koše?"
+
+#: ulng.rsmsgdelsel
+msgid "Delete selected \"%s\"?"
+msgstr "Vymazat vybrané \"%s\"?"
+
+#: ulng.rsmsgdelselt
+msgid "Delete selected \"%s\" into trash can?"
+msgstr "Přesunout vybrané \"%s\" do koše?"
+
+#: ulng.rsmsgdeltotrashforce
+msgid "Can not delete \"%s\" to trash! Delete directly?"
+msgstr ""
+
+#: ulng.rsmsgdisknotavail
+msgid "Disk is not available"
+msgstr "Disk není dostupný"
+
+#: ulng.rsmsgenterfileext
+#, fuzzy
+msgid "Enter file extension:"
+msgstr "Zadej příponu souboru:"
+
+#: ulng.rsmsgentername
+msgid "Enter name:"
+msgstr "Zadej název:"
+
+#: ulng.rsmsgerrbadarchive
+msgid "CRC error in archive data"
+msgstr "CRC chyba (kontrolní součet nesouhlasí)"
+
+#: ulng.rsmsgerrbaddata
+msgid "Data is bad"
+msgstr "Data jsou špatná"
+
+#: ulng.rsmsgerrcannotconnect
+msgid "Can not connect to server: \"%s\""
+msgstr ""
+
+#: ulng.rsmsgerrcannotcopyfile
+msgid "Cannot copy file %s to %s"
+msgstr ""
+
+#: ulng.rsmsgerrdatenotsupported
+msgid "Date %s is not supported"
+msgstr ""
+
+#: ulng.rsmsgerrdirexists
+msgid "Directory %s exists!"
+msgstr "Adresář %s existuje!"
+
+#: ulng.rsmsgerreaborted
+msgid "Function aborted by user"
+msgstr "7Operace přerušena uživatelem"
+
+#: ulng.rsmsgerreclose
+msgid "Error closing file"
+msgstr "Chyba při uzavírání souboru"
+
+#: ulng.rsmsgerrecreate
+msgid "Cannot create file"
+msgstr "Nelze vytvořit soubor"
+
+#: ulng.rsmsgerrendarchive
+msgid "No more files in archive"
+msgstr "V archívu nejsou žádné další soubory"
+
+#: ulng.rsmsgerreopen
+msgid "Cannot open existing file"
+msgstr "Nelze otevřít existující soubor"
+
+#: ulng.rsmsgerreread
+msgid "Error reading from file"
+msgstr "Chyba při čtení souboru"
+
+#: ulng.rsmsgerrewrite
+msgid "Error writing to file"
+msgstr "Chyba při zápisu do souboru"
+
+#: ulng.rsmsgerrforcedir
+msgid "Can not create directory %s!"
+msgstr "Nelze vytvořit adresář %s!"
+
+#: ulng.rsmsgerrinvalidlink
+msgid "Invalid link"
+msgstr "Nesprávný odkaz"
+
+#: ulng.rsmsgerrnofiles
+msgid "No files found"
+msgstr "Soubory neexistují"
+
+#: ulng.rsmsgerrnomemory
+msgid "Not enough memory"
+msgstr "Nedostatek paměti"
+
+#: ulng.rsmsgerrnotsupported
+msgid "Function not supported!"
+msgstr "Funkce není podporována!"
+
+#: ulng.rsmsgerrregexpsyntax
+msgid "Syntax error in regular expression!"
+msgstr "Chybý syntax v regulárním výrazu!"
+
+#: ulng.rsmsgerrrename
+msgid "Cannot rename file %s to %s"
+msgstr "Nelze přejmenovat soubor %s na %s"
+
+#: ulng.rsmsgerrsavefile
+msgid "Cannot save file"
+msgstr ""
+
+#: ulng.rsmsgerrsetattribute
+msgid "Can not set attributes for \"%s\""
+msgstr ""
+
+#: ulng.rsmsgerrsetdatetime
+msgid "Can not set date/time for \"%s\""
+msgstr ""
+
+#: ulng.rsmsgerrsmallbuf
+msgid "Buffer too small"
+msgstr "Buffer je příliš malý"
+
+#: ulng.rsmsgerrtoomanyfiles
+msgid "Too many files to pack"
+msgstr "Příliš mnoho souborů pro kompresi"
+
+#: ulng.rsmsgerrunknownformat
+msgid "Archive format unknown"
+msgstr "Neznámý formát archívu"
+
+#: ulng.rsmsgfilechangedsave
+msgid "File %s changed, save?"
+msgstr "Soubor %s byl změněn, uložit?"
+
+#: ulng.rsmsgfileexistsrwrt
+msgid "File %s exists, overwrite?"
+msgstr "Soubor %s existuje, přepsat?"
+
+#: ulng.rsmsgfileoperationsactive
+msgid "File operations active"
+msgstr ""
+
+#: ulng.rsmsgfileoperationsactivelong
+msgid "Some file operations have not yet finished. Closing Double Commander may result in data loss."
+msgstr ""
+
+#: ulng.rsmsgfilereadonly
+msgid "File %s is marked as read-only. Delete it?"
+msgstr "Soubor %s je pouze ke čtení! Přesto vymazat?"
+
+#: ulng.rsmsgfilesizetoobig
+msgid "The file size of \"%s\" is too big for destination file system!"
+msgstr ""
+
+#: ulng.rsmsgfolderexistsrwrt
+msgid "Folder %s exists, overwrite?"
+msgstr "Složka %s existuje, přepsat?"
+
+#: ulng.rsmsgfollowsymlink
+msgid "Follow symlink \"%s\"?"
+msgstr "Follow symbolický odkaz \"%s\"?"
+
+#: ulng.rsmsginvalidfilename
+msgid "Invalid filename"
+msgstr "Nesprávné jméno souboru"
+
+#: ulng.rsmsginvalidselection
+msgid "Invalid selection."
+msgstr "Nesprávný výběr."
+
+#: ulng.rsmsgloadingfilelist
+msgid "Loading file list..."
+msgstr ""
+
+#: ulng.rsmsglogcopy
+msgid "Copy file %s"
+msgstr "Kopírovat soubor %s"
+
+#: ulng.rsmsglogdelete
+msgid "Delete file %s"
+msgstr "Smazat soubor %s"
+
+#: ulng.rsmsglogerror
+msgid "Error: "
+msgstr "Chyba:"
+
+#: ulng.rsmsglogextract
+msgid "Extract file %s"
+msgstr "Rozbalit soubor %s"
+
+#: ulng.rsmsgloginfo
+msgid "Info: "
+msgstr "Info: "
+
+#: ulng.rsmsgloglink
+msgid "Create link %s"
+msgstr "Vytvořit odkaz %s"
+
+#: ulng.rsmsglogmkdir
+msgid "Create directory %s"
+msgstr "Vytvořit adresář %s"
+
+#: ulng.rsmsglogmove
+msgid "Move file %s"
+msgstr "Přesunout soubor %s"
+
+#: ulng.rsmsglogpack
+msgid "Pack to file %s"
+msgstr "Komprimovat do souboru %s"
+
+#: ulng.rsmsglogrmdir
+msgid "Remove directory %s"
+msgstr "Odstranit adresář %s"
+
+#: ulng.rsmsglogsuccess
+msgid "Done: "
+msgstr "Hotovo:"
+
+#: ulng.rsmsglogsymlink
+msgid "Create symlink %s"
+msgstr "Vytvořit symbolický odkaz %s"
+
+#: ulng.rsmsglogtest
+msgid "Test file integrity %s"
+msgstr ""
+
+#: ulng.rsmsgmanualaddhotdir
+msgid "Manually add hot path"
+msgstr ""
+
+#: ulng.rsmsgmanualedithotdir
+msgid "Manualy edit hot path"
+msgstr ""
+
+#: ulng.rsmsgmanualhotdirquery
+msgid "Enter name and path (format name=path):"
+msgstr ""
+
+#: ulng.rsmsgmasterpassword
+msgid "Master Password"
+msgstr ""
+
+#: ulng.rsmsgmasterpasswordenter
+msgid "Please enter the master password:"
+msgstr ""
+
+#: ulng.rsmsgnewfile
+msgid "New file"
+msgstr "Nový soubor"
+
+#: ulng.rsmsgnextvolunpack
+msgid "Next volume will be unpacked"
+msgstr "Další část bude rozbalena"
+
+#: ulng.rsmsgnofilesselected
+msgid "No files selected."
+msgstr "Nejsou vybrány žádné soubory."
+
+#: ulng.rsmsgnofreespacecont
+msgid "No enough free space on target drive, Continue?"
+msgstr "Není dostatek volného místa na cílovém disku! Pokračovat?"
+
+#: ulng.rsmsgnofreespaceretry
+msgid "No enough free space on target drive, Retry?"
+msgstr "Není dostatek volného místa na cílovém disku! Opakovat?"
+
+#: ulng.rsmsgnotdelete
+msgid "Can not delete file %s"
+msgstr "Nelze vymazat soubor %s"
+
+#: ulng.rsmsgnotimplemented
+msgid "Not implemented."
+msgstr "Není implementováno."
+
+#: ulng.rsmsgpassword
+msgid "Password:"
+msgstr ""
+
+#: ulng.rsmsgpasswordenter
+msgid "Please enter the password:"
+msgstr ""
+
+#: ulng.rsmsgpasswordfirewall
+msgid "Password (Firewall):"
+msgstr ""
+
+#: ulng.rsmsgpopuphotadd
+msgid "&Add %s"
+msgstr "&Přidat %s"
+
+#: ulng.rsmsgpopuphotcnf
+msgctxt "ulng.rsmsgpopuphotcnf"
+msgid "&Configure"
+msgstr "&Konfigurovat"
+
+#: ulng.rsmsgpopuphotdelete
+msgid "&Delete %s"
+msgstr "&Vymazat %s"
+
+#: ulng.rsmsgpresetalreadyexists
+#, fuzzy
+msgid "Preset \"%s\" already exists. Overwrite?"
+msgstr "Předvolba \"%s\" již existuje. Nahradit?"
+
+#: ulng.rsmsgrenfldr
+msgid "Rename/move %d selected files/directories?"
+msgstr "Přejmenovat/přesunout %d vybraných souborů/adresářů?"
+
+#: ulng.rsmsgrensel
+msgid "Rename/move selected \"%s\"?"
+msgstr "Přejmenovat/přesunout vybrané \"%s\"?"
+
+#: ulng.rsmsgrestartforapplychanges
+msgid "Please, restart Double Commander in order to apply changes"
+msgstr "Pro provedení změn restartujte program"
+
+#: ulng.rsmsgselected
+msgid "Selected %s of %s in %d of %d files"
+msgstr "Vybráno %s z %s v %d z %d souborů"
+
+#: ulng.rsmsgselectonlychecksumfiles
+msgid "Please select only check sum files!"
+msgstr "Prosím vyberte pouze soubory s kontrolním součtem!"
+
+#: ulng.rsmsgsellocnextvol
+msgid "Please select location of next volume"
+msgstr "Prosím vyberte umístění další části"
+
+#: ulng.rsmsgsetvolumelabel
+msgid "Set volume label"
+msgstr "Nastavit název disku"
+
+#: ulng.rsmsgtargetdir
+msgid "Target path:"
+msgstr ""
+
+#: ulng.rsmsgtoomanyfilesselected
+msgid "Too many files selected."
+msgstr "Vybráno příliš mnoho souborů."
+
+#: ulng.rsmsgurl
+msgid "URL:"
+msgstr ""
+
+#: ulng.rsmsgusername
+msgid "User name:"
+msgstr ""
+
+#: ulng.rsmsgusernamefirewall
+msgid "User name (Firewall):"
+msgstr ""
+
+#: ulng.rsmsgvolumelabel
+msgid "Volume label:"
+msgstr "Název disku:"
+
+#: ulng.rsmsgvolumesizeenter
+msgid "Please enter the volume size:"
+msgstr ""
+
+#: ulng.rsmsgwipefldr
+#, fuzzy
+msgid "Wipe %d selected files/directories?"
+msgstr "Pročistit %d vybraných souborů/adresářů?"
+
+#: ulng.rsmsgwipesel
+#, fuzzy
+msgid "Wipe selected \"%s\"?"
+msgstr "Očistit vybrané \"%s\"?"
+
+#: ulng.rsmulrenfilenamestylelist
+#, fuzzy
+#| msgid "No change;UPPERCASE;lowercase;First Char Big;"
+msgid "No change;UPPERCASE;lowercase;First char uppercase;First Char Of Every Word Uppercase;"
+msgstr "Neměnit;VELKÁ;malá;1. znak velký;"
+
+#: ulng.rsoperaborted
+msgid "Aborted"
+msgstr "Přerušeno"
+
+#: ulng.rsoperautostart
+msgid "Auto-started"
+msgstr "Automaticky spuštěno"
+
+#: ulng.rsoperfinished
+msgid "Finished"
+msgstr "Hotovo"
+
+#: ulng.rsopermanualstart
+msgid "Manually started"
+msgstr ""
+
+#: ulng.rsopernotstarted
+msgid "Not started"
+msgstr "Nespuštěno"
+
+#: ulng.rsoperpaused
+msgid "Paused"
+msgstr "Pozastaveno"
+
+#: ulng.rsoperpausing
+msgid "Pausing"
+msgstr "Pozastavuji"
+
+#: ulng.rsoperqueue
+msgid "Queued"
+msgstr "Ve frontě"
+
+#: ulng.rsoperrunning
+msgid "Running"
+msgstr "Běží"
+
+#: ulng.rsoperstarting
+msgid "Starting"
+msgstr "Spouštím"
+
+#: ulng.rsoperstartstateautostart
+msgctxt "ulng.rsoperstartstateautostart"
+msgid "Start"
+msgstr ""
+
+#: ulng.rsoperstartstatemanualstart
+msgid "Manual start"
+msgstr ""
+
+#: ulng.rsoperstartstatequeuefirst
+msgid "Queue as first"
+msgstr ""
+
+#: ulng.rsoperstartstatequeuelast
+msgid "Queue as last"
+msgstr ""
+
+#: ulng.rsoperstopped
+msgid "Stopped"
+msgstr "Zastaveno"
+
+#: ulng.rsoperstopping
+msgid "Stopping"
+msgstr "Zastavuji"
+
+#: ulng.rsoperwaitingforconnection
+msgid "Waiting for access to file source"
+msgstr ""
+
+#: ulng.rsoperwaitingforfeedback
+msgid "Waiting for user response"
+msgstr "Čekám na reakci uživatele"
+
+#: ulng.rsoptarchivedelete
+msgctxt "ulng.rsoptarchivedelete"
+msgid "Delete:"
+msgstr ""
+
+#: ulng.rsoptarchiveextractwithoutpath
+msgid "Extract without path:"
+msgstr ""
+
+#: ulng.rsoptarchiveid
+msgctxt "ulng.rsoptarchiveid"
+msgid "ID:"
+msgstr ""
+
+#: ulng.rsoptarchiveidpos
+msgctxt "ulng.rsoptarchiveidpos"
+msgid "ID Position:"
+msgstr ""
+
+#: ulng.rsoptarchiveidseekrange
+msgctxt "ulng.rsoptarchiveidseekrange"
+msgid "ID Seek Range:"
+msgstr ""
+
+#: ulng.rsoptarchiveparam
+msgid "Parameter"
+msgstr ""
+
+#: ulng.rsoptarchivepasswordquery
+msgid "Password query string:"
+msgstr ""
+
+#: ulng.rsoptarchivers
+msgid "Archivers"
+msgstr ""
+
+#: ulng.rsoptarchiveselfextract
+msgctxt "ulng.rsoptarchiveselfextract"
+msgid "Create self extracting archive:"
+msgstr ""
+
+#: ulng.rsoptarchivetest
+msgctxt "ulng.rsoptarchivetest"
+msgid "Test:"
+msgstr ""
+
+#: ulng.rsoptarchivetypename
+msgid "Archive type name:"
+msgstr ""
+
+#: ulng.rsoptarchivevalue
+msgid "Value"
+msgstr ""
+
+#: ulng.rsoptassocpluginwith
+msgid "Associate plugin \"%s\" with:"
+msgstr "Asociovat plugin \"%s\" s:"
+
+#: ulng.rsoptautorefresh
+msgid "Auto refresh"
+msgstr "Automatická obnova"
+
+#: ulng.rsoptautosizecolumn
+msgid "First;Last;"
+msgstr ""
+
+#: ulng.rsoptbehav
+msgid "Behaviors"
+msgstr "Funkce"
+
+#: ulng.rsoptcolors
+msgid "Colors"
+msgstr "Barvy"
+
+#: ulng.rsoptcolumns
+msgid "Columns"
+msgstr "Sloupce"
+
+#: ulng.rsoptconfig
+msgid "Configuration"
+msgstr "Konfigurace"
+
+#: ulng.rsoptdisable
+#, fuzzy
+msgid "Disable"
+msgstr "Zakázat"
+
+#: ulng.rsoptenable
+msgctxt "ulng.rsoptenable"
+msgid "Enable"
+msgstr "Povolit"
+
+#: ulng.rsoptenterext
+msgid "Enter extension"
+msgstr "Zadej výraz"
+
+#: ulng.rsoptexamplecursor
+msgid "Cursor"
+msgstr ""
+
+#: ulng.rsoptexamplemark
+msgid "Mark"
+msgstr ""
+
+#: ulng.rsoptexamplemarkcursor
+msgid "Mark + Cursor"
+msgstr ""
+
+#: ulng.rsoptexampletext
+msgid "Text"
+msgstr ""
+
+#: ulng.rsoptfileop
+#, fuzzy
+msgctxt "ulng.rsoptfileop"
+msgid "File operations"
+msgstr "Souborové operace"
+
+#: ulng.rsoptfilepanels
+#, fuzzy
+msgctxt "ulng.rsoptfilepanels"
+msgid "File panels"
+msgstr "Panely souborů"
+
+#: ulng.rsoptfiletypes
+msgctxt "ulng.rsoptfiletypes"
+msgid "File types"
+msgstr "Typy souborů"
+
+#: ulng.rsoptfoldertabs
+msgid "Folder tabs"
+msgstr "Záložky adresářů"
+
+#: ulng.rsoptfonts
+msgid "Fonts"
+msgstr "Písma"
+
+#: ulng.rsopthotkeys
+msgid "Hot keys"
+msgstr "Horké klávesy"
+
+#: ulng.rsopthotkeyscommands
+msgid "Commands"
+msgstr ""
+
+#: ulng.rsopthotkeyscomments
+msgid "Comments"
+msgstr ""
+
+#: ulng.rsopthotkeyshotkey
+msgctxt "ulng.rsopthotkeyshotkey"
+msgid "Hotkey"
+msgstr ""
+
+#: ulng.rsopthotkeyshotkeys
+msgid "Hotkeys"
+msgstr ""
+
+#: ulng.rsopthotkeysparameters
+msgctxt "ulng.rsopthotkeysparameters"
+msgid "Parameters"
+msgstr ""
+
+#: ulng.rsopthotkeysshortcutused
+msgid "Shortcut in use"
+msgstr ""
+
+#: ulng.rsopthotkeysshortcutusedtext1
+msgid "Shortcut %s is already used for %s."
+msgstr ""
+
+#: ulng.rsopthotkeysshortcutusedtext2
+msgid "Change it to %s?"
+msgstr ""
+
+#: ulng.rsopthotkeysusedby
+msgid "used by"
+msgstr ""
+
+#: ulng.rsopticons
+msgid "Icons"
+msgstr "Ikony"
+
+#: ulng.rsoptignorelist
+msgid "Ignore list"
+msgstr ""
+
+#: ulng.rsoptlanguage
+msgid "Language"
+msgstr "Jazyk"
+
+#: ulng.rsoptlayout
+msgid "Layout"
+msgstr "Rozvržení"
+
+#: ulng.rsoptlog
+msgctxt "ulng.rsoptlog"
+msgid "Log"
+msgstr "Log"
+
+#: ulng.rsoptmiscellaneous
+msgid "Miscellaneous"
+msgstr "Různé"
+
+#: ulng.rsoptmouseselectionbutton
+msgid "Left button;Right button;"
+msgstr "Levé tlačítko;Pravé tlačítko;"
+
+#: ulng.rsoptpluginalreadyassigned
+msgid "Plugin %s is already assigned for the following extensions:"
+msgstr ""
+
+#: ulng.rsoptplugins
+msgctxt "ulng.rsoptplugins"
+msgid "Plugins"
+msgstr "Zásuvné moduly"
+
+#: ulng.rsoptpluginsactive
+msgctxt "ulng.rsoptpluginsactive"
+msgid "Active"
+msgstr "Aktivní"
+
+#: ulng.rsoptpluginsfilename
+msgctxt "ulng.rsoptpluginsfilename"
+msgid "File name"
+msgstr "Název souboru"
+
+#: ulng.rsoptpluginsname
+msgctxt "ulng.rsoptpluginsname"
+msgid "Name"
+msgstr "Jméno"
+
+#: ulng.rsoptpluginsregisteredfor
+msgctxt "ulng.rsoptpluginsregisteredfor"
+msgid "Registered for"
+msgstr "Registrováno pro"
+
+#: ulng.rsoptquicksearch
+#, fuzzy
+#| msgid "Quick search"
+msgctxt "ulng.rsoptquicksearch"
+msgid "Quick search/filter"
+msgstr "Rychlé hledání"
+
+#: ulng.rsoptsortmethod
+msgid "Alphabetical, considering accents;Natural sorting: alphabetical and numbers"
+msgstr ""
+
+#: ulng.rsopttabsposition
+msgid "Top;Bottom;"
+msgstr ""
+
+#: ulng.rsopttools
+msgid "Tools"
+msgstr "Nástroje"
+
+#: ulng.rsopttooltips
+msgid "Tooltips"
+msgstr ""
+
+#: ulng.rspropserrchmod
+msgid "Can not change access rights for \"%s\""
+msgstr ""
+
+#: ulng.rspropserrchown
+msgid "Can not change owner for \"%s\""
+msgstr ""
+
+#: ulng.rspropsfile
+msgctxt "ulng.rspropsfile"
+msgid "File"
+msgstr "Soubor"
+
+#: ulng.rspropsfolder
+msgctxt "ulng.rspropsfolder"
+msgid "Directory"
+msgstr "Adresář"
+
+#: ulng.rspropsnmdpipe
+msgid "Named pipe"
+msgstr "Pojmenované roury"
+
+#: ulng.rspropsno
+msgid "No"
+msgstr "Ne"
+
+#: ulng.rspropssocket
+msgid "Socket"
+msgstr "Socket"
+
+#: ulng.rspropsspblkdev
+msgid "Special block device"
+msgstr "Speciální blokové zařízení"
+
+#: ulng.rspropsspchrdev
+msgid "Special character device"
+msgstr "Zvláštní charakter zařízení"
+
+#: ulng.rspropssymlink
+msgid "Symbolic link"
+msgstr "Zástupce"
+
+#: ulng.rspropsunknowntype
+msgid "Unknown type"
+msgstr "Neznámý typ"
+
+#: ulng.rspropsyes
+msgid "Yes (%s)"
+msgstr "Ano (%s)"
+
+#: ulng.rsquickfilterpanel
+msgid "Filter:"
+msgstr ""
+
+#: ulng.rsquicksearchpanel
+msgid "Find:"
+msgstr "Hledat:"
+
+#: ulng.rssearchresult
+msgid "Search result"
+msgstr ""
+
+#: ulng.rsselectdir
+msgid "Select a directory"
+msgstr "Vybrat adresář"
+
+#: ulng.rssizeunitbytes
+msgid "Bytes"
+msgstr ""
+
+#: ulng.rssizeunitgbytes
+msgctxt "ulng.rssizeunitgbytes"
+msgid "Gigabytes"
+msgstr ""
+
+#: ulng.rssizeunitkbytes
+msgctxt "ulng.rssizeunitkbytes"
+msgid "Kilobytes"
+msgstr ""
+
+#: ulng.rssizeunitmbytes
+msgctxt "ulng.rssizeunitmbytes"
+msgid "Megabytes"
+msgstr ""
+
+#: ulng.rssizeunittbytes
+msgid "Terabytes"
+msgstr ""
+
+#: ulng.rsspacemsg
+msgid "Files: %d, Dirs: %d, Size: %s (%s bytes)"
+msgstr "Souborů: %d, Adresářů: %d, Velikost: %s (%s bytů)"
+
+#: ulng.rsspliterrdirectory
+msgid "Unable to create target directory!"
+msgstr "Nelze vytvořit cílový adrresář!"
+
+#: ulng.rsspliterrfilesize
+msgid "Incorrect file size format!"
+msgstr "Nekorektní formát velikosti souboru!"
+
+#: ulng.rsspliterrsplitfile
+msgid "Unable to split the file!"
+msgstr "Nelze split soubor!"
+
+#: ulng.rssplitmsgmanyparts
+msgid "The number of parts is more than 100! Continue?"
+msgstr ""
+
+#: ulng.rssplitseldir
+msgid "Select directory:"
+msgstr "Výběr adreáře:"
+
+#: ulng.rssymerrcreate
+msgid "Error creating symlink."
+msgstr "Chyba při vytváření zástupce."
+
+#: ulng.rstimeunitday
+msgctxt "ulng.rstimeunitday"
+msgid "Day(s)"
+msgstr "Dnů(í)"
+
+#: ulng.rstimeunithour
+msgid "Hour(s)"
+msgstr ""
+
+#: ulng.rstimeunitminute
+msgid "Minute(s)"
+msgstr ""
+
+#: ulng.rstimeunitmonth
+msgid "Month(s)"
+msgstr ""
+
+#: ulng.rstimeunitsecond
+msgid "Second(s)"
+msgstr ""
+
+#: ulng.rstimeunitweek
+msgid "Week(s)"
+msgstr ""
+
+#: ulng.rstimeunityear
+msgid "Year(s)"
+msgstr ""
+
+#: ulng.rstooldiffer
+msgid "Differ"
+msgstr ""
+
+#: ulng.rstooleditor
+msgctxt "ulng.rstooleditor"
+msgid "Editor"
+msgstr "Editor"
+
+#: ulng.rstoolviewer
+msgctxt "ulng.rstoolviewer"
+msgid "Viewer"
+msgstr "Prohlížeč"
+
+#: ulng.rsunhandledexceptionmessage
+msgid "Please report this error to the bug tracker with a description of what you were doing and the following file:%sPress %s to continue or %s to abort the program."
+msgstr ""
+
+#: ulng.rsviewabouttext
+msgid "Internal Viewer of Double Commander."
+msgstr "Interní prohlížeč Double COmmanderu."
+
+#: ulng.rsviewencoding
+msgctxt "ulng.rsviewencoding"
+msgid "Encoding"
+msgstr ""
+
+#: ulng.rsviewnotfound
+msgid "%s not found!"
+msgstr ""
+

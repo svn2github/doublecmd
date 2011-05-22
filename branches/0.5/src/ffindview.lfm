@@ -1,0 +1,85 @@
+object frmFindView: TfrmFindView
+  Left = 365
+  Height = 104
+  Top = 311
+  Width = 344
+  HorzScrollBar.Page = 343
+  HorzScrollBar.Range = 103
+  VertScrollBar.Page = 96
+  VertScrollBar.Range = 90
+  ActiveControl = cbDataToFind
+  AutoScroll = False
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Find'
+  ClientHeight = 104
+  ClientWidth = 344
+  OnShow = FormShow
+  Position = poScreenCenter
+  ShowInTaskBar = stAlways
+  LCLVersion = '0.9.27'
+  object cbDataToFind: TComboBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 8
+    Height = 30
+    Top = 12
+    Width = 328
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 8
+    BorderSpacing.Top = 12
+    BorderSpacing.Right = 8
+    OnKeyUp = cbDataToFindKeyUp
+    TabOrder = 0
+  end
+  object btnFind: TBitBtn
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = btnClose
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 150
+    Height = 32
+    Top = 68
+    Width = 90
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 6
+    BorderSpacing.Bottom = 4
+    Caption = 'Find'
+    Default = True
+    NumGlyphs = 0
+    OnClick = btnFindClick
+    TabOrder = 1
+  end
+  object btnClose: TBitBtn
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 246
+    Height = 32
+    Top = 68
+    Width = 90
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 8
+    BorderSpacing.Bottom = 4
+    Caption = 'Cancel'
+    Kind = bkCancel
+    ModalResult = 2
+    NumGlyphs = 0
+    TabOrder = 2
+  end
+  object cbCaseSens: TCheckBox
+    AnchorSideLeft.Control = cbDataToFind
+    AnchorSideTop.Control = cbDataToFind
+    AnchorSideTop.Side = asrBottom
+    Left = 8
+    Height = 22
+    Top = 48
+    Width = 121
+    BorderSpacing.Top = 6
+    Caption = 'Case sensitive'
+    TabOrder = 3
+  end
+end

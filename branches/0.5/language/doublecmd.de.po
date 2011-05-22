@@ -1,0 +1,6875 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Double Commander 0.46 alpha\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-20 12:40+0300\n"
+"PO-Revision-Date: 2011-04-019 11:34+0100\n"
+"Last-Translator: Vacon <vacon@users.sourceforge.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+
+#: TFCOLUMNSSETCONF.BTNALLBACK.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLBACK.CAPTION"
+msgid "All"
+msgstr "Alle"
+
+#: TFCOLUMNSSETCONF.BTNALLBACK2.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLBACK2.CAPTION"
+msgid "All"
+msgstr "Alle"
+
+#: TFCOLUMNSSETCONF.BTNALLCURCOL.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLCURCOL.CAPTION"
+msgid "All"
+msgstr "Alle"
+
+#: TFCOLUMNSSETCONF.BTNALLCURTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLCURTEXT.CAPTION"
+msgid "All"
+msgstr "Alle"
+
+#: TFCOLUMNSSETCONF.BTNALLFONT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLFONT.CAPTION"
+msgid "All"
+msgstr "Alle"
+
+#: TFCOLUMNSSETCONF.BTNALLMARC.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLMARC.CAPTION"
+msgid "All"
+msgstr "Alle"
+
+#: TFCOLUMNSSETCONF.BTNALLTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNALLTEXT.CAPTION"
+msgid "All"
+msgstr "Alle"
+
+#: TFCOLUMNSSETCONF.BTNBACKCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNBACKCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNBACKCOLOR2.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNBACKCOLOR2.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNCANCEL.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFCOLUMNSSETCONF.BTNCURSORBORDERCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNCURSORBORDERCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNCURSORCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNCURSORCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNCURSORTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNCURSORTEXT.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNFONTSELECT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNFONTSELECT.CAPTION"
+msgid "..."
+msgstr ""
+
+#: TFCOLUMNSSETCONF.BTNFORECOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNFORECOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNMARKCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNMARKCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFCOLUMNSSETCONF.BTNNEXT.CAPTION
+msgid "->"
+msgstr "->"
+
+#: TFCOLUMNSSETCONF.BTNOK.CAPTION
+msgctxt "TFCOLUMNSSETCONF.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFCOLUMNSSETCONF.BTNPREV.CAPTION
+msgid "<-"
+msgstr "<-"
+
+#: TFCOLUMNSSETCONF.CAPTION
+msgid "Configure custom columns view"
+msgstr "Bearbeite angepasste Spaltenansichten"
+
+#: TFCOLUMNSSETCONF.CBACKGRNDLABEL.CAPTION
+msgctxt "TFCOLUMNSSETCONF.CBACKGRNDLABEL.CAPTION"
+msgid "BackGround:"
+msgstr "Hintergrund:"
+
+#: TFCOLUMNSSETCONF.CBCURSORBORDER.CAPTION
+msgid "Cursor border"
+msgstr "Cursor Begrenzung"
+
+#: TFCOLUMNSSETCONF.CBOVERCOLOR.CAPTION
+msgid "Allow Overcolor"
+msgstr "Erlaube Farb-Überschneidung"
+
+#: TFCOLUMNSSETCONF.CHKUSECUSTOMVIEW.CAPTION
+msgid "Use custom font and color"
+msgstr "Nutze selbstdefinierte Schriftart und -farbe"
+
+#: TFCOLUMNSSETCONF.CTEXTLABEL.CAPTION
+msgctxt "TFCOLUMNSSETCONF.CTEXTLABEL.CAPTION"
+msgid "Text Color:"
+msgstr "Textfarbe"
+
+#: TFCOLUMNSSETCONF.LABEL3.CAPTION
+msgid "Font:"
+msgstr "Schriftart:"
+
+#: TFCOLUMNSSETCONF.LABEL4.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LABEL4.CAPTION"
+msgid "Size:"
+msgstr "Grösse:"
+
+#: TFCOLUMNSSETCONF.LBLBACKGROUND2.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBLBACKGROUND2.CAPTION"
+msgid "Background 2:"
+msgstr "Hintergrund 2:"
+
+#: TFCOLUMNSSETCONF.LBLCONFIGVIEWNR.CAPTION
+msgid "Configure view nr:"
+msgstr "Bearbeite Ansicht Nr.:"
+
+#: TFCOLUMNSSETCONF.LBLCURSORCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBLCURSORCOLOR.CAPTION"
+msgid "Cursor Color:"
+msgstr "Cursorfarbe"
+
+#: TFCOLUMNSSETCONF.LBLCURSORTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBLCURSORTEXT.CAPTION"
+msgid "Cursor Text:"
+msgstr "Cursortext"
+
+#: TFCOLUMNSSETCONF.LBLMARKCOLOR.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBLMARKCOLOR.CAPTION"
+msgid "Mark Color:"
+msgstr "Markierungsfarbe"
+
+#: TFCOLUMNSSETCONF.LBLNAME.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBLNAME.CAPTION"
+msgid "Name:"
+msgstr "Name:"
+
+#: TFCOLUMNSSETCONF.LBNROFCOLUMNSSET.CAPTION
+msgctxt "TFCOLUMNSSETCONF.LBNROFCOLUMNSSET.CAPTION"
+msgid "0"
+msgstr "0"
+
+#: TFCOLUMNSSETCONF.MIADDCOLUMN.CAPTION
+msgid "Add column"
+msgstr "Spalte hinzufügen"
+
+#: TFCOLUMNSSETCONF.PNLCUSTHEAD.CAPTION
+msgid "Customize column:"
+msgstr "Spalten bearbeiten"
+
+#: TFCOLUMNSSETCONF.PNLPREVIEWHEAD.CAPTION
+msgctxt "TFCOLUMNSSETCONF.PNLPREVIEWHEAD.CAPTION"
+msgid "Preview"
+msgstr "Vorschau"
+
+#: TFCOLUMNSSETCONF.RESBACK.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESBACK.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESBACK2.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESBACK2.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESCURCOL.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESCURCOL.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESCURTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESCURTEXT.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESFONT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESFONT.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESMARK.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESMARK.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFCOLUMNSSETCONF.RESTEXT.CAPTION
+msgctxt "TFCOLUMNSSETCONF.RESTEXT.CAPTION"
+msgid "R"
+msgstr "R"
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.CBCHECKFREESPACE.CAPTION
+msgid "Check free space"
+msgstr "Prüfe freien Speicher"
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.CBCORRECTLINKS.CAPTION
+msgid "Correct links"
+msgstr "Korrigiere Verknüpfungen"
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.CBDROPREADONLYFLAG.CAPTION
+msgctxt "TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.CBDROPREADONLYFLAG.CAPTION"
+msgid "Drop readonly flag"
+msgstr "Schreibschutz-Attribut entfernen"
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.CBFOLLOWLINKS.CAPTION
+msgid "Follow links"
+msgstr "Folge Verknüpfungen"
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.LBLDIRECTORYEXISTS.CAPTION
+msgid "When directory exists"
+msgstr "Wenn das Verzeichnis vorhanden ist"
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.LBLFILEEXISTS.CAPTION
+msgctxt "TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.LBLFILEEXISTS.CAPTION"
+msgid "When file exists"
+msgstr "Wenn die Datei vorhanden ist"
+
+#: TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.LBLFILETYPE.CAPTION
+msgctxt "TFILESYSTEMCOPYMOVEOPERATIONOPTIONSUI.LBLFILETYPE.CAPTION"
+msgid "Only type:"
+msgstr "Nur diese Typen:"
+
+#: TFRMABOUT.CAPTION
+msgctxt "TFRMABOUT.CAPTION"
+msgid "About"
+msgstr "&Über"
+
+#: TFRMABOUT.LBLBUILD.CAPTION
+msgid "Build"
+msgstr "Build"
+
+#: TFRMABOUT.LBLFREEPASCALVER.CAPTION
+msgid "Free Pascal"
+msgstr "Free Pascal"
+
+#: TFRMABOUT.LBLHOMEPAGE.CAPTION
+msgid "Home Page:"
+msgstr "Homepage"
+
+#: TFRMABOUT.LBLHOMEPAGEADDRESS.CAPTION
+msgid "http://doublecmd.sourceforge.net"
+msgstr ""
+
+#: TFRMABOUT.LBLLAZARUSVER.CAPTION
+msgid "Lazarus"
+msgstr ""
+
+#: TFRMABOUT.LBLREVISION.CAPTION
+msgctxt "TFRMABOUT.LBLREVISION.CAPTION"
+msgid "Revision"
+msgstr "Revision"
+
+#: TFRMABOUT.LBLTITLE.CAPTION
+msgctxt "TFRMABOUT.LBLTITLE.CAPTION"
+msgid "Double Commander"
+msgstr "Double Commander"
+
+#: TFRMABOUT.LBLVERSION.CAPTION
+msgid "Version %s"
+msgstr ""
+"Version %s,\n"
+"deutsch by Vacon\n"
+
+#: TFRMABOUT.OKBUTTON.CAPTION
+msgctxt "TFRMABOUT.OKBUTTON.CAPTION"
+msgid "OK"
+msgstr "&OK"
+
+#: TFRMATTRIBUTESEDIT.BTNCANCEL.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.BTNCANCEL.CAPTION"
+msgid "&Cancel"
+msgstr "&Abbruch"
+
+#: TFRMATTRIBUTESEDIT.BTNOK.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMATTRIBUTESEDIT.BTNRESET.CAPTION
+msgid "&Reset"
+msgstr "&Zurücksetzen"
+
+#: TFRMATTRIBUTESEDIT.CAPTION
+msgid "Choose attributes"
+msgstr "Attribute wählen"
+
+#: TFRMATTRIBUTESEDIT.CBARCHIVE.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBARCHIVE.CAPTION"
+msgid "Archive"
+msgstr "Archiv"
+
+#: TFRMATTRIBUTESEDIT.CBCOMPRESSED.CAPTION
+msgid "Compressed"
+msgstr "Komprimiert"
+
+#: TFRMATTRIBUTESEDIT.CBDIRECTORY.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBDIRECTORY.CAPTION"
+msgid "Directory"
+msgstr "Verzeichnis"
+
+#: TFRMATTRIBUTESEDIT.CBENCRYPTED.CAPTION
+msgid "Encrypted"
+msgstr "Verschlüsselt"
+
+#: TFRMATTRIBUTESEDIT.CBHIDDEN.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBHIDDEN.CAPTION"
+msgid "Hidden"
+msgstr "Versteckt"
+
+#: TFRMATTRIBUTESEDIT.CBREADONLY.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBREADONLY.CAPTION"
+msgid "Read only"
+msgstr "Schreibgeschützt"
+
+#: TFRMATTRIBUTESEDIT.CBSGID.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBSGID.CAPTION"
+msgid "SGID"
+msgstr "SGID"
+
+#: TFRMATTRIBUTESEDIT.CBSPARSE.CAPTION
+msgid "Sparse"
+msgstr "Kaum"
+
+#: TFRMATTRIBUTESEDIT.CBSTICKY.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBSTICKY.CAPTION"
+msgid "Sticky"
+msgstr "Dauerhaft"
+
+#: TFRMATTRIBUTESEDIT.CBSUID.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBSUID.CAPTION"
+msgid "SUID"
+msgstr "SUID"
+
+#: TFRMATTRIBUTESEDIT.CBSYMLINK.CAPTION
+msgid "Symlink"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CBSYSTEM.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.CBSYSTEM.CAPTION"
+msgid "System"
+msgstr ""
+
+#: TFRMATTRIBUTESEDIT.CBTEMPORARY.CAPTION
+msgid "Temporary"
+msgstr "Temporär"
+
+#: TFRMATTRIBUTESEDIT.GBNTFSATTRIBUTES.CAPTION
+msgid "NTFS attributes"
+msgstr "NTFS-Attribute"
+
+#: TFRMATTRIBUTESEDIT.GBWINGENERAL.CAPTION
+msgid "General attributes"
+msgstr "Allgemeine Attribute"
+
+#: TFRMATTRIBUTESEDIT.LBLATTRBITSSTR.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLATTRBITSSTR.CAPTION"
+msgid "Bits:"
+msgstr "Bits:"
+
+#: TFRMATTRIBUTESEDIT.LBLATTRGROUPSTR.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLATTRGROUPSTR.CAPTION"
+msgid "Group"
+msgstr "Gruppe"
+
+#: TFRMATTRIBUTESEDIT.LBLATTROTHERSTR.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLATTROTHERSTR.CAPTION"
+msgid "Other"
+msgstr "Andere"
+
+#: TFRMATTRIBUTESEDIT.LBLATTROWNERSTR.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLATTROWNERSTR.CAPTION"
+msgid "Owner"
+msgstr "Besitzer"
+
+#: TFRMATTRIBUTESEDIT.LBLEXEC.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLEXEC.CAPTION"
+msgid "Execute"
+msgstr "Ausführen"
+
+#: TFRMATTRIBUTESEDIT.LBLREAD.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLREAD.CAPTION"
+msgid "Read"
+msgstr "Lesen"
+
+#: TFRMATTRIBUTESEDIT.LBLTEXTATTRS.CAPTION
+msgid "As text:"
+msgstr "Als Text:"
+
+#: TFRMATTRIBUTESEDIT.LBLWRITE.CAPTION
+msgctxt "TFRMATTRIBUTESEDIT.LBLWRITE.CAPTION"
+msgid "Write"
+msgstr "Schreiben"
+
+#: TFRMCALENDAR.CAPTION
+msgid "Calendar"
+msgstr "Kalender"
+
+#: TFRMCHECKSUMCALC.BTNCANCEL.CAPTION
+msgctxt "TFRMCHECKSUMCALC.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMCHECKSUMCALC.BTNOK.CAPTION
+msgctxt "TFRMCHECKSUMCALC.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMCHECKSUMCALC.CBSEPARATEFILE.CAPTION
+#, fuzzy
+#| msgid "Create separate MD5/SHA1 files for each file"
+msgid "Create separate checksum file for each file"
+msgstr "Für jede Datei eigene MD5/SHA1-Prüfdatei erstellen"
+
+#: TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT
+msgctxt "TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT"
+msgid "MD5"
+msgstr ""
+
+#: TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION
+msgctxt "TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION"
+msgid "Calculate check sum..."
+msgstr "Berechne Prüfsumme..."
+
+#: TFRMCHECKSUMCALC.LBLSAVETO.CAPTION
+msgid "Save check sum file(s) to:"
+msgstr "Prüfsummen-Datei speichern unter:"
+
+#: TFRMCHECKSUMVERIFY.BTNCLOSE.CAPTION
+msgctxt "TFRMCHECKSUMVERIFY.BTNCLOSE.CAPTION"
+msgid "&Close"
+msgstr "S&chliessen"
+
+#: TFRMCHECKSUMVERIFY.CAPTION
+msgctxt "TFRMCHECKSUMVERIFY.CAPTION"
+msgid "Verify check sum..."
+msgstr "Verifiziere Prüfsumme..."
+
+#: TFRMCOLUMSPROPS.BITBTN1.CAPTION
+msgid "&ОК"
+msgstr "&OK"
+
+#: TFRMCOMPAREFILES.BTNCLOSE.CAPTION
+msgctxt "TFRMCOMPAREFILES.BTNCLOSE.CAPTION"
+msgid "Close"
+msgstr "Schliessen"
+
+#: TFRMCOMPAREFILES.BTNCOMPARE.CAPTION
+msgctxt "TFRMCOMPAREFILES.BTNCOMPARE.CAPTION"
+msgid "Compare files"
+msgstr "Vergleiche Dateien"
+
+#: TFRMCOMPAREFILES.BTNNEXTDIFF.CAPTION
+msgid "Next difference"
+msgstr "Nächster Unterschied"
+
+#: TFRMCOMPAREFILES.BTNPREVDIFF.CAPTION
+msgid "Previous difference"
+msgstr "Vorheriger Unterschied"
+
+#: TFRMCOMPAREFILES.CAPTION
+msgctxt "TFRMCOMPAREFILES.CAPTION"
+msgid "Compare files"
+msgstr "Vergleiche Dateien"
+
+#: TFRMCOMPAREFILES.CHBBINMODE.CAPTION
+msgid "Binary mode"
+msgstr "Binär-Modus"
+
+#: TFRMCOMPAREFILES.CHBKEEPSCROLLING.CAPTION
+msgid "Keep scrolling"
+msgstr "Scrollen fortsetzen"
+
+#: TFRMCONFIGTOOLBAR.BTNAPPENDBUTTON.CAPTION
+msgid "&Insert new button"
+msgstr "Neuen Schalter e&infügen"
+
+#: TFRMCONFIGTOOLBAR.BTNAPPENDMORE.CAPTION
+msgid "A&ppend >>"
+msgstr "Leiste er&weitern >>"
+
+#: TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "A&bbruch"
+
+#: TFRMCONFIGTOOLBAR.BTNCLEARHOTKEY.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNCLEARHOTKEY.CAPTION"
+msgid "X"
+msgstr "X"
+
+#: TFRMCONFIGTOOLBAR.BTNCLONEBUTTON.CAPTION
+msgid "Clo&ne button"
+msgstr "&Schalter klonen"
+
+#: TFRMCONFIGTOOLBAR.BTNDELETEBUTTON.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNDELETEBUTTON.CAPTION"
+msgid "&Delete"
+msgstr "L&öschen"
+
+#: TFRMCONFIGTOOLBAR.BTNHELP.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNHELP.CAPTION"
+msgid "&Help"
+msgstr "H&ilfe"
+
+#: TFRMCONFIGTOOLBAR.BTNOK.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOK.CAPTION"
+msgid "OK"
+msgstr "&OK"
+
+#: TFRMCONFIGTOOLBAR.BTNOPENBARFILE.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOPENBARFILE.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMCONFIGTOOLBAR.BTNOPENFILE.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNOPENFILE.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMCONFIGTOOLBAR.CBFLATBUTTONS.CAPTION
+msgid "Flat b&uttons"
+msgstr "&Flache Schalter"
+
+#: TFRMCONFIGTOOLBAR.CBISSEPARATOR.CAPTION
+msgid "S&eparator"
+msgstr "Tre&nnendes Element"
+
+#: TFRMCONFIGTOOLBAR.FRMCONFIGTOOLBAR.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.FRMCONFIGTOOLBAR.CAPTION"
+msgid "Change button bar"
+msgstr "Schalterleiste ändern"
+
+#: TFRMCONFIGTOOLBAR.GBGROUPBOX.CAPTION
+msgid "Appearance"
+msgstr "Aussehen"
+
+#: TFRMCONFIGTOOLBAR.LBLBARSIZE.CAPTION
+msgid "Ba&r size:"
+msgstr "Höhe de&r Leiste:"
+
+#: TFRMCONFIGTOOLBAR.LBLBARSIZEVALUE.CAPTION
+msgid "36"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.LBLBUTTONBAR.CAPTION
+msgid "&Button bar:"
+msgstr "Schalt&erleiste"
+
+#: TFRMCONFIGTOOLBAR.LBLCOMMAND.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.LBLCOMMAND.CAPTION"
+msgid "&Command:"
+msgstr "Befe&hl"
+
+#: TFRMCONFIGTOOLBAR.LBLHOTKEYS.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.LBLHOTKEYS.CAPTION"
+msgid "Hot Key:"
+msgstr "Tastaturkürzel"
+
+#: TFRMCONFIGTOOLBAR.LBLICONFILE.CAPTION
+msgid "Icon &file:"
+msgstr "Icon&datei"
+
+#: TFRMCONFIGTOOLBAR.LBLICONSIZE.CAPTION
+msgid "Ic&on size:"
+msgstr "Höhe der I&cons:"
+
+#: TFRMCONFIGTOOLBAR.LBLICONSIZEVALUE.CAPTION
+msgid "32"
+msgstr ""
+
+#: TFRMCONFIGTOOLBAR.LBLPARAMETERS.CAPTION
+msgid "&Parameters:"
+msgstr "Para&meter"
+
+#: TFRMCONFIGTOOLBAR.LBLSTARTPATH.CAPTION
+msgid "&Start path:"
+msgstr "Start&pfad"
+
+#: TFRMCONFIGTOOLBAR.LBLTOOLTIP.CAPTION
+msgid "&Tooltip:"
+msgstr "&Tooltip"
+
+#: TFRMCONFIGTOOLBAR.MIADDSUBBAR.CAPTION
+#, fuzzy
+#| msgid "Add S&ubbar >>"
+msgctxt "TFRMCONFIGTOOLBAR.MIADDSUBBAR.CAPTION"
+msgid "S&ubbar >>"
+msgstr "Unter&leiste hinzufügen"
+
+#: TFRMCONFIGTOOLBAR.MIADDSUBMENU.CAPTION
+#, fuzzy
+#| msgid "Add Sub&menu >>"
+msgid "Sub&menu >>"
+msgstr "&Untermenü hinzufügen"
+
+#: TFRMCONNECTIONMANAGER.BTNADD.CAPTION
+msgctxt "TFRMCONNECTIONMANAGER.BTNADD.CAPTION"
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: TFRMCONNECTIONMANAGER.BTNCANCEL.CAPTION
+msgctxt "TFRMCONNECTIONMANAGER.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMCONNECTIONMANAGER.BTNCONNECT.CAPTION
+msgid "Connect"
+msgstr "Verbinden"
+
+#: TFRMCONNECTIONMANAGER.BTNDELETE.CAPTION
+msgctxt "TFRMCONNECTIONMANAGER.BTNDELETE.CAPTION"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMCONNECTIONMANAGER.BTNEDIT.CAPTION
+msgctxt "TFRMCONNECTIONMANAGER.BTNEDIT.CAPTION"
+msgid "Edit"
+msgstr "Bea&rbeiten"
+
+#: TFRMCONNECTIONMANAGER.CAPTION
+msgid "Connection manager"
+msgstr "Verbindungsmanager"
+
+#: TFRMCONNECTIONMANAGER.GBCONNECTTO.CAPTION
+msgid "Connect to:"
+msgstr "Verbinde mit:"
+
+#: TFRMCOPYDLG.BTNCANCEL.CAPTION
+msgctxt "TFRMCOPYDLG.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMCOPYDLG.BTNOPTIONS.CAPTION
+msgid "O&ptions"
+msgstr "O&ptionen"
+
+#: TFRMCOPYDLG.BTNSAVEOPTIONS.CAPTION
+msgid "Save these options as default"
+msgstr "Dies Optionen als Standard speichern"
+
+#: TFRMCOPYDLG.CAPTION
+msgctxt "TFRMCOPYDLG.CAPTION"
+msgid "Copy file(s)"
+msgstr "Datei(en) kopieren"
+
+#: TFRMCOPYDLG.LBLCOPYSRC.CAPTION
+msgid "Copy %s:"
+msgstr "Kopiere %s"
+
+#: TFRMDESCREDIT.BTNCANCEL.CAPTION
+msgctxt "TFRMDESCREDIT.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMDESCREDIT.BTNOK.CAPTION
+msgctxt "TFRMDESCREDIT.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMDESCREDIT.CAPTION
+msgid "File/folder comment"
+msgstr "Datei- / Ordnerkommentar"
+
+#: TFRMDESCREDIT.LBLEDITCOMMENTFOR.CAPTION
+msgid "Edit comment for:"
+msgstr "Bearbeite Kommentar für:"
+
+#: TFRMDESCREDIT.LBLENCODING.CAPTION
+msgctxt "TFRMDESCREDIT.LBLENCODING.CAPTION"
+msgid "Encoding:"
+msgstr "Kodiere:"
+
+#: TFRMDESCREDIT.LBLFILENAME.CAPTION
+msgctxt "TFRMDESCREDIT.LBLFILENAME.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMDIFFER.ACTABOUT.CAPTION
+msgctxt "TFRMDIFFER.ACTABOUT.CAPTION"
+msgid "About"
+msgstr "&Über"
+
+#: TFRMDIFFER.ACTAUTOCOMPARE.CAPTION
+msgid "Auto Compare"
+msgstr "Automatisch vergleichen"
+
+#: TFRMDIFFER.ACTBINARYCOMPARE.CAPTION
+msgid "Binary Mode"
+msgstr "Binärer Modus"
+
+#: TFRMDIFFER.ACTCANCELCOMPARE.CAPTION
+msgctxt "TFRMDIFFER.ACTCANCELCOMPARE.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMDIFFER.ACTCLOSE.CAPTION
+msgctxt "TFRMDIFFER.ACTCLOSE.CAPTION"
+msgid "Close"
+msgstr "Schliessen"
+
+#: TFRMDIFFER.ACTCOPYLEFTTORIGHT.CAPTION
+msgid "Copy Block Right"
+msgstr "Block nach rechts kopieren"
+
+#: TFRMDIFFER.ACTCOPYRIGHTTOLEFT.CAPTION
+msgid "Copy Block Left"
+msgstr "Block nach links kopieren"
+
+#: TFRMDIFFER.ACTEDITCOPY.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITCOPY.CAPTION"
+msgid "Copy"
+msgstr "Kopieren"
+
+#: TFRMDIFFER.ACTEDITCUT.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITCUT.CAPTION"
+msgid "Cut"
+msgstr "Ausschneiden"
+
+#: TFRMDIFFER.ACTEDITDELETE.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITDELETE.CAPTION"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMDIFFER.ACTEDITPASTE.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITPASTE.CAPTION"
+msgid "Paste"
+msgstr "Einfügen"
+
+#: TFRMDIFFER.ACTEDITREDO.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITREDO.CAPTION"
+msgid "Redo"
+msgstr "Wiederholen"
+
+#: TFRMDIFFER.ACTEDITSELECTALL.CAPTION
+msgid "Select &All"
+msgstr "&Alles markieren"
+
+#: TFRMDIFFER.ACTEDITUNDO.CAPTION
+msgctxt "TFRMDIFFER.ACTEDITUNDO.CAPTION"
+msgid "Undo"
+msgstr "Rückgängig machen"
+
+#: TFRMDIFFER.ACTFIRSTDIFF.CAPTION
+msgid "First Difference"
+msgstr "Erster Unterschied"
+
+#: TFRMDIFFER.ACTIGNORECASE.CAPTION
+msgid "Ignore Case"
+msgstr "Gross- / Kleinschreibung ignorieren"
+
+#: TFRMDIFFER.ACTIGNOREWHITESPACE.CAPTION
+msgid "Ignore Blanks"
+msgstr "Leerzeichen ignorieren"
+
+#: TFRMDIFFER.ACTKEEPSCROLLING.CAPTION
+msgid "Keep Scrolling"
+msgstr "Bildlauf fortsetzen"
+
+#: TFRMDIFFER.ACTLASTDIFF.CAPTION
+msgid "Last Difference"
+msgstr "Letzter Unterschied"
+
+#: TFRMDIFFER.ACTLINEDIFFERENCES.CAPTION
+msgid "Line Differences"
+msgstr ""
+
+#: TFRMDIFFER.ACTNEXTDIFF.CAPTION
+msgid "Next Difference"
+msgstr "Nächster Unterschied"
+
+#: TFRMDIFFER.ACTOPENLEFT.CAPTION
+msgid "Open Left..."
+msgstr "Öffne links ..."
+
+#: TFRMDIFFER.ACTOPENRIGHT.CAPTION
+msgid "Open Right..."
+msgstr "Öffne rechts ..."
+
+#: TFRMDIFFER.ACTPAINTBACKGROUND.CAPTION
+msgid "Paint Background"
+msgstr "Hintergrund zeichnen"
+
+#: TFRMDIFFER.ACTPREVDIFF.CAPTION
+msgid "Previous Difference"
+msgstr "Vorheriger Unterschied"
+
+#: TFRMDIFFER.ACTRELOAD.CAPTION
+msgctxt "TFRMDIFFER.ACTRELOAD.CAPTION"
+msgid "Reload"
+msgstr "Neu laden"
+
+#: TFRMDIFFER.ACTSAVE.CAPTION
+msgctxt "TFRMDIFFER.ACTSAVE.CAPTION"
+msgid "Save"
+msgstr "Speichern"
+
+#: TFRMDIFFER.ACTSAVEAS.CAPTION
+msgid "Save as..."
+msgstr "Speichern unter ..."
+
+#: TFRMDIFFER.ACTSAVELEFT.CAPTION
+msgid "Save Left"
+msgstr "Speichere links"
+
+#: TFRMDIFFER.ACTSAVELEFTAS.CAPTION
+msgid "Save Left As..."
+msgstr "Speichere links unter ..."
+
+#: TFRMDIFFER.ACTSAVERIGHT.CAPTION
+msgid "Save Right"
+msgstr "Speichere rechts"
+
+#: TFRMDIFFER.ACTSAVERIGHTAS.CAPTION
+msgid "Save Right As..."
+msgstr "Speichere rechts unter ..."
+
+#: TFRMDIFFER.ACTSTARTCOMPARE.CAPTION
+msgid "Compare"
+msgstr "Vergleiche"
+
+#: TFRMDIFFER.FRMDIFFER.CAPTION
+msgctxt "TFRMDIFFER.FRMDIFFER.CAPTION"
+msgid "Compare files"
+msgstr "Vergleiche Dateien"
+
+#: TFRMDIFFER.MIDIVIDER1.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER10.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER10.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER2.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER3.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER3.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER4.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER4.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER5.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER5.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER6.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER6.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER7.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER7.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER8.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER8.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIDIVIDER9.CAPTION
+msgctxt "TFRMDIFFER.MIDIVIDER9.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MIENCODINGLEFT.CAPTION
+msgid "Left"
+msgstr "Links"
+
+#: TFRMDIFFER.MIENCODINGRIGHT.CAPTION
+msgid "Right"
+msgstr "Rechts"
+
+#: TFRMDIFFER.MISEPARATOR1.CAPTION
+msgctxt "TFRMDIFFER.MISEPARATOR1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MISEPARATOR2.CAPTION
+msgctxt "TFRMDIFFER.MISEPARATOR2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMDIFFER.MNUACTIONS.CAPTION
+msgid "&Actions"
+msgstr "&Aktionen"
+
+#: TFRMDIFFER.MNUEDIT.CAPTION
+msgctxt "TFRMDIFFER.MNUEDIT.CAPTION"
+msgid "Edit"
+msgstr "Bea&rbeiten"
+
+#: TFRMDIFFER.MNUENCODING.CAPTION
+msgctxt "TFRMDIFFER.MNUENCODING.CAPTION"
+msgid "Encoding"
+msgstr "Codierung"
+
+#: TFRMDIFFER.MNUFILE.CAPTION
+msgctxt "TFRMDIFFER.MNUFILE.CAPTION"
+msgid "File"
+msgstr "Datei"
+
+#: TFRMDIFFER.MNUOPTIONS.CAPTION
+#, fuzzy
+#| msgid "Options"
+msgctxt "TFRMDIFFER.MNUOPTIONS.CAPTION"
+msgid "&Options"
+msgstr "Optionen"
+
+#: TFRMEDITOR.ACTABOUT.CAPTION
+msgctxt "TFRMEDITOR.ACTABOUT.CAPTION"
+msgid "About"
+msgstr "&Über"
+
+#: TFRMEDITOR.ACTCONFHIGH.CAPTION
+msgid "&Configuration"
+msgstr "&Einstellungen"
+
+#: TFRMEDITOR.ACTEDITCOPY.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITCOPY.CAPTION"
+msgid "Copy"
+msgstr "Kopieren"
+
+#: TFRMEDITOR.ACTEDITCUT.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITCUT.CAPTION"
+msgid "Cut"
+msgstr "Ausschneiden"
+
+#: TFRMEDITOR.ACTEDITDELETE.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITDELETE.CAPTION"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMEDITOR.ACTEDITFIND.CAPTION
+msgid "&Find"
+msgstr "&Suchen"
+
+#: TFRMEDITOR.ACTEDITFINDNEXT.CAPTION
+msgid "Find next"
+msgstr "Finde nächste"
+
+#: TFRMEDITOR.ACTEDITPASTE.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITPASTE.CAPTION"
+msgid "Paste"
+msgstr "Einfügen"
+
+#: TFRMEDITOR.ACTEDITREDO.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITREDO.CAPTION"
+msgid "Redo"
+msgstr "Wiederholen"
+
+#: TFRMEDITOR.ACTEDITRPLC.CAPTION
+msgid "&Replace"
+msgstr "E&rsetzen"
+
+#: TFRMEDITOR.ACTEDITSELECTALL.CAPTION
+msgid "Select&All"
+msgstr "&Alle markieren"
+
+#: TFRMEDITOR.ACTEDITUNDO.CAPTION
+msgctxt "TFRMEDITOR.ACTEDITUNDO.CAPTION"
+msgid "Undo"
+msgstr "Rückgängig machen"
+
+#: TFRMEDITOR.ACTFILECLOSE.CAPTION
+msgctxt "TFRMEDITOR.ACTFILECLOSE.CAPTION"
+msgid "&Close"
+msgstr "S&chliessen"
+
+#: TFRMEDITOR.ACTFILEEXIT.CAPTION
+msgctxt "TFRMEDITOR.ACTFILEEXIT.CAPTION"
+msgid "E&xit"
+msgstr "En&de"
+
+#: TFRMEDITOR.ACTFILENEW.CAPTION
+msgctxt "TFRMEDITOR.ACTFILENEW.CAPTION"
+msgid "&New"
+msgstr "&Neu"
+
+#: TFRMEDITOR.ACTFILEOPEN.CAPTION
+msgid "&Open"
+msgstr "&Öffnen"
+
+#: TFRMEDITOR.ACTFILESAVE.CAPTION
+msgctxt "TFRMEDITOR.ACTFILESAVE.CAPTION"
+msgid "&Save"
+msgstr "&Speichern"
+
+#: TFRMEDITOR.ACTFILESAVEAS.CAPTION
+msgid "Save &As.."
+msgstr "Speichern &unter..."
+
+#: TFRMEDITOR.ACTSAVEALL.CAPTION
+msgid "Sa&ve All"
+msgstr "Alles &speichern"
+
+#: TFRMEDITOR.CAPTION
+msgctxt "TFRMEDITOR.CAPTION"
+msgid "Editor"
+msgstr "Editor"
+
+#: TFRMEDITOR.HELP1.CAPTION
+msgctxt "TFRMEDITOR.HELP1.CAPTION"
+msgid "&Help"
+msgstr "&Hilfe"
+
+#: TFRMEDITOR.MIDIV.CAPTION
+msgctxt "TFRMEDITOR.MIDIV.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITOR.MIEDIT.CAPTION
+msgctxt "TFRMEDITOR.MIEDIT.CAPTION"
+msgid "&Edit"
+msgstr "&Bearbeiten"
+
+#: TFRMEDITOR.MIENCODING.CAPTION
+msgctxt "TFRMEDITOR.MIENCODING.CAPTION"
+msgid "En&coding"
+msgstr "&Kodiere"
+
+#: TFRMEDITOR.MIENCODINGIN.CAPTION
+msgid "Open as"
+msgstr "Öffnen als..."
+
+#: TFRMEDITOR.MIENCODINGOUT.CAPTION
+msgid "Save as"
+msgstr "Speichern unter..."
+
+#: TFRMEDITOR.MIFILE.CAPTION
+msgctxt "TFRMEDITOR.MIFILE.CAPTION"
+msgid "&File"
+msgstr "&Datei"
+
+#: TFRMEDITOR.MIHIGHLIGHT.CAPTION
+msgid "Syntax highlight"
+msgstr "S&yntax hervorheben"
+
+#: TFRMEDITOR.MISEPARATOR1.CAPTION
+msgctxt "TFRMEDITOR.MISEPARATOR1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITOR.MISEPARATOR2.CAPTION
+msgctxt "TFRMEDITOR.MISEPARATOR2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITOR.N1.CAPTION
+msgctxt "TFRMEDITOR.N1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITOR.N3.CAPTION
+msgctxt "TFRMEDITOR.N3.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITOR.N4.CAPTION
+msgctxt "TFRMEDITOR.N4.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMEDITORCONF.BTNCANCEL.CAPTION
+msgctxt "TFRMEDITORCONF.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMEDITORCONF.BTNOK.CAPTION
+msgctxt "TFRMEDITORCONF.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMEDITORCONF.CAPTION
+msgid "Editor configuration"
+msgstr "Editor konfigurieren"
+
+#: TFRMEDITORCONF.CBBOLD.CAPTION
+msgid "&Bold"
+msgstr "&Fett"
+
+#: TFRMEDITORCONF.CBITALIC.CAPTION
+msgid "&Italic"
+msgstr "K&ursiv"
+
+#: TFRMEDITORCONF.CBSTRIKEOUT.CAPTION
+msgid "&StrikeOut"
+msgstr "Durch&gestrichen"
+
+#: TFRMEDITORCONF.CBUNDERLINE.CAPTION
+msgid "&Underline"
+msgstr "Un&terstrichen"
+
+#: TFRMEDITORCONF.LBPREDEFINED.CAPTION
+msgid "Predefined"
+msgstr "Vordefiniert"
+
+#: TFRMEDITORCONF.LBSAMPLE.CAPTION
+msgid "Sample"
+msgstr "Beispiel"
+
+#: TFRMEDITSEARCHREPLACE.BTNCANCEL.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMEDITSEARCHREPLACE.BTNOK.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMEDITSEARCHREPLACE.CAPTION
+msgid "frmEditSearchReplace"
+msgstr ""
+
+#: TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION
+msgid "C&ase sensitivity"
+msgstr "Strikt nach Schreibweise"
+
+#: TFRMEDITSEARCHREPLACE.CBSEARCHFROMCURSOR.CAPTION
+msgid "Search from &caret"
+msgstr "Suche von &caret"
+
+#: TFRMEDITSEARCHREPLACE.CBSEARCHREGEXP.CAPTION
+msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHREGEXP.CAPTION"
+msgid "&Regular expressions"
+msgstr "&Reguläre Ausdrücke"
+
+#: TFRMEDITSEARCHREPLACE.CBSEARCHSELECTEDONLY.CAPTION
+msgid "Selected &text only"
+msgstr "Nur den markierten Text"
+
+#: TFRMEDITSEARCHREPLACE.CBSEARCHWHOLEWORDS.CAPTION
+msgid "&Whole words only"
+msgstr "Nur ganze Wörter"
+
+#: TFRMEDITSEARCHREPLACE.GBSEARCHOPTIONS.CAPTION
+msgid "Option"
+msgstr "Optionen"
+
+#: TFRMEDITSEARCHREPLACE.LBLREPLACEWITH.CAPTION
+msgid "&Replace with:"
+msgstr "&Ersetzen mit:"
+
+#: TFRMEDITSEARCHREPLACE.LBLSEARCHFOR.CAPTION
+msgid "&Search for:"
+msgstr "&Suche nach:"
+
+#: TFRMEDITSEARCHREPLACE.RGSEARCHDIRECTION.CAPTION
+msgid "Direction"
+msgstr "Richtung"
+
+#: TFRMEXTRACTDLG.BTNCANCEL.CAPTION
+msgctxt "TFRMEXTRACTDLG.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMEXTRACTDLG.BTNHELP.CAPTION
+msgctxt "TFRMEXTRACTDLG.BTNHELP.CAPTION"
+msgid "Help"
+msgstr "Hilfe"
+
+#: TFRMEXTRACTDLG.BTNOK.CAPTION
+msgctxt "TFRMEXTRACTDLG.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMEXTRACTDLG.CBEXTRACTPATH.CAPTION
+msgid "&Unpack path names if stored with files"
+msgstr "&Pfad mit entpacken (falls gespeichert)"
+
+#: TFRMEXTRACTDLG.CBFILEMASK.TEXT
+msgid "*.*"
+msgstr "*"
+
+#: TFRMEXTRACTDLG.CBINSEPARATEFOLDER.CAPTION
+msgid "Unpack each archive to a &separate subdir (name of the archive)"
+msgstr "Jedes Archiv in separaten Ordner entpacken (mit Namen des Archivs)"
+
+#: TFRMEXTRACTDLG.CBOVERWRITE.CAPTION
+msgid "&Overwrite existing files"
+msgstr "&Bestehende Datei(en) überschreiben"
+
+#: TFRMEXTRACTDLG.FRMEXTRACTDLG.CAPTION
+msgctxt "TFRMEXTRACTDLG.FRMEXTRACTDLG.CAPTION"
+msgid "Unpack files"
+msgstr "Entpacke Datei(en)"
+
+#: TFRMEXTRACTDLG.LBLEXTRACTTO.CAPTION
+#, fuzzy
+#| msgid "Unpack file to:"
+msgid "To the directory:"
+msgstr "Entpacke Datei(en) nach:"
+
+#: TFRMEXTRACTDLG.LBLFILEMASK.CAPTION
+#, fuzzy
+#| msgid "&Files to unpack:"
+msgid "Extract files matching file mask:"
+msgstr "Entpacken von &Dateien anhand von Vorgaben:"
+
+#: TFRMEXTRACTDLG.LBLPASSWORD.CAPTION
+msgid "Password for encrypted files:"
+msgstr "Passwort für verschlüsselte Dateien"
+
+#: TFRMFILEASSOC.BTNADDACT.CAPTION
+msgctxt "TFRMFILEASSOC.BTNADDACT.CAPTION"
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: TFRMFILEASSOC.BTNADDEXT.CAPTION
+msgctxt "TFRMFILEASSOC.BTNADDEXT.CAPTION"
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: TFRMFILEASSOC.BTNADDNEWTYPE.CAPTION
+msgctxt "TFRMFILEASSOC.BTNADDNEWTYPE.CAPTION"
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: TFRMFILEASSOC.BTNCANCEL.CAPTION
+msgctxt "TFRMFILEASSOC.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMFILEASSOC.BTNDOWNACT.CAPTION
+msgctxt "TFRMFILEASSOC.BTNDOWNACT.CAPTION"
+msgid "Down"
+msgstr "Runter"
+
+#: TFRMFILEASSOC.BTNOK.CAPTION
+msgctxt "TFRMFILEASSOC.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&Ok"
+
+#: TFRMFILEASSOC.BTNREMOVEACT.CAPTION
+msgctxt "TFRMFILEASSOC.BTNREMOVEACT.CAPTION"
+msgid "Remove"
+msgstr "Entfernen"
+
+#: TFRMFILEASSOC.BTNREMOVEEXT.CAPTION
+msgctxt "TFRMFILEASSOC.BTNREMOVEEXT.CAPTION"
+msgid "Remove"
+msgstr "Entfernen"
+
+#: TFRMFILEASSOC.BTNREMOVEICON.CAPTION
+msgctxt "TFRMFILEASSOC.BTNREMOVEICON.CAPTION"
+msgid "X"
+msgstr "X"
+
+#: TFRMFILEASSOC.BTNREMOVETYPE.CAPTION
+msgctxt "TFRMFILEASSOC.BTNREMOVETYPE.CAPTION"
+msgid "Remove"
+msgstr "Entfernen"
+
+#: TFRMFILEASSOC.BTNRENAMETYPE.CAPTION
+msgctxt "TFRMFILEASSOC.BTNRENAMETYPE.CAPTION"
+msgid "Rename"
+msgstr "Umbenennen"
+
+#: TFRMFILEASSOC.BTNUPACT.CAPTION
+msgctxt "TFRMFILEASSOC.BTNUPACT.CAPTION"
+msgid "Up"
+msgstr "Hoch"
+
+#: TFRMFILEASSOC.CAPTION
+msgid "File associations"
+msgstr "Datei-Verknüpfungen"
+
+#: TFRMFILEASSOC.GBACTIONS.CAPTION
+msgctxt "TFRMFILEASSOC.GBACTIONS.CAPTION"
+msgid "Actions"
+msgstr "Aktionen"
+
+#: TFRMFILEASSOC.GBEXTS.CAPTION
+msgid "Extensions"
+msgstr "Endungen"
+
+#: TFRMFILEASSOC.GBFILETYPES.CAPTION
+msgctxt "TFRMFILEASSOC.GBFILETYPES.CAPTION"
+msgid "File types"
+msgstr "Dateitypen"
+
+#: TFRMFILEASSOC.GBICON.CAPTION
+msgid "Icon"
+msgstr "Icon"
+
+#: TFRMFILEASSOC.LBLACTION.CAPTION
+msgid "Action:"
+msgstr "Aktion:"
+
+#: TFRMFILEASSOC.LBLCOMMAND.CAPTION
+msgctxt "TFRMFILEASSOC.LBLCOMMAND.CAPTION"
+msgid "&Command:"
+msgstr "&Befehl"
+
+#: TFRMFILEASSOC.MIEDIT.CAPTION
+msgctxt "TFRMFILEASSOC.MIEDIT.CAPTION"
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: TFRMFILEASSOC.MIEDITOR.CAPTION
+msgid "Open in Editor"
+msgstr "im Editor öffnen"
+
+#: TFRMFILEASSOC.MIFILENAME.CAPTION
+msgctxt "TFRMFILEASSOC.MIFILENAME.CAPTION"
+msgid "File name"
+msgstr "Dateiname"
+
+#: TFRMFILEASSOC.MIFILEPATH.CAPTION
+msgid "File path"
+msgstr "Dateipfad"
+
+#: TFRMFILEASSOC.MIFULLPATH.CAPTION
+msgid "Full path"
+msgstr "Vollständiger Pfad"
+
+#: TFRMFILEASSOC.MIGETOUTPUTFROMCOMMAND.CAPTION
+msgid "Get output from command"
+msgstr "Ausgabe aus Konsolen-Fenster entnehmen"
+
+#: TFRMFILEASSOC.MIOPEN.CAPTION
+msgctxt "TFRMFILEASSOC.MIOPEN.CAPTION"
+msgid "Open"
+msgstr "Öffnen"
+
+#: TFRMFILEASSOC.MISHELL.CAPTION
+msgid "Run in terminal"
+msgstr "In Konsolen-Fenster ausführen"
+
+#: TFRMFILEASSOC.MIVFS.CAPTION
+msgid "Open in VFS"
+msgstr "In VFS öffnen"
+
+#: TFRMFILEASSOC.MIVIEW.CAPTION
+msgctxt "TFRMFILEASSOC.MIVIEW.CAPTION"
+msgid "View"
+msgstr "Betrachten"
+
+#: TFRMFILEASSOC.MIVIEWER.CAPTION
+msgid "Open in Viewer"
+msgstr "In Betrachter öffnen"
+
+#: TFRMFILEEXECUTEYOURSELF.BTNCLOSE.CAPTION
+msgctxt "TFRMFILEEXECUTEYOURSELF.BTNCLOSE.CAPTION"
+msgid "&Close"
+msgstr "S&chliessen"
+
+#: TFRMFILEEXECUTEYOURSELF.FRMFILEEXECUTEYOURSELF.CAPTION
+msgctxt "TFRMFILEEXECUTEYOURSELF.FRMFILEEXECUTEYOURSELF.CAPTION"
+msgid "Wait..."
+msgstr "Warte..."
+
+#: TFRMFILEEXECUTEYOURSELF.LBLFILENAME.CAPTION
+msgid "File name:"
+msgstr "Dateiname:"
+
+#: TFRMFILEEXECUTEYOURSELF.LBLFROMPATH.CAPTION
+msgctxt "TFRMFILEEXECUTEYOURSELF.LBLFROMPATH.CAPTION"
+msgid "From:"
+msgstr "Von:"
+
+#: TFRMFILEEXECUTEYOURSELF.LBLPROMPT.CAPTION
+msgid "Click on Close when the temporary file can be deleted!"
+msgstr "Auf [Schliessen] klicken, wenn die temporären Daten gelöscht werden können!"
+
+#: TFRMFILEOP.BTHOPEND.CAPTION
+msgid "End"
+msgstr "Ende"
+
+#: TFRMFILEOP.BTNCANCEL.CAPTION
+msgctxt "TFRMFILEOP.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMFILEOP.BTNOPHOME.CAPTION
+msgid "Home"
+msgstr "Nutzer-Verzeichnis (Home)"
+
+#: TFRMFILEOP.BTNTOQUEUE.CAPTION
+msgid "To Queue"
+msgstr "In die Warteschlange"
+
+#: TFRMFILEOP.BTNWORKINBACKGROUND.CAPTION
+msgid "Work in &background"
+msgstr "Im Hintergrund &ausführen"
+
+#: TFRMFILEOP.CAPTION
+msgid "Process file(s)"
+msgstr "Verarbeite Datei(en)"
+
+#: TFRMFILEOP.LBLFILENAMEFROM.CAPTION
+#, fuzzy
+#| msgid "File name"
+msgctxt "TFRMFILEOP.LBLFILENAMEFROM.CAPTION"
+msgid "File name from"
+msgstr "Dateiname"
+
+#: TFRMFILEOP.LBLFILENAMETO.CAPTION
+msgid "File name to"
+msgstr "Dateiname zu"
+
+#: TFRMFILEOP.LBLFROM.CAPTION
+msgctxt "TFRMFILEOP.LBLFROM.CAPTION"
+msgid "From:"
+msgstr "Von:"
+
+#: TFRMFILEOP.LBLTO.CAPTION
+msgid "To:"
+msgstr "Nach:"
+
+#: TFRMFILEPROPERTIES.BTNALL.CAPTION
+msgctxt "TFRMFILEPROPERTIES.BTNALL.CAPTION"
+msgid "&All"
+msgstr "&Alle"
+
+#: TFRMFILEPROPERTIES.BTNCLOSE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.BTNCLOSE.CAPTION"
+msgid "Close"
+msgstr "Schliessen"
+
+#: TFRMFILEPROPERTIES.BTNOK.CAPTION
+msgctxt "TFRMFILEPROPERTIES.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMFILEPROPERTIES.BTNSKIP.CAPTION
+msgid "Skip"
+msgstr "Überspringen"
+
+#: TFRMFILEPROPERTIES.CBSGID.CAPTION
+msgctxt "TFRMFILEPROPERTIES.CBSGID.CAPTION"
+msgid "SGID"
+msgstr "SGID"
+
+#: TFRMFILEPROPERTIES.CBSTICKY.CAPTION
+msgctxt "TFRMFILEPROPERTIES.CBSTICKY.CAPTION"
+msgid "Sticky"
+msgstr "Dauerhaft"
+
+#: TFRMFILEPROPERTIES.CBSUID.CAPTION
+msgctxt "TFRMFILEPROPERTIES.CBSUID.CAPTION"
+msgid "SUID"
+msgstr "SUID"
+
+#: TFRMFILEPROPERTIES.FRMFILEPROPERTIES.CAPTION
+msgctxt "TFRMFILEPROPERTIES.FRMFILEPROPERTIES.CAPTION"
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#: TFRMFILEPROPERTIES.GBOWNER.CAPTION
+msgctxt "TFRMFILEPROPERTIES.GBOWNER.CAPTION"
+msgid "Owner"
+msgstr "Besitzer"
+
+#: TFRMFILEPROPERTIES.LBLATTRBITSSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLATTRBITSSTR.CAPTION"
+msgid "Bits:"
+msgstr "Bits:"
+
+#: TFRMFILEPROPERTIES.LBLATTRGROUPSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLATTRGROUPSTR.CAPTION"
+msgid "Group"
+msgstr "Gruppe"
+
+#: TFRMFILEPROPERTIES.LBLATTROTHERSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLATTROTHERSTR.CAPTION"
+msgid "Other"
+msgstr "Andere"
+
+#: TFRMFILEPROPERTIES.LBLATTROWNERSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLATTROWNERSTR.CAPTION"
+msgid "Owner"
+msgstr "Besitzer"
+
+#: TFRMFILEPROPERTIES.LBLATTRTEXT.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLATTRTEXT.CAPTION"
+msgid "-----------"
+msgstr "-----------"
+
+#: TFRMFILEPROPERTIES.LBLATTRTEXTSTR.CAPTION
+#, fuzzy
+#| msgid "Representation in text:"
+msgctxt "TFRMFILEPROPERTIES.LBLATTRTEXTSTR.CAPTION"
+msgid "Text:"
+msgstr "Darstellung im Text"
+
+#: TFRMFILEPROPERTIES.LBLEXEC.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLEXEC.CAPTION"
+msgid "Execute"
+msgstr "Ausführen"
+
+#: TFRMFILEPROPERTIES.LBLFILE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLFILE.CAPTION"
+msgid "File name"
+msgstr "Dateiname"
+
+#: TFRMFILEPROPERTIES.LBLFILENAME.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLFILENAME.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLFILENAMESTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLFILENAMESTR.CAPTION"
+msgid "Name:"
+msgstr "Name:"
+
+#: TFRMFILEPROPERTIES.LBLFILESTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLFILESTR.CAPTION"
+msgid "File name"
+msgstr "Dateiname"
+
+#: TFRMFILEPROPERTIES.LBLFOLDER.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLFOLDER.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLFOLDERSTR.CAPTION
+msgid "Path:"
+msgstr "Pfad:"
+
+#: TFRMFILEPROPERTIES.LBLGROUPSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLGROUPSTR.CAPTION"
+msgid "Group"
+msgstr "Gruppe"
+
+#: TFRMFILEPROPERTIES.LBLLASTACCESS.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLLASTACCESS.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLLASTACCESSSTR.CAPTION
+msgid "Last access:"
+msgstr "Letzter Zugriff"
+
+#: TFRMFILEPROPERTIES.LBLLASTMODIF.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLLASTMODIF.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLLASTMODIFSTR.CAPTION
+msgid "Last modification:"
+msgstr "Letzte Änderung:"
+
+#: TFRMFILEPROPERTIES.LBLLASTSTCHANGE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLLASTSTCHANGE.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLLASTSTCHANGESTR.CAPTION
+msgid "Last status change:"
+msgstr "Letzte Änderung des Status:"
+
+#: TFRMFILEPROPERTIES.LBLOCTAL.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLOCTAL.CAPTION"
+msgid "Octal:"
+msgstr "Oktal:"
+
+#: TFRMFILEPROPERTIES.LBLOWNERSTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLOWNERSTR.CAPTION"
+msgid "Owner"
+msgstr "Besitzer"
+
+#: TFRMFILEPROPERTIES.LBLREAD.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLREAD.CAPTION"
+msgid "Read"
+msgstr "Lesen"
+
+#: TFRMFILEPROPERTIES.LBLSIZE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLSIZE.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLSIZESTR.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLSIZESTR.CAPTION"
+msgid "Size:"
+msgstr "Grösse:"
+
+#: TFRMFILEPROPERTIES.LBLSYMLINK.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLSYMLINK.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLSYMLINKSTR.CAPTION
+#, fuzzy
+#| msgid "Symlink:"
+msgid "Symlink to:"
+msgstr "Symb. Link:"
+
+#: TFRMFILEPROPERTIES.LBLTYPE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLTYPE.CAPTION"
+msgid "???"
+msgstr "???"
+
+#: TFRMFILEPROPERTIES.LBLTYPESTR.CAPTION
+#, fuzzy
+msgid "Type:"
+msgstr "Typ:"
+
+#: TFRMFILEPROPERTIES.LBLWRITE.CAPTION
+msgctxt "TFRMFILEPROPERTIES.LBLWRITE.CAPTION"
+msgid "Write"
+msgstr "Schreiben"
+
+#: TFRMFILEPROPERTIES.TSATTRIBUTES.CAPTION
+msgctxt "TFRMFILEPROPERTIES.TSATTRIBUTES.CAPTION"
+msgid "Attributes"
+msgstr "Attribute"
+
+#: TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION
+msgctxt "TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION"
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#: TFRMFINDDLG.BTNADDATTRIBUTE.CAPTION
+msgid "&Add"
+msgstr "&Hinzufügen"
+
+#: TFRMFINDDLG.BTNATTRSHELP.CAPTION
+msgctxt "TFRMFINDDLG.BTNATTRSHELP.CAPTION"
+msgid "&Help"
+msgstr "&Hilfe"
+
+#: TFRMFINDDLG.BTNCLOSE.CAPTION
+msgctxt "TFRMFINDDLG.BTNCLOSE.CAPTION"
+msgid "&Close"
+msgstr "S&chliessen"
+
+#: TFRMFINDDLG.BTNGOTOPATH.CAPTION
+msgid "&Go to file"
+msgstr "&Gehe zu Datei"
+
+#: TFRMFINDDLG.BTNNEWSEARCH.CAPTION
+msgid "&New search"
+msgstr "&Neue Suche"
+
+#: TFRMFINDDLG.BTNSAVETEMPLATE.CAPTION
+msgctxt "TFRMFINDDLG.BTNSAVETEMPLATE.CAPTION"
+msgid "Save"
+msgstr "Speichern"
+
+#: TFRMFINDDLG.BTNSEARCHDELETE.CAPTION
+msgctxt "TFRMFINDDLG.BTNSEARCHDELETE.CAPTION"
+msgid "&Delete"
+msgstr "L&öschen"
+
+#: TFRMFINDDLG.BTNSEARCHLOAD.CAPTION
+msgid "L&oad"
+msgstr "&Laden"
+
+#: TFRMFINDDLG.BTNSEARCHSAVE.CAPTION
+msgid "S&ave"
+msgstr "&Speichern"
+
+#: TFRMFINDDLG.BTNSTART.CAPTION
+msgid "&Start"
+msgstr "&Starten"
+
+#: TFRMFINDDLG.BTNSTOP.CAPTION
+msgctxt "TFRMFINDDLG.BTNSTOP.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMFINDDLG.BTNVIEW.CAPTION
+msgctxt "TFRMFINDDLG.BTNVIEW.CAPTION"
+msgid "&View"
+msgstr "&Betrachten"
+
+#: TFRMFINDDLG.BTNWORKWITHFOUND.CAPTION
+msgid "Feed to &listbox"
+msgstr "Füge in &Listbox ein"
+
+#: TFRMFINDDLG.CBCASESENS.CAPTION
+msgid "Case sens&itive"
+msgstr "Gross- / Kleinschreibung beachten"
+
+#: TFRMFINDDLG.CBDATEFROM.CAPTION
+msgid "Date From:"
+msgstr "Ab Datum:"
+
+#: TFRMFINDDLG.CBDATETO.CAPTION
+msgid "Date To:"
+msgstr "Vor Datum:"
+
+#: TFRMFINDDLG.CBFILESIZEFROM.CAPTION
+#, fuzzy
+#| msgid "File Size From:"
+msgid "Size from:"
+msgstr "Dateigrösse ab:"
+
+#: TFRMFINDDLG.CBFILESIZETO.CAPTION
+#, fuzzy
+#| msgid "File Size To:"
+msgid "Size to:"
+msgstr "Bis Dateigrösse"
+
+#: TFRMFINDDLG.CBFINDTEXT.CAPTION
+msgctxt "TFRMFINDDLG.CBFINDTEXT.CAPTION"
+msgid "Find &text in file"
+msgstr "Suche in Datei"
+
+#: TFRMFINDDLG.CBNOTCONTAININGTEXT.CAPTION
+msgctxt "TFRMFINDDLG.CBNOTCONTAININGTEXT.CAPTION"
+msgid "Find files N&OT containing the text"
+msgstr "Suche Datei die NICHT den Text enthalten"
+
+#: TFRMFINDDLG.CBNOTOLDERTHAN.CAPTION
+msgid "Not older than:"
+msgstr "Nicht älter als:"
+
+#: TFRMFINDDLG.CBPARTIALNAMESEARCH.CAPTION
+msgid "Search for part of file name "
+msgstr "Suche nach einem Teil des Dateinamens"
+
+#: TFRMFINDDLG.CBREGEXP.CAPTION
+msgctxt "TFRMFINDDLG.CBREGEXP.CAPTION"
+msgid "&Regular expressions"
+msgstr "&Reguläre Ausdrücke"
+
+#: TFRMFINDDLG.CBREPLACETEXT.CAPTION
+#, fuzzy
+#| msgid "Re&place text"
+msgid "Re&place by"
+msgstr "Ersetze Text"
+
+#: TFRMFINDDLG.CBTIMEFROM.CAPTION
+msgid "Time from:"
+msgstr "Neuer als:"
+
+#: TFRMFINDDLG.CBTIMETO.CAPTION
+msgid "Time to:"
+msgstr "Älter als:"
+
+#: TFRMFINDDLG.CBUSEPLUGIN.CAPTION
+msgid "&Use search plugin:"
+msgstr "Nutze Such-PlugIn"
+
+#: TFRMFINDDLG.CMBFINDFILEMASK.TEXT
+msgctxt "TFRMFINDDLG.CMBFINDFILEMASK.TEXT"
+msgid "*"
+msgstr "*"
+
+#: TFRMFINDDLG.CMBFOLLOWSYMLINKS.CAPTION
+msgctxt "TFRMFINDDLG.CMBFOLLOWSYMLINKS.CAPTION"
+msgid "Follow symlinks"
+msgstr "Symlinks folgen"
+
+#: TFRMFINDDLG.FRMFINDDLG.CAPTION
+msgctxt "TFRMFINDDLG.FRMFINDDLG.CAPTION"
+msgid "Find files"
+msgstr "Suche Datei(en)"
+
+#: TFRMFINDDLG.GBATTRIBUTES.CAPTION
+msgid "&Attributes"
+msgstr "&Attribute"
+
+#: TFRMFINDDLG.GBFINDDATA.CAPTION
+msgid "Find Data"
+msgstr "Suche Daten"
+
+#: TFRMFINDDLG.GBFINDOPTIONS.CAPTION
+msgctxt "TFRMFINDDLG.GBFINDOPTIONS.CAPTION"
+msgid "Options"
+msgstr "Optionen"
+
+#: TFRMFINDDLG.LBLCURRENT.CAPTION
+msgid "Current"
+msgstr "Aktuell"
+
+#: TFRMFINDDLG.LBLENCODING.CAPTION
+msgctxt "TFRMFINDDLG.LBLENCODING.CAPTION"
+msgid "Encoding:"
+msgstr "Kodiere:"
+
+#: TFRMFINDDLG.LBLFINDFILEMASK.CAPTION
+msgid "&File mask"
+msgstr "Dateimaske"
+
+#: TFRMFINDDLG.LBLFINDPATHSTART.CAPTION
+msgid "&Directory"
+msgstr "Verzeichnis in dem DoubleCommander suchen soll"
+
+#: TFRMFINDDLG.LBLFOUND.CAPTION
+msgid "Found"
+msgstr "Gefunden"
+
+#: TFRMFINDDLG.LBLSEARCHDEPTH.CAPTION
+msgid "Search su&bdirectories:"
+msgstr "Suche Unterverzeichnisse"
+
+#: TFRMFINDDLG.LBLSTATUS.CAPTION
+msgid "Status"
+msgstr "Status"
+
+#: TFRMFINDDLG.LBLTEMPLATEHEADER.CAPTION
+msgid "&Previous searches:"
+msgstr "Vorherige Suche(n)"
+
+#: TFRMFINDDLG.MIREMOVEFROMLLIST.CAPTION
+msgid "Remove from list"
+msgstr "Von der Liste entfernen"
+
+#: TFRMFINDDLG.MISHOWALLFOUND.CAPTION
+msgid "Show all found items"
+msgstr "Alle gefundenen Einträge anzeigen"
+
+#: TFRMFINDDLG.MISHOWINVIEWER.CAPTION
+msgid "Show In Viewer"
+msgstr "Zeige im Betrachter"
+
+#: TFRMFINDDLG.TSADVANCED.CAPTION
+msgid "Advanced"
+msgstr "Fortgeschritten"
+
+#: TFRMFINDDLG.TSLOADSAVE.CAPTION
+msgid "Load/Save"
+msgstr "Laden/Speichern"
+
+#: TFRMFINDDLG.TSRESULTS.CAPTION
+msgid "Results"
+msgstr "Ergebnisse"
+
+#: TFRMFINDDLG.TSSTANDARD.CAPTION
+msgid "Standard"
+msgstr "Standard"
+
+#: TFRMFINDVIEW.BTNCLOSE.CAPTION
+msgctxt "TFRMFINDVIEW.BTNCLOSE.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMFINDVIEW.BTNFIND.CAPTION
+msgctxt "TFRMFINDVIEW.BTNFIND.CAPTION"
+msgid "Find"
+msgstr "Suchen"
+
+#: TFRMFINDVIEW.CAPTION
+msgctxt "TFRMFINDVIEW.CAPTION"
+msgid "Find"
+msgstr "Suchen"
+
+#: TFRMFINDVIEW.CBCASESENS.CAPTION
+msgid "Case sensitive"
+msgstr "Schreibweise beachten"
+
+#: TFRMHARDLINK.BTNCANCEL.CAPTION
+msgctxt "TFRMHARDLINK.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMHARDLINK.BTNOK.CAPTION
+msgctxt "TFRMHARDLINK.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMHARDLINK.CAPTION
+#, fuzzy
+#| msgid "Create hardlink"
+msgid "Create hard link"
+msgstr "Hardlink erstellen"
+
+#: TFRMHARDLINK.LBLEXISTINGFILE.CAPTION
+#, fuzzy
+#| msgid "Existing destination (where will link point)"
+msgctxt "TFRMHARDLINK.LBLEXISTINGFILE.CAPTION"
+msgid "Destination that the link will point to"
+msgstr "Bestehendes Ziel (auf das der Hardlink zeigt)"
+
+#: TFRMHARDLINK.LBLLINKTOCREATE.CAPTION
+msgctxt "TFRMHARDLINK.LBLLINKTOCREATE.CAPTION"
+msgid "Link name"
+msgstr "Hardlink-Name"
+
+#: TFRMHOTDIR.BTNADD.CAPTION
+msgctxt "TFRMHOTDIR.BTNADD.CAPTION"
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: TFRMHOTDIR.BTNADDMAN.CAPTION
+msgid "Add manually"
+msgstr "Manuel hinzufügen"
+
+#: TFRMHOTDIR.BTNCANCEL.CAPTION
+msgctxt "TFRMHOTDIR.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMHOTDIR.BTNDELETE.CAPTION
+msgctxt "TFRMHOTDIR.BTNDELETE.CAPTION"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMHOTDIR.BTNEDIT.CAPTION
+msgctxt "TFRMHOTDIR.BTNEDIT.CAPTION"
+msgid "Edit"
+msgstr "Bea&rbeiten"
+
+#: TFRMHOTDIR.BTNOK.CAPTION
+msgctxt "TFRMHOTDIR.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMHOTDIR.CAPTION
+msgid "Directory Hotlist"
+msgstr "Verzeichnisfavoriten"
+
+#: TFRMLINKER.BTNEXIT.CAPTION
+#, fuzzy
+#| msgid "Exit"
+msgctxt "TFRMLINKER.BTNEXIT.CAPTION"
+msgid "Cancel"
+msgstr "Ende"
+
+#: TFRMLINKER.BTNOK.CAPTION
+msgctxt "TFRMLINKER.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMLINKER.BTNSAVE.CAPTION
+msgctxt "TFRMLINKER.BTNSAVE.CAPTION"
+msgid "..."
+msgstr ""
+
+#: TFRMLINKER.FRMLINKER.CAPTION
+msgctxt "TFRMLINKER.FRMLINKER.CAPTION"
+msgid "Linker"
+msgstr "Verschmelzer"
+
+#: TFRMLINKER.GBSAVETO.CAPTION
+msgid "Save to..."
+msgstr "Speichern unter..."
+
+#: TFRMLINKER.GRBXCONTROL.CAPTION
+msgid "Item"
+msgstr "Eintrag"
+
+#: TFRMLINKER.LBLFILENAME.CAPTION
+msgctxt "TFRMLINKER.LBLFILENAME.CAPTION"
+msgid "File name"
+msgstr "Dateiname"
+
+#: TFRMLINKER.SPBTNDEL.CAPTION
+msgctxt "TFRMLINKER.SPBTNDEL.CAPTION"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMLINKER.SPBTNDEL.HINT
+msgctxt "TFRMLINKER.SPBTNDEL.HINT"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMLINKER.SPBTNDOWN.CAPTION
+msgctxt "TFRMLINKER.SPBTNDOWN.CAPTION"
+msgid "Down"
+msgstr "A&bwärts"
+
+#: TFRMLINKER.SPBTNDOWN.HINT
+msgctxt "TFRMLINKER.SPBTNDOWN.HINT"
+msgid "Down"
+msgstr "A&bwärts"
+
+#: TFRMLINKER.SPBTNUP.CAPTION
+msgctxt "TFRMLINKER.SPBTNUP.CAPTION"
+msgid "Up"
+msgstr "Aufw&ärts"
+
+#: TFRMLINKER.SPBTNUP.HINT
+msgctxt "TFRMLINKER.SPBTNUP.HINT"
+msgid "Up"
+msgstr "Aufw&ärts"
+
+#: TFRMMAIN.ACTABOUT.CAPTION
+#, fuzzy
+#| msgid "About"
+msgctxt "TFRMMAIN.ACTABOUT.CAPTION"
+msgid "&About"
+msgstr "&Über"
+
+#: TFRMMAIN.ACTADDFILENAMETOCMDLINE.CAPTION
+msgid "Add file name to command line"
+msgstr "Dateiname in die Befehlszeile kopieren"
+
+#: TFRMMAIN.ACTADDPATHANDFILENAMETOCMDLINE.CAPTION
+msgid "Add path and file name to command line"
+msgstr "Pfad und Dateiname in die Befehlszeile kopieren"
+
+#: TFRMMAIN.ACTADDPATHTOCMDLINE.CAPTION
+msgid "Copy path to command line"
+msgstr "&Pfad in die Befehlszeile eintragen"
+
+#: TFRMMAIN.ACTCALCULATESPACE.CAPTION
+msgid "Calculate &Occupied Space..."
+msgstr "Berechne belegten Platz"
+
+#: TFRMMAIN.ACTCHANGEDIR.CAPTION
+msgid "Change directory"
+msgstr "Verzeichnis wechseln"
+
+#: TFRMMAIN.ACTCHANGEDIRTOPARENT.CAPTION
+msgid "Change Directory To Parent"
+msgstr "In das übergeordnete Verzeichnis wechseln"
+
+#: TFRMMAIN.ACTCHANGEDIRTOROOT.CAPTION
+msgid "Change directory to root"
+msgstr "Verzeichnis zu Root wechseln"
+
+#: TFRMMAIN.ACTCHECKSUMCALC.CAPTION
+msgctxt "TFRMMAIN.ACTCHECKSUMCALC.CAPTION"
+msgid "Calculate check sum..."
+msgstr "Berechne Prüfsumme..."
+
+#: TFRMMAIN.ACTCHECKSUMVERIFY.CAPTION
+msgctxt "TFRMMAIN.ACTCHECKSUMVERIFY.CAPTION"
+msgid "Verify check sum..."
+msgstr "Verifiziere Prüfsumme..."
+
+#: TFRMMAIN.ACTCLEARLOGFILE.CAPTION
+msgid "Clear log file"
+msgstr "Log-Datei leeren"
+
+#: TFRMMAIN.ACTCLEARLOGWINDOW.CAPTION
+msgid "Clear log window"
+msgstr "Log-Fenster leeren"
+
+#: TFRMMAIN.ACTCOMPARECONTENTS.CAPTION
+msgid "Compare by &Contents"
+msgstr "Anhand des Inhalts vergleichen"
+
+#: TFRMMAIN.ACTCONTEXTMENU.CAPTION
+msgid "Show context menu"
+msgstr "&Zeige Kontextmenü"
+
+#: TFRMMAIN.ACTCOPY.CAPTION
+msgid "Copy F5"
+msgstr "Kopieren F5"
+
+#: TFRMMAIN.ACTCOPYFULLNAMESTOCLIP.CAPTION
+msgid "Copy Filename(s) with Full &Path"
+msgstr "Kopiere Dateinamen mit komplettem Pfad"
+
+#: TFRMMAIN.ACTCOPYNAMESTOCLIP.CAPTION
+msgid "Copy &Filename(s) to Clipboard"
+msgstr "Kopiere Dateinamen in die Zwischenablage"
+
+#: TFRMMAIN.ACTCOPYNOASK.CAPTION
+msgid "Copy files without asking for confirmation"
+msgstr "Datei(en) ohne Nachfrage kopieren"
+
+#: TFRMMAIN.ACTCOPYSAMEPANEL.CAPTION
+msgid "Copy to same panel"
+msgstr "Kopiere in gleichen Ordner"
+
+#: TFRMMAIN.ACTCOPYTOCLIPBOARD.CAPTION
+msgid "&Copy"
+msgstr "Kopieren"
+
+#: TFRMMAIN.ACTCOUNTDIRCONTENT.CAPTION
+msgid "Sho&w occupied space"
+msgstr "&Belegten Speicherplatz anzeigen"
+
+#: TFRMMAIN.ACTCUTTOCLIPBOARD.CAPTION
+msgid "Cu&t"
+msgstr "Ausschneiden"
+
+#: TFRMMAIN.ACTDELETE.CAPTION
+msgid "Delete F8"
+msgstr "Löschen F8"
+
+#: TFRMMAIN.ACTDIRHISTORY.CAPTION
+msgctxt "TFRMMAIN.ACTDIRHISTORY.CAPTION"
+msgid "Directory history"
+msgstr "Verzeichnisverlauf"
+
+#: TFRMMAIN.ACTDIRHOTLIST.CAPTION
+msgid "Directory &hotlist"
+msgstr "Verzeichnis-Favoriten"
+
+#: TFRMMAIN.ACTEDIT.CAPTION
+msgid "Edit F4"
+msgstr "Bearbeiten F4"
+
+#: TFRMMAIN.ACTEDITCOMMENT.CAPTION
+msgid "Edit comment..."
+msgstr "Kommentar bearbeiten"
+
+#: TFRMMAIN.ACTEDITNEW.CAPTION
+msgid "Edit new file"
+msgstr "Datei erstellen und bearbeiten"
+
+#: TFRMMAIN.ACTEDITPATH.CAPTION
+msgid "Edit path field above file list"
+msgstr "Pfad-Zeile über der Dateiliste bearbeiten"
+
+#: TFRMMAIN.ACTEXCHANGE.CAPTION
+msgid "Swap &Panels"
+msgstr "Panels tauschen"
+
+#: TFRMMAIN.ACTEXIT.CAPTION
+#, fuzzy
+#| msgid "Exit"
+msgctxt "TFRMMAIN.ACTEXIT.CAPTION"
+msgid "E&xit"
+msgstr "Beenden"
+
+#: TFRMMAIN.ACTEXTRACTFILES.CAPTION
+msgid "Extract files..."
+msgstr "E&ntpacke Dateien"
+
+#: TFRMMAIN.ACTFILEASSOC.CAPTION
+#, fuzzy
+#| msgid "File associations..."
+msgid "File &associations..."
+msgstr "Dateiverknüpfungen"
+
+#: TFRMMAIN.ACTFILELINKER.CAPTION
+msgid "Link files"
+msgstr "Ver&binde Datei(en)"
+
+#: TFRMMAIN.ACTFILEPROPERTIES.CAPTION
+msgid "Show file properties"
+msgstr "Dateiei&genschaften"
+
+#: TFRMMAIN.ACTFILESPLITER.CAPTION
+msgctxt "TFRMMAIN.ACTFILESPLITER.CAPTION"
+msgid "Split file"
+msgstr "Tei&le Datei"
+
+#: TFRMMAIN.ACTFOCUSCMDLINE.CAPTION
+msgid "Focus command line"
+msgstr "Fokus auf die Befehlsze&ile"
+
+#: TFRMMAIN.ACTGOTOFIRSTFILE.CAPTION
+msgid "Place cursor on first file in list"
+msgstr "Setze die Einfügemarke auf den ersten Eintrag der Liste"
+
+#: TFRMMAIN.ACTGOTOLASTFILE.CAPTION
+msgid "Place cursor on last file in list"
+msgstr "Setze die Einfügemarke auf den letzten Eintrag der Liste"
+
+#: TFRMMAIN.ACTHARDLINK.CAPTION
+#, fuzzy
+#| msgid "Create link..."
+msgctxt "TFRMMAIN.ACTHARDLINK.CAPTION"
+msgid "Create hard link..."
+msgstr "Hardlink erstellen"
+
+#: TFRMMAIN.ACTHELPINDEX.CAPTION
+#, fuzzy
+#| msgid "Contents"
+msgid "&Contents"
+msgstr "Inhalte"
+
+#: TFRMMAIN.ACTHORIZONTALFILEPANELS.CAPTION
+msgid "Horizontal file panels"
+msgstr "Horizontale Datei-Panel"
+
+#: TFRMMAIN.ACTKEYBOARD.CAPTION
+#, fuzzy
+#| msgid "Keyboard"
+msgid "&Keyboard"
+msgstr "Tastatur"
+
+#: TFRMMAIN.ACTLEFTEQUALRIGHT.CAPTION
+msgid "Left &= Right"
+msgstr "Links &= Rechts"
+
+#: TFRMMAIN.ACTLEFTOPENDRIVES.CAPTION
+msgid "Open left drive list"
+msgstr "Öffne linke Laufwerksliste"
+
+#: TFRMMAIN.ACTLOADSELECTIONFROMCLIP.CAPTION
+msgid "Load Selection From Clipboard"
+msgstr "Auswahl aus der Zwischenablage laden"
+
+#: TFRMMAIN.ACTLOADSELECTIONFROMFILE.CAPTION
+msgid "Load Selection From File"
+msgstr "Auswahl aus Datei laden"
+
+#: TFRMMAIN.ACTMAKEDIR.CAPTION
+msgid "MakeDir F7"
+msgstr "Verzeichnis erstellen F7"
+
+#: TFRMMAIN.ACTMARKCURRENTEXTENSION.CAPTION
+msgid "Select all with same extension"
+msgstr "Alle mit gleicher Endung markieren"
+
+#: TFRMMAIN.ACTMARKINVERT.CAPTION
+msgid "Invert Selections"
+msgstr "Auswahl umkehren"
+
+#: TFRMMAIN.ACTMARKMARKALL.CAPTION
+msgid "&Select All"
+msgstr "Alles markieren"
+
+#: TFRMMAIN.ACTMARKMINUS.CAPTION
+msgid "Unselect a group"
+msgstr "Gruppe abwählen"
+
+#: TFRMMAIN.ACTMARKPLUS.CAPTION
+msgid "Select a group"
+msgstr "Gruppe wählen"
+
+#: TFRMMAIN.ACTMARKUNMARKALL.CAPTION
+msgid "Unselect All"
+msgstr "Alles abwählen"
+
+#: TFRMMAIN.ACTMINIMIZE.CAPTION
+msgid "Minimize window"
+msgstr "Fenster minimieren"
+
+#: TFRMMAIN.ACTMULTIRENAME.CAPTION
+msgid "Multi Rename Tool"
+msgstr "Mehrfaches umbenennen"
+
+#: TFRMMAIN.ACTNETWORKCONNECT.CAPTION
+msgid "Network Connect..."
+msgstr "Netzwerk verbinden..."
+
+#: TFRMMAIN.ACTNETWORKDISCONNECT.CAPTION
+msgid "Network Disconnect"
+msgstr "Netzwerk trennen"
+
+#: TFRMMAIN.ACTNETWORKQUICKCONNECT.CAPTION
+msgid "Network Quick Connect..."
+msgstr "Netzwerk schnell verbinden..."
+
+#: TFRMMAIN.ACTNEWTAB.CAPTION
+#, fuzzy
+#| msgid "New tab"
+msgid "&New tab"
+msgstr "Ne&uer Reiter"
+
+#: TFRMMAIN.ACTNEXTTAB.CAPTION
+#, fuzzy
+#| msgid "Switch to next tab"
+msgid "Switch to nex&t tab"
+msgstr "Zum nächsten Reiter wechseln"
+
+#: TFRMMAIN.ACTOPEN.CAPTION
+msgctxt "TFRMMAIN.ACTOPEN.CAPTION"
+msgid "Open"
+msgstr "Öffne"
+
+#: TFRMMAIN.ACTOPENARCHIVE.CAPTION
+msgid "Try open archive"
+msgstr "Versuche Archiv zu öffnen"
+
+#: TFRMMAIN.ACTOPENBAR.CAPTION
+msgid "Open bar file"
+msgstr "Leisten-Datei öffnen"
+
+#: TFRMMAIN.ACTOPENDIRINNEWTAB.CAPTION
+#, fuzzy
+#| msgid "Open folder in new tab"
+msgid "Open &folder in new tab"
+msgstr "Verzeichnis in neuem Reiter öffnen"
+
+#: TFRMMAIN.ACTOPENVIRTUALFILESYSTEMLIST.CAPTION
+#, fuzzy
+#| msgid "Open VFS List"
+msgctxt "TFRMMAIN.ACTOPENVIRTUALFILESYSTEMLIST.CAPTION"
+msgid "Open &VFS List"
+msgstr "Öffne &VFS-Liste"
+
+#: TFRMMAIN.ACTOPTIONS.CAPTION
+#, fuzzy
+#| msgid "Options..."
+msgid "&Options..."
+msgstr "Optionen..."
+
+#: TFRMMAIN.ACTPACKFILES.CAPTION
+msgid "Pack files..."
+msgstr "&Packe Dateien"
+
+#: TFRMMAIN.ACTPANELSSPLITTERPERPOS.CAPTION
+msgid "Set splitter position"
+msgstr "Position des Fenster-Teilers festlegen"
+
+#: TFRMMAIN.ACTPASTEFROMCLIPBOARD.CAPTION
+msgid "&Paste"
+msgstr "Einfügen"
+
+#: TFRMMAIN.ACTPREVTAB.CAPTION
+#, fuzzy
+#| msgid "Switch to previous tab"
+msgid "Switch to &previous tab"
+msgstr "Zum vorherigen Reiter wechseln"
+
+#: TFRMMAIN.ACTQUICKFILTER.CAPTION
+msgid "Quick filter"
+msgstr "Schneller Filter"
+
+#: TFRMMAIN.ACTQUICKSEARCH.CAPTION
+msgctxt "TFRMMAIN.ACTQUICKSEARCH.CAPTION"
+msgid "Quick search"
+msgstr "Schnelle Suche"
+
+#: TFRMMAIN.ACTQUICKVIEW.CAPTION
+msgid "Quick View Panel"
+msgstr "Schnellbetrachter-Panel"
+
+#: TFRMMAIN.ACTREFRESH.CAPTION
+msgid "&Refresh"
+msgstr "Aktualisieren"
+
+#: TFRMMAIN.ACTREMOVEALLTABS.CAPTION
+#, fuzzy
+#| msgid "Remove all tabs"
+msgid "Remove &all tabs"
+msgstr "Alle Reiter entfernen"
+
+#: TFRMMAIN.ACTREMOVETAB.CAPTION
+#, fuzzy
+#| msgid "Remove tab"
+msgid "&Remove tab"
+msgstr "&Entferne Reiter"
+
+#: TFRMMAIN.ACTRENAME.CAPTION
+msgid "Move F6"
+msgstr "Verschieben F6"
+
+#: TFRMMAIN.ACTRENAMENOASK.CAPTION
+msgid "Move/Rename files without asking for confirmation"
+msgstr "Verschieben / Umbenennen von Datei(en) ohne Nachfrage"
+
+#: TFRMMAIN.ACTRENAMEONLY.CAPTION
+msgctxt "TFRMMAIN.ACTRENAMEONLY.CAPTION"
+msgid "Rename"
+msgstr "Umbenennen"
+
+#: TFRMMAIN.ACTRESTORESELECTION.CAPTION
+msgid "Restore Selection"
+msgstr "Auswahl wieder herstellen"
+
+#: TFRMMAIN.ACTREVERSEORDER.CAPTION
+msgid "Reverse order"
+msgstr "Umgekehrt anordnen"
+
+#: TFRMMAIN.ACTRIGHTEQUALLEFT.CAPTION
+msgid "Right &= Left"
+msgstr "Rechts &= Links"
+
+#: TFRMMAIN.ACTRIGHTOPENDRIVES.CAPTION
+msgid "Open right drive list"
+msgstr "Öffne rechte Laufwerksliste"
+
+#: TFRMMAIN.ACTRUNTERM.CAPTION
+msgid "Run Term"
+msgstr "Konsolen-Fenster öffnen"
+
+#: TFRMMAIN.ACTSAVESELECTION.CAPTION
+msgid "Save Selection"
+msgstr "Auswahl speichern"
+
+#: TFRMMAIN.ACTSAVESELECTIONTOFILE.CAPTION
+msgid "Save Selection To File"
+msgstr "Auswahl in Datei speichern"
+
+#: TFRMMAIN.ACTSEARCH.CAPTION
+msgid "&Search"
+msgstr "Suchen"
+
+#: TFRMMAIN.ACTSETFILEPROPERTIES.CAPTION
+#, fuzzy
+#| msgid "Change file properties"
+msgctxt "TFRMMAIN.ACTSETFILEPROPERTIES.CAPTION"
+msgid "Change attributes"
+msgstr "Eigenschaften ändern"
+
+#: TFRMMAIN.ACTSETTABOPTIONDIRSINNEWTAB.CAPTION
+#, fuzzy
+#| msgid "Directories are opened in new tabs"
+msgid "Directories are opened in new &tabs"
+msgstr "Verzeichnisse in neuem Reiter öffnen"
+
+#: TFRMMAIN.ACTSETTABOPTIONNORMAL.CAPTION
+msgid "&Normal"
+msgstr ""
+
+#: TFRMMAIN.ACTSETTABOPTIONPATHLOCKED.CAPTION
+#, fuzzy
+#| msgid "Locked"
+msgid "&Locked"
+msgstr "Gesperrt"
+
+#: TFRMMAIN.ACTSETTABOPTIONPATHRESETS.CAPTION
+#, fuzzy
+#| msgid "Locked, but directory changes allowed"
+msgctxt "TFRMMAIN.ACTSETTABOPTIONPATHRESETS.CAPTION"
+msgid "Locked, but &directory changes allowed"
+msgstr "Gesperrt, aber &Verzeichniswechsel erlaubt"
+
+#: TFRMMAIN.ACTSHOWBUTTONMENU.CAPTION
+msgid "Show button menu"
+msgstr "Button-Leiste anzeigen"
+
+#: TFRMMAIN.ACTSHOWCMDLINEHISTORY.CAPTION
+msgid "Show command line history"
+msgstr "Befehlszeilenverlauf anzeigen"
+
+#: TFRMMAIN.ACTSHOWMAINMENU.CAPTION
+msgctxt "TFRMMAIN.ACTSHOWMAINMENU.CAPTION"
+msgid "Menu F9"
+msgstr "Menü F9"
+
+#: TFRMMAIN.ACTSHOWSYSFILES.CAPTION
+msgctxt "TFRMMAIN.ACTSHOWSYSFILES.CAPTION"
+msgid "Show hidden/system files"
+msgstr "Zeige versteckte und Systemdateien"
+
+#: TFRMMAIN.ACTSORTBYATTR.CAPTION
+msgid "Sort by attrib"
+msgstr "Nach Attributen sortieren"
+
+#: TFRMMAIN.ACTSORTBYDATE.CAPTION
+msgid "Sort by date"
+msgstr "Nach Datum sortieren"
+
+#: TFRMMAIN.ACTSORTBYEXT.CAPTION
+msgid "Sort by extension"
+msgstr "Nach Endung sortieren"
+
+#: TFRMMAIN.ACTSORTBYNAME.CAPTION
+msgid "Sort by name"
+msgstr "Nach Name sortieren"
+
+#: TFRMMAIN.ACTSORTBYSIZE.CAPTION
+msgid "Sort by size"
+msgstr "Nach Grösse sortieren"
+
+#: TFRMMAIN.ACTSWITCHIGNORELIST.CAPTION
+msgid "Enable/disable ignore list file to not show file names"
+msgstr "De-/Aktivieren der Dateiliste um Dateinamen nicht anzuzeigen"
+
+#: TFRMMAIN.ACTSYMLINK.CAPTION
+#, fuzzy
+#| msgid "Create symlink..."
+msgctxt "TFRMMAIN.ACTSYMLINK.CAPTION"
+msgid "Create symbolic link..."
+msgstr "Erstelle symb. Link"
+
+#: TFRMMAIN.ACTTARGETEQUALSOURCE.CAPTION
+msgid "Target &= Source"
+msgstr "Ziel &= Quelle"
+
+#: TFRMMAIN.ACTTESTARCHIVE.CAPTION
+msgid "Test Archive(s)"
+msgstr "Archiv(e) testen"
+
+#: TFRMMAIN.ACTTRANSFERLEFT.CAPTION
+msgid "Transfer dir under cursor to left window"
+msgstr "Bewege markierten &Ordner in das linke Fenster"
+
+#: TFRMMAIN.ACTTRANSFERRIGHT.CAPTION
+msgid "Transfer dir under cursor to right window"
+msgstr "Bewege &markierten Ordner in das rechte Fenster"
+
+#: TFRMMAIN.ACTUNMARKCURRENTEXTENSION.CAPTION
+msgid "Unselect all with same extension"
+msgstr "Alle mit der gleichen Endung abwählen"
+
+#: TFRMMAIN.ACTVIEW.CAPTION
+msgid "View F3"
+msgstr "Betrachten F3"
+
+#: TFRMMAIN.ACTVIEWHISTORY.CAPTION
+msgid "Show history of visited paths for active view"
+msgstr "Zeige den Verlauf der geöffneten Verzeichnisse des aktiven Panels"
+
+#: TFRMMAIN.ACTVIEWHISTORYNEXT.CAPTION
+msgid "Go to next entry in history"
+msgstr "Gehe zum nächsten Eintrag in der Verlaufsliste"
+
+#: TFRMMAIN.ACTVIEWHISTORYPREV.CAPTION
+msgid "Go to previous entry in history"
+msgstr "Gehe zum vorherigen Eintrag in der Verlaufsliste"
+
+#: TFRMMAIN.ACTVISITHOMEPAGE.CAPTION
+#, fuzzy
+#| msgid "Visit Double Commander Web Site"
+msgid "&Visit Double Commander Web Site"
+msgstr "&Homepage von DoubleCommander öffnen"
+
+#: TFRMMAIN.ACTWIPE.CAPTION
+msgid "Wipe"
+msgstr "Löschen"
+
+#: TFRMMAIN.ALLOPCANCEL.CAPTION
+msgctxt "TFRMMAIN.ALLOPCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMMAIN.ALLOPPAUSE.CAPTION
+msgctxt "TFRMMAIN.ALLOPPAUSE.CAPTION"
+msgid "||"
+msgstr ""
+
+#: TFRMMAIN.ALLOPPCT.CAPTION
+msgid "%"
+msgstr ""
+
+#: TFRMMAIN.ALLOPPROGRESSIND.CAPTION
+msgid "||||||||||||||||||||"
+msgstr ""
+
+#: TFRMMAIN.ALLOPSTART.CAPTION
+msgctxt "TFRMMAIN.ALLOPSTART.CAPTION"
+msgid "Start"
+msgstr ""
+
+#: TFRMMAIN.BTNF10.CAPTION
+msgid "Exit F10"
+msgstr "Beenden F10"
+
+#: TFRMMAIN.BTNF9.CAPTION
+msgid "Terminal F9"
+msgstr "Konsolen-Fenster F9"
+
+#: TFRMMAIN.BTNLEFTDIRECTORYHOTLIST.CAPTION
+msgctxt "TFRMMAIN.BTNLEFTDIRECTORYHOTLIST.CAPTION"
+msgid "*"
+msgstr "*"
+
+#: TFRMMAIN.BTNLEFTDIRECTORYHOTLIST.HINT
+msgid "Directory hotlist"
+msgstr "Favoriten für Verzeichnisse anzeigen"
+
+#: TFRMMAIN.BTNLEFTEQUALRIGHT.CAPTION
+msgid "<"
+msgstr ""
+
+#: TFRMMAIN.BTNLEFTEQUALRIGHT.HINT
+msgid "Show current directory of the right panel in the left panel"
+msgstr "Aktuelles Verzeichnis der rechten Seite auch auf der linken Seite anzeigen"
+
+#: TFRMMAIN.BTNLEFTHOME.CAPTION
+msgctxt "TFRMMAIN.BTNLEFTHOME.CAPTION"
+msgid "~"
+msgstr "~"
+
+#: TFRMMAIN.BTNLEFTHOME.HINT
+msgid "Go to home directory"
+msgstr "Zu 'Eigene Dateien' wechseln"
+
+#: TFRMMAIN.BTNLEFTROOT.CAPTION
+msgctxt "TFRMMAIN.BTNLEFTROOT.CAPTION"
+msgid "/"
+msgstr "/"
+
+#: TFRMMAIN.BTNLEFTROOT.HINT
+msgid "Go to root directory"
+msgstr "Zum Root-Verzeichnis wechseln"
+
+#: TFRMMAIN.BTNLEFTUP.CAPTION
+msgctxt "TFRMMAIN.BTNLEFTUP.CAPTION"
+msgid ".."
+msgstr ".."
+
+#: TFRMMAIN.BTNLEFTUP.HINT
+msgid "Go to parent directory"
+msgstr "Zum übergeordneten Verzeichnis wechseln"
+
+#: TFRMMAIN.BTNRIGHTDIRECTORYHOTLIST.CAPTION
+msgctxt "TFRMMAIN.BTNRIGHTDIRECTORYHOTLIST.CAPTION"
+msgid "*"
+msgstr "*"
+
+#: TFRMMAIN.BTNRIGHTEQUALLEFT.CAPTION
+msgid ">"
+msgstr ""
+
+#: TFRMMAIN.BTNRIGHTEQUALLEFT.HINT
+msgid "Show current directory of the left panel in the right panel"
+msgstr "Aktuelles Verzeichnis der linken Seite auch auf der rechten Seite anzeigen"
+
+#: TFRMMAIN.BTNRIGHTHOME.CAPTION
+msgctxt "TFRMMAIN.BTNRIGHTHOME.CAPTION"
+msgid "~"
+msgstr "~"
+
+#: TFRMMAIN.BTNRIGHTROOT.CAPTION
+msgctxt "TFRMMAIN.BTNRIGHTROOT.CAPTION"
+msgid "/"
+msgstr "/"
+
+#: TFRMMAIN.BTNRIGHTUP.CAPTION
+msgctxt "TFRMMAIN.BTNRIGHTUP.CAPTION"
+msgid ".."
+msgstr ".."
+
+#: TFRMMAIN.FRMMAIN.CAPTION
+msgctxt "TFRMMAIN.FRMMAIN.CAPTION"
+msgid "Double Commander"
+msgstr "Double Commander"
+
+#: TFRMMAIN.LBLCOMMANDPATH.CAPTION
+msgctxt "TFRMMAIN.LBLCOMMANDPATH.CAPTION"
+msgid "Path"
+msgstr "Pfad"
+
+#: TFRMMAIN.MENUITEM2.CAPTION
+msgctxt "TFRMMAIN.MENUITEM2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MI2080.CAPTION
+msgid "&20/80"
+msgstr ""
+
+#: TFRMMAIN.MI3070.CAPTION
+msgid "&30/70"
+msgstr ""
+
+#: TFRMMAIN.MI4060.CAPTION
+msgid "&40/60"
+msgstr ""
+
+#: TFRMMAIN.MI5050.CAPTION
+msgid "&50/50"
+msgstr ""
+
+#: TFRMMAIN.MI6040.CAPTION
+msgid "&60/40"
+msgstr ""
+
+#: TFRMMAIN.MI7030.CAPTION
+msgid "&70/30"
+msgstr ""
+
+#: TFRMMAIN.MI8020.CAPTION
+msgid "&80/20"
+msgstr ""
+
+#: TFRMMAIN.MICANCEL.CAPTION
+msgctxt "TFRMMAIN.MICANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMMAIN.MICOPY.CAPTION
+msgid "Copy..."
+msgstr "Kopiere..."
+
+#: TFRMMAIN.MIHARDLINK.CAPTION
+msgctxt "TFRMMAIN.MIHARDLINK.CAPTION"
+msgid "Create link..."
+msgstr "Hardlink erstellen"
+
+#: TFRMMAIN.MILINE1.CAPTION
+msgctxt "TFRMMAIN.MILINE1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE10.CAPTION
+msgctxt "TFRMMAIN.MILINE10.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE12.CAPTION
+msgctxt "TFRMMAIN.MILINE12.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE13.CAPTION
+msgctxt "TFRMMAIN.MILINE13.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE14.CAPTION
+msgctxt "TFRMMAIN.MILINE14.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE15.CAPTION
+msgctxt "TFRMMAIN.MILINE15.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE16.CAPTION
+msgctxt "TFRMMAIN.MILINE16.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE17.CAPTION
+msgctxt "TFRMMAIN.MILINE17.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE18.CAPTION
+msgctxt "TFRMMAIN.MILINE18.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE19.CAPTION
+msgctxt "TFRMMAIN.MILINE19.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE2.CAPTION
+msgctxt "TFRMMAIN.MILINE2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE20.CAPTION
+msgctxt "TFRMMAIN.MILINE20.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE22.CAPTION
+msgctxt "TFRMMAIN.MILINE22.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE24.CAPTION
+msgctxt "TFRMMAIN.MILINE24.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE25.CAPTION
+msgctxt "TFRMMAIN.MILINE25.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE3.CAPTION
+msgctxt "TFRMMAIN.MILINE3.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE32.CAPTION
+msgctxt "TFRMMAIN.MILINE32.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE4.CAPTION
+msgctxt "TFRMMAIN.MILINE4.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE47.CAPTION
+msgctxt "TFRMMAIN.MILINE47.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE5.CAPTION
+msgctxt "TFRMMAIN.MILINE5.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE6.CAPTION
+msgctxt "TFRMMAIN.MILINE6.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE7.CAPTION
+msgctxt "TFRMMAIN.MILINE7.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE8.CAPTION
+msgctxt "TFRMMAIN.MILINE8.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILINE9.CAPTION
+msgctxt "TFRMMAIN.MILINE9.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMAIN.MILOGCLEAR.CAPTION
+msgid "Clear"
+msgstr "Leeren"
+
+#: TFRMMAIN.MILOGCOPY.CAPTION
+msgctxt "TFRMMAIN.MILOGCOPY.CAPTION"
+msgid "Copy"
+msgstr "Kopieren"
+
+#: TFRMMAIN.MILOGHIDE.CAPTION
+msgid "Hide"
+msgstr "Verstecken"
+
+#: TFRMMAIN.MILOGSELECTALL.CAPTION
+msgctxt "TFRMMAIN.MILOGSELECTALL.CAPTION"
+msgid "Select All"
+msgstr "Alle mar&kieren"
+
+#: TFRMMAIN.MIMOVE.CAPTION
+msgid "Move..."
+msgstr "Verschiebe..."
+
+#: TFRMMAIN.MISYMLINK.CAPTION
+msgctxt "TFRMMAIN.MISYMLINK.CAPTION"
+msgid "Create symlink..."
+msgstr "Erstelle symb. Link"
+
+#: TFRMMAIN.MITABOPTIONS.CAPTION
+msgid "Tab options"
+msgstr "Reiter-Optionen"
+
+#: TFRMMAIN.MITRAYICONEXIT.CAPTION
+#, fuzzy
+#| msgid "Exit"
+msgctxt "TFRMMAIN.MITRAYICONEXIT.CAPTION"
+msgid "E&xit"
+msgstr "Beenden"
+
+#: TFRMMAIN.MITRAYICONRESTORE.CAPTION
+msgid "Restore"
+msgstr "Wiederherstellen"
+
+#: TFRMMAIN.MNUCMD.CAPTION
+msgid "&Commands"
+msgstr "&Befehle"
+
+#: TFRMMAIN.MNUCONFIG.CAPTION
+msgid "C&onfiguration"
+msgstr "K&onfigurieren"
+
+#: TFRMMAIN.MNUFILES.CAPTION
+#, fuzzy
+#| msgid "Files"
+msgid "&Files"
+msgstr "&Dateien"
+
+#: TFRMMAIN.MNUFILESCOMBINE.CAPTION
+msgid "Combine Files"
+msgstr "Dateien &verschmelzen"
+
+#: TFRMMAIN.MNUHELP.CAPTION
+msgctxt "TFRMMAIN.MNUHELP.CAPTION"
+msgid "&Help"
+msgstr "&Hilfe"
+
+#: TFRMMAIN.MNUMARK.CAPTION
+msgid "&Mark"
+msgstr "&Markieren"
+
+#: TFRMMAIN.MNUMARKCMPDIR.CAPTION
+msgid "&Compare Directories"
+msgstr "Verzeichnisse &vergleichen"
+
+#: TFRMMAIN.MNUNETWORK.CAPTION
+msgid "Network"
+msgstr "Netzwerk"
+
+#: TFRMMAIN.MNUSHOW.CAPTION
+msgid "&Show"
+msgstr "&Zeigen"
+
+#: TFRMMAIN.MNUSHOWOPERATIONS.CAPTION
+msgid "Operations viewer"
+msgstr "Abläufe beobachten"
+
+#: TFRMMAIN.MNUTABOPTIONS.CAPTION
+#, fuzzy
+#| msgid "Options"
+msgctxt "TFRMMAIN.MNUTABOPTIONS.CAPTION"
+msgid "&Options"
+msgstr "Optionen"
+
+#: TFRMMAIN.MNUTABS.CAPTION
+msgid "&Tabs"
+msgstr "&Reiter"
+
+#: TFRMMAIN.TBCHANGEDIR.CAPTION
+msgid "CD"
+msgstr "Verzeichnis-Wechsel"
+
+#: TFRMMAIN.TBCOPY.CAPTION
+msgctxt "TFRMMAIN.TBCOPY.CAPTION"
+msgid "Copy"
+msgstr "Kopieren"
+
+#: TFRMMAIN.TBCUT.CAPTION
+msgctxt "TFRMMAIN.TBCUT.CAPTION"
+msgid "Cut"
+msgstr "Ausschneiden"
+
+#: TFRMMAIN.TBDELETE.CAPTION
+msgctxt "TFRMMAIN.TBDELETE.CAPTION"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMMAIN.TBEDIT.CAPTION
+msgctxt "TFRMMAIN.TBEDIT.CAPTION"
+msgid "Edit"
+msgstr "Bea&rbeiten"
+
+#: TFRMMAIN.TBPASTE.CAPTION
+msgctxt "TFRMMAIN.TBPASTE.CAPTION"
+msgid "Paste"
+msgstr "Einfügen"
+
+#: TFRMMAIN.TBSEPARATOR.CAPTION
+msgctxt "TFRMMAIN.TBSEPARATOR.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMASKINPUTDLG.BTNCANCEL.CAPTION
+msgctxt "TFRMMASKINPUTDLG.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMMASKINPUTDLG.BTNDEFINETEMPLATE.CAPTION
+msgid "Define..."
+msgstr "Definieren..."
+
+#: TFRMMASKINPUTDLG.BTNOK.CAPTION
+msgctxt "TFRMMASKINPUTDLG.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMMASKINPUTDLG.LBLSEARCHTEMPLATE.CAPTION
+msgid "Or select predefined selection type:"
+msgstr "Oder vordefinierten Auswahltyp wählen:"
+
+#: TFRMMKDIR.BTNCANCEL.CAPTION
+msgctxt "TFRMMKDIR.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMMKDIR.BTNOK.CAPTION
+msgctxt "TFRMMKDIR.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMMKDIR.CAPTION
+msgid "Create new directory"
+msgstr "Neues Verzeichnis anlegen"
+
+#: TFRMMKDIR.LBLMAKEDIR.CAPTION
+msgid "Input new directory name:"
+msgstr "Namen für neues Verzeichnis eingeben"
+
+#: TFRMMODVIEW.BTNCANCEL.CAPTION
+msgctxt "TFRMMODVIEW.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMMODVIEW.BTNOK.CAPTION
+msgid "Ok"
+msgstr ""
+
+#: TFRMMODVIEW.BTNPATH1.CAPTION
+msgctxt "TFRMMODVIEW.BTNPATH1.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMODVIEW.BTNPATH2.CAPTION
+msgctxt "TFRMMODVIEW.BTNPATH2.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMODVIEW.BTNPATH3.CAPTION
+msgctxt "TFRMMODVIEW.BTNPATH3.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMODVIEW.BTNPATH4.CAPTION
+msgctxt "TFRMMODVIEW.BTNPATH4.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMODVIEW.BTNPATH5.CAPTION
+msgctxt "TFRMMODVIEW.BTNPATH5.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMODVIEW.BTNPROPORTION.CAPTION
+msgid "Pr"
+msgstr "Verhältnis"
+
+#: TFRMMODVIEW.FRMMODVIEW.CAPTION
+msgid "New Size"
+msgstr "Neue Grösse"
+
+#: TFRMMODVIEW.LBLHEIGHT.CAPTION
+msgid "Height :"
+msgstr "Höhe :"
+
+#: TFRMMODVIEW.LBLPATH1.CAPTION
+msgctxt "TFRMMODVIEW.LBLPATH1.CAPTION"
+msgid "1"
+msgstr "1"
+
+#: TFRMMODVIEW.LBLPATH2.CAPTION
+msgid "2"
+msgstr ""
+
+#: TFRMMODVIEW.LBLPATH3.CAPTION
+msgid "3"
+msgstr ""
+
+#: TFRMMODVIEW.LBLPATH4.CAPTION
+msgid "4"
+msgstr ""
+
+#: TFRMMODVIEW.LBLPATH5.CAPTION
+msgid "5"
+msgstr ""
+
+#: TFRMMODVIEW.LBLQUALITY.CAPTION
+msgid "Quality of compress to Jpg"
+msgstr "Kompressions-Qualität für Jpg"
+
+#: TFRMMODVIEW.LBLWIDTH.CAPTION
+msgid "Width :"
+msgstr "Breite :"
+
+#: TFRMMODVIEW.RBBMP.CAPTION
+msgid "BMP"
+msgstr ""
+
+#: TFRMMODVIEW.RBICO.CAPTION
+msgid "ICO"
+msgstr ""
+
+#: TFRMMODVIEW.RBJPG.CAPTION
+msgid "JPG"
+msgstr ""
+
+#: TFRMMODVIEW.RBPNG.CAPTION
+msgid "PNG"
+msgstr ""
+
+#: TFRMMODVIEW.RBPNM.CAPTION
+msgid "PNM"
+msgstr ""
+
+#: TFRMMODVIEW.TEHEIGHT.TEXT
+msgid "Height"
+msgstr "Höhe"
+
+#: TFRMMODVIEW.TEQUALITY.TEXT
+msgid "80"
+msgstr ""
+
+#: TFRMMODVIEW.TEWIDTH.TEXT
+msgctxt "TFRMMODVIEW.TEWIDTH.TEXT"
+msgid "Width"
+msgstr "Breite"
+
+#: TFRMMOVEDLG.LBLFILETYPE.CAPTION
+msgctxt "TFRMMOVEDLG.LBLFILETYPE.CAPTION"
+msgid "Only type:"
+msgstr "Nur diese Typen"
+
+#: TFRMMOVEDLG.LBLMOVESRC.CAPTION
+msgid "Move %s:"
+msgstr "Verschiebe %s"
+
+#: TFRMMULTIRENAME.BTNCLOSE.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNCLOSE.CAPTION"
+msgid "&Close"
+msgstr "S&chliessen"
+
+#: TFRMMULTIRENAME.BTNDELETEPRESET.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNDELETEPRESET.CAPTION"
+msgid "&Delete"
+msgstr "L&öschen"
+
+#: TFRMMULTIRENAME.BTNEXTMENU.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNEXTMENU.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMULTIRENAME.BTNLOADPRESET.CAPTION
+msgid "&Load"
+msgstr "&Laden"
+
+#: TFRMMULTIRENAME.BTNNAMEMENU.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNNAMEMENU.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMMULTIRENAME.BTNRENAME.CAPTION
+msgid "&Rename"
+msgstr "&Umbenennen"
+
+#: TFRMMULTIRENAME.BTNRESTORE.CAPTION
+#, fuzzy
+#| msgid "Restore All"
+msgid "Reset all"
+msgstr "Alle wieder herstellen"
+
+#: TFRMMULTIRENAME.BTNSAVEPRESET.CAPTION
+msgctxt "TFRMMULTIRENAME.BTNSAVEPRESET.CAPTION"
+msgid "&Save"
+msgstr "&Speichern"
+
+#: TFRMMULTIRENAME.CBLOG.CAPTION
+#, fuzzy
+#| msgid "Log"
+msgctxt "TFRMMULTIRENAME.CBLOG.CAPTION"
+msgid "Enable"
+msgstr "Aktivieren"
+
+#: TFRMMULTIRENAME.CBREGEXP.CAPTION
+#, fuzzy
+#| msgid "&Regular expressions"
+msgctxt "TFRMMULTIRENAME.CBREGEXP.CAPTION"
+msgid "Regular e&xpressions"
+msgstr "&Reguläre Ausdrücke"
+
+#: TFRMMULTIRENAME.CBUSESUBS.CAPTION
+#, fuzzy
+#| msgid "Use substitution"
+msgid "&Use substitution"
+msgstr "N&utze Ersetzung"
+
+#: TFRMMULTIRENAME.CMBXWIDTH.TEXT
+msgid "01"
+msgstr "01"
+
+#: TFRMMULTIRENAME.EDINTERVAL.TEXT
+msgctxt "TFRMMULTIRENAME.EDINTERVAL.TEXT"
+msgid "1"
+msgstr "1"
+
+#: TFRMMULTIRENAME.EDPOC.TEXT
+msgctxt "TFRMMULTIRENAME.EDPOC.TEXT"
+msgid "1"
+msgstr "1"
+
+#: TFRMMULTIRENAME.EXTENSION.CAPTION
+#, fuzzy
+#| msgid "[E]xtension"
+msgid "[E] Extension"
+msgstr "[E]ndung"
+
+#: TFRMMULTIRENAME.FRMMULTIRENAME.CAPTION
+msgctxt "TFRMMULTIRENAME.FRMMULTIRENAME.CAPTION"
+msgid "MultiRename"
+msgstr "Mehrfaches Umbenennen"
+
+#: TFRMMULTIRENAME.GBCOUNTER.CAPTION
+msgid "Counter"
+msgstr "Zähler"
+
+#: TFRMMULTIRENAME.GBFINDREPLACE.CAPTION
+msgid "Find && Replace"
+msgstr "Suchen und ersetzen"
+
+#: TFRMMULTIRENAME.GBLOG.CAPTION
+msgid "Log Result"
+msgstr "Log-Ergebnis"
+
+#: TFRMMULTIRENAME.GBMASKA.CAPTION
+msgid "Mask"
+msgstr "Maske"
+
+#: TFRMMULTIRENAME.GBPRESETS.CAPTION
+msgid "Presets"
+msgstr "Vorgaben"
+
+#: TFRMMULTIRENAME.LBEXT.CAPTION
+#, fuzzy
+#| msgid "Extension"
+msgid "&Extension"
+msgstr "Endung"
+
+#: TFRMMULTIRENAME.LBFIND.CAPTION
+#, fuzzy
+#| msgid "Find..."
+msgid "&Find..."
+msgstr "Su&che..."
+
+#: TFRMMULTIRENAME.LBINTERVAL.CAPTION
+msgid "Interval"
+msgstr "Interval"
+
+#: TFRMMULTIRENAME.LBNAME.CAPTION
+#, fuzzy
+#| msgid "File Name"
+msgid "File &Name"
+msgstr "Datei&name"
+
+#: TFRMMULTIRENAME.LBREPLACE.CAPTION
+#, fuzzy
+#| msgid "Replace..."
+msgid "Re&place..."
+msgstr "Er&setze..."
+
+#: TFRMMULTIRENAME.LBSTNB.CAPTION
+msgid "Start Number"
+msgstr "Starten bei"
+
+#: TFRMMULTIRENAME.LBWIDTH.CAPTION
+msgctxt "TFRMMULTIRENAME.LBWIDTH.CAPTION"
+msgid "Width"
+msgstr "Breite"
+
+#: TFRMMULTIRENAME.LSVWFILE.COLUMNS[0].CAPTION
+msgid "Old File Name"
+msgstr "Vorheriger Dateiname"
+
+#: TFRMMULTIRENAME.LSVWFILE.COLUMNS[1].CAPTION
+msgid "New File Name"
+msgstr "Neuer Dateiname"
+
+#: TFRMMULTIRENAME.LSVWFILE.COLUMNS[2].CAPTION
+msgctxt "TFRMMULTIRENAME.LSVWFILE.COLUMNS[2].CAPTION"
+msgid "File Path"
+msgstr "Dateipfad"
+
+#: TFRMMULTIRENAME.MICOUNTER.CAPTION
+#, fuzzy
+#| msgid "[C]ounter"
+msgid "[C] Counter"
+msgstr "[C] Zählweise"
+
+#: TFRMMULTIRENAME.MIDAY.CAPTION
+#, fuzzy
+#| msgid "[D]ay"
+msgid "[D] Day"
+msgstr "[D] Tag"
+
+#: TFRMMULTIRENAME.MIDAY1.CAPTION
+msgid "[DD] Day (2 digits)"
+msgstr "[DD] Tag (zweistellig)"
+
+#: TFRMMULTIRENAME.MIDAY2.CAPTION
+msgid "[DDD] Day of the week (short, e.g., \"mon\")"
+msgstr "[DDD] Tag der Woche (kurz, z. B. \"Mo\")"
+
+#: TFRMMULTIRENAME.MIDAY3.CAPTION
+msgid "[DDDD] Day of the week (long, e.g., \"monday\")"
+msgstr "[DDDD] Tag der Woche (lang, z. B. \"Montag\")"
+
+#: TFRMMULTIRENAME.MIEXTENSIONX.CAPTION
+#, fuzzy
+#| msgid "[Ex]xtension"
+msgid "[Ex] Character at position x"
+msgstr "[Ex]Bezeichnung an Position x"
+
+#: TFRMMULTIRENAME.MIEXTENSIONXX.CAPTION
+#, fuzzy
+#| msgid "[Ex:x]xtension"
+msgid "[Ex:y] Characters from position x to y"
+msgstr "[Ex:y]Bezeichnung von Positionx bis y"
+
+#: TFRMMULTIRENAME.MIHOUR.CAPTION
+#, fuzzy
+#| msgid "[h]our"
+msgid "[h] Hour"
+msgstr "[h]Stunde"
+
+#: TFRMMULTIRENAME.MIHOUR1.CAPTION
+msgid "[hh] Hour (2 digits)"
+msgstr "[hh] Stunde (zweistellig)"
+
+#: TFRMMULTIRENAME.MIMINUTE.CAPTION
+#, fuzzy
+#| msgid "Mi[n]ute"
+msgid "[n] Minute"
+msgstr "[n] Minute"
+
+#: TFRMMULTIRENAME.MIMINUTE1.CAPTION
+msgid "[nn] Minute (2 digits)"
+msgstr "[nn] Minute (zweistellig)"
+
+#: TFRMMULTIRENAME.MIMONTH.CAPTION
+#, fuzzy
+#| msgid "[M]onth"
+msgid "[M] Month"
+msgstr "[M] Monat"
+
+#: TFRMMULTIRENAME.MIMONTH1.CAPTION
+msgid "[MM] Month (2 digits)"
+msgstr "[MM] Monat (zweistellig)"
+
+#: TFRMMULTIRENAME.MIMONTH2.CAPTION
+msgid "[MMM] Month name (short, e.g., \"jan\")"
+msgstr "[MMM] Monatsname (kurz, z. B. \"Jan\")"
+
+#: TFRMMULTIRENAME.MIMONTH3.CAPTION
+msgid "[MMMM] Month name (long, e.g. \"january\")"
+msgstr "[MMMM] Monatsname (lang, z. B. \"Januar\")"
+
+#: TFRMMULTIRENAME.MINAME.CAPTION
+#, fuzzy
+#| msgid "[N]ame"
+msgid "[N] Name"
+msgstr "[N] Name"
+
+#: TFRMMULTIRENAME.MINAMEX.CAPTION
+#, fuzzy
+#| msgid "[Nx]ame"
+msgid "[Nx] Character at position x"
+msgstr "[Nx]Bezeichnung an Position x"
+
+#: TFRMMULTIRENAME.MINAMEXX.CAPTION
+#, fuzzy
+#| msgid "[Nx:x]ame"
+msgid "[Nx:y] Characters from position x to y"
+msgstr "[Nx:y] Bezeichnung von Position x bis y"
+
+#: TFRMMULTIRENAME.MINEXT.CAPTION
+msgid "Time..."
+msgstr "Zeit..."
+
+#: TFRMMULTIRENAME.MINEXTEXTENSION.CAPTION
+msgid "Extension..."
+msgstr "Endung..."
+
+#: TFRMMULTIRENAME.MINEXTNAME.CAPTION
+msgid "Name..."
+msgstr "Name..."
+
+#: TFRMMULTIRENAME.MIPLUGIN.CAPTION
+msgctxt "TFRMMULTIRENAME.MIPLUGIN.CAPTION"
+msgid "Plugin"
+msgstr ""
+
+#: TFRMMULTIRENAME.MISECOND.CAPTION
+#, fuzzy
+#| msgid "[s]econd"
+msgid "[s] Second"
+msgstr "[S] Sekunde"
+
+#: TFRMMULTIRENAME.MISECOND1.CAPTION
+msgid "[ss] Second (2 digits)"
+msgstr "[ss] Sekunde (zweistellig)"
+
+#: TFRMMULTIRENAME.MIYEAR.CAPTION
+#, fuzzy
+#| msgid "[Y] Year"
+msgid "[Y] Year (2 digits)"
+msgstr "[Y] Jahr (zweistellig)"
+
+#: TFRMMULTIRENAME.MIYEAR1.CAPTION
+msgid "[YYYY] Year (4 digits)"
+msgstr "[YYYY] Jahr (vierstellig)"
+
+#: TFRMMULTIRENAME.N1.CAPTION
+msgctxt "TFRMMULTIRENAME.N1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMULTIRENAME.N2.CAPTION
+msgctxt "TFRMMULTIRENAME.N2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMULTIRENAME.N3.CAPTION
+msgctxt "TFRMMULTIRENAME.N3.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMULTIRENAME.N4.CAPTION
+msgctxt "TFRMMULTIRENAME.N4.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMMULTIRENAME.N5.CAPTION
+msgctxt "TFRMMULTIRENAME.N5.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMOPTIONS.BTCLEARHOTKEY.CAPTION
+msgid "Clear HotKey"
+msgstr "Tastaturkürzel löschen"
+
+#: TFRMOPTIONS.BTNADDSEL.CAPTION
+msgid "&Add selected names"
+msgstr "&Ausgewählte Namen hinzufügen"
+
+#: TFRMOPTIONS.BTNADDSELWITHPATH.CAPTION
+msgid "Add selected names with &full path"
+msgstr "Ausgewählte Namen mit &komplettem Pfad hinzufügen"
+
+#: TFRMOPTIONS.BTNAPPLY.CAPTION
+msgctxt "TFRMOPTIONS.BTNAPPLY.CAPTION"
+msgid "Apply"
+msgstr "Übernehmen"
+
+#: TFRMOPTIONS.BTNAUTOCONFIG.CAPTION
+msgid "Auto Configure"
+msgstr "Auto-Konfiguration"
+
+#: TFRMOPTIONS.BTNBACKVIEWERCOLOR.CAPTION
+msgctxt "TFRMOPTIONS.BTNBACKVIEWERCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONS.BTNCANCEL.CAPTION
+msgctxt "TFRMOPTIONS.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMOPTIONS.BTNCONFIGAPPLY.CAPTION
+msgctxt "TFRMOPTIONS.BTNCONFIGAPPLY.CAPTION"
+msgid "Apply"
+msgstr "Übernehmen"
+
+#: TFRMOPTIONS.BTNCONFIGEDIT.CAPTION
+msgctxt "TFRMOPTIONS.BTNCONFIGEDIT.CAPTION"
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: TFRMOPTIONS.BTNCOPYCOLUMNSSET.CAPTION
+msgctxt "TFRMOPTIONS.BTNCOPYCOLUMNSSET.CAPTION"
+msgid "Copy"
+msgstr "Kopieren"
+
+#: TFRMOPTIONS.BTNDELCOLUMNSSET.CAPTION
+msgctxt "TFRMOPTIONS.BTNDELCOLUMNSSET.CAPTION"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMOPTIONS.BTNEDITCOLUMNSSET.CAPTION
+msgctxt "TFRMOPTIONS.BTNEDITCOLUMNSSET.CAPTION"
+msgid "Edit"
+msgstr "Bea&rbeiten"
+
+#: TFRMOPTIONS.BTNFONTVIEWERCOLOR.CAPTION
+msgctxt "TFRMOPTIONS.BTNFONTVIEWERCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONS.BTNMULTIARCADD.CAPTION
+msgctxt "TFRMOPTIONS.BTNMULTIARCADD.CAPTION"
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: TFRMOPTIONS.BTNMULTIARCAPPLY.CAPTION
+msgctxt "TFRMOPTIONS.BTNMULTIARCAPPLY.CAPTION"
+msgid "Apply"
+msgstr "Übernehmen"
+
+#: TFRMOPTIONS.BTNMULTIARCDELETE.CAPTION
+msgctxt "TFRMOPTIONS.BTNMULTIARCDELETE.CAPTION"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMOPTIONS.BTNMULTIARCRENAME.CAPTION
+msgctxt "TFRMOPTIONS.BTNMULTIARCRENAME.CAPTION"
+msgid "Rename"
+msgstr "Umbenennen"
+
+#: TFRMOPTIONS.BTNNEWCOLUMNSSET.CAPTION
+msgctxt "TFRMOPTIONS.BTNNEWCOLUMNSSET.CAPTION"
+msgid "&New"
+msgstr "&Neu"
+
+#: TFRMOPTIONS.BTNOK.CAPTION
+msgctxt "TFRMOPTIONS.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMOPTIONS.BTNSELEDITFNT.CAPTION
+msgctxt "TFRMOPTIONS.BTNSELEDITFNT.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMOPTIONS.BTNSELLOGFNT.CAPTION
+msgctxt "TFRMOPTIONS.BTNSELLOGFNT.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMOPTIONS.BTNSELMAINFNT.CAPTION
+msgctxt "TFRMOPTIONS.BTNSELMAINFNT.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMOPTIONS.BTNSELVIEWERBOOKFNT.CAPTION
+msgctxt "TFRMOPTIONS.BTNSELVIEWERBOOKFNT.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMOPTIONS.BTNSELVIEWFNT.CAPTION
+msgctxt "TFRMOPTIONS.BTNSELVIEWFNT.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMOPTIONS.BTSETHOTKEY.CAPTION
+msgid "Set HotKey"
+msgstr "Tastaturkürzel erstellen"
+
+#: TFRMOPTIONS.CBALWAYSSHOWTRAYICON.CAPTION
+msgid "Always show tray icon"
+msgstr "Immer Tray-Icon anzeigen (neben der Uhr)"
+
+#: TFRMOPTIONS.CBBFILESYSTEM.TEXT
+msgctxt "TFRMOPTIONS.CBBFILESYSTEM.TEXT"
+msgid "General"
+msgstr "Allgemein"
+
+#: TFRMOPTIONS.CBCMDLINEHISTORY.CAPTION
+msgid "Command line history"
+msgstr "Verlauf der Befehlszeile"
+
+#: TFRMOPTIONS.CBCUTTEXTTOCOLWIDTH.CAPTION
+msgid "Cut text to column width"
+msgstr "Text auf Spaltenbreite kürzen"
+
+#: TFRMOPTIONS.CBDELETETOTRASH.CAPTION
+#, fuzzy
+#| msgid "&F8/Del deletes to recycle bin (Shift=directly)"
+msgid "Delete to recycle bin (Shift key reverses this setting)"
+msgstr "&F8/Entf löscht in den Papierkorb (mit 'Umschalt'- Taste = endgültiges Löschen)"
+
+#: TFRMOPTIONS.CBDIRBRACKETS.CAPTION
+msgid "Show square brackets around directories"
+msgstr "Zeige eckige Klammern um Verzeichnisse"
+
+#: TFRMOPTIONS.CBDIRHISTORY.CAPTION
+msgctxt "TFRMOPTIONS.CBDIRHISTORY.CAPTION"
+msgid "Directory history"
+msgstr "Verzeichnisverlauf"
+
+#: TFRMOPTIONS.CBDROPREADONLYFLAG.CAPTION
+msgctxt "TFRMOPTIONS.CBDROPREADONLYFLAG.CAPTION"
+msgid "Drop readonly flag"
+msgstr "Schreibschutz-Attribut entfernen"
+
+#: TFRMOPTIONS.CBEXACTBEGINNING.CAPTION
+msgid "&Beginning (name must start with first typed character)"
+msgstr "&Beginn (Name soll mit dem ersten eingetippten Buchstaben beginnen)"
+
+#: TFRMOPTIONS.CBEXACTENDING.CAPTION
+msgid "En&ding (last character before a typed dot . must match)"
+msgstr "Ende des Namens (letztes Zeichen vor einem . soll passen)"
+
+#: TFRMOPTIONS.CBFILEMASKHISTORY.CAPTION
+msgid "File mask history"
+msgstr "Dateimasken-Verlauf"
+
+#: TFRMOPTIONS.CBFLATDISKPANEL.CAPTION
+msgctxt "TFRMOPTIONS.CBFLATDISKPANEL.CAPTION"
+msgid "Flat buttons"
+msgstr "Flache Schalter"
+
+#: TFRMOPTIONS.CBFLATINTERFACE.CAPTION
+msgid "Flat interface"
+msgstr "Flaches Erscheinungsbild"
+
+#: TFRMOPTIONS.CBFLATTOOLBAR.CAPTION
+msgctxt "TFRMOPTIONS.CBFLATTOOLBAR.CAPTION"
+msgid "Flat buttons"
+msgstr "Flache Schalter"
+
+#: TFRMOPTIONS.CBFREESPACEIND.CAPTION
+#, fuzzy
+#| msgid "Show freespace indicator on drive label"
+msgid "Show free space indicator on drive label"
+msgstr "Zeige den 'Freien Speicher'-Indikator über den Panels"
+
+#: TFRMOPTIONS.CBGRIDHORZLINE.CAPTION
+msgid "Horizontal lines"
+msgstr "Horizontale Linien"
+
+#: TFRMOPTIONS.CBGRIDVERTLINE.CAPTION
+msgid "Vertical lines"
+msgstr "Vertikale Linien"
+
+#: TFRMOPTIONS.CBICONSSHOWOVERLAY.CAPTION
+msgid "Show overlay i&cons, e.g. for links"
+msgstr "Überlagernde Icons zeigen (z. B. Pfeile bei Verknüpfungen)"
+
+#: TFRMOPTIONS.CBICONSSIZE.TEXT
+msgid "16x16"
+msgstr "16x16"
+
+#: TFRMOPTIONS.CBLISTFILESINTHREAD.CAPTION
+msgid "Load file list in separate thread"
+msgstr "Datei(en) in eigenem Prozess starten"
+
+#: TFRMOPTIONS.CBLOADICONSSEPARATELY.CAPTION
+msgid "Load icons after file list"
+msgstr "Icons nach Dateiliste laden"
+
+#: TFRMOPTIONS.CBLOGARCOP.CAPTION
+msgid "Pack/Unpack"
+msgstr "Packen / Entpacken"
+
+#: TFRMOPTIONS.CBLOGCPMVLN.CAPTION
+msgid "Copy/Move/Create link/symlink"
+msgstr "Kopiere/Verschiebe/Erstelle Link/symb. Link"
+
+#: TFRMOPTIONS.CBLOGDELETE.CAPTION
+msgctxt "TFRMOPTIONS.CBLOGDELETE.CAPTION"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMOPTIONS.CBLOGDIROP.CAPTION
+msgid "Create/Delete directories"
+msgstr "Erstelle / Lösche Verzeichnisse"
+
+#: TFRMOPTIONS.CBLOGERRORS.CAPTION
+msgid "Log &errors"
+msgstr "F&ehler aufzeichnen"
+
+#: TFRMOPTIONS.CBLOGFILE.CAPTION
+msgid "&Create a log file:"
+msgstr "&Erstelle Log-Datei:"
+
+#: TFRMOPTIONS.CBLOGINFO.CAPTION
+msgid "Log information messages"
+msgstr "Log-Informationsmeldungen"
+
+#: TFRMOPTIONS.CBLOGSUCCESS.CAPTION
+msgid "Log &successful operations"
+msgstr "Erfolgreiche Vorg&änge aufzeichnen"
+
+#: TFRMOPTIONS.CBLOGVFS.CAPTION
+msgid "File system plugins"
+msgstr "Dateisystem Plugin"
+
+#: TFRMOPTIONS.CBLOGWINDOW.CAPTION
+msgid "Show log window"
+msgstr "Log-Datei anzeigen"
+
+#: TFRMOPTIONS.CBLYNXLIKE.CAPTION
+#, fuzzy
+#| msgid "Lynx like movement"
+msgid "Lynx-like movement"
+msgstr "Lynx-artiges navigieren"
+
+#: TFRMOPTIONS.CBMINIMIZETOTRAY.CAPTION
+msgid "Mo&ve icon to system tray when minimized"
+msgstr "In den Sys-Tray minimieren (neben der Uhr)"
+
+#: TFRMOPTIONS.CBONLYONCE.CAPTION
+msgid "Allow only one copy of DC at a time"
+msgstr "Nur eine Instanz von DoubleCommander gleichzeitig erlauben"
+
+#: TFRMOPTIONS.CBPANELOFOPERATIONS.CAPTION
+msgid "Show panel of operation in background"
+msgstr "Zeige den ausführenden Fensterteil im Hintergrund"
+
+#: TFRMOPTIONS.CBPARTIALNAMESEARCH.CAPTION
+msgid "Search for part of file name"
+msgstr "Suche nach Teil des Dateinamens"
+
+#: TFRMOPTIONS.CBPROCESSCOMMENTS.CAPTION
+msgid "Process comments with files/folders"
+msgstr "Kommentare von Dateien / Verzeichnissen mitbearbeiten"
+
+#: TFRMOPTIONS.CBPROGINMENUBAR.CAPTION
+msgid "Show common progress in menu bar"
+msgstr "Zeige allgemeinen Fortschritt in der Menü-Zeile"
+
+#: TFRMOPTIONS.CBRENAMESELONLYNAME.CAPTION
+#, fuzzy
+#| msgid "Select only the file name then renaming (not the extension)"
+msgid "Select only the file name when renaming (not the extension)"
+msgstr "Nur den Dateinamen bearbeiten (nicht die Endung)"
+
+#: TFRMOPTIONS.CBSAVETHUBNAILS.CAPTION
+msgid "Save thubnails in cache"
+msgstr "Vorschaubilder im Cache speichern"
+
+#: TFRMOPTIONS.CBSELECTIONBYMOUSE.CAPTION
+msgid "Selection by mouse"
+msgstr "Auswahl mit der Maus"
+
+#: TFRMOPTIONS.CBSHORTFILESIZEFORMAT.CAPTION
+#, fuzzy
+#| msgid "Short Filesize format"
+msgid "Short file size format"
+msgstr "Kurzes Dateigrössenformat"
+
+#: TFRMOPTIONS.CBSHOWCMDLINE.CAPTION
+msgid "Show command &line"
+msgstr "Befehlszeile anzeigen"
+
+#: TFRMOPTIONS.CBSHOWCOPYTABSELECTPANEL.CAPTION
+msgid "Show tab select panel in copy/move dialog"
+msgstr "Zeige Auswahldialog für Tabs im Kopieren/Verschieben-Dialog"
+
+#: TFRMOPTIONS.CBSHOWCURDIR.CAPTION
+msgid "Show &current directory"
+msgstr "Zeige aktuelles Verzeichnis"
+
+#: TFRMOPTIONS.CBSHOWDIALOGONDRAGDROP.CAPTION
+msgid "Show confirmation dialog on drag&&drop operations"
+msgstr "Bestätigungs-Dialog bei Drag&&Drop-Aktionen zeigen"
+
+#: TFRMOPTIONS.CBSHOWDISKPANEL.CAPTION
+msgid "Show &drive buttons"
+msgstr "Zeige Schalter für Laufwerke"
+
+#: TFRMOPTIONS.CBSHOWDRIVEFREESPACE.CAPTION
+msgid "Show free space label"
+msgstr "Zeige 'freien Speicher' von 'Gesamt-Speicherplatz' über den Panels"
+
+#: TFRMOPTIONS.CBSHOWDRIVEMENUBUTTON.CAPTION
+msgid "Show d&rive menu button"
+msgstr "Zeige Laufwerksmenü-Schalter"
+
+#: TFRMOPTIONS.CBSHOWKEYSPANEL.CAPTION
+msgid "Show &function key buttons"
+msgstr "Zeige Schalter der Funktionstasten"
+
+#: TFRMOPTIONS.CBSHOWMAINMENU.CAPTION
+msgid "Show main menu"
+msgstr "Zeige Hauptmenü"
+
+#: TFRMOPTIONS.CBSHOWMAINTOOLBAR.CAPTION
+msgid "Show &button bar"
+msgstr "Zeige Schalterleiste"
+
+#: TFRMOPTIONS.CBSHOWSTATUSBAR.CAPTION
+msgid "Show &status bar"
+msgstr "Stausleiste zeigen"
+
+#: TFRMOPTIONS.CBSHOWSYSTEMFILES.CAPTION
+#, fuzzy
+#| msgid "Show hidden/system files"
+msgctxt "TFRMOPTIONS.CBSHOWSYSTEMFILES.CAPTION"
+msgid "Show system and hidden files"
+msgstr "Zeige versteckte und Systemdateien"
+
+#: TFRMOPTIONS.CBSHOWTABHEADER.CAPTION
+msgid "Show &tabstop header"
+msgstr "Zeige Tabstop-Zeile"
+
+#: TFRMOPTIONS.CBSHOWTABS.CAPTION
+msgid "Sho&w folder tabs"
+msgstr "Zeige Verzeichnis-Reiter"
+
+#: TFRMOPTIONS.CBSHOWWARNINGMESSAGES.CAPTION
+msgid "Show warning messages (\"OK\" button only)"
+msgstr "Warnungen anzeigen (nur mit \"OK\" Schalter)"
+
+#: TFRMOPTIONS.CBSKIPFILEOPERROR.CAPTION
+msgid "Skip file operations errors and write them to log window"
+msgstr "Fehler bei Datei-Operationen ignorieren und sie im Log-Fenster anzeigen"
+
+#: TFRMOPTIONS.CBSORTCASESENSITIVE.CAPTION
+#, fuzzy
+#| msgid "Case sensitive sorting"
+msgctxt "TFRMOPTIONS.CBSORTCASESENSITIVE.CAPTION"
+msgid "Case-sensitive sorting"
+msgstr "Sortieren nach Gross- / Kleinschreibung"
+
+#: TFRMOPTIONS.CBSORTMETHOD.TEXT
+msgid "Alphabetical, considering accents"
+msgstr "Alphabetisch, unter Berücksichtigung von Akzenten"
+
+#: TFRMOPTIONS.CBSPACEMOVESDOWN.CAPTION
+msgid "When selecting files with <SPACEBAR>, move down to next file (as with <INSERT>)"
+msgstr "Wenn Dateien mit der <Leertaste> ausgewählt werden, zur nächsten Datei wechseln (wie mit <Einfügen>)"
+
+#: TFRMOPTIONS.CBTABSACTIVATEONCLICK.CAPTION
+msgid "Activate target &panel when clicking on one of its Tabs"
+msgstr "Ziel-Panel auswählen, wenn eines seiner Tabs angeklickt wird"
+
+#: TFRMOPTIONS.CBTABSALWAYSVISIBLE.CAPTION
+msgid "&Show tab header also when there is only one tab"
+msgstr "&Reiter-Titel auch zeigen wenn nur einer vorhanden"
+
+#: TFRMOPTIONS.CBTABSCONFIRMCLOSEALL.CAPTION
+msgid "&Confirm close all tabs"
+msgstr "&Schliessen aller Reiter bestätigen"
+
+#: TFRMOPTIONS.CBTABSLIMITOPTION.CAPTION
+msgid "&Limit tab title length to:"
+msgstr "Begrenze Reiter-Tite&lzeile auf"
+
+#: TFRMOPTIONS.CBTABSLOCKEDASTERISK.CAPTION
+msgid "Show locked tabs &with an asterisk *"
+msgstr "Alle gesperrten Reiter mit Sternchen * markieren"
+
+#: TFRMOPTIONS.CBTABSMULTILINES.CAPTION
+msgid "&Tabs on multiple lines"
+msgstr "Rei&ter-Titel auf mehrere Zeilen verteilen"
+
+#: TFRMOPTIONS.CBTABSOPENFOREGROUND.CAPTION
+msgid "Ctrl+&Up opens new tab in foreground"
+msgstr "Strg+Pf&eil hoch öffnet einen neuen Reiter im Vordergrund"
+
+#: TFRMOPTIONS.CBTABSOPENNEARCURRENT.CAPTION
+msgid "Open &new tabs near current tab"
+msgstr "Neuen Reiter neben aktuellem Reiter einfügen"
+
+#: TFRMOPTIONS.CBTABSSHOWCLOSEBUTTON.CAPTION
+msgid "Show tab close button"
+msgstr "Zeige Schalter um Tabs zu schliessen"
+
+#: TFRMOPTIONS.CBTERMWINDOW.CAPTION
+msgid "Show terminal window"
+msgstr "Konsolenfenster zeigen"
+
+#: TFRMOPTIONS.CBTOOLSKEEPTERMINALOPEN.CAPTION
+msgid "Keep terminal window open after executing program"
+msgstr "Konsolenfenster offen lassen, wenn der Vorgang abgeschlossen ist"
+
+#: TFRMOPTIONS.CBTOOLSRUNINTERMINAL.CAPTION
+msgid "Execute in terminal"
+msgstr "In Konsolenfenster ausführen"
+
+#: TFRMOPTIONS.CBTOOLSUSEEXTERNALPROGRAM.CAPTION
+msgid "Use external program"
+msgstr "Externes Programm benutzen"
+
+#: TFRMOPTIONS.CBTWODISKPANELS.CAPTION
+msgid "Show two drive button bars (fixed width, above file windows)"
+msgstr "Zeige zwei Laufwerksleisten (feste Breite, über den Dateifenstern)"
+
+#: TFRMOPTIONS.CBWATCHATTRIBUTESCHANGE.CAPTION
+#, fuzzy
+#| msgid "Also when &size, date, or attributes change"
+msgid "When &size, date or attributes change"
+msgstr "Auch wenn &Grösse, Datum oder Attribut geändert werden"
+
+#: TFRMOPTIONS.CBWATCHEXCLUDEDIRS.CAPTION
+msgid "For the following &paths and their subdirectories:"
+msgstr "Für die &folgenden Pfade und Unterverzeichnisse:"
+
+#: TFRMOPTIONS.CBWATCHFILENAMECHANGE.CAPTION
+#, fuzzy
+#| msgid "Refresh when files are &created, deleted and renamed"
+msgid "When files are &created, deleted or renamed"
+msgstr "Auffrischen wenn Dateien &erstellt, gelöscht oder umbenannt werden"
+
+#: TFRMOPTIONS.CBWATCHONLYFOREGROUND.CAPTION
+#, fuzzy
+#| msgid "Don't &react to updates while in the background"
+msgid "When application is in the &background"
+msgstr "Nicht auf Änderungen reagieren wenn im Hintergrund"
+
+#: TFRMOPTIONS.CHKAUTOFILLCOLUMNS.CAPTION
+msgid "Auto fill columns"
+msgstr "Spalten automatisch füllen"
+
+#: TFRMOPTIONS.CHKIGNOREENABLE.CAPTION
+msgid "&Ignore (don't show) the following files and folders:"
+msgstr "&Ignoriere (zeige nicht) die folgenden Dateien und Verzeichnisse:"
+
+#: TFRMOPTIONS.CHKMULTIARCDEBUG.CAPTION
+msgid "Debug mode"
+msgstr "Debug-Modus"
+
+#: TFRMOPTIONS.CHKMULTIARCENABLED.CAPTION
+msgid "Enabled"
+msgstr "Aktiviert"
+
+#: TFRMOPTIONS.CHKMULTIARCOUTPUT.CAPTION
+msgctxt "TFRMOPTIONS.CHKMULTIARCOUTPUT.CAPTION"
+msgid "Show console output"
+msgstr "Zeige die Ausgabe des Konsolenfensters"
+
+#: TFRMOPTIONS.CHKSAVECONFIGURATION.CAPTION
+msgid "Save configuration"
+msgstr "Konfiguration speichern"
+
+#: TFRMOPTIONS.CHKSEARCHREPLACEHISTORY.CAPTION
+msgid "Search/Replace history"
+msgstr "Suche / Ersetze Verlauf "
+
+#: TFRMOPTIONS.FRMOPTIONS.CAPTION
+msgctxt "TFRMOPTIONS.FRMOPTIONS.CAPTION"
+msgid "Options"
+msgstr "Optionen"
+
+#: TFRMOPTIONS.GBARCHIVEROPTIONS.CAPTION
+msgctxt "TFRMOPTIONS.GBARCHIVEROPTIONS.CAPTION"
+msgid "Options"
+msgstr "Optionen"
+
+#: TFRMOPTIONS.GBAUTOREFRESHDISABLE.CAPTION
+msgid "Disable auto-refresh"
+msgstr "Kein automatisches Auffrischen"
+
+#: TFRMOPTIONS.GBAUTOREFRESHENABLE.CAPTION
+msgid "Refresh file list"
+msgstr "Dateiliste auffrischen"
+
+#: TFRMOPTIONS.GBCOPYBUFFERSIZE.CAPTION
+msgid "&Buffer size for files:"
+msgstr "&Puffergrösse für Dateien"
+
+#: TFRMOPTIONS.GBDATETIMEFORMAT.CAPTION
+msgid "Date and time"
+msgstr "Datum und Zeit"
+
+#: TFRMOPTIONS.GBEXACTNAMEMATCH.CAPTION
+#, fuzzy
+#| msgid "Exact &name match:"
+msgid "Exact name match:"
+msgstr "Exakter &Name"
+
+#: TFRMOPTIONS.GBFILESEARCH.CAPTION
+msgid "File search"
+msgstr "Dateisuche"
+
+#: TFRMOPTIONS.GBGENERALOPTIONS.CAPTION
+msgid "General options"
+msgstr "Generelle Optionen"
+
+#: TFRMOPTIONS.GBICONSSIZE.CAPTION
+msgid " Icon &size "
+msgstr "Icon-Grö&sse"
+
+#: TFRMOPTIONS.GBLOCCONFIGFILES.CAPTION
+msgid "Location of configuration files"
+msgstr "Speicherort der Konfigurationsdatei"
+
+#: TFRMOPTIONS.GBLOGFILE.CAPTION
+msgid "File operation log file"
+msgstr "Dateioperation Log-Datei"
+
+#: TFRMOPTIONS.GBLOGFILEOP.CAPTION
+msgid "Log operations:"
+msgstr "Operationen aufzeichnen:"
+
+#: TFRMOPTIONS.GBLOGFILESTATUS.CAPTION
+msgid "Operation status:"
+msgstr "Fortschritt des Vorgangs:"
+
+#: TFRMOPTIONS.GBSAVEONEXIT.CAPTION
+msgid "Save on exit"
+msgstr "Beim Beenden speichern"
+
+#: TFRMOPTIONS.GBSCREENLAYOUT.CAPTION
+msgid " Screen layout "
+msgstr "Bildschirmdarstellung"
+
+#: TFRMOPTIONS.GBSCROLLING.CAPTION
+msgctxt "TFRMOPTIONS.GBSCROLLING.CAPTION"
+msgid "Scrolling"
+msgstr "Scrollen"
+
+#: TFRMOPTIONS.GBSHOWGRID.CAPTION
+msgid "Show grid in file panel"
+msgstr "Gitternetz anzeigen"
+
+#: TFRMOPTIONS.GBSHOWICONSMODE.CAPTION
+msgid " Show icons to the left of the filename "
+msgstr "Icons links vom Dateinamen anzeigen"
+
+#: TFRMOPTIONS.GBSORTING.CAPTION
+msgid "Sorting"
+msgstr "Sortierung"
+
+#: TFRMOPTIONS.GBTABS.CAPTION
+msgid "Folder tabs headers"
+msgstr "Verzeichnisreiter-Titel"
+
+#: TFRMOPTIONS.GBVIEWERBOOKMODE.CAPTION
+msgid "Viewer Book Mode"
+msgstr "Buchartige Ansicht"
+
+#: TFRMOPTIONS.GBVIEWEREXAMPLE.CAPTION
+msgctxt "TFRMOPTIONS.GBVIEWEREXAMPLE.CAPTION"
+msgid "Example"
+msgstr "Beispiel"
+
+#: TFRMOPTIONS.GRPQUICKSEARCHFILTERKEYS.CAPTION
+msgid "Keys settings"
+msgstr "Tasten-Einstellungen"
+
+#: TFRMOPTIONS.LBCOMMANDS.CAPTION
+msgid "Commands:"
+msgstr "Befehle:"
+
+#: TFRMOPTIONS.LBFILTER.CAPTION
+msgid "Filter"
+msgstr ""
+
+#: TFRMOPTIONS.LBLARCHIVEADD.CAPTION
+msgid "Add:"
+msgstr "Füge hinzu:"
+
+#: TFRMOPTIONS.LBLARCHIVEEXTENSION.CAPTION
+msgctxt "TFRMOPTIONS.LBLARCHIVEEXTENSION.CAPTION"
+msgid "Extension:"
+msgstr "Endung:"
+
+#: TFRMOPTIONS.LBLARCHIVEEXTRACT.CAPTION
+msgid "Extract:"
+msgstr "Entpacke:"
+
+#: TFRMOPTIONS.LBLARCHIVELIST.CAPTION
+msgid "List:"
+msgstr "Liste auf:"
+
+#: TFRMOPTIONS.LBLARCHIVELISTEND.CAPTION
+msgid "Listing finish (optional):"
+msgstr "Auflistungsende (optional):"
+
+#: TFRMOPTIONS.LBLARCHIVELISTFORMAT.CAPTION
+msgid "Listing format:"
+msgstr "Auflistungsformat"
+
+#: TFRMOPTIONS.LBLARCHIVELISTSTART.CAPTION
+msgid "Listing start (optional):"
+msgstr "Auflistungsbeginn (optional):"
+
+#: TFRMOPTIONS.LBLARCHIVER.CAPTION
+msgid "Archiver:"
+msgstr "Archivierer:"
+
+#: TFRMOPTIONS.LBLAUTOSIZECOLUMN.CAPTION
+msgid "Auto size column:"
+msgstr "Grösse der Spalten automatisch einstellen:"
+
+#: TFRMOPTIONS.LBLBACKGROUNDCOLORVIEWERBOOK.CAPTION
+msgid "Background color in book viewer"
+msgstr "Hintergrundfarbe in der buchartigen Ansicht"
+
+#: TFRMOPTIONS.LBLCHAR.CAPTION
+msgid "characters"
+msgstr "Bu&chstaben"
+
+#: TFRMOPTIONS.LBLCMDLINECONFIGDIR.CAPTION
+msgid "Set on command line"
+msgstr "An Eingabeaufforderung übergeben"
+
+#: TFRMOPTIONS.LBLCONFIGCOLUMNS.CAPTION
+msgid "Configure columns for file system:"
+msgstr "Bearbeite Spalten für Dateisystem"
+
+#: TFRMOPTIONS.LBLCOPYBUFFERSIZE.CAPTION
+msgid "Buffer size (Kb):"
+msgstr "Puffer&grösse"
+
+#: TFRMOPTIONS.LBLDATETIMEFORMAT.CAPTION
+msgid "Date and time format:"
+msgstr "Datums- und Zeitformat"
+
+#: TFRMOPTIONS.LBLDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONS.LBLDESCRIPTION.CAPTION"
+msgid "Description:"
+msgstr "Beschreibung:"
+
+#: TFRMOPTIONS.LBLEDITORFONT.CAPTION
+msgid "Editor font"
+msgstr "Schrift für Editor"
+
+#: TFRMOPTIONS.LBLFONTCOLORVIEWERBOOK.CAPTION
+msgid "Font color in book viewer"
+msgstr "Schriftfarbe in der buchartigen Ansicht"
+
+#: TFRMOPTIONS.LBLHOTKEY.CAPTION
+msgctxt "TFRMOPTIONS.LBLHOTKEY.CAPTION"
+msgid "Hot Key:"
+msgstr "Tastaturkürzel"
+
+#: TFRMOPTIONS.LBLLOGFONT.CAPTION
+msgid "Log font"
+msgstr "Log-Schriftart"
+
+#: TFRMOPTIONS.LBLMAINFONT.CAPTION
+msgid "Main font"
+msgstr "Hauptschriftart"
+
+#: TFRMOPTIONS.LBLMOUSEMODE.CAPTION
+msgid "Mode:"
+msgstr "Modus:"
+
+#: TFRMOPTIONS.LBLNUMBERCOLUMNSVIEWER.CAPTION
+msgid "Number of columns in book viewer"
+msgstr "Anzahl der Spalten in der buchartigen Ansicht"
+
+#: TFRMOPTIONS.LBLPARAM.CAPTION
+msgid "Param:"
+msgstr "Parameter:"
+
+#: TFRMOPTIONS.LBLQUICKFILTER.CAPTION
+msgid "Quick &filter:"
+msgstr "Schneller &Filter:"
+
+#: TFRMOPTIONS.LBLQUICKSEARCH.CAPTION
+msgid "Quick &search:"
+msgstr "Schnelle &Suche:"
+
+#: TFRMOPTIONS.LBLRUNINTERM.CAPTION
+msgid "Run in terminal:"
+msgstr "In Konsolen-Fenster ausführen"
+
+#: TFRMOPTIONS.LBLRUNTERM.CAPTION
+msgid "Run terminal:"
+msgstr "Konsolen-Fenster:"
+
+#: TFRMOPTIONS.LBLSAVEIN.CAPTION
+msgid "&Save in:"
+msgstr "&Speichern in:"
+
+#: TFRMOPTIONS.LBLSCFILES.CAPTION
+msgid "Shortcut files:"
+msgstr "Verknüpfungen:"
+
+#: TFRMOPTIONS.LBLSORTMETHOD.CAPTION
+msgid "Sort &method:"
+msgstr "Sortierungs&methode"
+
+#: TFRMOPTIONS.LBLTABSPOSITION.CAPTION
+msgid "Tabs position:"
+msgstr "Reiter-Position"
+
+#: TFRMOPTIONS.LBLTOOLSPARAMETERS.CAPTION
+msgid "Additional parameters"
+msgstr "Zusätzliche Parameter"
+
+#: TFRMOPTIONS.LBLTOOLSPATH.CAPTION
+msgid "Path to program to execute"
+msgstr "Pfad zum ausführbaren Programm"
+
+#: TFRMOPTIONS.LBLVIEWERBOOKFONT.CAPTION
+msgid "Viewer Book Font"
+msgstr "Schriftart für die buchartige Ansicht"
+
+#: TFRMOPTIONS.LBLVIEWERFONT.CAPTION
+msgid "Viewer font"
+msgstr "Schriftart für Betrachter"
+
+#: TFRMOPTIONS.LBLWIPEPASSNUMBER.CAPTION
+msgid "Number of wipe pass:"
+msgstr "Anzahl der Reinigungsdurchgänge"
+
+#: TFRMOPTIONS.LBTYPES.CAPTION
+msgid "Categories:"
+msgstr "Kategorien:"
+
+#: TFRMOPTIONS.LEDDRIVEBLACKLIST.HINT
+msgid "Here you can enter one or more drives, separated by \";\"."
+msgstr "Hier können ein oder mehrere Laufwerke eingetragen werden, getrennt durch \";\"."
+
+#: TFRMOPTIONS.RBALTLETTERQS.CAPTION
+#, fuzzy
+#| msgid "Al&t+Letters"
+msgid "Alt+Letters"
+msgstr "A&lt-Taste+Buchstabe"
+
+#: TFRMOPTIONS.RBCTRLALTLETTERQS.CAPTION
+#, fuzzy
+#| msgid "&Ctrl+Alt+Letters"
+msgid "Ctrl+Alt+Letters"
+msgstr "&Strg+Alt+Buchstabe"
+
+#: TFRMOPTIONS.RBICONSSHOWALL.CAPTION
+msgctxt "TFRMOPTIONS.RBICONSSHOWALL.CAPTION"
+msgid "&All"
+msgstr "&Alle"
+
+#: TFRMOPTIONS.RBICONSSHOWALLANDEXE.CAPTION
+msgid "All associated + &EXE/LNK (slow)"
+msgstr "Alle verknüpften .exe / .lnk - Dateien (langsam)"
+
+#: TFRMOPTIONS.RBICONSSHOWNONE.CAPTION
+msgid "&No icons"
+msgstr "&Keine Icons"
+
+#: TFRMOPTIONS.RBICONSSHOWSTANDARD.CAPTION
+msgid "&Only standard icons"
+msgstr "&Nur Standard-Icons"
+
+#: TFRMOPTIONS.RBLETTERQS.CAPTION
+#, fuzzy
+#| msgid "L&etter only"
+msgid "Letter only"
+msgstr "Nur Buchstaben"
+
+#: TFRMOPTIONS.RBNONEQS.CAPTION
+#, fuzzy
+#| msgid "Di&sabled"
+msgid "Disabled"
+msgstr "Nicht verfügbar"
+
+#: TFRMOPTIONS.RBPROGRAMDIR.CAPTION
+msgid "Program directory (portable version)"
+msgstr "Programmverzeichnis (portable Version)"
+
+#: TFRMOPTIONS.RBSCROLLLINEBYLINE.CAPTION
+msgctxt "TFRMOPTIONS.RBSCROLLLINEBYLINE.CAPTION"
+msgid "Line by line"
+msgstr "Zeile für Zeile"
+
+#: TFRMOPTIONS.RBSCROLLLINEBYLINECURSOR.CAPTION
+msgctxt "TFRMOPTIONS.RBSCROLLLINEBYLINECURSOR.CAPTION"
+msgid "Line by line with cursor movement"
+msgstr "Zeile für Zeile (Fokus bewegt sich mit)"
+
+#: TFRMOPTIONS.RBSCROLLPAGEBYPAGE.CAPTION
+msgctxt "TFRMOPTIONS.RBSCROLLPAGEBYPAGE.CAPTION"
+msgid "Page by page"
+msgstr "Seite für Seite"
+
+#: TFRMOPTIONS.RBUSEMMAPINSEARCH.CAPTION
+msgid "Use memory mapping for search text in files"
+msgstr "Nutze Memory-Mapping zur Textsuche in Dateien"
+
+#: TFRMOPTIONS.RBUSERHOMEDIR.CAPTION
+msgid "User home directory"
+msgstr "Eigene Dateien"
+
+#: TFRMOPTIONS.RBUSESTREAMINSEARCH.CAPTION
+msgid "Use stream for search text in files"
+msgstr "Nutze Stream zur Textsuche in Dateien"
+
+#: TFRMOPTIONS.STGHOTKEYS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONS.STGHOTKEYS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Hotkey"
+msgstr "Tastaturkürzel"
+
+#: TFRMOPTIONS.STGHOTKEYS.COLUMNS[1].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONS.STGHOTKEYS.COLUMNS[1].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Parameters"
+msgstr "Parameter"
+
+#: TFRMOPTIONS.STGTOOLS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONS.STGTOOLS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Tool"
+msgstr "Tools"
+
+#: TFRMOPTIONS.SUBLABEL.CAPTION
+msgctxt "TFRMOPTIONS.SUBLABEL.CAPTION"
+msgid "Drive blacklist:"
+msgstr "Ausschlussliste für Laufwerke:"
+
+#: TFRMOPTIONS.TBARCHIVERADDITIONAL.CAPTION
+msgctxt "TFRMOPTIONS.TBARCHIVERADDITIONAL.CAPTION"
+msgid "Additional"
+msgstr "Zusätzlich"
+
+#: TFRMOPTIONS.TBARCHIVERGENERAL.CAPTION
+msgctxt "TFRMOPTIONS.TBARCHIVERGENERAL.CAPTION"
+msgid "General"
+msgstr "Allgemein"
+
+#: TFRMOPTIONSCOLORS.BBTNADDCATEGORY.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BBTNADDCATEGORY.CAPTION"
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: TFRMOPTIONSCOLORS.BBTNAPPLYCATEGORY.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BBTNAPPLYCATEGORY.CAPTION"
+msgid "Apply"
+msgstr "Übernehmen"
+
+#: TFRMOPTIONSCOLORS.BBTNDELETECATEGORY.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BBTNDELETECATEGORY.CAPTION"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMOPTIONSCOLORS.BTNBACKCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNBACKCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNBACKCOLOR2.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNBACKCOLOR2.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNCATEGORYCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNCATEGORYCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNCURSORCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNCURSORCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNCURSORTEXT.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNCURSORTEXT.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNFORECOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNFORECOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNMARKCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.BTNMARKCOLOR.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSCOLORS.BTNSEARCHTEMPLATE.HINT
+msgctxt "TFRMOPTIONSCOLORS.BTNSEARCHTEMPLATE.HINT"
+msgid "Template..."
+msgstr "Vorlage..."
+
+#: TFRMOPTIONSCOLORS.CBACKGRNDLABEL.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.CBACKGRNDLABEL.CAPTION"
+msgid "BackGround:"
+msgstr "Hintergrund:"
+
+#: TFRMOPTIONSCOLORS.CBBUSEFRAMECURSOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.CBBUSEFRAMECURSOR.CAPTION"
+msgid "Use Frame Cursor"
+msgstr "Einfügemarke nur als Rahmen darstellen"
+
+#: TFRMOPTIONSCOLORS.CBBUSEINVERTEDSELECTION.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.CBBUSEINVERTEDSELECTION.CAPTION"
+msgid "Use Inverted Selection"
+msgstr "Umgekehrte Auswahl nutzen"
+
+#: TFRMOPTIONSCOLORS.CTEXTLABEL.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.CTEXTLABEL.CAPTION"
+msgid "Text Color:"
+msgstr "Textfarbe"
+
+#: TFRMOPTIONSCOLORS.GBEXAMPLE.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.GBEXAMPLE.CAPTION"
+msgid "Example"
+msgstr "Beispiel"
+
+#: TFRMOPTIONSCOLORS.GBFILETYPESCOLORS.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.GBFILETYPESCOLORS.CAPTION"
+msgid "File types colors"
+msgstr "Dateitypfarben"
+
+#: TFRMOPTIONSCOLORS.LBLBACKGROUND2.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLBACKGROUND2.CAPTION"
+msgid "Background 2:"
+msgstr "Hintergrund 2:"
+
+#: TFRMOPTIONSCOLORS.LBLCATEGORYATTR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLCATEGORYATTR.CAPTION"
+msgid "Category attributes:"
+msgstr "Kategorie der Attribute"
+
+#: TFRMOPTIONSCOLORS.LBLCATEGORYCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLCATEGORYCOLOR.CAPTION"
+msgid "Category color:"
+msgstr "Kategoriefarbe"
+
+#: TFRMOPTIONSCOLORS.LBLCATEGORYMASK.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLCATEGORYMASK.CAPTION"
+msgid "Category mask:"
+msgstr "Kategoriemaske"
+
+#: TFRMOPTIONSCOLORS.LBLCATEGORYNAME.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLCATEGORYNAME.CAPTION"
+msgid "Category name:"
+msgstr "Kategoriename"
+
+#: TFRMOPTIONSCOLORS.LBLCURSORCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLCURSORCOLOR.CAPTION"
+msgid "Cursor Color:"
+msgstr "Cursorfarbe"
+
+#: TFRMOPTIONSCOLORS.LBLCURSORTEXT.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLCURSORTEXT.CAPTION"
+msgid "Cursor Text:"
+msgstr "Cursortext"
+
+#: TFRMOPTIONSCOLORS.LBLINACTIVEPANELBRIGHTNESS.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLINACTIVEPANELBRIGHTNESS.CAPTION"
+msgid "Brightness level of inactive panel"
+msgstr "Helligkeitswert des inaktiven Panels"
+
+#: TFRMOPTIONSCOLORS.LBLMARKCOLOR.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.LBLMARKCOLOR.CAPTION"
+msgid "Mark Color:"
+msgstr "Markierungsfarbe"
+
+#: TFRMOPTIONSCOLORS.TSFILEPANELS.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.TSFILEPANELS.CAPTION"
+msgid "File panels"
+msgstr "Dateifenster"
+
+#: TFRMOPTIONSCOLORS.TSFILETYPES.CAPTION
+msgctxt "TFRMOPTIONSCOLORS.TSFILETYPES.CAPTION"
+msgid "File types"
+msgstr "Dateitypen"
+
+#: TFRMOPTIONSPLUGINS.BTNADDPLUGIN.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.BTNADDPLUGIN.CAPTION"
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: TFRMOPTIONSPLUGINS.BTNCONFIGPLUGIN.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.BTNCONFIGPLUGIN.CAPTION"
+msgid "Configure"
+msgstr "Einstellen"
+
+#: TFRMOPTIONSPLUGINS.BTNENABLEPLUGIN.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.BTNENABLEPLUGIN.CAPTION"
+msgid "Enable"
+msgstr "Aktivieren"
+
+#: TFRMOPTIONSPLUGINS.BTNREMOVEPLUGIN.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.BTNREMOVEPLUGIN.CAPTION"
+msgid "Remove"
+msgstr "Entfernen"
+
+#: TFRMOPTIONSPLUGINS.BTNTWEAKPLUGIN.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.BTNTWEAKPLUGIN.CAPTION"
+msgid "Tweak"
+msgstr "Anpassen"
+
+#: TFRMOPTIONSPLUGINS.LBLDSXDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.LBLDSXDESCRIPTION.CAPTION"
+msgid "Search plugins allow to use alternative search algorithms or external tools (like \"locate\", etc.)"
+msgstr "Such-PlugIns erlauben alternative Such-Algorithmen oder externe Tools (wie \"locate\", oder ähnliches) zu nutzen"
+
+#: TFRMOPTIONSPLUGINS.LBLWCXDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.LBLWCXDESCRIPTION.CAPTION"
+msgid "Packer plugins are used to work with archives."
+msgstr "Packer-PlugIns werden benutzt um mit Archiven zu arbeiten."
+
+#: TFRMOPTIONSPLUGINS.LBLWDXDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.LBLWDXDESCRIPTION.CAPTION"
+msgid "Content plugins allow to display extended file details like mp3 tags or image attributes in file lists, or use them in search and multi-rename tool"
+msgstr "Inhalt-PlugIns erlauben es, weitere Details (wie z.B. MP3-Tags) in Dateilisten anzuzeigen, oder sie zur Suche oder Umbenennung zu nutzen"
+
+#: TFRMOPTIONSPLUGINS.LBLWFXDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.LBLWFXDESCRIPTION.CAPTION"
+msgid "File system plugins allow access to disks inaccessible by operating system or to external devices like Palm/PocketPC."
+msgstr "Dateisystem-PlugIns erlauben auf Dateisysteme oder externe Laufwerke zuzugreifen, auf die das Betriebssystem nicht zugreifen kann (z.B. Palm oder Pocket-PCs)."
+
+#: TFRMOPTIONSPLUGINS.LBLWLXDESCRIPTION.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.LBLWLXDESCRIPTION.CAPTION"
+msgid "Viewer plugins allow to display file formats like images, spreadsheets, databases etc. in Viewer (F3, Ctrl+Q)"
+msgstr "Betrachter-PlugIns erlauben die Anzeige von Bilder, Tabellen, Datenbanken o.ä. durch den Betrachter (F3 oder Strg+Q)."
+
+#: TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[0].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Active"
+msgstr "Aktiv"
+
+#: TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[1].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[1].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Plugin"
+msgstr ""
+
+#: TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[2].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[2].TGRIDCOLUMNTITLE.CAPTION"
+msgid "Registered for"
+msgstr "Registriert für"
+
+#: TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[3].TGRIDCOLUMNTITLE.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[3].TGRIDCOLUMNTITLE.CAPTION"
+msgid "File name"
+msgstr "Dateiname"
+
+#: TFRMOPTIONSPLUGINS.TSDSX.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.TSDSX.CAPTION"
+msgid "Search plugins (.DSX)"
+msgstr "Such-PlugIns"
+
+#: TFRMOPTIONSPLUGINS.TSWCX.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.TSWCX.CAPTION"
+msgid "Packer plugins (.WCX)"
+msgstr "Packer plugins (.WCX)"
+
+#: TFRMOPTIONSPLUGINS.TSWDX.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.TSWDX.CAPTION"
+msgid "Content plugins (.WDX)"
+msgstr "Inhalt Plugin (.WDX)"
+
+#: TFRMOPTIONSPLUGINS.TSWFX.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.TSWFX.CAPTION"
+msgid "File system plugins (.WFX)"
+msgstr "Dateisystem-Plugins (.WFX)"
+
+#: TFRMOPTIONSPLUGINS.TSWLX.CAPTION
+msgctxt "TFRMOPTIONSPLUGINS.TSWLX.CAPTION"
+msgid "Viewer plugins (.WLX)"
+msgstr "Betrachter-PlugIns"
+
+#: TFRMOPTIONSTOOLTIPS.BTNADDFIELDS.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.BTNADDFIELDS.CAPTION"
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: TFRMOPTIONSTOOLTIPS.BTNAPPLYFIELDS.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.BTNAPPLYFIELDS.CAPTION"
+msgid "Apply"
+msgstr "Übernehmen"
+
+#: TFRMOPTIONSTOOLTIPS.BTNDELETEFIELDS.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.BTNDELETEFIELDS.CAPTION"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMOPTIONSTOOLTIPS.BTNFIELDSLIST.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.BTNFIELDSLIST.CAPTION"
+msgid ">>"
+msgstr ">>"
+
+#: TFRMOPTIONSTOOLTIPS.BTNFIELDSSEARCHTEMPLATE.HINT
+msgctxt "TFRMOPTIONSTOOLTIPS.BTNFIELDSSEARCHTEMPLATE.HINT"
+msgid "Template..."
+msgstr "Vorlage..."
+
+#: TFRMOPTIONSTOOLTIPS.GBCUSTOMFIELDS.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.GBCUSTOMFIELDS.CAPTION"
+msgid "Custom fields by file type"
+msgstr "Angepasste Felder nach Dateityp"
+
+#: TFRMOPTIONSTOOLTIPS.GBSHOWTOOLTIP.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.GBSHOWTOOLTIP.CAPTION"
+msgid "Show tool tip"
+msgstr "Zeige Tooltips (Hinweistexte)"
+
+#: TFRMOPTIONSTOOLTIPS.LBLFIELDSLIST.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.LBLFIELDSLIST.CAPTION"
+msgid "Category hint:"
+msgstr "Kategorie-Hinweis:"
+
+#: TFRMOPTIONSTOOLTIPS.LBLFIELDSMASK.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.LBLFIELDSMASK.CAPTION"
+msgid "Category mask:"
+msgstr "Kategoriemaske"
+
+#: TFRMOPTIONSTOOLTIPS.LBLFIELDSNAME.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.LBLFIELDSNAME.CAPTION"
+msgid "Category name:"
+msgstr "Kategoriename"
+
+#: TFRMOPTIONSTOOLTIPS.RBTOOLTIPALLFILES.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.RBTOOLTIPALLFILES.CAPTION"
+msgid "Show tool tip for all files in file panel"
+msgstr "Tooltip (Hinweistext) für alle Dateien im Panel anzeigen"
+
+#: TFRMOPTIONSTOOLTIPS.RBTOOLTIPNONE.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.RBTOOLTIPNONE.CAPTION"
+msgid "Don't show"
+msgstr "Nicht zeigen"
+
+#: TFRMOPTIONSTOOLTIPS.RBTOOLTIPONLYLARGE.CAPTION
+msgctxt "TFRMOPTIONSTOOLTIPS.RBTOOLTIPONLYLARGE.CAPTION"
+msgid "Show tool tip for files in file panel if truncated"
+msgstr "Tooltips (Hinweistexte) nur zeigen, wenn Dateinamen abgekürzt werden"
+
+#: TFRMPACKDLG.BTNCANCEL.CAPTION
+msgctxt "TFRMPACKDLG.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMPACKDLG.BTNCONFIG.CAPTION
+msgctxt "TFRMPACKDLG.BTNCONFIG.CAPTION"
+msgid "&Configure"
+msgstr "&Konfigurieren"
+
+#: TFRMPACKDLG.BTNHELP.CAPTION
+msgctxt "TFRMPACKDLG.BTNHELP.CAPTION"
+msgid "Help"
+msgstr "Hilfe"
+
+#: TFRMPACKDLG.BTNOK.CAPTION
+msgctxt "TFRMPACKDLG.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMPACKDLG.CAPTION
+msgid "Pack files"
+msgstr "Packe Dateien"
+
+#: TFRMPACKDLG.CBCREATESEPARATEARCHIVES.CAPTION
+msgid "Create separate archives, o&ne per selected file/dir"
+msgstr "Separate Archive erstellen, &pro gewählte Datei/Verzeichnis eins"
+
+#: TFRMPACKDLG.CBCREATESFX.CAPTION
+msgid "Create self e&xtracting archive"
+msgstr "SF&X-Archiv erstellen"
+
+#: TFRMPACKDLG.CBENCRYPT.CAPTION
+msgid "Encr&ypt"
+msgstr "Verschl&üsseln"
+
+#: TFRMPACKDLG.CBMOVETOARCHIVE.CAPTION
+msgid "M&ove to archive"
+msgstr "In Archiv ver&schieben"
+
+#: TFRMPACKDLG.CBMULTIVOLUME.CAPTION
+msgid "&Multiple disk archive"
+msgstr "Archiv auf&teilen"
+
+#: TFRMPACKDLG.CBOTHERPLUGINS.CAPTION
+msgid "=>"
+msgstr "=>"
+
+#: TFRMPACKDLG.CBRECURSE.CAPTION
+msgid "Recursively pack &subdirectories"
+msgstr "Alle &Unterverzeichnise mit Dateien einschliessen"
+
+#: TFRMPACKDLG.CBSTOREDIR.CAPTION
+msgid "Also &pack path names (only recursed)"
+msgstr "Pfadnamen &mitspeichern (nur abwärts)"
+
+#: TFRMPACKDLG.LBLPROMPT.CAPTION
+msgid "Pack file(s) to the file:"
+msgstr "Packe Datei(en) in Archiv"
+
+#: TFRMPACKDLG.RGPACKER.CAPTION
+msgid "Packer"
+msgstr "Packer"
+
+#: TFRMPACKINFODLG.BTNCLOSE.CAPTION
+msgctxt "TFRMPACKINFODLG.BTNCLOSE.CAPTION"
+msgid "Close"
+msgstr "Schliessen"
+
+#: TFRMPACKINFODLG.BTNUNPACKALLANDEXEC.CAPTION
+msgid "Unpack &all and execute"
+msgstr "&Alle entpacken und ausführen"
+
+#: TFRMPACKINFODLG.BTNUNPACKANDEXEC.CAPTION
+msgid "&Unpack and execute"
+msgstr "&Entpacken und ausführen"
+
+#: TFRMPACKINFODLG.FRMPACKINFODLG.CAPTION
+msgctxt "TFRMPACKINFODLG.FRMPACKINFODLG.CAPTION"
+msgid "Properties of packed file"
+msgstr "Eigenschaften der gepackten Datei(en)"
+
+#: TFRMPACKINFODLG.LBLATTRIBUTES.CAPTION
+msgid "Attributes:"
+msgstr "Attribute:"
+
+#: TFRMPACKINFODLG.LBLCOMPRESSIONRATIO.CAPTION
+msgid "Compression ratio:"
+msgstr "Kompressionsverhältnis:"
+
+#: TFRMPACKINFODLG.LBLDATE.CAPTION
+msgid "Date:"
+msgstr "Datum:"
+
+#: TFRMPACKINFODLG.LBLMETHOD.CAPTION
+msgid "Method:"
+msgstr "Methode:"
+
+#: TFRMPACKINFODLG.LBLORIGINALSIZE.CAPTION
+msgid "Original size:"
+msgstr "Originalgrösse"
+
+#: TFRMPACKINFODLG.LBLPACKEDFILE.CAPTION
+msgid "File:"
+msgstr "Datei:"
+
+#: TFRMPACKINFODLG.LBLPACKEDSIZE.CAPTION
+msgid "Packed size:"
+msgstr "Gepackte Grösse:"
+
+#: TFRMPACKINFODLG.LBLPACKER.CAPTION
+msgid "Packer:"
+msgstr "Packer:"
+
+#: TFRMPACKINFODLG.LBLTIME.CAPTION
+msgid "Time:"
+msgstr "Zeit:"
+
+#: TFRMSETFILEPROPERTIES.BTNCANCEL.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMSETFILEPROPERTIES.BTNOK.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&Ok"
+
+#: TFRMSETFILEPROPERTIES.CBSGID.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CBSGID.CAPTION"
+msgid "SGID"
+msgstr "SGID"
+
+#: TFRMSETFILEPROPERTIES.CBSTICKY.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CBSTICKY.CAPTION"
+msgid "Sticky"
+msgstr "Dauerhaft"
+
+#: TFRMSETFILEPROPERTIES.CBSUID.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CBSUID.CAPTION"
+msgid "SUID"
+msgstr "SUID"
+
+#: TFRMSETFILEPROPERTIES.CHKARCHIVE.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CHKARCHIVE.CAPTION"
+msgid "Archive"
+msgstr "Archiv"
+
+#: TFRMSETFILEPROPERTIES.CHKCREATIONTIME.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CHKCREATIONTIME.CAPTION"
+msgid "Created:"
+msgstr "Erstellt:"
+
+#: TFRMSETFILEPROPERTIES.CHKHIDDEN.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CHKHIDDEN.CAPTION"
+msgid "Hidden"
+msgstr "Versteckt"
+
+#: TFRMSETFILEPROPERTIES.CHKLASTACCESSTIME.CAPTION
+msgid "Accessed:"
+msgstr "Zugriff:"
+
+#: TFRMSETFILEPROPERTIES.CHKLASTWRITETIME.CAPTION
+msgid "Modified:"
+msgstr "Geändert"
+
+#: TFRMSETFILEPROPERTIES.CHKREADONLY.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CHKREADONLY.CAPTION"
+msgid "Read only"
+msgstr "Schreibgeschützt"
+
+#: TFRMSETFILEPROPERTIES.CHKRECURSIVE.CAPTION
+msgid "Recursive"
+msgstr "Auch Unterverzeichnisse"
+
+#: TFRMSETFILEPROPERTIES.CHKSYSTEM.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.CHKSYSTEM.CAPTION"
+msgid "System"
+msgstr ""
+
+#: TFRMSETFILEPROPERTIES.FRMSETFILEPROPERTIES.CAPTION
+#, fuzzy
+#| msgid "Change file properties"
+msgctxt "TFRMSETFILEPROPERTIES.FRMSETFILEPROPERTIES.CAPTION"
+msgid "Change attributes"
+msgstr "Ändern von Dateieigenschaften"
+
+#: TFRMSETFILEPROPERTIES.GBTIMESAMP.CAPTION
+msgid "Timestamp properties"
+msgstr "Zeitstempel-Eigenschaften"
+
+#: TFRMSETFILEPROPERTIES.GBUNIXATTRIBUTES.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.GBUNIXATTRIBUTES.CAPTION"
+msgid "Attributes"
+msgstr "Attribute"
+
+#: TFRMSETFILEPROPERTIES.GBWINATTRIBUTES.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.GBWINATTRIBUTES.CAPTION"
+msgid "Attributes"
+msgstr "Attribute"
+
+#: TFRMSETFILEPROPERTIES.LBLATTRBITSSTR.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTRBITSSTR.CAPTION"
+msgid "Bits:"
+msgstr "Bits:"
+
+#: TFRMSETFILEPROPERTIES.LBLATTRGROUPSTR.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTRGROUPSTR.CAPTION"
+msgid "Group"
+msgstr "Gruppe"
+
+#: TFRMSETFILEPROPERTIES.LBLATTRINFO.CAPTION
+#, fuzzy
+#| msgid "(gray = unchanged, checked=set attribute)"
+msgid "(gray field means unchanged value)"
+msgstr "(grau = unverändert, markiert = Attribut setzen)"
+
+#: TFRMSETFILEPROPERTIES.LBLATTROTHERSTR.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTROTHERSTR.CAPTION"
+msgid "Other"
+msgstr "Andere"
+
+#: TFRMSETFILEPROPERTIES.LBLATTROWNERSTR.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTROWNERSTR.CAPTION"
+msgid "Owner"
+msgstr "Besitzer"
+
+#: TFRMSETFILEPROPERTIES.LBLATTRTEXT.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTRTEXT.CAPTION"
+msgid "-----------"
+msgstr "-----------"
+
+#: TFRMSETFILEPROPERTIES.LBLATTRTEXTSTR.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLATTRTEXTSTR.CAPTION"
+msgid "Text:"
+msgstr "Darstellung im Text"
+
+#: TFRMSETFILEPROPERTIES.LBLEXEC.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLEXEC.CAPTION"
+msgid "Execute"
+msgstr "Ausführen"
+
+#: TFRMSETFILEPROPERTIES.LBLOCTAL.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLOCTAL.CAPTION"
+msgid "Octal:"
+msgstr "Oktal:"
+
+#: TFRMSETFILEPROPERTIES.LBLREAD.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLREAD.CAPTION"
+msgid "Read"
+msgstr "Lesen"
+
+#: TFRMSETFILEPROPERTIES.LBLWRITE.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.LBLWRITE.CAPTION"
+msgid "Write"
+msgstr "Schreiben"
+
+#: TFRMSPLITTER.BTNCANCEL.CAPTION
+#, fuzzy
+#| msgid "Exit"
+msgctxt "TFRMSPLITTER.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Ende"
+
+#: TFRMSPLITTER.BTNFTCHOICE.CAPTION
+msgctxt "TFRMSPLITTER.BTNFTCHOICE.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: TFRMSPLITTER.BTNOK.CAPTION
+msgctxt "TFRMSPLITTER.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMSPLITTER.CMBXSIZE.TEXT
+msgid "1457664B - 3.5\""
+msgstr "1457664B - 3.5\""
+
+#: TFRMSPLITTER.FRMSPLITTER.CAPTION
+msgctxt "TFRMSPLITTER.FRMSPLITTER.CAPTION"
+msgid "Splitter"
+msgstr "Teiler"
+
+#: TFRMSPLITTER.GRBXFILE.CAPTION
+msgctxt "TFRMSPLITTER.GRBXFILE.CAPTION"
+msgid "File name"
+msgstr "Dateiname"
+
+#: TFRMSPLITTER.GRBXSIZE.CAPTION
+#, fuzzy
+#| msgid "File size"
+msgid "Size and number of parts"
+msgstr "Grösse und Anzahl der Teilstücke"
+
+#: TFRMSPLITTER.LBDIRTARGET.CAPTION
+msgid "Directory target"
+msgstr "Zielverzeichnis"
+
+#: TFRMSPLITTER.LBFILESOURCE.CAPTION
+msgid "File source"
+msgstr "Dateiquelle"
+
+#: TFRMSPLITTER.LBLNUMBERPARTS.CAPTION
+msgid "Number of parts"
+msgstr "Anzahl der Teile"
+
+#: TFRMSPLITTER.RBTNGIGAB.CAPTION
+msgctxt "TFRMSPLITTER.RBTNGIGAB.CAPTION"
+msgid "Gigabytes"
+msgstr ""
+
+#: TFRMSPLITTER.RBTNKILOB.CAPTION
+msgctxt "TFRMSPLITTER.RBTNKILOB.CAPTION"
+msgid "Kilobytes"
+msgstr ""
+
+#: TFRMSPLITTER.RBTNMEGAB.CAPTION
+msgctxt "TFRMSPLITTER.RBTNMEGAB.CAPTION"
+msgid "Megabytes"
+msgstr ""
+
+#: TFRMSYMLINK.BTNCANCEL.CAPTION
+msgctxt "TFRMSYMLINK.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMSYMLINK.BTNOK.CAPTION
+msgctxt "TFRMSYMLINK.BTNOK.CAPTION"
+msgid "&OK"
+msgstr "&OK"
+
+#: TFRMSYMLINK.CAPTION
+#, fuzzy
+#| msgid "Create symlink"
+msgid "Create symbolic link"
+msgstr "Erstelle symb. Link"
+
+#: TFRMSYMLINK.LBLEXISTINGFILE.CAPTION
+#, fuzzy
+#| msgid "Existing destination (where will link point)"
+msgctxt "TFRMSYMLINK.LBLEXISTINGFILE.CAPTION"
+msgid "Destination that the link will point to"
+msgstr "Bestehendes Ziel (auf das die Verknüpfung zeigt)"
+
+#: TFRMSYMLINK.LBLLINKTOCREATE.CAPTION
+msgctxt "TFRMSYMLINK.LBLLINKTOCREATE.CAPTION"
+msgid "Link name"
+msgstr "Verknüpfungsname"
+
+#: TFRMTWEAKPLUGIN.BTNADD.CAPTION
+msgid "Add new"
+msgstr "Neue hinzufügen"
+
+#: TFRMTWEAKPLUGIN.BTNCANCEL.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMTWEAKPLUGIN.BTNCHANGE.CAPTION
+msgid "Change"
+msgstr "Ändern"
+
+#: TFRMTWEAKPLUGIN.BTNDEFAULT.CAPTION
+msgid "Default"
+msgstr "Standard"
+
+#: TFRMTWEAKPLUGIN.BTNOK.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.BTNOK.CAPTION"
+msgid "OK"
+msgstr "OK"
+
+#: TFRMTWEAKPLUGIN.BTNREMOVE.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.BTNREMOVE.CAPTION"
+msgid "Remove"
+msgstr "Entfernen"
+
+#: TFRMTWEAKPLUGIN.CAPTION
+msgid "Tweak plugin"
+msgstr "Anpass-PlugIn"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_BY_CONTENT.CAPTION
+msgid "Detect archive type by content"
+msgstr "Archivtyp am Inhalt erkennen"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_DELETE.CAPTION
+msgid "Can delete files"
+msgstr "Kann Dateien löschen"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_ENCRYPT.CAPTION
+msgid "Supports encryption"
+msgstr "Unterstützt Verschlüsselung"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_HIDE.CAPTION
+msgid "Show as normal files (hide packer icon)"
+msgstr "Als normale Dateien zeigen (Packer-Symbol verstecken)"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_MEMPACK.CAPTION
+msgid "Supports packing in memory"
+msgstr "Unterstützt Kompression im Arbeitsspeicher"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_MODIFY.CAPTION
+msgid "Can modify exisiting archives"
+msgstr "Kann bestehende Archive verändern"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_MULTIPLE.CAPTION
+msgid "Archive can contain multiple files"
+msgstr "Archive können mehrere Dateien enthalten"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_NEW.CAPTION
+msgid "Can create new archives"
+msgstr "Kann neue Archive erstellen"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_OPTIONS.CAPTION
+msgid "Supports the options dialogbox"
+msgstr "Unterstützt die Optionen-Dialogbox"
+
+#: TFRMTWEAKPLUGIN.CBPK_CAPS_SEARCHTEXT.CAPTION
+msgid "Allow searching for text in archives"
+msgstr "Erlaubt die Suche von Text in Archiven"
+
+#: TFRMTWEAKPLUGIN.LBLDESCRIPTION.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.LBLDESCRIPTION.CAPTION"
+msgid "Description:"
+msgstr "Beschreibung:"
+
+#: TFRMTWEAKPLUGIN.LBLDETECTSTR.CAPTION
+msgid "Detect string:"
+msgstr "Erkenne String:"
+
+#: TFRMTWEAKPLUGIN.LBLEXTENSION.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.LBLEXTENSION.CAPTION"
+msgid "Extension:"
+msgstr "Endung:"
+
+#: TFRMTWEAKPLUGIN.LBLFLAGS.CAPTION
+msgid "Flags:"
+msgstr ""
+
+#: TFRMTWEAKPLUGIN.LBLNAME.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.LBLNAME.CAPTION"
+msgid "Name:"
+msgstr "Name:"
+
+#: TFRMTWEAKPLUGIN.LBLPLUGIN.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.LBLPLUGIN.CAPTION"
+msgid "Plugin:"
+msgstr ""
+
+#: TFRMTWEAKPLUGIN.LBLPLUGIN1.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.LBLPLUGIN1.CAPTION"
+msgid "Plugin:"
+msgstr ""
+
+#: TFRMVIEWER.BTN270.HINT
+msgctxt "TFRMVIEWER.BTN270.HINT"
+msgid "- 90"
+msgstr ""
+
+#: TFRMVIEWER.BTN90.HINT
+msgctxt "TFRMVIEWER.BTN90.HINT"
+msgid "+ 90"
+msgstr ""
+
+#: TFRMVIEWER.BTNCOPYFILE.HINT
+msgctxt "TFRMVIEWER.BTNCOPYFILE.HINT"
+msgid "Copy"
+msgstr "Kopieren"
+
+#: TFRMVIEWER.BTNCOPYFILE1.HINT
+msgctxt "TFRMVIEWER.BTNCOPYFILE1.HINT"
+msgid "Copy"
+msgstr "Kopieren"
+
+#: TFRMVIEWER.BTNCUTTUIMAGE.HINT
+msgctxt "TFRMVIEWER.BTNCUTTUIMAGE.HINT"
+msgid "Crop"
+msgstr "Beschneiden"
+
+#: TFRMVIEWER.BTNDELETEFILE.HINT
+msgctxt "TFRMVIEWER.BTNDELETEFILE.HINT"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMVIEWER.BTNDELETEFILE1.HINT
+msgctxt "TFRMVIEWER.BTNDELETEFILE1.HINT"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: TFRMVIEWER.BTNFULLSCREEN.HINT
+msgctxt "TFRMVIEWER.BTNFULLSCREEN.HINT"
+msgid "Full Screen"
+msgstr "Ganzer Bildschirm"
+
+#: TFRMVIEWER.BTNGIFMOVE.CAPTION
+msgctxt "TFRMVIEWER.BTNGIFMOVE.CAPTION"
+msgid "||"
+msgstr ""
+
+#: TFRMVIEWER.BTNGIFTOBMP.CAPTION
+msgid "S"
+msgstr ""
+
+#: TFRMVIEWER.BTNHIGHTLIGHT.HINT
+msgctxt "TFRMVIEWER.BTNHIGHTLIGHT.HINT"
+msgid "Highlight"
+msgstr "Markieren"
+
+#: TFRMVIEWER.BTNMIRROR.HINT
+msgctxt "TFRMVIEWER.BTNMIRROR.HINT"
+msgid "Mirror"
+msgstr "Spiegeln"
+
+#: TFRMVIEWER.BTNMOVEFILE.HINT
+msgctxt "TFRMVIEWER.BTNMOVEFILE.HINT"
+msgid "Move"
+msgstr "Verschieben"
+
+#: TFRMVIEWER.BTNMOVEFILE1.HINT
+msgctxt "TFRMVIEWER.BTNMOVEFILE1.HINT"
+msgid "Move"
+msgstr "Verschieben"
+
+#: TFRMVIEWER.BTNNEXT.HINT
+msgctxt "TFRMVIEWER.BTNNEXT.HINT"
+msgid "Next"
+msgstr "Nächste"
+
+#: TFRMVIEWER.BTNNEXT1.HINT
+msgctxt "TFRMVIEWER.BTNNEXT1.HINT"
+msgid "Next"
+msgstr "Nächste"
+
+#: TFRMVIEWER.BTNNEXTGIFFRAME.CAPTION
+msgid "||>"
+msgstr ""
+
+#: TFRMVIEWER.BTNPAINT.HINT
+msgctxt "TFRMVIEWER.BTNPAINT.HINT"
+msgid "Paint"
+msgstr "Malen"
+
+#: TFRMVIEWER.BTNPREV.HINT
+msgctxt "TFRMVIEWER.BTNPREV.HINT"
+msgid "Previous"
+msgstr "Vorherige"
+
+#: TFRMVIEWER.BTNPREV1.HINT
+msgctxt "TFRMVIEWER.BTNPREV1.HINT"
+msgid "Previous"
+msgstr "Vorherige"
+
+#: TFRMVIEWER.BTNPREVGIFFRAME.CAPTION
+msgid "<||"
+msgstr ""
+
+#: TFRMVIEWER.BTNREDEYE.HINT
+msgid "Red Eyes"
+msgstr "Rote Augen"
+
+#: TFRMVIEWER.BTNRELOAD.HINT
+msgctxt "TFRMVIEWER.BTNRELOAD.HINT"
+msgid "Reload"
+msgstr "Neu laden"
+
+#: TFRMVIEWER.BTNRELOAD1.HINT
+msgctxt "TFRMVIEWER.BTNRELOAD1.HINT"
+msgid "Reload"
+msgstr "Neu laden"
+
+#: TFRMVIEWER.BTNRESIZE.HINT
+msgctxt "TFRMVIEWER.BTNRESIZE.HINT"
+msgid "Resize"
+msgstr ""
+"Grösse\n"
+"ändern\n"
+
+#: TFRMVIEWER.BTNUNDO.HINT
+msgctxt "TFRMVIEWER.BTNUNDO.HINT"
+msgid "Undo"
+msgstr "Rückgängig machen"
+
+#: TFRMVIEWER.BTNZOOMIN.HINT
+msgctxt "TFRMVIEWER.BTNZOOMIN.HINT"
+msgid "Zoom In"
+msgstr "Grösser darstellen"
+
+#: TFRMVIEWER.BTNZOOMOUT.HINT
+msgctxt "TFRMVIEWER.BTNZOOMOUT.HINT"
+msgid "Zoom Out"
+msgstr "Kleiner darstellen"
+
+#: TFRMVIEWER.CBSLIDESHOW.CAPTION
+msgctxt "TFRMVIEWER.CBSLIDESHOW.CAPTION"
+msgid "Slide Show"
+msgstr "Bilder automatisch nacheinander anzeigen (Slideshow)"
+
+#: TFRMVIEWER.COMBOBOXPAINT.TEXT
+msgid "Pen"
+msgstr "Stift"
+
+#: TFRMVIEWER.COMBOBOXWIDTH.TEXT
+msgctxt "TFRMVIEWER.COMBOBOXWIDTH.TEXT"
+msgid "1"
+msgstr "1"
+
+#: TFRMVIEWER.FRMVIEWER.CAPTION
+msgctxt "TFRMVIEWER.FRMVIEWER.CAPTION"
+msgid "Viewer"
+msgstr "Betrachter"
+
+#: TFRMVIEWER.GBOXHIGHTLIGHT.CAPTION
+msgctxt "TFRMVIEWER.GBOXHIGHTLIGHT.CAPTION"
+msgid "Highlight"
+msgstr "Markieren"
+
+#: TFRMVIEWER.GBOXPAINT.CAPTION
+msgctxt "TFRMVIEWER.GBOXPAINT.CAPTION"
+msgid "Paint"
+msgstr "Malen"
+
+#: TFRMVIEWER.GBOXSLIDESHOW.CAPTION
+msgctxt "TFRMVIEWER.GBOXSLIDESHOW.CAPTION"
+msgid "Slide Show"
+msgstr "Bilder automatisch nacheinander anzeigen (Slideshow)"
+
+#: TFRMVIEWER.GBOXVIEW.CAPTION
+msgctxt "TFRMVIEWER.GBOXVIEW.CAPTION"
+msgid "View"
+msgstr "Betrachten"
+
+#: TFRMVIEWER.LBLHIGHTLIGHT.CAPTION
+msgid "0x0"
+msgstr ""
+
+#: TFRMVIEWER.MI180.CAPTION
+msgid "+ 180"
+msgstr ""
+
+#: TFRMVIEWER.MI270.CAPTION
+msgctxt "TFRMVIEWER.MI270.CAPTION"
+msgid "- 90"
+msgstr ""
+
+#: TFRMVIEWER.MI90.CAPTION
+msgctxt "TFRMVIEWER.MI90.CAPTION"
+msgid "+ 90"
+msgstr ""
+
+#: TFRMVIEWER.MIABOUT.CAPTION
+msgctxt "TFRMVIEWER.MIABOUT.CAPTION"
+msgid "About"
+msgstr "&Über"
+
+#: TFRMVIEWER.MIABOUT2.CAPTION
+msgid "About Viewer..."
+msgstr "Über den Be&trachter"
+
+#: TFRMVIEWER.MIBIN.CAPTION
+msgid "Show as &Bin"
+msgstr "Bin&är anzeigen"
+
+#: TFRMVIEWER.MICOPYTOCLIPBOARD.CAPTION
+msgctxt "TFRMVIEWER.MICOPYTOCLIPBOARD.CAPTION"
+msgid "Copy To Clipboard"
+msgstr "In &Zwischenablage kopieren"
+
+#: TFRMVIEWER.MIDIV1.CAPTION
+msgctxt "TFRMVIEWER.MIDIV1.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MIDIV2.CAPTION
+msgctxt "TFRMVIEWER.MIDIV2.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MIDIV3.CAPTION
+msgctxt "TFRMVIEWER.MIDIV3.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MIDIV4.CAPTION
+msgctxt "TFRMVIEWER.MIDIV4.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MIDIV5.CAPTION
+msgctxt "TFRMVIEWER.MIDIV5.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MIEDIT.CAPTION
+msgctxt "TFRMVIEWER.MIEDIT.CAPTION"
+msgid "&Edit"
+msgstr "&Bearbeiten"
+
+#: TFRMVIEWER.MIENCODING.CAPTION
+msgctxt "TFRMVIEWER.MIENCODING.CAPTION"
+msgid "En&coding"
+msgstr "&Kodiere"
+
+#: TFRMVIEWER.MIEXIT.CAPTION
+msgctxt "TFRMVIEWER.MIEXIT.CAPTION"
+msgid "E&xit"
+msgstr "En&de"
+
+#: TFRMVIEWER.MIFILE.CAPTION
+msgctxt "TFRMVIEWER.MIFILE.CAPTION"
+msgid "&File"
+msgstr "&Datei"
+
+#: TFRMVIEWER.MIFULLSCREEN.CAPTION
+msgctxt "TFRMVIEWER.MIFULLSCREEN.CAPTION"
+msgid "Full Screen"
+msgstr "Ganzer Bildschirm"
+
+#: TFRMVIEWER.MIGRAPHICS.CAPTION
+msgid "Graphics"
+msgstr "Bilder"
+
+#: TFRMVIEWER.MIHEX.CAPTION
+msgid "Show as &Hex"
+msgstr "Als He&x anzeigen"
+
+#: TFRMVIEWER.MIIMAGE.CAPTION
+msgid "&Image"
+msgstr "B&ild"
+
+#: TFRMVIEWER.MILOOKBOOK.CAPTION
+msgid "Show as B&ook"
+msgstr "Wie ein &Buch anzeigen"
+
+#: TFRMVIEWER.MIMIRROR.CAPTION
+msgctxt "TFRMVIEWER.MIMIRROR.CAPTION"
+msgid "Mirror"
+msgstr "Spiegeln"
+
+#: TFRMVIEWER.MINEXT.CAPTION
+msgid "&Next"
+msgstr "&Nächste"
+
+#: TFRMVIEWER.MIPLUGINS.CAPTION
+msgctxt "TFRMVIEWER.MIPLUGINS.CAPTION"
+msgid "Plugins"
+msgstr "Plugins"
+
+#: TFRMVIEWER.MIPREV.CAPTION
+msgid "&Previous"
+msgstr "&Vorherige"
+
+#: TFRMVIEWER.MIPREVIEW.CAPTION
+msgctxt "TFRMVIEWER.MIPREVIEW.CAPTION"
+msgid "Preview"
+msgstr "Vorschau"
+
+#: TFRMVIEWER.MIPRINT.CAPTION
+msgid "Print..."
+msgstr "Drucken..."
+
+#: TFRMVIEWER.MIROTATE.CAPTION
+msgid "Rotate"
+msgstr "Drehen"
+
+#: TFRMVIEWER.MISAVE.CAPTION
+msgctxt "TFRMVIEWER.MISAVE.CAPTION"
+msgid "Save"
+msgstr "Speichern"
+
+#: TFRMVIEWER.MISAVEAS.CAPTION
+msgid "Save As..."
+msgstr "Speichern als ..."
+
+#: TFRMVIEWER.MISCREENSHOT.CAPTION
+msgctxt "TFRMVIEWER.MISCREENSHOT.CAPTION"
+msgid "Screenshot"
+msgstr ""
+"Anzeige als\n"
+"Bild kopieren (Screenshot)\n"
+
+#: TFRMVIEWER.MISEARCH.CAPTION
+msgctxt "TFRMVIEWER.MISEARCH.CAPTION"
+msgid "Search"
+msgstr "Suchen"
+
+#: TFRMVIEWER.MISEARCHNEXT.CAPTION
+msgid "Search next"
+msgstr "Nächste suchen"
+
+#: TFRMVIEWER.MISEARCHPREV.CAPTION
+msgid "Search prev"
+msgstr "Voriges suchen"
+
+#: TFRMVIEWER.MISELECTALL.CAPTION
+msgctxt "TFRMVIEWER.MISELECTALL.CAPTION"
+msgid "Select All"
+msgstr "Alle mar&kieren"
+
+#: TFRMVIEWER.MISEPARATOR.CAPTION
+msgctxt "TFRMVIEWER.MISEPARATOR.CAPTION"
+msgid "-"
+msgstr "-"
+
+#: TFRMVIEWER.MISTRETCH.CAPTION
+msgid "Stretch"
+msgstr "Strecken"
+
+#: TFRMVIEWER.MITEXT.CAPTION
+msgid "Show as &Text"
+msgstr "A&ls Text anzeigen"
+
+#: TFRMVIEWER.MIVIEW.CAPTION
+msgctxt "TFRMVIEWER.MIVIEW.CAPTION"
+msgid "&View"
+msgstr "&Betrachten"
+
+#: TFRMVIEWER.MIWRAPTEXT.CAPTION
+msgid "Show as &Wrap text"
+msgstr "&Zeilenumbruch"
+
+#: TFRMVIEWER.MIZOOMIN.CAPTION
+msgctxt "TFRMVIEWER.MIZOOMIN.CAPTION"
+msgid "Zoom In"
+msgstr "Grösser darstellen"
+
+#: TFRMVIEWER.MIZOOMOUT.CAPTION
+msgctxt "TFRMVIEWER.MIZOOMOUT.CAPTION"
+msgid "Zoom Out"
+msgstr "Kleiner darstellen"
+
+#: TFRMVIEWER.PMICOPY.CAPTION
+msgctxt "TFRMVIEWER.PMICOPY.CAPTION"
+msgid "Copy To Clipboard"
+msgstr "In &Zwischenablage kopieren"
+
+#: TFRMVIEWER.PMISELECTALL.CAPTION
+msgctxt "TFRMVIEWER.PMISELECTALL.CAPTION"
+msgid "Select All"
+msgstr "Alle mar&kieren"
+
+#: TFRMVIEWOPERATIONS.BTNALLCANCEL.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNALLCANCEL.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMVIEWOPERATIONS.BTNALLINQUEUE.CAPTION
+msgid "Queue In"
+msgstr "In die Warteschlange"
+
+#: TFRMVIEWOPERATIONS.BTNALLPAUSE.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNALLPAUSE.CAPTION"
+msgid "Pause"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNALLSTART.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNALLSTART.CAPTION"
+msgid "Start"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNCANCELCUROP.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNCANCELCUROP.CAPTION"
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: TFRMVIEWOPERATIONS.BTNCUROPQUEUEINOUT.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNCUROPQUEUEINOUT.CAPTION"
+msgid "In"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNDNCUROP.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNDNCUROP.CAPTION"
+msgid "Down"
+msgstr "A&bwärts"
+
+#: TFRMVIEWOPERATIONS.BTNRUNALLPAUSE.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNRUNALLPAUSE.CAPTION"
+msgid "Pause"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNRUNALLSTART.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNRUNALLSTART.CAPTION"
+msgid "Start"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNSTARTPAUSECUROP.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNSTARTPAUSECUROP.CAPTION"
+msgid "Start"
+msgstr ""
+
+#: TFRMVIEWOPERATIONS.BTNSTARTQUEUE.CAPTION
+msgid "Start queue"
+msgstr "Warteschlange abarbeiten"
+
+#: TFRMVIEWOPERATIONS.BTNUPCUROP.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.BTNUPCUROP.CAPTION"
+msgid "Up"
+msgstr "Aufw&ärts"
+
+#: TFRMVIEWOPERATIONS.CHKQUEUE.CAPTION
+msgid "Enable queue"
+msgstr "Warteschlange einschalten"
+
+#: TFRMVIEWOPERATIONS.FRMVIEWOPERATIONS.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.FRMVIEWOPERATIONS.CAPTION"
+msgid "File operations"
+msgstr "Dateioperationen"
+
+#: TFRMVIEWOPERATIONS.GRPALLOPERATION.CAPTION
+msgid "Operations control"
+msgstr "Ablaufkontrolle"
+
+#: TFRMVIEWOPERATIONS.LBLALL.CAPTION
+msgid "for all"
+msgstr "für alle"
+
+#: TFRMVIEWOPERATIONS.LBLALLPROGRESS.CAPTION
+msgid "Progress"
+msgstr "Fortschritt"
+
+#: TFRMVIEWOPERATIONS.LBLCOUNT.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.LBLCOUNT.CAPTION"
+msgid "0"
+msgstr "0"
+
+#: TFRMVIEWOPERATIONS.LBLCURRENTOPERATION.CAPTION
+msgid "Current operation"
+msgstr "Aktueller Vorgang"
+
+#: TFRMVIEWOPERATIONS.LBLOPERATIONSCOUNT.CAPTION
+msgid "Active operations:"
+msgstr "Aktiver Vorgang:"
+
+#: TFRMVIEWOPERATIONS.LBLQUEUE.CAPTION
+msgid "Queue:"
+msgstr "Warteschlange"
+
+#: TFRMVIEWOPERATIONS.LBLRUNNING.CAPTION
+msgid "for running"
+msgstr "für laufende"
+
+#: TWFXPLUGINCOPYMOVEOPERATIONOPTIONSUI.LBLFILEEXISTS.CAPTION
+msgctxt "TWFXPLUGINCOPYMOVEOPERATIONOPTIONSUI.LBLFILEEXISTS.CAPTION"
+msgid "When file exists"
+msgstr "Wenn Datei vorhanden"
+
+#: ulng.rscolattr
+msgid "Attr"
+msgstr "Attribut"
+
+#: ulng.rscoldate
+msgid "Date"
+msgstr "Datum"
+
+#: ulng.rscolext
+msgid "Ext"
+msgstr "Endung"
+
+#: ulng.rscolname
+msgctxt "ulng.rscolname"
+msgid "Name"
+msgstr "Name"
+
+#: ulng.rscolsize
+msgctxt "ulng.rscolsize"
+msgid "Size"
+msgstr "Grösse"
+
+#: ulng.rscomparediffs
+msgid "Number of changes:"
+msgstr "Anzahl der Änderungen:"
+
+#: ulng.rsconfcolalign
+msgid "Align"
+msgstr "Ausrichten"
+
+#: ulng.rsconfcolcaption
+msgid "Caption"
+msgstr "Überschrift"
+
+#: ulng.rsconfcolconfig
+msgid "Config"
+msgstr "Einstellung"
+
+#: ulng.rsconfcoldelete
+msgctxt "ulng.rsconfcoldelete"
+msgid "Delete"
+msgstr "&Löschen"
+
+#: ulng.rsconfcolfieldcont
+msgid "Field contents"
+msgstr "Feldinhalt"
+
+#: ulng.rsconfcolmove
+msgctxt "ulng.rsconfcolmove"
+msgid "Move"
+msgstr "Verschieben"
+
+#: ulng.rsconfcolwidth
+msgctxt "ulng.rsconfcolwidth"
+msgid "Width"
+msgstr "Breite"
+
+#: ulng.rsconfcustheader
+msgid "Customize column"
+msgstr "Spalten anpassen"
+
+#: ulng.rscopynametemplate
+msgid "Copy (%d) %s"
+msgstr "Kopiere (%d) %s"
+
+#: ulng.rsdlgallopcomplete
+msgid "All operations is complete"
+msgstr "Alle Vorgänge abgeschlossen"
+
+#: ulng.rsdlgallopprogress
+msgid "Progress of all operations %d %%"
+msgstr "Fortschritt für alle Vorgänge %d %%"
+
+#: ulng.rsdlgbuttonabort
+msgid "Ab&ort"
+msgstr "Unterbrechen"
+
+#: ulng.rsdlgbuttonall
+msgid "A&ll"
+msgstr "Alle"
+
+#: ulng.rsdlgbuttonappend
+msgid "A&ppend"
+msgstr "An&hängen"
+
+#: ulng.rsdlgbuttoncancel
+msgctxt "ulng.rsdlgbuttoncancel"
+msgid "&Cancel"
+msgstr "&Abbruch"
+
+#: ulng.rsdlgbuttoncopyinto
+msgid "Copy &Into"
+msgstr "H&inein kopieren"
+
+#: ulng.rsdlgbuttonno
+msgid "&No"
+msgstr "&Nein"
+
+#: ulng.rsdlgbuttonnone
+msgid "Non&e"
+msgstr "&Keine"
+
+#: ulng.rsdlgbuttonok
+msgctxt "ulng.rsdlgbuttonok"
+msgid "&OK"
+msgstr "&OK"
+
+#: ulng.rsdlgbuttonoverwrite
+msgid "&Overwrite"
+msgstr "&Überschreiben"
+
+#: ulng.rsdlgbuttonoverwriteall
+msgid "Overwrite &All"
+msgstr "Alle &vorhandenen Dateien überschreiben"
+
+#: ulng.rsdlgbuttonretry
+msgid "Re&try"
+msgstr "&Wiederholen"
+
+#: ulng.rsdlgbuttonskip
+msgid "&Skip"
+msgstr "Übe&rspringen"
+
+#: ulng.rsdlgbuttonskipall
+msgid "S&kip All"
+msgstr "Übers&pringe alle"
+
+#: ulng.rsdlgbuttonyes
+msgid "&Yes"
+msgstr "&Ja"
+
+#: ulng.rsdlgchecksumcalc
+msgctxt "ulng.rsdlgchecksumcalc"
+msgid "Calculate check sum..."
+msgstr "Berechne Prüfsumme..."
+
+#: ulng.rsdlgchecksumverify
+msgctxt "ulng.rsdlgchecksumverify"
+msgid "Verify check sum..."
+msgstr "Verifiziere Prüfsumme..."
+
+#: ulng.rsdlgcombine
+msgid "Combine"
+msgstr "Dateien verschmelzen"
+
+#: ulng.rsdlgcp
+msgctxt "ulng.rsdlgcp"
+msgid "Copy file(s)"
+msgstr "Datei(en) kopieren"
+
+#: ulng.rsdlgdel
+msgid "Delete file(s)"
+msgstr "Datei(en) löschen"
+
+#: ulng.rsdlgdeleting
+msgid "Deleting"
+msgstr "Lösche"
+
+#: ulng.rsdlgextract
+msgid "Extracting..."
+msgstr "Entpacke..."
+
+#: ulng.rsdlgmv
+msgid "Move file(s)"
+msgstr "Datei(en) verschieben"
+
+#: ulng.rsdlgopcaption
+msgid "Caption of operation"
+msgstr "Titel des Vorgangs"
+
+#: ulng.rsdlgoppause
+msgctxt "ulng.rsdlgoppause"
+msgid "Pause"
+msgstr ""
+
+#: ulng.rsdlgopstart
+msgctxt "ulng.rsdlgopstart"
+msgid "Start"
+msgstr ""
+
+#: ulng.rsdlgpack
+msgid "Packing..."
+msgstr "Packe..."
+
+#: ulng.rsdlgqueuein
+msgctxt "ulng.rsdlgqueuein"
+msgid "In"
+msgstr "Hinein"
+
+#: ulng.rsdlgqueueout
+msgid "Out"
+msgstr "Hinaus"
+
+#: ulng.rsdlgspeedtime
+#, fuzzy
+#| msgid "Speed %s/s, remaining time %s"
+msgid "Speed %s/s, time remaining %s"
+msgstr "Geschwindigkeit %s/s, verbleibende Zeit %s"
+
+#: ulng.rsdlgsplit
+#, fuzzy
+#| msgid "Split file"
+msgctxt "ulng.rsdlgsplit"
+msgid "Split"
+msgstr "Tei&le Datei"
+
+#: ulng.rsdlgtest
+msgid "Testing..."
+msgstr "Teste..."
+
+#: ulng.rsdlgunknownoperation
+msgid "Unknown operation"
+msgstr "Unbekannter Vorgang"
+
+#: ulng.rsdlgwipe
+msgid "Wipe file(s)"
+msgstr "Datei(en) durch überschreiben löschen (nicht wiederherstellbar)"
+
+#: ulng.rseditabouttext
+msgid "Internal Editor of Double Commander."
+msgstr "Interner Text-Editor von Double Commander"
+
+#: ulng.rseditnewfile
+msgid "new.txt"
+msgstr "Neu.txt"
+
+#: ulng.rseditnewfilename
+msgid "Filename:"
+msgstr "Dateiname:"
+
+#: ulng.rseditnewopen
+msgid "Open file"
+msgstr "Öffne Datei"
+
+#: ulng.rseditsearchback
+msgid "&Backward"
+msgstr "&Zurück"
+
+#: ulng.rseditsearchcaption
+msgctxt "ulng.rseditsearchcaption"
+msgid "Search"
+msgstr "Suchen"
+
+#: ulng.rseditsearchfrw
+msgid "&Forward"
+msgstr "&Vorwärts"
+
+#: ulng.rseditsearchreplace
+msgid "Replace"
+msgstr "Ersetzen"
+
+#: ulng.rsfinddefinetemplate
+msgid "Define template"
+msgstr "Vorlage definieren"
+
+#: ulng.rsfinddepth
+msgid "%s level(s)"
+msgstr "%s Level"
+
+#: ulng.rsfinddepthall
+msgid "all (unlimited depth)"
+msgstr "Alle (ohne Einschränkung der Verzeichnistiefe)"
+
+#: ulng.rsfinddepthcurdir
+msgid "current dir only"
+msgstr "Nur das aktuelle Verzeichnis"
+
+#: ulng.rsfinddirnoex
+msgid "Directory %s does not exist!"
+msgstr "Verzeichnis %s existiert nicht!"
+
+#: ulng.rsfindfound
+msgid "Found: %d"
+msgstr "Gefunden: %d"
+
+#: ulng.rsfindsavetemplatecaption
+msgid "Save search template"
+msgstr "Suche als Vorlage speichern"
+
+#: ulng.rsfindsavetemplatetitle
+msgid "Template name:"
+msgstr "Vorlagen-Name"
+
+#: ulng.rsfindscanned
+msgid "Scanned: %d"
+msgstr "Gelesen: %d"
+
+#: ulng.rsfindscanning
+msgid "Scanning"
+msgstr "Suche"
+
+#: ulng.rsfindsearchfiles
+msgctxt "ulng.rsfindsearchfiles"
+msgid "Find files"
+msgstr "Suche Datei(en)"
+
+#: ulng.rsfindwherebeg
+msgid "Begin at"
+msgstr "Starte bei"
+
+#: ulng.rsfreemsg
+msgid "Free %s from %s bytes"
+msgstr "%s Byte von %s frei"
+
+#: ulng.rsfreemsgshort
+msgid "%s bytes free"
+msgstr "%s Bytes frei"
+
+#: ulng.rsfuncatime
+msgid "Access date/time"
+msgstr "Datum / Zeit des letzten Zugriffs"
+
+#: ulng.rsfuncattr
+msgctxt "ulng.rsfuncattr"
+msgid "Attributes"
+msgstr "Attribute"
+
+#: ulng.rsfunccomment
+msgid "Comment"
+msgstr "Kommentar"
+
+#: ulng.rsfuncctime
+msgid "Creation date/time"
+msgstr "Datum / Zeit der Erstellung"
+
+#: ulng.rsfuncext
+msgid "Extension"
+msgstr "Endung"
+
+#: ulng.rsfuncgroup
+msgctxt "ulng.rsfuncgroup"
+msgid "Group"
+msgstr "Gruppe"
+
+#: ulng.rsfunclinkto
+msgid "Link to"
+msgstr "Vernüpfung mit"
+
+#: ulng.rsfuncmtime
+msgid "Modification date/time"
+msgstr "Datum / Zeit der letzten Änderung"
+
+#: ulng.rsfuncname
+msgctxt "ulng.rsfuncname"
+msgid "Name"
+msgstr "Name"
+
+#: ulng.rsfuncnamenoext
+msgid "Name without extension"
+msgstr "Name ohne Endung"
+
+#: ulng.rsfuncowner
+msgctxt "ulng.rsfuncowner"
+msgid "Owner"
+msgstr "Besitzer"
+
+#: ulng.rsfuncpath
+msgctxt "ulng.rsfuncpath"
+msgid "Path"
+msgstr "Pfad"
+
+#: ulng.rsfuncsize
+msgctxt "ulng.rsfuncsize"
+msgid "Size"
+msgstr "Grösse"
+
+#: ulng.rsfunctype
+msgid "Type"
+msgstr "Typ"
+
+#: ulng.rsharderrcreate
+msgid "Error creating hardlink."
+msgstr "Fehler beim Erstellen des Hardlink."
+
+#: ulng.rslinkmsgok
+msgid "Linker complete"
+msgstr "Verschmelzer ist fertig"
+
+#: ulng.rsmarkminus
+msgid "Unselect mask"
+msgstr "Maske abwählen"
+
+#: ulng.rsmarkplus
+msgid "Select mask"
+msgstr "Wähle Maske"
+
+#: ulng.rsmaskinput
+msgid "Input mask:"
+msgstr "Eingabemaske:"
+
+#: ulng.rsmenuconfigurecustomcolumns
+msgid "Configure custom columns"
+msgstr "Bearbeite angepasste Spalten"
+
+#: ulng.rsmenuconfigurethiscustomcolumn
+msgid "Configure this custom columns view"
+msgstr "Bearbeite diese angepasste Spaltenansicht"
+
+#: ulng.rsmnuactions
+msgctxt "ulng.rsmnuactions"
+msgid "Actions"
+msgstr "Aktionen"
+
+#: ulng.rsmnuedit
+msgctxt "ulng.rsmnuedit"
+msgid "Edit"
+msgstr "Bea&rbeiten"
+
+#: ulng.rsmnueject
+msgid "Eject"
+msgstr "Auswerfen"
+
+#: ulng.rsmnumount
+msgid "Mount"
+msgstr "Einbinden"
+
+#: ulng.rsmnunew
+msgid "New"
+msgstr "Neu"
+
+#: ulng.rsmnunomedia
+msgid "No media available"
+msgstr "Kein Datenträger verfügbar"
+
+#: ulng.rsmnuopenwith
+msgid "Open with ..."
+msgstr "Öffnen mit..."
+
+#: ulng.rsmnusortby
+msgid "Sort by"
+msgstr "Sortieren"
+
+#: ulng.rsmnuumount
+#, fuzzy
+#| msgid "Umount"
+msgid "Unmount"
+msgstr "Einbindung lösen"
+
+#: ulng.rsmnuview
+msgctxt "ulng.rsmnuview"
+msgid "View"
+msgstr "Betrachten"
+
+#: ulng.rsmsgaccount
+msgid "Account:"
+msgstr "Zugang:"
+
+#: ulng.rsmsgarchivercustomparams
+msgid "Additional parameters for archiver command-line:"
+msgstr "Zusätzliche Parameter für die Befehlszeile des Packers:"
+
+#: ulng.rsmsgcannotcopymoveitself
+msgid "You can not copy/move a file \"%s\" to itself!"
+msgstr "Die Datei \"%s\" kann nicht über sich selbst kopiert / verschoben werden!"
+
+#: ulng.rsmsgchdirfailed
+msgid "ChDir to [%s] failed!"
+msgstr "Verzeichniswechsel nach [%s] fehlgeschlagen"
+
+#: ulng.rsmsgcloseallinactivetabs
+msgid "Remove all inactive tabs?"
+msgstr "Alle in-aktiven Tabs entfernen?"
+
+#: ulng.rsmsgcloselockedtab
+msgid "This tab (%s) is locked! Close anyway?"
+msgstr "Dieser Tab ist gesperrt! Trotzdem schliessen?"
+
+#: ulng.rsmsgconfirmquit
+msgid "Are you sure you want to quit?"
+msgstr "Soll DoubleCommander wirklich beendet werden?"
+
+#: ulng.rsmsgcpfldr
+msgid "Copy %d selected files/directories?"
+msgstr "%d markierte Datei(en) / Verzeichnis(se) kopieren?"
+
+#: ulng.rsmsgcpsel
+msgid "Copy selected \"%s\"?"
+msgstr "Markierte \"%s\" kopieren?"
+
+#: ulng.rsmsgdelfldr
+msgid "Delete %d selected files/directories?"
+msgstr "Löschen von %d Dateien / Verzeichnissen?"
+
+#: ulng.rsmsgdelfldrt
+msgid "Delete %d selected files/directories into trash can?"
+msgstr "%d markierte Dateien/Ordner in den Papierkorb löschen?"
+
+#: ulng.rsmsgdelsel
+msgid "Delete selected \"%s\"?"
+msgstr "Markierte \"%s\" löschen?"
+
+#: ulng.rsmsgdelselt
+msgid "Delete selected \"%s\" into trash can?"
+msgstr "Markierte \"%s\" in den Papierkorb löschen?"
+
+#: ulng.rsmsgdeltotrashforce
+msgid "Can not delete \"%s\" to trash! Delete directly?"
+msgstr "Kann \"%s\" nicht in den Papierkorb löschen! Endgültig löschen?"
+
+#: ulng.rsmsgdisknotavail
+msgid "Disk is not available"
+msgstr "Laufwerk steht nicht zur Verfügung"
+
+#: ulng.rsmsgenterfileext
+msgid "Enter file extension:"
+msgstr "Dateiendung eingeben:"
+
+#: ulng.rsmsgentername
+msgid "Enter name:"
+msgstr "Namen eingeben:"
+
+#: ulng.rsmsgerrbadarchive
+msgid "CRC error in archive data"
+msgstr "CRC-Fehler in der Archivdatei"
+
+#: ulng.rsmsgerrbaddata
+msgid "Data is bad"
+msgstr "Datenfehler"
+
+#: ulng.rsmsgerrcannotconnect
+msgid "Can not connect to server: \"%s\""
+msgstr "Kann nicht mit dem Server \"%s\" verbinden"
+
+#: ulng.rsmsgerrcannotcopyfile
+msgid "Cannot copy file %s to %s"
+msgstr "Kann die Datei %s nicht zu %s kopieren"
+
+#: ulng.rsmsgerrdatenotsupported
+msgid "Date %s is not supported"
+msgstr "Datum %s wird nicht nicht unterstützt"
+
+#: ulng.rsmsgerrdirexists
+msgid "Directory %s exists!"
+msgstr "Verzeichnis %s besteht bereits!"
+
+#: ulng.rsmsgerreaborted
+msgid "Function aborted by user"
+msgstr "Abbruch durch Benutzer"
+
+#: ulng.rsmsgerreclose
+msgid "Error closing file"
+msgstr "Kann Datei nicht schliessen"
+
+#: ulng.rsmsgerrecreate
+msgid "Cannot create file"
+msgstr "Kann Datei nicht erstellen"
+
+#: ulng.rsmsgerrendarchive
+msgid "No more files in archive"
+msgstr "Keine weiteren Dateien im Archiv"
+
+#: ulng.rsmsgerreopen
+msgid "Cannot open existing file"
+msgstr "Kann bestehende Datei nicht öffnen"
+
+#: ulng.rsmsgerreread
+msgid "Error reading from file"
+msgstr "Kann Datei nicht lesen"
+
+#: ulng.rsmsgerrewrite
+msgid "Error writing to file"
+msgstr "Kann Datei nicht erstellen"
+
+#: ulng.rsmsgerrforcedir
+msgid "Can not create directory %s!"
+msgstr "Verzeichnis %s kann nicht erstellt werden!"
+
+#: ulng.rsmsgerrinvalidlink
+msgid "Invalid link"
+msgstr "Ungültige Verknüpfung"
+
+#: ulng.rsmsgerrnofiles
+msgid "No files found"
+msgstr "Keine Dateien gefunden"
+
+#: ulng.rsmsgerrnomemory
+msgid "Not enough memory"
+msgstr "Nicht genügend Arbeitsspeicher"
+
+#: ulng.rsmsgerrnotsupported
+msgid "Function not supported!"
+msgstr "Funktion wird nicht unterstützt!"
+
+#: ulng.rsmsgerrregexpsyntax
+msgid "Syntax error in regular expression!"
+msgstr "Syntax-fehler im regulären Ausdruck!"
+
+#: ulng.rsmsgerrrename
+msgid "Cannot rename file %s to %s"
+msgstr "Kann Datei %s nicht zu %s umbenennen"
+
+#: ulng.rsmsgerrsavefile
+msgid "Cannot save file"
+msgstr "Kann Datei nicht speichern"
+
+#: ulng.rsmsgerrsetattribute
+msgid "Can not set attributes for \"%s\""
+msgstr "Kann Attribut für  \"%s\" nicht setzen"
+
+#: ulng.rsmsgerrsetdatetime
+msgid "Can not set date/time for \"%s\""
+msgstr "Kann Datum / Zeit für  \"%s\" nicht setzen"
+
+#: ulng.rsmsgerrsmallbuf
+msgid "Buffer too small"
+msgstr "Puffer zu klein"
+
+#: ulng.rsmsgerrtoomanyfiles
+msgid "Too many files to pack"
+msgstr "Zuviel Dateien zum Packen"
+
+#: ulng.rsmsgerrunknownformat
+msgid "Archive format unknown"
+msgstr "Archivformat unbekannt"
+
+#: ulng.rsmsgfilechangedsave
+msgid "File %s changed, save?"
+msgstr "Datei %s wurde geändert, speichern?"
+
+#: ulng.rsmsgfileexistsrwrt
+msgid "File %s exists, overwrite?"
+msgstr "Datei %s existiert bereits. Überschreiben?"
+
+#: ulng.rsmsgfileoperationsactive
+msgid "File operations active"
+msgstr "Aktive Datei-Operationen"
+
+#: ulng.rsmsgfileoperationsactivelong
+msgid "Some file operations have not yet finished. Closing Double Commander may result in data loss."
+msgstr "Es gibt Datei-Operationen, die noch nicht beendet sind. Das Schliessen von Double Commander kann deshalb zu Datenverlust führen!"
+
+#: ulng.rsmsgfilereadonly
+msgid "File %s is marked as read-only. Delete it?"
+msgstr "Datei %s ist als schreibgeschützt markiert. Soll sie gelöscht werden?"
+
+#: ulng.rsmsgfilesizetoobig
+msgid "The file size of \"%s\" is too big for destination file system!"
+msgstr "Die Grösse der Datei \"%s\" ist zu gross für das Dateisystem des Ziel-Laufwerks!"
+
+#: ulng.rsmsgfolderexistsrwrt
+msgid "Folder %s exists, overwrite?"
+msgstr "Verzeichnis besteht bereits. Soll es überschrieben werden"
+
+#: ulng.rsmsgfollowsymlink
+msgid "Follow symlink \"%s\"?"
+msgstr "Sym-Link \"%s\" folgen?"
+
+#: ulng.rsmsginvalidfilename
+msgid "Invalid filename"
+msgstr "Ungültiger Dateiname"
+
+#: ulng.rsmsginvalidselection
+msgid "Invalid selection."
+msgstr "Ungültige Auswahl"
+
+#: ulng.rsmsgloadingfilelist
+msgid "Loading file list..."
+msgstr "Lade Dateiliste..."
+
+#: ulng.rsmsglogcopy
+msgid "Copy file %s"
+msgstr "Kopiere Datei %s"
+
+#: ulng.rsmsglogdelete
+msgid "Delete file %s"
+msgstr "Lösche Datei %s"
+
+#: ulng.rsmsglogerror
+msgid "Error: "
+msgstr "Fehler:"
+
+#: ulng.rsmsglogextract
+msgid "Extract file %s"
+msgstr "Entpacke Datei(en) %s"
+
+#: ulng.rsmsgloginfo
+msgid "Info: "
+msgstr "Info"
+
+#: ulng.rsmsgloglink
+msgid "Create link %s"
+msgstr "Erstelle Verknüpfung %s"
+
+#: ulng.rsmsglogmkdir
+msgid "Create directory %s"
+msgstr "Erstelle Verzeichnis %s"
+
+#: ulng.rsmsglogmove
+msgid "Move file %s"
+msgstr "Verschiebe Datei(en) %s"
+
+#: ulng.rsmsglogpack
+msgid "Pack to file %s"
+msgstr "Packe in Datei %s"
+
+#: ulng.rsmsglogrmdir
+msgid "Remove directory %s"
+msgstr "Verzeichnis %s entfernen"
+
+#: ulng.rsmsglogsuccess
+msgid "Done: "
+msgstr "Fertig:"
+
+#: ulng.rsmsglogsymlink
+msgid "Create symlink %s"
+msgstr "Erstelle symb. Link für %s"
+
+#: ulng.rsmsglogtest
+msgid "Test file integrity %s"
+msgstr "Teste Dateiintegrität von %s"
+
+#: ulng.rsmsgmanualaddhotdir
+msgid "Manually add hot path"
+msgstr "Favoriten-Pfad von Hand angeben"
+
+#: ulng.rsmsgmanualedithotdir
+msgid "Manualy edit hot path"
+msgstr "Favoriten-Pfad von Hand bearbeiten"
+
+#: ulng.rsmsgmanualhotdirquery
+msgid "Enter name and path (format name=path):"
+msgstr "Name und Pfad eingeben (Format Name=Pfad)"
+
+#: ulng.rsmsgmasterpassword
+msgid "Master Password"
+msgstr "Master-Passwort"
+
+#: ulng.rsmsgmasterpasswordenter
+msgid "Please enter the master password:"
+msgstr "Bitte Master-Passwort eingeben"
+
+#: ulng.rsmsgnewfile
+msgid "New file"
+msgstr "Neue Datei"
+
+#: ulng.rsmsgnextvolunpack
+msgid "Next volume will be unpacked"
+msgstr "Nächster Teil wird entpackt"
+
+#: ulng.rsmsgnofilesselected
+msgid "No files selected."
+msgstr "Keine Dateien ausgewählt."
+
+#: ulng.rsmsgnofreespacecont
+msgid "No enough free space on target drive, Continue?"
+msgstr "Nicht genügend Speicherplatz auf dem Ziellaufwerk. Trotzdem fortfahren?"
+
+#: ulng.rsmsgnofreespaceretry
+msgid "No enough free space on target drive, Retry?"
+msgstr "Nicht genügend Speicherplatz auf dem Ziellaufwerk. Erneut versuchen?"
+
+#: ulng.rsmsgnotdelete
+msgid "Can not delete file %s"
+msgstr "Kann Datei %s nicht löschen"
+
+#: ulng.rsmsgnotimplemented
+msgid "Not implemented."
+msgstr "Nicht möglich."
+
+#: ulng.rsmsgpassword
+msgid "Password:"
+msgstr "Passwort"
+
+#: ulng.rsmsgpasswordenter
+msgid "Please enter the password:"
+msgstr "Bitte Passwort eingeben:"
+
+#: ulng.rsmsgpasswordfirewall
+msgid "Password (Firewall):"
+msgstr "Passwort (Firewall):"
+
+#: ulng.rsmsgpopuphotadd
+msgid "&Add %s"
+msgstr "&Füge %s hinzu"
+
+#: ulng.rsmsgpopuphotcnf
+msgctxt "ulng.rsmsgpopuphotcnf"
+msgid "&Configure"
+msgstr "&Konfigurieren"
+
+#: ulng.rsmsgpopuphotdelete
+msgid "&Delete %s"
+msgstr "&Lösche %s"
+
+#: ulng.rsmsgpresetalreadyexists
+msgid "Preset \"%s\" already exists. Overwrite?"
+msgstr "Voreinstellung \"%s\" besteht bereits. Überschreiben?"
+
+#: ulng.rsmsgrenfldr
+msgid "Rename/move %d selected files/directories?"
+msgstr "%d markierte Dateien / Verzeichnisse umbenennen / verschieben?"
+
+#: ulng.rsmsgrensel
+msgid "Rename/move selected \"%s\"?"
+msgstr "Datei / Verzeichnis \"%s\" kopieren / verschieben?"
+
+#: ulng.rsmsgrestartforapplychanges
+msgid "Please, restart Double Commander in order to apply changes"
+msgstr "Bitte DoubleCommander neustarten um die Änderungen zu übernehmen"
+
+#: ulng.rsmsgselected
+msgid "Selected %s of %s in %d of %d files"
+msgstr "Markierte %s von %s in %d von %d Dateien"
+
+#: ulng.rsmsgselectonlychecksumfiles
+msgid "Please select only check sum files!"
+msgstr "Bitte nur Prüfsummen-Dateien auswählen!"
+
+#: ulng.rsmsgsellocnextvol
+msgid "Please select location of next volume"
+msgstr "Speicherort des nächsten Teils angeben"
+
+#: ulng.rsmsgsetvolumelabel
+msgid "Set volume label"
+msgstr "Laufwerksbezeichnung angeben"
+
+#: ulng.rsmsgtargetdir
+msgid "Target path:"
+msgstr "Zielpfad"
+
+#: ulng.rsmsgtoomanyfilesselected
+msgid "Too many files selected."
+msgstr "Zuviele Dateien ausgewählt."
+
+#: ulng.rsmsgurl
+msgid "URL:"
+msgstr ""
+
+#: ulng.rsmsgusername
+msgid "User name:"
+msgstr "Nutzername:"
+
+#: ulng.rsmsgusernamefirewall
+msgid "User name (Firewall):"
+msgstr "Nutzername (Firewall):"
+
+#: ulng.rsmsgvolumelabel
+msgid "Volume label:"
+msgstr "Laufwerksbezeichnung:"
+
+#: ulng.rsmsgvolumesizeenter
+msgid "Please enter the volume size:"
+msgstr "Bitte Volume-Grösse eingeben:"
+
+#: ulng.rsmsgwipefldr
+msgid "Wipe %d selected files/directories?"
+msgstr "%d markierte Dateien/Ordner sicher löschen?"
+
+#: ulng.rsmsgwipesel
+msgid "Wipe selected \"%s\"?"
+msgstr "Markierte \"%s\" sicher löschen?"
+
+#: ulng.rsmulrenfilenamestylelist
+#, fuzzy
+#| msgid "No change;UPPERCASE;lowercase;First Char Big;"
+msgid "No change;UPPERCASE;lowercase;First char uppercase;First Char Of Every Word Uppercase;"
+msgstr "Keine Änderung;GROSSBUCHSTABEN;alles klein;Erster Buchstabe Gross"
+
+#: ulng.rsoperaborted
+msgid "Aborted"
+msgstr "Abgebrochen"
+
+#: ulng.rsoperautostart
+msgid "Auto-started"
+msgstr "Automatisch gestartet"
+
+#: ulng.rsoperfinished
+msgid "Finished"
+msgstr "Beendet"
+
+#: ulng.rsopermanualstart
+msgid "Manually started"
+msgstr "Manuell gestartet"
+
+#: ulng.rsopernotstarted
+msgid "Not started"
+msgstr "Nicht gestartet"
+
+#: ulng.rsoperpaused
+msgid "Paused"
+msgstr "Pausiert"
+
+#: ulng.rsoperpausing
+msgid "Pausing"
+msgstr "Pause"
+
+#: ulng.rsoperqueue
+msgid "Queued"
+msgstr "In Warteschlange"
+
+#: ulng.rsoperrunning
+msgid "Running"
+msgstr "Wird ausgeführt"
+
+#: ulng.rsoperstarting
+msgid "Starting"
+msgstr "Wird gestartet"
+
+#: ulng.rsoperstartstateautostart
+msgctxt "ulng.rsoperstartstateautostart"
+msgid "Start"
+msgstr ""
+
+#: ulng.rsoperstartstatemanualstart
+msgid "Manual start"
+msgstr "Manueller Start"
+
+#: ulng.rsoperstartstatequeuefirst
+msgid "Queue as first"
+msgstr "Warteschlange zuerst"
+
+#: ulng.rsoperstartstatequeuelast
+msgid "Queue as last"
+msgstr "Warteschlange zuletzt"
+
+#: ulng.rsoperstopped
+msgid "Stopped"
+msgstr "Gestoppt"
+
+#: ulng.rsoperstopping
+msgid "Stopping"
+msgstr "Stoppe"
+
+#: ulng.rsoperwaitingforconnection
+msgid "Waiting for access to file source"
+msgstr "Warte auf Zugriff auf Datei-Quelle"
+
+#: ulng.rsoperwaitingforfeedback
+msgid "Waiting for user response"
+msgstr "Warte auf Benutzereingabe"
+
+#: ulng.rsoptarchivedelete
+msgctxt "ulng.rsoptarchivedelete"
+msgid "Delete:"
+msgstr "Lösche:"
+
+#: ulng.rsoptarchiveextractwithoutpath
+msgid "Extract without path:"
+msgstr "Ohne gespeicherten Pfad entpacken:"
+
+#: ulng.rsoptarchiveid
+msgctxt "ulng.rsoptarchiveid"
+msgid "ID:"
+msgstr ""
+
+#: ulng.rsoptarchiveidpos
+msgctxt "ulng.rsoptarchiveidpos"
+msgid "ID Position:"
+msgstr ""
+
+#: ulng.rsoptarchiveidseekrange
+#, fuzzy
+#| msgid "ID Seek Range (optional):"
+msgctxt "ulng.rsoptarchiveidseekrange"
+msgid "ID Seek Range:"
+msgstr "ID Such-Bereich (optional)"
+
+#: ulng.rsoptarchiveparam
+msgid "Parameter"
+msgstr ""
+
+#: ulng.rsoptarchivepasswordquery
+msgid "Password query string:"
+msgstr "Passwortabfrage:"
+
+#: ulng.rsoptarchivers
+msgid "Archivers"
+msgstr "Archivierer"
+
+#: ulng.rsoptarchiveselfextract
+msgctxt "ulng.rsoptarchiveselfextract"
+msgid "Create self extracting archive:"
+msgstr "Selbstentpackendes Archiv (Sfx) erstellen:"
+
+#: ulng.rsoptarchivetest
+msgctxt "ulng.rsoptarchivetest"
+msgid "Test:"
+msgstr "Teste:"
+
+#: ulng.rsoptarchivetypename
+msgid "Archive type name:"
+msgstr "Name des Archiv-Typs:"
+
+#: ulng.rsoptarchivevalue
+msgid "Value"
+msgstr "Wert"
+
+#: ulng.rsoptassocpluginwith
+msgid "Associate plugin \"%s\" with:"
+msgstr "Verknüpfe PlugIn \"%s\" mit:"
+
+#: ulng.rsoptautorefresh
+msgid "Auto refresh"
+msgstr "Automatisch Auffrischen"
+
+#: ulng.rsoptautosizecolumn
+msgid "First;Last;"
+msgstr "Erste;Letzte;"
+
+#: ulng.rsoptbehav
+msgid "Behaviors"
+msgstr "Verhalten"
+
+#: ulng.rsoptcolors
+msgid "Colors"
+msgstr "Farben"
+
+#: ulng.rsoptcolumns
+msgid "Columns"
+msgstr "Spalten"
+
+#: ulng.rsoptconfig
+msgid "Configuration"
+msgstr "Einstellungen"
+
+#: ulng.rsoptdisable
+msgid "Disable"
+msgstr "Deaktivieren"
+
+#: ulng.rsoptenable
+msgctxt "ulng.rsoptenable"
+msgid "Enable"
+msgstr "Aktivieren"
+
+#: ulng.rsoptenterext
+msgid "Enter extension"
+msgstr "Endung eingeben"
+
+#: ulng.rsoptexamplecursor
+msgid "Cursor"
+msgstr "Zeiger"
+
+#: ulng.rsoptexamplemark
+msgid "Mark"
+msgstr "Einfügemarke"
+
+#: ulng.rsoptexamplemarkcursor
+msgid "Mark + Cursor"
+msgstr "Einfügemarke + Zeiger"
+
+#: ulng.rsoptexampletext
+msgid "Text"
+msgstr ""
+
+#: ulng.rsoptfileop
+msgctxt "ulng.rsoptfileop"
+msgid "File operations"
+msgstr "Dateioperationen"
+
+#: ulng.rsoptfilepanels
+msgctxt "ulng.rsoptfilepanels"
+msgid "File panels"
+msgstr "Dateifenster"
+
+#: ulng.rsoptfiletypes
+msgctxt "ulng.rsoptfiletypes"
+msgid "File types"
+msgstr "Dateitypen"
+
+#: ulng.rsoptfoldertabs
+msgid "Folder tabs"
+msgstr "Verzeichnisreiter"
+
+#: ulng.rsoptfonts
+msgid "Fonts"
+msgstr "Schriftart"
+
+#: ulng.rsopthotkeys
+msgid "Hot keys"
+msgstr "Tastaurkürzel"
+
+#: ulng.rsopthotkeyscommands
+msgid "Commands"
+msgstr "Befehle"
+
+#: ulng.rsopthotkeyscomments
+msgid "Comments"
+msgstr "Kommentare"
+
+#: ulng.rsopthotkeyshotkey
+msgctxt "ulng.rsopthotkeyshotkey"
+msgid "Hotkey"
+msgstr "Tastaturkürzel"
+
+#: ulng.rsopthotkeyshotkeys
+msgid "Hotkeys"
+msgstr "Tastaturkürzel"
+
+#: ulng.rsopthotkeysparameters
+msgctxt "ulng.rsopthotkeysparameters"
+msgid "Parameters"
+msgstr "Parameter"
+
+#: ulng.rsopthotkeysshortcutused
+msgid "Shortcut in use"
+msgstr "Tastaturkürzel in Gebrauch"
+
+#: ulng.rsopthotkeysshortcutusedtext1
+msgid "Shortcut %s is already used for %s."
+msgstr "Tastaturkürzel %s wird bereits für %s benutzt"
+
+#: ulng.rsopthotkeysshortcutusedtext2
+msgid "Change it to %s?"
+msgstr "Verändern zu %s?"
+
+#: ulng.rsopthotkeysusedby
+msgid "used by"
+msgstr "Benutzt von"
+
+#: ulng.rsopticons
+msgid "Icons"
+msgstr ""
+
+#: ulng.rsoptignorelist
+msgid "Ignore list"
+msgstr "Ausschluss-Liste"
+
+#: ulng.rsoptlanguage
+msgid "Language"
+msgstr "Sprache"
+
+#: ulng.rsoptlayout
+msgid "Layout"
+msgstr "Layout"
+
+#: ulng.rsoptlog
+msgctxt "ulng.rsoptlog"
+msgid "Log"
+msgstr "Log"
+
+#: ulng.rsoptmiscellaneous
+msgid "Miscellaneous"
+msgstr "Verschiedenes"
+
+#: ulng.rsoptmouseselectionbutton
+msgid "Left button;Right button;"
+msgstr "Linke Taste;Rechte Taste;"
+
+#: ulng.rsoptpluginalreadyassigned
+msgid "Plugin %s is already assigned for the following extensions:"
+msgstr "Plugin %s ist bereits den folgenden Dateiendungen zugewiesen:"
+
+#: ulng.rsoptplugins
+msgctxt "ulng.rsoptplugins"
+msgid "Plugins"
+msgstr "Plugins"
+
+#: ulng.rsoptpluginsactive
+msgctxt "ulng.rsoptpluginsactive"
+msgid "Active"
+msgstr "Aktiv"
+
+#: ulng.rsoptpluginsfilename
+msgctxt "ulng.rsoptpluginsfilename"
+msgid "File name"
+msgstr "Dateiname"
+
+#: ulng.rsoptpluginsname
+msgctxt "ulng.rsoptpluginsname"
+msgid "Name"
+msgstr "Name"
+
+#: ulng.rsoptpluginsregisteredfor
+msgctxt "ulng.rsoptpluginsregisteredfor"
+msgid "Registered for"
+msgstr "Registriert für"
+
+#: ulng.rsoptquicksearch
+#, fuzzy
+#| msgid "Quick search"
+msgctxt "ulng.rsoptquicksearch"
+msgid "Quick search/filter"
+msgstr "Schnelle Suche"
+
+#: ulng.rsoptsortmethod
+msgid "Alphabetical, considering accents;Natural sorting: alphabetical and numbers"
+msgstr "Alphabetisch;Natürliche Sortierung: alphabetisch und numerisch"
+
+#: ulng.rsopttabsposition
+msgid "Top;Bottom;"
+msgstr "Oben;Unten;"
+
+#: ulng.rsopttools
+msgid "Tools"
+msgstr "Tools"
+
+#: ulng.rsopttooltips
+msgid "Tooltips"
+msgstr "Tooltips"
+
+#: ulng.rspropserrchmod
+msgid "Can not change access rights for \"%s\""
+msgstr "Kann die Zugriffsrechte für die Datei  \"%s\" nicht ändern"
+
+#: ulng.rspropserrchown
+msgid "Can not change owner for \"%s\""
+msgstr "Kann den Besitzer für \"%s\" nicht ändern"
+
+#: ulng.rspropsfile
+msgctxt "ulng.rspropsfile"
+msgid "File"
+msgstr "Datei"
+
+#: ulng.rspropsfolder
+msgctxt "ulng.rspropsfolder"
+msgid "Directory"
+msgstr "Verzeichnis"
+
+#: ulng.rspropsnmdpipe
+msgid "Named pipe"
+msgstr "Benannte Pipe"
+
+#: ulng.rspropsno
+msgid "No"
+msgstr "Nein"
+
+#: ulng.rspropssocket
+msgid "Socket"
+msgstr "Socket"
+
+#: ulng.rspropsspblkdev
+msgid "Special block device"
+msgstr "Spezielles Block-device"
+
+#: ulng.rspropsspchrdev
+msgid "Special character device"
+msgstr "Spezielles Buchstaben-device"
+
+#: ulng.rspropssymlink
+msgid "Symbolic link"
+msgstr "Symbolischer Link"
+
+#: ulng.rspropsunknowntype
+msgid "Unknown type"
+msgstr "Unbekannter Typ"
+
+#: ulng.rspropsyes
+msgid "Yes (%s)"
+msgstr "Ja (%s)"
+
+#: ulng.rsquickfilterpanel
+msgid "Filter:"
+msgstr ""
+
+#: ulng.rsquicksearchpanel
+msgid "Find:"
+msgstr "Finde:"
+
+#: ulng.rssearchresult
+msgid "Search result"
+msgstr "Suchergebnis"
+
+#: ulng.rsselectdir
+msgid "Select a directory"
+msgstr "Wähle ein Verzeichnis"
+
+#: ulng.rssizeunitbytes
+msgid "Bytes"
+msgstr ""
+
+#: ulng.rssizeunitgbytes
+msgctxt "ulng.rssizeunitgbytes"
+msgid "Gigabytes"
+msgstr ""
+
+#: ulng.rssizeunitkbytes
+msgctxt "ulng.rssizeunitkbytes"
+msgid "Kilobytes"
+msgstr ""
+
+#: ulng.rssizeunitmbytes
+msgctxt "ulng.rssizeunitmbytes"
+msgid "Megabytes"
+msgstr ""
+
+#: ulng.rssizeunittbytes
+msgid "Terabytes"
+msgstr ""
+
+#: ulng.rsspacemsg
+msgid "Files: %d, Dirs: %d, Size: %s (%s bytes)"
+msgstr "Dateien: %d, Verzeichnis: %d, Grösse: %s (%s byte)"
+
+#: ulng.rsspliterrdirectory
+msgid "Unable to create target directory!"
+msgstr "Kann Zielverzeichnis nicht erstellen"
+
+#: ulng.rsspliterrfilesize
+msgid "Incorrect file size format!"
+msgstr "Falsches Dateigrössenformat!"
+
+#: ulng.rsspliterrsplitfile
+msgid "Unable to split the file!"
+msgstr "Kann Datei nicht teilen!"
+
+#: ulng.rssplitmsgmanyparts
+msgid "The number of parts is more than 100! Continue?"
+msgstr "Die Anzahl der Teile ist grösser als 100! Fortfahren?"
+
+#: ulng.rssplitseldir
+msgid "Select directory:"
+msgstr "Wähle Verzeichnis:"
+
+#: ulng.rssymerrcreate
+msgid "Error creating symlink."
+msgstr "Fehler beim Erstellen des symb. Link."
+
+#: ulng.rstimeunitday
+msgctxt "ulng.rstimeunitday"
+msgid "Day(s)"
+msgstr "Tag(e)"
+
+#: ulng.rstimeunithour
+msgid "Hour(s)"
+msgstr "Stunde(n)"
+
+#: ulng.rstimeunitminute
+msgid "Minute(s)"
+msgstr "Minute(n)"
+
+#: ulng.rstimeunitmonth
+msgid "Month(s)"
+msgstr "Monat(e)"
+
+#: ulng.rstimeunitsecond
+msgid "Second(s)"
+msgstr "Sekunde(n)"
+
+#: ulng.rstimeunitweek
+msgid "Week(s)"
+msgstr "Woche(n)"
+
+#: ulng.rstimeunityear
+msgid "Year(s)"
+msgstr "Jahr(e)"
+
+#: ulng.rstooldiffer
+msgid "Differ"
+msgstr "Vergleichsprogramm"
+
+#: ulng.rstooleditor
+msgctxt "ulng.rstooleditor"
+msgid "Editor"
+msgstr "Text-Editor"
+
+#: ulng.rstoolviewer
+msgctxt "ulng.rstoolviewer"
+msgid "Viewer"
+msgstr "Schnellansicht"
+
+#: ulng.rsunhandledexceptionmessage
+msgid "Please report this error to the bug tracker with a description of what you were doing and the following file:%sPress %s to continue or %s to abort the program."
+msgstr "Bitte diesen Fehler im Bug-Tracker melden, mit einer Beschreibung was Sie getan haben und der folgend Datei:%s Klicken Sie auf %s zum Fortfahren oder %s zum Abbrechen."
+
+#: ulng.rsviewabouttext
+msgid "Internal Viewer of Double Commander."
+msgstr "Interner Betrachter des Double Commander"
+
+#: ulng.rsviewencoding
+msgctxt "ulng.rsviewencoding"
+msgid "Encoding"
+msgstr "Codierung"
+
+#: ulng.rsviewnotfound
+msgid "%s not found!"
+msgstr "%s nicht gefunden!"
+

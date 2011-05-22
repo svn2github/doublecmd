@@ -1,0 +1,4500 @@
+object frmOptions: TfrmOptions
+  Left = 72
+  Height = 557
+  Top = 8
+  Width = 886
+  ActiveControl = tvTreeView
+  Caption = 'Options'
+  ClientHeight = 557
+  ClientWidth = 886
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  Position = poScreenCenter
+  SessionProperties = 'Height;Width;WindowState;Left;Top'
+  ShowInTaskBar = stNever
+  LCLVersion = '0.9.29'
+  object Panel1: TPanel
+    Left = 0
+    Height = 43
+    Top = 514
+    Width = 886
+    Align = alBottom
+    ClientHeight = 43
+    ClientWidth = 886
+    FullRepaint = False
+    TabOrder = 1
+    object btnOK: TBitBtn
+      AnchorSideRight.Control = btnCancel
+      Left = 567
+      Height = 31
+      Top = 5
+      Width = 98
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 8
+      BorderSpacing.InnerBorder = 2
+      Caption = '&OK'
+      Kind = bkOK
+      ModalResult = 1
+      NumGlyphs = 0
+      OnClick = btnOKClick
+      TabOrder = 0
+    end
+    object btnCancel: TBitBtn
+      AnchorSideRight.Control = btnApply
+      Left = 673
+      Height = 31
+      Top = 5
+      Width = 98
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 8
+      BorderSpacing.InnerBorder = 2
+      Cancel = True
+      Caption = 'Cancel'
+      Kind = bkCancel
+      ModalResult = 2
+      NumGlyphs = 0
+      TabOrder = 1
+    end
+    object btnApply: TBitBtn
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      Left = 779
+      Height = 31
+      Top = 5
+      Width = 98
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 8
+      BorderSpacing.InnerBorder = 2
+      Caption = 'Apply'
+      NumGlyphs = 0
+      OnClick = btnApplyClick
+      TabOrder = 2
+    end
+  end
+  object tvTreeView: TTreeView
+    Left = 0
+    Height = 514
+    Top = 0
+    Width = 170
+    Align = alLeft
+    DefaultItemHeight = 16
+    Images = ilTreeView
+    ReadOnly = True
+    ScrollBars = ssNone
+    TabOrder = 0
+    OnChange = tvTreeViewChange
+    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips]
+    Items.Data = {
+      F9FFFFFF020014000000000000000000000000000000FFFFFFFF000000000000
+      000000080000004C616E6775616765010000000100000001000000FFFFFFFF00
+      0000000000000000090000004265686176696F72730200000002000000020000
+      00FFFFFFFF00000000000000000005000000546F6F6C73030000000300000003
+      000000FFFFFFFF00000000000000000005000000466F6E747304000000040000
+      0004000000FFFFFFFF00000000000000000006000000436F6C6F727305000000
+      0500000005000000FFFFFFFF00000000000000000008000000486F74206B6579
+      73060000000600000006000000FFFFFFFF00000000000000000007000000506C
+      7567696E73070000000700000007000000FFFFFFFF0000000000000000000600
+      00004C61796F7574080000000800000008000000FFFFFFFF0000000000000000
+      000F00000046696C65206F7065726174696F6E73090000000900000009000000
+      FFFFFFFF0000000000000000000B000000466F6C64657220746162730A000000
+      0A0000000A000000FFFFFFFF000000000000000000080000004C6F672066696C
+      650B0000000B0000000B000000FFFFFFFF0000000000000000000D000000436F
+      6E66696775726174696F6E0C0000000C0000000C000000FFFFFFFF0000000000
+      0000000013000000517569636B207365617263682F66696C7465720D0000000D
+      0000000D000000FFFFFFFF00000000000000000007000000436F6C756D6E730E
+      0000000E0000000E000000FFFFFFFF0000000000000000000D0000004D697363
+      656C6C616E656F75730F0000000F0000000F000000FFFFFFFF00000000000000
+      00000C0000004175746F2072656672657368100000001000000010000000FFFF
+      FFFF0000000000000000000500000049636F6E73110000001100000011000000
+      FFFFFFFF0000000000000000000B00000049676E6F7265206C69737412000000
+      1200000012000000FFFFFFFF0000000000000000000900000041726368697665
+      7273130000001300000013000000FFFFFFFF0000000000000000000800000054
+      6F6F6C74697073
+    }
+  end
+  object Panel3: TPanel
+    Left = 175
+    Height = 514
+    Top = 0
+    Width = 711
+    Align = alClient
+    ClientHeight = 514
+    ClientWidth = 711
+    TabOrder = 2
+    object nbNotebook: TNotebook
+      Left = 1
+      Height = 489
+      Top = 24
+      Width = 709
+      Align = alClient
+      PageIndex = 19
+      TabOrder = 0
+      object pgLng: TPage
+        ClientWidth = 705
+        ClientHeight = 458
+        object lngList: TListBox
+          Left = 0
+          Height = 455
+          Top = 0
+          Width = 703
+          Align = alClient
+          ItemHeight = 0
+          TabOrder = 0
+        end
+      end
+      object pgBehav: TPage
+        ClientWidth = 705
+        ClientHeight = 458
+        OnResize = pgBehavResize
+        object lblRunInTerm: TLabel
+          AnchorSideTop.Control = edtRunInTerm
+          AnchorSideTop.Side = asrCenter
+          Left = 8
+          Height = 17
+          Top = 13
+          Width = 92
+          Caption = 'Run in terminal:'
+          ParentColor = False
+        end
+        object lblRunTerm: TLabel
+          AnchorSideTop.Control = edtRunTerm
+          AnchorSideTop.Side = asrCenter
+          Left = 8
+          Height = 17
+          Top = 45
+          Width = 78
+          Caption = 'Run terminal:'
+          ParentColor = False
+        end
+        object edtRunInTerm: TEdit
+          AnchorSideLeft.Control = lblRunInTerm
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideRight.Control = pgBehav
+          AnchorSideRight.Side = asrBottom
+          Left = 106
+          Height = 26
+          Top = 8
+          Width = 587
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 6
+          BorderSpacing.Right = 10
+          TabOrder = 0
+        end
+        object edtRunTerm: TEdit
+          AnchorSideLeft.Control = edtRunInTerm
+          AnchorSideTop.Control = edtRunInTerm
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = edtRunInTerm
+          AnchorSideRight.Side = asrBottom
+          Left = 106
+          Height = 26
+          Top = 40
+          Width = 587
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 6
+          TabOrder = 1
+        end
+        object gbMisc1: TGroupBox
+          AnchorSideTop.Control = edtRunTerm
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = gbMisc2
+          Left = 10
+          Height = 150
+          Top = 72
+          Width = 322
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 6
+          ChildSizing.LeftRightSpacing = 8
+          ChildSizing.TopBottomSpacing = 6
+          ClientHeight = 132
+          ClientWidth = 318
+          TabOrder = 3
+          object cbOnlyOnce: TCheckBox
+            AnchorSideLeft.Control = gbMisc1
+            AnchorSideTop.Control = gbMisc1
+            AnchorSideRight.Control = gbMisc1
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 22
+            Top = 6
+            Width = 302
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 6
+            Caption = 'Allow only one copy of DC at a time'
+            TabOrder = 0
+          end
+          object cbLynxLike: TCheckBox
+            AnchorSideLeft.Control = gbMisc1
+            AnchorSideTop.Control = cbOnlyOnce
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbMisc1
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 22
+            Top = 34
+            Width = 302
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 6
+            Caption = 'Lynx-like movement'
+            TabOrder = 1
+          end
+          object cbShortFileSizeFormat: TCheckBox
+            AnchorSideLeft.Control = gbMisc1
+            AnchorSideTop.Control = cbLynxLike
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbMisc1
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 22
+            Top = 62
+            Width = 302
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 6
+            Caption = 'Short file size format'
+            TabOrder = 2
+          end
+          object cbMinimizeToTray: TCheckBox
+            AnchorSideLeft.Control = gbMisc1
+            AnchorSideTop.Control = cbShortFileSizeFormat
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbMisc1
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 22
+            Top = 90
+            Width = 302
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 6
+            Caption = 'Mo&ve icon to system tray when minimized'
+            TabOrder = 3
+          end
+          object cbAlwaysShowTrayIcon: TCheckBox
+            AnchorSideLeft.Control = gbMisc1
+            AnchorSideTop.Control = cbMinimizeToTray
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbMisc1
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 22
+            Top = 118
+            Width = 302
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 6
+            Caption = 'Always show tray icon'
+            OnChange = cbAlwaysShowTrayIconChange
+            TabOrder = 4
+          end
+        end
+        object gbMisc2: TGroupBox
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = edtRunTerm
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = edtRunTerm
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = gbMisc1
+          AnchorSideBottom.Side = asrBottom
+          Left = 338
+          Height = 150
+          Top = 72
+          Width = 355
+          Anchors = [akTop, akRight, akBottom]
+          BorderSpacing.Top = 6
+          ClientHeight = 132
+          ClientWidth = 351
+          TabOrder = 4
+          object lblMouseMode: TLabel
+            AnchorSideTop.Control = cbMouseMode
+            AnchorSideTop.Side = asrCenter
+            Left = 14
+            Height = 17
+            Top = 45
+            Width = 37
+            Caption = 'Mode:'
+            ParentColor = False
+          end
+          object cbSelectionByMouse: TCheckBox
+            AnchorSideLeft.Control = gbMisc2
+            AnchorSideTop.Control = gbMisc2
+            AnchorSideRight.Control = gbMisc2
+            AnchorSideRight.Side = asrBottom
+            Left = 6
+            Height = 22
+            Top = 6
+            Width = 339
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 6
+            BorderSpacing.Top = 6
+            BorderSpacing.Right = 6
+            Caption = 'Selection by mouse'
+            TabOrder = 0
+          end
+          object cbMouseMode: TComboBox
+            AnchorSideLeft.Control = cmbAutoSizeColumn
+            AnchorSideTop.Control = cbSelectionByMouse
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbMisc2
+            AnchorSideRight.Side = asrBottom
+            Left = 124
+            Height = 21
+            Top = 38
+            Width = 209
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 10
+            BorderSpacing.Right = 18
+            ItemHeight = 13
+            Style = csDropDownList
+            TabOrder = 1
+          end
+          object chkAutoFillColumns: TCheckBox
+            AnchorSideLeft.Control = cbSelectionByMouse
+            AnchorSideTop.Control = cbMouseMode
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = cbSelectionByMouse
+            AnchorSideRight.Side = asrBottom
+            Left = 6
+            Height = 22
+            Top = 76
+            Width = 339
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 8
+            Caption = 'Auto fill columns'
+            TabOrder = 2
+          end
+          object lblAutoSizeColumn: TLabel
+            AnchorSideLeft.Control = chkAutoFillColumns
+            AnchorSideTop.Control = cmbAutoSizeColumn
+            AnchorSideTop.Side = asrCenter
+            Left = 6
+            Height = 17
+            Top = 115
+            Width = 106
+            BorderSpacing.Top = 6
+            Caption = 'Auto size column:'
+            ParentColor = False
+          end
+          object cmbAutoSizeColumn: TComboBox
+            AnchorSideLeft.Control = lblAutoSizeColumn
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = chkAutoFillColumns
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbMisc2
+            AnchorSideRight.Side = asrBottom
+            Left = 124
+            Height = 21
+            Top = 108
+            Width = 209
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 12
+            BorderSpacing.Top = 10
+            BorderSpacing.Right = 18
+            ItemHeight = 13
+            Items.Strings = (
+              'First'
+              'Last'
+            )
+            Style = csDropDownList
+            TabOrder = 3
+          end
+        end
+        object gbDateTimeFormat: TGroupBox
+          AnchorSideLeft.Control = gbMisc1
+          AnchorSideTop.Control = gbMisc1
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = gbMisc1
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 135
+          Top = 228
+          Width = 322
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 6
+          Caption = 'Date and time'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.TopBottomSpacing = 6
+          ClientHeight = 117
+          ClientWidth = 318
+          TabOrder = 5
+          object lblDateTimeFormat: TLabel
+            AnchorSideLeft.Control = gbDateTimeFormat
+            AnchorSideRight.Control = gbDateTimeFormat
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 17
+            Top = 6
+            Width = 304
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 8
+            Caption = 'Date and time format:'
+            ParentColor = False
+          end
+          object lblDateTimeExample: TLabel
+            AnchorSideLeft.Control = gbDateTimeFormat
+            AnchorSideTop.Control = cbDateTimeFormat
+            AnchorSideTop.Side = asrBottom
+            Left = 8
+            Height = 1
+            Top = 63
+            Width = 1
+            BorderSpacing.Left = 8
+            BorderSpacing.Top = 6
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object cbDateTimeFormat: TComboBox
+            AnchorSideLeft.Control = gbDateTimeFormat
+            AnchorSideTop.Control = lblDateTimeFormat
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbDateTimeFormat
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 21
+            Top = 29
+            Width = 302
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 8
+            BorderSpacing.Top = 6
+            BorderSpacing.Right = 8
+            ItemHeight = 13
+            Items.Strings = (
+              'yyyy.mm.dd hh:mm:ss'
+              'yyyy.mm.dd hh:mm'
+              'yy.mm.dd hh:mm'
+              'dd.mm.yyyy hh:mm:ss'
+              'dd.mm.yyyy hh:mm'
+              'dd.mm.yy hh:mm'
+              'dd.mm.yyyy'
+              'dd.mm.yy'
+            )
+            OnChange = cbDateTimeFormatChange
+            TabOrder = 0
+          end
+        end
+        object gbScrolling: TGroupBox
+          AnchorSideLeft.Control = gbMisc2
+          AnchorSideTop.Control = gbMisc2
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = gbMisc2
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = gbDateTimeFormat
+          AnchorSideBottom.Side = asrBottom
+          Left = 338
+          Height = 135
+          Top = 228
+          Width = 355
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          BorderSpacing.Top = 6
+          Caption = 'Scrolling'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.TopBottomSpacing = 6
+          ClientHeight = 117
+          ClientWidth = 351
+          TabOrder = 2
+          object rbScrollLineByLineCursor: TRadioButton
+            AnchorSideLeft.Control = gbScrolling
+            AnchorSideTop.Control = gbScrolling
+            AnchorSideRight.Control = gbScrolling
+            AnchorSideRight.Side = asrBottom
+            Left = 6
+            Height = 22
+            Top = 6
+            Width = 339
+            Anchors = [akTop, akLeft, akRight]
+            Caption = 'Line by line with cursor movement'
+            Checked = True
+            TabOrder = 0
+            TabStop = True
+          end
+          object rbScrollLineByLine: TRadioButton
+            AnchorSideLeft.Control = gbScrolling
+            AnchorSideTop.Control = seWheelScrollLines
+            AnchorSideTop.Side = asrCenter
+            Left = 6
+            Height = 22
+            Top = 34
+            Width = 90
+            BorderSpacing.Right = 6
+            Caption = 'Line by line'
+            TabOrder = 1
+          end
+          object rbScrollPageByPage: TRadioButton
+            AnchorSideLeft.Control = gbScrolling
+            AnchorSideTop.Control = seWheelScrollLines
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbScrolling
+            AnchorSideRight.Side = asrBottom
+            Left = 6
+            Height = 22
+            Top = 62
+            Width = 339
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 4
+            Caption = 'Page by page'
+            TabOrder = 2
+          end
+          object seWheelScrollLines: TSpinEdit
+            AnchorSideLeft.Control = rbScrollLineByLine
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = rbScrollLineByLineCursor
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbScrolling
+            AnchorSideRight.Side = asrBottom
+            Left = 114
+            Height = 26
+            Top = 32
+            Width = 219
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 18
+            BorderSpacing.Top = 4
+            BorderSpacing.Right = 18
+            MinValue = 1
+            TabOrder = 3
+            Value = 1
+          end
+        end
+        object gbMisc3: TGroupBox
+          AnchorSideLeft.Control = gbDateTimeFormat
+          AnchorSideTop.Control = gbDateTimeFormat
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = gbDateTimeFormat
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 122
+          Top = 369
+          Width = 322
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Top = 6
+          ChildSizing.LeftRightSpacing = 8
+          ChildSizing.TopBottomSpacing = 6
+          ClientHeight = 104
+          ClientWidth = 318
+          TabOrder = 6
+          object cbCutTextToColWidth: TCheckBox
+            AnchorSideLeft.Control = gbMisc3
+            AnchorSideTop.Control = gbMisc3
+            AnchorSideRight.Control = gbMisc3
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 22
+            Top = 6
+            Width = 302
+            Anchors = [akTop, akLeft, akRight]
+            Caption = 'Cut text to column width'
+            TabOrder = 0
+          end
+          object cbShowSystemFiles: TCheckBox
+            AnchorSideLeft.Control = gbMisc3
+            AnchorSideTop.Control = cbCutTextToColWidth
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbMisc3
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 22
+            Top = 34
+            Width = 302
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 6
+            Caption = 'Show system and hidden files'
+            TabOrder = 1
+          end
+          object cbListFilesInThread: TCheckBox
+            AnchorSideLeft.Control = cbShowSystemFiles
+            AnchorSideTop.Control = cbShowSystemFiles
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbMisc3
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 22
+            Top = 62
+            Width = 302
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 6
+            Caption = 'Load file list in separate thread'
+            TabOrder = 2
+          end
+          object cbLoadIconsSeparately: TCheckBox
+            AnchorSideLeft.Control = cbListFilesInThread
+            AnchorSideTop.Control = cbListFilesInThread
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbMisc3
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 22
+            Top = 90
+            Width = 302
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 6
+            Caption = 'Load icons after file list'
+            TabOrder = 3
+          end
+        end
+        object gbMisc4: TGroupBox
+          AnchorSideLeft.Control = gbScrolling
+          AnchorSideTop.Control = gbScrolling
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = gbScrolling
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = gbMisc3
+          AnchorSideBottom.Side = asrBottom
+          Left = 338
+          Height = 122
+          Top = 369
+          Width = 355
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          BorderSpacing.Top = 6
+          ClientHeight = 104
+          ClientWidth = 351
+          TabOrder = 7
+          object ledDriveBlackList: TLabeledEdit
+            AnchorSideLeft.Control = gbMisc4
+            AnchorSideRight.Control = gbMisc4
+            AnchorSideRight.Side = asrBottom
+            Left = 10
+            Height = 26
+            Hint = 'Here you can enter one or more drives, separated by ";".'
+            Top = 24
+            Width = 331
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 10
+            BorderSpacing.Right = 10
+            EditLabel.AnchorSideLeft.Control = ledDriveBlackList
+            EditLabel.AnchorSideBottom.Control = ledDriveBlackList
+            EditLabel.Left = 10
+            EditLabel.Height = 17
+            EditLabel.Top = 4
+            EditLabel.Width = 85
+            EditLabel.Caption = 'Drive blacklist:'
+            EditLabel.ParentColor = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 0
+          end
+        end
+      end
+      object pgTools: TPage
+        ClientWidth = 701
+        ClientHeight = 463
+        object stgTools: TStringGrid
+          Left = 0
+          Height = 463
+          Top = 0
+          Width = 142
+          Align = alLeft
+          AutoFillColumns = True
+          ColCount = 1
+          Columns = <          
+            item
+              Title.Caption = 'Tool'
+              Width = 142
+            end>
+          ExtendedSelect = False
+          FixedCols = 0
+          Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goRowSelect, goThumbTracking]
+          RowCount = 4
+          TabOrder = 0
+          OnSelectCell = stgToolsSelectCell
+          ColWidths = (
+            142
+          )
+          Cells = (
+            3
+            0
+            1
+            'Viewer'
+            0
+            2
+            'Editor'
+            0
+            3
+            'Differ'
+          )
+        end
+        object edtToolsParameters: TEdit
+          AnchorSideLeft.Control = lblToolsParameters
+          AnchorSideTop.Control = lblToolsParameters
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = fneToolsPath
+          AnchorSideRight.Side = asrBottom
+          Left = 148
+          Height = 21
+          Top = 111
+          Width = 513
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 4
+          OnChange = edtToolsParametersChange
+          TabOrder = 3
+        end
+        object fneToolsPath: TFileNameEdit
+          AnchorSideLeft.Control = lblToolsPath
+          AnchorSideTop.Control = lblToolsPath
+          AnchorSideTop.Side = asrBottom
+          Left = 148
+          Height = 21
+          Top = 62
+          Width = 513
+          OnAcceptFileName = fneToolsPathAcceptFileName
+          DialogOptions = []
+          FilterIndex = 0
+          HideDirectories = False
+          ButtonWidth = 23
+          NumGlyphs = 0
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 4
+          MaxLength = 0
+          TabOrder = 2
+          OnChange = fneToolsPathChange
+        end
+        object lblToolsPath: TLabel
+          AnchorSideLeft.Control = cbToolsUseExternalProgram
+          AnchorSideTop.Control = cbToolsUseExternalProgram
+          AnchorSideTop.Side = asrBottom
+          Left = 148
+          Height = 14
+          Top = 44
+          Width = 134
+          BorderSpacing.Top = 15
+          Caption = 'Path to program to execute'
+          ParentColor = False
+        end
+        object lblToolsParameters: TLabel
+          AnchorSideLeft.Control = cbToolsUseExternalProgram
+          AnchorSideTop.Control = fneToolsPath
+          AnchorSideTop.Side = asrBottom
+          Left = 148
+          Height = 14
+          Top = 93
+          Width = 106
+          BorderSpacing.Top = 10
+          Caption = 'Additional parameters'
+          ParentColor = False
+        end
+        object cbToolsKeepTerminalOpen: TCheckBox
+          AnchorSideLeft.Control = cbToolsRunInTerminal
+          AnchorSideTop.Control = cbToolsRunInTerminal
+          AnchorSideTop.Side = asrBottom
+          Left = 163
+          Height = 17
+          Top = 163
+          Width = 269
+          BorderSpacing.Left = 15
+          BorderSpacing.Top = 2
+          Caption = 'Keep terminal window open after executing program'
+          OnChange = cbToolsKeepTerminalOpenChange
+          TabOrder = 5
+        end
+        object cbToolsRunInTerminal: TCheckBox
+          AnchorSideLeft.Control = edtToolsParameters
+          AnchorSideTop.Control = edtToolsParameters
+          AnchorSideTop.Side = asrBottom
+          Left = 148
+          Height = 17
+          Top = 144
+          Width = 109
+          BorderSpacing.Top = 12
+          Caption = 'Execute in terminal'
+          OnChange = cbToolsRunInTerminalChange
+          TabOrder = 4
+        end
+        object cbToolsUseExternalProgram: TCheckBox
+          AnchorSideTop.Control = pgTools
+          Left = 148
+          Height = 17
+          Top = 12
+          Width = 122
+          BorderSpacing.Top = 12
+          Caption = 'Use external program'
+          OnChange = cbToolsUseExternalProgramChange
+          TabOrder = 1
+        end
+        object gbViewerBookMode: TGroupBox
+          AnchorSideTop.Control = cbToolsKeepTerminalOpen
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = pgTools
+          AnchorSideRight.Side = asrBottom
+          Left = 146
+          Height = 105
+          Top = 192
+          Width = 545
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Top = 12
+          BorderSpacing.Right = 10
+          BorderSpacing.Bottom = 10
+          Caption = 'Viewer Book Mode'
+          ChildSizing.TopBottomSpacing = 6
+          ClientHeight = 87
+          ClientWidth = 541
+          TabOrder = 6
+          Visible = False
+          object lblBackgroundColorViewerBook: TLabel
+            AnchorSideTop.Control = cbBackgroundColorViewerBook
+            AnchorSideTop.Side = asrCenter
+            AnchorSideRight.Control = cbBackgroundColorViewerBook
+            Left = 8
+            Height = 14
+            Top = 8
+            Width = 155
+            Caption = 'Background color in book viewer'
+            ParentColor = False
+          end
+          object seNumberColumnsViewer: TSpinEdit
+            AnchorSideLeft.Control = cbFontColorViewerBook
+            AnchorSideTop.Control = cbFontColorViewerBook
+            AnchorSideTop.Side = asrBottom
+            Left = 177
+            Height = 21
+            Top = 58
+            Width = 36
+            BorderSpacing.Top = 5
+            MaxValue = 3
+            MinValue = 1
+            OnChange = seNumberColumnsViewerChange
+            TabOrder = 0
+            Value = 1
+          end
+          object lblNumberColumnsViewer: TLabel
+            AnchorSideLeft.Control = lblBackgroundColorViewerBook
+            AnchorSideTop.Control = seNumberColumnsViewer
+            AnchorSideTop.Side = asrCenter
+            Left = 8
+            Height = 14
+            Top = 61
+            Width = 164
+            Caption = 'Number of columns in book viewer'
+            ParentColor = False
+          end
+          object gbViewerExample: TGroupBox
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = gbViewerBookMode
+            AnchorSideRight.Control = gbViewerBookMode
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Control = seNumberColumnsViewer
+            AnchorSideBottom.Side = asrBottom
+            Left = 417
+            Height = 73
+            Top = 6
+            Width = 119
+            Anchors = [akTop, akRight, akBottom]
+            AutoSize = True
+            BorderSpacing.Left = 5
+            BorderSpacing.Right = 5
+            Caption = 'Example'
+            ClientHeight = 55
+            ClientWidth = 115
+            TabOrder = 1
+            object pbViewerBook: TPaintBox
+              AnchorSideLeft.Control = gbViewerExample
+              AnchorSideTop.Control = gbViewerExample
+              AnchorSideRight.Control = gbViewerExample
+              AnchorSideRight.Side = asrBottom
+              AnchorSideBottom.Control = gbViewerExample
+              AnchorSideBottom.Side = asrBottom
+              Left = 5
+              Height = 45
+              Top = 5
+              Width = 105
+              Anchors = [akTop, akLeft, akBottom]
+              BorderSpacing.Left = 5
+              BorderSpacing.Top = 5
+              BorderSpacing.Right = 5
+              BorderSpacing.Bottom = 5
+              OnPaint = pbViewerBookPaint
+            end
+          end
+          object btnFontViewerColor: TButton
+            AnchorSideLeft.Control = cbFontColorViewerBook
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = cbFontColorViewerBook
+            AnchorSideRight.Control = btnBackViewerColor
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Control = cbFontColorViewerBook
+            AnchorSideBottom.Side = asrBottom
+            Left = 388
+            Height = 22
+            Top = 31
+            Width = 24
+            Anchors = [akTop, akLeft, akRight, akBottom]
+            BorderSpacing.Left = 4
+            Caption = '>>'
+            OnClick = btnFontViewerColorClick
+            TabOrder = 2
+          end
+          object btnBackViewerColor: TButton
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = cbBackgroundColorViewerBook
+            AnchorSideRight.Control = gbViewerExample
+            AnchorSideBottom.Control = cbBackgroundColorViewerBook
+            AnchorSideBottom.Side = asrBottom
+            Left = 388
+            Height = 22
+            Top = 4
+            Width = 24
+            Anchors = [akTop, akRight, akBottom]
+            BorderSpacing.Left = 4
+            BorderSpacing.Right = 5
+            Caption = '>>'
+            OnClick = btnBackViewerColorClick
+            TabOrder = 3
+          end
+          object cbFontColorViewerBook: TColorBox
+            AnchorSideLeft.Control = cbBackgroundColorViewerBook
+            AnchorSideTop.Control = cbBackgroundColorViewerBook
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = cbBackgroundColorViewerBook
+            AnchorSideRight.Side = asrBottom
+            Left = 177
+            Height = 22
+            Top = 31
+            Width = 207
+            Style = [cbStandardColors, cbExtendedColors, cbSystemColors, cbPrettyNames]
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 5
+            ItemHeight = 16
+            OnChange = cbColorBoxChange
+            TabOrder = 4
+          end
+          object lblFontColorViewerBook: TLabel
+            AnchorSideLeft.Control = lblBackgroundColorViewerBook
+            AnchorSideTop.Control = cbFontColorViewerBook
+            AnchorSideTop.Side = asrCenter
+            Left = 8
+            Height = 14
+            Top = 35
+            Width = 121
+            BorderSpacing.Top = 10
+            Caption = 'Font color in book viewer'
+            ParentColor = False
+          end
+          object cbBackgroundColorViewerBook: TColorBox
+            AnchorSideLeft.Control = lblBackgroundColorViewerBook
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideRight.Control = btnBackViewerColor
+            Left = 177
+            Height = 22
+            Top = 4
+            Width = 207
+            Style = [cbStandardColors, cbExtendedColors, cbSystemColors, cbPrettyNames]
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 14
+            ItemHeight = 16
+            OnChange = cbColorBoxChange
+            TabOrder = 5
+          end
+        end
+      end
+      object pgFonts: TPage
+        ClientWidth = 701
+        ClientHeight = 463
+        object lblMainFont: TLabel
+          Left = 6
+          Height = 14
+          Top = 8
+          Width = 46
+          Caption = 'Main font'
+          ParentColor = False
+        end
+        object lblEditorFont: TLabel
+          AnchorSideTop.Control = edtMainFont
+          AnchorSideTop.Side = asrBottom
+          Left = 6
+          Height = 14
+          Top = 59
+          Width = 52
+          BorderSpacing.Top = 10
+          Caption = 'Editor font'
+          ParentColor = False
+        end
+        object lblViewerFont: TLabel
+          AnchorSideTop.Control = edtEditorFont
+          AnchorSideTop.Side = asrBottom
+          Left = 6
+          Height = 14
+          Top = 110
+          Width = 56
+          BorderSpacing.Top = 10
+          Caption = 'Viewer font'
+          ParentColor = False
+        end
+        object btnSelMainFnt: TButton
+          AnchorSideTop.Control = edtMainFontSize
+          AnchorSideBottom.Control = edtMainFontSize
+          AnchorSideBottom.Side = asrBottom
+          Left = 638
+          Height = 21
+          Top = 28
+          Width = 40
+          Anchors = [akTop, akRight, akBottom]
+          Caption = '...'
+          OnClick = btnSelMainFntClick
+          TabOrder = 0
+        end
+        object edtMainFontSize: TSpinEdit
+          AnchorSideTop.Control = edtMainFont
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = btnSelMainFnt
+          Left = 579
+          Height = 21
+          Top = 28
+          Width = 55
+          Anchors = [akTop, akRight]
+          BorderSpacing.Right = 4
+          MaxValue = 25
+          MinValue = 6
+          OnChange = edtMainFontSizeChange
+          TabOrder = 1
+          Value = 14
+        end
+        object edtMainFont: TEdit
+          AnchorSideLeft.Control = lblMainFont
+          AnchorSideTop.Control = lblMainFont
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = edtMainFontSize
+          Left = 6
+          Height = 21
+          Top = 28
+          Width = 569
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 4
+          TabOrder = 2
+        end
+        object btnSelEditFnt: TButton
+          AnchorSideTop.Control = edtEditorFont
+          AnchorSideBottom.Control = edtEditorFont
+          AnchorSideBottom.Side = asrBottom
+          Left = 638
+          Height = 21
+          Top = 79
+          Width = 40
+          Anchors = [akTop, akRight, akBottom]
+          BorderSpacing.InnerBorder = 4
+          Caption = '...'
+          OnClick = btnSelEditFntClick
+          TabOrder = 3
+        end
+        object edtEditorFont: TEdit
+          AnchorSideLeft.Control = lblEditorFont
+          AnchorSideTop.Control = lblEditorFont
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = edtEditorFontSize
+          Left = 6
+          Height = 21
+          Top = 79
+          Width = 569
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 4
+          TabOrder = 4
+        end
+        object edtEditorFontSize: TSpinEdit
+          AnchorSideTop.Control = edtEditorFont
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = btnSelEditFnt
+          Left = 579
+          Height = 21
+          Top = 79
+          Width = 55
+          Anchors = [akTop, akRight]
+          BorderSpacing.Right = 4
+          MaxValue = 25
+          MinValue = 6
+          OnChange = edtEditorFontSizeChange
+          TabOrder = 5
+          Value = 14
+        end
+        object btnSelViewFnt: TButton
+          AnchorSideTop.Control = edtViewerFontSize
+          AnchorSideBottom.Control = edtViewerFontSize
+          AnchorSideBottom.Side = asrBottom
+          Left = 638
+          Height = 21
+          Top = 130
+          Width = 40
+          Anchors = [akTop, akRight, akBottom]
+          BorderSpacing.InnerBorder = 4
+          Caption = '...'
+          OnClick = btnSelViewFntClick
+          TabOrder = 6
+        end
+        object edtViewerFont: TEdit
+          AnchorSideLeft.Control = lblViewerFont
+          AnchorSideTop.Control = lblViewerFont
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = edtViewerFontSize
+          Left = 6
+          Height = 21
+          Top = 130
+          Width = 568
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 4
+          TabOrder = 7
+        end
+        object edtViewerFontSize: TSpinEdit
+          AnchorSideTop.Control = edtViewerFont
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = btnSelViewFnt
+          Left = 578
+          Height = 21
+          Top = 130
+          Width = 56
+          Anchors = [akTop, akRight]
+          BorderSpacing.Right = 4
+          MaxValue = 25
+          MinValue = 6
+          OnChange = edtViewerFontSizeChange
+          TabOrder = 8
+          Value = 14
+        end
+        object lblLogFont: TLabel
+          AnchorSideLeft.Control = edtViewerFont
+          AnchorSideTop.Control = edtViewerFont
+          AnchorSideTop.Side = asrBottom
+          Left = 6
+          Height = 14
+          Top = 161
+          Width = 41
+          BorderSpacing.Top = 10
+          Caption = 'Log font'
+          ParentColor = False
+        end
+        object edtLogFont: TEdit
+          AnchorSideLeft.Control = lblLogFont
+          AnchorSideTop.Control = lblLogFont
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = edtLogFontSize
+          Left = 6
+          Height = 21
+          Top = 181
+          Width = 568
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 4
+          TabOrder = 9
+        end
+        object btnSelLogFnt: TButton
+          AnchorSideTop.Control = edtLogFontSize
+          AnchorSideBottom.Control = edtLogFontSize
+          AnchorSideBottom.Side = asrBottom
+          Left = 638
+          Height = 21
+          Top = 181
+          Width = 40
+          Anchors = [akTop, akRight, akBottom]
+          BorderSpacing.InnerBorder = 4
+          Caption = '...'
+          OnClick = btnSelLogFntClick
+          TabOrder = 10
+        end
+        object edtLogFontSize: TSpinEdit
+          AnchorSideTop.Control = edtLogFont
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = btnSelLogFnt
+          Left = 578
+          Height = 21
+          Top = 181
+          Width = 56
+          Anchors = [akTop, akRight]
+          BorderSpacing.Right = 4
+          MaxValue = 25
+          MinValue = 6
+          OnChange = edtLogFontSizeChange
+          TabOrder = 11
+          Value = 14
+        end
+        object lblViewerBookFont: TLabel
+          AnchorSideLeft.Control = edtLogFont
+          AnchorSideTop.Control = edtLogFont
+          AnchorSideTop.Side = asrBottom
+          Left = 6
+          Height = 14
+          Top = 212
+          Width = 84
+          BorderSpacing.Top = 10
+          Caption = 'Viewer Book Font'
+          ParentColor = False
+        end
+        object edtViewerBookFont: TEdit
+          AnchorSideLeft.Control = lblViewerBookFont
+          AnchorSideTop.Control = lblViewerBookFont
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = edtViewerBookFontSize
+          Left = 6
+          Height = 21
+          Top = 236
+          Width = 571
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 10
+          BorderSpacing.Right = 4
+          TabOrder = 12
+        end
+        object edtViewerBookFontSize: TSpinEdit
+          AnchorSideTop.Control = edtViewerBookFont
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = btnSelViewerBookFnt
+          Left = 581
+          Height = 21
+          Top = 236
+          Width = 53
+          Anchors = [akTop, akRight]
+          BorderSpacing.Right = 4
+          MinValue = 6
+          OnChange = edtViewerBookFontSizeChange
+          TabOrder = 13
+          Value = 18
+        end
+        object btnSelViewerBookFnt: TButton
+          AnchorSideTop.Control = edtViewerBookFont
+          AnchorSideBottom.Control = edtViewerBookFont
+          AnchorSideBottom.Side = asrBottom
+          Left = 638
+          Height = 21
+          Top = 236
+          Width = 40
+          Anchors = [akTop, akRight, akBottom]
+          Caption = '...'
+          OnClick = btnSelViewerBookFntClick
+          TabOrder = 14
+        end
+      end
+      object pgColor: TPage
+      end
+      object pgHotKey: TPage
+        ClientWidth = 701
+        ClientHeight = 463
+        object lblHotKey: TLabel
+          AnchorSideLeft.Control = stgHotkeys
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideBottom.Control = edHotKey
+          Left = 281
+          Height = 14
+          Top = 385
+          Width = 43
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Left = 8
+          Caption = 'Hot Key:'
+          ParentColor = False
+        end
+        object lbtypes: TLabel
+          Left = 316
+          Height = 14
+          Top = 0
+          Width = 57
+          Caption = 'Categories:'
+          ParentColor = False
+        end
+        object lbcommands: TLabel
+          AnchorSideLeft.Control = lblSCFiles
+          AnchorSideTop.Control = lbxCategories
+          AnchorSideTop.Side = asrBottom
+          Left = 8
+          Height = 14
+          Top = 68
+          Width = 57
+          BorderSpacing.Top = 4
+          Caption = 'Commands:'
+          ParentColor = False
+        end
+        object lblParam: TLabel
+          AnchorSideLeft.Control = lblHotKey
+          AnchorSideBottom.Control = edtParam
+          Left = 281
+          Height = 14
+          Top = 422
+          Width = 35
+          Anchors = [akLeft, akBottom]
+          Caption = 'Param:'
+          ParentColor = False
+        end
+        object lbFilter: TLabel
+          AnchorSideTop.Control = edtFilter
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = edtFilter
+          Left = 546
+          Height = 14
+          Top = 306
+          Width = 25
+          Anchors = [akTop, akRight]
+          BorderSpacing.Top = 4
+          BorderSpacing.Right = 4
+          Caption = 'Filter'
+          ParentColor = False
+        end
+        object lbPressedHotKeyCommand: TLabel
+          AnchorSideLeft.Control = lblHotKey
+          AnchorSideBottom.Control = lblHotKey
+          Left = 281
+          Height = 1
+          Top = 380
+          Width = 1
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Bottom = 4
+          Font.Color = clRed
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edHotKey: TEdit
+          AnchorSideLeft.Control = lblHotKey
+          AnchorSideRight.Control = pnlHotkeyButtons
+          AnchorSideBottom.Control = lblParam
+          Left = 281
+          Height = 21
+          Top = 399
+          Width = 292
+          Anchors = [akLeft, akRight, akBottom]
+          BorderSpacing.Bottom = 2
+          OnKeyDown = edHotKeyKeyDown
+          OnKeyPress = edHotKeyKeyPress
+          TabOrder = 4
+        end
+        object lbxCategories: TListBox
+          AnchorSideTop.Control = lbtypes
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 316
+          Height = 50
+          Top = 14
+          Width = 362
+          Anchors = [akTop, akLeft, akRight]
+          ItemHeight = 0
+          OnSelectionChange = lbxCategoriesSelectionChange
+          TabOrder = 0
+        end
+        object edtParam: TEdit
+          AnchorSideLeft.Control = edHotKey
+          AnchorSideTop.Control = lblParam
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = edHotKey
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = stgHotkeys
+          AnchorSideBottom.Side = asrBottom
+          Left = 281
+          Height = 21
+          Top = 436
+          Width = 292
+          Anchors = [akLeft, akRight, akBottom]
+          BorderSpacing.Bottom = 4
+          TabOrder = 5
+        end
+        object edtFilter: TEdit
+          AnchorSideTop.Control = stgCommands
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = stgCommands
+          AnchorSideRight.Side = asrBottom
+          Left = 575
+          Height = 21
+          Top = 303
+          Width = 103
+          Anchors = [akTop, akRight]
+          BorderSpacing.Top = 4
+          OnChange = edtFilterChange
+          TabOrder = 3
+        end
+        object stgCommands: TStringGrid
+          AnchorSideTop.Control = lbcommands
+          AnchorSideTop.Side = asrBottom
+          Left = 8
+          Height = 217
+          Top = 82
+          Width = 670
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          ColCount = 3
+          ExtendedSelect = False
+          FixedCols = 0
+          MouseWheelOption = mwGrid
+          Options = [goVertLine, goColSizing, goRowSelect, goThumbTracking, goDblClickAutoSize, goSmoothScroll]
+          RowCount = 1
+          TabOrder = 1
+          OnResize = stgCommandsResize
+          OnSelectCell = stgCommandsSelectCell
+        end
+        object stgHotkeys: TStringGrid
+          AnchorSideLeft.Control = stgCommands
+          AnchorSideTop.Control = stgCommands
+          AnchorSideTop.Side = asrBottom
+          Left = 8
+          Height = 158
+          Top = 303
+          Width = 265
+          AutoFillColumns = True
+          BorderSpacing.Top = 4
+          ColCount = 2
+          Columns = <          
+            item
+              Title.Caption = 'Hotkey'
+              Width = 132
+            end          
+            item
+              Title.Caption = 'Parameters'
+              Width = 133
+            end>
+          FixedCols = 0
+          MouseWheelOption = mwGrid
+          Options = [goFixedVertLine, goFixedHorzLine, goRangeSelect, goColSizing, goRowSelect, goThumbTracking, goDblClickAutoSize, goSmoothScroll]
+          RowCount = 3
+          TabOrder = 2
+          OnSelectCell = stgHotkeysSelectCell
+          ColWidths = (
+            132
+            133
+          )
+        end
+        object pnlHotkeyButtons: TPanel
+          AnchorSideTop.Control = edHotKey
+          AnchorSideRight.Control = stgCommands
+          AnchorSideRight.Side = asrBottom
+          Left = 573
+          Height = 62
+          Top = 399
+          Width = 105
+          Anchors = [akTop, akRight]
+          AutoSize = True
+          BevelOuter = bvNone
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ClientHeight = 62
+          ClientWidth = 105
+          TabOrder = 6
+          object btSetHotKey: TButton
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 31
+            Top = 0
+            Width = 97
+            AutoSize = True
+            BorderSpacing.InnerBorder = 4
+            Caption = 'Set HotKey'
+            Enabled = False
+            OnClick = btSetHotKeyClick
+            TabOrder = 0
+          end
+          object btClearHotKey: TButton
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideRight.Side = asrBottom
+            Left = 8
+            Height = 31
+            Top = 31
+            Width = 97
+            AutoSize = True
+            BorderSpacing.Left = 8
+            BorderSpacing.Top = 6
+            BorderSpacing.InnerBorder = 4
+            Caption = 'Clear HotKey'
+            Enabled = False
+            OnClick = btClearHotKeyClick
+            TabOrder = 1
+          end
+        end
+        object lbSCFilesList: TListBox
+          Left = 8
+          Height = 50
+          Top = 14
+          Width = 297
+          ItemHeight = 0
+          TabOrder = 7
+        end
+        object lblSCFiles: TLabel
+          Left = 8
+          Height = 14
+          Top = 0
+          Width = 68
+          Caption = 'Shortcut files:'
+          ParentColor = False
+        end
+      end
+      object pgPlugins: TPage
+      end
+      object pgLayout: TPage
+        ClientWidth = 701
+        ClientHeight = 463
+        object gbScreenLayout: TGroupBox
+          Left = 10
+          Height = 408
+          Top = 6
+          Width = 673
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          Caption = ' Screen layout '
+          ChildSizing.LeftRightSpacing = 12
+          ChildSizing.TopBottomSpacing = 6
+          ClientHeight = 390
+          ClientWidth = 669
+          TabOrder = 0
+          object cbShowMainMenu: TCheckBox
+            Left = 12
+            Height = 17
+            Top = 6
+            Width = 98
+            Caption = 'Show main menu'
+            TabOrder = 0
+          end
+          object cbShowMainToolBar: TCheckBox
+            AnchorSideTop.Control = cbShowMainMenu
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 25
+            Width = 98
+            BorderSpacing.Top = 2
+            Caption = 'Show &button bar'
+            TabOrder = 1
+          end
+          object cbShowDiskPanel: TCheckBox
+            AnchorSideTop.Control = cbFlatToolBar
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 63
+            Width = 111
+            BorderSpacing.Top = 2
+            Caption = 'Show &drive buttons'
+            OnChange = cbShowDiskPanelChange
+            TabOrder = 3
+          end
+          object cbShowDriveMenuButton: TCheckBox
+            AnchorSideTop.Control = cbFlatDiskPanel
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 120
+            Width = 135
+            BorderSpacing.Top = 2
+            Caption = 'Show d&rive menu button'
+            TabOrder = 6
+          end
+          object cbShowCurDir: TCheckBox
+            AnchorSideTop.Control = cbShowTabs
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 196
+            Width = 128
+            BorderSpacing.Top = 2
+            Caption = 'Show &current directory'
+            TabOrder = 10
+          end
+          object cbShowTabHeader: TCheckBox
+            AnchorSideTop.Control = cbShowCurDir
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 215
+            Width = 121
+            BorderSpacing.Top = 2
+            Caption = 'Show &tabstop header'
+            TabOrder = 11
+          end
+          object cbShowStatusBar: TCheckBox
+            AnchorSideTop.Control = cbShowTabHeader
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 234
+            Width = 96
+            BorderSpacing.Top = 2
+            Caption = 'Show &status bar'
+            TabOrder = 12
+          end
+          object cbShowCmdLine: TCheckBox
+            AnchorSideTop.Control = cbShowStatusBar
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 253
+            Width = 111
+            BorderSpacing.Top = 2
+            Caption = 'Show command &line'
+            TabOrder = 13
+          end
+          object cbShowKeysPanel: TCheckBox
+            AnchorSideTop.Control = cbShowCmdLine
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 272
+            Width = 146
+            BorderSpacing.Top = 2
+            Caption = 'Show &function key buttons'
+            TabOrder = 14
+          end
+          object cbFlatDiskPanel: TCheckBox
+            AnchorSideTop.Control = cbTwoDiskPanels
+            AnchorSideTop.Side = asrBottom
+            Left = 28
+            Height = 17
+            Top = 101
+            Width = 76
+            BorderSpacing.Top = 2
+            Caption = 'Flat buttons'
+            Enabled = False
+            TabOrder = 5
+          end
+          object cbTwoDiskPanels: TCheckBox
+            AnchorSideTop.Control = cbShowDiskPanel
+            AnchorSideTop.Side = asrBottom
+            Left = 28
+            Height = 17
+            Top = 82
+            Width = 313
+            BorderSpacing.Top = 2
+            Caption = 'Show two drive button bars (fixed width, above file windows)'
+            Enabled = False
+            TabOrder = 4
+          end
+          object cbShowTabs: TCheckBox
+            AnchorSideTop.Control = cbFreespaceInd
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 177
+            Width = 99
+            BorderSpacing.Top = 2
+            Caption = 'Sho&w folder tabs'
+            TabOrder = 9
+          end
+          object cbFlatInterface: TCheckBox
+            AnchorSideTop.Control = cbShowKeysPanel
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 291
+            Width = 82
+            BorderSpacing.Top = 2
+            Caption = 'Flat interface'
+            TabOrder = 15
+          end
+          object cbFlatToolBar: TCheckBox
+            AnchorSideTop.Control = cbShowMainToolBar
+            AnchorSideTop.Side = asrBottom
+            Left = 28
+            Height = 17
+            Top = 44
+            Width = 76
+            BorderSpacing.Top = 2
+            Caption = 'Flat buttons'
+            TabOrder = 2
+          end
+          object cbLogWindow: TCheckBox
+            AnchorSideTop.Control = cbFlatInterface
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 310
+            Width = 100
+            BorderSpacing.Top = 2
+            Caption = 'Show log window'
+            TabOrder = 16
+          end
+          object cbTermWindow: TCheckBox
+            AnchorSideTop.Control = cbLogWindow
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 329
+            Width = 124
+            BorderSpacing.Top = 2
+            Caption = 'Show terminal window'
+            OnChange = cbTermWindowChange
+            TabOrder = 17
+          end
+          object cbFreespaceInd: TCheckBox
+            AnchorSideTop.Control = cbShowDriveFreeSpace
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 158
+            Width = 209
+            BorderSpacing.Top = 2
+            Caption = 'Show free space indicator on drive label'
+            TabOrder = 8
+          end
+          object cbProgInMenuBar: TCheckBox
+            AnchorSideTop.Control = cbTermWindow
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 348
+            Width = 190
+            BorderSpacing.Top = 2
+            Caption = 'Show common progress in menu bar'
+            TabOrder = 18
+          end
+          object cbPanelOfOperations: TCheckBox
+            AnchorSideTop.Control = cbProgInMenuBar
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 367
+            Width = 205
+            BorderSpacing.Top = 2
+            Caption = 'Show panel of operation in background'
+            TabOrder = 19
+          end
+          object cbShowDriveFreeSpace: TCheckBox
+            AnchorSideTop.Control = cbShowDriveMenuButton
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 139
+            Width = 123
+            BorderSpacing.Top = 2
+            Caption = 'Show free space label'
+            TabOrder = 7
+          end
+        end
+      end
+      object pgFileOp: TPage
+        ClientWidth = 701
+        ClientHeight = 463
+        object gbCopyBufferSize: TGroupBox
+          Left = 10
+          Height = 47
+          Top = 6
+          Width = 673
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          Caption = '&Buffer size for files:'
+          ChildSizing.LeftRightSpacing = 14
+          ChildSizing.TopBottomSpacing = 6
+          ClientHeight = 29
+          ClientWidth = 669
+          TabOrder = 0
+          object lblCopyBufferSize: TLabel
+            AnchorSideTop.Control = edtCopyBufferSize
+            AnchorSideTop.Side = asrCenter
+            Left = 14
+            Height = 14
+            Top = 4
+            Width = 79
+            Caption = 'Buffer size (Kb):'
+            ParentColor = False
+          end
+          object edtCopyBufferSize: TEdit
+            AnchorSideRight.Control = gbCopyBufferSize
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrCenter
+            Left = 563
+            Height = 21
+            Top = 1
+            Width = 80
+            Anchors = [akRight]
+            BorderSpacing.Right = 26
+            TabOrder = 0
+          end
+        end
+        object gbGeneralOptions: TGroupBox
+          AnchorSideLeft.Control = gbFileSearch
+          AnchorSideTop.Control = gbFileSearch
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = gbFileSearch
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 228
+          Top = 158
+          Width = 673
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Top = 6
+          Caption = 'General options'
+          ChildSizing.TopBottomSpacing = 6
+          ClientHeight = 210
+          ClientWidth = 669
+          TabOrder = 1
+          object lblWipePassNumber: TLabel
+            AnchorSideLeft.Control = gbGeneralOptions
+            AnchorSideTop.Control = gbGeneralOptions
+            Left = 14
+            Height = 14
+            Top = 6
+            Width = 105
+            BorderSpacing.Left = 14
+            BorderSpacing.Top = 6
+            Caption = 'Number of wipe pass:'
+            ParentColor = False
+          end
+          object cbDropReadOnlyFlag: TCheckBox
+            AnchorSideLeft.Control = gbGeneralOptions
+            AnchorSideTop.Control = lblWipePassNumber
+            AnchorSideTop.Side = asrBottom
+            Left = 14
+            Height = 17
+            Top = 26
+            Width = 107
+            BorderSpacing.Left = 14
+            BorderSpacing.Top = 6
+            Caption = 'Drop readonly flag'
+            TabOrder = 1
+          end
+          object seWipePassNumber: TSpinEdit
+            AnchorSideTop.Control = lblWipePassNumber
+            AnchorSideTop.Side = asrCenter
+            AnchorSideRight.Control = gbGeneralOptions
+            AnchorSideRight.Side = asrBottom
+            Left = 593
+            Height = 21
+            Top = 3
+            Width = 50
+            Anchors = [akTop, akRight]
+            BorderSpacing.Right = 26
+            TabOrder = 0
+          end
+          object cbProcessComments: TCheckBox
+            AnchorSideLeft.Control = gbGeneralOptions
+            AnchorSideTop.Control = cbDropReadOnlyFlag
+            AnchorSideTop.Side = asrBottom
+            Left = 14
+            Height = 17
+            Top = 49
+            Width = 188
+            BorderSpacing.Left = 14
+            BorderSpacing.Top = 6
+            Caption = 'Process comments with files/folders'
+            TabOrder = 2
+          end
+          object cbRenameSelOnlyName: TCheckBox
+            AnchorSideTop.Control = cbProcessComments
+            AnchorSideTop.Side = asrBottom
+            Left = 13
+            Height = 17
+            Top = 72
+            Width = 307
+            BorderSpacing.Left = 14
+            BorderSpacing.Top = 6
+            Caption = 'Select only the file name when renaming (not the extension)'
+            TabOrder = 3
+          end
+          object cbShowCopyTabSelectPanel: TCheckBox
+            AnchorSideTop.Control = cbRenameSelOnlyName
+            AnchorSideTop.Side = asrBottom
+            Left = 13
+            Height = 17
+            Top = 95
+            Width = 221
+            BorderSpacing.Left = 14
+            BorderSpacing.Top = 6
+            Caption = 'Show tab select panel in copy/move dialog'
+            TabOrder = 4
+          end
+          object cbDeleteToTrash: TCheckBox
+            AnchorSideLeft.Control = gbGeneralOptions
+            AnchorSideTop.Control = cbShowCopyTabSelectPanel
+            AnchorSideTop.Side = asrBottom
+            Left = 14
+            Height = 17
+            Top = 118
+            Width = 270
+            BorderSpacing.Left = 14
+            BorderSpacing.Top = 6
+            Caption = 'Delete to recycle bin (Shift key reverses this setting)'
+            TabOrder = 5
+          end
+          object cbSkipFileOpError: TCheckBox
+            AnchorSideLeft.Control = cbDeleteToTrash
+            AnchorSideTop.Control = cbDeleteToTrash
+            AnchorSideTop.Side = asrBottom
+            Left = 14
+            Height = 17
+            Top = 141
+            Width = 284
+            BorderSpacing.Top = 6
+            Caption = 'Skip file operations errors and write them to log window'
+            TabOrder = 6
+          end
+          object cbShowDialogOnDragDrop: TCheckBox
+            AnchorSideLeft.Control = cbSkipFileOpError
+            AnchorSideTop.Control = cbSkipFileOpError
+            AnchorSideTop.Side = asrBottom
+            Left = 14
+            Height = 17
+            Top = 164
+            Width = 260
+            BorderSpacing.Top = 6
+            Caption = 'Show confirmation dialog on drag&&drop operations'
+            TabOrder = 7
+          end
+          object cbSaveThubnails: TCheckBox
+            AnchorSideLeft.Control = cbShowDialogOnDragDrop
+            AnchorSideTop.Control = cbShowDialogOnDragDrop
+            AnchorSideTop.Side = asrBottom
+            Left = 14
+            Height = 17
+            Top = 187
+            Width = 130
+            BorderSpacing.Top = 6
+            Caption = 'Save thubnails in cache'
+            TabOrder = 8
+          end
+        end
+        object gbFileSearch: TGroupBox
+          AnchorSideLeft.Control = gbCopyBufferSize
+          AnchorSideTop.Control = gbCopyBufferSize
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = gbCopyBufferSize
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 93
+          Top = 59
+          Width = 673
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Top = 6
+          Caption = 'File search'
+          ChildSizing.LeftRightSpacing = 14
+          ChildSizing.TopBottomSpacing = 6
+          ClientHeight = 75
+          ClientWidth = 669
+          TabOrder = 2
+          object rbUseMmapInSearch: TRadioButton
+            Left = 14
+            Height = 17
+            Top = 6
+            Width = 228
+            Caption = 'Use memory mapping for search text in files'
+            TabOrder = 0
+          end
+          object rbUseStreamInSearch: TRadioButton
+            AnchorSideTop.Control = rbUseMmapInSearch
+            AnchorSideTop.Side = asrBottom
+            Left = 14
+            Height = 17
+            Top = 29
+            Width = 180
+            BorderSpacing.Top = 6
+            Caption = 'Use stream for search text in files'
+            Checked = True
+            TabOrder = 1
+            TabStop = True
+          end
+          object cbPartialNameSearch: TCheckBox
+            AnchorSideTop.Control = rbUseStreamInSearch
+            AnchorSideTop.Side = asrBottom
+            Left = 14
+            Height = 17
+            Top = 52
+            Width = 150
+            BorderSpacing.Top = 6
+            Caption = 'Search for part of file name'
+            TabOrder = 2
+          end
+        end
+      end
+      object pgTabs: TPage
+        ClientWidth = 705
+        ClientHeight = 458
+        object gbTabs: TGroupBox
+          AnchorSideLeft.Control = pgTabs
+          AnchorSideRight.Control = pgTabs
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 263
+          Top = 6
+          Width = 681
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 10
+          Caption = 'Folder tabs headers'
+          ChildSizing.TopBottomSpacing = 6
+          ClientHeight = 245
+          ClientWidth = 677
+          TabOrder = 0
+          object lblChar: TLabel
+            AnchorSideLeft.Control = edtTabsLimitLength
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = edtTabsLimitLength
+            AnchorSideTop.Side = asrCenter
+            Left = 488
+            Height = 14
+            Top = 53
+            Width = 52
+            BorderSpacing.Left = 6
+            Caption = 'characters'
+            ParentColor = False
+          end
+          object lblTabsPosition: TLabel
+            AnchorSideLeft.Control = cbTabsActivateOnClick
+            AnchorSideTop.Control = cbTabsActivateOnClick
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 14
+            Top = 221
+            Width = 68
+            BorderSpacing.Top = 14
+            Caption = 'Tabs position:'
+            ParentColor = False
+          end
+          object cbTabsAlwaysVisible: TCheckBox
+            AnchorSideLeft.Control = gbTabs
+            AnchorSideTop.Control = gbTabs
+            Left = 12
+            Height = 17
+            Top = 6
+            Width = 253
+            BorderSpacing.Left = 12
+            BorderSpacing.Top = 6
+            Caption = '&Show tab header also when there is only one tab'
+            TabOrder = 0
+          end
+          object cbTabsMultiLines: TCheckBox
+            AnchorSideLeft.Control = cbTabsAlwaysVisible
+            AnchorSideTop.Control = cbTabsAlwaysVisible
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 29
+            Width = 119
+            BorderSpacing.Top = 6
+            Caption = '&Tabs on multiple lines'
+            TabOrder = 1
+          end
+          object cbTabsLimitOption: TCheckBox
+            AnchorSideLeft.Control = cbTabsMultiLines
+            AnchorSideTop.Control = cbTabsMultiLines
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 52
+            Width = 129
+            BorderSpacing.Top = 6
+            Caption = '&Limit tab title length to:'
+            TabOrder = 2
+          end
+          object edtTabsLimitLength: TEdit
+            AnchorSideTop.Control = cbTabsLimitOption
+            AnchorSideTop.Side = asrCenter
+            AnchorSideRight.Side = asrBottom
+            Left = 441
+            Height = 21
+            Top = 50
+            Width = 41
+            Anchors = [akTop, akRight]
+            TabOrder = 3
+          end
+          object cbTabsOpenForeground: TCheckBox
+            AnchorSideLeft.Control = cbTabsConfirmCloseAll
+            AnchorSideTop.Control = cbTabsConfirmCloseAll
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 98
+            Width = 198
+            BorderSpacing.Top = 6
+            Caption = 'Ctrl+&Up opens new tab in foreground'
+            TabOrder = 4
+          end
+          object cbTabsConfirmCloseAll: TCheckBox
+            AnchorSideLeft.Control = cbTabsLimitOption
+            AnchorSideTop.Control = cbTabsLimitOption
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 75
+            Width = 119
+            BorderSpacing.Top = 6
+            Caption = '&Confirm close all tabs'
+            TabOrder = 5
+          end
+          object cbTabsLockedAsterisk: TCheckBox
+            AnchorSideLeft.Control = cbTabsShowCloseButton
+            AnchorSideTop.Control = cbTabsShowCloseButton
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 167
+            Width = 188
+            BorderSpacing.Top = 6
+            Caption = 'Show locked tabs &with an asterisk *'
+            TabOrder = 6
+          end
+          object cbTabsActivateOnClick: TCheckBox
+            AnchorSideLeft.Control = cbTabsLockedAsterisk
+            AnchorSideTop.Control = cbTabsLockedAsterisk
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 190
+            Width = 274
+            BorderSpacing.Top = 6
+            Caption = 'Activate target &panel when clicking on one of its Tabs'
+            TabOrder = 7
+          end
+          object cbTabsShowCloseButton: TCheckBox
+            AnchorSideLeft.Control = cbTabsOpenNearCurrent
+            AnchorSideTop.Control = cbTabsOpenNearCurrent
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 144
+            Width = 125
+            BorderSpacing.Top = 6
+            Caption = 'Show tab close button'
+            TabOrder = 8
+          end
+          object cmbTabsPosition: TComboBox
+            AnchorSideLeft.Control = lblTabsPosition
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = lblTabsPosition
+            AnchorSideTop.Side = asrCenter
+            Left = 86
+            Height = 21
+            Top = 218
+            Width = 100
+            BorderSpacing.Left = 6
+            ItemHeight = 13
+            Items.Strings = (
+              'Top'
+              'Bottom'
+            )
+            Style = csDropDownList
+            TabOrder = 9
+          end
+          object cbTabsOpenNearCurrent: TCheckBox
+            AnchorSideLeft.Control = cbTabsOpenForeground
+            AnchorSideTop.Control = cbTabsOpenForeground
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 121
+            Width = 173
+            BorderSpacing.Top = 6
+            Caption = 'Open &new tabs near current tab'
+            TabOrder = 10
+          end
+        end
+      end
+      object pgLogFile: TPage
+        ClientWidth = 705
+        ClientHeight = 458
+        object gbLogFile: TGroupBox
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 66
+          Top = 8
+          Width = 677
+          Anchors = [akTop, akLeft, akRight]
+          Caption = 'File operation log file'
+          ClientHeight = 48
+          ClientWidth = 673
+          TabOrder = 0
+          object cbLogFile: TCheckBox
+            AnchorSideTop.Control = fneLogFileName
+            AnchorSideTop.Side = asrCenter
+            Left = 10
+            Height = 17
+            Top = 4
+            Width = 98
+            Caption = '&Create a log file:'
+            TabOrder = 0
+          end
+          object fneLogFileName: TFileNameEdit
+            AnchorSideLeft.Control = cbLogFile
+            AnchorSideLeft.Side = asrBottom
+            Left = 114
+            Height = 21
+            Top = 2
+            Width = 485
+            DialogOptions = []
+            FilterIndex = 0
+            HideDirectories = False
+            ButtonWidth = 23
+            NumGlyphs = 1
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 6
+            MaxLength = 0
+            TabOrder = 1
+          end
+        end
+        object gbLogFileOp: TGroupBox
+          AnchorSideTop.Control = gbLogFile
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 103
+          Top = 80
+          Width = 677
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Top = 6
+          Caption = 'Log operations:'
+          ChildSizing.LeftRightSpacing = 10
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ClientHeight = 85
+          ClientWidth = 673
+          TabOrder = 1
+          object cbLogCpMvLn: TCheckBox
+            Left = 10
+            Height = 17
+            Top = 0
+            Width = 166
+            Caption = 'Copy/Move/Create link/symlink'
+            TabOrder = 0
+          end
+          object cbLogDelete: TCheckBox
+            Left = 10
+            Height = 17
+            Top = 17
+            Width = 166
+            Caption = 'Delete'
+            TabOrder = 1
+          end
+          object cbLogDirOp: TCheckBox
+            Left = 10
+            Height = 17
+            Top = 34
+            Width = 166
+            Caption = 'Create/Delete directories'
+            TabOrder = 2
+          end
+          object cbLogArcOp: TCheckBox
+            Left = 10
+            Height = 17
+            Top = 51
+            Width = 166
+            Caption = 'Pack/Unpack'
+            TabOrder = 3
+          end
+          object cbLogVFS: TCheckBox
+            Left = 10
+            Height = 17
+            Top = 68
+            Width = 166
+            Caption = 'File system plugins'
+            TabOrder = 4
+          end
+        end
+        object gbLogFileStatus: TGroupBox
+          AnchorSideTop.Control = gbLogFileOp
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 69
+          Top = 189
+          Width = 677
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Top = 6
+          Caption = 'Operation status:'
+          ChildSizing.LeftRightSpacing = 10
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ClientHeight = 51
+          ClientWidth = 673
+          TabOrder = 2
+          object cbLogSuccess: TCheckBox
+            Left = 10
+            Height = 17
+            Top = 0
+            Width = 142
+            Caption = 'Log &successful operations'
+            TabOrder = 0
+          end
+          object cbLogErrors: TCheckBox
+            Left = 10
+            Height = 17
+            Top = 17
+            Width = 142
+            Caption = 'Log &errors'
+            TabOrder = 1
+          end
+          object cbLogInfo: TCheckBox
+            Left = 10
+            Height = 17
+            Top = 34
+            Width = 142
+            Caption = 'Log information messages'
+            TabOrder = 2
+          end
+        end
+      end
+      object pgConfigStorage: TPage
+        ClientWidth = 709
+        ClientHeight = 489
+        object gbLocConfigFiles: TGroupBox
+          Left = 10
+          Height = 114
+          Top = 6
+          Width = 681
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          Caption = 'Location of configuration files'
+          ChildSizing.LeftRightSpacing = 10
+          ChildSizing.TopBottomSpacing = 5
+          ChildSizing.VerticalSpacing = 5
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ClientHeight = 96
+          ClientWidth = 677
+          TabOrder = 0
+          object rbProgramDir: TRadioButton
+            Left = 10
+            Height = 25
+            Top = 5
+            Width = 268
+            Caption = 'Program directory (portable version)'
+            Checked = True
+            TabOrder = 0
+            TabStop = True
+          end
+          object rbUserHomeDir: TRadioButton
+            Left = 10
+            Height = 25
+            Top = 35
+            Width = 268
+            Caption = 'User home directory'
+            TabOrder = 1
+          end
+          object lblCmdLineConfigDir: TLabel
+            Left = 10
+            Height = 22
+            Top = 65
+            Width = 268
+            Caption = 'Set on command line'
+            ParentColor = False
+            Visible = False
+          end
+        end
+        object gbSaveOnExit: TGroupBox
+          AnchorSideTop.Control = btnConfigEdit
+          AnchorSideTop.Side = asrBottom
+          Left = 10
+          Height = 121
+          Top = 115
+          Width = 677
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Top = 6
+          Caption = 'Save on exit'
+          ChildSizing.TopBottomSpacing = 5
+          ClientHeight = 103
+          ClientWidth = 673
+          TabOrder = 1
+          object cbDirHistory: TCheckBox
+            AnchorSideLeft.Control = chkSaveConfiguration
+            AnchorSideTop.Control = chkSearchReplaceHistory
+            AnchorSideTop.Side = asrBottom
+            Left = 10
+            Height = 17
+            Top = 43
+            Width = 98
+            BorderSpacing.Top = 2
+            Caption = 'Directory history'
+            TabOrder = 0
+          end
+          object cbCmdLineHistory: TCheckBox
+            AnchorSideLeft.Control = chkSaveConfiguration
+            AnchorSideTop.Control = cbDirHistory
+            AnchorSideTop.Side = asrBottom
+            Left = 10
+            Height = 17
+            Top = 62
+            Width = 120
+            BorderSpacing.Top = 2
+            Caption = 'Command line history'
+            TabOrder = 1
+          end
+          object cbFileMaskHistory: TCheckBox
+            AnchorSideLeft.Control = chkSaveConfiguration
+            AnchorSideTop.Control = cbCmdLineHistory
+            AnchorSideTop.Side = asrBottom
+            Left = 10
+            Height = 17
+            Top = 81
+            Width = 97
+            BorderSpacing.Top = 2
+            Caption = 'File mask history'
+            TabOrder = 2
+          end
+          object chkSaveConfiguration: TCheckBox
+            AnchorSideLeft.Control = gbSaveOnExit
+            AnchorSideTop.Control = gbSaveOnExit
+            Left = 10
+            Height = 17
+            Top = 5
+            Width = 108
+            BorderSpacing.Left = 10
+            Caption = 'Save configuration'
+            OnChange = chkSaveConfigurationChange
+            TabOrder = 3
+          end
+          object chkSearchReplaceHistory: TCheckBox
+            AnchorSideLeft.Control = chkSaveConfiguration
+            AnchorSideTop.Control = chkSaveConfiguration
+            AnchorSideTop.Side = asrBottom
+            Left = 10
+            Height = 17
+            Top = 24
+            Width = 129
+            BorderSpacing.Top = 2
+            Caption = 'Search/Replace history'
+            TabOrder = 4
+          end
+        end
+        object btnConfigEdit: TBitBtn
+          AnchorSideLeft.Control = pgConfigStorage
+          AnchorSideTop.Control = gbLocConfigFiles
+          AnchorSideTop.Side = asrBottom
+          Left = 10
+          Height = 30
+          Top = 79
+          Width = 116
+          BorderSpacing.Left = 10
+          BorderSpacing.Top = 6
+          Caption = 'Edit'
+          NumGlyphs = 0
+          OnClick = btnConfigEditClick
+          TabOrder = 2
+        end
+        object btnConfigApply: TBitBtn
+          AnchorSideLeft.Control = btnConfigEdit
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = gbLocConfigFiles
+          AnchorSideTop.Side = asrBottom
+          Left = 136
+          Height = 30
+          Top = 79
+          Width = 116
+          BorderSpacing.Left = 10
+          BorderSpacing.Top = 6
+          Caption = 'Apply'
+          Enabled = False
+          NumGlyphs = 0
+          OnClick = btnConfigApplyClick
+          TabOrder = 3
+        end
+      end
+      object pgQuickSearch: TPage
+        ClientWidth = 705
+        ClientHeight = 458
+        object gbExactNameMatch: TGroupBox
+          AnchorSideLeft.Control = grpQuickSearchFilterKeys
+          AnchorSideTop.Control = grpQuickSearchFilterKeys
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = grpQuickSearchFilterKeys
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Side = asrBottom
+          Left = 6
+          Height = 64
+          Top = 132
+          Width = 689
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          Caption = 'Exact name match:'
+          ChildSizing.TopBottomSpacing = 4
+          ChildSizing.VerticalSpacing = 4
+          ClientHeight = 46
+          ClientWidth = 685
+          TabOrder = 1
+          object cbExactBeginning: TCheckBox
+            AnchorSideLeft.Control = gbExactNameMatch
+            AnchorSideTop.Control = gbExactNameMatch
+            Left = 10
+            Height = 17
+            Top = 6
+            Width = 278
+            BorderSpacing.Left = 10
+            BorderSpacing.Top = 6
+            Caption = '&Beginning (name must start with first typed character)'
+            TabOrder = 0
+          end
+          object cbExactEnding: TCheckBox
+            AnchorSideLeft.Control = cbExactBeginning
+            AnchorSideTop.Control = cbExactBeginning
+            AnchorSideTop.Side = asrBottom
+            AnchorSideBottom.Control = gbExactNameMatch
+            AnchorSideBottom.Side = asrBottom
+            Left = 10
+            Height = 13
+            Top = 27
+            Width = 286
+            Anchors = [akTop, akLeft, akBottom]
+            BorderSpacing.Bottom = 6
+            Caption = 'En&ding (last character before a typed dot . must match)'
+            TabOrder = 1
+          end
+        end
+        object grpQuickSearchFilterKeys: TGroupBox
+          AnchorSideLeft.Control = pgQuickSearch
+          AnchorSideRight.Control = pgQuickSearch
+          AnchorSideRight.Side = asrBottom
+          Left = 6
+          Height = 128
+          Top = 4
+          Width = 689
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Left = 6
+          BorderSpacing.Right = 6
+          Caption = 'Keys settings'
+          ChildSizing.LeftRightSpacing = 10
+          ChildSizing.TopBottomSpacing = 6
+          ChildSizing.HorizontalSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousSpaceResize
+          ChildSizing.ShrinkHorizontal = crsHomogenousSpaceResize
+          ChildSizing.ShrinkVertical = crsHomogenousSpaceResize
+          ChildSizing.Layout = cclTopToBottomThenLeftToRight
+          ClientHeight = 110
+          ClientWidth = 685
+          TabOrder = 0
+          object pnlQuickSearch: TPanel
+            Left = 10
+            Height = 98
+            Top = 6
+            Width = 351
+            BevelOuter = bvNone
+            ChildSizing.TopBottomSpacing = 4
+            ChildSizing.VerticalSpacing = 2
+            ChildSizing.ShrinkHorizontal = crsHomogenousSpaceResize
+            ChildSizing.Layout = cclLeftToRightThenTopToBottom
+            ClientHeight = 98
+            ClientWidth = 351
+            TabOrder = 0
+            object lblQuickSearch: TLabel
+              Left = 0
+              Height = 14
+              Top = 4
+              Width = 98
+              Caption = 'Quick &search:'
+              FocusControl = rbNoneQS
+              ParentColor = False
+            end
+            object rbCtrlAltLetterQS: TRadioButton
+              Left = 0
+              Height = 17
+              Top = 20
+              Width = 98
+              Caption = 'Ctrl+Alt+Letters'
+              Checked = True
+              OnChange = rbQuickSearchFilterKeyChange
+              TabOrder = 0
+              TabStop = True
+            end
+            object rbAltLetterQS: TRadioButton
+              Left = 0
+              Height = 17
+              Top = 39
+              Width = 98
+              Caption = 'Alt+Letters'
+              OnChange = rbQuickSearchFilterKeyChange
+              TabOrder = 1
+            end
+            object rbLetterQS: TRadioButton
+              Left = 0
+              Height = 17
+              Top = 58
+              Width = 98
+              Caption = 'Letter only'
+              OnChange = rbQuickSearchFilterKeyChange
+              TabOrder = 2
+            end
+            object rbNoneQS: TRadioButton
+              Left = 0
+              Height = 17
+              Top = 77
+              Width = 98
+              Caption = 'Disabled'
+              OnChange = rbQuickSearchFilterKeyChange
+              TabOrder = 3
+            end
+          end
+          object pnlQuickFilter: TPanel
+            Left = 367
+            Height = 98
+            Top = 6
+            Width = 308
+            BevelOuter = bvNone
+            ChildSizing.TopBottomSpacing = 4
+            ChildSizing.VerticalSpacing = 2
+            ChildSizing.ShrinkHorizontal = crsHomogenousSpaceResize
+            ChildSizing.Layout = cclLeftToRightThenTopToBottom
+            ClientHeight = 98
+            ClientWidth = 308
+            TabOrder = 1
+            object lblQuickFilter: TLabel
+              Left = 0
+              Height = 14
+              Top = 4
+              Width = 56
+              Caption = 'Quick &filter:'
+              FocusControl = rbNoneQF
+              ParentColor = False
+            end
+            object rbCtrlAltLetterQF: TRadioButton
+              Left = 0
+              Height = 17
+              Top = 20
+              Width = 56
+              Checked = True
+              OnChange = rbQuickSearchFilterKeyChange
+              TabOrder = 0
+              TabStop = True
+            end
+            object rbAltLetterQF: TRadioButton
+              Left = 0
+              Height = 17
+              Top = 39
+              Width = 56
+              OnChange = rbQuickSearchFilterKeyChange
+              TabOrder = 1
+            end
+            object rbLetterQF: TRadioButton
+              Left = 0
+              Height = 17
+              Top = 58
+              Width = 56
+              OnChange = rbQuickSearchFilterKeyChange
+              TabOrder = 2
+            end
+            object rbNoneQF: TRadioButton
+              Left = 0
+              Height = 17
+              Top = 77
+              Width = 56
+              OnChange = rbQuickSearchFilterKeyChange
+              TabOrder = 3
+            end
+          end
+        end
+      end
+      object pgColumns: TPage
+        ClientWidth = 705
+        ClientHeight = 458
+        object lblConfigColumns: TLabel
+          AnchorSideTop.Control = cbbFileSystem
+          AnchorSideTop.Side = asrCenter
+          Left = 7
+          Height = 14
+          Top = 3
+          Width = 164
+          Caption = 'Configure columns for file system:'
+          ParentColor = False
+        end
+        object cbbFileSystem: TComboBox
+          AnchorSideLeft.Control = lblConfigColumns
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideRight.Control = pgColumns
+          AnchorSideRight.Side = asrBottom
+          Left = 175
+          Height = 21
+          Top = 0
+          Width = 520
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 4
+          BorderSpacing.Right = 6
+          ItemHeight = 13
+          ItemIndex = 0
+          Items.Strings = (
+            'General'
+          )
+          Style = csDropDownList
+          TabOrder = 0
+          Text = 'General'
+        end
+        object lstColumnsSets: TListBox
+          AnchorSideLeft.Control = pgColumns
+          AnchorSideTop.Control = cbbFileSystem
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = pgColumns
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = pnlButtons
+          Left = 6
+          Height = 396
+          Top = 27
+          Width = 689
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          BorderSpacing.Left = 6
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 6
+          BorderSpacing.Bottom = 6
+          ItemHeight = 0
+          OnDblClick = btnEditColumnsSetClick
+          TabOrder = 1
+        end
+        object pnlButtons: TPanel
+          AnchorSideRight.Control = pgColumns
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = pgColumns
+          AnchorSideBottom.Side = asrBottom
+          Left = 7
+          Height = 46
+          Top = 429
+          Width = 688
+          Anchors = [akLeft, akRight, akBottom]
+          BorderSpacing.Right = 6
+          BorderSpacing.Bottom = 6
+          ClientHeight = 46
+          ClientWidth = 688
+          TabOrder = 2
+          object btnNewColumnsSet: TButton
+            AnchorSideLeft.Control = pnlButtons
+            Left = 7
+            Height = 32
+            Top = 7
+            Width = 118
+            BorderSpacing.Left = 6
+            Caption = '&New'
+            OnClick = btnNewColumnsSetClick
+            TabOrder = 0
+          end
+          object btnEditColumnsSet: TButton
+            AnchorSideLeft.Control = btnNewColumnsSet
+            AnchorSideLeft.Side = asrBottom
+            Left = 131
+            Height = 32
+            Top = 7
+            Width = 116
+            BorderSpacing.Left = 6
+            Caption = 'Edit'
+            OnClick = btnEditColumnsSetClick
+            TabOrder = 1
+          end
+          object btnDelColumnsSet: TButton
+            AnchorSideRight.Control = btnCopyColumnsSet
+            Left = 452
+            Height = 32
+            Top = 7
+            Width = 112
+            Anchors = [akTop, akRight]
+            BorderSpacing.Right = 6
+            Caption = 'Delete'
+            OnClick = btnDelColumnsSetClick
+            TabOrder = 2
+          end
+          object btnCopyColumnsSet: TButton
+            AnchorSideRight.Control = pnlButtons
+            AnchorSideRight.Side = asrBottom
+            Left = 570
+            Height = 32
+            Top = 7
+            Width = 111
+            Anchors = [akTop, akRight]
+            BorderSpacing.Right = 6
+            Caption = 'Copy'
+            OnClick = btnCopyColumnsSetClick
+            TabOrder = 3
+          end
+        end
+      end
+      object pgMisc: TPage
+        ClientWidth = 701
+        ClientHeight = 463
+        object gbShowGrid: TGroupBox
+          AnchorSideLeft.Control = pgMisc
+          AnchorSideTop.Control = pgMisc
+          AnchorSideRight.Control = pgMisc
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 70
+          Top = 8
+          Width = 685
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 8
+          BorderSpacing.Right = 8
+          Caption = 'Show grid in file panel'
+          ChildSizing.LeftRightSpacing = 12
+          ChildSizing.TopBottomSpacing = 6
+          ClientHeight = 52
+          ClientWidth = 681
+          TabOrder = 0
+          object cbGridVertLine: TCheckBox
+            AnchorSideLeft.Control = gbShowGrid
+            AnchorSideTop.Control = gbShowGrid
+            Left = 12
+            Height = 17
+            Top = 6
+            Width = 77
+            Caption = 'Vertical lines'
+            TabOrder = 0
+          end
+          object cbGridHorzLine: TCheckBox
+            AnchorSideLeft.Control = gbShowGrid
+            AnchorSideTop.Control = cbGridVertLine
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 29
+            Width = 90
+            BorderSpacing.Top = 6
+            Caption = 'Horizontal lines'
+            TabOrder = 1
+          end
+        end
+        object gbExtended: TGroupBox
+          AnchorSideLeft.Control = pgMisc
+          AnchorSideTop.Control = gbShowGrid
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = pgMisc
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 81
+          Top = 84
+          Width = 685
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 8
+          ChildSizing.LeftRightSpacing = 12
+          ChildSizing.TopBottomSpacing = 6
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ClientHeight = 63
+          ClientWidth = 681
+          TabOrder = 1
+          object cbShowWarningMessages: TCheckBox
+            Left = 12
+            Height = 17
+            Top = 6
+            Width = 424
+            Caption = 'Show warning messages ("OK" button only)'
+            TabOrder = 0
+          end
+          object cbSpaceMovesDown: TCheckBox
+            Left = 12
+            Height = 17
+            Top = 23
+            Width = 424
+            Caption = 'When selecting files with <SPACEBAR>, move down to next file (as with <INSERT>)'
+            TabOrder = 1
+          end
+          object cbDirBrackets: TCheckBox
+            Left = 12
+            Height = 17
+            Top = 40
+            Width = 424
+            Caption = 'Show square brackets around directories'
+            TabOrder = 2
+          end
+        end
+        object gbSorting: TGroupBox
+          AnchorSideLeft.Control = pgMisc
+          AnchorSideTop.Control = gbExtended
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = pgMisc
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 78
+          Top = 171
+          Width = 685
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 8
+          Caption = 'Sorting'
+          ChildSizing.LeftRightSpacing = 12
+          ChildSizing.TopBottomSpacing = 8
+          ClientHeight = 60
+          ClientWidth = 681
+          TabOrder = 2
+          object cbSortCaseSensitive: TCheckBox
+            AnchorSideLeft.Control = gbSorting
+            AnchorSideTop.Control = gbSorting
+            AnchorSideRight.Control = gbSorting
+            AnchorSideRight.Side = asrBottom
+            Left = 12
+            Height = 17
+            Top = 8
+            Width = 657
+            Anchors = [akTop, akLeft, akRight]
+            Caption = 'Case-sensitive sorting'
+            TabOrder = 0
+          end
+          object lblSortMethod: TLabel
+            AnchorSideLeft.Control = gbSorting
+            AnchorSideTop.Control = cbSortMethod
+            AnchorSideTop.Side = asrCenter
+            Left = 12
+            Height = 14
+            Top = 34
+            Width = 64
+            BorderSpacing.Top = 6
+            Caption = 'Sort &method:'
+            ParentColor = False
+          end
+          object cbSortMethod: TComboBox
+            AnchorSideLeft.Control = lblSortMethod
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = cbSortCaseSensitive
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbSorting
+            AnchorSideRight.Side = asrBottom
+            Left = 82
+            Height = 21
+            Top = 31
+            Width = 587
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 6
+            BorderSpacing.Top = 6
+            ItemHeight = 13
+            ItemIndex = 0
+            Items.Strings = (
+              'Alphabetical, considering accents'
+              'Natural sorting: alphabetical and numbers'
+            )
+            Style = csDropDownList
+            TabOrder = 1
+            Text = 'Alphabetical, considering accents'
+          end
+        end
+      end
+      object pgAutoRefresh: TPage
+        ClientWidth = 701
+        ClientHeight = 463
+        object gbAutoRefreshEnable: TGroupBox
+          AnchorSideLeft.Control = pgAutoRefresh
+          AnchorSideTop.Control = pgAutoRefresh
+          AnchorSideRight.Control = pgAutoRefresh
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 65
+          Top = 5
+          Width = 681
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Left = 10
+          BorderSpacing.Top = 5
+          BorderSpacing.Right = 10
+          Caption = 'Refresh file list'
+          ChildSizing.LeftRightSpacing = 10
+          ChildSizing.TopBottomSpacing = 5
+          ChildSizing.VerticalSpacing = 3
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ClientHeight = 47
+          ClientWidth = 677
+          TabOrder = 0
+          object cbWatchFileNameChange: TCheckBox
+            Left = 10
+            Height = 17
+            Top = 5
+            Width = 228
+            Caption = 'When files are &created, deleted or renamed'
+            OnChange = OnAutoRefreshOptionChanged
+            TabOrder = 0
+          end
+          object cbWatchAttributesChange: TCheckBox
+            Left = 10
+            Height = 17
+            Top = 25
+            Width = 228
+            Caption = 'When &size, date or attributes change'
+            OnChange = OnAutoRefreshOptionChanged
+            TabOrder = 1
+          end
+        end
+        object gbAutoRefreshDisable: TGroupBox
+          AnchorSideLeft.Control = gbAutoRefreshEnable
+          AnchorSideTop.Control = gbAutoRefreshEnable
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = gbAutoRefreshEnable
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 93
+          Top = 74
+          Width = 681
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Top = 4
+          Caption = 'Disable auto-refresh'
+          ChildSizing.LeftRightSpacing = 10
+          ChildSizing.TopBottomSpacing = 5
+          ChildSizing.VerticalSpacing = 3
+          ClientHeight = 75
+          ClientWidth = 677
+          TabOrder = 1
+          object cbWatchOnlyForeground: TCheckBox
+            AnchorSideLeft.Control = gbAutoRefreshDisable
+            AnchorSideTop.Control = gbAutoRefreshDisable
+            Left = 10
+            Height = 17
+            Top = 5
+            Width = 199
+            Caption = 'When application is in the &background'
+            TabOrder = 0
+          end
+          object cbWatchExcludeDirs: TCheckBox
+            AnchorSideLeft.Control = cbWatchOnlyForeground
+            AnchorSideTop.Control = cbWatchOnlyForeground
+            AnchorSideTop.Side = asrBottom
+            Left = 10
+            Height = 17
+            Top = 25
+            Width = 248
+            Caption = 'For the following &paths and their subdirectories:'
+            OnChange = cbWatchExcludeDirsChange
+            TabOrder = 1
+          end
+          object edtWatchExcludeDirs: TEdit
+            AnchorSideLeft.Control = cbWatchExcludeDirs
+            AnchorSideTop.Control = cbWatchExcludeDirs
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = gbAutoRefreshDisable
+            AnchorSideRight.Side = asrBottom
+            Left = 30
+            Height = 21
+            Top = 45
+            Width = 637
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 20
+            BorderSpacing.Bottom = 15
+            TabOrder = 2
+          end
+        end
+      end
+      object pgIcons: TPage
+        ClientWidth = 701
+        ClientHeight = 463
+        object gbIconsSize: TGroupBox
+          AnchorSideLeft.Control = pgIcons
+          AnchorSideTop.Control = gbShowIconsMode
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = pgIcons
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 82
+          Top = 157
+          Width = 681
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Left = 10
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 10
+          Caption = ' Icon &size '
+          ChildSizing.TopBottomSpacing = 8
+          ClientHeight = 64
+          ClientWidth = 677
+          TabOrder = 0
+          object cbIconsSize: TComboBox
+            AnchorSideLeft.Control = gbIconsSize
+            AnchorSideTop.Control = pnlIconExample
+            AnchorSideTop.Side = asrCenter
+            AnchorSideRight.Side = asrBottom
+            Left = 10
+            Height = 21
+            Top = 22
+            Width = 131
+            BorderSpacing.Left = 10
+            BorderSpacing.Right = 10
+            ItemHeight = 13
+            ItemIndex = 0
+            Items.Strings = (
+              '16x16'
+              '22x22'
+              '32x32'
+            )
+            OnChange = cbIconsSizeChange
+            Style = csDropDownList
+            TabOrder = 0
+            Text = '16x16'
+          end
+          object pnlIconExample: TPanel
+            AnchorSideTop.Control = gbIconsSize
+            AnchorSideRight.Control = gbIconsSize
+            AnchorSideRight.Side = asrBottom
+            Left = 619
+            Height = 48
+            Top = 8
+            Width = 48
+            Anchors = [akTop, akRight]
+            BorderSpacing.Right = 10
+            BevelOuter = bvLowered
+            ClientHeight = 48
+            ClientWidth = 48
+            TabOrder = 1
+            object imgIconExample: TImage
+              Left = 1
+              Height = 46
+              Top = 1
+              Width = 46
+              Align = alClient
+              Center = True
+            end
+          end
+        end
+        object gbShowIconsMode: TGroupBox
+          AnchorSideLeft.Control = pgIcons
+          AnchorSideTop.Control = pgIcons
+          AnchorSideRight.Control = pgIcons
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 145
+          Top = 6
+          Width = 681
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Left = 10
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 10
+          Caption = ' Show icons to the left of the filename '
+          ChildSizing.TopBottomSpacing = 8
+          ClientHeight = 127
+          ClientWidth = 677
+          TabOrder = 1
+          object rbIconsShowAll: TRadioButton
+            AnchorSideLeft.Control = gbShowIconsMode
+            AnchorSideTop.Control = rbIconsShowAllAndExe
+            AnchorSideTop.Side = asrBottom
+            Left = 10
+            Height = 17
+            Top = 31
+            Width = 29
+            BorderSpacing.Left = 10
+            BorderSpacing.Top = 6
+            Caption = '&All'
+            Checked = True
+            TabOrder = 3
+            TabStop = True
+          end
+          object rbIconsShowStandard: TRadioButton
+            AnchorSideLeft.Control = gbShowIconsMode
+            AnchorSideTop.Control = rbIconsShowAll
+            AnchorSideTop.Side = asrBottom
+            Left = 10
+            Height = 17
+            Top = 54
+            Width = 113
+            BorderSpacing.Left = 10
+            BorderSpacing.Top = 6
+            Caption = '&Only standard icons'
+            TabOrder = 1
+          end
+          object rbIconsShowNone: TRadioButton
+            AnchorSideLeft.Control = gbShowIconsMode
+            AnchorSideTop.Control = rbIconsShowStandard
+            AnchorSideTop.Side = asrBottom
+            Left = 10
+            Height = 17
+            Top = 77
+            Width = 58
+            BorderSpacing.Left = 10
+            BorderSpacing.Top = 6
+            Caption = '&No icons'
+            OnChange = rbIconsShowNoneChange
+            TabOrder = 2
+          end
+          object rbIconsShowAllAndExe: TRadioButton
+            AnchorSideLeft.Control = gbShowIconsMode
+            AnchorSideTop.Control = gbShowIconsMode
+            Left = 10
+            Height = 17
+            Top = 8
+            Width = 169
+            BorderSpacing.Left = 10
+            Caption = 'All associated + &EXE/LNK (slow)'
+            TabOrder = 0
+          end
+          object cbIconsShowOverlay: TCheckBox
+            AnchorSideLeft.Control = gbShowIconsMode
+            AnchorSideTop.Control = rbIconsShowNone
+            AnchorSideTop.Side = asrBottom
+            Left = 10
+            Height = 17
+            Top = 102
+            Width = 177
+            BorderSpacing.Left = 10
+            BorderSpacing.Top = 8
+            Caption = 'Show overlay i&cons, e.g. for links'
+            TabOrder = 4
+          end
+        end
+      end
+      object pgIgnoreList: TPage
+        ClientWidth = 701
+        ClientHeight = 463
+        object lblSaveIn: TLabel
+          Tag = 304
+          AnchorSideLeft.Control = memIgnoreList
+          AnchorSideTop.Control = fneSaveIn
+          AnchorSideTop.Side = asrCenter
+          Left = 10
+          Height = 14
+          Top = 395
+          Width = 40
+          Caption = '&Save in:'
+          ParentColor = False
+        end
+        object chkIgnoreEnable: TCheckBox
+          Tag = 301
+          AnchorSideLeft.Control = pgIgnoreList
+          AnchorSideTop.Control = pgIgnoreList
+          AnchorSideRight.Control = pgIgnoreList
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 17
+          Top = 8
+          Width = 681
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 10
+          BorderSpacing.Top = 8
+          BorderSpacing.Right = 10
+          Caption = '&Ignore (don''t show) the following files and folders:'
+          OnChange = chkIgnoreEnableChange
+          TabOrder = 0
+        end
+        object memIgnoreList: TMemo
+          AnchorSideLeft.Control = chkIgnoreEnable
+          AnchorSideTop.Control = chkIgnoreEnable
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = chkIgnoreEnable
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = fneSaveIn
+          Left = 10
+          Height = 351
+          Top = 31
+          Width = 681
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          BorderSpacing.Top = 6
+          BorderSpacing.Bottom = 10
+          Lines.Strings = (
+            ''
+          )
+          ParentFont = False
+          ScrollBars = ssBoth
+          TabOrder = 1
+        end
+        object btnAddSel: TButton
+          Tag = 303
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = memIgnoreList
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = pgIgnoreList
+          AnchorSideBottom.Side = asrBottom
+          Left = 569
+          Height = 30
+          Top = 423
+          Width = 122
+          Anchors = [akRight, akBottom]
+          AutoSize = True
+          BorderSpacing.Bottom = 10
+          Caption = '&Add selected names'
+          Constraints.MinHeight = 30
+          OnClick = btnAddSelClick
+          TabOrder = 3
+        end
+        object btnAddSelWithPath: TButton
+          Tag = 302
+          AnchorSideLeft.Control = memIgnoreList
+          AnchorSideTop.Side = asrBottom
+          AnchorSideBottom.Control = pgIgnoreList
+          AnchorSideBottom.Side = asrBottom
+          Left = 10
+          Height = 30
+          Top = 423
+          Width = 187
+          Anchors = [akLeft, akBottom]
+          AutoSize = True
+          BorderSpacing.Bottom = 10
+          Caption = 'Add selected names with &full path'
+          Constraints.MinHeight = 30
+          OnClick = btnAddSelWithPathClick
+          TabOrder = 2
+        end
+        object fneSaveIn: TFileNameEdit
+          AnchorSideLeft.Control = lblSaveIn
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = btnAddSel
+          Left = 58
+          Height = 21
+          Top = 392
+          Width = 665
+          DialogOptions = []
+          FilterIndex = 0
+          HideDirectories = False
+          ButtonWidth = 23
+          NumGlyphs = 0
+          Anchors = [akLeft, akRight, akBottom]
+          BorderSpacing.Left = 8
+          BorderSpacing.Bottom = 10
+          MaxLength = 0
+          TabOrder = 4
+        end
+      end
+      object pgArchivers: TPage
+        ClientWidth = 701
+        ClientHeight = 463
+        object lbxMultiArc: TListBox
+          Left = 0
+          Height = 463
+          Top = 0
+          Width = 55
+          Align = alLeft
+          ItemHeight = 0
+          OnSelectionChange = lbxMultiArcSelectionChange
+          TabOrder = 0
+        end
+        object splMultiArc: TSplitter
+          Left = 55
+          Height = 463
+          Top = 0
+          Width = 5
+        end
+        object pnlArchiverCommands: TPanel
+          Left = 60
+          Height = 463
+          Top = 0
+          Width = 641
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 463
+          ClientWidth = 641
+          TabOrder = 2
+          object pcArchiverCommands: TPageControl
+            AnchorSideLeft.Control = pnlArchiverCommands
+            AnchorSideTop.Control = pnlArchiverCommands
+            AnchorSideRight.Control = pnlArchiverCommands
+            Left = 0
+            Height = 413
+            Top = 0
+            Width = 641
+            HelpType = htKeyword
+            HelpKeyword = '/multiarc.html'
+            ActivePage = tbArchiverGeneral
+            Align = alClient
+            Anchors = [akTop, akLeft, akRight]
+            TabIndex = 0
+            TabOrder = 0
+            object tbArchiverGeneral: TTabSheet
+              Caption = 'General'
+              ClientHeight = 387
+              ClientWidth = 633
+              object lblDescription: TLabel
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 14
+                Top = 10
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                BorderSpacing.Left = 10
+                BorderSpacing.Top = 10
+                BorderSpacing.Right = 10
+                Caption = 'Description:'
+                ParentColor = False
+              end
+              object edtDescription: TEdit
+                AnchorSideLeft.Control = lblDescription
+                AnchorSideTop.Control = lblDescription
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Control = lblDescription
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 21
+                Top = 24
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                TabOrder = 0
+              end
+              object lblArchiver: TLabel
+                AnchorSideTop.Control = edtDescription
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 14
+                Top = 47
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                BorderSpacing.Left = 10
+                BorderSpacing.Top = 2
+                BorderSpacing.Right = 10
+                Caption = 'Archiver:'
+                ParentColor = False
+              end
+              object lblArchiveExtension: TLabel
+                AnchorSideTop.Control = fneArchiver
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 14
+                Top = 84
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                BorderSpacing.Left = 10
+                BorderSpacing.Top = 2
+                BorderSpacing.Right = 10
+                Caption = 'Extension:'
+                ParentColor = False
+              end
+              object edtArchiveExtension: TEdit
+                AnchorSideLeft.Control = lblDescription
+                AnchorSideTop.Control = lblArchiveExtension
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Control = lblDescription
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 21
+                Top = 98
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                TabOrder = 1
+              end
+              object lblArchiveList: TLabel
+                AnchorSideTop.Control = edtArchiveExtension
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 14
+                Top = 121
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                BorderSpacing.Left = 10
+                BorderSpacing.Top = 2
+                BorderSpacing.Right = 10
+                Caption = 'List:'
+                ParentColor = False
+              end
+              object edtArchiveList: TEdit
+                AnchorSideLeft.Control = lblDescription
+                AnchorSideTop.Control = lblArchiveList
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Control = lblDescription
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 21
+                Top = 135
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                TabOrder = 2
+              end
+              object lblArchiveExtract: TLabel
+                AnchorSideTop.Control = memArchiveListFormat
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 14
+                Top = 306
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                BorderSpacing.Left = 10
+                BorderSpacing.Top = 2
+                BorderSpacing.Right = 10
+                Caption = 'Extract:'
+                ParentColor = False
+              end
+              object edtArchiveExtract: TEdit
+                AnchorSideLeft.Control = lblDescription
+                AnchorSideTop.Control = lblArchiveExtract
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Control = lblDescription
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 21
+                Top = 320
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                TabOrder = 3
+              end
+              object lblArchiveAdd: TLabel
+                AnchorSideTop.Control = edtArchiveExtract
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 14
+                Top = 343
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                BorderSpacing.Left = 10
+                BorderSpacing.Top = 2
+                BorderSpacing.Right = 10
+                Caption = 'Add:'
+                ParentColor = False
+              end
+              object edtArchiveAdd: TEdit
+                AnchorSideLeft.Control = lblDescription
+                AnchorSideTop.Control = lblArchiveAdd
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Control = lblDescription
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 21
+                Top = 357
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                TabOrder = 4
+              end
+              object lblArchiveListFormat: TLabel
+                AnchorSideTop.Control = edtArchiveListEnd
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 14
+                Top = 230
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                BorderSpacing.Left = 10
+                BorderSpacing.Top = 2
+                BorderSpacing.Right = 10
+                Caption = 'Listing format:'
+                ParentColor = False
+              end
+              object memArchiveListFormat: TMemo
+                AnchorSideTop.Control = lblArchiveListFormat
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 60
+                Top = 244
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                BorderSpacing.Left = 10
+                BorderSpacing.Right = 10
+                Lines.Strings = (
+                  ''
+                )
+                ScrollBars = ssAutoBoth
+                TabOrder = 5
+                WordWrap = False
+              end
+              object fneArchiver: TFileNameEdit
+                AnchorSideLeft.Control = lblDescription
+                AnchorSideTop.Control = lblArchiver
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 21
+                Top = 61
+                Width = 587
+                DialogOptions = []
+                FilterIndex = 0
+                HideDirectories = False
+                ButtonWidth = 23
+                NumGlyphs = 0
+                Anchors = [akTop, akLeft, akRight]
+                MaxLength = 0
+                TabOrder = 6
+              end
+              object lblArchiveListStart: TLabel
+                AnchorSideLeft.Control = lblDescription
+                AnchorSideTop.Control = edtArchiveList
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Control = lblDescription
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 14
+                Top = 158
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                BorderSpacing.Top = 2
+                Caption = 'Listing start (optional):'
+                ParentColor = False
+              end
+              object edtArchiveListStart: TEdit
+                AnchorSideLeft.Control = lblDescription
+                AnchorSideTop.Control = lblArchiveListStart
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Control = lblDescription
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 21
+                Top = 172
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                TabOrder = 7
+              end
+              object lblArchiveListEnd: TLabel
+                AnchorSideLeft.Control = lblDescription
+                AnchorSideTop.Control = edtArchiveListStart
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Control = lblDescription
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 14
+                Top = 193
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                Caption = 'Listing finish (optional):'
+                ParentColor = False
+              end
+              object edtArchiveListEnd: TEdit
+                AnchorSideLeft.Control = lblDescription
+                AnchorSideTop.Control = lblArchiveListEnd
+                AnchorSideTop.Side = asrBottom
+                AnchorSideRight.Control = lblDescription
+                AnchorSideRight.Side = asrBottom
+                Left = 10
+                Height = 21
+                Top = 207
+                Width = 609
+                Anchors = [akTop, akLeft, akRight]
+                TabOrder = 8
+              end
+            end
+            object tbArchiverAdditional: TTabSheet
+              HelpType = htKeyword
+              HelpKeyword = '/multiarc.html'
+              Caption = 'Additional'
+              ChildSizing.LeftRightSpacing = 10
+              ChildSizing.TopBottomSpacing = 10
+              ClientHeight = 387
+              ClientWidth = 633
+              OnShow = tbArchiverAdditionalShow
+              object stgArchiverCommands: TStringGrid
+                Left = 10
+                Height = 314
+                Top = 10
+                Width = 613
+                Align = alClient
+                AutoFillColumns = True
+                ColCount = 2
+                DefaultColWidth = 128
+                Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing, goSmoothScroll]
+                RowCount = 9
+                TabOrder = 0
+                OnPrepareCanvas = stgArchiverCommandsPrepareCanvas
+                ColWidths = (
+                  64
+                  549
+                )
+              end
+              object gbArchiverOptions: TGroupBox
+                Left = 10
+                Height = 51
+                Top = 326
+                Width = 613
+                Align = alBottom
+                Anchors = [akLeft, akRight]
+                AutoSize = True
+                BorderSpacing.Top = 2
+                Caption = 'Options'
+                ChildSizing.LeftRightSpacing = 10
+                ChildSizing.TopBottomSpacing = 8
+                ClientHeight = 33
+                ClientWidth = 609
+                TabOrder = 1
+                object chkMultiArcOutput: TCheckBox
+                  AnchorSideTop.Control = gbArchiverOptions
+                  Left = 10
+                  Height = 17
+                  Top = 8
+                  Width = 118
+                  Caption = 'Show console output'
+                  TabOrder = 0
+                end
+                object chkMultiArcDebug: TCheckBox
+                  AnchorSideTop.Control = gbArchiverOptions
+                  AnchorSideTop.Side = asrCenter
+                  AnchorSideRight.Control = gbArchiverOptions
+                  AnchorSideRight.Side = asrBottom
+                  Left = 521
+                  Height = 17
+                  Top = 8
+                  Width = 78
+                  Anchors = [akTop, akRight]
+                  Caption = 'Debug mode'
+                  TabOrder = 1
+                end
+              end
+            end
+          end
+          object pnlMultiArcButtons: TPanel
+            Left = 0
+            Height = 50
+            Top = 413
+            Width = 641
+            Align = alBottom
+            BevelOuter = bvNone
+            ClientHeight = 50
+            ClientWidth = 641
+            TabOrder = 1
+            object btnMultiArcApply: TBitBtn
+              AnchorSideTop.Control = pnlMultiArcButtons
+              AnchorSideTop.Side = asrCenter
+              AnchorSideRight.Control = pnlMultiArcButtons
+              AnchorSideRight.Side = asrBottom
+              Left = 531
+              Height = 30
+              Top = 10
+              Width = 100
+              Anchors = [akTop, akRight]
+              BorderSpacing.Right = 10
+              Caption = 'Apply'
+              OnClick = btnMultiArcApplyClick
+              TabOrder = 0
+            end
+            object btnMultiArcRename: TBitBtn
+              AnchorSideTop.Control = btnMultiArcApply
+              AnchorSideTop.Side = asrCenter
+              AnchorSideRight.Control = btnMultiArcApply
+              Left = 425
+              Height = 30
+              Top = 10
+              Width = 100
+              Anchors = [akTop, akRight]
+              BorderSpacing.Right = 6
+              Caption = 'Rename'
+              OnClick = btnMultiArcRenameClick
+              TabOrder = 1
+            end
+            object btnMultiArcDelete: TBitBtn
+              AnchorSideTop.Control = btnMultiArcApply
+              AnchorSideTop.Side = asrCenter
+              AnchorSideRight.Control = btnMultiArcRename
+              Left = 319
+              Height = 30
+              Top = 10
+              Width = 100
+              Anchors = [akTop, akRight]
+              BorderSpacing.Right = 6
+              Caption = 'Delete'
+              OnClick = btnMultiArcDeleteClick
+              TabOrder = 2
+            end
+            object btnMultiArcAdd: TBitBtn
+              AnchorSideTop.Control = btnMultiArcApply
+              AnchorSideTop.Side = asrCenter
+              AnchorSideRight.Control = btnMultiArcDelete
+              Left = 213
+              Height = 30
+              Top = 10
+              Width = 100
+              Anchors = [akTop, akRight]
+              BorderSpacing.Right = 6
+              Caption = 'Add'
+              OnClick = btnMultiArcAddClick
+              TabOrder = 3
+            end
+            object chkMultiArcEnabled: TCheckBox
+              AnchorSideLeft.Control = pnlMultiArcButtons
+              AnchorSideTop.Control = pnlMultiArcButtons
+              AnchorSideTop.Side = asrCenter
+              AnchorSideRight.Control = btnAutoConfig
+              Left = 10
+              Height = 17
+              Top = 17
+              Width = 60
+              Anchors = [akTop, akLeft, akRight]
+              BorderSpacing.Left = 10
+              BorderSpacing.Right = 6
+              Caption = 'Enabled'
+              OnChange = chkMultiArcEnabledChange
+              TabOrder = 4
+            end
+            object btnAutoConfig: TBitBtn
+              AnchorSideTop.Control = btnMultiArcApply
+              AnchorSideRight.Control = btnMultiArcAdd
+              Left = 76
+              Height = 30
+              Top = 10
+              Width = 131
+              Anchors = [akTop, akRight]
+              BorderSpacing.Right = 6
+              Caption = 'Auto Configure'
+              OnClick = btnAutoConfigClick
+              TabOrder = 5
+            end
+          end
+        end
+      end
+      object pgToolTips: TPage
+      end
+    end
+    object pnlCaption: TPanel
+      Left = 1
+      Height = 23
+      Top = 1
+      Width = 709
+      Align = alTop
+      Color = clActiveCaption
+      Font.Color = clCaptionText
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 1
+    end
+  end
+  object splOptionsSplitter: TSplitter
+    Left = 170
+    Height = 514
+    Top = 0
+    Width = 5
+  end
+  object dlgFnt: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    Options = [fdNoStyleSel]
+    left = 48
+    top = 368
+  end
+  object optColorDialog: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    left = 80
+    top = 368
+  end
+  object ilTreeView: TImageList
+    left = 16
+    top = 368
+    Bitmap = {
+      4C6914000000100000001000000066355CFF66355CFF66355CFF66355CFF6635
+      5CFF66355CFF66355CFF66355CFF66355CFF66355CFF66355CFF66355CFF6635
+      5CFF00000000000000000000000066355CFFB395AFFFC6ACC3FFD3BED0FFD1C0
+      CEFFC9BBC7FFAA97A7FF877184FF755871FF6A4565FF744B6FFF7E5278FF6635
+      5CFF00000000000000000000000066355CFFB395AFFFA1769BFFAB81A5FF956D
+      8FFF7E5A79FF684763FF563752FF603E5BFF6A4565FF744B6FFF7E5278FF6635
+      5CFF00000000000000000000000066355CFFB395AFFFA1769BFFAB81A5FF956D
+      8FFF7E5A79FF684763FF563752FF603E5BFF6A4565FF744B6FFF7E5278FF6635
+      5CFF00000000000000000000000066355CFFB395AFFFA1769BFFAB81A5FF956D
+      8FFF7E5A79FF684763FF563752FF603E5BFF6A4565FF744B6FFF7E5278FF6635
+      5CFF00000000000000000000000066355CFFB395AFFFA1769BFF069A4EFF069A
+      4EFF069A4EFF069A4EFF069A4EFF069A4EFF069A4EFF069A4EFF069A4EFF069A
+      4EFF069A4EFF069A4EFF069A4EFF66355CFFB395AFFFA1769BFF089B50FF68E7
+      A6FF73ECB0FF89F1BDFF9CEEC5FFAFEDCEFF71DAA5FF2EC176FF18BF6AFF1EC9
+      72FF24D27AFF28D980FF069A4EFF66355CFFB395AFFFA1769BFF089B50FF66E6
+      A6FF3EE692FF48EA99FF3BDE8CFF2FD280FF22C673FF15BA66FF18BF6AFF1EC9
+      72FF24D27AFF28D980FF069A4EFF66355CFFB395AFFFA1769BFF089B50FF66E6
+      A6FF3EE692FF48EA99FF3BDE8CFF2FD280FF22C673FF15BA66FF18BF6AFF1EC9
+      72FF24D27AFF28D980FF069A4EFF66355CFFB395AFFFC6ACC3FF089B50FF66E6
+      A6FF3EE692FF48EA99FF3BDE8CFF2FD280FF22C673FF15BA66FF18BF6AFF1EC9
+      72FF24D27AFF28D980FF069A4EFF66355CFF66355CFF66355CFF089B50FF66E6
+      A6FF3EE692FF48EA99FF3BDE8CFF2FD280FF22C673FF15BA66FF18BF6AFF1EC9
+      72FF24D27AFF28D980FF069A4EFF000000000000000000000000089B50FF66E6
+      A6FF3EE692FF48EA99FF3BDE8CFF2FD280FF22C673FF15BA66FF18BF6AFF1EC9
+      72FF24D27AFF28D980FF069A4EFF000000000000000000000000089B50FF66E6
+      A6FF3EE692FF48EA99FF3BDE8CFF2FD280FF22C673FF15BA66FF18BF6AFF1EC9
+      72FF24D27AFF28D980FF069A4EFF000000000000000000000000089B50FF66E6
+      A6FF40E693FF4AEA9AFF3EDE8DFF33D282FF24C674FF15BA66FF18BF6AFF1EC9
+      72FF24D27AFF28D980FF069A4EFF000000000000000000000000079A4FFF66E6
+      A6FF72ECAFFF87F1BCFF99EDC3FFAAECCBFF70DAA4FF2EC176FF18BF6AFF1EC9
+      72FF24D27AFF28D980FF069A4EFF000000000000000000000000069A4EFF069A
+      4EFF069A4EFF069A4EFF069A4EFF069A4EFF069A4EFF069A4EFF069A4EFF069A
+      4EFF069A4EFF069A4EFF069A4EFF00000000858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF00000000858A88FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFF858A88FF858A88FFFFFFFFFFE3E3E3FFE3E3E3FFE3E3
+      E3FFE3E3E3FFE3E3E3FFE3E3E3FFE3E3E3FFE3E3E3FFE3E3E3FFE3E3E3FFE3E3
+      E3FFE3E3E3FFFDFDFDFF858A88FF858A88FFFFFFFFFFE3E3E3FFE3E3E3FFE3E3
+      E3FFC5C6C6FFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFC5C6C6FFE3E3E3FFE3E3
+      E3FFE3E3E3FFFDFDFDFF858A88FF858A88FFFFFFFFFFE3E3E3FFE3E3E3FFE3E3
+      E3FFA8ABAAFFC6C7C7FFE6E6E6FFE6E7E6FFC6C8C7FFA8ABAAFFE5E4E4FFE4E3
+      E4FFE3E3E3FFFDFDFDFF858A88FF858A88FFFFFFFFFFE3E3E3FFE4E4E4FFE5E6
+      E6FFA8ABAAFFE9E8E9FFE9E9E9FFE9E9E9FFE9E9EAFFA8ABAAFFE7E7E8FFE6E6
+      E6FFE4E5E4FFFBFBFBFF858A88FF858A88FFFFFFFFFFE4E4E4FFE6E7E6FFE8E8
+      E9FFA8ABAAFFEBECEBFFECECECFFECEDEDFFECEDECFFA8ABAAFFEBEBEAFFE9E9
+      E9FFE6E7E7FFFBFBFBFF858A88FF858A88FFFFFFFFFFE6E6E6FFE9E8E8FFA8AB
+      AAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFEBEC
+      ECFFEAE9E9FFF8F8F8FF858A88FF858A88FFFFFFFFFFE8E8E8FFEBEBEAFFA8AB
+      AAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFEEEE
+      EEFFECEBECFFF6F6F6FF858A88FF858A88FFFFFFFFFFE9E9EAFFECECECFFA8AB
+      AAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFF0F0
+      F0FFEDEDEDFFEFEFEFFF858A88FF858A88FFFFFFFFFFEAEBEAFFEEEDEDFFA8AB
+      AAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFF1F1
+      F2FFEFEEEFFFEFEFEFFF858A88FF858A88FFFFFFFFFFEBEBEBFFEEEEEEFFCCCD
+      CDFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFA8ABAAFFCECFCFFFF3F3
+      F3FFEFF0EFFFEFEFEFFF858A88FF858A88FFFFFFFFFFEBEBEAFFEEEEEEFFF2F1
+      F2FFF5F5F5FFF8F8F8FFFBFBFBFFFEFEFEFFFCFCFCFFF9F9F9FFF6F6F5FFF3F3
+      F3FFEFEFEFFFEFEFEFFF858A88FF858A88FFFFFFFFFFEAEAEBFFEDEEEDFFF1F1
+      F1FFF4F4F4FFF6F6F7FFF9F9F9FFFBFAFBFFF9FAF9FFF8F8F8FFF5F5F4FFF2F2
+      F2FFEFEFEFFFEFEFEFFF858A88FF858A88FFFFFFFFFFFCFCFCFFFCFCFCFFFCFC
+      FCFFFCFCFCFFFCFCFCFFFCFCFCFFFAFAFAFFFAFAFAFFFAFAFAFFF6F6F6FFF6F6
+      F6FFF6F6F6FFEFEFEFFF858A88FF00000000858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000858A
+      88FF000000000000000000000000000000000000000000000000000000000000
+      0000858A88FF0000000000000000000000000000000000000000858A88FFE9EB
+      ECFF858A88FF000000000000000000000000000000000000000000000000858A
+      88FFEEEFEFFF858A88FF0000000000000000000000000000000000000000858A
+      88FFEEF0F0FF858A88FF00000000000000000000000000000000858A88FFF0F0
+      F0FF858A88FF000000000000000000000000858A88FF0000000000000000858A
+      88FFFAFAFAFF858A88FF00000000000000000000000000000000858A88FF878C
+      8AFF000000000000000000000000858A88FFF5F6F6FFA9ACABFF858A88FFF7F7
+      F7FFE2E3E5FFAAADADFFECEEEEFF0000000000000000858A88FF000000000000
+      000000000000000000000000000000000000858A88FFF3F3F3FFEFF0F0FFEDEE
+      EEFFEAECECFFB6B9BAFF858A88FF00000000858A88FF00000000000000000000
+      00000000000000000000000000000000000000000000858A88FF858A88FF858A
+      88FF858A88FFD0D1D2FFA3A4A4FF858A88FF858A88FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000B5B7B8FF858A88FFB7B8B9FF858A88FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000874A20FF874A
+      20FF874A20FF85837DFFAAADADFFC8C9CAFFBDBEBFFF858A88FF000000000000
+      00000000000000000000000000000000000000000000874A20FFCCBBADFFCCBB
+      ADFFB3937CFF874A20FF858A88FF858A88FFD3D3D4FFBDBEBFFF858A88FF0000
+      000000000000000000000000000000000000874A20FFD4C8BDFFA48D78FFA48D
+      78FFBEA592FF874A20FF0000000000000000858A88FFE2E3E4FFC2C4C6FF858A
+      88FF858A88FF0000000000000000874A20FFCCBBADFFA48D78FFA28A74FFB495
+      7AFFB3937CFF874A20FF000000000000000000000000858A88FFD2D3D4FFC2C3
+      C4FF858A88FF0000000000000000874A20FFCCBBADFFA7917DFFB5957AFFAE8B
+      72FF874A20FF0000000000000000000000000000000000000000858A88FF9EA1
+      A0FF858A88FF0000000000000000874A20FFBEA592FFB89C86FFB89C86FF874A
+      20FF000000000000000000000000000000000000000000000000858A88FF858A
+      88FF858A88FF000000000000000000000000874A20FF874A20FF874A20FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF00000000858A88FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFF858A88FF858A88FFFFFFFFFFE3E3E3FFA7A7A7FF8282
+      82FF2F2F2FFF2F2F2FFFE3E3E3FFE6E6E6FFE6E6E6FFE6E6E6FFE6E6E6FFE3E3
+      E3FFE3E3E3FFFDFDFDFF858A88FF858A88FFFFFFFFFFE3E3E3FFE2E2E2FFDBDB
+      DBFFCECECEFF2F2F2FFFE3E3E3FFE8E8E8FFE9E9E9FFE8E8E8FFE8E8E8FFE3E3
+      E3FFE3E3E3FFFDFDFDFF858A88FF858A88FFFFFFFFFFE3E3E3FFB1B1B1FF2F2F
+      2FFF747474FF2F2F2FFFE6E6E6FFE6E7E6FFE6E6E6FFE5E6E5FFE5E4E4FFE4E3
+      E4FFE3E3E3FFFDFDFDFF858A88FF858A88FFFFFFFFFFE3E3E3FF2F2F2FFFD3D3
+      D3FFBFBFBFFF2F2F2FFFE9E9E9FFE9E9E9FFE9E9EAFFE9E9E8FFE7E7E8FFE6E6
+      E6FFE4E5E4FFFBFBFBFF858A88FF858A88FFFFFFFFFFE4E4E4FF2F2F2FFF2F2F
+      2FFF2F2F2FFFB8B9B8FF4B4B4BFF2F2F2FFFECEDECFFECEBECFFEBEBEAFFE9E9
+      E9FFE6E7E7FFFBFBFBFF858A88FF858A88FFFFFFFFFFE6E6E6FFECECECFFEDED
+      EDFFEEEEEEFFEFEFEFFF474747FF2C2C2CFFF0F0F0FFEFEFEFFFEEEEEEFFEBEC
+      ECFFEAE9E9FFF8F8F8FF858A88FF858A88FFFFFFFFFFE8E8E8FFEDEDEDFFEFEF
+      EFFFF0F0F0FFF1F1F1FF484848FF202020FF343434FF000000FF010101FF6262
+      62FFF2F2F2FFF6F6F6FF858A88FF858A88FFFFFFFFFFE9E9EAFFEFEFEFFFF0F0
+      F0FFF2F2F2FFF3F3F3FF484848FF000000FF767676FFF2F2F2FF666666FF0000
+      00FFB1B1B1FFEFEFEFFF858A88FF858A88FFFFFFFFFFEAEBEAFFF0F0F0FFF2F2
+      F2FFF3F3F3FFF5F5F5FF494949FF050505FFF3F3F3FFF9F9F9FFDBDBDBFF0000
+      00FF7C7C7CFFEFEFEFFF858A88FF858A88FFFFFFFFFFEBEBEBFFF1F1F1FFF3F3
+      F3FFF4F4F4FFF6F6F6FF494949FF060606FFF1F1F1FFFBFBFBFFD3D3D3FF0000
+      00FF767676FFEFEFEFFF858A88FF858A88FFFFFFFFFFEBEBEAFFF2F2F2FFF4F4
+      F4FFF6F6F6FFF7F7F7FF4A4A4AFF000000FF797979FFF7F7F7FF5F5F5FFF0000
+      00FFADADADFFEFEFEFFF858A88FF858A88FFFFFFFFFFEAEAEBFFF2F2F2FFF4F4
+      F4FFF6F6F6FFF8F8F8FF565656FF2E2E2EFF222222FF040404FF000000FF4D4D
+      4DFFF7F7F7FFEFEFEFFF858A88FF858A88FFFFFFFFFFFCFCFCFFFCFCFCFFFCFC
+      FCFFFCFCFCFFFCFCFCFFFCFCFCFFFAFAFAFFFAFAFAFFFAFAFAFFF6F6F6FFF6F6
+      F6FFF6F6F6FFEFEFEFFF858A88FF00000000858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF00000000FFFFFF00FFFFFF00FFFFFF000DD8000004D0
+      13000CD135FF15D255FF18D474FF18D68CFF13D8A2FF0DDBB9FF06E4D900FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF003AD5040020D009FF3AD7
+      3DFF6AE67CFF88F3AAFF96F9C4FF97FBD3FF87F7DBFF68EFE0FF1AE7E5FF0AD5
+      EBFF05BBF400FFFFFF00FFFFFF00FFFFFF0065D800004CD50EFF74E158FFA1F6
+      99FF9EFFA6FF7BFF9EFF70FFAEFF70FFC7FF7CFFE3FFA5FFFAFF98F4FBFF55D8
+      F5FF0DB7F9FF008DFC00FFFFFF0080DE000077DA09FF94E257FFBBF99DFF8AFF
+      6EFF79FF76FF82FF97FF89FFB6FF87FFD1FF7EFFECFF6DFBFEFF76E8FFFF9BDF
+      FCFF54BAFBFF0782F6FFFFFFFF0096DF0000A0E138FFCBF697FFAEFF6CFFA4FF
+      7AFF9DFF8DFF9BFFA3FFA4FFC4FFA2FFDFFF97FFF8FF85EFFFFF6ED3FFFF78C5
+      FFFF92C5FCFF146EF4FF0052F000B2E608FFC6EB67FFDDFF9BFFC5FF6FFFC3FF
+      8CFFBEFFA1FFB9FFB3FFBDFFCFFFBDFFEEFFB0F8FFFF99DEFFFF7EC2FFFF63A3
+      FFFF9EBDFFFF5983F8FF0336E2FFCDEA0EFFE4F582FFE5FF6FFFE0FF79FFE0FF
+      95FFDFFFAFFFDCFFC7FFDCFFE0FFD9FEFAFFC5E9FFFFA7CAFFFF87AAFFFF698B
+      FFFF788EFFFF7386FBFF0822DDFFEAEC0EFFF9FA92FFFAFD64FFFAFD7BFFF9FD
+      98FFFAFDB5FFFAFED3FFFAFEEFFFEFF3FFFFD0D5FFFFAFB3FFFF8D91FFFF6C6F
+      FFFF6769FFFF8283FBFF090DD9FFF1DA0EFFFFF290FFFFE962FFFFE876FFFFE7
+      93FFFFE7B0FFFFE6CAFFFFE5E5FFFCDEFDFFE1C6FFFFC2A6FFFFA184FFFF7E66
+      FFFF7664FFFF887BF6FF1A08D5FFF5BF09FFFEDD80FFFFD16CFFFFC76BFFFFC7
+      85FFFFC49EFFFFBDB3FFFFBFD0FFFFBFF1FFF4B0FFFFD696FFFFB679FFFF955E
+      FFFF9977FFFF8265ECFF2A04D0FFFBA600FFFDBE60FFFFD09CFFFFA55BFFFFA2
+      71FFFF9A84FFFF979BFFFF9FBFFFFF9FE0FFFE92FBFFE77CFFFFC966FFFFA84F
+      FFFFBE95FDFF7240DDFF3600CC00FA820000F87C0BFFFBB98EFFFF976AFFFF79
+      5BFFFF716BFFFF7689FFFF7CADFFFF7BCDFFFF71EDFFF763FFFFD952FFFFCF7C
+      FFFFB373ECFF5906CCFF4600CC00FFFFFF00F05600FFF07744FFFCA692FFFF7B
+      6FFFFF5158FFFF5A79FFFF5E9BFFFF5CBCFFFF57DAFFFF4CF7FFF17BFFFFD685
+      F1FF9734CFFF6100C200FFFFFF00FFFFFF00EB470000E22A00FFE95240FFF885
+      84FFFF969FFFFF7491FFFF609AFFFF60B7FFFF78D8FFFC92EFFFE871EAFFB632
+      CCFF8900BDFF6D00CE00FFFFFF00FFFFFF00FFFFFF00E51E0000D30400FFD404
+      0CFFE14059FFEE6384FFF373A1FFF071B2FFE45AB6FFD236B4FFBE02B4FFAD00
+      BA009700CC00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D000
+      0700C3001C00BF0031FFBE0144FFBB005AFFB90072FFB8008A00C100AF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      000000000000894D25FF884C23FF884C23FF884C23FF884C23FF884C23FF884C
+      23FF884C23FF894F26FF00000000000000000000000000000000000000000000
+      00008B5129FFE2DFDAFFEDEFEEFFF0F2F1FFF4F5F4FFF6F7F7FFF7F8F8FFF5F6
+      F6FFF3F4F4FFE1DAD4FF894F26FF000000000000000000000000874A20FF874A
+      20FF8E5630FFE8EBEAFFD6DADAFFD6DADAFFD7DADAFFD8DCDBFFD8DCDBFFD7DC
+      DBFFDADEDEFFEFF0F0FF874A20FF0000000000000000874A20FF874A20FF874A
+      20FF8E562FFFE6E8E7FFD6DBDBFFDAE0DDFFDCE2DFFFDDE3E0FFDEE4E1FFDCE2
+      E0FFD8DCDCFFEAECECFF874A20FF00000000874A20FF874A20FF874A20FF0000
+      00008E562FFFE0E3E2FFDEE2E1FFDDE3E0FFE0E6E3FFE2E7E5FFE3E8E5FFE2E7
+      E4FFDFE2E2FFE4E7E6FF874A20FF00000000874A20FF874A20FF000000000000
+      00008D562FFFDBDEDCFFE7E9E9FFE1E6E3FFE4E9E6FFE7EBE9FFE8ECE9FFE6EB
+      E8FFE6E8E8FFDEE0DFFF874A20FF00000000894F27FF874B21FF874B22FF874A
+      21FF8D552FFFD7DBD9FFEFF2F2FFE4E9E6FFE8ECEAFFEBEFEDFFEDF0EEFFEBEF
+      EDFFEDEFEFFFD7DBD9FF874A20FF895028FFC1B6ABFFD5D9D8FFD6DAD9FFD1D0
+      CDFF8F5933FFD6DAD8FFEFF1F0FFF8F9F9FFF8F9F9FFF8F9F9FFF8F9F9FFF8F9
+      F9FFE9EBEBFFD7DBD9FF874A20FF874B22FFD6DAD9FFD7DBDBFFD8DCDCFFD2D3
+      D0FF8F5933FFD6DAD8FFB7BEBBFFB7BEBBFFB7BEBBFFB7BEBBFFB7BEBBFFB7BE
+      BBFFB9BFBCFFD7DBD9FF874A20FF874B22FFD6DAD9FFE4E6E6FFD0D8D4FFD3D8
+      D3FF8C542EFFCECBC5FFD7DAD8FFD7DAD8FFD7DAD8FFD7DAD8FFD7DAD8FFD7DA
+      D8FFD7DAD8FFC8C2B9FF884E25FF874B22FFD6DAD9FFEEEFEFFFD3DAD6FFD7DE
+      DBFFB7A18DFF8E5731FF884D24FF884D24FF884D24FF884D24FF884D24FF884D
+      24FF884D24FF8F5A34FF874D25FF874B22FFD6DAD9FFF8F8F8FFD4DBD8FFD9E0
+      DDFFDFE4E1FFE3E8E5FFE7ECE9FFEAEEEBFFE8ECEAFFE4E9E6FFE0E5E2FFDBE1
+      DEFFEDEFEEFFDCDFDFFF884D25FF874B22FFD6DAD9FFFCFCFCFFF5F7F7FFF6F7
+      F7FFF6F8F8FFF7F8F8FFF7F9F8FFF8F9F9FFF7F9F9FFF7F8F8FFF6F8F8FFF6F8
+      F7FFFCFCFCFFDEE1E0FF884D25FF874B22FFD6DAD9FFBEC4C1FFC1C7C4FFC1C7
+      C4FFC1C7C4FFC1C7C4FFC1C7C4FFC1C7C4FFC1C7C4FFC1C7C4FFC1C7C4FFC1C7
+      C4FFC0C6C4FFD6DAD9FF884D24FF895028FFC0B4A8FFD6DAD8FFD6DAD9FFD6DA
+      D9FFD6DAD9FFD6DAD9FFD6DAD9FFD6DAD9FFD6DAD9FFD6DAD9FFD6DAD9FFD6DA
+      D9FFD6DAD8FFBFB4A7FF895028FF00000000895029FF874A20FF874A20FF874A
+      20FF874A20FF874A20FF874A20FF874A20FF874A20FF874A20FF874A20FF874A
+      20FF874A20FF895028FF00000000000000009D9D9DFF9C9C9CFF9C9C9CFF9C9C
+      9CFF9C9C9CFF9C9C9CFF9C9C9CFF9C9C9CFF9C9C9CFF9C9C9CFF9C9C9CFF9C9C
+      9CFF9C9C9CFF9D9D9DFF9F9F9FFF9D9D9DFFFAFAFAFFFBFBFBFFFBFBFBFFFBFB
+      FBFFFBFBFBFFFBFBFBFFFBFBFBFFFBFBFBFFFBFBFBFFFBFBFBFFFBFBFBFFFBFB
+      FBFFFBFBFBFFFBFBFBFF9C9C9CFF9C9C9CFFFFFFFFFFE2E2E2FFE3E3E3FFE4E4
+      E4FFE4E4E4FFE5E5E5FFE6E6E6FFE6E6E6FFE6E6E6FFE6E6E6FFE6E6E6FFE5E5
+      E5FFE5E5E5FFFFFFFFFF9C9C9CFF9C9C9CFFFFFFFFFF9B9B9BFF9B9B9BFF9B9B
+      9BFF9B9B9BFF9B9B9BFF9B9B9BFFE6E6E6FF4F4E48FF4F4E48FF4F4E48FF4F4E
+      48FFE5E5E5FFFFFFFFFF9C9C9CFF9C9C9CFFFFFFFFFF9B9B9BFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFF9B9B9BFFE8E8E8FF57554EFF57554EFF57554EFF5755
+      4EFFE6E6E6FFFFFFFFFF9C9C9CFF9C9C9CFFFFFFFFFF9B9B9BFFFFFFFFFFECEE
+      EEFFECEEEEFFFFFFFFFF9B9B9BFFEAEAEAFF5F5D54FF5F5D54FF5F5D54FF5F5D
+      54FFE8E8E8FFFFFFFFFF9C9C9CFF9C9C9CFFFFFFFFFF9B9B9BFFFFFFFFFFECEE
+      EEFFECEEEEFFFFFFFFFF9B9B9BFFECECECFF67645AFF67645AFF67645AFF6764
+      5AFFEAEAEAFFFFFFFFFF9C9C9CFF9C9C9CFFFFFFFFFF9B9B9BFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFF9B9B9BFF9B9B9BFF9B9B9BFF9B9B9BFF9B9B9BFF9B9B
+      9BFFA0A0A0FFFFFFFFFF9C9C9CFF9C9C9CFFFFFFFFFF9B9B9BFF9B9B9BFF9B9B
+      9BFF9B9B9BFF9B9B9BFF9B9B9BFFA5A5A5FFFFFFFFFFFFFFFFFFFFFFFFFFFDFD
+      FDFF9F9F9FFFFFFFFFFF9C9C9CFF9D9D9DFFFFFFFFFFEAEAEAFF666359FF6663
+      59FF666359FF666359FFECECECFFA5A5A5FFFDFEFEFFECEEEEFFEDEFEFFFFDFD
+      FDFF9F9F9FFFFFFFFFFF9C9C9CFF9D9D9DFFFFFFFFFFEBEBEBFF6E6A5FFF6E6A
+      5FFF6E6A5FFF6E6A5FFFEDEDEDFFA5A5A5FFFDFEFEFFECEEEEFFEDEFEFFFFDFD
+      FDFF9F9F9FFFFFFFFFFF9C9C9CFF9D9D9DFFFFFFFFFFECECECFF757164FF7571
+      64FF757164FF757164FFEFEFEFFFA5A5A5FFFFFFFFFFFFFFFFFFFFFFFFFFFDFD
+      FDFF9F9F9FFFFFFFFFFF9C9C9CFF9D9D9DFFFFFFFFFFEDEDEDFF797567FF7975
+      67FF797567FF797567FFF1F1F1FF9B9B9BFF9B9B9BFF9B9B9BFF9B9B9BFF9B9B
+      9BFFA0A0A0FFFFFFFFFF9C9C9CFF9D9D9DFFFFFFFFFFEEEEEEFFF0F0F0FFF2F2
+      F2FFF4F4F4FFF6F6F6FFF8F8F8FFFAFAFAFFFBFBFBFFFAFAFAFFF9F9F9FFF7F7
+      F7FFF5F5F5FFFFFFFFFF9C9C9CFF9D9D9DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFF9C9C9CFFA0A0A0FF9B9B9BFF9B9B9BFF9B9B9BFF9B9B
+      9BFF9B9B9BFF9B9B9BFF9B9B9BFF9B9B9BFF9B9B9BFF9B9B9BFF9B9B9BFF9B9B
+      9BFF9B9B9BFF9B9B9BFFA1A1A1FF00000000B6BDBAFFB6BDBAFFB6BDBAFFB6BD
+      BAFFB6BDBAFFB6BDBAFFB6BDBAFFB6BDBAFFB6BDBAFFB6BDBAFF000000000000
+      0000000000000000000000000000B6BDBAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB6BDBAFF0000
+      0000000000000000000000000000B6BDBAFFFEFEFEFF874A20FF874A20FF874A
+      20FF874A20FF874A20FF874A20FF874A20FF874A20FFFDFDFDFFB6BDBAFF0000
+      0000000000000000000000000000B6BDBAFFFBFCFCFFA46534FFA46534FFA465
+      34FFA46534FFA46534FFA46534FFA46534FFA46534FFFBFBFBFFB6BDBAFF0000
+      0000000000000000000000000000B6BDBAFFFAFBFAFFF9F9F9FFF9F9F9FFE0E3
+      E2FFB6BDBAFFB6BDBAFFB6BDBAFFB6BDBAFFB6BDBAFFB6BDBAFFB6BDBAFFB6BD
+      BAFFB6BDBAFFB6BDBAFF00000000B6BDBAFFF8F8F8FFF6F6F6FFF6F6F5FFB6BD
+      BAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFB6BDBAFFB6BDBAFFF7F7F7FFF3F3F4FFF3F3F3FFB6BD
+      BAFFFEFEFEFF874A20FF874A20FF874A20FF874A20FF874A20FF874A20FF874A
+      20FF874A20FFFDFDFDFFB6BDBAFFB6BDBAFFF2F2F2FFEEEEEEFFEFEFEFFFB6BD
+      BAFFFBFCFCFFA46534FFA46534FFA46534FFA46534FFA46534FFA46534FFA465
+      34FFA46534FFFBFBFBFFB6BDBAFFB6BDBAFFF0EFEFFFEAEAEBFFEAEAEAFFB6BD
+      BAFFFAFBFAFFF9F9F9FFF9F9F9FFF9F9F9FFF8F9F8FFF8F8F8FFF8F8F8FFF8F8
+      F8FFF8F8F8FFF8F9F8FFB6BDBAFFB6BDBAFFEEEFEEFFE6E5E5FFE5E5E5FFB6BD
+      BAFFF8F8F8FFF6F6F6FFF6F6F5FFF6F5F6FFF6F6F6FFF5F5F6FFF5F5F5FFF5F5
+      F6FFF5F5F6FFF7F7F7FFB6BDBAFFB6BDBAFFF2F2F3FFEFF0EFFFEFEFF0FFB6BD
+      BAFFF7F7F7FFF3F3F4FFF3F3F3FFF3F3F3FFF3F3F3FFF3F3F2FFF3F3F3FFF3F2
+      F2FFF3F2F3FFF6F6F6FFB6BDBAFF00000000B6BDBAFFB6BDBAFFB6BDBAFFB6BD
+      BAFFF2F2F2FFEEEEEEFFEFEFEFFFEFEFEFFFEFEFEFFFEFEFEFFFEFEFEFFFEFEF
+      EFFFEEEEEEFFF1F2F1FFB6BDBAFF00000000000000000000000000000000B6BD
+      BAFFF0EFEFFFEAEAEBFFEAEAEAFFEAEAEAFFEAEAEAFFE9E9E9FFEAEAEAFFE9E9
+      EAFFEAE9EAFFEFEFEFFFB6BDBAFF00000000000000000000000000000000B6BD
+      BAFFEEEFEEFFE6E5E5FFE5E5E5FFE5E6E5FFE5E5E5FFE5E5E5FFE5E5E5FFE5E5
+      E5FFE5E5E5FFEDEEEEFFB6BDBAFF00000000000000000000000000000000B6BD
+      BAFFF2F2F3FFEFF0EFFFEFEFF0FFEFEFEFFFF0F0EFFFEFEFEFFFEFEFEFFFEFEF
+      F0FFEFEFEFFFEFEFEFFFB6BDBAFF000000000000000000000000000000000000
+      0000B6BDBAFFB6BDBAFFB6BDBAFFB6BDBAFFB6BDBAFFB6BDBAFFB6BDBAFFB6BD
+      BAFFB6BDBAFFB6BDBAFF00000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00EAC39DFFE6BF96FFE4BB92FFE4BB92FFD1A06CF5D09E6DF6CC96
+      5FDAC479427EB2673C09FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00E5BE96FFFFFFFEFFFDF3E9FFFDF3EAFFFCF2E8FFFAEFE3FFFAF2
+      E7FFEABB88FFCF8555B3B4693D0CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00E4BB93FFFEF5EDFFFCDEC5FFFBE0C7FFF9DCC2FFF5D3B4FFFEF9
+      F3FFFAE2C4FFECC193FFC37D4893FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00E4BB92FFFEF6F0FFFCE2CDFFFCE3CDFFFADFC8FFF7D9BCFFF5E9
+      DDFFFAF3EBFFFBF8F3FFCA8353FEFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00E4BB92FFFEF7F1FFFCE5D2FFFCE4D1FFFBE2CCFFF9DDC4FFF6D7
+      BBFFF3D1AFFFFAEFE4FFCC8758FE34B4D9D05EC2E1FA60C3E2FA60C3E2FA60C3
+      E2FA5FC3E2FAE4BB91FFFFF7F2FFFEE7D5FFFEE7D5FFFDE5D1FFFAE0CAFFF9DE
+      C4FFF7D9BCFFFDF2E7FFCC8757FE36B3DAF8FDFEFEFFFEFFFFFFFEFEFFFFFDFE
+      FFFFFEFFFFFFE4BA91FFFFF7F0FFFFE7D5FFFDE7D6FFFDE6D4FFFCE4D0FFFBE3
+      CBFFFADCC2FFFEF3E8FFCC8656FE35AFDAF0F7FCFEFF8EE4F8FF91DEF5FF9FE0
+      F5FFACE1F6FFCA8452FFFFF7F1FFFFE9D9FFFFEADBFFFFE9D9FFFFE7D7FFFFE5
+      D2FFFFE2CBFFFFF7F1FFCB8555FE36AADAF2F1FAFDFF94DEF5FF93DCF4FF64BC
+      E9FF3594DAFF3594DAFF3594DAFF3594DAFF3594DAFF3594DAFF3594DAFF3594
+      DAFF3594DAFFFBF6EFFFCC8355FE35ABDAFAE8F6FBFF70BCE7FF55AAE2FF4DA5
+      E0FF91C9EBFFFAF3EFFFFDFEFDFFFFFDFCFFFFFDFCFFFEFDFCFFFEFCFBFFFEFE
+      FDFF3594DAFFEFF2E8FFCE8156FF37A6DAFAFEFFFFFFF8FDFFFFF6FDFFFFF5FC
+      FFFFF3FCFEFF9AE4F4FF9AE6F7FF9BE6F6FF9DE5F5FF9EE5F5FF9FE5F4FFDAF3
+      F8FF3594DAFFFDF4EEFFCA8054F936A1DAF9F6FCFEFF94E5F8FF93E5F8FF93E5
+      F8FF91E5F8FF93DBE9FF93D7E3FF93D2DCFF90CED7FF8CC8CFFF86C1C6FFC9D8
+      D6FF3594DAFFC57444E8CA7F53F1369ADAF8F2FAFDFF94E6F8FF92E5F8FF90E5
+      F8FF8BE3F8FF86E2F7FF7FE1F7FF77DEF6FF6CDCF6FF5ED9F4FF4FD5F3FFCCF2
+      FBFF3594DAFFFFFFFF00FFFFFF003594DAF7EFFAFEFF93E5F8FF8FE4F8FF89E3
+      F8FF82E1F7FF7ADFF7FF71DEF6FF67DBF5FF5BD8F4FF4DD4F3FF40D1F2FFCAF2
+      FBFF3594DAFFFFFFFF00FFFFFF00338ED9FBDCF0FAFF98E1F6FF95E0F6FF92DF
+      F6FF8EDEF5FF89DCF5FF85DAF4FF80D9F4FF7AD7F3FF74D5F3FF70D3F2FFC2EA
+      F8FF3594DAFFFFFFFF00FFFFFF002C86D8D12D88D8F72D87D8F72D88D8F72D88
+      D8F72D88D8F72D88D8F72D88D8F72D88D8F72D88D8F72D88D8F72D87D8F72D88
+      D8F72C86D8D1FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000008F3FF3F10F4
+      FF7310F4FF760AF3FF4900000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000007F3FF3716F4FFA126F5
+      FFE42CF5FFE518F4FFAE0AF3FF36000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000EF3FF6722F5FFE490FA
+      FFF19BFAFFF333F5FFE611F4FF730000000000000000858A888F888D8BFC888D
+      8BFC868B89FC868B89FD868B89FD858A88FD858A88FD51B7BBFE36EAF2FFA8F6
+      F9FFB8F7FAFF46ECF5FD12F4FF6D00000000858A889AA5AAA8FFFDFDFDFFFDFD
+      FDFFFDFDFDFFFDFDFDFFFDFDFDFFFDFDFDFFFDFDFDFFB4FAFDFF53F6FEFF5CF7
+      FEFF61F7FEFF31DFE7FF0FF1FC2D00000000858A88FFFDFDFDFFDBDFDFFFD1D5
+      D5FFCFD3D3FFCFD3D3FFCFD3D3FFCFD3D3FFCFD3D3FFCFD3D3FFC6E4E5FFB7E4
+      E6FF6AF6FDFF65A7A9FF59ADAF0300000000858A88FFFDFDFDFFD1D5D5FFCFD3
+      D3FFCFD3D3FFCFD3D3FFCFD3D3FFCFD3D3FFCFD3D3FFCFD3D3FFCFD3D3FFCFD3
+      D3FFF6FBFCFF868B89FE858A880300000000858A88FFF0F2F2FFD1D5D5FFD2D6
+      D6FFD2D6D6FFD2D6D6FFD2D6D6FFD2D6D6FFD1D5D5FFD1D5D5FFD1D5D5FFD1D5
+      D5FFF7F7F7FF868B89FD858A880400000000858A88FFEFF0F0FFD4D8D8FFD4D8
+      D8FFD4D8D8FFD4D8D8FFD4D8D8FFD4D8D8FFD4D8D8FFD4D8D8FFD4D8D8FFD4D8
+      D8FFEFF0F0FF878C8AFD858A8806858A8844858A88FFEBEDEDFFD5D9D9FFD5D9
+      D9FFD5D9D9FFD5D9D9FFD5D9D9FFD5D9D9FFD5D9D9FFD5D9D9FFD5D9D9FFD5D9
+      D9FFEFF0F0FF878C8AFC858A8835858A88A48E9391F7E9EBEBFFDADEDEFFDBDF
+      DFFFDBDFDFFFDBDFDFFFDBDFDFFFDBDFDFFFDBDFDFFFDBDFDFFFDBDFDFFFDBDF
+      DFFFECEDEDFF919694F6858A889A858A88FEC9CBCAFFECEDEDFFDBDFDFFFDBDF
+      DFFFDBDFDFFFDBDFDFFFDBDFDFFFDBDFDFFFDBDFDFFFDBDFDFFFDBDFDFFFDBDF
+      DFFFECEDEDFFD1D3D2FF858A88FF858A88FDECEDEDFFD9DDDDFFDADEDEFFDADE
+      DEFFDADEDEFFDADEDEFFDADEDEFFDADEDEFFDBDFDFFFDBDFDFFFDBDFDFFFDBDF
+      DFFFDBDFDFFFEFF0F0FF858A88FF858A88FCEFF0F0FFE9EAEAFFECEDEDFFECED
+      EDFFECEDEDFFECEDEDFFECEDEDFFE9EAEAFFE9EAEAFFE9EAEAFFE9EAEAFFE9EA
+      EAFFE9EAEAFFE9EAEAFF858A88FF888D8BE5868B89FC868B89FC868B89FC868B
+      89FC868B89FC868B89FC868B89FC868B89FC868B89FC868B89FC868B89FC868B
+      89FC868B89FC868B89FC888D8BEAFFFFFF00C17D4460C88B4DBBC88C4FEEC88C
+      4FF6C88C4FF7C88C4FF7C88D4FF7C98C4FF7C78B4FF7C5894BD4C4763B91B368
+      3C06FFFFFF00FFFFFF00FFFFFF00FFFFFF00C48549C3F7F2ECECF8F4EEFCF8F4
+      EDFFF8F3EDFFF8F3EDFFF8F3EDFFF8F2ECFFF7F2ECFFF2E6D7FFE2B27DFFDB94
+      65F5B3683B07FFFFFF00FFFFFF00FFFFFF00C5884BEAFAF6F2FCFAE0C7FFFBE1
+      C9FFFBE2C9FFFBE0C8FFF9DFC5FFF8DBC1FFF4D6B8FFFFFBF8FFB6CBC2FF58A5
+      D8FF85B1DBFF469DD0FF2B95D15EFFFFFF00C6894CF6F9F5F1FFFCE3CDFFFBE3
+      CEFFFBE3CDFFFBE2CBFFF9E0C8FFF8DCC2FFF5D6BAFFAFE3F1FF77BEE7FFB4D2
+      F0FFE5F3FFFFACD2EFFF488CC7E8FFFFFF00C6894BF7F9F5F1FFFCE3CFFFFBE4
+      D0FFFCE4CFFFFCE3CDFFFAE1CAFFF9DDC4FFAFCDC9FF81D5EEFFB2E3F9FF8BC0
+      E7FFAED3F6FFC4E0FCFF669FD3F7FFFFFF00C6894BF7F9F4F0FFFCE6D3FFFCE6
+      D4FFFDE7D3FFFCE4D1FFFBE3CDFFBED4D0FF7DD4EEFFC4F6FDFF6CDDF6FF6DCA
+      EDFF63A3D7FF6499C8FE5192CA26FFFFFF00C6884AF7F9F4EFFFFEE7D7FFFDE7
+      D6FFFDE7D5FFFDE6D4FFBDD6D5FF79D3EEFFC7F7FDFF5FDCF5FF5BE2F7FF7AD6
+      F2FF51A1E0FFAD8560F9FFFFFF00FFFFFF00C68849F7F9F4EDFFFEE8D8FFFEE8
+      D8FFFEE8D7FFB0C6CCFF77CBE7FFC7F7FDFF5EDCF5FF5AE1F7FF7BD4F1FF4B99
+      DBFFD2DFE9FFC68245F7FFFFFF00FFFFFF00C68447F7F9F3ECFFFEE8D6FFFEE8
+      D7FFB3C6CCFF76B9D6FFC2F6FDFF63DFF7FF5DE2F8FF79D3F0FF4998DAFFE2D5
+      C8FFFAF2EAFFC68042F7FFFFFF00FFFFFF00C58245F7F8F2EBFFFEE7D6FFA6B6
+      BFFF7AB6D5FF90B7D1FF55C9E4FF5BDFF5FF78D0EDFF519BD9FFE1D6CDFFFBE1
+      C9FFFBF7F2FFC57C3FF7FFFFFF00FFFFFF00C58042F7F8F1E8FFFEE5D5FF4389
+      AAFFE0F2FFFF549AD8FF1A7ABEFF4998C5FF488CC2FFDAD2CDFFFBE0C9FFFBE1
+      C8FFFDFAF7FFC1763BF7FFFFFF00FFFFFF00C47C40F7F7F0E6FFF8B455FF2E66
+      82FF94C7F9FF91C9F9FF4185C9FF2668A6FFD2A865FFF7B251FFF7B24FFFF7B2
+      4FFFFCF9F5FFBF6F36F7FFFFFF00FFFFFF00C1783CF7F7EDE3FFFDC26EFF1842
+      57FF2B6187FF4C89BCFF709FB3FFE3C99AFFFFD695FFFFD594FFFFD493FFFBBE
+      65FFFBF7F4FFBB6731F7FFFFFF00FFFFFF00BF7138F5F5EBDFFEFDBF68FFFCBD
+      67FFFBBE65FFFCBE64FFFCBE64FFFCBD62FFFBBD63FFFBBC61FFFCBE60FFFCBC
+      62FFFDFBF8FDB9642DF3FFFFFF00FFFFFF00BC6933DEF8F1EAF2F7ECDFFDF6EB
+      DEFFF6EADEFFF6EADCFFF6EADCFFFAF3EBFFFAF3EBFFFAF2EAFFFCF7F3FFFCF8
+      F4FDFEFEFDF0B7602AD5FFFFFF00FFFFFF00BB6A346BBA6530BCBB6631EDBA66
+      30F7BA6630F7BA6630F7BA6530F7BA652FF7B9652EF7B9652EF7B9642EF7B964
+      2EEFB7622CBDB7622E63FFFFFF00C17D4460C88B4DBBC88C4FEEC88C4FFFC88C
+      4FF7C88D4FF7C98C4FF7C78B4FF7C5894BD4C4763B91B3683C06FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00C48549C3F7F2ECECF8F4EEFCF8F3EDFFF8F3
+      EDFFF8F3EDFFF8F2ECFFF7F2ECFFF2E6D7FFE2B27DFFDB9465F5B3683B07FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00C5884BEAFAF6F2FCFAE0C7FFFBE2C9FFFBE0
+      C8FFF9DFC5FFF8DBC1FFF4D6B8FFFFFBF8FFF6D8B4FFE1B07DFFDB9264F6B46B
+      3E07FFFFFF00FFFFFF00FFFFFF00C6894CF6F9F5F1FFFCE3CDFFFBE3CDFFFBE2
+      CBFFF9E0C8FFF8DCC2FFF5D6BAFFFDFBF8FFFCE6CDFFFAE5C9FFE2B684FFBF79
+      42A6FFFFFF00FFFFFF00FFFFFF00C6894BF7F9F5F1FFFCE3CFFFFCE4CFFFFCE3
+      CDFFFAE1CAFFF9DDC4FFF6D9BCFFF4E9DFFFF7F2ECFFFBF7F3FFF5EFE9FFC27E
+      45FBFFFFFF00FFFFFF00FFFFFF00C6894BF7F9F4F0FFFCE6D3FFFDE7D3FFFCE4
+      D1FFFBE3CDFFFAE0C8FFF8DCC2FFF5D6BBFFF3D4B5FFF1D2B3FFF8F4F0FFC482
+      46F7FFFFFF00FFFFFF00FFFFFF00C6884AF7F9F4EFFFFEE7D7FFFDE7D5FFFDE6
+      D4FFFCE6D2FFD4976EFFD49E7BFFD09871FFD6A482FFCD8E68FFCD9069FFD09A
+      75FFD19973FFC88B62FFAD5A2036C68849F7F9F4EDFFFEE8D8FFFEE8D7FFFEE7
+      D6FFFDE5D3FFCC8D65FFF3CDB0FFFFFFFFFFE3C7B3FFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFEABFA1FFC98960FFC68447F7F9F3ECFFFEE8D6FFFDE7D6FFFDE7
+      D6FFFDE7D5FFC7865BFFEFC09EFFFFFFFFFFCC936EFFFFFFFFFFFFFFFFFFFFFB
+      F7FFFFF8F1FFE4AF8CFFC78A61FFC58245FFF8F2EBFFFEE7D6FFFDE7D6FFFDE7
+      D6FFFDE6D5FFC8885DFFEFBFA1FFFDFCFAFFFEFCFBFFFEFDFDFFFEFDFCFFFDFB
+      FAFFFDFCFBFFDDA885FFC17F53FFC47C40F7F7F0E6FFF8B455FFF7B554FFF8B4
+      53FFF8B253FFCA8D65FFEAB899FFDDA57EFFDDA680FFDBA37CFFD9A07AFFD9A0
+      79FFD89F78FFD89E78FFBF845DFFC1783CF7F7EDE3FFFDC26EFFFFD79EFFFFD6
+      9BFFFFD798FFC98B61FFE6B592FFE2A781FFE1A781FFDEA37DFFDCA17BFFDB9F
+      79FFD99E77FFD49A73FFBB7E57FFBF7138F5F5EBDFFEFDBF68FFFBBE65FFFCBE
+      64FFFCBE64FFC48154FFEAB697FFF3F3EAFFEDF1E6FFEFF1E6FFEFF0E6FFEDF1
+      E5FFF3F5EDFFD59C79FFB07044FFBC6933DEF8F1EAF2F7ECDFFDF6EADEFFF6EA
+      DCFFF6EADCFFC37F51FFEFB69AFFEAF3E8FF51BF84FF6FC998FF71C999FF54BF
+      84FFE4F4E9FFDD9C7BFFAA693AFFBB6A346BBA6530BCBB6631EDBA6630FFBA66
+      30F7BA6530F7C68355FFEFCEBAFFDDFFFFFF87EEC7FFA2F4D7FFA2F6D7FF8CEE
+      C7FFE0FFFFFFDDA285FFAB6A3EFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00BA6833C5C38458FFD38B68FFE18F70FFDC8D6CFFDA8B6DFFD78A
+      6EFFCD8B6CFFAB6D44FFA65F2EFFFFFFFF00FFFFFF00C17D4460C88B4DBBC88C
+      4FEEC88C4FF6C88C4FF7C88C4FF7C88D4FF7C98C4FF7C78B4FF7C5894BD4C476
+      3B91B3683C06FFFFFF00FFFFFF00FFFFFF00FFFFFF00C48549C3F7F2ECECF8F4
+      EEFCF8F4EDFFF8F3EDFFF8F3EDFFF8F3EDFFF8F2ECFFF7F2ECFFF2E6D7FFE2B2
+      7DFFDB9465F5B3683B07FFFFFF00FFFFFF00FFFFFF00C5884BEAFAF6F2FCFAE0
+      C7FFFBE1C9FFFBE2C9FFFBE0C8FFF9DFC5FFF8DBC1FFF4D6B8FFFFFBF8FFF6D8
+      B4FFE1B07DFFDB9264F6B46B3E07FFFFFF0092877B12776D62FF756D65FFDDC8
+      B5FF6F665EFF6C6259FFFBE2CBFFF9E0C8FFF8DCC2FFF5D6BAFFFDFBF8FFFCE6
+      CDFFFAE5C9FFE2B684FFBF7942A6756C630F988C808F9C8F83FF524C47FFCBB7
+      A7FF544D47FF908579FF9A8C7FFFF5DDC6FFF9DDC4FFF6D9BCFFF4E9DFFFF7F2
+      ECFFFBF7F3FFF5EFE9FFC27E45FB95897D1D665E56F385786FFF4A413BFF9586
+      7AFF564A40FF928374FF4F4740FFE4CFBBFFFAE0C8FFF8DCC2FFF5D6BBFFF3D4
+      B5FFF1D2B3FFF8F4F0FFC48246F73E3934855B544DFFB0A090FF695D51FF8674
+      65FF63584EFFAA9888FF5A514AFF85796EFFFBE1CCFFFADFC7FFF8DCC2FFF6DA
+      BDFFF6D8BBFFFAF4EFFFC68346F7665E56EF696158FF564F48FF4D4946FF8C80
+      77FF403B37FF46423CFF3D3833FF2C2825FFFCE4D1FFFBE1CCFFFAE0C7FFF9DD
+      C3FFF8DCC2FFFAF4EDFFC68245F7756C63F8C4B9AFFFA79A8DFF807A73FFD6C3
+      B4FF6C635CFFBBAFA4FFA6988BFF534D46FFFDE5D3FFFBE4D0FFFBE3CCFFFADF
+      C7FFFADFC6FFFAF2EAFFC68042F771685FFFC1B6ABFF797066FF625C56FFBAA9
+      9CFF6E665DFFBDB1A5FF7E746AFF332E2BFFFDE5D3FFFCE4D1FFFCE2CDFFFBE1
+      CBFFFBE1C9FFFBF7F2FFC57C3FF7635B54FFA79A8DFF70675EFF453F3AFFAD9C
+      91FF5C554EFF968A7FFF665E56FF1B1918FFFCE4D1FFFCE2CEFFFCE2CCFFFBE0
+      C9FFFBE1C8FFFDFAF7FFC1763BF7423D38D948423CD94B3E31FE58544FFFB686
+      42FF3D3020FF413524FF372B1BFF3B2C15FFF7B352FFF7B352FFF7B251FFF7B2
+      4FFFF7B24FFFFCF9F5FFBF6F36F7FFFFFF00FFFFFF00C1783CF7F7EDE3FFFDC2
+      6EFFFFD8A0FFFFD79EFFFFD69BFFFFD798FFFFD696FFFFD695FFFFD594FFFFD4
+      93FFFBBE65FFFBF7F4FFBB6731F7FFFFFF00FFFFFF00BF7138F5F5EBDFFEFDBF
+      68FFFCBD67FFFBBE65FFFCBE64FFFCBE64FFFCBD62FFFBBD63FFFBBC61FFFCBE
+      60FFFCBC62FFFDFBF8FDB9642DF3FFFFFF00FFFFFF00BC6933DEF8F1EAF2F7EC
+      DFFDF6EBDEFFF6EADEFFF6EADCFFF6EADCFFFAF3EBFFFAF3EBFFFAF2EAFFFCF7
+      F3FFFCF8F4FDFEFEFDF0B7602AD5FFFFFF00FFFFFF00BB6A346BBA6530BCBB66
+      31EDBA6630F7BA6630F7BA6630F7BA6530F7BA652FF7B9652EF7B9652EF7B964
+      2EF7B9642EEFB7622CBDB7622E63000000000000000000000000000000009543
+      1A00B67A5D00BF8A6F00BE896E00BE886D00BE886D00BE896E00BE896D00BF89
+      6E00BE84680085462C002505000000000000000000000000000000000000994B
+      24FFB57758FFBC8567FFBC8366FFBD8669FFBE886BFFBB8366FFBD8769FFBC83
+      66FFBB7F61FF874E33FF2F120800000000000000000000000000000000009B4F
+      2AFFA56C50FFA87155FFA66F53FFA87358FFA9745AFFA66E53FFA87358FFA66E
+      51FFA96F52FF835036FF36180A0000000000000000000000000000000000984D
+      2AFFBEB6B2FFD3C8C2FFE1E7EAFFE1E7EAFFE1E6E9FFE1E7EAFFE0E7E9FFE1E7
+      EAFFE2E3E4FF977666FF35140300A5624200B4795DFFC5967FFFC69882FFAD6A
+      49FFC5B0A3FFBC9F8EFFEFEFF0FFF6F7F7FFF6F7F7FFF6F7F7FFF6F7F7FFF7F7
+      F7FFF8F4F1FFA37F6DFF391604009A502A00AB6846FFB98062FFBC8568FFBA76
+      52FFD3D7DBFFE2EDF4FFF8F8F7FFF5F5F5FFF5F5F5FFF5F5F5FFF5F5F5FFF5F6
+      F6FFF8F5F1FFA98572FF401B0900974C2700A16E54FFB18E7EFFB29383FFC483
+      5FFF7DAFD6FF76B7EDFFF4F3F2FFF4F4F4FFF4F4F4FFF4F4F4FFF4F4F4FFF4F5
+      F5FFF8F5F2FFB08C77FF47230E00974D2600AC8774FFC29883FFE7EBEDFFDCA9
+      8BFFC2CBD2FFD0DBE7FFF7F5F4FFF6F5F5FFF5F5F5FFF5F5F5FFF6F5F6FFF7F6
+      F8FFFCF7F4FFB5927DFF4B291300A5572E00C09C89FFC8AD9BFFDEE0E0FFE3B4
+      93FFC2C1D2FFD6D6EFFFF7F8F6FFF4F4F5FFF4F4F5FFF4F4F5FFF7F5F8FFDBEE
+      D5FFBFE6B5FFB89687FF4F2E1800B6623500C2A495FFB7DDF7FFFEFDFBFFE6BA
+      99FF8083C3FF7277C9FFF5F7F6FFFAFBFBFFFAFAFBFFFAFAFBFFFCFCFCFFB5E6
+      A9FF67C355FFB9978EFF52311D00CA724100A09595FF4697ECFFE6E8EAFFE5B9
+      9BFFAA7B63FFAA7963FFBC896AFFBA886AFFBB886BFFBC896CFFBE8B6EFFBA8B
+      6BFFB68A64FFA8785EFF53352300CD7E4C00D7B59CFFE9E7E4FFFCFAF8FFDBCF
+      C8FFA19085FFA08F84FFA08F84FFA29087FFA7938FFFA18475FF614430FF5C42
+      31FF5D4130FF402A1DFF13080300D2895400BD9F9AFF797AD7FFF7F7F6FFF4F5
+      F5FFEAECEDFFEAECEEFFEBEDEFFFD8E9D5FF7BD06EFFCBC5ACFF543522FF0104
+      0600000101000000000000000000D9905D00B69693FF4841AAFFDDD6D1FFF2E8
+      E3FFF2E8E3FFF2E8E3FFF2E8E3FFDBE2C9FF75BC56FFD0C1A4FF603E2AFF0000
+      0000000000000000000000000000B3764F00AC7855FFAC7D5AFFAD7C5EFFA97A
+      5EFFA9795DFFA9795DFFA9795DFFAC7A61FFAE7965FFB98468FF503626FF0002
+      04000000000000000000000000006F462D006A4933006A4D39006A4C3900694C
+      3800694C3800694C3800694C38006A4C39006A4C3A00674A3800241811000002
+      04000000000000000000000000000000000000000000000000000000000000A0
+      C41B02A1C5A404A2C5EA02A1C4FD02A1C4FD03A2C5EA01A1C49800A0C41B0000
+      000000000000000000000000000000000000000000000000000000A0C46401A0
+      C4FBEEF8FAFFF4FBFCFFE4F9FCFFE4F9FCFFC3EDF4FF18AACAFA00A0C4F800A0
+      C464000000000000000000000000000000000000000000A0C46800A0C4FF83D4
+      E5FEEFFCFDFFCEF7FCFFAFF4FCFFA9F4FCFF9CF0FAFF4ECCDEFF5ECBDFFA00A0
+      C4FF00A0C46400000000000000000000000000A0C41B01A0C4FC7DD5E5FFCDF6
+      FAFFEAFBFDFFB8F4FBFFB5F4FCFFADF3FBFF9CEEF8FF52CFE0FFA7EFF8FF61CD
+      E0FC00A0C4FA00A0C41B000000000000000001A1C49D1AACCBFEC4F3F8FFAEEF
+      F7FFE0F9FCFFBDF3F9FFAEF1F9FFA4EFF8FF8EE6F2FF54D2E1FFC1F4F9FF6FE3
+      EFFF13A9C9F900A0C48A000000000000000005A3C6EC91DEEBFF93E8F2FFA1EB
+      F4FFCDF4F9FFAEEEF6FFA1ECF5FF96EAF4FF81E2EFFF4ECFDFFF9EEBF4FF59DC
+      EBFF54CDE0FE01A0C4E2000000000000000002A1C4FEA4E8F1FF80E2EDFF8BE5
+      F0FF90E6F1FF90E7F1FF8BE6F0FF82E4EFFF74DFEDFF6CDEECFF63DCEAFF3BD2
+      E4FF40D1E3FF01A0C4FD000000000000000003A1C4FF9BE6F0FF66DAE8FF69DB
+      E9FF5CD9E7FF50D6E6FF51D6E7FF4FD6E6FF42D3E3FF32CDE1FF29CCE0FF24CA
+      DEFF1FC8DDFF00A0C4FF000000000000000000A0C4FF79DDE8FF23C7DCFF16C5
+      DAFF65D9E7FF55D5E5FF47D2E3FF38CEE1FF28C9DDFF13B7CBFF16C5DAFF13C3
+      D9FF11C2D8FF00A0C4FF000000000000000000A0C4FF8BE1EBFF01BCD3FF04BE
+      D4FF31C9DDFF08BFD5FF09BFD6FF09BFD6FF08BFD5FF05B0C5FF04BED4FF01BC
+      D3FFFFFFFFFF00A0C4FF000000000000000000A0C4FFC9F1F6FF8AE1EBFF00BC
+      D3FF22C5D9FF00BCD3FF00BCD3FF00BCD3FF00BCD3FF00AFC4FF01BCD3FF87DF
+      EAFFFFFFFFFF00A0C4FF000000000000000001A0C4FCE3F4F8FFA3E7EFFFBAED
+      F3FF84DEEAFF75DBE7FF3FCCDEFF0BBFD5FF4CD0E0FF9BE1EAFFC9F0F6FFC9F1
+      F6FFE3F4F8FF019FC3FC000000000000000000A0C4BB00A0C4FFDDF2F7FF93E3
+      EDFF9AE5EEFFA0E6EFFFA6E8F0FFABEAF1FFAFEAF1FFB1EAF1FFAFEAF1FFDDF2
+      F7FF00A0C4FF00A0C4AB00000000000000000000000006A2C4CE00A0C4FF5AC1
+      D8FFC7EAF2FFF0F9FBFFFDFEFEFFFDFEFEFFF0F9FBFFC7EAF2FF5AC1D8FF00A0
+      C4FF039FC0C80000000000000000000000000000000000000000009EC150019B
+      BBCD11A4C4F407A2C4FC01A0C4FF01A0C4FF08A1C4FC0EA1C1F3049BBBCF0098
+      BA4A000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00A465341DA769
+      3A9FA76A3ADEA56736F6A76939E5A76A3ABCA4653453A4653405FFFFFF00FFFF
+      FF00FFFFFF00A4653479A4653410FFFFFF00FFFFFF00A4653550A66838F6C090
+      68FAD3B08FFFDFC2A8FFDEC1A8FFD4B193FFB9875FF4A56737F0A4653458FFFF
+      FF00A4663566A46534FFA465340FFFFFFF00A4653429A66939F5D3AD8CFFDCBD
+      9DFFDDBEA1FFE5CBB4FFE9D3BFFFEEDDCCFFF0E2D5FFE7D2BFFFAF774BF5A567
+      36C0AB7143F7A46635FCA465340EFFFFFF00A769399BC09069FDC59872FFA86B
+      3CFFA46635FFA76A3AFCB7855DF3D9BBA1FEF1E4D8FFF2E6DBFFF3E8DDFFCEA7
+      88FDEAD8C8FFA76A3AF9A465340DFFFFFF00A66838F3AB7041FFA96C3CFEA76A
+      3AF5A4653475A4653419A4653445A66938CDB98861F5EBDBCDFFF5EBE2FFF6EE
+      E6FFF6EEE6FFA76A3AFAA465340BFFFFFF00A46535FEA76A3AFBC791689DA567
+      37E6A4653423FFFFFF00FFFFFF00FFFFFF00A4653460A46635FFE9D7C7FFEBD8
+      C6FFF5ECE3FFA66A3AFAA465340AFFFFFF00A46534FCB3794C7ECF9D762BBB83
+      5713A4653402FFFFFF00FFFFFF00A4653404A66838C4D0AC8FFAF6EEE7FFF2E6
+      DBFFF6EEE6FFA66A3AFBA4653409FFFFFF00A465340DFFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00A46534A0A46534FFAD7447F8AF774CF7AF77
+      4CF7AF784CF7A46534FFA4653408FFFFFF00A46534F9A46534FEA46534FEA465
+      34FDA46534FCA46534FBA46534B9A465341DA4653418A4653418A4653418A465
+      3418A4653418A465341CFFFFFF00FFFFFF00A46534FCF5EDE5FFF6EDE5FFF5EC
+      E4FFD7B79CFDA66837E0A4653410FFFFFF00FFFFFF00FFFFFF00FFFFFF00D5A4
+      7E1ACD997239A46534FCA465340CFFFFFF00A46635FCF6EEE6FFEBD7C4FFEAD9
+      C9FFA46534FEA465346AFFFFFF00FFFFFF00FFFFFF00A465340BA56635E9C995
+      6C8DB77F53C2A46534FFA4653405FFFFFF00A56737FDF6EEE6FFF5ECE3FFF5ED
+      E4FFE6D2C1FFB0794DF5A66938CAA4653436FFFFFF00A465346AA96B3CEDB67C
+      4FFFA76A3AFEA56837FAFFFFFF00FFFFFF00A66838FDF1E4D8FFD4B295FEF4E9
+      E0FFF3E8DDFFEDDCCCFFD2AD8FFEB0784CF5A56635FBA66939FFA66939FEA96D
+      3DFFB0784CFFA76A3AA8FFFFFF00FFFFFF00A56737FEB7845BF7A56736D4B17A
+      4EF4E3CAB4FFECDAC9FFE7D1BCFFE3C9B0FFDEBEA0FFD2AB88FFCEA582FFD3AE
+      8EFFA66838F5A465342AFFFFFF00FFFFFF00A46534FFA5673693FFFFFF00A465
+      3454A66737EEB58055F3CEA684FFD8B697FFDBB999FFD3AC8AFFC2946DFCA668
+      38F6A466355BFFFFFF00FFFFFF00FFFFFF00A46534A2A4653401FFFFFF00FFFF
+      FF00A4653405A4653453A76A3ABEA66938E9A46635FAA76A3AE4A76B3BAAA465
+      3424FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00884A2086874A20F9884B
+      21C6874A2025FFFFFF00FFFFFF00FFFFFF00FFFFFF00A5673686A46635F9A668
+      38C6A4653425FFFFFF00FFFFFF00FFFFFF00874A206B8B4E23F49F6131FF9658
+      2AFD884B20E1874A200BFFFFFF00FFFFFF00A466356BAA6E3DF4C89669FFBA83
+      54FDA66736E1A465340BFFFFFF00FFFFFF00884B20ED9F6030FFA46534FFA465
+      34FF8C4F23F2874A204DFFFFFF00FFFFFF00A56736EDC79567FFCF9F72FFCF9F
+      72FFAC7040F2A465344DFFFFFF00874A2018884B20F7A46534FFA46534FFA465
+      34FF945629FC874A2087FFFFFF00A4653418A56736F7CF9F72FFCF9F72FFCF9F
+      72FFB88050FCA4663587FFFFFF00874A204D8D5024F0A46534FFA46534FFA465
+      34FF9A5C2DFF894B21C9FFFFFF00A465344DAD7242F0CF9F72FFCF9F72FFCF9F
+      72FFC18C5EFFA76938C9FFFFFF00874A2082945629FCA46534FFA46534FFA465
+      34FFA06231FF874A20F6FFFFFF00A4653482B88051FCCF9F72FFCF9F72FFCF9F
+      72FFCA986BFFA56635F6FFFFFF00874A2079945629FAA46534FFA46534FFA465
+      34FF9F6030FF884B20EDFFFFFF00A4653479B77F50FACF9F72FFCF9F72FFCF9F
+      72FFC89568FFA56736EDFFFFFF00874A20518E5025F0A46534FFA46534FFA465
+      34FF995B2CFF894B21BAFFFFFF00A4653451AF7444F0CF9F72FFCF9F72FFCF9F
+      72FFBF8A5BFFA76938BAFFFFFF00874A2029894C21F3A46534FFA46534FFA465
+      34FF935528F9874A207AFFFFFF00A4653429A86A3AF3CF9F72FFCF9F72FFCF9F
+      72FFB67D4EF9A465347AFFFFFF00874A2006874A20FD874A20FF874A20FF874A
+      20FF874A20FF874A2044FFFFFF00A4653406A46534FDA46534FFA46534FFA465
+      34FFA46534FFA4653444FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00874A20E4874A20FF874A20FF874A
+      20FF874A20FAFFFFFF00FFFFFF00FFFFFF00A56635E4A46534FFA46534FFA465
+      34FFA46534FAFFFFFF00FFFFFF00FFFFFF00884B21C69A5C2DFFA46534FF9D5F
+      2FFF884B21E1FFFFFF00FFFFFF00FFFFFF00A66838C6C08B5DFFCF9F72FFC592
+      64FFA66837E1FFFFFF00FFFFFF00FFFFFF00874A20668C4F24F69E5F2FFF8F51
+      25F9884B208AFFFFFF00FFFFFF00FFFFFF00A4653466AC7040F6C69365FFB075
+      45F9A567368AFFFFFF00FFFFFF00FFFFFF00874A2008874A2082874A20F3884B
+      2096874A2010FFFFFF00FFFFFF00FFFFFF00A4653408A5663582A56635F3A667
+      3696A4653410FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00874A2002FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00C5C5C575CCCCCC99BCBCBC3CFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF007373733C72727286979797DAE8E8E8FFF1F1F1FFCFCFCFF77373
+      738C6C6C6C3CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF007373735C727272DCBABABAFFD8D8D8FFF4F4F4FFFDFDFDFFEAEAEAFFBCBC
+      BCFF6B6B6BDC6A6A6A5CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00757575C6C4C4C4FFDFDFDFFFEBEBEBFFE8E8E8FFF6F6F6FFF0F0F0FFE9E9
+      E9FFABABABFF6C6C6CC6FFFFFF00FFFFFF00FFFFFF00FFFFFF00B0B0B001ADAD
+      AD01A1A1A1F2EFEFEFFFF0F0F0FFE6E6E6FFEDEDEDFFEEEEEEFFF9F9F9FFDDDD
+      DDFFDEDEDEFF898989F6FFFFFF00FFFFFF00B1B1B103AFAFAF22ACACAC3CA9A9
+      A942B0B0B0FECBCBCBFFEFEFEFFFEFEFEFFFEDEDEDFFEFEFEFFFEFEFEFFFEFEF
+      EFFFA6A6A6FF898989FFFFFFFF00FFFFFF00AFAFAF2AACACACA6A8A8A8E6A4A4
+      A4F2A1A1A1FFB9B9B9FFC7C7C7FFBEBEBEFFBFBFBFFFBBBBBBFFC2C2C2FFBABA
+      BAFFC6C6C6FF848484FFFFFFFF00AEAEAE0CABABABB6D7D7D7FFEEEEEEFFF3F3
+      F3FFE3E3E3FFB6B6B6FFA9A9A9FFCCCCCCFFCDCDCDFFCACACAFFC6C6C6FFB6B6
+      B6FFB6B6B6FF7E7E7EFFFFFFFF00AAAAAA52C1C1C1FFEFEFEFFFE5E5E5FFEBEB
+      EBFFF1F1F1FFEEEEEEFFB6B6B6FFA9A9A9FFD8D8D8FFCBCBCBFFD0D0D0FF9D9D
+      9DFFB5B5B5FF797979FFFFFFFF00A5A5A5BBE2E2E2FFDCDCDCFFD8D8D8FFDDDD
+      DDFFE5E5E5FFEFEFEFFFE9E9E9FF868686FFD7D7D7FFCDCDCDFFD3D3D3FF9797
+      97FFB4B4B4FF747474FFFFFFFF00A0A0A0D0E6E6E6FFBFBFBFFFD0D0D0FFD5D5
+      D5FFDADADAFFE5E5E5FFF5F5F5FF787878FFC6C6C6FFCDCDCDFFD3D3D3FF9191
+      91FFB1B1B1FF6F6F6FFFFFFFFF009A9A9AB2DBDBDBFFE8E8E8FFB7B7B7FFA9A9
+      A9FFCCCCCCFFDADADAFFF5F5F5FF717171FFBFBFBFFFCBCBCBFFD1D1D1FF8C8C
+      8CFFAFAFAFFF6B6B6BFFFFFFFF009494945AB5B5B5FFF4F4F4FFE5E5E5FFDBDB
+      DBFFDADADAFFDADADAFFF0F0F0FF6E6E6EFFCFCFCFFFC9C9C9FFD0D0D0FF8F8F
+      8FFFB9B9B9FF666666FFFFFFFF00FFFFFF00888888ACB5B5B5FFF3F3F3FFE9E9
+      E9FFE3E3E3FFE4E4E4FFB6B6B6FF929292FFE5E5E5FFE4E4E4FFDEDEDEFFD4D4
+      D4FFA0A0A0FF626262E5FFFFFF00FFFFFF00828282017C7C7CAEA7A7A7FFDADA
+      DAFFD8D8D8FFD3D3D3FF666666FE727272FF707070FF6C6C6CFF686868FF6565
+      65FA626262E05F5F5F13FFFFFF00FFFFFF00FFFFFF00FFFFFF007171715D6C6C
+      6CE2686868C9646464BC60606061FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000007AB9FF007AB9FF007A
+      B9FF007AB9FF007AB9FF00000000000000000000000000000000000000000000
+      000000000000000000000000000000000000007AB9FF9AEFFEFF9AEFFEFF9292
+      92FF97ECFEFF96ECFEFF0178B6FF000000000000000000000000000000000000
+      0000000000000000000000000000007AB9FF9DF2FEFF9DF2FEFF929292FFB6B6
+      B6FF0E0E0EFF99EEFEFF98EEFEFF0373ADFF0471AAFF056EA5FF066AA0FF0767
+      9BFF086597FF00000000000000000179B7FFC5F8FFFFC1F4FDFF929292FFC5F8
+      FFFF0E0E0EFFA7E0EEFFA0D9EBFF9BD5E7FF94CFE3FF8DCADFFF87C4DCFF81BF
+      D9FF7ABAD5FF0B5D8AFF000000000277B4FFC3F6FDFF9CF3FEFF929292FFB6B6
+      B6FF0E0E0EFF92EBFDFF90E9FDFF8DE7FDFF8AE4FDFF88E2FDFF86E0FDFF83DE
+      FDFF76B6D2FF0B5D8AFF000000000175B2FFBEF3FBFF9CF2FEFFB6B6B6FF0000
+      0000B6B6B6FF91E9FDFF8EE8FDFF8CE5FDFF89E3FDFF87E1FDFF84DEFDFF81DC
+      FCFF72B3CFFF0B5D8AFF000000000374AFFFBAEFF9FF9AF1FEFF000000009292
+      92FF0000000090E8FDFF8DE6FEFF8BE3FDFF87E1FDFF85DFFDFF82DDFDFF7FDB
+      FDFF6DAFCDFF0B5D8AFF000000000373ADFFB5ECF6FF98F0FEFFB6B6B6FF9292
+      92FFB6B6B6FF8EE7FDFF8BE4FEFF89E2FDFF85DFFDFF84DEFDFF80DBFDFF7ED9
+      FCFF69ABCBFF0B5D8AFF000000000471AAFFB1E7F4FF97EFFEFF000000009292
+      92FF000000008CE5FEFF8AE3FEFF87E1FDFF84DEFDFF81DCFDFF80DAFDFF7CD8
+      FDFF65A8C8FF0B5D8AFF00000000056FA7FFADE4F2FF95EDFDFFB6B6B6FF9292
+      92FFB6B6B6FF8AE4FDFF88E2FDFF85DFFDFF83DDFDFF80DBFDFF7DD9FDFF7BD6
+      FCFF60A4C6FF0B5D8AFF00000000056EA4FFA8E0EFFF94ECFDFF000000009292
+      92FF0000000089E2FDFF86E0FDFF84DEFCFF81DCFDFF7FD9FDFF7CD7FCFF79D5
+      FCFF5CA1C3FF0B5D8AFF00000000056CA1FFA4DDEDFF9ED7E8FF97D2E6FF90CD
+      E1FF8AC8DEFF84C2DAFF7EBDD7FF77B8D3FF71B2D0FF6AADCCFF64A7C9FF5DA3
+      C4FF579DC1FF0B5D8AFF0000000000000000086597FF096496FF086495FF0963
+      94FF096292FF096291FF0A608FFF0B608FFF0A5E8DFF0B5E8BFF0C5E8AFF0C5C
+      8AFF0C5C88FF0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000774B3B86774A3AE1784938FC794A38FD774B3AE3764C3D8D000000000000
+      000000000000000000000000000000000000000000000000000077493821784C
+      3BE2C3ADA4FFF4EFEDFFFDFCFCFFFBF9F7FFEFE7E2FFBEA59AFF794E3EE9764D
+      3D26000000000000000000000000000000000000000000000000784D3CE6E0D5
+      D0FFFAF8F5D5F4EFE8AAF3EAE2A4EEE3D9A8EBDFD3B2EDE2D8D9D6C4B9FF7B51
+      41F00000000000000000000000000000000000000000764D3D8EC3ADA4FFFAF8
+      F5D6F7F3EFA0FAF7F49FF6F0EBA2F2E8DFA6EDE0D4AAE4D3C2A7E5D5C5D3B89C
+      8DFF775143A2000000000000000000000000000000007A5040EDF4EFEDFFF5EF
+      E8ACFAF7F39FFDFCFA9DF7F1ECA1F2E7DFA4EBDDD0A4E4D2C1A5C49D788AE1D2
+      C5FF7F5546F600000000000000000000000000000000794A39FDFDFBFAFFF2E9
+      E0A5F8F3EEB2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD7CCC1C1B988597BE9DB
+      CEFF7A4B39FE716461020000000000000000000000007A4B3AFEFAF7F4FFEDE1
+      D6A7F1E7DEA7FFFFFFFFF5F0EBC9ECE6E0CCE2DAD2C8CDAE9191B682537DE7D6
+      C9FF7A4B39FE7164610B0000000000000000000000007E5445F4EDE5E0FFE8D9
+      CBADE8D7C89EFFFFFFFFE3D0C097E0CAB596D6B99D90BA895C7BBC8E608CDBC7
+      B5FF835848F9000000000000000000000000000000007A574ABABDA498FFECE0
+      D4D7D8BEA693FFFFFFFFD8BEA594CCA88787B9895B7AB27E4B80D9C1AAD6B191
+      7EFF836054D7000000000000000000000000000000007164610A805747F7D5C2
+      B7FFE4D3C3D3C59D778AFFFFFFFFB581527EBA8D5E8DD9C0A9D6C8AE9BFF8559
+      49FA7164611B000000000000000000000000000000000000000073584F4D8057
+      47F9B89B8CFFE0D0C2FFE8D9CCFFE5D6C7FFDAC6B5FFB2907EFF865A4AFB7C62
+      596A000000000000000000000000000000000000000000000000000000007164
+      6113836358DD835B4BFC98ACA6FF98ADA7FF98B1ABFF80685EF37164611F0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00004259590C3E5E5EFFC1EDEBFFCAF8F5FFABDFDDFF3E5E5EFF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000425959073E5E5EFF5C8080FF84AAA8FF668B8AFF3E5E5EFF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000003E5E5EFFBAE6E3FEC9F6F3FFB0D5D3FE3E5E5EFF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000003E5E5E4C363939A5464646EC303030A93E5E5E4C000000000000
+      0000000000000000000000000000
+    }
+  end
+  object odOpenDialog: TOpenDialog
+    FilterIndex = 0
+    left = 112
+    top = 368
+  end
+end

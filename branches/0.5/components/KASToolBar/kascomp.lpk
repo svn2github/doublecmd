@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="3">
+    <Name Value="KASComp"/>
+    <Author Value="Alexander Koblov"/>
+    <CompilerOptions>
+      <Version Value="9"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="$(LazarusDir)/lcl/units/$(TargetCPU)-$(TargetOS)/$(LCLWidgetType)"/>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <SyntaxMode Value="Delphi"/>
+        </SyntaxOptions>
+      </Parsing>
+      <Linking>
+        <Debugging>
+          <GenerateDebugInfo Value="True"/>
+        </Debugging>
+      </Linking>
+      <Other>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="ToolBar that loading from *.ini file. Format of *.ini file 
+      KASBarMenu is popupmenu read *.bar file and uses *.bar buttons as menu items.
+"/>
+    <License Value="GNU GPL 2
+"/>
+    <Version Major="1" Minor="6"/>
+    <Files Count="4">
+      <Item1>
+        <Filename Value="kastoolbar.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="KASToolBar"/>
+      </Item1>
+      <Item2>
+        <Filename Value="kasbarmenu.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="KASBarMenu"/>
+      </Item2>
+      <Item3>
+        <Filename Value="kasbarfiles.pas"/>
+        <UnitName Value="KASBarFiles"/>
+      </Item3>
+      <Item4>
+        <Filename Value="kasprogressbar.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="KASProgressBar"/>
+      </Item4>
+    </Files>
+    <Type Value="RunAndDesignTime"/>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="LCL"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)/"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

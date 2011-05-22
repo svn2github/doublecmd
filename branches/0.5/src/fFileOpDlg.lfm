@@ -1,0 +1,223 @@
+object frmFileOp: TfrmFileOp
+  Left = 523
+  Height = 180
+  Top = 259
+  Width = 539
+  ActiveControl = btnCancel
+  Caption = 'Process file(s)'
+  ChildSizing.TopBottomSpacing = 4
+  ClientHeight = 180
+  ClientWidth = 539
+  Constraints.MinWidth = 500
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  ShowInTaskBar = stAlways
+  LCLVersion = '0.9.31'
+  object lblFileNameFrom: TLabel
+    AnchorSideLeft.Control = lblFrom
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 51
+    Height = 14
+    Top = 8
+    Width = 476
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 8
+    BorderSpacing.Right = 12
+    Caption = 'File name from'
+    ParentColor = False
+  end
+  object lblEstimated: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = pbSecond
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 14
+    Top = 100
+    Width = 527
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 6
+    ParentColor = False
+  end
+  object lblFrom: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 10
+    Height = 14
+    Top = 8
+    Width = 35
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 8
+    Caption = 'From:'
+    ParentColor = False
+  end
+  object lblTo: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = lblFrom
+    AnchorSideTop.Side = asrBottom
+    Left = 10
+    Height = 14
+    Top = 24
+    Width = 20
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 2
+    Caption = 'To:'
+    ParentColor = False
+  end
+  object lblFileNameTo: TLabel
+    AnchorSideLeft.Control = lblFileNameFrom
+    AnchorSideTop.Control = lblFileNameFrom
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 51
+    Height = 14
+    Top = 24
+    Width = 478
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 2
+    BorderSpacing.Right = 10
+    Caption = 'File name to'
+    ParentColor = False
+  end
+  object pbSecond: TKASProgressBar
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = pbFirst
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 22
+    Top = 72
+    Width = 527
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 6
+    Smooth = True
+    TabOrder = 0
+    BarShowText = True
+  end
+  object pbFirst: TKASProgressBar
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = lblTo
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 22
+    Top = 44
+    Width = 527
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 6
+    Smooth = True
+    TabOrder = 1
+    BarShowText = True
+  end
+  object btnCancel: TBitBtn
+    AnchorSideTop.Control = lblEstimated
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = btnPauseStart
+    Left = 363
+    Height = 32
+    Top = 120
+    Width = 89
+    Anchors = [akTop, akRight]
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 6
+    BorderSpacing.InnerBorder = 2
+    Cancel = True
+    Caption = 'Cancel'
+    Kind = bkCancel
+    ModalResult = 2
+    NumGlyphs = 0
+    OnClick = btnCancelClick
+    TabOrder = 2
+  end
+  object btnPauseStart: TBitBtn
+    AnchorSideTop.Control = btnCancel
+    AnchorSideRight.Control = pbFirst
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = btnCancel
+    AnchorSideBottom.Side = asrBottom
+    Left = 458
+    Height = 32
+    Top = 120
+    Width = 75
+    Anchors = [akTop, akRight, akBottom]
+    Layout = blGlyphTop
+    NumGlyphs = 0
+    OnClick = btnPauseStartClick
+    Spacing = 0
+    TabOrder = 3
+  end
+  object btnWorkInBackground: TButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = btnCancel
+    Left = 6
+    Height = 32
+    Top = 120
+    Width = 149
+    BorderSpacing.Left = 6
+    Caption = 'Work in &background'
+    OnClick = btnWorkInBackgroundClick
+    TabOrder = 4
+  end
+  object btnToQueue: TSpeedButton
+    AnchorSideLeft.Control = btnWorkInBackground
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = btnWorkInBackground
+    AnchorSideBottom.Control = btnWorkInBackground
+    AnchorSideBottom.Side = asrBottom
+    Left = 160
+    Height = 32
+    Top = 120
+    Width = 58
+    Anchors = [akTop, akLeft, akBottom]
+    BorderSpacing.Left = 5
+    Caption = 'To Queue'
+    NumGlyphs = 0
+    OnClick = btnToQueueClick
+  end
+  object btnOpHome: TSpeedButton
+    AnchorSideLeft.Control = btnToQueue
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = btnToQueue
+    AnchorSideBottom.Control = btnToQueue
+    AnchorSideBottom.Side = asrBottom
+    Left = 221
+    Height = 32
+    Top = 120
+    Width = 41
+    Anchors = [akTop, akLeft, akBottom]
+    BorderSpacing.Left = 3
+    Caption = 'Home'
+    NumGlyphs = 0
+    OnClick = btnOpHomeClick
+  end
+  object bthOpEnd: TSpeedButton
+    AnchorSideLeft.Control = btnOpHome
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = btnOpHome
+    AnchorSideBottom.Control = btnOpHome
+    AnchorSideBottom.Side = asrBottom
+    Left = 262
+    Height = 32
+    Top = 120
+    Width = 42
+    Anchors = [akTop, akLeft, akBottom]
+    Caption = 'End'
+    NumGlyphs = 0
+    OnClick = bthOpEndClick
+  end
+end
