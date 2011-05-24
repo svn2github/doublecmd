@@ -6,11 +6,11 @@ msgstr ""
 
 #: lclstrconsts.hhshelpbrowsernotexecutable
 msgid "Browser %s%s%s not executable."
-msgstr "Браузер %S%S%S не є виконавчим."
+msgstr "Браузер %s%s%s не є виконуваним."
 
 #: lclstrconsts.hhshelpbrowsernotfound
 msgid "Browser %s%s%s not found."
-msgstr "Браузер %S%S%S не знайдено."
+msgstr "Браузер %s%s%s не знайдено."
 
 #: lclstrconsts.hhshelperrorwhileexecuting
 msgid "Error while executing %s%s%s:%s%s"
@@ -22,7 +22,7 @@ msgstr "Не вдається знайти браузер HTML."
 
 #: lclstrconsts.hhshelpnohtmlbrowserfoundpleasedefineoneinhelpconfigurehe
 msgid "No HTML Browser found.%sPlease define one in Help -> Configure Help -> Viewers"
-msgstr "Програму довідки не знайдено.%s Оберіть її в меню Допомога -> Параметри довідки -> Програми перегляду"
+msgstr "Браузер HTML не знайдено.%s Задайте його в меню Допомога -> Параметри довідки -> Переглядачі"
 
 #: lclstrconsts.hhshelpthehelpdatabasewasunabletofindfile
 msgid "The help database %s%s%s was unable to find file %s%s%s."
@@ -55,7 +55,7 @@ msgstr "Backspace"
 #: lclstrconsts.ifsvk_cancel
 msgctxt "lclstrconsts.ifsvk_cancel"
 msgid "Cancel"
-msgstr "Відміна"
+msgstr "Скасувати"
 
 #: lclstrconsts.ifsvk_capital
 msgid "Capital"
@@ -79,10 +79,12 @@ msgid "Delete"
 msgstr "Видалити"
 
 #: lclstrconsts.ifsvk_down
+msgctxt "lclstrconsts.ifsvk_down"
 msgid "Down"
 msgstr "Вниз"
 
 #: lclstrconsts.ifsvk_end
+msgctxt "lclstrconsts.ifsvk_end"
 msgid "End"
 msgstr "Кінець"
 
@@ -100,13 +102,14 @@ msgstr "Кінцевий"
 
 #: lclstrconsts.ifsvk_hanja
 msgid "Hanja"
-msgstr "Корейська"
+msgstr "Китайська"
 
 #: lclstrconsts.ifsvk_help
 msgid "Help"
 msgstr "Допомога"
 
 #: lclstrconsts.ifsvk_home
+msgctxt "lclstrconsts.ifsvk_home"
 msgid "Home"
 msgstr "Дім"
 
@@ -128,6 +131,7 @@ msgid "Mouse Button Left"
 msgstr "Ліва клавіша миші"
 
 #: lclstrconsts.ifsvk_left
+msgctxt "lclstrconsts.ifsvk_left"
 msgid "Left"
 msgstr "Вліво"
 
@@ -176,7 +180,7 @@ msgstr "Друкувати"
 #: lclstrconsts.ifsvk_prior
 msgctxt "lclstrconsts.ifsvk_prior"
 msgid "Prior"
-msgstr "Prior"
+msgstr "Попередній"
 
 #: lclstrconsts.ifsvk_rbutton
 msgid "Mouse Button Right"
@@ -187,6 +191,7 @@ msgid "Return"
 msgstr "Enter"
 
 #: lclstrconsts.ifsvk_right
+msgctxt "lclstrconsts.ifsvk_right"
 msgid "Right"
 msgstr "Вправо"
 
@@ -215,6 +220,7 @@ msgid "Space key"
 msgstr "Пробіл"
 
 #: lclstrconsts.ifsvk_tab
+msgctxt "lclstrconsts.ifsvk_tab"
 msgid "Tab"
 msgstr "Tab"
 
@@ -223,13 +229,22 @@ msgid "Unknown"
 msgstr "Невідомий"
 
 #: lclstrconsts.ifsvk_up
+msgctxt "lclstrconsts.ifsvk_up"
 msgid "Up"
 msgstr "Вверх"
+
+#: lclstrconsts.liscannotexecute
+msgid "can not execute %s"
+msgstr "неможливо виконати %s"
 
 #: lclstrconsts.lislclresourcesnotfound
 msgctxt "lclstrconsts.lislclresourcesnotfound"
 msgid "Resource %s not found"
-msgstr "Ресурсу %s не знайдено"
+msgstr "Ресурс %s не знайдено"
+
+#: lclstrconsts.lisprogramfilenotfound
+msgid "program file not found %s"
+msgstr "програмний файл %s не знайдено"
 
 #: lclstrconsts.rs3ddkshadowcolorcaption
 msgid "3D Dark Shadow"
@@ -310,7 +325,7 @@ msgstr "Калькулятор"
 #: lclstrconsts.rscancelrecordhint
 msgctxt "lclstrconsts.rscancelrecordhint"
 msgid "Cancel"
-msgstr "Відміна"
+msgstr "Скасувати"
 
 #: lclstrconsts.rscannotfocus
 msgid "Can not focus"
@@ -326,7 +341,15 @@ msgstr "Текст заголовка"
 
 #: lclstrconsts.rscasesensitive
 msgid "Case sensitive"
-msgstr "Враховувати регістр"
+msgstr "Врахування регістру"
+
+#: lclstrconsts.rscontrolclasscantcontainchildclass
+msgid "Control of class '%s' can't have control of class '%s' as a child"
+msgstr "Елемент управління класу '%s' не може мати наслідником елемент класу '%s'"
+
+#: lclstrconsts.rscontrolhasnoparentwindow
+msgid "Control '%s' has no parent window"
+msgstr "Елемент управління '%s' не має батьківського вінка"
 
 #: lclstrconsts.rscreamcolorcaption
 msgid "Cream"
@@ -350,7 +373,7 @@ msgstr "За замовчуванням"
 
 #: lclstrconsts.rsdefaultfileinfovalue
 msgid "permissions user group size date time"
-msgstr "дозволи групи користувачі розмір дата час"
+msgstr "дозволи користувач група розмір дата час"
 
 #: lclstrconsts.rsdeleterecord
 msgid "Delete record?"
@@ -412,11 +435,11 @@ msgstr "Помилка збереження растрового зображе�
 
 #: lclstrconsts.rsexception
 msgid "Exception"
-msgstr "Виняткова ситуація"
+msgstr "Виняток"
 
 #: lclstrconsts.rsfddirectorymustexist
 msgid "Directory must exist"
-msgstr "Має існувати тека"
+msgstr "Тека повинна існувати"
 
 #: lclstrconsts.rsfddirectorynotexist
 msgid "The directory \"%s\" does not exist."
@@ -432,11 +455,11 @@ msgstr "Файл має існувати"
 
 #: lclstrconsts.rsfdfilenotexist
 msgid "The file \"%s\" does not exist."
-msgstr "Файл \"%s\" не існує"
+msgstr "Файл \"%s\" не існує."
 
 #: lclstrconsts.rsfdfilereadonly
 msgid "The file \"%s\" is not writable."
-msgstr "Файл \"%s\" не для запису."
+msgstr "Файл \"%s\" не може бути записаний."
 
 #: lclstrconsts.rsfdfilereadonlytitle
 msgid "File is not writable"
@@ -464,7 +487,7 @@ msgstr "Шлях \"%s\" не існує."
 
 #: lclstrconsts.rsfdselectdirectory
 msgid "Select Directory"
-msgstr "Виберіть теку"
+msgstr "Виберіть каталог"
 
 #: lclstrconsts.rsfileinfofilenotfound
 msgid "(file not found: \"%s\")"
@@ -488,11 +511,11 @@ msgstr "Перший"
 
 #: lclstrconsts.rsfixedcolstoobig
 msgid "FixedCols can't be >= ColCount"
-msgstr "FixedCols не може  бути >= ColCount"
+msgstr "FixedCols не може бути >= ColCount"
 
 #: lclstrconsts.rsfixedrowstoobig
 msgid "FixedRows can't be >= RowCount"
-msgstr "FixedRows не може  бути >= RowCount"
+msgstr "FixedRows не може бути >= RowCount"
 
 #: lclstrconsts.rsformcolorcaption
 msgid "Form"
@@ -500,7 +523,7 @@ msgstr "Форма"
 
 #: lclstrconsts.rsformstreamingerror
 msgid "Form streaming \"%s\" error: %s"
-msgstr "Помилка потоків \"%s\" форм: %s"
+msgstr "Помилка потоків форм \"%s\": %s"
 
 #: lclstrconsts.rsforward
 msgid "Forward"
@@ -518,6 +541,10 @@ msgstr "--gdk-debug flags     Ввімкнути вказані налагодж
 msgid "--gdk-no-debug flags  Turn off specific GDK trace/debug messages."
 msgstr "--gdk-no-debug flags Вимкнути вказані налагоджувальні повідомлення GDK."
 
+#: lclstrconsts.rsgif
+msgid "Graphics Interchange Format"
+msgstr "Формат обміну графічними даними"
+
 #: lclstrconsts.rsgoptionfatalwarnings
 msgid "--g-fatal-warnings    Warnings and errors generated by Gtk+/GDK will halt the application."
 msgstr "--g-fatal-warnings    Попередження і помилки програми, згенеровані Gtk+/GDK, зупинятимуть програму."
@@ -529,6 +556,10 @@ msgstr "Заголовок активного градієнта"
 #: lclstrconsts.rsgradientinactivecaptioncolorcaption
 msgid "Gradient Inactive Caption"
 msgstr "Заголовок неактивного градієнта"
+
+#: lclstrconsts.rsgraphic
+msgid "Graphic"
+msgstr "Графічний"
 
 #: lclstrconsts.rsgraycolorcaption
 msgid "Gray"
@@ -548,19 +579,19 @@ msgstr "Файла сітки не існує"
 
 #: lclstrconsts.rsgridindexoutofrange
 msgid "Grid index out of range."
-msgstr "Індекс Grid'а поза межею допустимих значень."
+msgstr "Індекс сітки поза межею допустимих значень."
 
 #: lclstrconsts.rsgroupindexcannotbelessthanprevious
 msgid "GroupIndex cannot be less than a previous menu item's GroupIndex"
-msgstr "GroupIndex не може  бути менше GroupIndex для попереднього елемента меню"
+msgstr "GroupIndex не може бути менше GroupIndex для попереднього елемента меню"
 
 #: lclstrconsts.rsgtkfilter
 msgid "Filter:"
-msgstr "Фільтр"
+msgstr "Фільтр:"
 
 #: lclstrconsts.rsgtkhistory
 msgid "History:"
-msgstr "Історія"
+msgstr "Історія:"
 
 #: lclstrconsts.rsgtkoptionclass
 msgid "--class classname     Following Xt conventions, the class of a program is the program name with the initial character capitalized. For example, the classname for gimp is \"Gimp\". If --class is specified, the class of the program will be set to \"classname\"."
@@ -572,7 +603,7 @@ msgstr "--gtk-debug flags     Ввімкнути вказані налагодж
 
 #: lclstrconsts.rsgtkoptiondisplay
 msgid "--display h:s:d       Connect to the specified X server, where \"h\" is the hostname, \"s\" is the server number (usually 0), and \"d\" is the display number (typically omitted). If --display is not specified, the DISPLAY environment variable is used."
-msgstr "--display h:s:d       Зв'язатись із вказаним сервером іксів, де \"h\" - назва хоста, \"s\" - номер сервера (звичайно 0) і \"d\" - номер дисплея (звичайно нехтують). Якщо --display не вказаний, використовується змінна оточення DISPLAY."
+msgstr "--display h:s:d       Зв'язатись із вказаним X-сервером, де \"h\" - назва хоста, \"s\" - номер сервера (звичайно 0) і \"d\" - номер дисплея (звичайно нехтують). Якщо --display не вказаний, використовується змінна оточення DISPLAY."
 
 #: lclstrconsts.rsgtkoptionmodule
 msgid "--gtk-module module   Load the specified module at startup."
@@ -580,7 +611,7 @@ msgstr "--gtk-module модуль   Завантажити вказаний мо
 
 #: lclstrconsts.rsgtkoptionname
 msgid "--name programe       Set program name to \"progname\". If not specified, program name will be set to ParamStrUTF8(0)."
-msgstr "--name ім'япрог       Встановити ім'я програми в \"ім'япрог\". Якщо не вказано, ім'я програми буде встановлено в ParamStrUTF8(0)."
+msgstr "--name ім'япрог       Встановити ім'я програми в \"progname\". Якщо не вказано, ім'я програми буде встановлено в ParamStrUTF8(0)."
 
 #: lclstrconsts.rsgtkoptionnodebug
 msgid "--gtk-no-debug flags  Turn off specific Gtk+ trace/debug messages."
@@ -592,15 +623,15 @@ msgstr "--lcl-no-transient    Не встановлювати тимчасови
 
 #: lclstrconsts.rsgtkoptionnoxshm
 msgid "--no-xshm             Disable use of the X Shared Memory Extension."
-msgstr "--no-xshm             Заборонити використання розширень Х-пам'яті, що розділяється."
+msgstr "--no-xshm             Заборонити використання спільних розширень Х-пам'яті."
 
 #: lclstrconsts.rsgtkoptionsync
 msgid "--sync                Call XSynchronize (display, True) after the Xserver connection has been established. This makes debugging X protocol errors easier, because X request buffering will be disabled and X errors will be received immediatey after the protocol request that generated the error has been processed by the X server."
-msgstr "--sync                Виклик XSynchronize (display, True) після встановлення з'єднання з Xserver'ом. Це полегшує налагодження помилок протокола X через те, що запити буферування X будуть вимкнені і помилки X будуть одержані одразу після запиту протоколу, який викликав цю помилку, яка була оброблена сервером X."
+msgstr "--sync                Виклик XSynchronize (display, True) після встановлення з'єднання з X-сервером. Це полегшує налагодження помилок протоколу X через те, що запити буферування X будуть вимкнені і помилки X будуть одержані одразу після запиту протоколу, який викликав цю помилку, яка була оброблена X-сервером."
 
 #: lclstrconsts.rshelpalreadyregistered
 msgid "%s: Already registered"
-msgstr "%s: вже зареєстрований"
+msgstr "%s: Вже зареєстрований"
 
 #: lclstrconsts.rshelpcontextnotfound
 msgid "Help Context not found"
@@ -624,7 +655,7 @@ msgstr "Контекст довідки %s не знайдено в базі %s%
 
 #: lclstrconsts.rshelphelpdatabasedidnotfoundaviewerforahelppageoftype
 msgid "Help Database %s%s%s did not found a viewer for a help page of type %s"
-msgstr "База даних довідки %s%s%s не знайла програму перегляду для сторінки довідки типу %s"
+msgstr "База даних довідки %s%s%s не знайшла програму перегляду для сторінки довідки типу %s"
 
 #: lclstrconsts.rshelphelpdatabasenotfound
 msgid "Help Database %s%s%s not found"
@@ -648,7 +679,7 @@ msgstr "Не знайдено довідки для рядка %d, колонк�
 
 #: lclstrconsts.rshelpnohelpnodesavailable
 msgid "No help nodes available"
-msgstr "Відсутні доступни вузли довідки"
+msgstr "Відсутні доступні вузли довідки"
 
 #: lclstrconsts.rshelpnotfound
 msgid "Help not found"
@@ -696,7 +727,7 @@ msgstr "Іконка"
 
 #: lclstrconsts.rsiconimageempty
 msgid "Icon image cannot be empty"
-msgstr "Зображення іконки не може бути пустим"
+msgstr "Зображення іконки не може бути порожнім"
 
 #: lclstrconsts.rsiconimageformat
 msgid "Icon image must have the same format"
@@ -704,7 +735,7 @@ msgstr "Зображення іконки має бути того самого 
 
 #: lclstrconsts.rsiconimageformatchange
 msgid "Cannot change format of icon image"
-msgstr "Невдалося змінити формат зображення іконки"
+msgstr "Не вдалося змінити формат зображення іконки"
 
 #: lclstrconsts.rsiconimagesize
 msgid "Icon image must have the same size"
@@ -712,7 +743,7 @@ msgstr "Зображення іконки має бути того самого 
 
 #: lclstrconsts.rsiconimagesizechange
 msgid "Cannot change size of icon image"
-msgstr "Невдалося змінити розмір іконки"
+msgstr "Не вдалося змінити розмір іконки"
 
 #: lclstrconsts.rsiconnocurrent
 msgid "Icon has no current image"
@@ -803,7 +834,7 @@ msgstr "Коричнево-малиновий"
 
 #: lclstrconsts.rsmbabort
 msgid "Abort"
-msgstr "Скидання"
+msgstr "Перервати"
 
 #: lclstrconsts.rsmball
 msgid "&All"
@@ -860,11 +891,11 @@ msgstr "&Так"
 
 #: lclstrconsts.rsmbyestoall
 msgid "Yes to &All"
-msgstr "Так для &усіх"
+msgstr "Так для &Всіх"
 
 #: lclstrconsts.rsmedgraycolorcaption
 msgid "Medium Gray"
-msgstr "Сірий"
+msgstr "Світло-сірий"
 
 #: lclstrconsts.rsmenubarcolorcaption
 msgid "Menu Bar"
@@ -877,7 +908,7 @@ msgstr "Меню"
 
 #: lclstrconsts.rsmenuhighlightcolorcaption
 msgid "Menu Highlight"
-msgstr "підсічене меню"
+msgstr "Підсічене меню"
 
 #: lclstrconsts.rsmenutextcolorcaption
 msgid "Menu Text"
@@ -927,7 +958,7 @@ msgstr "Наступний"
 
 #: lclstrconsts.rsnonecolorcaption
 msgid "None"
-msgstr "Ні"
+msgstr "Жоден"
 
 #: lclstrconsts.rsnotavalidgridfile
 msgid "Not a valid grid file"
@@ -971,7 +1002,7 @@ msgstr "Відправити"
 
 #: lclstrconsts.rspressoktoignoreandriskdatacorruptionpresscanceltok
 msgid "%s%sPress OK to ignore and risk data corruption.%sPress Cancel to kill the program."
-msgstr "%s%sНатисніть 'OK' щоб проігнорувати і ризикнути втратити дані.%sНатисніть 'Відміна' для закриття програми."
+msgstr "%s%sНатисніть 'OK' щоб проігнорувати і ризикнути втратити дані.%sНатисніть 'Скасувати' для закриття програми."
 
 #: lclstrconsts.rspriorrecordhint
 msgctxt "lclstrconsts.rspriorrecordhint"
@@ -984,11 +1015,99 @@ msgstr "Властивості %s не існує"
 
 #: lclstrconsts.rspurplecolorcaption
 msgid "Purple"
-msgstr "Пурпурний"
+msgstr "Пурпуровий"
+
+#: lclstrconsts.rsqtoptiondograb
+msgid "-dograb (only under X11), running under a debugger can cause an implicit -nograb, use -dograb to override. Need QT_DEBUG."
+msgstr "-dograb (лише під X11), запуск під налаголжувачем може спричинити неявний -nograb, використайте -dograb щоб перевизначити. Потрібен QT_DEBUG."
+
+#: lclstrconsts.rsqtoptiongraphicsstyle
+msgid "-graphicssystem param, sets the backend to be used for on-screen widgets and QPixmaps. Available options are native, raster and opengl. OpenGL is still unstable."
+msgstr "-graphicssystem param, задає бекенд, який буде використовуватись для екранних віджетів та QPixmaps. Доступні опції: native, raster та opengl. OpenGL все ще нестабільний."
+
+#: lclstrconsts.rsqtoptionnograb
+msgid "-nograb, tells Qt that it must never grab the mouse or the keyboard. Need QT_DEBUG."
+msgstr "-nograb, вказує Qt щоб він ніколи не захоплював мишку чи клавіатуру. Потрібен QT_DEBUG."
+
+#: lclstrconsts.rsqtoptionreverse
+msgid "-reverse, sets the application's layout direction to Qt::RightToLeft."
+msgstr "-reverse, виставляє напрямок макету програми на Qt::RightToLeft."
+
+#: lclstrconsts.rsqtoptionsession
+msgid "-session session, restores the application from an earlier session."
+msgstr "-session session, відновлює програму з попереднього сеансу."
+
+#: lclstrconsts.rsqtoptionstyle
+msgid "-style style or -style=style, sets the application GUI style. Possible values are motif, windows, and platinum. If you compiled Qt with additional styles or have additional styles as plugins these will be available to the -style  command line option. NOTE: Not all styles are available on all platforms. If style param does not exist Qt will start an application with default common style (windows)."
+msgstr "-style style або -style=style, задає стиль GUI програми. Можливі значення: motif, windows, та platinum. Якщо ви зібрали Qt з додатковими стилями ябо маєте додаткові стилі як плагіни вони будуть доступні для опцій командного рядка -style. ПРИМІТКА: Не всі стилі доступні на всіх платформах. Якщо параметр style не існує Qt запустить програму з типовим стилем (windows)."
+
+#: lclstrconsts.rsqtoptionstylesheet
+msgid "-stylesheet stylesheet or -stylesheet=stylesheet, sets the application Style Sheet. The value must be a path to a file that contains the Style Sheet. Note: Relative URLs in the Style Sheet file are relative to the Style Sheet file's path."
+msgstr "-stylesheet stylesheet або -stylesheet=stylesheet, задає програмі Список Стилів. Значення повинне бути шляхом до файлу що містить Список Стилів. Note: Відносні URLs в файлі Списку Стилів сприймаються відносно шляху до файлу Списку Стилів."
+
+#: lclstrconsts.rsqtoptionsync
+msgid "-sync (only under X11), switches to synchronous mode for debugging."
+msgstr "-sync (лише під X11), перемикає в снхронний режим налагодження."
+
+#: lclstrconsts.rsqtoptionwidgetcount
+msgid "-widgetcount, prints debug message at the end about number of widgets left undestroyed and maximum number of widgets existed at the same time."
+msgstr "-widgetcount, друкує налагоджувальне повідомлення в кінці про кількість незнищених віджетів та максимальну кількість віджетів, що існували в той же час."
+
+#: lclstrconsts.rsqtoptionx11bgcolor
+msgid "-bg or -background color, sets the default background color and an application palette (light and dark shades are calculated)."
+msgstr "-bg or -background color, задає типовий колір фону та палітру програми (обчислюються світлі на темні відтінки)."
+
+#: lclstrconsts.rsqtoptionx11btncolor
+msgid "-btn or -button color, sets the default button color."
+msgstr "-btn або -button color, задає типовий колір кнопок."
+
+#: lclstrconsts.rsqtoptionx11cmap
+msgid "-cmap, causes the application to install a private color map on an 8-bit display."
+msgstr "-cmap, змушує програму встановити карту приватних кольорів на 8-бітний дисплей."
+
+#: lclstrconsts.rsqtoptionx11display
+msgid "-display display, sets the X display (default is $DISPLAY)."
+msgstr "-display display, задає дисплей Іксів (типовим є $DISPLAY)."
+
+#: lclstrconsts.rsqtoptionx11fgcolor
+msgid "-fg or -foreground color, sets the default foreground color."
+msgstr "-fg або -foreground color, задає типовий колір переднього плану."
+
+#: lclstrconsts.rsqtoptionx11font
+msgid "-fn or -font font, defines the application font. The font should be specified using an X logical font description."
+msgstr "-fn або -font font, визначає шрифт для програми. Шрифт повинен бути вказаний використовуючи X-логічний опис шрифту."
+
+#: lclstrconsts.rsqtoptionx11geometry
+msgid "-geometry geometry, sets the client geometry of the first window that is shown."
+msgstr "-geometry geometry, задає клієнтську геометрію першого показаного вікна."
+
+#: lclstrconsts.rsqtoptionx11im
+msgid "-im, sets the input method server (equivalent to setting the XMODIFIERS environment variable)."
+msgstr "-im, задає сервер методу вводу (аналогічно до задання змінної оточення XMODIFIERS)."
+
+#: lclstrconsts.rsqtoptionx11inputstyle
+msgid "-inputstyle, defines how the input is inserted into the given widget, e.g. onTheSpot makes the input appear directly in the widget, while overTheSpot makes the input appear in a box floating over the widget and is not inserted until the editing is done."
+msgstr "-inputstyle, визначає як ввід вставляється в заданий віджет, наприклад onTheSpot вносить ввід прямо в віджет, тоді як overTheSpot робить так, що ввід з'являється в вікні, що плаває над віджетом і не вставляється поки редагування не завершено."
+
+#: lclstrconsts.rsqtoptionx11name
+msgid "-name name, sets the application name."
+msgstr "-name name, задає назву програми."
+
+#: lclstrconsts.rsqtoptionx11ncols
+msgid "-ncols count, limits the number of colors allocated in the color cube on an 8-bit display, if the application is using the QApplication::ManyColor color specification. If count is 216 then a 6x6x6 color cube is used (i.e. 6 levels of red, 6 of green, and 6 of blue); for other values, a cube approximately proportional to a 2x3x1 cube is used."
+msgstr "-ncols count, обмежує кількість кольорів, розміщних в кольоровому кубі на 8-бітному дисплеї, якщо програма використовує специфікацію кольору QApplication::ManyColor. Якщо кількість рівна 216 тоді використовується кольоровий куб 6x6x6 (тобто 6 рівнів червоного, 6 зеленого, та 6 синього); для інших значень використовується куб приблизно пропорційний до 2x3x1."
+
+#: lclstrconsts.rsqtoptionx11title
+msgid "-title title, sets the application title."
+msgstr "-title title, задає заголовок програми."
+
+#: lclstrconsts.rsqtoptionx11visual
+msgid "-visual TrueColor, forces the application to use a TrueColor visual on an 8-bit display."
+msgstr "-visual TrueColor, змушує програму використовувати TrueColor visual на 8-бітному дисплеї."
 
 #: lclstrconsts.rsrasterimageendupdate
 msgid "Endupdate while no update in progress"
-msgstr "Команда Endupdate, хоча ніякого оновлення не проводилося"
+msgstr "Команда Endupdate, хоча ніякого оновлення не проводиться"
 
 #: lclstrconsts.rsrasterimagesaveinupdate
 msgid "Cannot save image while update in progress"
@@ -1004,7 +1123,7 @@ msgstr "Червоний"
 
 #: lclstrconsts.rsrefreshrecordshint
 msgid "Refresh"
-msgstr "Поновити"
+msgstr "Оновити"
 
 #: lclstrconsts.rsreplace
 msgid "Replace"
@@ -1017,7 +1136,7 @@ msgstr "Замінити все"
 #: lclstrconsts.rsresourcenotfound
 msgctxt "lclstrconsts.rsresourcenotfound"
 msgid "Resource %s not found"
-msgstr "Ресурсу %s не знайдено"
+msgstr "Ресурс %s не знайдено"
 
 #: lclstrconsts.rsscrollbarcolorcaption
 msgid "ScrollBar"
@@ -1041,7 +1160,7 @@ msgstr "Срібний"
 
 #: lclstrconsts.rssize
 msgid "  size "
-msgstr "  розмір"
+msgstr "  розмір "
 
 #: lclstrconsts.rsskybluecolorcaption
 msgid "Sky Blue"
@@ -1055,25 +1174,33 @@ msgstr "Синьо-зелений"
 msgid "Text"
 msgstr "Текст"
 
+#: lclstrconsts.rstiff
+msgid "Tagged Image File Format"
+msgstr "Тегований формат файлу зображення"
+
 #: lclstrconsts.rsunabletoloaddefaultfont
 msgid "Unable to load default font"
 msgstr "Не можу завантажити шрифт за замовчуванням"
 
 #: lclstrconsts.rsunknownerrorpleasereportthisbug
 msgid "Unknown Error, please report this bug"
-msgstr "Невідома помилка, повідомте розробника"
+msgstr "Невідома помилка, повідомте розробників"
 
 #: lclstrconsts.rsunknownpictureextension
 msgid "Unknown picture extension"
 msgstr "Невідоме розширення файлу зображення"
 
+#: lclstrconsts.rsunknownpictureformat
+msgid "Unknown picture format"
+msgstr "Невідомий формат зображення"
+
 #: lclstrconsts.rsunsupportedbitmapformat
 msgid "Unsupported bitmap format."
-msgstr "Не підтримуваний тип точкового малюнка."
+msgstr "Непідтримуваний тип растрового малюнку."
 
 #: lclstrconsts.rsunsupportedclipboardformat
 msgid "Unsupported clipboard format: %s"
-msgstr "Формат не підтримує буфер обміну: %s"
+msgstr "Непідтримуваний формат буферу обміну: %s"
 
 #: lclstrconsts.rswarningunreleaseddcsdump
 msgid " WARNING: There are %d unreleased DCs, a detailed dump follows:"
@@ -1133,7 +1260,7 @@ msgstr "Не можна дати фокус вимкненому або неви
 
 #: lclstrconsts.sduplicatemenus
 msgid "Duplicate menus"
-msgstr "Повторювані меню"
+msgstr "Дублювати меню"
 
 #: lclstrconsts.sinvalidactioncreation
 msgid "Invalid action creation"
@@ -1149,7 +1276,7 @@ msgstr "Неправильна реєстрація дії"
 
 #: lclstrconsts.sinvalidactionunregistration
 msgid "Invalid action unregistration"
-msgstr "Неправильна дія зняття реєстрації"
+msgstr "Скасування реєстрації невірної дії"
 
 #: lclstrconsts.sinvalidcharset
 msgid "The char set in mask \"%s\" is not valid!"
@@ -1157,11 +1284,11 @@ msgstr "Невірний набір символів по масці \"%s\"!"
 
 #: lclstrconsts.sinvalidimagesize
 msgid "Invalid image size"
-msgstr "Неправильний розмір малюнка"
+msgstr "Невірний розмір зображення"
 
 #: lclstrconsts.sinvalidindex
 msgid "Invalid ImageList Index"
-msgstr "Неправильний індекс ImageList"
+msgstr "Невірний індекс ImageList"
 
 #: lclstrconsts.smenuindexerror
 msgid "Menu index out of range"
@@ -1175,13 +1302,96 @@ msgstr "MenuItem вказує на nil"
 msgid "Sub-menu is not in menu"
 msgstr "Підменю не в меню"
 
+#: lclstrconsts.smkcalt
+msgid "Alt+"
+msgstr "Alt+"
+
+#: lclstrconsts.smkcbksp
+msgid "BkSp"
+msgstr "BkSp"
+
+#: lclstrconsts.smkcctrl
+msgid "Ctrl+"
+msgstr "Ctrl+"
+
+#: lclstrconsts.smkcdel
+msgid "Del"
+msgstr "Del"
+
+#: lclstrconsts.smkcdown
+msgctxt "lclstrconsts.smkcdown"
+msgid "Down"
+msgstr "Вниз"
+
+#: lclstrconsts.smkcend
+msgctxt "lclstrconsts.smkcend"
+msgid "End"
+msgstr "End"
+
+#: lclstrconsts.smkcenter
+msgid "Enter"
+msgstr "Enter"
+
+#: lclstrconsts.smkcesc
+msgid "Esc"
+msgstr "Esc"
+
+#: lclstrconsts.smkchome
+msgctxt "lclstrconsts.smkchome"
+msgid "Home"
+msgstr "Home"
+
+#: lclstrconsts.smkcins
+msgid "Ins"
+msgstr "Ins"
+
+#: lclstrconsts.smkcleft
+msgctxt "lclstrconsts.smkcleft"
+msgid "Left"
+msgstr "Вліво"
+
+#: lclstrconsts.smkcmeta
+msgid "Meta+"
+msgstr "Meta+"
+
+#: lclstrconsts.smkcpgdn
+msgid "PgDn"
+msgstr "PgDn"
+
+#: lclstrconsts.smkcpgup
+msgid "PgUp"
+msgstr "PgUp"
+
+#: lclstrconsts.smkcright
+msgctxt "lclstrconsts.smkcright"
+msgid "Right"
+msgstr "Вправо"
+
+#: lclstrconsts.smkcshift
+msgid "Shift+"
+msgstr "Shift+"
+
+#: lclstrconsts.smkcspace
+msgid "Space"
+msgstr "Пробіл"
+
+#: lclstrconsts.smkctab
+msgctxt "lclstrconsts.smkctab"
+msgid "Tab"
+msgstr "Tab"
+
+#: lclstrconsts.smkcup
+msgctxt "lclstrconsts.smkcup"
+msgid "Up"
+msgstr "Вгору"
+
 #: lclstrconsts.snomdiform
 msgid "No MDI form present."
-msgstr "Немає MDI форми"
+msgstr "Немає MDI форми."
 
 #: lclstrconsts.snotimers
 msgid "No timers available"
-msgstr "Таймери є недоступними"
+msgstr "Немає доступних таймерів"
 
 #: lclstrconsts.sparexpected
 msgid "Wrong token type: %s expected"
