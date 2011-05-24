@@ -175,7 +175,6 @@ function ExpandAbsolutePath(const Path: String): String;
     IsInPath('/home', '/home/somedir/somefile', True) = True
     IsInPath('/home', '/home/somedir/somefile', False) = False
     IsInPath('/home', '/home/somedir/', False) = True
-    IsInPath('/home', '/home', False) = False
 }
 function IsInPath(sBasePath : String; sPathToCheck : String; AllowSubDirs: Boolean) : Boolean;
 
@@ -787,7 +786,7 @@ begin
   BasePathLength := Length(sBasePath);
   PathToCheckLength := Length(sPathToCheck);
 
-  if (PathToCheckLength > BasePathLength) and
+  if (PathToCheckLength >= BasePathLength) and
      (CompareStr(Copy(sPathToCheck, 1, BasePathLength), sBasePath) = 0) then
   begin
     if AllowSubDirs then
