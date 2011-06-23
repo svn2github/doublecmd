@@ -456,6 +456,7 @@ const
   stgArchiveIDPos                = 6;
   stgArchiveIDSeekRange          = 7;
   stgArchivePasswordQuery        = 8;
+  stgArchiveFormMode             = 9;
 
 const
   // Tools page: what tool is displayed in each row.
@@ -559,6 +560,7 @@ begin
   stgArchiverCommands.Cells[0, stgArchiveIDPos] := rsOptArchiveIDPos;
   stgArchiverCommands.Cells[0, stgArchiveIDSeekRange] := rsOptArchiveIDSeekRange;
   stgArchiverCommands.Cells[0, stgArchivePasswordQuery] := rsOptArchivePasswordQuery;
+  stgArchiverCommands.Cells[0, stgArchiveFormMode] := rsOptArchiveFormMode;
 
   // Create and fill options editor list
   CreateOptionsEditorList;
@@ -627,28 +629,28 @@ begin
  sCommand := stgCommands.Cells[stgCmdCommandIndex, stgCommands.Row];
 
  sForm := 'Frm'+ lbxCategories.Items[lbxCategories.ItemIndex];
-  i:=HotMan.GetHotKeyIndex(sShortCut);      // смотрим есть ли вообще данный шот кат
+  i:=HotMan.GetHotKeyIndex(sShortCut);      // check if this shortcut exists at all
   if i=-1 then
   begin
-   lAddHotKey;                             // если нет, то смело запоминаем
+   lAddHotKey;                             // if not, then save it
   end
   else
    begin
      st:=TStringList.Create;
-     HotMan.GetControlsListBy(sShortCut,st);   // если есть то получаем список форм и объектов (категорий)
+     HotMan.GetControlsListBy(sShortCut,st);   // if it exists, then set list of its forms and objects (categories)
 
-     if st.IndexOf(sForm)>-1 then         // если есть список форм то значит  нужно удалить из нее
+     if st.IndexOf(sForm)>-1 then         // if exists list of forms then we should delete from it
        begin
           // Shortcut already used.
 
-          HotMan.GetCommandsListBy(sShortCut,st);       // берем строку с командами на данном шоткате
-          sOldCommand := Copy(st[0], pos('=',st[0]) + 1, Length(st[0]) - pos('=', st[0]));  // выделяем команду после '='
+          HotMan.GetCommandsListBy(sShortCut,st);       // get string of commands on this sgortcut
+          sOldCommand := Copy(st[0], pos('=',st[0]) + 1, Length(st[0]) - pos('=', st[0]));  // select command after '='
 
           // Delete the old shortcut.
           // If it was assigned to a different command then ask user for confirmation.
           if (sOldCommand = sCommand) or
-             (MessageDlg(rsOptHotkeysShortCutUsed,                                     // удаляем команду на назначенном шоткате
-                         Format(rsOptHotkeysShortCutUsedText1,                         // если был применен другой
+             (MessageDlg(rsOptHotkeysShortCutUsed,                                     // delete command on assigned shortcut
+                         Format(rsOptHotkeysShortCutUsedText1,                         // if another was applied
                                 [sShortCut, sOldCommand]) + LineEnding +
                          Format(rsOptHotkeysShortCutUsedText2,
                                 [sCommand]),
@@ -1075,6 +1077,7 @@ begin
     FIDPos:= Cells[1, stgArchiveIDPos];
     FIDSeekRange:= Cells[1, stgArchiveIDSeekRange];
     FPasswordQuery:= Cells[1, stgArchivePasswordQuery];
+    FFormMode:= StrToIntDef(Cells[1, stgArchiveFormMode], 0);
     FOutput:= chkMultiArcOutput.Checked;
     FDebug:= chkMultiArcDebug.Checked;
   end;
@@ -1469,6 +1472,7 @@ begin
       Cells[1, stgArchiveIDPos]:= EmptyStr;
       Cells[1, stgArchiveIDSeekRange]:= EmptyStr;
       Cells[1, stgArchivePasswordQuery]:= EmptyStr;
+      Cells[1, stgArchiveFormMode]:= EmptyStr;
       chkMultiArcOutput.Checked:= False;
       chkMultiArcDebug.Checked:= False;
       chkMultiArcEnabled.Checked:= False;
@@ -1495,6 +1499,7 @@ begin
       Cells[1, stgArchiveIDPos]:= FIDPos;
       Cells[1, stgArchiveIDSeekRange]:= FIDSeekRange;
       Cells[1, stgArchivePasswordQuery]:= FPasswordQuery;
+      Cells[1, stgArchiveFormMode]:= IntToStr(FFormMode);
       chkMultiArcOutput.Checked:= FOutput;
       chkMultiArcDebug.Checked:= FDebug;
       chkMultiArcEnabled.Checked:= FEnabled;

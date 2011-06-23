@@ -114,6 +114,7 @@ type
     FAdd,
     FAddSelfExtract,
     FPasswordQuery: UTF8String;
+    FFormMode: Integer;
   public
     FEnabled: Boolean;
     FOutput: Boolean;
@@ -270,6 +271,7 @@ begin
         FAddSelfExtract:= TrimQuotes(IniFile.ReadString(Section, 'AddSelfExtract', EmptyStr));
         FPasswordQuery:= IniFile.ReadString(Section, 'PasswordQuery', EmptyStr);
         // optional
+        FFormMode:= IniFile.ReadInteger(Section, 'FormMode', 0);
         FEnabled:= IniFile.ReadBool(Section, 'Enabled', True);
         FOutput:= IniFile.ReadBool(Section, 'Output', False);
         FDebug:= IniFile.ReadBool(Section, 'Debug', False);
@@ -321,6 +323,7 @@ begin
         IniFile.WriteString(Section, 'AddSelfExtract', FAddSelfExtract);
         IniFile.WriteString(Section, 'PasswordQuery', FPasswordQuery);
         // optional
+        IniFile.WriteInteger(Section, 'FormMode', FFormMode);
         IniFile.WriteBool(Section, 'Enabled', FEnabled);
         IniFile.WriteBool(Section, 'Output', FOutput);
         IniFile.WriteBool(Section, 'Debug', FDebug);

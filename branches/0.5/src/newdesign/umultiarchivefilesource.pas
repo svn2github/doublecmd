@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, contnrs, StringHashList, uOSUtils,
   uMultiArc, uFile, uFileSourceProperty, uFileSourceOperationTypes,
   uArchiveFileSource, uFileProperty, uFileSource, uFileSourceOperation,
-  uMultiArchiveUtil;
+  uMultiArchiveUtil, uTypes;
 
 type
 
@@ -37,12 +37,15 @@ type
     FArcFileList : TObjectList;
     FMultiArcItem: TMultiArcItem;
     FAllDirsList,
-    FExistsDirList : TStringHashList;
+    FExistsDirList: TStringHashList;
+    FDirectoryAttribute: TFileAttrs;
 
     function GetMultiArcItem: TMultiArcItem;
     procedure OnGetArchiveItem(ArchiveItem: TArchiveItem);
 
     function ReadArchive(bCanYouHandleThisFile : Boolean = False): Boolean;
+
+    function FileIsDirectory(ArchiveItem: TArchiveItem): Boolean;
 
     function GetArcFileList: TObjectList;
 
@@ -64,7 +67,7 @@ type
                        aMultiArcItem: TMultiArcItem); reintroduce;
     destructor Destroy; override;
 
-    class function CreateFile(const APath: String; ArchiveItem: TArchiveItem): TFile; overload;
+    class function CreateFile(const APath: String; ArchiveItem: TArchiveItem; FormMode: Integer): TFile; overload;
 
     // Retrieve operations permitted on the source.  = capabilities?
     function GetOperationsTypes: TFileSourceOperationTypes; override;
@@ -109,7 +112,7 @@ type
 implementation
 
 uses
-  uDebug, uGlobs,
+  uDebug, uGlobs, uFileAttributes,
   FileUtil, uMasks, uDCUtils,
   uMultiArchiveListOperation,
   uMultiArchiveCopyInOperation,
@@ -211,6 +214,16 @@ begin
   FOperationsClasses[fsoCopyIn]          := TMultiArchiveCopyInOperation.GetOperationClass;
   FOperationsClasses[fsoCopyOut]         := TMultiArchiveCopyOutOperation.GetOperationClass;
 
+  with FMultiArcItem do
+  begin
+    if (FFormMode and MAF_UNIX_ATTR) <> 0 then
+      FDirectoryAttribute:= S_IFDIR
+    else if (FFormMode and MAF_WIN_ATTR) <> 0 then
+      FDirectoryAttribute:= FILE_ATTRIBUTE_DIRECTORY
+    else
+      FDirectoryAttribute:= faFolder;
+  end;
+
   ReadArchive;
 end;
 
@@ -222,7 +235,7 @@ begin
     FreeAndNil(FArcFileList);
 end;
 
-class function TMultiArchiveFileSource.CreateFile(const APath: String; ArchiveItem: TArchiveItem): TFile;
+class function TMultiArchiveFileSource.CreateFile(const APath: String; ArchiveItem: TArchiveItem; FormMode: Integer): TFile;
 begin
   Result := TFile.Create(APath);
 
@@ -233,8 +246,14 @@ begin
   }
     SizeProperty := TFileSizeProperty.Create(ArchiveItem.UnpSize);
     CompressedSizeProperty := TFileCompressedSizeProperty.Create(ArchiveItem.PackSize);
-    AttributesProperty := {TNtfsFileAttributesProperty or Unix?}
-                          TFileAttributesProperty.CreateOSAttributes(ArchiveItem.Attributes);
+
+    if (FormMode and MAF_UNIX_ATTR) <> 0 then
+      AttributesProperty := TUnixFileAttributesProperty.Create(ArchiveItem.Attributes)
+    else if (FormMode and MAF_WIN_ATTR) <> 0 then
+      AttributesProperty := TNtfsFileAttributesProperty.Create(ArchiveItem.Attributes)
+    else
+      AttributesProperty := TFileAttributesProperty.CreateOSAttributes(ArchiveItem.Attributes);
+
     ModificationTimeProperty := TFileModificationDateTimeProperty.Create(0);
     try
       with ArchiveItem do
@@ -292,7 +311,7 @@ begin
     for I := 0 to FArcFileList.Count - 1 do
     begin
       ArchiveItem := TArchiveItem(FArcFileList.Items[I]);
-      if FPS_ISDIR(ArchiveItem.Attributes) and (Length(ArchiveItem.FileName) > 0) then
+      if FileIsDirectory(ArchiveItem) and (Length(ArchiveItem.FileName) > 0) then
       begin
         if NewDir = IncludeTrailingPathDelimiter(GetRootDir() + ArchiveItem.FileName) then
           Exit(True);
@@ -399,7 +418,7 @@ var
   NameLength: Integer;
 begin
   // Some archivers end directories with path delimiter. Delete it if present.
-  if FPS_ISDIR(ArchiveItem.Attributes) then
+  if FileIsDirectory(ArchiveItem) then
     begin
       NameLength := Length(ArchiveItem.FileName);
       if (ArchiveItem.FileName[NameLength] = PathDelim) then
@@ -461,7 +480,7 @@ begin
         ArchiveItem:= TArchiveItem.Create;
         try
           ArchiveItem.FileName := FAllDirsList.List[I]^.Key;
-          ArchiveItem.Attributes := faFolder;
+          ArchiveItem.Attributes := FDirectoryAttribute;
           FArcFileList.Add(ArchiveItem);
         except
           FreeAndNil(ArchiveItem);
@@ -475,6 +494,11 @@ begin
   end;
 
   Result := True;
+end;
+
+function TMultiArchiveFileSource.FileIsDirectory(ArchiveItem: TArchiveItem): Boolean;
+begin
+  Result:= (ArchiveItem.Attributes and FDirectoryAttribute <> 0);
 end;
 
 procedure TMultiArchiveFileSource.DoReload(const PathsToReload: TPathsArray);
@@ -508,7 +532,7 @@ begin
         if  (aFile.FullPath = sFileName) or // Item in the list is a file, only compare names.
             (aFile.AttributesProperty.IsDirectory and IsInPath(aFile.FullPath, sFileName, True)) then // Check if 'FileName' is in this directory or any of its subdirectories.
           begin
-            if FPS_ISDIR(ArchiveItem.Attributes) then
+            if FileIsDirectory(ArchiveItem) then
               begin
                 if CountDirs then Inc(FilesCount);
               end
@@ -517,7 +541,7 @@ begin
                 Inc(FilesCount);
                 Inc(FilesSize, aFile.Size);
               end;
-            aFile:= TMultiArchiveFileSource.CreateFile(ExtractFilePath(ArchiveItem.FileName), ArchiveItem);
+            aFile:= TMultiArchiveFileSource.CreateFile(ExtractFilePath(ArchiveItem.FileName), ArchiveItem, FMultiArcItem.FFormMode);
             aFile.FullPath:= ExcludeFrontPathDelimiter(aFile.FullPath);
             NewFiles.Add(aFile);
           end;
