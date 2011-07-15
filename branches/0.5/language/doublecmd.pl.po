@@ -716,16 +716,33 @@ msgctxt "TFRMDIFFER.ACTCANCELCOMPARE.CAPTION"
 msgid "Cancel"
 msgstr "Anuluj"
 
+#: TFRMDIFFER.ACTCANCELCOMPARE.HINT
+msgctxt "TFRMDIFFER.ACTCANCELCOMPARE.HINT"
+msgid "Cancel"
+msgstr "Anuluj"
+
 #: TFRMDIFFER.ACTCLOSE.CAPTION
 msgctxt "TFRMDIFFER.ACTCLOSE.CAPTION"
 msgid "Close"
 msgstr "Zamknij"
 
 #: TFRMDIFFER.ACTCOPYLEFTTORIGHT.CAPTION
+msgctxt "TFRMDIFFER.ACTCOPYLEFTTORIGHT.CAPTION"
+msgid "Copy Block Right"
+msgstr "Kopiuj blok w prawo"
+
+#: TFRMDIFFER.ACTCOPYLEFTTORIGHT.HINT
+msgctxt "TFRMDIFFER.ACTCOPYLEFTTORIGHT.HINT"
 msgid "Copy Block Right"
 msgstr "Kopiuj blok w prawo"
 
 #: TFRMDIFFER.ACTCOPYRIGHTTOLEFT.CAPTION
+msgctxt "TFRMDIFFER.ACTCOPYRIGHTTOLEFT.CAPTION"
+msgid "Copy Block Left"
+msgstr "Kopiuj blok w lewo"
+
+#: TFRMDIFFER.ACTCOPYRIGHTTOLEFT.HINT
+msgctxt "TFRMDIFFER.ACTCOPYRIGHTTOLEFT.HINT"
 msgid "Copy Block Left"
 msgstr "Kopiuj blok w lewo"
 
@@ -764,6 +781,12 @@ msgid "Undo"
 msgstr "Cofnij"
 
 #: TFRMDIFFER.ACTFIRSTDIFF.CAPTION
+msgctxt "TFRMDIFFER.ACTFIRSTDIFF.CAPTION"
+msgid "First Difference"
+msgstr "Pierwsza różnica"
+
+#: TFRMDIFFER.ACTFIRSTDIFF.HINT
+msgctxt "TFRMDIFFER.ACTFIRSTDIFF.HINT"
 msgid "First Difference"
 msgstr "Pierwsza różnica"
 
@@ -780,6 +803,12 @@ msgid "Keep Scrolling"
 msgstr "Kontynuuj przewijanie"
 
 #: TFRMDIFFER.ACTLASTDIFF.CAPTION
+msgctxt "TFRMDIFFER.ACTLASTDIFF.CAPTION"
+msgid "Last Difference"
+msgstr "Ostatnia różnica"
+
+#: TFRMDIFFER.ACTLASTDIFF.HINT
+msgctxt "TFRMDIFFER.ACTLASTDIFF.HINT"
 msgid "Last Difference"
 msgstr "Ostatnia różnica"
 
@@ -788,6 +817,12 @@ msgid "Line Differences"
 msgstr "Różnice linii"
 
 #: TFRMDIFFER.ACTNEXTDIFF.CAPTION
+msgctxt "TFRMDIFFER.ACTNEXTDIFF.CAPTION"
+msgid "Next Difference"
+msgstr "Następna różnica"
+
+#: TFRMDIFFER.ACTNEXTDIFF.HINT
+msgctxt "TFRMDIFFER.ACTNEXTDIFF.HINT"
 msgid "Next Difference"
 msgstr "Następna różnica"
 
@@ -804,6 +839,12 @@ msgid "Paint Background"
 msgstr "Maluj tło"
 
 #: TFRMDIFFER.ACTPREVDIFF.CAPTION
+msgctxt "TFRMDIFFER.ACTPREVDIFF.CAPTION"
+msgid "Previous Difference"
+msgstr "Poprzednia różnica"
+
+#: TFRMDIFFER.ACTPREVDIFF.HINT
+msgctxt "TFRMDIFFER.ACTPREVDIFF.HINT"
 msgid "Previous Difference"
 msgstr "Poprzednia różnica"
 
@@ -812,34 +853,90 @@ msgctxt "TFRMDIFFER.ACTRELOAD.CAPTION"
 msgid "Reload"
 msgstr "Wczytaj ponownie"
 
+#: TFRMDIFFER.ACTRELOAD.HINT
+msgctxt "TFRMDIFFER.ACTRELOAD.HINT"
+msgid "Reload"
+msgstr "Wczytaj ponownie"
+
 #: TFRMDIFFER.ACTSAVE.CAPTION
 msgctxt "TFRMDIFFER.ACTSAVE.CAPTION"
 msgid "Save"
 msgstr "Zapisz"
 
+#: TFRMDIFFER.ACTSAVE.HINT
+msgctxt "TFRMDIFFER.ACTSAVE.HINT"
+msgid "Save"
+msgstr "Zapisz"
+
 #: TFRMDIFFER.ACTSAVEAS.CAPTION
+msgctxt "TFRMDIFFER.ACTSAVEAS.CAPTION"
+msgid "Save as..."
+msgstr "Zapisz jako..."
+
+#: TFRMDIFFER.ACTSAVEAS.HINT
+msgctxt "TFRMDIFFER.ACTSAVEAS.HINT"
 msgid "Save as..."
 msgstr "Zapisz jako..."
 
 #: TFRMDIFFER.ACTSAVELEFT.CAPTION
+msgctxt "TFRMDIFFER.ACTSAVELEFT.CAPTION"
+msgid "Save Left"
+msgstr "Zapisz lewy"
+
+#: TFRMDIFFER.ACTSAVELEFT.HINT
+msgctxt "TFRMDIFFER.ACTSAVELEFT.HINT"
 msgid "Save Left"
 msgstr "Zapisz lewy"
 
 #: TFRMDIFFER.ACTSAVELEFTAS.CAPTION
+msgctxt "TFRMDIFFER.ACTSAVELEFTAS.CAPTION"
+msgid "Save Left As..."
+msgstr "Zapisz lewy jako..."
+
+#: TFRMDIFFER.ACTSAVELEFTAS.HINT
+msgctxt "TFRMDIFFER.ACTSAVELEFTAS.HINT"
 msgid "Save Left As..."
 msgstr "Zapisz lewy jako..."
 
 #: TFRMDIFFER.ACTSAVERIGHT.CAPTION
+msgctxt "TFRMDIFFER.ACTSAVERIGHT.CAPTION"
+msgid "Save Right"
+msgstr "Zapisz prawy"
+
+#: TFRMDIFFER.ACTSAVERIGHT.HINT
+msgctxt "TFRMDIFFER.ACTSAVERIGHT.HINT"
 msgid "Save Right"
 msgstr "Zapisz prawy"
 
 #: TFRMDIFFER.ACTSAVERIGHTAS.CAPTION
+msgctxt "TFRMDIFFER.ACTSAVERIGHTAS.CAPTION"
+msgid "Save Right As..."
+msgstr "Zapisz prawy jako..."
+
+#: TFRMDIFFER.ACTSAVERIGHTAS.HINT
+msgctxt "TFRMDIFFER.ACTSAVERIGHTAS.HINT"
 msgid "Save Right As..."
 msgstr "Zapisz prawy jako..."
 
 #: TFRMDIFFER.ACTSTARTCOMPARE.CAPTION
+msgctxt "TFRMDIFFER.ACTSTARTCOMPARE.CAPTION"
 msgid "Compare"
 msgstr "Porównaj"
+
+#: TFRMDIFFER.ACTSTARTCOMPARE.HINT
+msgctxt "TFRMDIFFER.ACTSTARTCOMPARE.HINT"
+msgid "Compare"
+msgstr "Porównaj"
+
+#: TFRMDIFFER.BTNLEFTENCODING.HINT
+msgctxt "TFRMDIFFER.BTNLEFTENCODING.HINT"
+msgid "Encoding"
+msgstr "Kodowanie"
+
+#: TFRMDIFFER.BTNRIGHTENCODING.HINT
+msgctxt "TFRMDIFFER.BTNRIGHTENCODING.HINT"
+msgid "Encoding"
+msgstr "Kodowanie"
 
 #: TFRMDIFFER.FRMDIFFER.CAPTION
 msgctxt "TFRMDIFFER.FRMDIFFER.CAPTION"
@@ -1422,7 +1519,8 @@ msgstr "Do źródła"
 msgid "Work in &background"
 msgstr "Pracuj w tle"
 
-#: TFRMFILEOP.CAPTION
+#: TFRMFILEOP.FRMFILEOP.CAPTION
+msgctxt "TFRMFILEOP.FRMFILEOP.CAPTION"
 msgid "Process file(s)"
 msgstr "Przetwarzaj plik(i)"
 
@@ -2011,7 +2109,9 @@ msgid "Copy path to command line"
 msgstr "Kopiuj ścieżkę do paska poleceń"
 
 #: TFRMMAIN.ACTCALCULATESPACE.CAPTION
-msgid "Calculate &Occupied Space..."
+#, fuzzy
+#| msgid "Calculate &Occupied Space..."
+msgid "Calculate &Occupied Space"
 msgstr "Oblicz wielkość"
 
 #: TFRMMAIN.ACTCHANGEDIR.CAPTION
@@ -2027,13 +2127,17 @@ msgid "Change directory to root"
 msgstr "Przejdź do katalogu głównego"
 
 #: TFRMMAIN.ACTCHECKSUMCALC.CAPTION
+#, fuzzy
+#| msgid "Calculate check sum..."
 msgctxt "TFRMMAIN.ACTCHECKSUMCALC.CAPTION"
-msgid "Calculate check sum..."
+msgid "Calculate Check&sum..."
 msgstr "Oblicz sumy kontrolne"
 
 #: TFRMMAIN.ACTCHECKSUMVERIFY.CAPTION
+#, fuzzy
+#| msgid "Verify check sum..."
 msgctxt "TFRMMAIN.ACTCHECKSUMVERIFY.CAPTION"
-msgid "Verify check sum..."
+msgid "&Verify Checksum..."
 msgstr "Sprawdź sumy kontrolne"
 
 #: TFRMMAIN.ACTCLEARLOGFILE.CAPTION
@@ -2077,7 +2181,9 @@ msgid "&Copy"
 msgstr "Kopiuj"
 
 #: TFRMMAIN.ACTCOUNTDIRCONTENT.CAPTION
-msgid "Sho&w occupied space"
+#, fuzzy
+#| msgid "Sho&w occupied space"
+msgid "Sho&w Occupied Space"
 msgstr "Pokaż objętość katalogów"
 
 #: TFRMMAIN.ACTCUTTOCLIPBOARD.CAPTION
@@ -2094,7 +2200,9 @@ msgid "Directory history"
 msgstr "Historia katalogów"
 
 #: TFRMMAIN.ACTDIRHOTLIST.CAPTION
-msgid "Directory &hotlist"
+#, fuzzy
+#| msgid "Directory &hotlist"
+msgid "Directory &Hotlist"
 msgstr "Lista otwieranych katalogów"
 
 #: TFRMMAIN.ACTEDIT.CAPTION
@@ -2102,7 +2210,9 @@ msgid "Edit F4"
 msgstr "Edytuj F4"
 
 #: TFRMMAIN.ACTEDITCOMMENT.CAPTION
-msgid "Edit comment..."
+#, fuzzy
+#| msgid "Edit comment..."
+msgid "Edit Co&mment..."
 msgstr "Wstaw komentarz"
 
 #: TFRMMAIN.ACTEDITNEW.CAPTION
@@ -2123,24 +2233,34 @@ msgid "E&xit"
 msgstr "Koniec"
 
 #: TFRMMAIN.ACTEXTRACTFILES.CAPTION
-msgid "Extract files..."
+#, fuzzy
+#| msgid "Extract files..."
+msgid "&Extract Files..."
 msgstr "Rozpakuj"
 
 #: TFRMMAIN.ACTFILEASSOC.CAPTION
-msgid "File &associations..."
+#, fuzzy
+#| msgid "File &associations..."
+msgid "File &Associations..."
 msgstr "Skojarzenia plików"
 
 #: TFRMMAIN.ACTFILELINKER.CAPTION
-msgid "Link files"
+#, fuzzy
+#| msgid "Link files"
+msgid "Com&bine Files..."
 msgstr "Linkuj pliki"
 
 #: TFRMMAIN.ACTFILEPROPERTIES.CAPTION
-msgid "Show file properties"
+#, fuzzy
+#| msgid "Show file properties"
+msgid "Show &File Properties"
 msgstr "Właściwości"
 
 #: TFRMMAIN.ACTFILESPLITER.CAPTION
+#, fuzzy
+#| msgid "Split file"
 msgctxt "TFRMMAIN.ACTFILESPLITER.CAPTION"
-msgid "Split file"
+msgid "Spl&it File..."
 msgstr "Podziel plik"
 
 #: TFRMMAIN.ACTFOCUSCMDLINE.CAPTION
@@ -2156,9 +2276,10 @@ msgid "Place cursor on last file in list"
 msgstr "Umieść kursor na ostatnim pliku listy"
 
 #: TFRMMAIN.ACTHARDLINK.CAPTION
-#| msgid "Create link..."
+#, fuzzy
+#| msgid "Create hard link..."
 msgctxt "TFRMMAIN.ACTHARDLINK.CAPTION"
-msgid "Create hard link..."
+msgid "Create &Hard Link..."
 msgstr "Utwórz link twardy..."
 
 #: TFRMMAIN.ACTHELPINDEX.CAPTION
@@ -2166,7 +2287,9 @@ msgid "&Contents"
 msgstr "Zawartość"
 
 #: TFRMMAIN.ACTHORIZONTALFILEPANELS.CAPTION
-msgid "Horizontal file panels"
+#, fuzzy
+#| msgid "Horizontal file panels"
+msgid "&Horizontal Panels Mode"
 msgstr "Horyzontalne ustawienie paneli"
 
 #: TFRMMAIN.ACTKEYBOARD.CAPTION
@@ -2182,11 +2305,15 @@ msgid "Open left drive list"
 msgstr "Otwórz listę dysków z lewej"
 
 #: TFRMMAIN.ACTLOADSELECTIONFROMCLIP.CAPTION
-msgid "Load Selection From Clipboard"
+#, fuzzy
+#| msgid "Load Selection From Clipboard"
+msgid "Load Selection from Clip&board"
 msgstr "Wczytaj wybór ze schowka"
 
 #: TFRMMAIN.ACTLOADSELECTIONFROMFILE.CAPTION
-msgid "Load Selection From File"
+#, fuzzy
+#| msgid "Load Selection From File"
+msgid "&Load Selection from File..."
 msgstr "Wczytaj wybór z pliku"
 
 #: TFRMMAIN.ACTMAKEDIR.CAPTION
@@ -2194,11 +2321,15 @@ msgid "MakeDir F7"
 msgstr "Utwórz katalog F7"
 
 #: TFRMMAIN.ACTMARKCURRENTEXTENSION.CAPTION
-msgid "Select all with same extension"
+#, fuzzy
+#| msgid "Select all with same extension"
+msgid "Select All with the Same E&xtension"
 msgstr "Pokaż pliki według rozszerzenia"
 
 #: TFRMMAIN.ACTMARKINVERT.CAPTION
-msgid "Invert Selections"
+#, fuzzy
+#| msgid "Invert Selections"
+msgid "&Invert Selection"
 msgstr "Odwróć selekcję"
 
 #: TFRMMAIN.ACTMARKMARKALL.CAPTION
@@ -2206,15 +2337,21 @@ msgid "&Select All"
 msgstr "Zaznacz wzystko"
 
 #: TFRMMAIN.ACTMARKMINUS.CAPTION
-msgid "Unselect a group"
+#, fuzzy
+#| msgid "Unselect a group"
+msgid "Unselect a Gro&up..."
 msgstr "Usuń zaznaczenie"
 
 #: TFRMMAIN.ACTMARKPLUS.CAPTION
-msgid "Select a group"
+#, fuzzy
+#| msgid "Select a group"
+msgid "Select a &Group..."
 msgstr "Zaznacz wg wzoru"
 
 #: TFRMMAIN.ACTMARKUNMARKALL.CAPTION
-msgid "Unselect All"
+#, fuzzy
+#| msgid "Unselect All"
+msgid "&Unselect All"
 msgstr "Usuń zaznaczenie"
 
 #: TFRMMAIN.ACTMINIMIZE.CAPTION
@@ -2222,27 +2359,39 @@ msgid "Minimize window"
 msgstr "Minimalizuj okno"
 
 #: TFRMMAIN.ACTMULTIRENAME.CAPTION
-msgid "Multi Rename Tool"
+#, fuzzy
+#| msgid "Multi Rename Tool"
+msgid "Multi &Rename Tool"
 msgstr "Zmiany wielokrotne"
 
 #: TFRMMAIN.ACTNETWORKCONNECT.CAPTION
-msgid "Network Connect..."
+#, fuzzy
+#| msgid "Network Connect..."
+msgid "Network &Connect..."
 msgstr "Połączenie sieciowe"
 
 #: TFRMMAIN.ACTNETWORKDISCONNECT.CAPTION
-msgid "Network Disconnect"
+#, fuzzy
+#| msgid "Network Disconnect"
+msgid "Network &Disconnect"
 msgstr "Rozłącz sieć"
 
 #: TFRMMAIN.ACTNETWORKQUICKCONNECT.CAPTION
-msgid "Network Quick Connect..."
+#, fuzzy
+#| msgid "Network Quick Connect..."
+msgid "Network &Quick Connect..."
 msgstr "Szybkie połączenie sieciowe..."
 
 #: TFRMMAIN.ACTNEWTAB.CAPTION
-msgid "&New tab"
+#, fuzzy
+#| msgid "&New tab"
+msgid "&New Tab"
 msgstr "&Nowa karta"
 
 #: TFRMMAIN.ACTNEXTTAB.CAPTION
-msgid "Switch to nex&t tab"
+#, fuzzy
+#| msgid "Switch to nex&t tab"
+msgid "Switch to Nex&t Tab"
 msgstr "Przełącz do kolejnej karty"
 
 #: TFRMMAIN.ACTOPEN.CAPTION
@@ -2259,19 +2408,27 @@ msgid "Open bar file"
 msgstr "Otwórz plik paska"
 
 #: TFRMMAIN.ACTOPENDIRINNEWTAB.CAPTION
-msgid "Open &folder in new tab"
+#, fuzzy
+#| msgid "Open &folder in new tab"
+msgid "Open &Folder in a New Tab"
 msgstr "Otwórz katalog w nowej karcie"
 
 #: TFRMMAIN.ACTOPENVIRTUALFILESYSTEMLIST.CAPTION
 msgid "Open &VFS List"
 msgstr "Otwórz listę VFS"
 
+#: TFRMMAIN.ACTOPERATIONSVIEWER.CAPTION
+msgid "Operations &Viewer"
+msgstr ""
+
 #: TFRMMAIN.ACTOPTIONS.CAPTION
 msgid "&Options..."
 msgstr "Opcje"
 
 #: TFRMMAIN.ACTPACKFILES.CAPTION
-msgid "Pack files..."
+#, fuzzy
+#| msgid "Pack files..."
+msgid "&Pack Files..."
 msgstr "Spakuj pliki"
 
 #: TFRMMAIN.ACTPANELSSPLITTERPERPOS.CAPTION
@@ -2283,7 +2440,9 @@ msgid "&Paste"
 msgstr "Wklej"
 
 #: TFRMMAIN.ACTPREVTAB.CAPTION
-msgid "Switch to &previous tab"
+#, fuzzy
+#| msgid "Switch to &previous tab"
+msgid "Switch to &Previous Tab"
 msgstr "Wróć do poprzedniej karty"
 
 #: TFRMMAIN.ACTQUICKFILTER.CAPTION
@@ -2296,7 +2455,9 @@ msgid "Quick search"
 msgstr "Szybkie wyszukiwanie"
 
 #: TFRMMAIN.ACTQUICKVIEW.CAPTION
-msgid "Quick View Panel"
+#, fuzzy
+#| msgid "Quick View Panel"
+msgid "&Quick View Panel"
 msgstr "Panel szybkiego podglądu"
 
 #: TFRMMAIN.ACTREFRESH.CAPTION
@@ -2304,11 +2465,15 @@ msgid "&Refresh"
 msgstr "Odśwież"
 
 #: TFRMMAIN.ACTREMOVEALLTABS.CAPTION
-msgid "Remove &all tabs"
+#, fuzzy
+#| msgid "Remove &all tabs"
+msgid "Remove &All Tabs"
 msgstr "Usuń wszystkie karty"
 
 #: TFRMMAIN.ACTREMOVETAB.CAPTION
-msgid "&Remove tab"
+#, fuzzy
+#| msgid "&Remove tab"
+msgid "&Remove Tab"
 msgstr "Usuń kartę"
 
 #: TFRMMAIN.ACTRENAME.CAPTION
@@ -2324,12 +2489,20 @@ msgctxt "TFRMMAIN.ACTRENAMEONLY.CAPTION"
 msgid "Rename"
 msgstr "Zmień nazwę"
 
+#: TFRMMAIN.ACTRENAMETAB.CAPTION
+msgid "Re&name Tab"
+msgstr ""
+
 #: TFRMMAIN.ACTRESTORESELECTION.CAPTION
-msgid "Restore Selection"
+#, fuzzy
+#| msgid "Restore Selection"
+msgid "&Restore Selection"
 msgstr "Przywróc wybór"
 
 #: TFRMMAIN.ACTREVERSEORDER.CAPTION
-msgid "Reverse order"
+#, fuzzy
+#| msgid "Reverse order"
+msgid "Re&verse Order"
 msgstr "Odwrotna kolejność"
 
 #: TFRMMAIN.ACTRIGHTEQUALLEFT.CAPTION
@@ -2341,29 +2514,40 @@ msgid "Open right drive list"
 msgstr "Otwórz listę dysków z prawej"
 
 #: TFRMMAIN.ACTRUNTERM.CAPTION
-msgid "Run Term"
+#, fuzzy
+#| msgid "Run Term"
+msgid "Run &Terminal"
 msgstr "Otwórz terminal"
 
 #: TFRMMAIN.ACTSAVESELECTION.CAPTION
-msgid "Save Selection"
+#, fuzzy
+#| msgid "Save Selection"
+msgid "Sa&ve Selection"
 msgstr "Zapisz wybór"
 
 #: TFRMMAIN.ACTSAVESELECTIONTOFILE.CAPTION
-msgid "Save Selection To File"
+#, fuzzy
+#| msgid "Save Selection To File"
+msgid "Save S&election to File..."
 msgstr "Zapisz wybór do pliku"
 
 #: TFRMMAIN.ACTSEARCH.CAPTION
-msgid "&Search"
+#, fuzzy
+#| msgid "&Search"
+msgid "&Search..."
 msgstr "Szukaj"
 
 #: TFRMMAIN.ACTSETFILEPROPERTIES.CAPTION
-#| msgid "Change file properties"
+#, fuzzy
+#| msgid "Change attributes"
 msgctxt "TFRMMAIN.ACTSETFILEPROPERTIES.CAPTION"
-msgid "Change attributes"
+msgid "Change &Attributes..."
 msgstr "Zmień atrybuty pliku"
 
 #: TFRMMAIN.ACTSETTABOPTIONDIRSINNEWTAB.CAPTION
-msgid "Directories are opened in new &tabs"
+#, fuzzy
+#| msgid "Directories are opened in new &tabs"
+msgid "Locked with Directories Opened in New &Tabs"
 msgstr "Katalogi otwierane w &nowych kartach"
 
 #: TFRMMAIN.ACTSETTABOPTIONNORMAL.CAPTION
@@ -2375,7 +2559,9 @@ msgid "&Locked"
 msgstr "&Zablokowana"
 
 #: TFRMMAIN.ACTSETTABOPTIONPATHRESETS.CAPTION
-msgid "Locked, but &directory changes allowed"
+#, fuzzy
+#| msgid "Locked, but &directory changes allowed"
+msgid "Locked with &Directory Changes Allowed"
 msgstr "Zablokowana, ale możliwa zmiana &katalogu"
 
 #: TFRMMAIN.ACTSHOWBUTTONMENU.CAPTION
@@ -2392,28 +2578,40 @@ msgid "Menu F9"
 msgstr "Menu F9"
 
 #: TFRMMAIN.ACTSHOWSYSFILES.CAPTION
+#, fuzzy
+#| msgid "Show hidden/system files"
 msgctxt "TFRMMAIN.ACTSHOWSYSFILES.CAPTION"
-msgid "Show hidden/system files"
+msgid "Show &Hidden/System Files"
 msgstr "Pokaż pliki ukryte/systemowe"
 
 #: TFRMMAIN.ACTSORTBYATTR.CAPTION
-msgid "Sort by attrib"
+#, fuzzy
+#| msgid "Sort by attrib"
+msgid "Sort by &Attributes"
 msgstr "Wg atrybutów"
 
 #: TFRMMAIN.ACTSORTBYDATE.CAPTION
-msgid "Sort by date"
+#, fuzzy
+#| msgid "Sort by date"
+msgid "Sort by &Date"
 msgstr "Wg daty"
 
 #: TFRMMAIN.ACTSORTBYEXT.CAPTION
-msgid "Sort by extension"
+#, fuzzy
+#| msgid "Sort by extension"
+msgid "Sort by &Extension"
 msgstr "Wg rozszerzenia"
 
 #: TFRMMAIN.ACTSORTBYNAME.CAPTION
-msgid "Sort by name"
+#, fuzzy
+#| msgid "Sort by name"
+msgid "Sort by &Name"
 msgstr "Wg nazwy"
 
 #: TFRMMAIN.ACTSORTBYSIZE.CAPTION
-msgid "Sort by size"
+#, fuzzy
+#| msgid "Sort by size"
+msgid "Sort by &Size"
 msgstr "Wg wielkości"
 
 #: TFRMMAIN.ACTSWITCHIGNORELIST.CAPTION
@@ -2421,9 +2619,10 @@ msgid "Enable/disable ignore list file to not show file names"
 msgstr "Włącz/wyłącz plik ignorowania plików, aby nie pokazywać nazw plików"
 
 #: TFRMMAIN.ACTSYMLINK.CAPTION
-#| msgid "Create symlink..."
+#, fuzzy
+#| msgid "Create symbolic link..."
 msgctxt "TFRMMAIN.ACTSYMLINK.CAPTION"
-msgid "Create symbolic link..."
+msgid "Create Symbolic &Link..."
 msgstr "Utwórz link symboliczny..."
 
 #: TFRMMAIN.ACTTARGETEQUALSOURCE.CAPTION
@@ -2431,7 +2630,9 @@ msgid "Target &= Source"
 msgstr "Wyrównaj zawartości okien"
 
 #: TFRMMAIN.ACTTESTARCHIVE.CAPTION
-msgid "Test Archive(s)"
+#, fuzzy
+#| msgid "Test Archive(s)"
+msgid "&Test Archive(s)"
 msgstr "Testuj archiwa"
 
 #: TFRMMAIN.ACTTRANSFERLEFT.CAPTION
@@ -2443,7 +2644,9 @@ msgid "Transfer dir under cursor to right window"
 msgstr "Otwórz ten katalog w prawym oknie"
 
 #: TFRMMAIN.ACTUNMARKCURRENTEXTENSION.CAPTION
-msgid "Unselect all with same extension"
+#, fuzzy
+#| msgid "Unselect all with same extension"
+msgid "Unselect All with the Same Ex&tension"
 msgstr "Usuń selekcję według rozszerzenia"
 
 #: TFRMMAIN.ACTVIEW.CAPTION
@@ -2463,7 +2666,9 @@ msgid "Go to previous entry in history"
 msgstr "Przejdź do poprzedniego wpisu w historii"
 
 #: TFRMMAIN.ACTVISITHOMEPAGE.CAPTION
-msgid "&Visit Double Commander Web Site"
+#, fuzzy
+#| msgid "&Visit Double Commander Web Site"
+msgid "&Visit Double Commander Website"
 msgstr "Odwiedź stronę Double Commander"
 
 #: TFRMMAIN.ACTWIPE.CAPTION
@@ -2635,11 +2840,6 @@ msgctxt "TFRMMAIN.MILINE1.CAPTION"
 msgid "-"
 msgstr "-"
 
-#: TFRMMAIN.MILINE10.CAPTION
-msgctxt "TFRMMAIN.MILINE10.CAPTION"
-msgid "-"
-msgstr "-"
-
 #: TFRMMAIN.MILINE12.CAPTION
 msgctxt "TFRMMAIN.MILINE12.CAPTION"
 msgid "-"
@@ -2802,10 +3002,6 @@ msgstr "Konfiguracja"
 msgid "&Files"
 msgstr "Pliki"
 
-#: TFRMMAIN.MNUFILESCOMBINE.CAPTION
-msgid "Combine Files"
-msgstr "Połącz plki"
-
 #: TFRMMAIN.MNUHELP.CAPTION
 msgctxt "TFRMMAIN.MNUHELP.CAPTION"
 msgid "&Help"
@@ -2815,10 +3011,6 @@ msgstr "Pomoc"
 msgid "&Mark"
 msgstr "Zaznacz"
 
-#: TFRMMAIN.MNUMARKCMPDIR.CAPTION
-msgid "&Compare Directories"
-msgstr "Porównaj katalogi"
-
 #: TFRMMAIN.MNUNETWORK.CAPTION
 msgid "Network"
 msgstr "Sieć"
@@ -2826,10 +3018,6 @@ msgstr "Sieć"
 #: TFRMMAIN.MNUSHOW.CAPTION
 msgid "&Show"
 msgstr "Wyświetlanie"
-
-#: TFRMMAIN.MNUSHOWOPERATIONS.CAPTION
-msgid "Operations viewer"
-msgstr "Przeglądarka operacji"
 
 #: TFRMMAIN.MNUTABOPTIONS.CAPTION
 msgctxt "TFRMMAIN.MNUTABOPTIONS.CAPTION"
@@ -4465,10 +4653,6 @@ msgctxt "TFRMPACKDLG.BTNOK.CAPTION"
 msgid "OK"
 msgstr "OK"
 
-#: TFRMPACKDLG.CAPTION
-msgid "Pack files"
-msgstr "Pakowanie plików"
-
 #: TFRMPACKDLG.CBCREATESEPARATEARCHIVES.CAPTION
 msgid "Create separate archives, o&ne per selected file/dir"
 msgstr "Utwórz oddzielne archiwa dla każdego z katalogów/plików"
@@ -4500,6 +4684,11 @@ msgstr "Archiwizowanie rekursywne (z podkatalogami)"
 #: TFRMPACKDLG.CBSTOREDIR.CAPTION
 msgid "Also &pack path names (only recursed)"
 msgstr "Przy archwizowaniu z podkatalogami zachowaj ścieżki"
+
+#: TFRMPACKDLG.FRMPACKDLG.CAPTION
+msgctxt "TFRMPACKDLG.FRMPACKDLG.CAPTION"
+msgid "Pack files"
+msgstr "Pakowanie plików"
 
 #: TFRMPACKDLG.LBLPROMPT.CAPTION
 msgid "Pack file(s) to the file:"
@@ -4815,10 +5004,6 @@ msgctxt "TFRMTWEAKPLUGIN.BTNREMOVE.CAPTION"
 msgid "Remove"
 msgstr "Usuń"
 
-#: TFRMTWEAKPLUGIN.CAPTION
-msgid "Tweak plugin"
-msgstr "Ustawienia wtyczki"
-
 #: TFRMTWEAKPLUGIN.CBPK_CAPS_BY_CONTENT.CAPTION
 msgid "Detect archive type by content"
 msgstr "Wykryj typ archiwum wg zawartości"
@@ -4858,6 +5043,11 @@ msgstr "Z oknem dialogowym"
 #: TFRMTWEAKPLUGIN.CBPK_CAPS_SEARCHTEXT.CAPTION
 msgid "Allow searching for text in archives"
 msgstr "Pozwala przeszukiwać archiwa"
+
+#: TFRMTWEAKPLUGIN.FRMTWEAKPLUGIN.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.FRMTWEAKPLUGIN.CAPTION"
+msgid "Tweak plugin"
+msgstr "Ustawienia wtyczki"
 
 #: TFRMTWEAKPLUGIN.LBLDESCRIPTION.CAPTION
 msgctxt "TFRMTWEAKPLUGIN.LBLDESCRIPTION.CAPTION"
@@ -6202,6 +6392,14 @@ msgstr "Wybierz lokalizacją kolejnej części"
 #: ulng.rsmsgsetvolumelabel
 msgid "Set volume label"
 msgstr "Zmień etykietę części"
+
+#: ulng.rsmsgtabrenamecaption
+msgid "Rename tab"
+msgstr ""
+
+#: ulng.rsmsgtabrenameprompt
+msgid "New tab name:"
+msgstr ""
 
 #: ulng.rsmsgtargetdir
 msgid "Target path:"

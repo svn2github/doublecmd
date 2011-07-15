@@ -80,6 +80,7 @@ type
     actHorizontalFilePanels: TAction;
     actGoToFirstFile: TAction;
     actGoToLastFile: TAction;
+    actRenameTab: TAction;
     actOperationsViewer: TAction;
     actNetworkDisconnect: TAction;
     actNetworkQuickConnect: TAction;
@@ -154,6 +155,7 @@ type
     AllOpCancel: TMenuItem;
     AllOpStart: TMenuItem;
     AllOpPct: TMenuItem;
+    miRenameTab: TMenuItem;
     tbChangeDir: TMenuItem;
     mnuShowHorizontalFilePanels: TMenuItem;
     miLine20: TMenuItem;
@@ -1330,10 +1332,10 @@ end;
 
 procedure TfrmMain.MainSplitterDblClick(Sender: TObject);
 begin
-  // чтоби не обробативалось  MainSplitterMouseUp
+  // To prevent MainSplitterMouseUp processing
   MainSplitterLeftMouseBtnDown:=false;
   MainSplitter.ParentColor:=true;
-  // 50 50
+  // Set splitter to 50/50
   Actions.cm_PanelsSplitterPerPos('50');
 end;
 
@@ -1342,7 +1344,7 @@ procedure TfrmMain.MainSplitterMouseDown(Sender: TObject; Button: TMouseButton;
 begin
   if (Button=mbLeft) and (not MainSplitterLeftMouseBtnDown) then
   begin
-   // под линуксом MainSplitter.Color:=clBlack не работает
+   // Under Linux MainSplitter.Color:=clBlack Doesn't work
    MainSplitter.ParentColor:=true;
    MainSplitter.Color:=ColorToRGB(clBlack);
 
@@ -2870,11 +2872,11 @@ begin
       if (ItemEnd > OperationsManager.OperationsCount) then OperationsManager.MoveOperation(IndexFocus, OperationsManager.OperationsCount);
       if IndexFocus=ItemEnd then
         begin
-          if OperationsManager.GetFormCreate (OperationsManager.GetHandleById(IndexFocus)) = False then //проверяем наличие формы у указанной операции
+          if OperationsManager.GetFormCreate (OperationsManager.GetHandleById(IndexFocus)) = False then //Check if current operation has a form
             begin
-              OperationDialog := TfrmFileOp.Create(OperationsManager.GetHandleById(IndexFocus)); // если нет то создаем
+              OperationDialog := TfrmFileOp.Create(OperationsManager.GetHandleById(IndexFocus)); // create it if it hasn't
               OperationDialog.Show;
-              OperationsManager.SetFormCreate (OperationsManager.GetHandleById(IndexFocus), True); // показываем что форма есть
+              OperationsManager.SetFormCreate (OperationsManager.GetHandleById(IndexFocus), True); // Show form presence
             end;
          end
       else OperationsManager.MoveOperation(IndexFocus, ItemEnd);
@@ -2947,11 +2949,11 @@ begin
 
       // set progress bar color by operation state
 
-      sboxOperations.Canvas.Brush.Color := clRed; // если стоит по каким то причинам значит красная
+      sboxOperations.Canvas.Brush.Color := clRed; // If it is stopped then it should be red
 
-      if (StartingState in [ossQueueIn, ossQueueFirst, ossQueueLast]) then     // если в очереди то желтая
+      if (StartingState in [ossQueueIn, ossQueueFirst, ossQueueLast]) then     // Yellow if in queue
         sboxOperations.Canvas.Brush.Color := clYellow;
-      if Operation.State = fsosRunning then             //Если идет значит синяя
+      if Operation.State = fsosRunning then             //Blue if running
         sboxOperations.Canvas.Brush.Color := clHighlight;
       // Draw progress bar
       sboxOperations.Canvas.FillRect(
@@ -2960,7 +2962,7 @@ begin
         Round(5 + (widthOfItem * i) + (widthOfItem - 10) * Operation.Progress),
         10 + textHeight);
       end;
-    end; // for
+    end;
       end;
   end;
 end;
@@ -3601,10 +3603,12 @@ procedure TfrmMain.UpdateWindowView;
 
     for I := 0 to NoteBook.PageCount - 1 do  //  change on all tabs
     begin
-      if NoteBook.Page[I].LockState <> tlsPathResets then
-        NoteBook.Page[I].UpdateCaption(GetLastDir(NoteBook.View[I].CurrentPath))
+      if NoteBook.Page[I].LockState = tlsNormal then
+        NoteBook.Page[I].UpdateCaption(GetLastDir(NoteBook.View[I].CurrentPath));
+      {
       else
         NoteBook.Page[I].UpdateCaption(GetLastDir(NoteBook.Page[I].LockPath));
+      }
       NoteBook.View[I].UpdateView;
     end;
   end;
@@ -4323,9 +4327,6 @@ end;
 
 procedure TfrmMain.RestoreFromTray;
 begin
-  // делал по другому
-  // WindowState:=lastWindowState; но при wsNormal
-  // окно становится видимим но свернутим
   if lastWindowState=wsMaximized then  WindowState:=wsMaximized;
   ShowOnTop;
 
@@ -4535,7 +4536,7 @@ begin
       if gPanelOfOp = True then
         begin
           PanelAllProgress.Height := sboxOperations.Canvas.TextHeight('Pg') * 2 + 8;
-          // Делаем все видимым  если у хотя бы одной операции нет формы
+          // Make panel visible if at least one operation has no form
           visiblePanel:= False;
            for i := 0 to  OperationsManager.OperationsCount - 1 do
            begin
@@ -4552,7 +4553,7 @@ begin
       if gProgInMenuBar = true then
         begin
           AllProgressPoint:= Round(OperationsManager.AllProgressPoint*100);
-          AllOpPct.Caption:=IntToStr(AllProgressPoint)+' %'; // Показываем в строке меню
+          AllOpPct.Caption:=IntToStr(AllProgressPoint)+' %'; // Show in menu line
           Pct:='';
           for i:=0 to 25 do
           begin
