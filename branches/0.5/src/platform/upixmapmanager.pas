@@ -432,6 +432,7 @@ begin
           Result:= Graphics.TBitMap.Create;
           Icon:= CreateIconFromHandle(phIcon);
           Result.Assign(Icon);
+          Result.Masked := True; // Need to explicitly set Masked=True, Lazarus issue #0019747
         finally
           FreeThenNil(Icon);
         end
@@ -444,6 +445,7 @@ begin
             phicon := phIconSmall; // Use small icon
           Icon:= CreateIconFromHandle(phIcon);
           bmStandartBitmap.Assign(Icon);
+          bmStandartBitmap.Masked := True; // Need to explicitly set Masked=True, Lazarus issue #0019747
           Result := StretchBitmap(bmStandartBitmap, iIconSize, clBackColor, True);
         finally
           FreeThenNil(Icon);
@@ -1284,6 +1286,7 @@ begin
           Icon := CreateIconFromHandle(hicn);
           Result := Graphics.TBitmap.Create;
           Result.Assign(Icon);
+          Result.Masked := True; // Need to explicitly set Masked=True, Lazarus issue #0019747
         finally
           FreeThenNil(Icon);
           DestroyIcon(hicn);
@@ -1666,6 +1669,7 @@ begin
             try
               Icon := CreateIconFromHandle(SFI.hIcon);
               Result.Assign(Icon);
+              Result.Masked := True; // Need to explicitly set Masked=True, Lazarus issue #0019747
             finally
               FreeThenNil(Icon);
               DestroyIcon(SFI.hIcon);
@@ -1674,6 +1678,7 @@ begin
             try
               Icon := CreateIconFromHandle(SFI.hIcon);
               Result.Assign(Icon);
+              Result.Masked := True; // Need to explicitly set Masked=True, Lazarus issue #0019747
               Result := StretchBitmap(Result, IconSize, clBackColor, True);
             finally
               FreeThenNil(Icon);
