@@ -3,7 +3,7 @@
    -------------------------------------------------------------------------
    Archive File support - class for manage WCX plugins (Version 2.20)
 
-   Copyright (C) 2006-2010  Koblov Alexander (Alexx2000@mail.ru)
+   Copyright (C) 2006-2011  Koblov Alexander (Alexx2000@mail.ru)
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -68,6 +68,7 @@ Type
   TWCXModule = class
   private
     FModuleHandle: TLibHandle;  // Handle to .DLL or .so
+    FBackgroundFlags: Integer;
 
   public
     // module's functions
@@ -90,6 +91,7 @@ Type
     CanYouHandleThisFile : TCanYouHandleThisFile;
     PackSetDefaultParams : TPackSetDefaultParams;
     PkSetCryptCallback : TPkSetCryptCallback;
+    GetBackgroundFlags: TGetBackgroundFlags;
     { Unicode }
     OpenArchiveW: TOpenArchiveW;
     ReadHeaderExW: TReadHeaderExW;
@@ -128,6 +130,8 @@ Type
     function GetPluginCapabilities: Integer;
 
     function IsLoaded: Boolean;
+
+    property BackgroundFlags: Integer read FBackgroundFlags write FBackgroundFlags;
   end;
 
   { TWCXModuleList }
@@ -354,6 +358,7 @@ begin
   CanYouHandleThisFile:= TCanYouHandleThisFile(GetProcAddress(FModuleHandle,'CanYouHandleThisFile'));
   PackSetDefaultParams:= TPackSetDefaultParams(GetProcAddress(FModuleHandle,'PackSetDefaultParams'));
   PkSetCryptCallback:= TPkSetCryptCallback(GetProcAddress(FModuleHandle,'PkSetCryptCallback'));
+  GetBackgroundFlags:= TGetBackgroundFlags(GetProcAddress(FModuleHandle,'GetBackgroundFlags'));
   // Unicode
   OpenArchiveW:= TOpenArchiveW(GetProcAddress(FModuleHandle,'OpenArchiveW'));
   ReadHeaderExW:= TReadHeaderExW(GetProcAddress(FModuleHandle,'ReadHeaderExW'));
@@ -379,6 +384,11 @@ begin
         end;
       PackSetDefaultParams(@PackDefaultParamStruct);
     end;
+
+  if not Assigned(GetBackgroundFlags) then
+    FBackgroundFlags:= 0
+  else
+    FBackgroundFlags:= GetBackgroundFlags();
 
   // Dialog API
   if Assigned(SetDlgProc) then
@@ -432,6 +442,7 @@ begin
   CanYouHandleThisFile:= nil;
   PackSetDefaultParams:= nil;
   PkSetCryptCallback:= nil;
+  GetBackgroundFlags:= nil;
   // Unicode
   OpenArchiveW:= nil;
   ReadHeaderExW:= nil;
