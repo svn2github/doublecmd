@@ -345,7 +345,7 @@ end;
 
 (*Is Directory*)
 
-function  FPS_ISDIR(iAttr: TFileAttrs) : Boolean;
+function  FPS_ISDIR(iAttr: TFileAttrs) : Boolean; inline;
 {$IFDEF MSWINDOWS}
 begin
   Result := (iAttr and FILE_ATTRIBUTE_DIRECTORY <> 0);
@@ -358,7 +358,7 @@ end;
 
 (*Is Link*)
 
-function FPS_ISLNK(iAttr: TFileAttrs) : Boolean;
+function FPS_ISLNK(iAttr: TFileAttrs) : Boolean; inline;
 {$IFDEF MSWINDOWS}
 begin
   Result := (iAttr and FILE_ATTRIBUTE_REPARSE_POINT <> 0);

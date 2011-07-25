@@ -4559,8 +4559,8 @@ msgstr ""
 msgid "=>"
 msgstr ""
 
-#: TFRMPACKDLG.CBRECURSE.CAPTION
-msgid "Recursively pack &subdirectories"
+#: TFRMPACKDLG.CBPUTINTARFIRST.CAPTION
+msgid "Put in the TAR archive first"
 msgstr ""
 
 #: TFRMPACKDLG.CBSTOREDIR.CAPTION
