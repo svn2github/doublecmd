@@ -68,11 +68,11 @@ type
     FArchiveName,
     FArchiveType: UTF8String;
     FArchiveTypeCount: Integer;
-    FTooManyFiles,
+    FHasFolder,
     FExistsArchive : Boolean;
     FSourceFileSource: IFileSource;
     FCustomParams: UTF8String;
-    procedure SwitchOptions;
+    procedure SwitchOptions(ArcTypeChange: Boolean);
     procedure AddArchiveType(const FileExt, ArcType: UTF8String);
   public
     { public declarations }
@@ -176,18 +176,18 @@ begin
           begin
             if Files.Count = 1 then // if one file selected
               begin
-                FTooManyFiles:= Files[0].IsDirectory;
+                FHasFolder:= Files[0].IsDirectory;
                 FArchiveName:= Files[0].NameNoExt;
                 edtPackCmd.Text := TargetArchivePath + FArchiveName + ExtensionSeparator + FArchiveType;
               end
             else   // if some files selected
               begin
-                FTooManyFiles:= False;
+                FHasFolder:= False;
                 for I:= 0 to Files.Count - 1 do
                 begin
-                  if Files[0].IsDirectory then
+                  if Files[I].IsDirectory then
                   begin
-                    FTooManyFiles:= True;
+                    FHasFolder:= True;
                     Break;
                   end;
                 end;
@@ -239,8 +239,11 @@ begin
                           end;
                       end;
 
-                      // Pack current item
-                      Pack(aFiles, ossQueueLast);
+                      // Pack current item, if files count > 1 then put to queue
+                      if (I > 0) then
+                        Pack(aFiles, ossQueueLast)
+                      else
+                        Pack(aFiles, ossAutoStart);
                     finally
                       FreeAndNil(aFile);
                     end;
@@ -369,6 +372,7 @@ begin
   if cbCreateSFX.Tag = 0 then
   begin
     cbCreateSFX.Tag:= 1;
+    // Save check box state
     State:= cbCreateSFX.Checked;
     if State then
       FArchiveExt:= GetSfxExt
@@ -376,7 +380,7 @@ begin
       FArchiveExt:= ExtensionSeparator + FArchiveType;
     edtPackCmd.Text := ChangeFileExt(edtPackCmd.Text, FArchiveExt);
     // Switch archiver options
-    SwitchOptions;
+    SwitchOptions(False);
     // Restore check box state
     cbCreateSFX.Checked:= State;
     cbCreateSFX.Tag:= 0;
@@ -399,7 +403,7 @@ begin
     end;
   FCustomParams:= EmptyStr;
   cbPackerList.Enabled := cbOtherPlugins.Checked;
-  SwitchOptions;
+  SwitchOptions(True);
 end;
 
 procedure TfrmPackDlg.cbPutInTarFirstChange(Sender: TObject);
@@ -431,16 +435,19 @@ begin
       cbOtherPlugins.Checked := False;
     end;
   FCustomParams:= EmptyStr;
-  SwitchOptions;
+  SwitchOptions(True);
 end;
 
-procedure TfrmPackDlg.SwitchOptions; // Ugly but working
+procedure TfrmPackDlg.SwitchOptions(ArcTypeChange: Boolean); // Ugly but working
 var
   I: LongInt;
   sCmd: String;
 begin
-  // Reset some options
-  cbCreateSFX.Checked:= False;
+  if ArcTypeChange then
+  begin
+    // Reset some options
+    cbCreateSFX.Checked:= False;
+  end;
 
   // WCX plugins
   for I:= 0 to gWCXPlugins.Count - 1 do
@@ -453,7 +460,7 @@ begin
       begin
         // If file list contain directory then
         // put to the tar archive first is needed
-        if not FTooManyFiles then
+        if not FHasFolder then
           cbCreateSeparateArchives.Checked:= True
         else
           begin
@@ -500,7 +507,6 @@ begin
         // Options that don't supported by addons
         cbStoreDir.Checked:= True;
         EnableControl(cbStoreDir, False);
-
         Exit;
       end;
     end;

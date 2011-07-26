@@ -35,6 +35,7 @@ type
     FPluginCapabilities: PtrInt;
     FArcFileList : TObjectList;
     FWcxModule: TWCXModule;
+    FOpenResult: LongInt;
 
     function LoadModule: Boolean;
     procedure UnloadModule;
@@ -371,7 +372,11 @@ begin
 
   SetCryptCallback;
 
-  ReadArchive;
+  if mbFileExists(anArchiveFileName) then
+  begin
+    if not ReadArchive then
+      raise Exception.Create(GetErrorMsg(FOpenResult));
+  end;
 
   CreateConnections;
 end;
@@ -392,7 +397,11 @@ begin
 
   SetCryptCallback;
 
-  ReadArchive;
+  if mbFileExists(anArchiveFileName) then
+  begin
+    if not ReadArchive then
+      raise Exception.Create(GetErrorMsg(FOpenResult));
+  end;
 
   CreateConnections;
 end;
@@ -621,26 +630,20 @@ var
   AllDirsList, ExistsDirList : TStringHashList;
   I : Integer;
   NameLength: Integer;
-  iResult : Integer;
-  lOpenResult : Longint;
 begin
+  Result:= False;
+
   if not mbFileAccess(ArchiveFileName, fmOpenRead) then
-    begin
-      Result := False;
-      Exit;
-    end;
+  begin
+    FOpenResult := E_EREAD;
+    Exit;
+  end;
 
   DCDebug('Open Archive');
 
   (*Open Archive*)
-  ArcHandle := WcxModule.OpenArchiveHandle(ArchiveFileName, PK_OM_LIST, lOpenResult);
-  if ArcHandle = 0 then
-    begin
-      {if not bCanYouHandleThisFile then
-        ShowErrorMsg(lOpenResult);}
-      Result := False;
-      Exit;
-    end;
+  ArcHandle := WcxModule.OpenArchiveHandle(ArchiveFileName, PK_OM_LIST, FOpenResult);
+  if ArcHandle = 0 then Exit;
 
   WcxModule.WcxSetChangeVolProc(ArcHandle, nil, nil {ChangeVolProc});
   WcxModule.WcxSetProcessDataProc(ArcHandle, nil, nil {ProcessDataProc});
@@ -678,11 +681,10 @@ begin
         FArcFileList.Add(Header);
 
         // get next file
-        iResult := WcxModule.WcxProcessFile(ArcHandle, PK_SKIP, EmptyStr, EmptyStr);
+        FOpenResult := WcxModule.WcxProcessFile(ArcHandle, PK_SKIP, EmptyStr, EmptyStr);
 
-        //Check for errors
-        {if iResult <> E_SUCCESS then
-          ShowErrorMessage;}
+        // Check for errors
+        if FOpenResult <> E_SUCCESS then Exit;
       end; // while
 
       (* if plugin does not give a list of folders *)
@@ -710,13 +712,12 @@ begin
         end;
       end;
 
+    Result:= True;
   finally
     AllDirsList.Free;
     ExistsDirList.Free;
     WcxModule.CloseArchive(ArcHandle);
   end;
-
-  Result := True;
 end;
 
 procedure TWcxArchiveFileSource.AddToConnectionQueue(Operation: TFileSourceOperation);
@@ -935,4 +936,4 @@ finalization
   FreeThenNil(WcxOperationsQueueLock);
 
 end.
-
+
