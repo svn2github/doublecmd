@@ -988,10 +988,11 @@ static void vfs_copy_progress_callback (goffset current_num_bytes,
     {
       Percent = (current_num_bytes * 100) / total_num_bytes;
     }
-   /* 
+
     if (gProgressProc(gPluginNumber, ProgressInfo->SourceName, ProgressInfo->TargetName, Percent) == 1)
+    {
       g_cancellable_cancel (ProgressInfo->cancellable);
-   */ 
+    }
   }
 }
 
@@ -1272,7 +1273,7 @@ struct TVFSGlobs * NetworkConnect(gchar *ConnectionName)
       return globs;
     }
   }
-  return NULL;
+  return globs;
 }
 
 gboolean AddQuickConnection(PConnection Connection)
