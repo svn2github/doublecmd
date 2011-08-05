@@ -75,9 +75,7 @@ begin
 
   with Result do
   begin
-    SizeProperty := TFileSizeProperty.Create;
     AttributesProperty := TNtfsFileAttributesProperty.Create;
-    ModificationTimeProperty := TFileModificationDateTimeProperty.Create;
   end;
 end;
 
@@ -94,7 +92,7 @@ end;
 function TVfsFileSource.GetSupportedFileProperties: TFilePropertiesTypes;
 begin
   Result := inherited GetSupportedFileProperties +
-            [fpSize, fpAttributes, fpModificationTime];
+            [fpAttributes];
 end;
 
 function TVfsFileSource.GetWfxModuleList: TWFXModuleList;

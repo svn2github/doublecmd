@@ -96,9 +96,8 @@ begin
 
   with Result do
   begin
-    SizeProperty := TFileSizeProperty.Create;
     AttributesProperty := TNtfsFileAttributesProperty.Create;
-    ModificationTimeProperty := TFileModificationDateTimeProperty.Create;
+    CommentProperty:= TFileCommentProperty.Create;
   end;
 end;
 
@@ -120,7 +119,7 @@ end;
 function TWinNetFileSource.GetSupportedFileProperties: TFilePropertiesTypes;
 begin
   Result := inherited GetSupportedFileProperties +
-            [fpSize, fpAttributes, fpModificationTime];
+            [fpAttributes, fpComment];
 end;
 
 constructor TWinNetFileSource.Create;
