@@ -22,7 +22,6 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <MinorVersionNr Value="5"/>
-      <RevisionNr Value="0"/>
       <StringTable FileDescription="Double Commander is a cross platform open source file manager with two panels side by side" InternalName="DOUBLECMD" LegalCopyright="Copyright (C) 2006-2011  Koblov Alexander" ProductName="Double Commander" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="4">
@@ -203,7 +202,7 @@
         <PackageName Value="viewerpackage"/>
       </Item7>
     </RequiredPackages>
-    <Units Count="120">
+    <Units Count="119">
       <Unit0>
         <Filename Value="doublecmd.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -914,26 +913,26 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uTarWriter"/>
       </Unit114>
-      <Unit116>
+      <Unit115>
         <Filename Value="uvfsmodule.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uVfsModule"/>
-      </Unit116>
-      <Unit117>
+      </Unit115>
+      <Unit116>
         <Filename Value="newdesign\uwinnetfilesource.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uWinNetFileSource"/>
-      </Unit117>
-      <Unit118>
+      </Unit116>
+      <Unit117>
         <Filename Value="newdesign\uwinnetlistoperation.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uWinNetListOperation"/>
-      </Unit118>
-      <Unit119>
+      </Unit117>
+      <Unit118>
         <Filename Value="newdesign\uwinnetexecuteoperation.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uWinNetExecuteOperation"/>
-      </Unit119>
+      </Unit118>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

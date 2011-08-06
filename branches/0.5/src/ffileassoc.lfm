@@ -7,11 +7,13 @@ object frmFileAssoc: TfrmFileAssoc
   ClientHeight = 585
   ClientWidth = 568
   Constraints.MinHeight = 300
+  OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   Position = poScreenCenter
   SessionProperties = 'Height;Width;WindowState;Left;Top'
-  LCLVersion = '0.9.29'
+  ShowInTaskBar = stAlways
+  LCLVersion = '0.9.31'
   object pnlButtonPanel: TPanel
     Left = 0
     Height = 47
@@ -287,6 +289,7 @@ object frmFileAssoc: TfrmFileAssoc
             Height = 29
             Top = 85
             Width = 225
+            OnAcceptFileName = fneCommandAcceptFileName
             DialogOptions = []
             FilterIndex = 0
             HideDirectories = False
@@ -415,6 +418,7 @@ object frmFileAssoc: TfrmFileAssoc
           Width = 207
           Anchors = [akTop, akLeft, akRight]
           BorderSpacing.Left = 4
+          OnChange = edtIconFileNameChange
           TabOrder = 0
         end
       end
