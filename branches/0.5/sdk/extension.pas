@@ -1,4 +1,4 @@
-unit DialogAPI;
+unit Extension;
 
 interface
 
@@ -90,38 +90,54 @@ const
   ID_CLOSE      = 8;
   ID_HELP       = 9;
 
-type
-  { Dialog window callback function }
-  TDlgProc = function(pDlg: PtrUInt; DlgItemName: PAnsiChar; Msg, wParam, lParam: PtrInt): PtrInt; stdcall;
-  { Definition of callback functions called by the DLL }
-  TInputBoxProc = function(Caption, Prompt: PWideChar; MaskInput: LongBool; Value: PWideChar; ValueMaxLen: Integer): LongBool; stdcall;
-  TMessageBoxProc = function(Text, Caption: PWideChar; Flags: Longint): Integer; stdcall;
-  TDialogBoxLFMProc = function(LFMData: Pointer; DataSize: LongWord; DlgProc: TDlgProc): LongBool; stdcall;
-  TDialogBoxLRSProc = function(LRSData: Pointer; DataSize: LongWord; DlgProc: TDlgProc): LongBool; stdcall;
-  TDialogBoxLFMFileProc = function(lfmFileName: PWideChar; DlgProc: TDlgProc): LongBool; stdcall;
+const
+  EXT_MAX_PATH = 16384; // 16 Kb
+
+{ For compatibility with Delphi use $IFDEF's to set calling convention }
 
 type
-  TSetDlgProcInfo = packed record
-    PluginDir: PWideChar;
-    PluginConfDir: PWideChar;
+  { Dialog window callback function }
+  TDlgProc = function(pDlg: PtrUInt; DlgItemName: PAnsiChar; Msg, wParam, lParam: PtrInt): PtrInt; {$IFDEF MSWINDOWS}stdcall{$ELSE}cdecl{$ENDIF};
+  { Definition of callback functions called by the DLL }
+  TInputBoxProc = function(Caption, Prompt: PAnsiChar; MaskInput: LongBool; Value: PAnsiChar; ValueMaxLen: Integer): LongBool; {$IFDEF MSWINDOWS}stdcall{$ELSE}cdecl{$ENDIF};
+  TMessageBoxProc = function(Text, Caption: PAnsiChar; Flags: Longint): Integer; {$IFDEF MSWINDOWS}stdcall{$ELSE}cdecl{$ENDIF};
+  TDialogBoxLFMProc = function(LFMData: Pointer; DataSize: LongWord; DlgProc: TDlgProc): LongBool; {$IFDEF MSWINDOWS}stdcall{$ELSE}cdecl{$ENDIF};
+  TDialogBoxLRSProc = function(LRSData: Pointer; DataSize: LongWord; DlgProc: TDlgProc): LongBool; {$IFDEF MSWINDOWS}stdcall{$ELSE}cdecl{$ENDIF};
+  TDialogBoxLFMFileProc = function(lfmFileName: PAnsiChar; DlgProc: TDlgProc): LongBool; {$IFDEF MSWINDOWS}stdcall{$ELSE}cdecl{$ENDIF};
+
+type
+  PExtensionStartupInfo = ^TExtensionStartupInfo;
+  TExtensionStartupInfo = packed record
+    // The size of the structure, in bytes
+    StructSize: LongWord;
+    // Directory where plugin is located (UTF-8 encoded)
+    PluginDir: packed array [0..Pred(EXT_MAX_PATH)] of AnsiChar;
+    // Directory where plugin configuration file must be located (UTF-8 encoded)
+    PluginConfDir: packed array [0..Pred(EXT_MAX_PATH)] of AnsiChar;
+    // Dialog API
     InputBox: TInputBoxProc;
     MessageBox: TMessageBoxProc;
     DialogBoxLFM: TDialogBoxLFMProc;
     DialogBoxLRS: TDialogBoxLRSProc;
     DialogBoxLFMFile: TDialogBoxLFMFileProc;
     SendDlgMsg: TDlgProc;
+    // Reserved for future API extension
+    Reserved: packed array [0..Pred(4096 * SizeOf(Pointer))] of Byte;
   end;
 
 type
-   TSetDlgProc = procedure(var SetDlgProcInfo: TSetDlgProcInfo);stdcall;
+  TExtensionInitializeProc = procedure(StartupInfo: PExtensionStartupInfo); {$IFDEF MSWINDOWS}stdcall{$ELSE}cdecl{$ENDIF};
+  TExtensionFinalizeProc   = procedure(Reserved: Pointer); {$IFDEF MSWINDOWS}stdcall{$ELSE}cdecl{$ENDIF};
 
 implementation
 
-{ Plugin must implement this function for working with Dialog API
+(* Plugin must implement this function for working with Extension API
 
-procedure SetDlgProc(var SetDlgProcInfo: TSetDlgProcInfo);stdcall;
+procedure ExtensionInitialize(StartupInfo: PExtensionStartupInfo); {$IFDEF MSWINDOWS}stdcall{$ELSE}cdecl{$ENDIF};
 
-}
+procedure ExtensionFinalize(Reserved: Pointer); {$IFDEF MSWINDOWS}stdcall{$ELSE}cdecl{$ENDIF};
+
+*)
 
 end.
 

@@ -26,13 +26,14 @@
 unit ZipConfDlg;
 
 {$mode objfpc}{$H+}
+{$include calling.inc}
 
 {$R ZipConfDlg.lfm}
 
 interface
 
 uses
-  SysUtils, DialogAPI;
+  SysUtils, Extension;
 
 procedure CreateZipConfDlg;
 procedure LoadConfig;
@@ -42,11 +43,12 @@ implementation
 
 uses ZipFunc, AbZipTyp, IniFiles;
 
-function DlgProc (pDlg: PtrUInt; DlgItemName: PChar; Msg, wParam, lParam: PtrInt): PtrInt; stdcall;
+function DlgProc (pDlg: PtrUInt; DlgItemName: PAnsiChar; Msg, wParam, lParam: PtrInt): PtrInt; dcpcall;
 var
  iIndex: Integer;
 begin
-  with gSetDlgProcInfo do
+  Result:= 0;
+  with gStartupInfo do
   begin
     case Msg of
       DN_INITDIALOG:
@@ -119,7 +121,7 @@ begin
         ResData := LockResource(ResGlobal);
         ResSize := SizeofResource(HINSTANCE, ResHandle);
 
-        with gSetDlgProcInfo do
+        with gStartupInfo do
         begin
           DialogBoxLRS(ResData, ResSize, @DlgProc);
         end;
@@ -139,7 +141,7 @@ procedure LoadConfig;
 var
   gIni: TIniFile;
 begin
-  gIni:= TIniFile.Create(gPluginConfDir + IniFileName);
+  gIni:= TIniFile.Create(gStartupInfo.PluginConfDir + IniFileName);
   try
     gCompressionMethodToUse:= TAbZipSupportedMethod(gIni.ReadInteger('Configuration', 'CompressionMethodToUse', 2));
     gDeflationOption:= TAbZipDeflationOption(gIni.ReadInteger('Configuration', 'DeflationOption', 0));
@@ -152,7 +154,7 @@ procedure SaveConfig;
 var
   gIni: TIniFile;
 begin
-  gIni:= TIniFile.Create(gPluginConfDir + IniFileName);
+  gIni:= TIniFile.Create(gStartupInfo.PluginConfDir + IniFileName);
   try
     gIni.WriteInteger('Configuration', 'CompressionMethodToUse', Integer(gCompressionMethodToUse));
     gIni.WriteInteger('Configuration', 'DeflationOption', Integer(gDeflationOption));

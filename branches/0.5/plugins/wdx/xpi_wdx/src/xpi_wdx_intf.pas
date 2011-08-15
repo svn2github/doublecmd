@@ -7,33 +7,34 @@
    Copyright (C) 2010 Koblov Alexander (Alexx2000@mail.ru)
 
    This program is free software: you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, either version 3 of the License, or
-   (at your option) any later version.
+   it under the terms of the GNU Lesser General Public License as 
+   published by the Free Software Foundation, either version 3 of the 
+   License, or (at your option) any later version.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
+   GNU Lesser General Public License for more details.
 
-   You should have received a copy of the GNU General Public License
+   You should have received a copy of the GNU Lesser General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 }
 
 unit xpi_wdx_intf;
 
 {$mode objfpc}{$H+}
+{$include calling.inc}
 
 interface
 
 uses
   Classes, SysUtils, WdxPlugin;
 
-procedure ContentGetDetectString(DetectString: PAnsiChar; MaxLen: Integer); stdcall;
+procedure ContentGetDetectString(DetectString: PAnsiChar; MaxLen: Integer); dcpcall;
 function ContentGetSupportedField(FieldIndex: Integer; FieldName: PAnsiChar;
-                                  Units: PAnsiChar; MaxLen: Integer): Integer; stdcall;
+                                  Units: PAnsiChar; MaxLen: Integer): Integer; dcpcall;
 function ContentGetValue(FileName: PAnsiChar; FieldIndex, UnitIndex: Integer;
-                         FieldValue: PByte; MaxLen, Flags: Integer): Integer; stdcall;
+                         FieldValue: PByte; MaxLen, Flags: Integer): Integer; dcpcall;
 
 implementation
 
@@ -78,13 +79,13 @@ begin
     end;
 end;
 
-procedure ContentGetDetectString(DetectString: PAnsiChar; MaxLen: Integer); stdcall;
+procedure ContentGetDetectString(DetectString: PAnsiChar; MaxLen: Integer); dcpcall;
 begin
   StrPLCopy(DetectString, 'EXT="XPI"', MaxLen)
 end;
 
 function ContentGetSupportedField(FieldIndex: Integer; FieldName: PAnsiChar;
-  Units: PAnsiChar; MaxLen: Integer): Integer; stdcall;
+  Units: PAnsiChar; MaxLen: Integer): Integer; dcpcall;
 var
   Field: AnsiString;
 begin
@@ -124,7 +125,7 @@ begin
 end;
 
 function ContentGetValue(FileName: PAnsiChar; FieldIndex, UnitIndex: Integer;
-  FieldValue: PByte; MaxLen, Flags: Integer): Integer; stdcall;
+  FieldValue: PByte; MaxLen, Flags: Integer): Integer; dcpcall;
 var
   Value : AnsiString;
 begin

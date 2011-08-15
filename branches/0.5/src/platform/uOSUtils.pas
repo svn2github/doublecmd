@@ -504,6 +504,19 @@ begin
     sCmdLine := FormatTerminal(sCmdLine, bKeepTerminalOpen);
 
   SplitCmdLine(sCmdLine, Command, Args);
+  {$IFDEF DARWIN}
+  // If we run application bundle (*.app) then
+  // execute it by 'open -a' command (see 'man open' for details)
+  if StrEnds(Command, '.app') then
+  begin
+    SetLength(Args, Length(Args) + 2);
+    for pid := High(Args) downto Low(Args) + 2 do
+      Args[pid]:= Args[pid - 2];
+    Args[0] := '-a';
+    Args[1] := Command;
+    Command := 'open';
+  end;
+  {$ENDIF}
   if Command = EmptyStr then Exit(False);
 
   pid := fpFork;
@@ -562,17 +575,24 @@ begin
 end;
 {$ELSEIF DEFINED(DARWIN)}
 var
-  theFileNameCFRef: CFStringRef;
-  theFileNameUrlRef: CFURLRef;
+  theFileNameCFRef: CFStringRef = nil;
+  theFileNameUrlRef: CFURLRef = nil;
   theFileNameFSRef: FSRef;
 begin
   Result:= False;
-  theFileNameCFRef:= CFStringCreateWithFileSystemRepresentation(nil, PAnsiChar(URL));
-  theFileNameUrlRef:= CFURLCreateWithFileSystemPath(nil, theFileNameCFRef, kCFURLPOSIXPathStyle, False);
-  if (CFURLGetFSRef(theFileNameUrlRef, theFileNameFSRef)) then
-    begin
-      Result:= (LSOpenFSRef(theFileNameFSRef, nil) = noErr);
-    end;
+  try
+    theFileNameCFRef:= CFStringCreateWithFileSystemRepresentation(nil, PAnsiChar(URL));
+    theFileNameUrlRef:= CFURLCreateWithFileSystemPath(nil, theFileNameCFRef, kCFURLPOSIXPathStyle, False);
+    if (CFURLGetFSRef(theFileNameUrlRef, theFileNameFSRef)) then
+      begin
+        Result:= (LSOpenFSRef(theFileNameFSRef, nil) = noErr);
+      end;
+  finally
+    if Assigned(theFileNameCFRef) then
+      CFRelease(theFileNameCFRef);
+    if Assigned(theFileNameUrlRef) then
+      CFRelease(theFileNameUrlRef);
+  end;
 end;
 {$ELSE}
 var
@@ -1833,4 +1853,4 @@ begin
 {$ENDIF}
 end;
 
-end.
+end.

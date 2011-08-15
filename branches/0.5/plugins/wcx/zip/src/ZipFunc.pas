@@ -3,7 +3,7 @@
    -------------------------------------------------------------------------
    WCX plugin for working with *.zip, *.gz, *.tar, *.tgz archives
 
-   Copyright (C) 2007-2009  Koblov Alexander (Alexx2000@mail.ru)
+   Copyright (C) 2007-2011  Koblov Alexander (Alexx2000@mail.ru)
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
@@ -24,11 +24,14 @@
 
 unit ZipFunc;
 
+{$mode objfpc}{$H+}
+{$include calling.inc}
+
 interface
 
 uses 
   Classes,
-  WcxPlugin, AbZipKit, AbArcTyp, AbZipTyp, DialogAPI,
+  WcxPlugin, AbZipKit, AbArcTyp, AbZipTyp, Extension,
   AbExcept, AbUtils, AbConst;
 
 type
@@ -51,29 +54,29 @@ type
   end;
 
 {Mandatory functions}
-function OpenArchive (var ArchiveData : tOpenArchiveData) : TArcHandle;stdcall;
-function OpenArchiveW(var ArchiveData : tOpenArchiveDataW) : TArcHandle;stdcall;
-function ReadHeader(hArcData : TArcHandle; var HeaderData: THeaderData) : Integer;stdcall;
-function ReadHeaderEx(hArcData : TArcHandle; var HeaderData: THeaderDataEx) : Integer;stdcall;
-function ReadHeaderExW(hArcData : TArcHandle; var HeaderData: THeaderDataExW) : Integer;stdcall;
-function ProcessFile (hArcData : TArcHandle; Operation : Integer; DestPath, DestName : PChar) : Integer;stdcall;
-function ProcessFileW(hArcData : TArcHandle; Operation : Integer; DestPath, DestName : PWideChar) : Integer;stdcall;
-function CloseArchive (hArcData : TArcHandle) : Integer;stdcall;
-procedure SetChangeVolProc (hArcData : TArcHandle; pChangeVolProc : PChangeVolProc);stdcall;
-procedure SetChangeVolProcW(hArcData : TArcHandle; pChangeVolProc : TChangeVolProcW);stdcall;
-procedure SetProcessDataProc (hArcData : TArcHandle; pProcessDataProc : TProcessDataProc);stdcall;
-procedure SetProcessDataProcW(hArcData : TArcHandle; pProcessDataProc : TProcessDataProcW);stdcall;
+function OpenArchive (var ArchiveData : tOpenArchiveData) : TArcHandle;dcpcall;
+function OpenArchiveW(var ArchiveData : tOpenArchiveDataW) : TArcHandle;dcpcall;
+function ReadHeader(hArcData : TArcHandle; var HeaderData: THeaderData) : Integer;dcpcall;
+function ReadHeaderEx(hArcData : TArcHandle; var HeaderData: THeaderDataEx) : Integer;dcpcall;
+function ReadHeaderExW(hArcData : TArcHandle; var HeaderData: THeaderDataExW) : Integer;dcpcall;
+function ProcessFile (hArcData : TArcHandle; Operation : Integer; DestPath, DestName : PChar) : Integer;dcpcall;
+function ProcessFileW(hArcData : TArcHandle; Operation : Integer; DestPath, DestName : PWideChar) : Integer;dcpcall;
+function CloseArchive (hArcData : TArcHandle) : Integer;dcpcall;
+procedure SetChangeVolProc (hArcData : TArcHandle; pChangeVolProc : PChangeVolProc);dcpcall;
+procedure SetChangeVolProcW(hArcData : TArcHandle; pChangeVolProc : TChangeVolProcW);dcpcall;
+procedure SetProcessDataProc (hArcData : TArcHandle; pProcessDataProc : TProcessDataProc);dcpcall;
+procedure SetProcessDataProcW(hArcData : TArcHandle; pProcessDataProc : TProcessDataProcW);dcpcall;
 {Optional functions}
-function PackFiles(PackedFile: PChar;  SubPath: PChar;  SrcPath: PChar;  AddList: PChar;  Flags: Integer): Integer;stdcall;
-function PackFilesW(PackedFile: PWideChar;  SubPath: PWideChar;  SrcPath: PWideChar;  AddList: PWideChar;  Flags: Integer): Integer;stdcall;
-function DeleteFiles(PackedFile, DeleteList : PChar) : Integer;stdcall;
-function DeleteFilesW(PackedFile, DeleteList : PWideChar) : Integer;stdcall;
-function GetPackerCaps : Integer;stdcall;
-procedure ConfigurePacker (Parent: HWND;  DllInstance: THandle);stdcall;
-function CanYouHandleThisFile(FileName: PAnsiChar): Boolean; stdcall;
-function CanYouHandleThisFileW(FileName: PWideChar): Boolean; stdcall;
-{Dialog API function}
-procedure SetDlgProc(var SetDlgProcInfo: TSetDlgProcInfo);stdcall;
+function PackFiles(PackedFile: PChar;  SubPath: PChar;  SrcPath: PChar;  AddList: PChar;  Flags: Integer): Integer;dcpcall;
+function PackFilesW(PackedFile: PWideChar;  SubPath: PWideChar;  SrcPath: PWideChar;  AddList: PWideChar;  Flags: Integer): Integer;dcpcall;
+function DeleteFiles(PackedFile, DeleteList : PChar) : Integer;dcpcall;
+function DeleteFilesW(PackedFile, DeleteList : PWideChar) : Integer;dcpcall;
+function GetPackerCaps : Integer;dcpcall;
+procedure ConfigurePacker (Parent: HWND;  DllInstance: THandle);dcpcall;
+function CanYouHandleThisFile(FileName: PAnsiChar): Boolean; dcpcall;
+function CanYouHandleThisFileW(FileName: PWideChar): Boolean; dcpcall;
+{Extension API}
+procedure ExtensionInitialize(StartupInfo: PExtensionStartupInfo); dcpcall;
 
 const
   IniFileName = 'zip.ini';
@@ -81,11 +84,9 @@ const
 var
   gProcessDataProc : TProcessDataProc;
   gProcessDataProcW : TProcessDataProcW;
-  gSetDlgProcInfo: TSetDlgProcInfo;
+  gStartupInfo: TExtensionStartupInfo;
   gCompressionMethodToUse : TAbZipSupportedMethod;
   gDeflationOption : TAbZipDeflationOption;
-  gPluginDir: UTF8String;
-  gPluginConfDir: UTF8String;
   
 implementation
 
@@ -193,7 +194,7 @@ end;
 
 // -- Exported functions ------------------------------------------------------
 
-function OpenArchive (var ArchiveData : tOpenArchiveData) : TArcHandle;stdcall;
+function OpenArchive (var ArchiveData : tOpenArchiveData) : TArcHandle;dcpcall;
 var
   Arc : TAbZipKitEx;
 begin
@@ -232,7 +233,7 @@ begin
     Arc.Free;
 end;
 
-function OpenArchiveW(var ArchiveData : tOpenArchiveDataW) : TArcHandle;stdcall;
+function OpenArchiveW(var ArchiveData : tOpenArchiveDataW) : TArcHandle;dcpcall;
 var
   Arc : TAbZipKitEx;
 begin
@@ -271,7 +272,7 @@ begin
     Arc.Free;
 end;
 
-function ReadHeader(hArcData : TArcHandle; var HeaderData: THeaderData) : Integer;stdcall;
+function ReadHeader(hArcData : TArcHandle; var HeaderData: THeaderData) : Integer;dcpcall;
 var
   Arc : TAbZipKitEx;
   sFileName : String;
@@ -302,7 +303,7 @@ begin
   Result := E_SUCCESS;
 end;
 
-function ReadHeaderEx(hArcData : TArcHandle; var HeaderData: THeaderDataEx) : Integer;stdcall;
+function ReadHeaderEx(hArcData : TArcHandle; var HeaderData: THeaderDataEx) : Integer;dcpcall;
 var
   Arc : TAbZipKitEx;
   sFileName : String;
@@ -335,7 +336,7 @@ begin
   Result := E_SUCCESS;
 end;
 
-function ReadHeaderExW(hArcData : TArcHandle; var HeaderData: THeaderDataExW) : Integer;stdcall;
+function ReadHeaderExW(hArcData : TArcHandle; var HeaderData: THeaderDataExW) : Integer;dcpcall;
 var
   Arc : TAbZipKitEx;
   sFileName : String;
@@ -368,7 +369,7 @@ begin
   Result := E_SUCCESS;
 end;
 
-function ProcessFile (hArcData : TArcHandle; Operation : Integer; DestPath, DestName : PChar) : Integer;stdcall;
+function ProcessFile (hArcData : TArcHandle; Operation : Integer; DestPath, DestName : PChar) : Integer;dcpcall;
 var
   Arc : TAbZipKitEx;
 begin
@@ -420,7 +421,7 @@ begin
   Arc.Tag := Arc.Tag + 1;
 end;
 
-function ProcessFileW(hArcData : TArcHandle; Operation : Integer; DestPath, DestName : PWideChar) : Integer;stdcall;
+function ProcessFileW(hArcData : TArcHandle; Operation : Integer; DestPath, DestName : PWideChar) : Integer;dcpcall;
 var
   Arc : TAbZipKitEx;
   DestNameUtf8: UTF8String;
@@ -474,7 +475,7 @@ begin
   Arc.Tag := Arc.Tag + 1;
 end;
 
-function CloseArchive (hArcData : TArcHandle) : Integer;stdcall;
+function CloseArchive (hArcData : TArcHandle) : Integer;dcpcall;
 var
  Arc : TAbZipKitEx;
 begin
@@ -484,15 +485,15 @@ begin
   Result := E_SUCCESS;
 end;
 
-procedure SetChangeVolProc (hArcData : TArcHandle; pChangeVolProc : PChangeVolProc);stdcall;
+procedure SetChangeVolProc (hArcData : TArcHandle; pChangeVolProc : PChangeVolProc);dcpcall;
 begin
 end;
 
-procedure SetChangeVolProcW(hArcData : TArcHandle; pChangeVolProc : TChangeVolProcW);stdcall;
+procedure SetChangeVolProcW(hArcData : TArcHandle; pChangeVolProc : TChangeVolProcW);dcpcall;
 begin
 end;
 
-procedure SetProcessDataProc (hArcData : TArcHandle; pProcessDataProc : TProcessDataProc);stdcall;
+procedure SetProcessDataProc (hArcData : TArcHandle; pProcessDataProc : TProcessDataProc);dcpcall;
 var
  Arc : TAbZipKitEx;
 begin
@@ -505,7 +506,7 @@ begin
     gProcessDataProc := pProcessDataProc;
 end;
 
-procedure SetProcessDataProcW(hArcData : TArcHandle; pProcessDataProc : TProcessDataProcW);stdcall;
+procedure SetProcessDataProcW(hArcData : TArcHandle; pProcessDataProc : TProcessDataProcW);dcpcall;
 var
  Arc : TAbZipKitEx;
 begin
@@ -520,7 +521,7 @@ end;
 
 {Optional functions}
 
-function PackFiles(PackedFile: PChar;  SubPath: PChar;  SrcPath: PChar;  AddList: PChar;  Flags: Integer): Integer;stdcall;
+function PackFiles(PackedFile: PChar;  SubPath: PChar;  SrcPath: PChar;  AddList: PChar;  Flags: Integer): Integer;dcpcall;
 var
   Arc : TAbZipKitEx;
   sPassword: AnsiString;
@@ -581,7 +582,7 @@ begin
   end;
 end;
 
-function PackFilesW(PackedFile: PWideChar;  SubPath: PWideChar;  SrcPath: PWideChar;  AddList: PWideChar;  Flags: Integer): Integer;stdcall;
+function PackFilesW(PackedFile: PWideChar;  SubPath: PWideChar;  SrcPath: PWideChar;  AddList: PWideChar;  Flags: Integer): Integer;dcpcall;
 var
   Arc : TAbZipKitEx;
   sPassword: AnsiString;
@@ -645,7 +646,7 @@ begin
   end;
 end;
 
-function DeleteFiles (PackedFile, DeleteList : PChar) : Integer;stdcall;
+function DeleteFiles (PackedFile, DeleteList : PChar) : Integer;dcpcall;
 var
  Arc : TAbZipKitEx;
  pFileName : PChar;
@@ -710,7 +711,7 @@ begin
   end;
 end;
 
-function DeleteFilesW(PackedFile, DeleteList : PWideChar) : Integer;stdcall;
+function DeleteFilesW(PackedFile, DeleteList : PWideChar) : Integer;dcpcall;
 var
  Arc : TAbZipKitEx;
  pFileName : PWideChar;
@@ -778,7 +779,7 @@ begin
   end;
 end;
 
-function GetPackerCaps : Integer;stdcall;
+function GetPackerCaps : Integer;dcpcall;
 begin
   Result := PK_CAPS_NEW      or PK_CAPS_DELETE  or PK_CAPS_MODIFY
          or PK_CAPS_MULTIPLE or PK_CAPS_OPTIONS or PK_CAPS_BY_CONTENT
@@ -786,12 +787,12 @@ begin
   //     or PK_CAPS_MEMPACK
 end;
 
-procedure ConfigurePacker(Parent: HWND; DllInstance: THandle);stdcall;
+procedure ConfigurePacker(Parent: HWND; DllInstance: THandle);dcpcall;
 begin
   CreateZipConfDlg;
 end;
 
-function CanYouHandleThisFile(FileName: PAnsiChar): Boolean; stdcall;
+function CanYouHandleThisFile(FileName: PAnsiChar): Boolean; dcpcall;
 begin
   try
     Result:= (AbDetermineArcType(SysToUtf8(StrPas(FileName)), atUnknown) <> atUnknown);
@@ -800,7 +801,7 @@ begin
   end;
 end;
 
-function CanYouHandleThisFileW(FileName: PWideChar): Boolean; stdcall;
+function CanYouHandleThisFileW(FileName: PWideChar): Boolean; dcpcall;
 begin
   try
     Result:= (AbDetermineArcType(UTF8Encode(WideString(FileName)), atUnknown) <> atUnknown);
@@ -809,21 +810,14 @@ begin
   end;
 end;
 
-procedure SetDlgProc(var SetDlgProcInfo: TSetDlgProcInfo);stdcall;
+procedure ExtensionInitialize(StartupInfo: PExtensionStartupInfo); dcpcall;
 var
   gIni: TIniFile;
 begin
-  gSetDlgProcInfo:= SetDlgProcInfo;
-
-  gPluginDir := UTF8Encode(WideString(gSetDlgProcInfo.PluginDir));
-  gPluginConfDir := UTF8Encode(WideString(gSetDlgProcInfo.PluginConfDir));
-
-  // Clear so they are not used anymore.
-  gSetDlgProcInfo.PluginDir := nil;
-  gSetDlgProcInfo.PluginConfDir := nil;
+  gStartupInfo:= StartupInfo^;
 
   // load configuration from ini file
-  gIni:= TIniFile.Create(gPluginConfDir + IniFileName);
+  gIni:= TIniFile.Create(gStartupInfo.PluginConfDir + IniFileName);
   try
     LoadConfig;
   finally
@@ -890,16 +884,14 @@ end;
 procedure TAbZipKitEx.AbNeedPasswordEvent(Sender: TObject;
                                           var NewPassword: AnsiString);
 var
-  waNewPassword: array[0..MAX_PATH] of WideChar;
-  wsNewPassword: WideString;
+  aNewPassword: array[0..MAX_PATH-1] of AnsiChar;
   Result: Boolean;
 begin
-  wsNewPassword := UTF8Decode(NewPassword);
-  waNewPassword := Copy(wsNewPassword, 1, MAX_PATH);
-  Result:= gSetDlgProcInfo.InputBox('Zip', 'Please enter the password:', True, PWideChar(waNewPassword), MAX_PATH);
+  aNewPassword := Copy(NewPassword, 1, MAX_PATH);
+  Result:= gStartupInfo.InputBox('Zip', 'Please enter the password:', True, PAnsiChar(aNewPassword), MAX_PATH);
   if Result then
     begin
-      NewPassword := UTF8Encode(WideString(waNewPassword));
+      NewPassword := aNewPassword;
     end
   else
     begin
