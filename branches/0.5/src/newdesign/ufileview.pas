@@ -452,6 +452,7 @@ end;
 destructor TFileView.Destroy;
 var
   i: Integer;
+  DbgWorkersThread: TFunctionThread;
 begin
   for i := 0 to FileSourcesCount - 1 do
     FHistory.FileSource[i].RemoveReloadEventListener(@ReloadEvent);
@@ -463,8 +464,9 @@ begin
     // Wait until all the workers finish.
     FWorkersThread.Finish;
     DCDebug('Waiting for workers thread ', hexStr(FWorkersThread));
+    DbgWorkersThread := FWorkersThread;
     TFunctionThread.Finalize(FWorkersThread);
-    FWorkersThread := nil;
+    DCDebug('Finalized workers thread   ', hexStr(DbgWorkersThread));
   end;
 
   // Now all the workers can be safely freed.
@@ -811,6 +813,9 @@ function TFileView.Reload(const PathsToReload: TPathsArray = nil): Boolean;
 var
   i: Integer;
 begin
+  if csDestroying in ComponentState then
+    Exit(False);
+
   if Assigned(PathsToReload) then
   begin
     Result := False;
@@ -884,7 +889,7 @@ var
 begin
   SetLength(Paths, 1);
   Paths[0] := PathToReload;
-  Reload(Paths);
+  Result := Reload(Paths);
 end;
 
 procedure TFileView.ReloadIfNeeded;
