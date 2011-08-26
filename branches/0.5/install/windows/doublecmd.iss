@@ -48,6 +48,7 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 
 [Files]
 Source: "doublecmd\doublecmd.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "doublecmd\doublecmd.zdli"; DestDir: "{app}"; Flags: ignoreversion
 Source: "doublecmd\twilight.col"; DestDir: "{app}"; Flags: ignoreversion
 Source: "doublecmd\default.bar"; DestDir: "{app}"; Flags: ignoreversion
 Source: "doublecmd\doublecmd.xml"; DestDir: "{app}"; Flags: ignoreversion
