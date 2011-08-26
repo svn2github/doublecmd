@@ -319,7 +319,13 @@ implementation
 
 uses
    LCLProc, SysUtils, uGlobsPaths, uLng, uShowMsg, uFileProcs, uOSUtils,
-   uDCUtils, fMultiRename, uFile, uDCVersion, uDebug, uFileFunctions;
+   uDCUtils, fMultiRename, uFile, uDCVersion, uDebug, uFileFunctions,
+   uDefaultPlugins;
+
+var
+  // Double Commander version
+  // loaded from configuration file
+  gPreviousVersion: UTF8String = '';
 
 procedure LoadDefaultHotkeyBindings;
 begin
@@ -947,6 +953,9 @@ begin
     Exit(False);
   end;
 
+  // Update plugins if DC version is changed
+  if (gPreviousVersion <> dcVersion) then UpdatePlugins;
+
   // Set secondary variables for options that need restart.
   gShowIconsNew := gShowIcons;
   gIconsSizeNew := gIconsSize;
@@ -1392,6 +1401,9 @@ begin
   with gConfig do
   begin
     Root := gConfig.RootNode;
+
+    { Double Commander Version }
+    gPreviousVersion:= GetAttr(Root, 'DCVersion', EmptyStr);
 
     { Language page }
     gPOFileName := GetValue(Root, 'Language/POFileName', gPOFileName);
