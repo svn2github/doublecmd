@@ -503,6 +503,7 @@ msgid "Keep scrolling"
 msgstr "Scrollen fortsetzen"
 
 #: TFRMCONFIGTOOLBAR.BTNAPPENDBUTTON.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNAPPENDBUTTON.CAPTION"
 msgid "&Insert new button"
 msgstr "Neuen Schalter e&infügen"
 
@@ -5673,6 +5674,15 @@ msgstr "für laufende"
 msgctxt "TWFXPLUGINCOPYMOVEOPERATIONOPTIONSUI.LBLFILEEXISTS.CAPTION"
 msgid "When file exists"
 msgstr "Wenn Datei vorhanden"
+
+#: ulng.rscfgtoolbaraddbutton
+msgid "&Add button to end"
+msgstr ""
+
+#: ulng.rscfgtoolbarinsertbutton
+msgctxt "ulng.rscfgtoolbarinsertbutton"
+msgid "&Insert new button"
+msgstr "Neuen Schalter e&infügen"
 
 #: ulng.rscolattr
 msgid "Attr"
