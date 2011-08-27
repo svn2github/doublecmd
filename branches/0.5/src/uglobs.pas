@@ -672,7 +672,7 @@ begin
   gMainMenu := True;
   gButtonBar := True;
   gToolBarFlat := True;
-  gToolBarButtonSize := 24
+  gToolBarButtonSize := 24;
   gToolBarIconSize := 16;
   gToolBarSmallIcons := False;
   gDriveBar1 := True;
@@ -1934,4 +1934,4 @@ initialization
 
 finalization
   DestroyGlobs;
-end.
+end.
