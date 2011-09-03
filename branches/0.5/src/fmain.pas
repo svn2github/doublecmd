@@ -1989,7 +1989,7 @@ var
   I: Integer;
 begin
   I:= glsHotDir.IndexOfValue(ActiveFrame.CurrentPath);
-  if I > 0 then glsHotDir.Delete(I);
+  if I >= 0 then glsHotDir.Delete(I);
 end;
 
 procedure TfrmMain.miHotConfClick(Sender: TObject);
@@ -2241,7 +2241,7 @@ begin
   // now add ADD or DELETE item
 
   mi:= TMenuItem.Create(pmHotList);
-  if glsHotDir.IndexOfValue(ActiveFrame.CurrentPath) > 0 then
+  if glsHotDir.IndexOfValue(ActiveFrame.CurrentPath) >= 0 then
     begin
       mi.Caption:= Format(rsMsgPopUpHotDelete,[ActiveFrame.CurrentPath]);
       mi.OnClick:= @miHotDeleteClick;
@@ -4674,4 +4674,4 @@ begin
 end;
 
 end.
-
+
