@@ -52,7 +52,7 @@ This package contains the documentation for the DC in Ukrainian.
 install -d     %{buildroot}/%{_datadir}/doublecmd/doc
 cp -r en   %{buildroot}/%{_datadir}/doublecmd/doc
 cp -r ru   %{buildroot}/%{_datadir}/doublecmd/doc
-cp -r uk   %{buildroot}/%{_datadir}/doublecmd/doc
+cp -r uk_UA   %{buildroot}/%{_datadir}/doublecmd/doc
 
 %clean
 [ %{buildroot} != "/" ] && ( rm -rf %{buildroot} )
@@ -67,7 +67,7 @@ cp -r uk   %{buildroot}/%{_datadir}/doublecmd/doc
 
 %files -n doublecmd-help-uk
 %defattr(-,root,root)
-%doc %{_datadir}/doublecmd/doc/uk
+%doc %{_datadir}/doublecmd/doc/uk_UA
 
 %changelog
 * Fri Jan 21 2011 - Alexander Koblov <Alexx2000@mail.ru>

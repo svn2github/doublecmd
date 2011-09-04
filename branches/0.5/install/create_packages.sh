@@ -115,6 +115,7 @@ if [ "$CK_PORTABLE" ]; then
   # Create *.tar.bz2 package
   mkdir -p $BUILD_PACK_DIR
   install/linux/install.sh --portable-prefix=$BUILD_PACK_DIR
+  cp -r doc/en   $BUILD_PACK_DIR/doublecmd/doc
   cd $BUILD_PACK_DIR
   sed -i -e 's/<UseConfigInProgramDir>False/<UseConfigInProgramDir>True/' doublecmd/doublecmd.xml
   tar -cvjf $PACK_DIR/doublecmd-$DC_VER-1.$lcl.$CPU_TARGET.tar.bz2 doublecmd
