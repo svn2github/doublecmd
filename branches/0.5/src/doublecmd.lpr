@@ -37,6 +37,9 @@ uses
   {$IFDEF MSWINDOWS}
   , uMyWindows
   {$ENDIF}
+  {$IFDEF UNIX}
+  , uMyUnix
+  {$ENDIF}
   ;
 
 {$R *.res}
@@ -70,6 +73,9 @@ begin
   // Use only current directory separator
   AllowDirectorySeparators:= [DirectorySeparator];
   ThousandSeparator:= ' ';
+  {$IFDEF UNIX}
+  uMyUnix.FixDateTimeSeparators;
+  {$ENDIF}
 
   DCDebug('Double Commander ' + dcVersion);
   DCDebug('Revision: ' + dcRevision);
@@ -118,4 +124,4 @@ begin
      end;
 
   DCDebug('Finished Double Commander');
-end.
+end.
