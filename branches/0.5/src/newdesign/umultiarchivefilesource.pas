@@ -530,7 +530,7 @@ begin
         aFile := Files[J];
 
         if  (aFile.FullPath = sFileName) or // Item in the list is a file, only compare names.
-            (aFile.AttributesProperty.IsDirectory and IsInPath(aFile.FullPath, sFileName, True)) then // Check if 'FileName' is in this directory or any of its subdirectories.
+            (aFile.AttributesProperty.IsDirectory and IsInPath(aFile.FullPath, sFileName, True, False)) then // Check if 'FileName' is in this directory or any of its subdirectories.
           begin
             if FileIsDirectory(ArchiveItem) then
               begin
@@ -550,4 +550,4 @@ begin
 end;
 
 end.
-
+

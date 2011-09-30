@@ -820,7 +820,7 @@ begin
   begin
     Result := False;
     for i := Low(PathsToReload) to High(PathsToReload) do
-      if IsInPath(PathsToReload[i], CurrentPath, True) then
+      if IsInPath(PathsToReload[i], CurrentPath, True, True) then
       begin
         Result := True;
         Break;
@@ -1370,7 +1370,7 @@ begin
         sWatchDirsExclude := gWatchDirsExclude;
         repeat
           sDrive := Copy2SymbDel(sWatchDirsExclude, ';');
-          if IsInPath(UTF8UpperCase(sDrive), UTF8UpperCase(CurrentPath), True) then
+          if IsInPath(UTF8UpperCase(sDrive), UTF8UpperCase(CurrentPath), True, True) then
             Exit;
         until sWatchDirsExclude = '';
       end;
@@ -1594,4 +1594,4 @@ begin
 end;
 
 end.
-
+
