@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.3.5 alpha\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2011-09-10 15:19+0300\n"
+"PO-Revision-Date: 2011-09-30 18:27+0300\n"
 "Last-Translator: Alexander Koblov <Alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -686,7 +686,7 @@ msgstr "&ОК"
 
 #: TFRMDESCREDIT.CAPTION
 msgid "File/folder comment"
-msgstr "Комментприй к файлу/папке"
+msgstr "Комментарий к файлу/папке"
 
 #: TFRMDESCREDIT.LBLEDITCOMMENTFOR.CAPTION
 msgid "Edit comment for:"
@@ -3886,7 +3886,7 @@ msgstr "Открывать новую вкладку р&ядом с текуще
 
 #: TFRMOPTIONS.CBTABSSHOWCLOSEBUTTON.CAPTION
 msgid "Show tab close button"
-msgstr "Кнопка закрытия таба"
+msgstr "Кнопка закрытия вкладки"
 
 #: TFRMOPTIONS.CBTERMWINDOW.CAPTION
 msgid "Show terminal window"
@@ -4310,7 +4310,7 @@ msgstr "Утилита"
 #: TFRMOPTIONS.SUBLABEL.CAPTION
 msgctxt "TFRMOPTIONS.SUBLABEL.CAPTION"
 msgid "Drive blacklist:"
-msgstr "Черный список дисков:"
+msgstr "Чёрный список дисков:"
 
 #: TFRMOPTIONS.TBARCHIVERADDITIONAL.CAPTION
 msgctxt "TFRMOPTIONS.TBARCHIVERADDITIONAL.CAPTION"
@@ -5337,7 +5337,7 @@ msgstr "&Графика"
 
 #: TFRMVIEWER.MIHEX.CAPTION
 msgid "Show as &Hex"
-msgstr "В &шестнадцатиричном виде"
+msgstr "В &шестнадцатеричном виде"
 
 #: TFRMVIEWER.MIIMAGE.CAPTION
 msgid "&Image"
@@ -6800,7 +6800,7 @@ msgstr "Каталог"
 
 #: ulng.rspropsnmdpipe
 msgid "Named pipe"
-msgstr "Именованый канал"
+msgstr "Именованный канал"
 
 #: ulng.rspropsno
 msgid "No"
