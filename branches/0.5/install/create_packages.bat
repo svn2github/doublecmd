@@ -1,6 +1,6 @@
 
 rem Set Double Commander version
-set DC_VER=0.5.0
+set DC_VER=0.5.1
 
 rem Path to subversion
 set SVN_EXE="c:\Program Files\SlikSvn\bin\svn.exe"
