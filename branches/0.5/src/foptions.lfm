@@ -1925,7 +1925,7 @@ object frmOptions: TfrmOptions
             Top = 187
             Width = 130
             BorderSpacing.Top = 6
-            Caption = 'Save thubnails in cache'
+            Caption = 'Save thumbnails in cache'
             TabOrder = 8
           end
         end
