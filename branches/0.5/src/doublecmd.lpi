@@ -259,7 +259,7 @@
         <PackageName Value="viewerpackage"/>
       </Item7>
     </RequiredPackages>
-    <Units Count="119">
+    <Units Count="120">
       <Unit0>
         <Filename Value="doublecmd.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -990,6 +990,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uWinNetExecuteOperation"/>
       </Unit118>
+      <Unit119>
+        <Filename Value="platform\unix\uoverlayscrollbarfix.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uOverlayScrollBarFix"/>
+      </Unit119>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

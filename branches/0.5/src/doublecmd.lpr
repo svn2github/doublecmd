@@ -8,6 +8,9 @@ uses
   cthreads,
   //cwstring,
   clocale,
+  {$IFDEF LCLGTK2}
+  uOverlayScrollBarFix,
+  {$ENDIF}
   {$ENDIF}
   Interfaces,
   LCLProc,
@@ -124,4 +127,4 @@ begin
      end;
 
   DCDebug('Finished Double Commander');
-end.
+end.
