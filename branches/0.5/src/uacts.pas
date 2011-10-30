@@ -2351,8 +2351,9 @@ end;
 procedure TActs.cm_EditNew(param:string);
 var
   sNewFile: String;
-  hFile: Integer = 0;
+  hFile: System.THandle = 0;
   aFile: TFile;
+  Attrs: TFileAttrs;
 begin
   frmMain.ActiveFrame.ExecuteCommand('cm_EditNew', param);
 
@@ -2378,21 +2379,26 @@ begin
     if ExtractFilePath(sNewFile) = '' then
       sNewFile:= ActiveFrame.CurrentPath + sNewFile;
 
-    if not mbFileExists(sNewFile) then
-      try
-        hFile:= mbFileCreate(sNewFile);
-      finally
-        if hFile > 0 then
-          FileClose(hFile);
+    Attrs := mbFileGetAttr(sNewFile);
+    if Attrs = faInvalidAttributes then
+    begin
+      hFile := mbFileCreate(sNewFile);
+      if hFile = feInvalidHandle then
+      begin
+        MessageDlg(rsMsgErrECreate, mbSysErrorMessage(GetLastOSError), mtWarning, [mbOK], 0);
+        Exit;
       end;
-
-    try
-      ShowEditorByGlob(sNewFile);
-
-    finally
-      frameLeft.Reload;
-      frameRight.Reload;
+      FileClose(hFile);
+      ActiveFrame.FileSource.Reload(ExtractFilePath(sNewFile));
+    end
+    else if FPS_ISDIR(Attrs) then
+    begin
+      MessageDlg(rsMsgErrECreate, Format(rsMsgErrCreateFileDirectoryExists,
+        [ExtractFileName(sNewFile)]), mtWarning, [mbOK], 0);
+      Exit;
     end;
+
+    ShowEditorByGlob(sNewFile);
   end
   else
     msgWarning(rsMsgNotImplemented);
