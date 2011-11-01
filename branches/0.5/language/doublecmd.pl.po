@@ -438,11 +438,6 @@ msgstr "&OK"
 msgid "Create separate checksum file for each file"
 msgstr "Dla każdego pliku utwórz oddzielny plik sumy kontrolnej"
 
-#: TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT
-msgctxt "TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT"
-msgid "MD5"
-msgstr "MD5"
-
 #: TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION
 msgctxt "TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION"
 msgid "Calculate check sum..."
@@ -1237,10 +1232,6 @@ msgstr "Anuluj"
 msgctxt "TFRMEDITSEARCHREPLACE.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "&ОК"
-
-#: TFRMEDITSEARCHREPLACE.CAPTION
-msgid "frmEditSearchReplace"
-msgstr "frmEditSearchReplace"
 
 #: TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION
 msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION"
@@ -3781,7 +3772,9 @@ msgid "Select only the file name when renaming (not the extension)"
 msgstr "Przy zmianie nazwy edytuj tylko nazwę (bez rozszerzenia)"
 
 #: TFRMOPTIONS.CBSAVETHUBNAILS.CAPTION
-msgid "Save thubnails in cache"
+#, fuzzy
+#| msgid "Save thubnails in cache"
+msgid "Save thumbnails in cache"
 msgstr "Zapisz miniatury w pamięci podręcznej"
 
 #: TFRMOPTIONS.CBSELECTIONBYMOUSE.CAPTION
@@ -6114,6 +6107,10 @@ msgstr "Nie można połączyć z serwerem: \"%s\""
 #: ulng.rsmsgerrcannotcopyfile
 msgid "Cannot copy file %s to %s"
 msgstr "Nie można skopiować pliku %s do %s"
+
+#: ulng.rsmsgerrcreatefiledirectoryexists
+msgid "There already exists a directory named \"%s\"."
+msgstr ""
 
 #: ulng.rsmsgerrdatenotsupported
 msgid "Date %s is not supported"

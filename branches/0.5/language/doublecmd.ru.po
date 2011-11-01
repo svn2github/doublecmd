@@ -439,11 +439,6 @@ msgstr "&ОК"
 msgid "Create separate checksum file for each file"
 msgstr "Для каждого файла создать отдельный MD5/SHA-файл"
 
-#: TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT
-msgctxt "TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT"
-msgid "MD5"
-msgstr "MD5"
-
 #: TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION
 msgctxt "TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION"
 msgid "Calculate check sum..."
@@ -1240,10 +1235,6 @@ msgstr "Отмена"
 msgctxt "TFRMEDITSEARCHREPLACE.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "&ОК"
-
-#: TFRMEDITSEARCHREPLACE.CAPTION
-msgid "frmEditSearchReplace"
-msgstr ""
 
 #: TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION
 msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION"
@@ -3760,7 +3751,9 @@ msgid "Select only the file name when renaming (not the extension)"
 msgstr "При переименовании выделять имя файла без расширения"
 
 #: TFRMOPTIONS.CBSAVETHUBNAILS.CAPTION
-msgid "Save thubnails in cache"
+#, fuzzy
+#| msgid "Save thubnails in cache"
+msgid "Save thumbnails in cache"
 msgstr "Сохранять эскизы в кэш"
 
 #: TFRMOPTIONS.CBSELECTIONBYMOUSE.CAPTION
@@ -6101,6 +6094,10 @@ msgstr "Не могу соединиться с сервером: \"%s\""
 #: ulng.rsmsgerrcannotcopyfile
 msgid "Cannot copy file %s to %s"
 msgstr "Не могу копировать файл из %s в %s"
+
+#: ulng.rsmsgerrcreatefiledirectoryexists
+msgid "There already exists a directory named \"%s\"."
+msgstr ""
 
 #: ulng.rsmsgerrdatenotsupported
 msgid "Date %s is not supported"

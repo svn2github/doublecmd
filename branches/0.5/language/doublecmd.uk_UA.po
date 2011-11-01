@@ -436,19 +436,14 @@ msgctxt "TFRMCHECKSUMCALC.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "&Так"
 
-#: TFRMCHECKSUMCALC.CAPTION
-msgctxt "TFRMCHECKSUMCALC.CAPTION"
-msgid "Calculate check sum..."
-msgstr "Розрахувати контрольну суму..."
-
 #: TFRMCHECKSUMCALC.CBSEPARATEFILE.CAPTION
 msgid "Create separate checksum file for each file"
 msgstr "Для кожного файлу створити свій контрольний файл"
 
-#: TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT
-msgctxt "TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT"
-msgid "MD5"
-msgstr "MD5"
+#: TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION
+msgctxt "TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION"
+msgid "Calculate check sum..."
+msgstr "Розрахувати контрольну суму..."
 
 #: TFRMCHECKSUMCALC.LBLSAVETO.CAPTION
 msgid "Save check sum file(s) to:"
@@ -548,11 +543,6 @@ msgctxt "TFRMCONFIGTOOLBAR.BTNOPENFILE.CAPTION"
 msgid ">>"
 msgstr ">>"
 
-#: TFRMCONFIGTOOLBAR.CAPTION
-msgctxt "TFRMCONFIGTOOLBAR.CAPTION"
-msgid "Change button bar"
-msgstr "Налаштування панелі кнопок"
-
 #: TFRMCONFIGTOOLBAR.CBFLATBUTTONS.CAPTION
 msgid "Flat b&uttons"
 msgstr "П&лоскі кнопки"
@@ -560,6 +550,11 @@ msgstr "П&лоскі кнопки"
 #: TFRMCONFIGTOOLBAR.CBISSEPARATOR.CAPTION
 msgid "S&eparator"
 msgstr "Ро&здільник"
+
+#: TFRMCONFIGTOOLBAR.FRMCONFIGTOOLBAR.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.FRMCONFIGTOOLBAR.CAPTION"
+msgid "Change button bar"
+msgstr "Налаштування панелі кнопок"
 
 #: TFRMCONFIGTOOLBAR.GBGROUPBOX.CAPTION
 msgid "Appearance"
@@ -942,8 +937,8 @@ msgctxt "TFRMDIFFER.BTNRIGHTENCODING.HINT"
 msgid "Encoding"
 msgstr "Кодування"
 
-#: TFRMDIFFER.CAPTION
-msgctxt "TFRMDIFFER.CAPTION"
+#: TFRMDIFFER.FRMDIFFER.CAPTION
+msgctxt "TFRMDIFFER.FRMDIFFER.CAPTION"
 msgid "Compare files"
 msgstr "Порівняти файли"
 
@@ -1241,10 +1236,6 @@ msgctxt "TFRMEDITSEARCHREPLACE.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "&Так"
 
-#: TFRMEDITSEARCHREPLACE.CAPTION
-msgid "frmEditSearchReplace"
-msgstr "frmEditSearchReplace"
-
 #: TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION
 msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION"
 msgid "C&ase sensitivity"
@@ -1305,11 +1296,6 @@ msgctxt "TFRMEXTRACTDLG.BTNOK.CAPTION"
 msgid "OK"
 msgstr "Так"
 
-#: TFRMEXTRACTDLG.CAPTION
-msgctxt "TFRMEXTRACTDLG.CAPTION"
-msgid "Unpack files"
-msgstr "Розпакувати файли"
-
 #: TFRMEXTRACTDLG.CBEXTRACTPATH.CAPTION
 msgid "&Unpack path names if stored with files"
 msgstr "Роз&пакувати шляхи якщо такі є з файлами"
@@ -1325,6 +1311,11 @@ msgstr "Розпакувати кожен архів в &окремий ката
 #: TFRMEXTRACTDLG.CBOVERWRITE.CAPTION
 msgid "&Overwrite existing files"
 msgstr "&Заміняти існуючі файли"
+
+#: TFRMEXTRACTDLG.FRMEXTRACTDLG.CAPTION
+msgctxt "TFRMEXTRACTDLG.FRMEXTRACTDLG.CAPTION"
+msgid "Unpack files"
+msgstr "Розпакувати файли"
 
 #: TFRMEXTRACTDLG.LBLEXTRACTTO.CAPTION
 msgid "To the directory:"
@@ -1482,8 +1473,8 @@ msgctxt "TFRMFILEEXECUTEYOURSELF.BTNCLOSE.CAPTION"
 msgid "&Close"
 msgstr "&Закрити"
 
-#: TFRMFILEEXECUTEYOURSELF.CAPTION
-msgctxt "TFRMFILEEXECUTEYOURSELF.CAPTION"
+#: TFRMFILEEXECUTEYOURSELF.FRMFILEEXECUTEYOURSELF.CAPTION
+msgctxt "TFRMFILEEXECUTEYOURSELF.FRMFILEEXECUTEYOURSELF.CAPTION"
 msgid "Wait..."
 msgstr "Почекайте..."
 
@@ -1521,8 +1512,8 @@ msgstr "До черги"
 msgid "Work in &background"
 msgstr "У &фоні"
 
-#: TFRMFILEOP.CAPTION
-msgctxt "TFRMFILEOP.CAPTION"
+#: TFRMFILEOP.FRMFILEOP.CAPTION
+msgctxt "TFRMFILEOP.FRMFILEOP.CAPTION"
 msgid "Process file(s)"
 msgstr "Обробити файл(и)"
 
@@ -1564,11 +1555,6 @@ msgstr "&Так"
 msgid "Skip"
 msgstr "Пропустити"
 
-#: TFRMFILEPROPERTIES.CAPTION
-msgctxt "TFRMFILEPROPERTIES.CAPTION"
-msgid "Properties"
-msgstr "Властивості"
-
 #: TFRMFILEPROPERTIES.CBSGID.CAPTION
 msgctxt "TFRMFILEPROPERTIES.CBSGID.CAPTION"
 msgid "SGID"
@@ -1583,6 +1569,11 @@ msgstr "Закріплювальний біт"
 msgctxt "TFRMFILEPROPERTIES.CBSUID.CAPTION"
 msgid "SUID"
 msgstr "SUID"
+
+#: TFRMFILEPROPERTIES.FRMFILEPROPERTIES.CAPTION
+msgctxt "TFRMFILEPROPERTIES.FRMFILEPROPERTIES.CAPTION"
+msgid "Properties"
+msgstr "Властивості"
 
 #: TFRMFILEPROPERTIES.GBOWNER.CAPTION
 msgctxt "TFRMFILEPROPERTIES.GBOWNER.CAPTION"
@@ -1801,11 +1792,6 @@ msgstr "&Перегляд"
 msgid "Feed to &listbox"
 msgstr "Фай&ли на панель"
 
-#: TFRMFINDDLG.CAPTION
-msgctxt "TFRMFINDDLG.CAPTION"
-msgid "Find files"
-msgstr "Пошук файлів"
-
 #: TFRMFINDDLG.CBCASESENS.CAPTION
 msgid "Case sens&itive"
 msgstr "З врахуванням регістру"
@@ -1876,6 +1862,11 @@ msgstr "*"
 msgctxt "TFRMFINDDLG.CMBFOLLOWSYMLINKS.CAPTION"
 msgid "Follow symlinks"
 msgstr "Перейти за посиланнями"
+
+#: TFRMFINDDLG.FRMFINDDLG.CAPTION
+msgctxt "TFRMFINDDLG.FRMFINDDLG.CAPTION"
+msgid "Find files"
+msgstr "Пошук файлів"
 
 #: TFRMFINDDLG.GBATTRIBUTES.CAPTION
 msgid "&Attributes"
@@ -2043,8 +2034,8 @@ msgctxt "TFRMLINKER.BTNSAVE.CAPTION"
 msgid "..."
 msgstr "..."
 
-#: TFRMLINKER.CAPTION
-msgctxt "TFRMLINKER.CAPTION"
+#: TFRMLINKER.FRMLINKER.CAPTION
+msgctxt "TFRMLINKER.FRMLINKER.CAPTION"
 msgid "Linker"
 msgstr "Компонувальник"
 
@@ -2736,8 +2727,8 @@ msgctxt "TFRMMAIN.BTNRIGHTUP.CAPTION"
 msgid ".."
 msgstr ".."
 
-#: TFRMMAIN.CAPTION
-msgctxt "TFRMMAIN.CAPTION"
+#: TFRMMAIN.FRMMAIN.CAPTION
+msgctxt "TFRMMAIN.FRMMAIN.CAPTION"
 msgid "Double Commander"
 msgstr "Double Commander"
 
@@ -3096,8 +3087,8 @@ msgstr "..."
 msgid "Pr"
 msgstr "Pr"
 
-#: TFRMMODVIEW.CAPTION
-msgctxt "TFRMMODVIEW.CAPTION"
+#: TFRMMODVIEW.FRMMODVIEW.CAPTION
+msgctxt "TFRMMODVIEW.FRMMODVIEW.CAPTION"
 msgid "New Size"
 msgstr "Новий розмір"
 
@@ -3213,11 +3204,6 @@ msgctxt "TFRMMULTIRENAME.BTNSAVEPRESET.CAPTION"
 msgid "&Save"
 msgstr "З&берегти"
 
-#: TFRMMULTIRENAME.CAPTION
-msgctxt "TFRMMULTIRENAME.CAPTION"
-msgid "MultiRename"
-msgstr "Групове перейменування"
-
 #: TFRMMULTIRENAME.CBLOG.CAPTION
 msgctxt "TFRMMULTIRENAME.CBLOG.CAPTION"
 msgid "Enable"
@@ -3249,6 +3235,11 @@ msgstr "1"
 #: TFRMMULTIRENAME.EXTENSION.CAPTION
 msgid "[E] Extension"
 msgstr "[E] Розширення"
+
+#: TFRMMULTIRENAME.FRMMULTIRENAME.CAPTION
+msgctxt "TFRMMULTIRENAME.FRMMULTIRENAME.CAPTION"
+msgid "MultiRename"
+msgstr "Групове перейменування"
 
 #: TFRMMULTIRENAME.GBCOUNTER.CAPTION
 msgid "Counter"
@@ -3562,11 +3553,6 @@ msgstr "..."
 msgid "Set HotKey"
 msgstr "Задати ГарКлавішу"
 
-#: TFRMOPTIONS.CAPTION
-msgctxt "TFRMOPTIONS.CAPTION"
-msgid "Options"
-msgstr "Налаштування"
-
 #: TFRMOPTIONS.CBALWAYSSHOWTRAYICON.CAPTION
 msgid "Always show tray icon"
 msgstr "Завжди показувати іконку в треї"
@@ -3731,7 +3717,9 @@ msgid "Select only the file name when renaming (not the extension)"
 msgstr "При перейменуванні виділяти лише ім'я файлу (без розширення)"
 
 #: TFRMOPTIONS.CBSAVETHUBNAILS.CAPTION
-msgid "Save thubnails in cache"
+#, fuzzy
+#| msgid "Save thubnails in cache"
+msgid "Save thumbnails in cache"
 msgstr "Зберігати ескізи в кеш"
 
 #: TFRMOPTIONS.CBSELECTIONBYMOUSE.CAPTION
@@ -3920,6 +3908,11 @@ msgstr "Зберегти налаштування"
 #: TFRMOPTIONS.CHKSEARCHREPLACEHISTORY.CAPTION
 msgid "Search/Replace history"
 msgstr "Історія пошуку/заміни"
+
+#: TFRMOPTIONS.FRMOPTIONS.CAPTION
+msgctxt "TFRMOPTIONS.FRMOPTIONS.CAPTION"
+msgid "Options"
+msgstr "Налаштування"
 
 #: TFRMOPTIONS.GBARCHIVEROPTIONS.CAPTION
 msgctxt "TFRMOPTIONS.GBARCHIVEROPTIONS.CAPTION"
@@ -4182,11 +4175,6 @@ msgstr "Кіл-ть проходів стирання:"
 msgid "Categories:"
 msgstr "Категорії:"
 
-#: TFRMOPTIONS.LEDDRIVEBLACKLIST.EDITLABEL.CAPTION
-msgctxt "TFRMOPTIONS.LEDDRIVEBLACKLIST.EDITLABEL.CAPTION"
-msgid "Drive blacklist:"
-msgstr "Чорний список дисків:"
-
 #: TFRMOPTIONS.LEDDRIVEBLACKLIST.HINT
 msgid "Here you can enter one or more drives, separated by \";\"."
 msgstr "Тут ви можете ввести один або декілька дисків, розділених \";\"."
@@ -4272,6 +4260,11 @@ msgstr "Параметри"
 msgctxt "TFRMOPTIONS.STGTOOLS.COLUMNS[0].TITLE.CAPTION"
 msgid "Tool"
 msgstr "Інструмент"
+
+#: TFRMOPTIONS.SUBLABEL.CAPTION
+msgctxt "TFRMOPTIONS.SUBLABEL.CAPTION"
+msgid "Drive blacklist:"
+msgstr "Чорний список дисків:"
 
 #: TFRMOPTIONS.TBARCHIVERADDITIONAL.CAPTION
 msgctxt "TFRMOPTIONS.TBARCHIVERADDITIONAL.CAPTION"
@@ -4604,11 +4597,6 @@ msgctxt "TFRMPACKDLG.BTNOK.CAPTION"
 msgid "OK"
 msgstr "Так"
 
-#: TFRMPACKDLG.CAPTION
-msgctxt "TFRMPACKDLG.CAPTION"
-msgid "Pack files"
-msgstr "Упакування файлів"
-
 #: TFRMPACKDLG.CBCREATESEPARATEARCHIVES.CAPTION
 msgid "Create separate archives, o&ne per selected file/dir"
 msgstr "Окремі архіви для кожн&ого вибраного файлу/каталогу"
@@ -4641,6 +4629,11 @@ msgstr "Спершу помістити в TAR архів"
 msgid "Also &pack path names (only recursed)"
 msgstr "Зберігати шляхи"
 
+#: TFRMPACKDLG.FRMPACKDLG.CAPTION
+msgctxt "TFRMPACKDLG.FRMPACKDLG.CAPTION"
+msgid "Pack files"
+msgstr "Упакування файлів"
+
 #: TFRMPACKDLG.LBLPROMPT.CAPTION
 msgid "Pack file(s) to the file:"
 msgstr "Ім'я архіву:"
@@ -4662,8 +4655,8 @@ msgstr "Розпакувати все і виконати"
 msgid "&Unpack and execute"
 msgstr "Розпакувати і виконати"
 
-#: TFRMPACKINFODLG.CAPTION
-msgctxt "TFRMPACKINFODLG.CAPTION"
+#: TFRMPACKINFODLG.FRMPACKINFODLG.CAPTION
+msgctxt "TFRMPACKINFODLG.FRMPACKINFODLG.CAPTION"
 msgid "Properties of packed file"
 msgstr "Властивості стисненого файлу"
 
@@ -4713,11 +4706,6 @@ msgctxt "TFRMSETFILEPROPERTIES.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "&Так"
 
-#: TFRMSETFILEPROPERTIES.CAPTION
-msgctxt "TFRMSETFILEPROPERTIES.CAPTION"
-msgid "Change attributes"
-msgstr "Змінити атрибути"
-
 #: TFRMSETFILEPROPERTIES.CBSGID.CAPTION
 msgctxt "TFRMSETFILEPROPERTIES.CBSGID.CAPTION"
 msgid "SGID"
@@ -4763,14 +4751,19 @@ msgstr "Лише читання"
 
 #: TFRMSETFILEPROPERTIES.CHKRECURSIVE.CAPTION
 #, fuzzy
-#| msgid "Recursive"
-msgid "Including subfolders"
+#| msgid "Including subfolders"
+msgid "Recursive"
 msgstr "Рекурсивно"
 
 #: TFRMSETFILEPROPERTIES.CHKSYSTEM.CAPTION
 msgctxt "TFRMSETFILEPROPERTIES.CHKSYSTEM.CAPTION"
 msgid "System"
 msgstr "Системний"
+
+#: TFRMSETFILEPROPERTIES.FRMSETFILEPROPERTIES.CAPTION
+msgctxt "TFRMSETFILEPROPERTIES.FRMSETFILEPROPERTIES.CAPTION"
+msgid "Change attributes"
+msgstr "Змінити атрибути"
 
 #: TFRMSETFILEPROPERTIES.GBTIMESAMP.CAPTION
 #, fuzzy
@@ -4856,14 +4849,14 @@ msgctxt "TFRMSPLITTER.BTNOK.CAPTION"
 msgid "OK"
 msgstr "Так"
 
-#: TFRMSPLITTER.CAPTION
-msgctxt "TFRMSPLITTER.CAPTION"
-msgid "Splitter"
-msgstr "Розбивка"
-
 #: TFRMSPLITTER.CMBXSIZE.TEXT
 msgid "1457664B - 3.5\""
 msgstr "1457664B - 3.5\""
+
+#: TFRMSPLITTER.FRMSPLITTER.CAPTION
+msgctxt "TFRMSPLITTER.FRMSPLITTER.CAPTION"
+msgid "Splitter"
+msgstr "Розбивка"
 
 #: TFRMSPLITTER.GRBXFILE.CAPTION
 msgctxt "TFRMSPLITTER.GRBXFILE.CAPTION"
@@ -4952,11 +4945,6 @@ msgctxt "TFRMTWEAKPLUGIN.BTNREMOVE.CAPTION"
 msgid "Remove"
 msgstr "Видалити"
 
-#: TFRMTWEAKPLUGIN.CAPTION
-msgctxt "TFRMTWEAKPLUGIN.CAPTION"
-msgid "Tweak plugin"
-msgstr "Параметри плагіну"
-
 #: TFRMTWEAKPLUGIN.CBPK_CAPS_BY_CONTENT.CAPTION
 msgid "Detect archive type by content"
 msgstr "Визначати тип архіву за вмістом"
@@ -4996,6 +4984,11 @@ msgstr "Підтримує діалогове вікно з налаштуван
 #: TFRMTWEAKPLUGIN.CBPK_CAPS_SEARCHTEXT.CAPTION
 msgid "Allow searching for text in archives"
 msgstr "Дозволити шукати текст у архівах"
+
+#: TFRMTWEAKPLUGIN.FRMTWEAKPLUGIN.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.FRMTWEAKPLUGIN.CAPTION"
+msgid "Tweak plugin"
+msgstr "Параметри плагіну"
 
 #: TFRMTWEAKPLUGIN.LBLDESCRIPTION.CAPTION
 msgctxt "TFRMTWEAKPLUGIN.LBLDESCRIPTION.CAPTION"
@@ -5167,11 +5160,6 @@ msgctxt "TFRMVIEWER.BTNZOOMOUT.HINT"
 msgid "Zoom Out"
 msgstr "Зменшити"
 
-#: TFRMVIEWER.CAPTION
-msgctxt "TFRMVIEWER.CAPTION"
-msgid "Viewer"
-msgstr "Переглядач"
-
 #: TFRMVIEWER.CBSLIDESHOW.CAPTION
 msgctxt "TFRMVIEWER.CBSLIDESHOW.CAPTION"
 msgid "Slide Show"
@@ -5185,6 +5173,11 @@ msgstr "Ручка"
 msgctxt "TFRMVIEWER.COMBOBOXWIDTH.TEXT"
 msgid "1"
 msgstr "1"
+
+#: TFRMVIEWER.FRMVIEWER.CAPTION
+msgctxt "TFRMVIEWER.FRMVIEWER.CAPTION"
+msgid "Viewer"
+msgstr "Переглядач"
 
 #: TFRMVIEWER.GBOXHIGHTLIGHT.CAPTION
 msgctxt "TFRMVIEWER.GBOXHIGHTLIGHT.CAPTION"
@@ -5473,14 +5466,14 @@ msgctxt "TFRMVIEWOPERATIONS.BTNUPCUROP.CAPTION"
 msgid "Up"
 msgstr "Вгору"
 
-#: TFRMVIEWOPERATIONS.CAPTION
-msgctxt "TFRMVIEWOPERATIONS.CAPTION"
-msgid "File operations"
-msgstr "Операції з файлами"
-
 #: TFRMVIEWOPERATIONS.CHKQUEUE.CAPTION
 msgid "Enable queue"
 msgstr "Ввімкнути чергу"
+
+#: TFRMVIEWOPERATIONS.FRMVIEWOPERATIONS.CAPTION
+msgctxt "TFRMVIEWOPERATIONS.FRMVIEWOPERATIONS.CAPTION"
+msgid "File operations"
+msgstr "Операції з файлами"
 
 #: TFRMVIEWOPERATIONS.GRPALLOPERATION.CAPTION
 msgid "Operations control"
@@ -6065,6 +6058,10 @@ msgstr "Неможливо з'єднатися з серевером: \"%s\""
 #: ulng.rsmsgerrcannotcopyfile
 msgid "Cannot copy file %s to %s"
 msgstr "Помилка при копіюванні файлу %s в %s"
+
+#: ulng.rsmsgerrcreatefiledirectoryexists
+msgid "There already exists a directory named \"%s\"."
+msgstr ""
 
 #: ulng.rsmsgerrdatenotsupported
 msgid "Date %s is not supported"

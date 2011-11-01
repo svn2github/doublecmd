@@ -441,11 +441,6 @@ msgstr "確定(&O)"
 msgid "Create separate checksum file for each file"
 msgstr "為每個檔案建立單獨的MD5/SHA1檔案"
 
-#: TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT
-msgctxt "TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT"
-msgid "MD5"
-msgstr ""
-
 #: TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION
 msgctxt "TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION"
 msgid "Calculate check sum..."
@@ -501,6 +496,7 @@ msgid "Keep scrolling"
 msgstr "保持滾動"
 
 #: TFRMCONFIGTOOLBAR.BTNAPPENDBUTTON.CAPTION
+msgctxt "TFRMCONFIGTOOLBAR.BTNAPPENDBUTTON.CAPTION"
 msgid "&Insert new button"
 msgstr ""
 
@@ -1242,10 +1238,6 @@ msgctxt "TFRMEDITSEARCHREPLACE.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "確定(&O)"
 
-#: TFRMEDITSEARCHREPLACE.CAPTION
-msgid "frmEditSearchReplace"
-msgstr ""
-
 #: TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION
 msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION"
 msgid "C&ase sensitivity"
@@ -1526,7 +1518,8 @@ msgstr ""
 msgid "Work in &background"
 msgstr "在背景中執行"
 
-#: TFRMFILEOP.CAPTION
+#: TFRMFILEOP.FRMFILEOP.CAPTION
+msgctxt "TFRMFILEOP.FRMFILEOP.CAPTION"
 msgid "Process file(s)"
 msgstr "處理檔案:"
 
@@ -3016,6 +3009,7 @@ msgid "&Mark"
 msgstr "標記(&M)"
 
 #: TFRMMAIN.MNUNETWORK.CAPTION
+msgctxt "TFRMMAIN.MNUNETWORK.CAPTION"
 msgid "Network"
 msgstr "網路"
 
@@ -3815,7 +3809,7 @@ msgid "Select only the file name when renaming (not the extension)"
 msgstr "僅選擇檔案名稱稱然後重新命名(不包含副檔名)"
 
 #: TFRMOPTIONS.CBSAVETHUBNAILS.CAPTION
-msgid "Save thubnails in cache"
+msgid "Save thumbnails in cache"
 msgstr ""
 
 #: TFRMOPTIONS.CBSELECTIONBYMOUSE.CAPTION
@@ -4585,7 +4579,7 @@ msgstr "啟動"
 #: TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[1].TGRIDCOLUMNTITLE.CAPTION
 msgctxt "TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[1].TGRIDCOLUMNTITLE.CAPTION"
 msgid "Plugin"
-msgstr ""
+msgstr "插件"
 
 #: TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[2].TGRIDCOLUMNTITLE.CAPTION
 msgctxt "TFRMOPTIONSPLUGINS.STGPLUGINS.COLUMNS[2].TGRIDCOLUMNTITLE.CAPTION"
@@ -5060,10 +5054,6 @@ msgctxt "TFRMTWEAKPLUGIN.BTNREMOVE.CAPTION"
 msgid "Remove"
 msgstr "移除"
 
-#: TFRMTWEAKPLUGIN.CAPTION
-msgid "Tweak plugin"
-msgstr "Tweak插件"
-
 #: TFRMTWEAKPLUGIN.CBPK_CAPS_BY_CONTENT.CAPTION
 msgid "Detect archive type by content"
 msgstr "按內容檢測壓縮檔類型"
@@ -5103,6 +5093,11 @@ msgstr "支持選項對話框"
 #: TFRMTWEAKPLUGIN.CBPK_CAPS_SEARCHTEXT.CAPTION
 msgid "Allow searching for text in archives"
 msgstr "允許在壓縮檔中搜索文字"
+
+#: TFRMTWEAKPLUGIN.FRMTWEAKPLUGIN.CAPTION
+msgctxt "TFRMTWEAKPLUGIN.FRMTWEAKPLUGIN.CAPTION"
+msgid "Tweak plugin"
+msgstr "Tweak插件"
 
 #: TFRMTWEAKPLUGIN.LBLDESCRIPTION.CAPTION
 msgctxt "TFRMTWEAKPLUGIN.LBLDESCRIPTION.CAPTION"
@@ -5533,7 +5528,7 @@ msgstr ""
 #: TFRMVIEWOPERATIONS.BTNALLSTART.CAPTION
 msgctxt "TFRMVIEWOPERATIONS.BTNALLSTART.CAPTION"
 msgid "Start"
-msgstr ""
+msgstr "開始"
 
 #: TFRMVIEWOPERATIONS.BTNCANCELCUROP.CAPTION
 msgctxt "TFRMVIEWOPERATIONS.BTNCANCELCUROP.CAPTION"
@@ -5558,12 +5553,12 @@ msgstr ""
 #: TFRMVIEWOPERATIONS.BTNRUNALLSTART.CAPTION
 msgctxt "TFRMVIEWOPERATIONS.BTNRUNALLSTART.CAPTION"
 msgid "Start"
-msgstr ""
+msgstr "開始"
 
 #: TFRMVIEWOPERATIONS.BTNSTARTPAUSECUROP.CAPTION
 msgctxt "TFRMVIEWOPERATIONS.BTNSTARTPAUSECUROP.CAPTION"
 msgid "Start"
-msgstr ""
+msgstr "開始"
 
 #: TFRMVIEWOPERATIONS.BTNSTARTQUEUE.CAPTION
 msgid "Start queue"
@@ -5619,6 +5614,15 @@ msgstr ""
 #: TWFXPLUGINCOPYMOVEOPERATIONOPTIONSUI.LBLFILEEXISTS.CAPTION
 msgctxt "TWFXPLUGINCOPYMOVEOPERATIONOPTIONSUI.LBLFILEEXISTS.CAPTION"
 msgid "When file exists"
+msgstr ""
+
+#: ulng.rscfgtoolbaraddbutton
+msgid "&Add button to end"
+msgstr ""
+
+#: ulng.rscfgtoolbarinsertbutton
+msgctxt "ulng.rscfgtoolbarinsertbutton"
+msgid "&Insert new button"
 msgstr ""
 
 #: ulng.rscolattr
@@ -5807,7 +5811,7 @@ msgstr ""
 #: ulng.rsdlgopstart
 msgctxt "ulng.rsdlgopstart"
 msgid "Start"
-msgstr ""
+msgstr "開始"
 
 #: ulng.rsdlgpack
 msgid "Packing..."
@@ -6158,6 +6162,10 @@ msgstr ""
 
 #: ulng.rsmsgerrcannotcopyfile
 msgid "Cannot copy file %s to %s"
+msgstr ""
+
+#: ulng.rsmsgerrcreatefiledirectoryexists
+msgid "There already exists a directory named \"%s\"."
 msgstr ""
 
 #: ulng.rsmsgerrdatenotsupported
@@ -6542,7 +6550,7 @@ msgstr ""
 #: ulng.rsoperstartstateautostart
 msgctxt "ulng.rsoperstartstateautostart"
 msgid "Start"
-msgstr ""
+msgstr "開始"
 
 #: ulng.rsoperstartstatemanualstart
 msgid "Manual start"
@@ -6996,6 +7004,11 @@ msgstr "查看器"
 #: ulng.rsunhandledexceptionmessage
 msgid "Please report this error to the bug tracker with a description of what you were doing and the following file:%sPress %s to continue or %s to abort the program."
 msgstr ""
+
+#: ulng.rsvfsnetwork
+msgctxt "ulng.rsvfsnetwork"
+msgid "Network"
+msgstr "網路"
 
 #: ulng.rsviewabouttext
 msgid "Internal Viewer of Double Commander."

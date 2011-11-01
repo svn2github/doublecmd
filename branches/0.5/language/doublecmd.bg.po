@@ -439,11 +439,6 @@ msgstr "&Добре"
 msgid "Create separate checksum file for each file"
 msgstr "Създаване на отделни проверчони сборове за всички файлове"
 
-#: TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT
-msgctxt "TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT"
-msgid "MD5"
-msgstr ""
-
 #: TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION
 msgctxt "TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION"
 msgid "Calculate check sum..."
@@ -1242,10 +1237,6 @@ msgstr "Отказ"
 msgctxt "TFRMEDITSEARCHREPLACE.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "&Добре"
-
-#: TFRMEDITSEARCHREPLACE.CAPTION
-msgid "frmEditSearchReplace"
-msgstr ""
 
 #: TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION
 msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION"
@@ -3832,7 +3823,7 @@ msgid "Select only the file name when renaming (not the extension)"
 msgstr "Избор само на файловото име при преименуване (без разширението)"
 
 #: TFRMOPTIONS.CBSAVETHUBNAILS.CAPTION
-msgid "Save thubnails in cache"
+msgid "Save thumbnails in cache"
 msgstr ""
 
 #: TFRMOPTIONS.CBSELECTIONBYMOUSE.CAPTION
@@ -6182,6 +6173,10 @@ msgstr ""
 
 #: ulng.rsmsgerrcannotcopyfile
 msgid "Cannot copy file %s to %s"
+msgstr ""
+
+#: ulng.rsmsgerrcreatefiledirectoryexists
+msgid "There already exists a directory named \"%s\"."
 msgstr ""
 
 #: ulng.rsmsgerrdatenotsupported

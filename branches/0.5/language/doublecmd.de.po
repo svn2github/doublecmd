@@ -443,11 +443,6 @@ msgstr "&OK"
 msgid "Create separate checksum file for each file"
 msgstr "Für jede Datei eigene MD5/SHA1-Prüfdatei erstellen"
 
-#: TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT
-msgctxt "TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT"
-msgid "MD5"
-msgstr ""
-
 #: TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION
 msgctxt "TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION"
 msgid "Calculate check sum..."
@@ -1248,10 +1243,6 @@ msgstr "Abbruch"
 msgctxt "TFRMEDITSEARCHREPLACE.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "&OK"
-
-#: TFRMEDITSEARCHREPLACE.CAPTION
-msgid "frmEditSearchReplace"
-msgstr ""
 
 #: TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION
 msgid "C&ase sensitivity"
@@ -3856,7 +3847,9 @@ msgid "Select only the file name when renaming (not the extension)"
 msgstr "Nur den Dateinamen bearbeiten (nicht die Endung)"
 
 #: TFRMOPTIONS.CBSAVETHUBNAILS.CAPTION
-msgid "Save thubnails in cache"
+#, fuzzy
+#| msgid "Save thubnails in cache"
+msgid "Save thumbnails in cache"
 msgstr "Vorschaubilder im Cache speichern"
 
 #: TFRMOPTIONS.CBSELECTIONBYMOUSE.CAPTION
@@ -6222,6 +6215,10 @@ msgstr "Kann nicht mit dem Server \"%s\" verbinden"
 #: ulng.rsmsgerrcannotcopyfile
 msgid "Cannot copy file %s to %s"
 msgstr "Kann die Datei %s nicht zu %s kopieren"
+
+#: ulng.rsmsgerrcreatefiledirectoryexists
+msgid "There already exists a directory named \"%s\"."
+msgstr ""
 
 #: ulng.rsmsgerrdatenotsupported
 msgid "Date %s is not supported"

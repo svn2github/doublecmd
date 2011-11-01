@@ -452,11 +452,6 @@ msgstr "&OK"
 msgid "Create separate checksum file for each file"
 msgstr "Vytvořit samostatný MD5/SHA1 pro každý soubor"
 
-#: TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT
-msgctxt "TFRMCHECKSUMCALC.CMBHASHALGORITHM.TEXT"
-msgid "MD5"
-msgstr ""
-
 #: TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION
 msgctxt "TFRMCHECKSUMCALC.FRMCHECKSUMCALC.CAPTION"
 msgid "Calculate check sum..."
@@ -475,10 +470,6 @@ msgstr "&Zavřít"
 msgctxt "TFRMCHECKSUMVERIFY.CAPTION"
 msgid "Verify check sum..."
 msgstr "Ověřit kontrolní součet..."
-
-#: TFRMCOLUMSPROPS.BITBTN1.CAPTION
-msgid "&??"
-msgstr "&??"
 
 #: TFRMCOMPAREFILES.BTNCLOSE.CAPTION
 msgctxt "TFRMCOMPAREFILES.BTNCLOSE.CAPTION"
@@ -1256,10 +1247,6 @@ msgstr "Zrušit"
 msgctxt "TFRMEDITSEARCHREPLACE.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "&OK"
-
-#: TFRMEDITSEARCHREPLACE.CAPTION
-msgid "frmEditSearchReplace"
-msgstr "Nahradit"
 
 #: TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION
 msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHCASESENSITIVE.CAPTION"
@@ -3850,7 +3837,9 @@ msgid "Select only the file name when renaming (not the extension)"
 msgstr "Při přejmenování vybrat pouze jméno souboru (bez přípony)"
 
 #: TFRMOPTIONS.CBSAVETHUBNAILS.CAPTION
-msgid "Save thubnails in cache"
+#, fuzzy
+#| msgid "Save thubnails in cache"
+msgid "Save thumbnails in cache"
 msgstr "Uložit náhledy do cache"
 
 #: TFRMOPTIONS.CBSELECTIONBYMOUSE.CAPTION
@@ -4639,7 +4628,6 @@ msgstr "Název souboru"
 #: TFRMOPTIONSPLUGINS.TSDSX.CAPTION
 msgctxt "TFRMOPTIONSPLUGINS.TSDSX.CAPTION"
 msgid "Search plugins (.DSX)"
-msgstr "Vyhledávací pluginy (.DSX)"
 msgstr "Vyhledávací pluginy (.DSX)"
 
 #: TFRMOPTIONSPLUGINS.TSWCX.CAPTION
@@ -6219,6 +6207,10 @@ msgstr "Nelze se spojit se serverem: \"%s\""
 msgid "Cannot copy file %s to %s"
 msgstr "Nelze kopírovat soubor %s to %s"
 
+#: ulng.rsmsgerrcreatefiledirectoryexists
+msgid "There already exists a directory named \"%s\"."
+msgstr ""
+
 #: ulng.rsmsgerrdatenotsupported
 msgid "Date %s is not supported"
 msgstr "Datum %s není podporováno!"
@@ -6790,7 +6782,7 @@ msgstr "Poznámky"
 #: ulng.rsopthotkeyshotkey
 msgctxt "ulng.rsopthotkeyshotkey"
 msgid "Hotkey"
-msgstr ""
+msgstr "Klávesa"
 
 #: ulng.rsopthotkeyshotkeys
 msgid "Hotkeys"
