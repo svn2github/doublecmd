@@ -2188,27 +2188,23 @@ var
   ColumnsClass: TPanelColumnsClass;
   OldFilePropertiesNeeded: TFilePropertiesTypes;
 begin
-  if (ActiveColm <> '') or (isSlave and Assigned(ActiveColmSlave)) then
+  // If the ActiveColm set doesn't exist this will retrieve either
+  // the first set or the default set.
+  ColumnsClass := GetColumnsClass;
+  // Set name in case a different set was loaded.
+  ActiveColm := ColumnsClass.Name;
+
+  SetColumnsWidths;
+
+  dgPanel.FocusRectVisible := ColumnsClass.GetCursorBorder and not gUseFrameCursor;
+  dgPanel.FocusColor := ColumnsClass.GetCursorBorderColor;
+
+  OldFilePropertiesNeeded := FilePropertiesNeeded;
+  FilePropertiesNeeded := GetFilePropertiesNeeded;
+  if FilePropertiesNeeded >= OldFilePropertiesNeeded then
   begin
-    // If the ActiveColm set doesn't exist this will retrieve either
-    // the first set or the default set.
-    ColumnsClass := GetColumnsClass;
-    // Set name in case a different set was loaded.
-    ActiveColm := ColumnsClass.Name;
-
-    SetColumnsWidths;
-
-    dgPanel.FocusRectVisible := ColumnsClass.GetCursorBorder and not gUseFrameCursor;
-    dgPanel.FocusColor := ColumnsClass.GetCursorBorderColor;
-
-    OldFilePropertiesNeeded := FilePropertiesNeeded;
-    FilePropertiesNeeded := GetFilePropertiesNeeded;
-    if FilePropertiesNeeded >= OldFilePropertiesNeeded then
-    begin
-      EnsureDisplayProperties;
-    end;
+    EnsureDisplayProperties;
   end;
-  // else No columns set yet.
 end;
 
 procedure TColumnsFileView.dgPanelKeyUp(Sender: TObject; var Key: Word;
