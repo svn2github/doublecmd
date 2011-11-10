@@ -5,8 +5,12 @@ unit uFileViewNotebook;
 interface
 
 uses
-  Classes, SysUtils, Controls, ExtCtrls,
+  Classes, SysUtils, Controls, ComCtrls, ExtCtrls {Lazarus < 31552}, LCLVersion,
   uFileView, uFilePanelSelect;
+
+const
+  lazRevNewTabControl = '31767';
+  lazRevOnPageChangedRemoved = '32622';
 
 type
 
@@ -24,7 +28,7 @@ type
   private
     FLockState: TTabLockState;
     FLockPath: String;          //<en Path on which tab is locked
-    {$IFDEF LCLQT}
+    {$IF DEFINED(LCLQT) and (LCL_FULLVERSION < 093100)}
     FSettingCaption: Boolean;
     {$ENDIF}
     FOnActivate: TNotifyEvent;
@@ -50,7 +54,7 @@ type
 
     procedure DoActivate;
 
-  {$IF DEFINED(LCLQT) or DEFINED(MSWINDOWS)}
+  {$IF (DEFINED(LCLQT) and (LCL_FULLVERSION < 093100)) or DEFINED(MSWINDOWS)}
   protected
     procedure RealSetText(const AValue: TCaption); override;
   {$ENDIF}
@@ -58,7 +62,7 @@ type
   public
     constructor Create(TheOwner: TComponent); override;
 
-    {$IFDEF LCLQT}
+    {$IF DEFINED(LCLQT) and (LCL_FULLVERSION < 093100)}
     function HandleObjectShouldBeVisible: boolean; override;
     {$ENDIF}
     function IsActive: Boolean;
@@ -75,7 +79,11 @@ type
 
   { TFileViewNotebook }
 
+  {$IF (LCL_FULLVERSION >= 093100) and (lazRevision >= lazRevNewTabControl)}
+  TFileViewNotebook = class(TCustomTabControl)
+  {$ELSE}
   TFileViewNotebook = class(TCustomNotebook)
+  {$ENDIF}
   private
     FNotebookSide: TFilePanelSelect;
     FStartDrag: Boolean;
@@ -118,6 +126,9 @@ type
 
   published
     property OnDblClick;
+    {$IF DECLARED(lcl_fullversion) and (lcl_fullversion >= 093100) and (lazRevision >= lazRevOnPageChangedRemoved)}
+    property OnChange;
+    {$ENDIF}
     property OnMouseDown;
     property OnMouseUp;
   end;
@@ -130,7 +141,7 @@ uses
   {$IF DEFINED(LCLGTK2)}
   , GTK2Globals // for DblClickTime
   {$ENDIF}
-  {$IFDEF LCLQT}
+  {$IF DEFINED(LCLQT) and (LCL_FULLVERSION < 093100)}
   , qt4, qtwidgets
   {$ENDIF}
   {$IF DEFINED(MSWINDOWS)}
@@ -143,13 +154,13 @@ uses
 constructor TFileViewPage.Create(TheOwner: TComponent);
 begin
   FLockState := tlsNormal;
-  {$IFDEF LCLQT}
+  {$IF DEFINED(LCLQT) and (LCL_FULLVERSION < 093100)}
   FSettingCaption := False;
   {$ENDIF}
   inherited Create(TheOwner);
 end;
 
-{$IFDEF LCLQT}
+{$IF DEFINED(LCLQT) and (LCL_FULLVERSION < 093100)}
 // On QT after handle is created but before the widget is visible
 // setting caption fails unless the notebook and all its parents are
 // set as Visible and the current page is the one of which we set caption.
@@ -171,7 +182,7 @@ begin
 end;
 {$ENDIF}
 
-{$IF DEFINED(LCLQT) or DEFINED(MSWINDOWS)}
+{$IF (DEFINED(LCLQT) and (LCL_FULLVERSION < 093100)) or DEFINED(MSWINDOWS)}
 procedure TFileViewPage.RealSetText(const AValue: TCaption);
 begin
   {$IF DEFINED(LCLQT)}
@@ -442,13 +453,13 @@ end;
 
 procedure TFileViewNotebook.DragOverEvent(Sender, Source: TObject; X, Y: Integer; State: TDragState; var Accept: Boolean);
 var
-  TabIndex: Integer;
+  ATabIndex: Integer;
 begin
   if (Source is TFileViewNotebook) and (Sender is TFileViewNotebook) then
   begin
-    TabIndex := TabIndexAtClientPos(Classes.Point(X, Y));
-    Accept := (TabIndex <> -1) and
-              ((Source <> Sender) or (TabIndex <> FDraggedPageIndex));
+    ATabIndex := TabIndexAtClientPos(Classes.Point(X, Y));
+    Accept := (ATabIndex <> -1) and
+              ((Source <> Sender) or (ATabIndex <> FDraggedPageIndex));
   end
   else
     Accept := False;
@@ -457,19 +468,19 @@ end;
 procedure TFileViewNotebook.DragDropEvent(Sender, Source: TObject; X, Y: Integer);
 var
   SourceNotebook: TFileViewNotebook;
-  TabIndex: Integer;
+  ATabIndex: Integer;
   NewPage, DraggedPage: TFileViewPage;
 begin
   if (Source is TFileViewNotebook) and (Sender is TFileViewNotebook) then
   begin
-    TabIndex := TabIndexAtClientPos(Classes.Point(X, Y));
-    if TabIndex = -1 then
+    ATabIndex := TabIndexAtClientPos(Classes.Point(X, Y));
+    if ATabIndex = -1 then
       Exit;
 
     if Source = Sender then
     begin
       // Move within the same panel.
-      Pages.Move(FDraggedPageIndex, TabIndex);
+      Pages.Move(FDraggedPageIndex, ATabIndex);
     end
     else
     begin
@@ -478,7 +489,7 @@ begin
       DraggedPage := SourceNotebook.Page[SourceNotebook.FDraggedPageIndex];
 
       // Create a clone of the page in the panel.
-      NewPage := InsertPage(TabIndex, DraggedPage.Caption);
+      NewPage := InsertPage(ATabIndex, DraggedPage.Caption);
       DraggedPage.FileView.Clone(NewPage);
       NewPage.MakeActive;
 
