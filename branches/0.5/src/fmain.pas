@@ -4661,6 +4661,14 @@ begin
   else
   begin
     msgWarning(rsMsgDiskNotAvail);
+
+    // Restore previous selected button.
+    case aPanel of
+      fpLeft:
+        UpdateSelectedDrive(LeftTabs);
+      fpRight:
+        UpdateSelectedDrive(RightTabs);
+    end;
   end;
 end;
 
