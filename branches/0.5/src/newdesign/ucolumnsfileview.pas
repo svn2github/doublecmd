@@ -1866,10 +1866,10 @@ begin
         Key := 0; // catch the enter
         NewPath:= NormalizePathDelimiters(edtPath.Text);
         if not mbFileExists(NewPath) then
-          CurrentPath := NewPath
+          ChooseFileSource(Self, NewPath)
         else
           begin
-            CurrentPath := ExtractFileDir(NewPath);
+            ChooseFileSource(Self, ExtractFileDir(NewPath));
             SetActiveFile(ExtractFileName(NewPath));
           end;
         edtPath.Visible := False;

@@ -21,7 +21,9 @@ procedure ChooseFile(aFileView: TFileView; aFile: TFile);
    @returns @true if the file matched any rules and a new file source was created,
             @false otherwise, which means no action was taken.
 }
-function ChooseFileSource(aFileView: TFileView; aFile: TFile): Boolean;
+function ChooseFileSource(aFileView: TFileView; aFile: TFile): Boolean; overload;
+
+function ChooseFileSource(aFileView: TFileView; const aPath: UTF8String): Boolean; overload;
 
 function ChooseArchive(aFileView: TFileView; aFile: TFile; bForce: Boolean = False): Boolean;
 
@@ -170,6 +172,48 @@ begin
       Exit(True);
     end;
   end;
+end;
+
+function ChooseFileSource(aFileView: TFileView; const aPath: UTF8String): Boolean;
+var
+  I: Integer;
+  aFileSourceClass: TFileSourceClass;
+begin
+  Result:= True;
+  aFileSourceClass:= gVfsModuleList.GetFileSource(aPath);
+  if Assigned(aFileSourceClass) then
+    begin
+      // If found FileSource is same as current then simply change path
+      if aFileSourceClass.ClassNameIs(aFileView.FileSource.ClassName) then
+        aFileView.CurrentPath := aPath
+      else
+        aFileView.AddFileSource(aFileSourceClass.Create, aPath);
+    end
+  else
+    // Search for filesystem file source in this view, and remove others.
+    with aFileView do
+    begin
+      for I := FileSourcesCount - 1 downto 0 do
+      begin
+        // Search FileSource with same class name, we can not use "is"
+        // operator because it also works for descendant classes
+        if TFileSystemFileSource.ClassNameIs(FileSources[I].ClassName) then
+        begin
+          CurrentPath := aPath;
+          Break;
+        end
+        else
+          RemoveCurrentFileSource;
+      end;
+
+      if FileSourcesCount = 0 then
+      begin
+        // If not found, get a new filesystem file source.
+        AddFileSource(TFileSystemFileSource.GetFileSource, aPath);
+      end;
+
+      Result:= mbSetCurrentDir(aPath);
+    end;
 end;
 
 function ChooseArchive(aFileView: TFileView; aFile: TFile; bForce: Boolean): Boolean;

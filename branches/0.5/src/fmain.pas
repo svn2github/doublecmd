@@ -43,7 +43,7 @@ uses
   Graphics, Forms, Menus, Controls, StdCtrls, ExtCtrls, ActnList,
   Buttons, SysUtils, Classes, SynEdit, LCLType, ComCtrls,
   KASToolBar, KASBarMenu, KASBarFiles,
-  uCmdBox, uFilePanelSelect,
+  uCmdBox, uFilePanelSelect, uFileSourceUtil,
   uFileView, uColumnsFileView, uFileSource, uFileViewNotebook, uFile,
   uOperationsManager, uFileSourceOperation, uDrivesList, uTerminal, uClassesEx,
   uXmlConfig, uDrive, uDriveWatcher;
@@ -2272,7 +2272,7 @@ begin
   // Hot dirs are only supported by filesystem.
   aPath := (Sender as TMenuItem).Hint;
   aPath := mbExpandFileName(aPath);
-  SetFileSystemPath(ActiveFrame, aPath);
+  ChooseFileSource(ActiveFrame, aPath);
 end;
 
 procedure TfrmMain.ViewHistorySelected(Sender: TObject);
@@ -4034,16 +4034,16 @@ begin
               if Pos('~' + PathDelim, sDir) = 1 then
                 sDir:= StringReplace(sDir, '~' + PathDelim, GetHomeDir, []);
             end;
-          logWrite('Chdir to: ' + sDir);
-          if not mbSetCurrentDir(sDir) then
+
+          // Choose FileSource by path
+          ChooseFileSource(ActiveFrame, sDir);
+
+          if not SameText(ActiveFrame.CurrentPath, sDir) then
             begin
               msgWarning(Format(rsMsgChDirFailed, [sDir]));
             end
           else
             begin
-              sDir := mbGetCurrentDir;
-              ActiveFrame.CurrentPath := sDir;
-              DCDebug(sDir);
               if gTermWindow and Assigned(Cons) then
                 Cons.Terminal.SetCurrentDir(sDir);
             end;
