@@ -977,7 +977,7 @@ end;
 procedure TfrmFindDlg.lsFoundedFilesKeyDown(Sender: TObject;
   var Key: Word; Shift: TShiftState);
 begin
-  if lsFoundedFiles.ItemIndex <> -1 then
+  if (Shift = []) and (lsFoundedFiles.ItemIndex <> -1) then
   begin
     case Key of
       VK_F3:
