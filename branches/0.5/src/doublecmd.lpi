@@ -259,7 +259,7 @@
         <PackageName Value="viewerpackage"/>
       </Item7>
     </RequiredPackages>
-    <Units Count="120">
+    <Units Count="121">
       <Unit0>
         <Filename Value="doublecmd.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -995,6 +995,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uOverlayScrollBarFix"/>
       </Unit119>
+      <Unit120>
+        <Filename Value="platform\win\uexceptionhandlerfix.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uExceptionHandlerFix"/>
+      </Unit120>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
