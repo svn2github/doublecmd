@@ -2952,12 +2952,14 @@ begin
   if sCmd <> '' then
     begin
       sParam:= ReplaceEnvVars(sParam);
+      ReplaceExtCommand(sParam, frmMain.FrameLeft, frmMain.FrameRight, frmMain.ActiveFrame);
       if Actions.Execute(sCmd, sParam) = uActs.cf_Error then
           //Result:= True
           //  else
         begin
           sCmd:= mbExpandFileName(sCmd);
           sPath:= ReplaceEnvVars(sPath);
+          ReplaceExtCommand(sPath, frmMain.FrameLeft, frmMain.FrameRight, frmMain.ActiveFrame);
           if sPath <> '' then
             mbSetCurrentDir(sPath);
           // Only add a space after command if there are parameters.
