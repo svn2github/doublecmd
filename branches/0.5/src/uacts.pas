@@ -1931,15 +1931,20 @@ procedure TActs.cm_Options(param:string);
 var
   Ind: Integer;
 begin
-  with TfrmOptions.Create(Application) do
-  begin
-    try
+  if Assigned(frmOptions) then
+    begin
+      if frmOptions.WindowState = wsMinimized then
+        frmOptions.WindowState:= wsNormal
+      else
+        frmOptions.BringToFront;
+    end
+  else
+    begin
+      frmOptions := TfrmOptions.Create(Application);
       if TryStrToInt(param, Ind) then
-      Tag:= Ind; // else Tag:=0;
-      ShowModal;
-    finally
-      Free;
-    end;
+        frmOptions.Tag:= Ind; // else Tag:=0;
+
+      frmOptions.Show;
   end;
 end;
 

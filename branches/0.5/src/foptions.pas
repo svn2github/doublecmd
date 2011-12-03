@@ -340,6 +340,7 @@ type
     procedure btnAddSelWithPathClick(Sender: TObject);
     procedure btnAutoConfigClick(Sender: TObject);
     procedure btnBackViewerColorClick(Sender: TObject);
+    procedure btnCancelClick(Sender: TObject);
     procedure btnConfigApplyClick(Sender: TObject);
     procedure btnConfigEditClick(Sender: TObject);
     procedure btnFontViewerColorClick(Sender: TObject);
@@ -362,6 +363,7 @@ type
     procedure edtViewerBookFontSizeChange(Sender: TObject);
     procedure fneToolsPathAcceptFileName(Sender: TObject; var Value: String);
     procedure fneToolsPathChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure lbSCFilesListSelectionChange(Sender: TObject; User: boolean);
     procedure lbxMultiArcSelectionChange(Sender: TObject; User: boolean);
     procedure OnAutoRefreshOptionChanged(Sender: TObject);
@@ -430,6 +432,9 @@ type
     // return assigned hotkey for command
     function  getHotKeyListByCommand(command:string; const res:TStringList):integer;
   end;
+
+var
+  frmOptions: TfrmOptions = nil;
 
 implementation
 
@@ -780,6 +785,14 @@ begin
   SaveConfig;
   // write to config file
   SaveGlobs;
+  // close window
+  Close;
+end;
+
+procedure TfrmOptions.btnCancelClick(Sender: TObject);
+begin
+  // close window
+  Close;
 end;
 
 procedure TfrmOptions.btnApplyClick(Sender: TObject);
@@ -1441,6 +1454,12 @@ begin
       // Use fneToolsPath.Caption because Filename is one letter behind when typing manually.
       tmpExternalTools[ExtToolFromRow[aRow]].Path := fneToolsPath.Caption;
   end;
+end;
+
+procedure TfrmOptions.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  CloseAction:= caFree;
+  frmOptions:= nil;
 end;
 
 procedure TfrmOptions.lbSCFilesListSelectionChange(Sender: TObject;
