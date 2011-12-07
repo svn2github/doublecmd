@@ -441,70 +441,68 @@ begin
     Self.Items.Add(mi);
 
     aFile := Files[0];
-    if (Files.Count = 1) then
-      begin
-        miActions:=TMenuItem.Create(Self);
-        miActions.Caption:= rsMnuActions;
+    // Actions submenu
+    begin
+      miActions:=TMenuItem.Create(Self);
+      miActions.Caption:= rsMnuActions;
 
-        { Actions submenu }
-        // Read actions from doublecmd.ext
-        sl:=TStringList.Create;
-        try
-          if gExts.GetExtActions(aFile, sl) then
-            begin
-              AddActionsMenu := True;
+      // Read actions from doublecmd.ext
+      sl:=TStringList.Create;
+      try
+        if gExts.GetExtActions(aFile, sl) then
+          begin
+            AddActionsMenu := True;
 
-              for I:= 0 to sl.Count - 1 do
-                begin
-                  sAct:= sl.Names[I];
-                  if (SysUtils.CompareText('OPEN', sAct) = 0) or (SysUtils.CompareText('VIEW', sAct) = 0) or (SysUtils.CompareText('EDIT', sAct) = 0) then Continue;
-                  sCmd:= sl.ValueFromIndex[I];
-                  ReplaceExtCommand(sCmd, aFile, aFile.Path);
-                  mi:= TMenuItem.Create(miActions);
-                  mi.Caption:= sAct;
-                  mi.Hint:= sCmd;
-                  mi.OnClick:= Self.ContextMenuSelect; // handler
-                  miActions.Add(mi);
-                end;
-            end;
+            for I:= 0 to sl.Count - 1 do
+              begin
+                sAct:= sl.Names[I];
+                if (SysUtils.CompareText('OPEN', sAct) = 0) or (SysUtils.CompareText('VIEW', sAct) = 0) or (SysUtils.CompareText('EDIT', sAct) = 0) then Continue;
+                sCmd:= sl.ValueFromIndex[I];
+                ReplaceExtCommand(sCmd, frmMain.FrameLeft, frmMain.FrameRight, frmMain.ActiveFrame);
+                mi:= TMenuItem.Create(miActions);
+                mi.Caption:= sAct;
+                mi.Hint:= sCmd;
+                mi.OnClick:= Self.ContextMenuSelect; // handler
+                miActions.Add(mi);
+              end;
+          end;
 
-          if not (aFile.IsDirectory or aFile.IsLinkToDirectory) then
-            begin
-              if sl.Count = 0 then
-                AddActionsMenu := True
-              else
-                begin
-                  // now add delimiter
-                  mi:=TMenuItem.Create(miActions);
-                  mi.Caption:='-';
-                  miActions.Add(mi);
-                end;
+        if (Files.Count = 1) and not (aFile.IsDirectory or aFile.IsLinkToDirectory) then
+          begin
+            if sl.Count = 0 then
+              AddActionsMenu := True
+            else
+              begin
+                // now add delimiter
+                mi:=TMenuItem.Create(miActions);
+                mi.Caption:='-';
+                miActions.Add(mi);
+              end;
 
-              // now add VIEW item
-              mi:=TMenuItem.Create(miActions);
-              mi.Caption:= rsMnuView;
-              mi.Hint:= '{!VIEWER} ' + QuoteStr(aFile.FullPath);
-              mi.OnClick:=Self.ContextMenuSelect; // handler
-              miActions.Add(mi);
+            // now add VIEW item
+            mi:=TMenuItem.Create(miActions);
+            mi.Caption:= rsMnuView;
+            mi.Hint:= '{!VIEWER} ' + QuoteStr(aFile.FullPath);
+            mi.OnClick:=Self.ContextMenuSelect; // handler
+            miActions.Add(mi);
 
-              // now add EDITconfigure item
-              mi:=TMenuItem.Create(miActions);
-              mi.Caption:= rsMnuEdit;
-              mi.Hint:= '{!EDITOR} ' + QuoteStr(aFile.FullPath);
-              mi.OnClick:=Self.ContextMenuSelect; // handler
-              miActions.Add(mi);
-            end;
-        finally
-          FreeAndNil(sl);
-        end;
-
-        if AddActionsMenu then
-        begin
-          //founded any commands
-          Self.Items.Add(miActions);
-       end;
-       { /Actions submenu }
-      end; // if count = 1
+            // now add EDITconfigure item
+            mi:=TMenuItem.Create(miActions);
+            mi.Caption:= rsMnuEdit;
+            mi.Hint:= '{!EDITOR} ' + QuoteStr(aFile.FullPath);
+            mi.OnClick:=Self.ContextMenuSelect; // handler
+            miActions.Add(mi);
+          end;
+      finally
+        FreeAndNil(sl);
+      end;
+      
+      // Founded any commands
+      if AddActionsMenu then
+        Self.Items.Add(miActions)
+      else  
+        miActions.Free;    
+    end; // Actions submenu
 
     // Add "Open with" submenu if needed
     AddOpenWithMenu:= FillOpenWithSubMenu;
