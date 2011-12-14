@@ -36,7 +36,7 @@ update_doublecmd()
   # Remove help files
   rm -rf $DC_SOURCE_DIR/doc/en
   rm -rf $DC_SOURCE_DIR/doc/ru
-  rm -rf $DC_SOURCE_DIR/doc/uk
+  rm -rf $DC_SOURCE_DIR/doc/uk_UA
 
   # Prepare doublecmd-*.spec file
   cp -a rpm/doublecmd-*.spec $DC_TEMP_DIR
