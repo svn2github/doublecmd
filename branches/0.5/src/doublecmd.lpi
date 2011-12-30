@@ -22,7 +22,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <MinorVersionNr Value="5"/>
-      <RevisionNr Value="2"/>
+      <RevisionNr Value="3"/>
       <StringTable FileDescription="Double Commander is a cross platform open source file manager with two panels side by side" InternalName="DOUBLECMD" LegalCopyright="Copyright (C) 2006-2011  Koblov Alexander" ProductName="Double Commander" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="5">
@@ -1060,4 +1060,4 @@
       </ExecuteBefore>
     </Other>
   </CompilerOptions>
-</CONFIG>
+</CONFIG>
