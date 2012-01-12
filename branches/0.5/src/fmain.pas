@@ -46,7 +46,11 @@ uses
   uCmdBox, uFilePanelSelect, uFileSourceUtil,
   uFileView, uColumnsFileView, uFileSource, uFileViewNotebook, uFile,
   uOperationsManager, uFileSourceOperation, uDrivesList, uTerminal, uClassesEx,
-  uXmlConfig, uDrive, uDriveWatcher;
+  uXmlConfig, uDrive, uDriveWatcher
+  {$IFDEF LCLQT}
+  , Qt4, QtWidgets
+  {$ENDIF}
+  ;
 
 const
   cHistoryFile='cmdhistory.txt';
@@ -493,6 +497,11 @@ type
     procedure OnUniqueInstanceMessage(Sender: TObject; Params: array of UTF8String; ParamCount: Integer);
     procedure tbPasteClick(Sender: TObject);
     procedure AllProgressOnUpdateTimer(Sender: TObject);
+{$IFDEF LCLQT}
+  private
+    QEventHook: QObject_hookH;
+    function QObjectEventFilter(Sender: QObjectH; Event: QEventH): Boolean; cdecl;
+{$ENDIF}
   private
     { Private declarations }
     PanelSelected: TFilePanelSelect;
@@ -646,15 +655,16 @@ uses
   uFileSourceOperationTypes, uFileSourceCopyOperation, uFileSourceMoveOperation,
   fFileOpDlg, uFileSourceProperty, uFileSourceExecuteOperation, uArchiveFileSource,
   uShellExecute, uActs, fSymLink, fHardLink, uExceptions, uUniqueInstance, Clipbrd,
-  uFileSourceOperationOptionsUI, uDebug
-  {$IFDEF LCLQT}
-    , qtwidgets
-  {$ENDIF}
-  ;
+  uFileSourceOperationOptionsUI, uDebug;
 
 {$IF DEFINED(LCLGTK2) or DEFINED(LCLQT)}
 var
   LastActiveWindow: TCustomForm = nil;
+{$ENDIF}
+
+{$IFDEF LCLQT}
+var
+  CloseQueryResult: Boolean = False;
 {$ENDIF}
 
 function HistoryIndexesToTag(aFileSourceIndex, aPathIndex: Integer): Longint;
@@ -776,6 +786,13 @@ begin
   UpdateWindowView;
   //DCDebug('frmMain.FormCreate Done');
   Draging:=false;
+
+{$IFDEF LCLQT}
+  // Fixes bug - [0000033] "DC cancels shutdown in KDE"
+  // http://doublecmd.sourceforge.net/mantisbt/view.php?id=33
+  QEventHook:= QObject_hook_create(TQtWidget(Self.Handle).Widget);
+  QObject_hook_hook_events(QEventHook, @QObjectEventFilter);
+{$ENDIF}
 end;
 
 procedure TfrmMain.btnLeftClick(Sender: TObject);
@@ -849,9 +866,9 @@ begin
           pt.X := X;
           pt.Y := Y;
           pt := ClientToScreen(pt);
-          ShowDriveContextMenu(Parent, DrivesList[Tag], pt.X, pt.Y, nil);
-        end;
-    end;
+            ShowDriveContextMenu(Parent, DrivesList[Tag], pt.X, pt.Y, nil);
+          end;
+      end;
 end;
 
 procedure TfrmMain.ConsoleSplitterCanResize(Sender: TObject;
@@ -1087,6 +1104,10 @@ begin
 
   FreeAndNil(DrivesList);
 
+{$IFDEF LCLQT}
+  QObject_hook_destroy(QEventHook);
+{$ENDIF}
+
   DCDebug('Main form destroyed');
 end;
 
@@ -1100,6 +1121,9 @@ begin
   end
   else
     CanClose := True;
+{$IFDEF LCLQT}
+  CloseQueryResult:= CanClose;
+{$ENDIF}
 end;
 
 procedure TfrmMain.FormDropFiles(Sender: TObject; const FileNames: array of String);
@@ -4684,6 +4708,22 @@ begin
   if Assigned(FrameRight) then
     FrameRight.ReloadIfNeeded;
 end;
+
+{$IFDEF LCLQT}
+function TfrmMain.QObjectEventFilter(Sender: QObjectH; Event: QEventH): Boolean; cdecl;
+begin
+  Result:= False;
+  if QEvent_type(Event) = QEventClose then
+  begin
+    TQtWidget(Self.Handle).SlotClose;
+    Result:= CloseQueryResult;
+    if Result then
+      QEvent_accept(Event)
+    else
+      QEvent_ignore(Event);
+  end;
+end;
+{$ENDIF}
 
 end.
 

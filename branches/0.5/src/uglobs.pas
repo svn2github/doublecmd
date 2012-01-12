@@ -408,6 +408,10 @@ begin
       AddHotKeyEx('F1','cm_Viewer_DeleteFile','','FrmViewer','FrmViewer');
 
     end;
+
+  if not mbFileExists(gpCfgDir + gNameSCFile) then
+    gNameSCFile := 'shortcuts.scf';
+  HotMan.Save(gpCfgDir + gNameSCFile);
 end;
 
 function InitPropStorage(Owner: TComponent): TIniPropStorageEx;

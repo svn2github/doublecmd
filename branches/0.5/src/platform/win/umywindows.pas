@@ -296,6 +296,7 @@ begin
     st2:= mbGetVolumeLabel(sDrv, FALSE);
 end;
 
+{$IF FPC_FULLVERSION < 020600}
 type
   // mmsystem unit has incorrect definition
   MCI_OPEN_PARMS = packed record
@@ -305,6 +306,7 @@ type
     lpstrElementName: LPCTSTR;
     lpstrAlias: LPCTSTR;
   end;
+{$ENDIF}
 
 function mciSendCommand(IDDevice: MCIDEVICEID; uMsg: UINT; fdwCommand: DWORD; dwParam: DWORD_PTR): MCIERROR; stdcall; external 'winmm.dll' name 'mciSendCommandA';
 
