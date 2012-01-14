@@ -19,7 +19,7 @@ unit fAbout;
 interface
 
 uses
-  Graphics, Forms, Controls,  StdCtrls, ExtCtrls,
+  Graphics, Forms, Controls, StdCtrls, ExtCtrls, Buttons,
   SysUtils, Classes, LCLType;
 
 type
@@ -27,6 +27,8 @@ type
   { TfrmAbout }
 
   TfrmAbout = class(TForm)
+    btnClose: TBitBtn;
+    btnCopyToClipboard: TButton;
     imgLogo: TImage;
     lblWidgetsetVer: TLabel;
     lblPlatform: TLabel;
@@ -39,10 +41,11 @@ type
     lblLazarusVer: TLabel;
     lblBuild: TLabel;
     lblVersion: TLabel;
-    OKButton: TButton;
-    Panel1: TPanel;
+    pnlText: TPanel;
     memInfo: TMemo;
+    pnlInfo: TPanel;
     pnlLogo: TPanel;
+    procedure btnCopyToClipboardClick(Sender: TObject);
     procedure lblHomePageAddressClick(Sender: TObject);
     procedure lblHomePageAddressMouseEnter(Sender: TObject);
     procedure lblHomePageAddressMouseLeave(Sender: TObject);
@@ -64,7 +67,7 @@ implementation
 {$R *.lfm}
 
 uses
-  dmHelpManager, uDCVersion;
+  Clipbrd, dmHelpManager, uDCVersion;
 
 const
   cIndention = LineEnding + #32#32;
@@ -136,6 +139,27 @@ var
   ErrMsg: String;
 begin
   dmHelpMgr.HTMLHelpDatabase.ShowURL('http://doublecmd.sourceforge.net','Double Commander Web Site', ErrMsg);
+end;
+
+procedure TfrmAbout.btnCopyToClipboardClick(Sender: TObject);
+var
+  StrInfo: String;
+begin
+  StrInfo := Format('Double Commander' + LineEnding +
+                    'Version: %s' + LineEnding +
+                    'Revision: %s' + LineEnding +
+                    'Build date: %s' + LineEnding +
+                    'Lazarus: %s' + LineEnding +
+                    'FPC: %s' + LineEnding +
+                    'Platform: %s' + LineEnding +
+                    'OS version: %s' + LineEnding,
+                    [dcVersion, dcRevision, dcBuildDate,
+                    lazVersion + '-' + lazRevision, fpcVersion,
+                    TargetCPU + '-' + TargetOS + '-' + TargetWS,
+                    OSVersion]);
+  if WSVersion <> EmptyStr then
+    StrInfo := StrInfo + LineEnding + 'Widgetset library: ' + WSVersion;
+  Clipboard.AsText := StrInfo;
 end;
 
 procedure TfrmAbout.FormKeyDown(Sender: TObject; var Key: Word;
