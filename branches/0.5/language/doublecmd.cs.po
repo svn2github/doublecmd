@@ -471,6 +471,10 @@ msgctxt "TFRMCHECKSUMVERIFY.CAPTION"
 msgid "Verify check sum..."
 msgstr "Ověřit kontrolní součet..."
 
+#: TFRMCOLUMSPROPS.BITBTN1.CAPTION
+msgid "&ОК"
+msgstr ""
+
 #: TFRMCOMPAREFILES.BTNCLOSE.CAPTION
 msgctxt "TFRMCOMPAREFILES.BTNCLOSE.CAPTION"
 msgid "Close"
@@ -3465,7 +3469,9 @@ msgid "[MMM] Month name (short, e.g., \"jan\")"
 msgstr "[MMM] Jméno měsíce (krátce, t.j. \"led\")"
 
 #: TFRMMULTIRENAME.MIMONTH3.CAPTION
-msgid "[MMMM] Month name (long, e.g., \"january\")"
+#, fuzzy
+#| msgid "[MMMM] Month name (long, e.g., \"january\")"
+msgid "[MMMM] Month name (long, e.g. \"january\")"
 msgstr "[MMMM] Jméno měsíce (celé, t.j. \"leden\")"
 
 #: TFRMMULTIRENAME.MINAME.CAPTION
@@ -5759,6 +5765,10 @@ msgstr "&Zrušit"
 #: ulng.rsdlgbuttoncopyinto
 msgid "Copy &Into"
 msgstr "Kopírovat do"
+
+#: ulng.rsdlgbuttoncopyintoall
+msgid "Copy Into &All"
+msgstr ""
 
 #: ulng.rsdlgbuttonno
 msgid "&No"

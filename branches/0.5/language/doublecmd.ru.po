@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.3.5 alpha\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2011-09-30 18:27+0300\n"
+"PO-Revision-Date: 2012-01-14 18:30+0400\n"
 "Last-Translator: Alexander Koblov <Alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -5653,6 +5653,10 @@ msgstr "&Отмена"
 #: ulng.rsdlgbuttoncopyinto
 msgid "Copy &Into"
 msgstr "Копировать в"
+
+#: ulng.rsdlgbuttoncopyintoall
+msgid "Copy Into &All"
+msgstr "Копировать в для всех"
 
 #: ulng.rsdlgbuttonno
 msgid "&No"
