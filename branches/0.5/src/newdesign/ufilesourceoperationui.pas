@@ -18,6 +18,7 @@ type
      fsourNone,
      fsourAppend,      // for files
      fsourCopyInto,    // for directories
+     fsourCopyIntoAll, // for directories
      fsourOverwrite,
      fsourOverwriteAll,
      fsourSkip,

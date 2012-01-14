@@ -651,7 +651,7 @@ implementation
 uses
   LCLIntf, LCLVersion, Dialogs, uGlobs, uLng, fConfigToolBar, uMasks, fCopyMoveDlg, uQuickViewPanel,
   uShowMsg, fHotDir, uDCUtils, uLog, uGlobsPaths, LCLProc, uOSUtils, uOSForms, uPixMapManager,
-  uDragDropEx, uKeyboard, uFileSystemFileSource, fViewOperations,
+  uDragDropEx, uKeyboard, uFileSystemFileSource, fViewOperations, uMultiListFileSource,
   uFileSourceOperationTypes, uFileSourceCopyOperation, uFileSourceMoveOperation,
   fFileOpDlg, uFileSourceProperty, uFileSourceExecuteOperation, uArchiveFileSource,
   uShellExecute, uActs, fSymLink, fHardLink, uExceptions, uUniqueInstance, Clipbrd,
@@ -919,7 +919,8 @@ end;
 procedure TfrmMain.MainToolBarToolButtonDragDrop(Sender, Source: TObject; X,
   Y: Integer; NumberOfButton: Integer);
 var
-  aFile: TFile;
+  I: LongWord;
+  SelectedFiles: TFiles = nil;
   Cmd, Param, Path: string;
 begin
   if (ssShift in GetKeyShiftState) then
@@ -927,13 +928,21 @@ begin
   else
     if Sender is TSpeedButton and not Draging then
       begin
-        aFile := ActiveFrame.CloneActiveFile;
+        SelectedFiles := ActiveFrame.CloneSelectedFiles;
         try
-          if Assigned(aFile) and aFile.IsNameValid then
+          if SelectedFiles.Count > 0 then
             begin
+              Param:= EmptyStr;
+              for I := 0 to SelectedFiles.Count - 1 do
+              begin
+                // Workaround for not fully implemented TMultiListFileSource.
+                if ActiveFrame.FileSource.IsClass(TMultiListFileSource) then
+                  Param := Param + QuoteStr(SelectedFiles[I].FullPath) + ' '
+                else
+                  Param := Param + QuoteStr(ActiveFrame.CurrentAddress + SelectedFiles[I].FullPath) + ' ';
+              end;
               Cmd:= MainToolBar.GetButtonX(NumberOfButton, CmdX);
               Path:= MainToolBar.GetButtonX(NumberOfButton, PathX);
-              Param:= QuoteStr(aFile.FullPath);
               if Actions.Execute(Cmd, Param) = uActs.cf_Error then
                 begin
                   Cmd:= mbExpandFileName(Cmd);
@@ -945,7 +954,7 @@ begin
                 end;
             end;
         finally
-          FreeAndNil(aFile);
+          FreeAndNil(SelectedFiles);
         end;
       end;
 end;
@@ -4726,4 +4735,4 @@ end;
 {$ENDIF}
 
 end.
-
+

@@ -1197,7 +1197,10 @@ begin
         if AllowDelete then
           AddResponse(fsourOverwrite);
         if AllowCopyInto then
+        begin
           AddResponse(fsourCopyInto);
+          AddResponse(fsourCopyIntoAll);
+        end;
         AddResponse(fsourSkip);
         if AllowDelete then
           AddResponse(fsourOverwriteAll);
@@ -1217,6 +1220,11 @@ begin
             Result := fsoodeDelete;
           fsourCopyInto:
             Result := fsoodeCopyInto;
+          fsourCopyIntoAll:
+            begin
+              FDirExistsOption := fsoodeCopyInto;
+              Result := fsoodeCopyInto;
+            end;
           fsourSkip:
             Result := fsoodeSkip;
           fsourOverwriteAll:
