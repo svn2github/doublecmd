@@ -3,7 +3,7 @@
 # This script updates Double Commander Personal Package Archive (PPA) repository
 
 # Set Double Commander version
-DC_VER=0.5.3
+DC_VER=0.5.3.1
 # Set Ubuntu series
 DISTRO=( lucid maverick natty oneiric )
 
