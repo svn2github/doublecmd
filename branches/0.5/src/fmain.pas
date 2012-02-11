@@ -4644,7 +4644,9 @@ begin
   begin
     for i := FileSourcesCount - 1 downto 0 do
     begin
-      if FileSources[i].IsClass(TFileSystemFileSource) then
+      // Search FileSource with same class name, we can not use "is"
+      // operator because it also works for descendant classes
+      if TFileSystemFileSource.ClassNameIs(FileSources[i].ClassName) then
       begin
         CurrentPath := aPath;
         Break;
@@ -4735,4 +4737,4 @@ end;
 {$ENDIF}
 
 end.
-
+
