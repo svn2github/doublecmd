@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.3.5 alpha\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-01-14 18:30+0400\n"
+"PO-Revision-Date: 2012-02-12 22:47+0400\n"
 "Last-Translator: Alexander Koblov <Alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1161,7 +1161,7 @@ msgstr "&Файл"
 
 #: TFRMEDITOR.MIHIGHLIGHT.CAPTION
 msgid "Syntax highlight"
-msgstr "&Подсветка синтаксиса"
+msgstr "Подсветка &синтаксиса"
 
 #: TFRMEDITOR.MISEPARATOR1.CAPTION
 msgctxt "TFRMEDITOR.MISEPARATOR1.CAPTION"
@@ -5419,7 +5419,7 @@ msgstr "В виде &текста"
 #: TFRMVIEWER.MIVIEW.CAPTION
 msgctxt "TFRMVIEWER.MIVIEW.CAPTION"
 msgid "&View"
-msgstr "&Просмотр"
+msgstr "&Вид"
 
 #: TFRMVIEWER.MIWRAPTEXT.CAPTION
 msgid "Show as &Wrap text"
