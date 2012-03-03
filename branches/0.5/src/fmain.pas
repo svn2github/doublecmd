@@ -4066,6 +4066,7 @@ begin
               sDir:= IncludeTrailingBackslash(sDir);
               if Pos('~' + PathDelim, sDir) = 1 then
                 sDir:= StringReplace(sDir, '~' + PathDelim, GetHomeDir, []);
+              sDir:= GetAbsoluteFileName(ActiveFrame.CurrentPath, sDir);
             end;
 
           // Choose FileSource by path
