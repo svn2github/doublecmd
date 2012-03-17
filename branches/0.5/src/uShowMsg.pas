@@ -196,7 +196,7 @@ var
 begin
   frmMsg.Position:=poScreenCenter;
   frmMsg.BorderStyle := bsSingle;
-  frmMsg.BorderIcons := [biSystemMenu, biMinimize];
+  frmMsg.BorderIcons := [biSystemMenu];
   
   if (High(Buttons)+1)>=3 then
     frmMsg.Width:=(cButtonWidth+cButtonSpace)*3+cButtonSpace

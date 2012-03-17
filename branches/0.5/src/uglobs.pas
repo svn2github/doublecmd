@@ -1044,7 +1044,10 @@ begin
     glsReplaceHistory.SaveToFile(gpCfgDir + 'replacehistory.txt');
   end;
   if gIgnoreListFileEnabled then
+  begin
+    mbForceDirectory(ExtractFileDir(gIgnoreListFile));
     glsIgnoreList.SaveToFile(ReplaceEnvVars(gIgnoreListFile));
+  end;
   gMultiArcList.SaveToFile(gpCfgDir + 'multiarc.ini');
 
   { Hotkeys }
