@@ -33,10 +33,13 @@ uses
   WcxPlugin, Extension;
 
 const
-  {$IFDEF MSWINDOWS}
+  {$IF DEFINED(MSWINDOWS)}
   // libunrar must be built with sizeof(wchar_t) = 2 (default on Windows)
   _unrar = 'unrar.dll';
-  {$ELSE UNIX}
+  {$ELSEIF DEFINED(DARWIN)}
+  // libunrar must be built with sizeof(wchar_t) = 4 (default on Unix)
+  _unrar = 'libunrar.dylib';
+  {$ELSEIF DEFINED(UNIX)}
   // libunrar must be built with sizeof(wchar_t) = 4 (default on Unix)
   _unrar = 'libunrar.so';
   {$ENDIF}
@@ -188,6 +191,7 @@ procedure SetChangeVolProc(hArcData : TArcHandle; pChangeVolProc : TChangeVolPro
 procedure SetChangeVolProcW(hArcData : TArcHandle; pChangeVolProc : TChangeVolProcW);dcpcall;
 procedure SetProcessDataProc(hArcData : TArcHandle; pProcessDataProc : TProcessDataProc);dcpcall;
 procedure SetProcessDataProcW(hArcData : TArcHandle; pProcessDataProc : TProcessDataProcW);dcpcall;
+function GetPackerCaps : Integer; dcpcall;
 procedure ExtensionInitialize(StartupInfo: PExtensionStartupInfo); dcpcall;
 
 implementation
@@ -681,6 +685,11 @@ end;
 procedure SetProcessDataProcW(hArcData : TArcHandle; pProcessDataProc : TProcessDataProcW);dcpcall;
 begin
   ProcessDataProcW := pProcessDataProc;
+end;
+
+function GetPackerCaps: Integer; dcpcall;
+begin
+  Result := PK_CAPS_MULTIPLE or PK_CAPS_BY_CONTENT;
 end;
 
 procedure ExtensionInitialize(StartupInfo: PExtensionStartupInfo); dcpcall;

@@ -1,9 +1,10 @@
 library unrar;
 
 uses
-  DynLibs, UnRARFunc;
+  SysUtils, DynLibs, UnRARFunc;
 
 exports
+  { Mandatory }
   OpenArchive,
   OpenArchiveW,
   ReadHeader,
@@ -16,10 +17,15 @@ exports
   SetChangeVolProcW,
   SetProcessDataProc,
   SetProcessDataProcW,
+  { Optional }
+  GetPackerCaps,
+  { Extension API }
   ExtensionInitialize;
 
 begin
   ModuleHandle := LoadLibrary(_unrar);
+  if ModuleHandle = 0 then
+    ModuleHandle := LoadLibrary(GetEnvironmentVariable('COMMANDER_PATH') + PathDelim + _unrar);
   if ModuleHandle > 0 then
     begin
       RAROpenArchive := TRAROpenArchive(GetProcAddress(ModuleHandle, 'RAROpenArchive'));
