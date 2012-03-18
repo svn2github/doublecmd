@@ -1051,12 +1051,12 @@ msgstr "&Копировать"
 #: TFRMEDITOR.ACTEDITCUT.CAPTION
 msgctxt "TFRMEDITOR.ACTEDITCUT.CAPTION"
 msgid "Cut"
-msgstr "В&ырезать"
+msgstr "&Вырезать"
 
 #: TFRMEDITOR.ACTEDITDELETE.CAPTION
 msgctxt "TFRMEDITOR.ACTEDITDELETE.CAPTION"
 msgid "Delete"
-msgstr "Удалить"
+msgstr "&Удалить"
 
 #: TFRMEDITOR.ACTEDITFIND.CAPTION
 msgid "&Find"
@@ -1069,12 +1069,12 @@ msgstr "Найти далее"
 #: TFRMEDITOR.ACTEDITPASTE.CAPTION
 msgctxt "TFRMEDITOR.ACTEDITPASTE.CAPTION"
 msgid "Paste"
-msgstr "&Вставить"
+msgstr "Вст&авить"
 
 #: TFRMEDITOR.ACTEDITREDO.CAPTION
 msgctxt "TFRMEDITOR.ACTEDITREDO.CAPTION"
 msgid "Redo"
-msgstr "Повторить"
+msgstr "&Повторить"
 
 #: TFRMEDITOR.ACTEDITRPLC.CAPTION
 msgid "&Replace"
@@ -1082,12 +1082,12 @@ msgstr "&Заменить..."
 
 #: TFRMEDITOR.ACTEDITSELECTALL.CAPTION
 msgid "Select&All"
-msgstr "Выделить &всё"
+msgstr "В&ыделить всё"
 
 #: TFRMEDITOR.ACTEDITUNDO.CAPTION
 msgctxt "TFRMEDITOR.ACTEDITUNDO.CAPTION"
 msgid "Undo"
-msgstr "Отменить"
+msgstr "&Отменить"
 
 #: TFRMEDITOR.ACTFILECLOSE.CAPTION
 msgctxt "TFRMEDITOR.ACTFILECLOSE.CAPTION"
@@ -1097,7 +1097,7 @@ msgstr "Закрыть"
 #: TFRMEDITOR.ACTFILEEXIT.CAPTION
 msgctxt "TFRMEDITOR.ACTFILEEXIT.CAPTION"
 msgid "E&xit"
-msgstr "Вы&ход"
+msgstr "В&ыход"
 
 #: TFRMEDITOR.ACTFILENEW.CAPTION
 msgctxt "TFRMEDITOR.ACTFILENEW.CAPTION"
@@ -1111,7 +1111,7 @@ msgstr "&Открыть"
 #: TFRMEDITOR.ACTFILESAVE.CAPTION
 msgctxt "TFRMEDITOR.ACTFILESAVE.CAPTION"
 msgid "&Save"
-msgstr "&Сохранить"
+msgstr "Со&хранить"
 
 #: TFRMEDITOR.ACTFILESAVEAS.CAPTION
 msgid "Save &As.."
