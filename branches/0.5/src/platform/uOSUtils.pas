@@ -1069,9 +1069,6 @@ begin
     pme:= getmntent(mtab);
   end;
   endmntent(mtab);
-
-  if not Result and TryMount then
-    Result := MountDrive(Drive);
 end;
 {$ELSE}
 begin
@@ -1960,4 +1957,4 @@ begin
     LongDayNames[i] := SysToUTF8(LongDayNames[i]);
 end;
 
-end.
+end.
