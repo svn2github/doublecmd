@@ -557,7 +557,7 @@ begin
         // Display free space only for some drives
         // (removable, network, etc. may be slow).
         if (DriveType in [dtHardDisk, dtOptical, dtRamDisk]) and
-           IsAvailable(Path, False) and
+           IsAvailable(FDrivesList[I], False) and
            GetDiskFreeSpace(Path, FreeSize, TotalSize) then
         begin
           Cells[3, LowestRow + I] :=

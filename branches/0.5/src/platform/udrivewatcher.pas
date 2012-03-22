@@ -344,7 +344,7 @@ class function TDriveWatcher.GetDrivesList: TDrivesList;
 var
   Drive : PDrive;
   DriveNum: Integer;
-  DriveBits: set of 0..25;
+  DriveBits: DWORD;
   WinDriveType: UINT;
   DriveLetter: AnsiChar;
   DrivePath: String;
@@ -393,7 +393,8 @@ begin
     begin
       DeviceId := EmptyStr;
       Path := DrivePath;
-      DisplayName := Path;
+      DisplayName := DriveLetter;
+      DriveLabel := EmptyStr;
       IsMediaAvailable := True;
       IsMediaEjectable := False;
       IsMounted := True;
@@ -401,7 +402,7 @@ begin
       case WinDriveType of
         DRIVE_REMOVABLE:
           begin
-            if Path[1] in ['a'..'b'] then
+            if DriveLetter in ['a', 'b'] then
               DriveType := dtFloppy
             else
               DriveType := dtFlash;
@@ -425,16 +426,17 @@ begin
       if IsMediaAvailable then
       begin
         case DriveType of
-          dtFloppy:
-            DriveLabel := EmptyStr;
+          dtFloppy: ; // Don't retrieve, it's slow.
+          dtHardDisk:
+            begin
+              DriveLabel := mbGetVolumeLabel(Path, True);
+            end;
           dtNetwork:
             DriveLabel := mbGetRemoteFileName(Path);
           else
             DriveLabel := mbGetVolumeLabel(Path, True);
         end;
-      end
-      else
-        DriveLabel := EmptyStr;
+      end;
     end;
   end;
 end;

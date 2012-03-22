@@ -27,7 +27,7 @@ unit uOSUtils;
 interface
 
 uses
-    SysUtils, Classes, LCLType, uClassesEx, uTypes
+    SysUtils, Classes, LCLType, uClassesEx, uTypes, uDrive
     {$IF DEFINED(UNIX)}
     , uFileAttributes
       {$IFDEF DARWIN}
@@ -37,23 +37,27 @@ uses
     ;
     
 const
-  {$IFDEF MSWINDOWS}
+  {$IF DEFINED(MSWINDOWS)}
   faFolder = faDirectory;
-  faSymLink   = $00000400;
   RunTerm = 'cmd.exe';  // default terminal
   RunInTerm = 'cmd.exe /K'; // default run in terminal command
   fmtRunInTerm = '%s "%s"';
   fmtRunInShell = '%s /C "%s"';
-  ShieldChar = '/';
+  fmtCommandPath = '%s>';
   MonoSpaceFont = 'Fixedsys';
-  {$ELSE}
+  {$ELSEIF DEFINED(UNIX)}
   faFolder = S_IFDIR;
-  faSymLink   = $00000040;
+  {$IFDEF DARWIN)}
+  RunTerm = '/Applications/Utilities/Terminal.app';  // default terminal
+  RunInTerm = ''; // default run in terminal command
+  fmtRunInTerm = '';
+  {$ELSE}
   RunTerm = 'xterm';  // default terminal
   RunInTerm = 'xterm -e sh -c'; // default run in terminal command
   fmtRunInTerm = '%s ''%s ; echo -n Press ENTER to exit... ; read a''';
+  {$ENDIF}
   fmtRunInShell = '%s -c ''%s''';
-  ShieldChar = '\';
+  fmtCommandPath = '[%s]$:';
   MonoSpaceFont = 'Monospace';
   {$ENDIF}
 
@@ -178,7 +182,7 @@ function GetTempName(PathPrefix: String): String;
 }
 function GetSfxExt: String;
 
-function IsAvailable(Path : String; TryMount: Boolean = True) : Boolean;
+function IsAvailable(Drive: PDrive; TryMount: Boolean = True) : Boolean;
 
 (* File mapping/unmapping routines *)
 {en
@@ -209,9 +213,10 @@ function FormatTerminal(Command: String; bKeepTerminalOpen: Boolean): String;
 function ConsoleToUTF8(const Str: AnsiString): UTF8String;
 
 { File handling functions}
-function mbFileOpen(const FileName: UTF8String; Mode: Integer): System.THandle;
+function mbFileOpen(const FileName: UTF8String; Mode: Longint): System.THandle;
 function mbFileCreate(const FileName: UTF8String): System.THandle; overload;
-function mbFileCreate(const FileName: UTF8String; Mode: Integer): System.THandle; overload;
+function mbFileCreate(const FileName: UTF8String; ShareMode: Longint): System.THandle; overload;
+function mbFileCreate(const FileName: UTF8String; ShareMode: Longint; Rights: Longint): System.THandle; overload;
 function mbFileAge(const FileName: UTF8String): uTypes.TFileTime;
 // On success returns True.
 function mbFileGetTime(const FileName: UTF8String;
@@ -269,6 +274,7 @@ function mbFileNameToSysEnc(const LongPath: UTF8String): String;
 function mbCompareFileNames(const FileName1, FileName2: UTF8String): Boolean;
 { Other functions }
 function mbGetEnvironmentString(Index : Integer) : UTF8String;
+function mbGetEnvironmentVariable(const sName: UTF8String): UTF8String;
 function mbSetEnvironmentVariable(const sName, sValue: UTF8String): Boolean;
 function mbLoadLibrary(const Name: UTF8String): TLibHandle;
 function mbSysErrorMessage(ErrorCode: Integer): UTF8String;
@@ -280,11 +286,12 @@ function ExtractRootDir(const FileName: UTF8String): UTF8String;
 
 procedure FixFormIcon(Handle: LCLType.HWND);
 procedure HideConsoleWindow;
+procedure FixDateNamesToUTF8;
 
 implementation
 
 uses
-  FileUtil, uDebug, uDCUtils, uGlobs
+  FileUtil, uDebug, uDCUtils, uGlobs, uLng
   {$IF DEFINED(MSWINDOWS)}
   , JwaWinCon, Windows, uNTFSLinks, uMyWindows, JwaWinNetWk, uShlObjAdditional
   , shlobj
@@ -296,6 +303,26 @@ uses
     {$ENDIF}
   {$ENDIF}
   ;
+
+{$IF DEFINED(MSWINDOWS)}
+const
+  AccessModes: array[0..2] of DWORD  = (
+                GENERIC_READ,
+                GENERIC_WRITE,
+                GENERIC_READ or GENERIC_WRITE);
+  ShareModes: array[0..4] of DWORD = (
+               0,
+               0,
+               FILE_SHARE_READ,
+               FILE_SHARE_WRITE,
+               FILE_SHARE_READ or FILE_SHARE_WRITE or FILE_SHARE_DELETE);
+{$ELSEIF DEFINED(UNIX)}
+const
+  AccessModes: array[0..2] of LongInt  = (
+                O_RdOnly,
+                O_WrOnly,
+                O_RdWr);
+{$ENDIF}
 
 {$IFDEF UNIX}
 type
@@ -459,13 +486,13 @@ var
   utb : BaseUnix.TUTimBuf;
   mode : TMode;
 begin
-  Result := fpLStat(PChar(sSrc), StatInfo) >= 0;
+  Result := fpLStat(PChar(UTF8ToSys(sSrc)), StatInfo) >= 0;
   if Result then
   begin
     if FPS_ISLNK(StatInfo.st_mode) then
     begin
       // Only group/owner can be set for links.
-      if fpLChown(PChar(sDst),StatInfo.st_uid, StatInfo.st_gid)=-1 then
+      if fpLChown(PChar(UTF8ToSys(sDst)), StatInfo.st_uid, StatInfo.st_gid)=-1 then
       begin
         DCDebug(Format('chown (%s) failed',[sDst]));
         Result := False;
@@ -476,10 +503,10 @@ begin
     // file time
       utb.actime  := StatInfo.st_atime;  // last access time
       utb.modtime := StatInfo.st_mtime;  // last modification time
-      Result := (fputime(PChar(sDst), @utb) = 0) and Result;
+      Result := (fputime(PChar(UTF8ToSys(sDst)), @utb) = 0) and Result;
 
     // owner & group
-      if fpChown(PChar(sDst),StatInfo.st_uid, StatInfo.st_gid)=-1 then
+      if fpChown(PChar(UTF8ToSys(sDst)), StatInfo.st_uid, StatInfo.st_gid)=-1 then
       begin
         DCDebug(Format('chown (%s) failed',[sDst]));
         Result := False;
@@ -488,7 +515,7 @@ begin
       mode := StatInfo.st_mode;
       if bDropReadOnlyFlag then
         mode := SetModeReadOnly(mode, False);
-      if fpChmod(PChar(sDst), mode) = -1 then
+      if fpChmod(PChar(UTF8ToSys(sDst)), mode) = -1 then
       begin
         DCDebug(Format('chmod (%s) failed',[sDst]));
         Result := False;
@@ -511,7 +538,7 @@ begin
   if bTerm then
     sCmdLine := FormatTerminal(sCmdLine, bKeepTerminalOpen);
 
-  SplitCmdLine(sCmdLine, Command, Args);
+  SplitCmdLine(UTF8ToSys(sCmdLine), Command, Args);
   {$IFDEF DARWIN}
   // If we run application bundle (*.app) then
   // execute it by 'open -a' command (see 'man open' for details)
@@ -568,6 +595,7 @@ begin
     
   SplitCmdLine(sCmdLine, sFileName, sParams);
   DCDebug('File: ' + sFileName + ' Params: ' + sParams + ' WorkDir: ' + wWorkDir);
+  sFileName:= NormalizePathDelimiters(sFileName);
   wFileName:= UTF8Decode(sFileName);
   wParams:= UTF8Decode(sParams);
   Result := (ShellExecuteW(0, nil, PWChar(wFileName), PWChar(wParams), PWChar(wWorkDir), SW_SHOW) > 32);
@@ -646,7 +674,7 @@ function GetDiskFreeSpace(const Path : String; out FreeSize, TotalSize : Int64) 
 var
   sbfs: TStatFS;
 begin
-    Result:= (fpStatFS(PChar(Path), @sbfs) = 0);
+    Result:= (fpStatFS(PChar(UTF8ToSys(Path)), @sbfs) = 0);
     if not Result then Exit;
     FreeSize := (Int64(sbfs.bavail)*sbfs.bsize);
 {$IF DEFINED(CPU32) or (FPC_VERSION>2) or ((FPC_VERSION=2) and ((FPC_RELEASE>2) or ((FPC_RELEASE=2) and (FPC_PATCH>=3))))}
@@ -719,7 +747,7 @@ begin
 end;
 {$ELSE}
 begin
-  Result := (fplink(PChar(@Path[1]),PChar(@LinkName[1]))=0);
+  Result := (fplink(PChar(UTF8ToSys(Path)),PChar(UTF8ToSys(LinkName)))=0);
 end;
 {$ENDIF}
 
@@ -739,7 +767,7 @@ begin
 end;
 {$ELSE}
 begin
-  Result := (fpsymlink(PChar(@Path[1]),PChar(@LinkName[1]))=0);
+  Result := (fpsymlink(PChar(UTF8ToSys(Path)),PChar(UTF8ToSys(LinkName)))=0);
 end;
 {$ENDIF}
 
@@ -764,7 +792,7 @@ begin
 end;
 {$ELSE}
 begin
-  Result := fpReadlink(LinkName);
+  Result := SysToUTF8(fpReadlink(UTF8ToSys(LinkName)));
 end;
 {$ENDIF}
 
@@ -836,11 +864,11 @@ begin
       GetEnvironmentVariableW('USERPROFILE', PWChar(wHomeDir), iSize);
     end;
   Delete(wHomeDir, iSize, 1);
-  Result:= UTF8Encode(wHomeDir) + DirectorySeparator;
+  Result:= ExcludeBackPathDelimiter(UTF8Encode(wHomeDir));
 end;
 {$ELSE}
 begin
-  Result:= GetEnvironmentVariable('HOME')+DirectorySeparator;
+  Result:= ExcludeBackPathDelimiter(SysToUTF8(GetEnvironmentVariable('HOME')));
 end;
 {$ENDIF}
 
@@ -861,7 +889,7 @@ begin
 end;
 {$ELSE}
 begin
-  Result:= GetEnvironmentVariable('SHELL');
+  Result:= SysToUTF8(GetEnvironmentVariable('SHELL'));
 end;
 {$ENDIF}
 
@@ -917,7 +945,7 @@ begin
 end;
 {$ELSEIF DEFINED(DARWIN)}
 begin
-  Result:= GetHomeDir + 'Library/Preferences/' + ApplicationName;
+  Result:= GetHomeDir + '/Library/Preferences/' + ApplicationName;
 end;
 {$ELSE}
 var
@@ -925,9 +953,9 @@ var
 begin
   uinfo:= getpwuid(fpGetUID);
   if (uinfo <> nil) and (uinfo^.pw_dir <> '') then
-    Result:= uinfo^.pw_dir + '/.config/' + ApplicationName
+    Result:= SysToUTF8(uinfo^.pw_dir) + '/.config/' + ApplicationName
   else
-    Result:= ExcludeTrailingPathDelimiter(SysUtils.GetAppConfigDir(False));
+    Result:= ExcludeTrailingPathDelimiter(SysToUTF8(SysUtils.GetAppConfigDir(False)));
 end;
 {$ENDIF}
 
@@ -943,7 +971,7 @@ begin
 end;
 {$ELSEIF DEFINED(DARWIN)}
 begin
-  Result:= GetHomeDir + 'Library/Caches/' + ApplicationName;
+  Result:= GetHomeDir + '/Library/Caches/' + ApplicationName;
 end;
 {$ELSE}
 var
@@ -951,9 +979,9 @@ var
 begin
   uinfo:= getpwuid(fpGetUID);
   if (uinfo <> nil) and (uinfo^.pw_dir <> '') then
-    Result:= uinfo^.pw_dir + '/.cache/' + ApplicationName
+    Result:= SysToUTF8(uinfo^.pw_dir) + '/.cache/' + ApplicationName
   else
-    Result:= GetHomeDir + '.cache/' + ApplicationName;
+    Result:= GetHomeDir + '/.cache/' + ApplicationName;
 end;
 {$ENDIF}
 
@@ -984,7 +1012,7 @@ begin
 end;
 {$ENDIF}
 
-function IsAvailable(Path: String; TryMount: Boolean): Boolean;
+function IsAvailable(Drive: PDrive; TryMount: Boolean): Boolean;
 {$IF DEFINED(MSWINDOWS)}
 var
   Drv: String;
@@ -992,7 +1020,7 @@ var
   NetResource: TNetResourceW;
   wsLocalName, wsRemoteName: WideString;
 begin
-  Drv:= ExtractFileDrive(Path) + PathDelim;
+  Drv:= ExtractFileDrive(Drive^.Path) + PathDelim;
 
   // Try to close CD/DVD drive
   if (GetDriveType(PChar(Drv)) = DRIVE_CDROM) and
@@ -1033,7 +1061,7 @@ begin
   pme:= getmntent(mtab);
   while (pme <> nil) do
   begin
-    if pme.mnt_dir = Path then
+    if SysToUTF8(pme.mnt_dir) = Drive^.Path then
     begin
       Result:= True;
       Break;
@@ -1041,6 +1069,9 @@ begin
     pme:= getmntent(mtab);
   end;
   endmntent(mtab);
+
+  if not Result and TryMount then
+    Result := MountDrive(Drive);
 end;
 {$ELSE}
 begin
@@ -1090,7 +1121,7 @@ begin
   with FileMapRec do
     begin
       MappedFile := nil;
-      FileHandle:= fpOpen(PChar(sFileName), O_RDONLY);
+      FileHandle:= fpOpen(PChar(UTF8ToSys(sFileName)), O_RDONLY);
 
       if FileHandle = feInvalidHandle then Exit;
       if fpfstat(FileHandle, StatInfo) <> 0 then
@@ -1176,61 +1207,58 @@ begin
   {$ENDIF}
 end;
 
-function mbFileOpen(const FileName: UTF8String; Mode: Integer): System.THandle;
+function mbFileOpen(const FileName: UTF8String; Mode: Longint): System.THandle;
 {$IFDEF MSWINDOWS}
-const
-  AccessMode: array[0..2] of DWORD  = (
-                GENERIC_READ,
-                GENERIC_WRITE,
-                GENERIC_READ or GENERIC_WRITE);
-  ShareMode: array[0..4] of DWORD = (
-               0,
-               0,
-               FILE_SHARE_READ,
-               FILE_SHARE_WRITE,
-               FILE_SHARE_READ or FILE_SHARE_WRITE);
-var
-  wFileName: WideString;
 begin
-  wFileName:= UTF8Decode(FileName);
-  Result:= CreateFileW(PWChar(wFileName), AccessMode[Mode and 3],
-                       ShareMode[(Mode and $F0) shr 4], nil, OPEN_EXISTING,
+  Result:= CreateFileW(PWideChar(UTF8Decode(FileName)), AccessModes[Mode and 3],
+                       ShareModes[(Mode and $F0) shr 4], nil, OPEN_EXISTING,
                        FILE_ATTRIBUTE_NORMAL, 0);
 end;
 {$ELSE}
-const
-  AccessMode: array[0..2] of LongInt  = (
-                O_RdOnly,
-                O_WrOnly,
-                O_RdWr);
 begin
-  Result:= fpOpen(FileName, AccessMode[Mode and 3]);
+  Result:= fpOpen(UTF8ToSys(FileName), AccessModes[Mode and 3]);
 end;
 {$ENDIF}
 
 function mbFileCreate(const FileName: UTF8String): System.THandle;
 {$IFDEF MSWINDOWS}
-var
-  wFileName: WideString;
 begin
-  wFileName:= UTF8Decode(FileName);
-  Result:= CreateFileW(PWChar(wFileName), GENERIC_READ or GENERIC_WRITE,
-                       0, nil, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
+  Result := mbFileCreate(FileName, fmShareDenyWrite, 0);
 end;
 {$ELSE}
 begin
-  Result:= fpOpen(FileName, O_Creat or O_RdWr or O_Trunc);
+  Result:= fpOpen(UTF8ToSys(FileName), O_Creat or O_RdWr or O_Trunc);
 end;
 {$ENDIF}
 
-function mbFileCreate(const FileName: UTF8String; Mode: Integer): System.THandle;
+function mbFileCreate(const FileName: UTF8String; ShareMode: Longint): System.THandle;
 {$IFDEF MSWINDOWS}
 begin
-  Result:= mbFileCreate(FileName);
+  Result:= mbFileCreate(FileName, ShareMode, 0);
 end;
 {$ELSE}
 begin
-  Result:= fpOpen(FileName, O_Creat or O_RdWr or O_Trunc, Mode);
+  {$IF (FPC_VERSION > 2) or ((FPC_VERSION = 2) and (FPC_RELEASE >= 5))}
+  Result:= FileCreate(UTF8ToSys(FileName), ShareMode, 438); // 438 = 666 octal
+  {$ELSE}
+  Result:= FileCreate(UTF8ToSys(FileName), 438); // 438 = 666 octal
+  {$ENDIF}
+end;
+{$ENDIF}
+
+function mbFileCreate(const FileName: UTF8String; ShareMode: Longint; Rights: Longint): System.THandle;
+{$IFDEF MSWINDOWS}
+begin
+  Result:= CreateFileW(PWideChar(UTF8Decode(FileName)), GENERIC_READ or GENERIC_WRITE,
+                       ShareModes[(ShareMode and $F0) shr 4], nil, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
+end;
+{$ELSE}
+begin
+  {$IF (FPC_VERSION > 2) or ((FPC_VERSION = 2) and (FPC_RELEASE >= 5))}
+  Result:= FileCreate(UTF8ToSys(FileName), ShareMode, Rights);
+  {$ELSE}
+  Result:= FileCreate(UTF8ToSys(FileName), Rights);
+  {$ENDIF}
 end;
 {$ENDIF}
 
@@ -1256,7 +1284,7 @@ var
   Info: BaseUnix.Stat;
 begin
   Result:= uTypes.TFileTime(-1);
-  if fpStat(FileName, Info) >= 0 then
+  if fpStat(UTF8ToSys(FileName), Info) >= 0 then
 {$PUSH}{$R-}
     Result := Info.st_mtime;
 {$POP}
@@ -1296,7 +1324,7 @@ end;
 var
   StatInfo : BaseUnix.Stat;
 begin
-  Result := fpLStat(PChar(FileName), StatInfo) >= 0;
+  Result := fpLStat(PChar(UTF8ToSys(FileName)), StatInfo) >= 0;
   if Result then
   begin
     LastAccessTime   := StatInfo.st_atime;
@@ -1357,7 +1385,7 @@ var
 begin
   t.actime := LastAccessTime;
   t.modtime := ModificationTime;
-  Result := (fputime(PChar(pointer(FileName)), @t) <> -1);
+  Result := (fputime(PChar(UTF8ToSys(FileName)), @t) <> -1);
 end;
 {$ENDIF}
 
@@ -1379,7 +1407,7 @@ var
 begin
   Result:= False;
   // Can use fpStat, because link to an existing filename can be opened as if it were a real file.
-  if fpStat(FileName, Info) >= 0 then
+  if fpStat(UTF8ToSys(FileName), Info) >= 0 then
     Result:= fpS_ISREG(Info.st_mode);
 end;
 {$ENDIF}
@@ -1417,7 +1445,7 @@ const
                 W_OK,
                 R_OK or W_OK);
 begin
-  Result:= fpAccess(FileName, AccessMode[Mode and 3]) = 0;
+  Result:= fpAccess(UTF8ToSys(FileName), AccessMode[Mode and 3]) = 0;
 end;
 {$ENDIF}
 
@@ -1439,7 +1467,7 @@ var
   Info: BaseUnix.Stat;
 begin
   Result:= faInvalidAttributes;
-  if fpLStat(FileName, @Info) >= 0 then
+  if fpLStat(UTF8ToSys(FileName), @Info) >= 0 then
     Result:= Info.st_mode;
 end;
 {$ENDIF}
@@ -1456,7 +1484,7 @@ begin
 end;
 {$ELSE}
 begin
-  Result:= fpchmod(PChar(FileName), Attr);
+  Result:= fpchmod(PChar(UTF8ToSys(FileName)), Attr);
 end;
 {$ENDIF}
 
@@ -1465,7 +1493,7 @@ function mbFileGetAttrNoLinks(const FileName: UTF8String): TFileAttrs;
 var
   Info: BaseUnix.Stat;
 begin
-  if fpStat(FileName, Info) >= 0 then
+  if fpStat(UTF8ToSys(FileName), Info) >= 0 then
     Result := Info.st_mode
   else
     Result := faInvalidAttributes;
@@ -1507,9 +1535,9 @@ var
   StatInfo: BaseUnix.Stat;
   mode: TMode;
 begin
-  if fpStat(PChar(FileName), StatInfo) <> 0 then Exit(False);
+  if fpStat(PChar(UTF8ToSys(FileName)), StatInfo) <> 0 then Exit(False);
   mode := SetModeReadOnly(StatInfo.st_mode, ReadOnly);
-  Result:= fpchmod(PChar(FileName), mode) = 0;
+  Result:= fpchmod(PChar(UTF8ToSys(FileName)), mode) = 0;
 end;
 {$ENDIF}
 
@@ -1523,7 +1551,7 @@ begin
 end;
 {$ELSE}
 begin
-  Result:= fpUnLink(FileName) = 0;
+  Result:= fpUnLink(UTF8ToSys(FileName)) = 0;
 end;
 {$ENDIF}
 
@@ -1548,11 +1576,11 @@ begin
   if OldName = NewName then
     Exit(True);
 
-  if fpLstat(OldName, OldFileStat) <> 0 then
+  if fpLstat(UTF8ToSys(OldName), OldFileStat) <> 0 then
     Exit(False);
 
   // Check if target file exists.
-  if fpLstat(NewName, NewFileStat) = 0 then
+  if fpLstat(UTF8ToSys(NewName), NewFileStat) = 0 then
   begin
     // Check if source and target are the same files (same inode and same device).
     if (OldFileStat.st_ino = NewFileStat.st_ino) and
@@ -1575,30 +1603,30 @@ begin
       begin
         tmpFileName := GetTempName(OldName);
 
-        if FpRename(OldName, tmpFileName) = 0 then
+        if FpRename(UTF8ToSys(OldName), UTF8ToSys(tmpFileName)) = 0 then
         begin
-          if fpLstat(NewName, NewFileStat) = 0 then
+          if fpLstat(UTF8ToSys(NewName), NewFileStat) = 0 then
           begin
             // We have renamed the old file but the new file name still exists,
             // so this wasn't a single file on a case-insensitive filesystem
             // accessible by two names that differ by case.
 
-            FpRename(tmpFileName, OldName);  // Restore old file.
+            FpRename(UTF8ToSys(tmpFileName), UTF8ToSys(OldName));  // Restore old file.
 {$IFDEF DARWIN}
             // If it's a directory with multiple hard links then simply unlink the source.
             if BaseUnix.fpS_ISDIR(NewFileStat.st_mode) and (NewFileStat.st_nlink > 1) then
-              Result := (fpUnLink(OldName) = 0)
+              Result := (fpUnLink(UTF8ToSys(OldName)) = 0)
             else
 {$ENDIF}
             Result := False;
           end
-          else if FpRename(tmpFileName, NewName) = 0 then
+          else if FpRename(UTF8ToSys(tmpFileName), UTF8ToSys(NewName)) = 0 then
           begin
             Result := True;
           end
           else
           begin
-            FpRename(tmpFileName, OldName);  // Restore old file.
+            FpRename(UTF8ToSys(tmpFileName), UTF8ToSys(OldName));  // Restore old file.
             Result := False;
           end;
         end
@@ -1608,13 +1636,13 @@ begin
       else
       begin
         // Multiple links - simply unlink the source file.
-        Result := (fpUnLink(OldName) = 0);
+        Result := (fpUnLink(UTF8ToSys(OldName)) = 0);
       end;
 
       Exit;
     end;
   end;
-  Result := FpRename(OldName, NewName) = 0;
+  Result := FpRename(UTF8ToSys(OldName), UTF8ToSys(NewName)) = 0;
 end;
 {$ENDIF}
 
@@ -1643,7 +1671,7 @@ var
   Info: BaseUnix.Stat;
 begin
   Result:= 0;
-  if fpStat(FileName, Info) >= 0 then
+  if fpStat(UTF8ToSys(FileName), Info) >= 0 then
     Result:= Info.st_size;
 end;
 {$ENDIF}
@@ -1678,6 +1706,7 @@ end;
 {$ELSE}
 begin
   GetDir(0, Result);
+  Result := SysToUTF8(Result);
 end;
 {$ENDIF}
 
@@ -1700,7 +1729,7 @@ begin
 end;
 {$ELSE}
 begin
-  Result:= fpChDir(PChar(NewDir)) = 0;
+  Result:= fpChDir(PChar(UTF8ToSys(NewDir))) = 0;
 end;
 {$ENDIF}
 
@@ -1726,7 +1755,7 @@ begin
   // Note that same behaviour would be achieved by passing paths
   // that end with path delimiter to fpLstat.
   // Paths with links can be used the same way as if they were real directories.
-  if fpStat(Directory, Info) >= 0 then
+  if fpStat(UTF8ToSys(Directory), Info) >= 0 then
     Result:= fpS_ISDIR(Info.st_mode);
 end;
 {$ENDIF}
@@ -1741,7 +1770,7 @@ begin
 end;
 {$ELSE}
 begin
-  Result:= fpMkDir(PChar(NewDir), $1FF) = 0; // $1FF = &0777
+  Result:= fpMkDir(PChar(UTF8ToSys(NewDir)), $1FF) = 0; // $1FF = &0777
 end;
 {$ENDIF}
 
@@ -1755,7 +1784,7 @@ begin
 end;
 {$ELSE}
 begin
-  Result:= fpRmDir(PChar(Dir)) = 0;
+  Result:= fpRmDir(PChar(UTF8ToSys(Dir))) = 0;
 end;
 {$ENDIF}
 
@@ -1810,7 +1839,40 @@ begin
 end;
 {$ELSE}
 begin
-  Result:= GetEnvironmentString(Index);
+  Result:= SysToUTF8(GetEnvironmentString(Index));
+end;
+{$ENDIF}
+
+function mbGetEnvironmentVariable(const sName: UTF8String): UTF8String;
+{$IFDEF MSWINDOWS}
+var
+  wsName: WideString;
+  smallBuf: array[0..1023] of WideChar;
+  largeBuf: PWideChar;
+  dwResult: DWORD;
+begin
+  Result := EmptyStr;
+  wsName := UTF8Decode(sName);
+  dwResult := GetEnvironmentVariableW(PWideChar(wsName), @smallBuf[0], Length(smallBuf));
+  if dwResult > Length(smallBuf) then
+  begin
+    // Buffer not large enough.
+    largeBuf := GetMem(SizeOf(WideChar) * dwResult);
+    if Assigned(largeBuf) then
+    try
+      dwResult := GetEnvironmentVariableW(PWideChar(wsName), largeBuf, dwResult);
+      if dwResult > 0 then
+        Result := UTF8Encode(WideString(largeBuf));
+    finally
+      FreeMem(largeBuf);
+    end;
+  end
+  else if dwResult > 0 then
+    Result := UTF8Encode(WideString(smallBuf));
+end;
+{$ELSE}
+begin
+  Result:= SysToUTF8(GetEnvironmentVariable(UTF8ToSys(sName)));
 end;
 {$ENDIF}
 
@@ -1826,7 +1888,7 @@ begin
 end;
 {$ELSE}
 begin
-  Result:= (setenv(PChar(sName), PChar(sValue), 1) = 0);
+  Result:= (setenv(PChar(UTF8ToSys(sName)), PChar(UTF8ToSys(sValue)), 1) = 0);
 end;
 {$ENDIF}
 
@@ -1841,7 +1903,7 @@ end;
 {$ELSE}
 begin
   {$PUSH}{$HINTS OFF}
-  Result:= TLibHandle(dlopen(PChar(Name), RTLD_LAZY));
+  Result:= TLibHandle(dlopen(PChar(UTF8ToSys(Name)), RTLD_LAZY));
   {$POP}
 end;
 {$ENDIF}
@@ -1852,7 +1914,7 @@ begin
 {$IFDEF WINDOWS}
             UTF8Encode(SysErrorMessage(ErrorCode));
 {$ELSE}
-            SysErrorMessage(ErrorCode);
+            SysToUTF8(SysErrorMessage(ErrorCode));
 {$ENDIF}
 end;
 
@@ -1884,5 +1946,18 @@ begin
 {$ENDIF}
 end;
 
-end.
+procedure FixDateNamesToUTF8;
+var
+  i: Integer;
+begin
+  for i := Low(ShortMonthNames) to High(ShortMonthNames) do
+    ShortMonthNames[i] := SysToUTF8(ShortMonthNames[i]);
+  for i := Low(ShortDayNames) to High(ShortDayNames) do
+    ShortDayNames[i] := SysToUTF8(ShortDayNames[i]);
+  for i := Low(LongMonthNames) to High(LongMonthNames) do
+    LongMonthNames[i] := SysToUTF8(LongMonthNames[i]);
+  for i := Low(LongDayNames) to High(LongDayNames) do
+    LongDayNames[i] := SysToUTF8(LongDayNames[i]);
+end;
 
+end.
