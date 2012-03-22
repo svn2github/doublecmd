@@ -3,7 +3,7 @@
    -------------------------------------------------------------------------
    Enumerating and monitoring drives in the system.
 
-   Copyright (C) 2006-2010  Koblov Alexander (Alexx2000@mail.ru)
+   Copyright (C) 2006-2012  Koblov Alexander (Alexx2000@mail.ru)
    Copyright (C) 2010  Przemyslaw Nagay (cobines@gmail.com)
 
    This program is free software; you can redistribute it and/or modify
@@ -346,15 +346,45 @@ var
   DriveNum: Integer;
   DriveBits: set of 0..25;
   WinDriveType: UINT;
+  DriveLetter: AnsiChar;
   DrivePath: String;
+  Key: HKEY;
+  RegDrivePath: WideString;
+  NetworkPath: array[0..Pred(MAX_PATH)] of WideChar;
+  NetworkPathSize: DWORD = MAX_PATH * SizeOf(WideChar);
 begin
   Result := TDrivesList.Create;
   { fill list }
   DWORD(DriveBits) := GetLogicalDrives;
   for DriveNum := 0 to 25 do
   begin
-    if not (DriveNum in DriveBits) then Continue;
-    DrivePath := Char(DriveNum + Ord('a')) + ':\';
+    if ((DriveBits shr DriveNum) and $1) = 0 then
+    begin
+      // Try to find in mapped network drives
+      DriveLetter := AnsiChar(DriveNum + Ord('a'));
+      RegDrivePath := 'Network' + PathDelim + DriveLetter;
+      if RegOpenKeyExW(HKEY_CURRENT_USER, PWideChar(RegDrivePath), 0, KEY_READ, Key) = ERROR_SUCCESS then
+      begin
+        if RegQueryValueExW(Key, 'RemotePath', nil, nil, @NetworkPath, @NetworkPathSize) = ERROR_SUCCESS then
+        begin
+          New(Drive);
+          Result.Add(Drive);
+          FillChar(Drive^, SizeOf(TDrive), #0);
+          with Drive^ do
+          begin
+            Path := DriveLetter + ':\';
+            DisplayName := DriveLetter;
+            DriveLabel := UTF8Encode(WideString(NetworkPath));
+            DriveType := dtNetwork;
+          end;
+        end;
+        RegCloseKey(Key);
+      end;
+      Continue;
+    end;
+
+    DriveLetter := AnsiChar(DriveNum + Ord('a'));
+    DrivePath := DriveLetter + ':\';
     WinDriveType := GetDriveType(PChar(DrivePath));
     if WinDriveType = DRIVE_NO_ROOT_DIR then Continue;
     New(Drive);
