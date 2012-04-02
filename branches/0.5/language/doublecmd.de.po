@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Double Commander 0.46 alpha\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-20 12:40+0300\n"
-"PO-Revision-Date: 2011-06-27 11:34+0100\n"
+"PO-Revision-Date: 2012-04-02 14:34+0100\n"
 "Last-Translator: Vacon <vacon@users.sourceforge.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -819,7 +819,7 @@ msgstr "Letzter Unterschied"
 
 #: TFRMDIFFER.ACTLINEDIFFERENCES.CAPTION
 msgid "Line Differences"
-msgstr ""
+msgstr "Zeilenunterschied"
 
 #: TFRMDIFFER.ACTNEXTDIFF.CAPTION
 msgctxt "TFRMDIFFER.ACTNEXTDIFF.CAPTION"
@@ -2440,7 +2440,7 @@ msgstr "Öffne &VFS-Liste"
 
 #: TFRMMAIN.ACTOPERATIONSVIEWER.CAPTION
 msgid "Operations &Viewer"
-msgstr ""
+msgstr "Operations-Betrachter"
 
 #: TFRMMAIN.ACTOPTIONS.CAPTION
 #, fuzzy
@@ -4768,7 +4768,7 @@ msgstr "=>"
 
 #: TFRMPACKDLG.CBPUTINTARFIRST.CAPTION
 msgid "Put in the TAR archive first"
-msgstr ""
+msgstr "Zuerst in ein TAR-Archiv packen"
 
 #: TFRMPACKDLG.CBSTOREDIR.CAPTION
 msgid "Also &pack path names (only recursed)"
@@ -5670,7 +5670,7 @@ msgstr "Wenn Datei vorhanden"
 
 #: ulng.rscfgtoolbaraddbutton
 msgid "&Add button to end"
-msgstr ""
+msgstr "Sch&alter am Ende einfügen"
 
 #: ulng.rscfgtoolbarinsertbutton
 msgctxt "ulng.rscfgtoolbarinsertbutton"
@@ -5773,7 +5773,7 @@ msgstr "H&inein kopieren"
 
 #: ulng.rsdlgbuttoncopyintoall
 msgid "Copy Into &All"
-msgstr ""
+msgstr "In &alle einfügen"
 
 #: ulng.rsdlgbuttonno
 msgid "&No"
@@ -6222,7 +6222,7 @@ msgstr "Kann die Datei %s nicht zu %s kopieren"
 
 #: ulng.rsmsgerrcreatefiledirectoryexists
 msgid "There already exists a directory named \"%s\"."
-msgstr ""
+msgstr "Es besteht bereits ein Verzeichnis mit dem Namen \"%s\"."
 
 #: ulng.rsmsgerrdatenotsupported
 msgid "Date %s is not supported"
