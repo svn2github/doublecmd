@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Double Commander 0.5.1 beta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-17 23:08+0300\n"
-"PO-Revision-Date: 2012-04-16 10:02+0100\n"
+"PO-Revision-Date: 2012-04-17 10:28+0100\n"
 "Last-Translator: giggetto2 <bicatwork@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -541,7 +541,7 @@ msgstr "Eliminare"
 #: TFRMCONFIGTOOLBAR.BTNHELP.CAPTION
 msgctxt "TFRMCONFIGTOOLBAR.BTNHELP.CAPTION"
 msgid "&Help"
-msgstr "Aiuto"
+msgstr "Aiuto OnLine"
 
 #: TFRMCONFIGTOOLBAR.BTNOK.CAPTION
 msgctxt "TFRMCONFIGTOOLBAR.BTNOK.CAPTION"
@@ -793,7 +793,7 @@ msgstr "Incollare"
 #: TFRMDIFFER.ACTEDITREDO.CAPTION
 msgctxt "TFRMDIFFER.ACTEDITREDO.CAPTION"
 msgid "Redo"
-msgstr "Annulla l'operazione"
+msgstr "Rifai"
 
 #: TFRMDIFFER.ACTEDITSELECTALL.CAPTION
 msgid "Select &All"
@@ -802,7 +802,7 @@ msgstr "Seleziona tutto"
 #: TFRMDIFFER.ACTEDITUNDO.CAPTION
 msgctxt "TFRMDIFFER.ACTEDITUNDO.CAPTION"
 msgid "Undo"
-msgstr "Annulla indietro"
+msgstr "Disfa"
 
 #: TFRMDIFFER.ACTFIRSTDIFF.CAPTION
 msgctxt "TFRMDIFFER.ACTFIRSTDIFF.CAPTION"
@@ -1106,7 +1106,7 @@ msgstr "Incolla"
 #: TFRMEDITOR.ACTEDITREDO.CAPTION
 msgctxt "TFRMEDITOR.ACTEDITREDO.CAPTION"
 msgid "Redo"
-msgstr "Ripristina"
+msgstr "Rifai"
 
 #: TFRMEDITOR.ACTEDITRPLC.CAPTION
 msgid "&Replace"
@@ -1161,7 +1161,7 @@ msgstr "Editore"
 #: TFRMEDITOR.HELP1.CAPTION
 msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
-msgstr "Aiuto"
+msgstr "Aiuto OnLine"
 
 #: TFRMEDITOR.MIDIV.CAPTION
 msgctxt "TFRMEDITOR.MIDIV.CAPTION"
@@ -1330,7 +1330,7 @@ msgstr "Annulla"
 #: TFRMEXTRACTDLG.BTNHELP.CAPTION
 msgctxt "TFRMEXTRACTDLG.BTNHELP.CAPTION"
 msgid "Help"
-msgstr "Aiuto"
+msgstr "Aiuto OnLine"
 
 #: TFRMEXTRACTDLG.BTNOK.CAPTION
 msgctxt "TFRMEXTRACTDLG.BTNOK.CAPTION"
@@ -1649,7 +1649,7 @@ msgstr "SUID"
 #: TFRMFILEPROPERTIES.FRMFILEPROPERTIES.CAPTION
 msgctxt "TFRMFILEPROPERTIES.FRMFILEPROPERTIES.CAPTION"
 msgid "Properties"
-msgstr "Proprieta'"
+msgstr "Proprietá"
 
 #: TFRMFILEPROPERTIES.GBOWNER.CAPTION
 msgctxt "TFRMFILEPROPERTIES.GBOWNER.CAPTION"
@@ -1809,7 +1809,7 @@ msgstr "Attributi"
 #: TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION
 msgctxt "TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION"
 msgid "Properties"
-msgstr "Proprieta'"
+msgstr "Proprietá"
 
 #: TFRMFINDDLG.BTNADDATTRIBUTE.CAPTION
 msgid "&Add"
@@ -1818,7 +1818,7 @@ msgstr "&Aggiungi"
 #: TFRMFINDDLG.BTNATTRSHELP.CAPTION
 msgctxt "TFRMFINDDLG.BTNATTRSHELP.CAPTION"
 msgid "&Help"
-msgstr "Aiuto"
+msgstr "Aiuto OnLine"
 
 #: TFRMFINDDLG.BTNCLOSE.CAPTION
 msgctxt "TFRMFINDDLG.BTNCLOSE.CAPTION"
@@ -2034,7 +2034,7 @@ msgstr "Standard"
 #: TFRMFINDVIEW.BTNCLOSE.CAPTION
 msgctxt "TFRMFINDVIEW.BTNCLOSE.CAPTION"
 msgid "Cancel"
-msgstr "Annullare"
+msgstr "Annulla"
 
 #: TFRMFINDVIEW.BTNFIND.CAPTION
 msgctxt "TFRMFINDVIEW.BTNFIND.CAPTION"
@@ -2079,7 +2079,7 @@ msgstr "Nome del collegamento"
 #: TFRMHOTDIR.BTNADD.CAPTION
 msgctxt "TFRMHOTDIR.BTNADD.CAPTION"
 msgid "Add"
-msgstr "Agiungi"
+msgstr "Aggiungi"
 
 #: TFRMHOTDIR.BTNADDMAN.CAPTION
 msgid "Add manually"
@@ -2205,7 +2205,7 @@ msgstr "Cambia cartella"
 
 #: TFRMMAIN.ACTCHANGEDIRTOPARENT.CAPTION
 msgid "Change Directory To Parent"
-msgstr "Cambia cartella alla parente"
+msgstr "vai alla cartella precedente"
 
 # Menu > Fichier > ...
 #: TFRMMAIN.ACTCHANGEDIRTOROOT.CAPTION
@@ -2328,7 +2328,7 @@ msgstr "Concatena file..."
 
 #: TFRMMAIN.ACTFILEPROPERTIES.CAPTION
 msgid "Show &File Properties"
-msgstr "Visualizza proprieta' file"
+msgstr "Visualizza proprietá file"
 
 # Contexte ???
 #: TFRMMAIN.ACTFILESPLITER.CAPTION
@@ -2578,7 +2578,7 @@ msgstr "Cambia attributi..."
 # (menu onglets > options)
 #: TFRMMAIN.ACTSETTABOPTIONDIRSINNEWTAB.CAPTION
 msgid "Locked with Directories Opened in New &Tabs"
-msgstr "Bloccato con le cartelle aperte nelle nuove linguette"
+msgstr "Bloccato, con le cartelle aperte nelle nuove linguette"
 
 # Concerne les onglets
 # (menu onglets > options)
@@ -2760,7 +2760,7 @@ msgstr "/"
 #: TFRMMAIN.BTNLEFTROOT.HINT
 msgctxt "TFRMMAIN.BTNLEFTROOT.HINT"
 msgid "Go to root directory"
-msgstr "Vai alla root"
+msgstr "Vai alla radice"
 
 #: TFRMMAIN.BTNLEFTUP.CAPTION
 msgctxt "TFRMMAIN.BTNLEFTUP.CAPTION"
@@ -2770,7 +2770,7 @@ msgstr ".."
 #: TFRMMAIN.BTNLEFTUP.HINT
 msgctxt "TFRMMAIN.BTNLEFTUP.HINT"
 msgid "Go to parent directory"
-msgstr "Vai alla cartella parente"
+msgstr "Vai alla cartella precedente"
 
 #: TFRMMAIN.BTNRIGHTDIRECTORYHOTLIST.CAPTION
 msgctxt "TFRMMAIN.BTNRIGHTDIRECTORYHOTLIST.CAPTION"
@@ -2783,7 +2783,8 @@ msgstr ">"
 
 #: TFRMMAIN.BTNRIGHTEQUALLEFT.HINT
 msgid "Show current directory of the left panel in the right panel"
-msgstr "Mostra la cartella attiva del pannello sinistro nel destro"
+msgstr "Sincronizza il pannello sinistro nel destro"
+
 
 #: TFRMMAIN.BTNRIGHTHOME.CAPTION
 msgctxt "TFRMMAIN.BTNRIGHTHOME.CAPTION"
@@ -3029,7 +3030,7 @@ msgstr "&File"
 #: TFRMMAIN.MNUHELP.CAPTION
 msgctxt "TFRMMAIN.MNUHELP.CAPTION"
 msgid "&Help"
-msgstr "Aiuto"
+msgstr "Aiuto OnLine"
 
 #: TFRMMAIN.MNUMARK.CAPTION
 msgid "&Mark"
@@ -3671,7 +3672,7 @@ msgstr "Taglia testo in relazione alla larghezza colonna"
 
 #: TFRMOPTIONS.CBDELETETOTRASH.CAPTION
 msgid "Delete to recycle bin (Shift key reverses this setting)"
-msgstr "Cestina (il tasto <Shift> elimina definitivamente.)"
+msgstr "Cestina (il tasto <Shift> elimina definitivamente)"
 
 #: TFRMOPTIONS.CBDIRBRACKETS.CAPTION
 #, fuzzy
@@ -3849,7 +3850,7 @@ msgstr "Mostra linea di comando"
 
 #: TFRMOPTIONS.CBSHOWCOPYTABSELECTPANEL.CAPTION
 msgid "Show tab select panel in copy/move dialog"
-msgstr "Mostra la linguetta selezionata nel dialogo Copy/Move"
+msgstr "Mostra la linguetta selezionata nel dialogo Copia/Muovi"
 
 #: TFRMOPTIONS.CBSHOWCURDIR.CAPTION
 msgid "Show &current directory"
@@ -3873,7 +3874,7 @@ msgstr "Mostra i pulsanti dei drive"
 
 #: TFRMOPTIONS.CBSHOWKEYSPANEL.CAPTION
 msgid "Show &function key buttons"
-msgstr "Mostra i tasti di funzione (F3 a� F10)"
+msgstr "Mostra i tasti di funzione (F3 a�F10)"
 
 #: TFRMOPTIONS.CBSHOWMAINMENU.CAPTION
 msgid "Show main menu"
@@ -3932,7 +3933,7 @@ msgstr "Attiva il pannello di destinazione cliccando su una qualsiasi linguetta"
 
 #: TFRMOPTIONS.CBTABSALWAYSVISIBLE.CAPTION
 msgid "&Show tab header also when there is only one tab"
-msgstr "Mostra il titolo della linguetta anche se � la sola visualizzata"
+msgstr "Mostra il titolo della linguetta anche se é la sola visualizzata"
 
 #: TFRMOPTIONS.CBTABSCONFIRMCLOSEALL.CAPTION
 msgid "&Confirm close all tabs"
@@ -3999,7 +4000,7 @@ msgstr "Quando i file sono &creati, rinominati o eliminati"
 
 #: TFRMOPTIONS.CBWATCHONLYFOREGROUND.CAPTION
 msgid "When application is in the &background"
-msgstr "Quando l'applicazione e' in sfondo"
+msgstr "Quando l'applicazione é in sfondo"
 
 # Concerne les options de la liste des fichiers/dossiers qu'il ne faut pas montrer
 #: TFRMOPTIONS.CHKAUTOFILLCOLUMNS.CAPTION
@@ -4776,7 +4777,7 @@ msgstr "&Configura"
 #: TFRMPACKDLG.BTNHELP.CAPTION
 msgctxt "TFRMPACKDLG.BTNHELP.CAPTION"
 msgid "Help"
-msgstr "Aiuto"
+msgstr "Aiuto OnLine"
 
 #: TFRMPACKDLG.BTNOK.CAPTION
 msgctxt "TFRMPACKDLG.BTNOK.CAPTION"
@@ -4855,7 +4856,7 @@ msgstr "Estrai ed esegui"
 #: TFRMPACKINFODLG.FRMPACKINFODLG.CAPTION
 msgctxt "TFRMPACKINFODLG.FRMPACKINFODLG.CAPTION"
 msgid "Properties of packed file"
-msgstr "Proprieta' archivio"
+msgstr "Proprietá archivio"
 
 #: TFRMPACKINFODLG.LBLATTRIBUTES.CAPTION
 msgid "Attributes:"
@@ -5801,7 +5802,7 @@ msgstr "Numero modifiche:"
 #: ulng.rsconfcolalign
 #, fuzzy
 msgid "Align"
-msgstr "Alligna"
+msgstr "Allinea"
 
 #: ulng.rsconfcolcaption
 #, fuzzy
@@ -6305,7 +6306,7 @@ msgstr "Rimuovi tutte le linguette inattive?"
 
 #: ulng.rsmsgcloselockedtab
 msgid "This tab (%s) is locked! Close anyway?"
-msgstr "Questa linguetta e' bloccata! Chiuderla comunque?"
+msgstr "Questa linguetta é bloccata! Chiuderla comunque?"
 
 #: ulng.rsmsgconfirmquit
 msgid "Are you sure you want to quit?"
@@ -6472,7 +6473,7 @@ msgstr "Formato archivio sconosciuto"
 
 #: ulng.rsmsgfilechangedsave
 msgid "File %s changed, save?"
-msgstr "Il file %s e' stato modificato, salvare?"
+msgstr "Il file %s é stato modificato, salvare?"
 
 #: ulng.rsmsgfileexistsrwrt
 msgid "File %s exists, overwrite?"
@@ -6489,11 +6490,11 @@ msgstr "Operazioni in corso. La chiusura di Double Commander potrebbe risultare 
 
 #: ulng.rsmsgfilereadonly
 msgid "File %s is marked as read-only. Delete it?"
-msgstr "Il file e' di sola lettura. Eliminarlo comunque?"
+msgstr "Il file é di sola lettura. Eliminarlo comunque?"
 
 #: ulng.rsmsgfilesizetoobig
 msgid "The file size of \"%s\" is too big for destination file system!"
-msgstr "La dimensione del file \"%s\" e' eccessiva per la destinazione!"
+msgstr "La dimensione del file \"%s\" é eccessiva per la destinazione!"
 
 #: ulng.rsmsgfolderexistsrwrt
 msgid "Folder %s exists, overwrite?"
@@ -6733,7 +6734,7 @@ msgstr "Cancellare (Wipe) \"%s\" selezionati?"
 
 #: ulng.rsmulrenfilenamestylelist
 msgid "No change;UPPERCASE;lowercase;First char uppercase;First Char Of Every Word Uppercase;"
-msgstr "Invariato;MAIUSCOLE;minuscole;Prima lettera maiuscola;Prima Lettera Di Ogni Parola maiuscola;"
+msgstr "Invariato;MAIUSCOLE;minuscole;Prima lettera maiuscola;Prima Lettera Di Ogni Parola Maiuscola;"
 
 #: ulng.rsoperaborted
 msgid "Aborted"
@@ -7030,7 +7031,7 @@ msgstr "Miscellanea"
 
 #: ulng.rsoptmouseselectionbutton
 msgid "Left button;Right button;"
-msgstr "Pulsante sinistro; Pulsante destro;"
+msgstr "Pulsante sinistro;Pulsante destro;"
 
 #: ulng.rsoptpluginalreadyassigned
 msgid "Plugin %s is already assigned for the following extensions:"
@@ -7069,7 +7070,7 @@ msgstr "Filtro ricerca rapida"
 
 #: ulng.rsoptsortmethod
 msgid "Alphabetical, considering accents;Natural sorting: alphabetical and numbers"
-msgstr "Alpabetico, considerando accenti: ordine naturale, alfabetico e numerico"
+msgstr "Alpabetico, considerando accenti;ordine naturale, alfabetico e numerico"
 
 #: ulng.rsopttabsposition
 msgid "Top;Bottom;"
