@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Double Commander 0.5.1 beta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-17 23:08+0300\n"
-"PO-Revision-Date: 2012-04-17 10:28+0100\n"
+"PO-Revision-Date: 2012-04-18 12:05+0100\n"
 "Last-Translator: giggetto2 <bicatwork@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -517,7 +517,7 @@ msgstr "Aggiungere un nuovo pulsante"
 #: TFRMCONFIGTOOLBAR.BTNAPPENDMORE.CAPTION
 #, fuzzy
 msgid "A&ppend >>"
-msgstr "Ahhiungere >>"
+msgstr "A&ggiungi >>"
 
 #: TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION
 msgctxt "TFRMCONFIGTOOLBAR.BTNCANCEL.CAPTION"
@@ -632,7 +632,7 @@ msgstr "Barra secondaria >>"
 
 #: TFRMCONFIGTOOLBAR.MIADDSUBMENU.CAPTION
 msgid "Sub&menu >>"
-msgstr "Sotto.menu >>"
+msgstr "Sottomenu >>"
 
 #: TFRMCONNECTIONMANAGER.BTNADD.CAPTION
 msgctxt "TFRMCONNECTIONMANAGER.BTNADD.CAPTION"
@@ -2062,7 +2062,7 @@ msgstr "&OK"
 
 #: TFRMHARDLINK.CAPTION
 msgid "Create hard link"
-msgstr "Crea un collegamento rigido"
+msgstr "Crea collegamento &rigido"
 
 #: TFRMHARDLINK.LBLEXISTINGFILE.CAPTION
 msgctxt "TFRMHARDLINK.LBLEXISTINGFILE.CAPTION"
@@ -2196,7 +2196,7 @@ msgstr "Copia il percorso alla linea di comando"
 
 #: TFRMMAIN.ACTCALCULATESPACE.CAPTION
 msgid "Calculate &Occupied Space"
-msgstr "Calcula lo spazio occupato"
+msgstr "Calcola lo spa&zio occupato"
 
 #: TFRMMAIN.ACTCHANGEDIR.CAPTION
 #, fuzzy
@@ -2235,7 +2235,7 @@ msgstr "Azzera la finestra di log"
 
 #: TFRMMAIN.ACTCOMPARECONTENTS.CAPTION
 msgid "Compare by &Contents"
-msgstr "Confronta per contenuto"
+msgstr "Co&nfronta per contenuto"
 
 #: TFRMMAIN.ACTCONTEXTMENU.CAPTION
 msgid "Show context menu"
@@ -2292,7 +2292,7 @@ msgstr "Edita F4"
 
 #: TFRMMAIN.ACTEDITCOMMENT.CAPTION
 msgid "Edit Co&mment..."
-msgstr "Edita commenti"
+msgstr "&Edita commenti"
 
 #: TFRMMAIN.ACTEDITNEW.CAPTION
 #, fuzzy
@@ -2328,7 +2328,7 @@ msgstr "Concatena file..."
 
 #: TFRMMAIN.ACTFILEPROPERTIES.CAPTION
 msgid "Show &File Properties"
-msgstr "Visualizza proprietá file"
+msgstr "Visualizza proprietá &file"
 
 # Contexte ???
 #: TFRMMAIN.ACTFILESPLITER.CAPTION
@@ -2353,7 +2353,7 @@ msgstr "Posizionare il cursore sull'ultimo file della lista"
 #: TFRMMAIN.ACTHARDLINK.CAPTION
 msgctxt "TFRMMAIN.ACTHARDLINK.CAPTION"
 msgid "Create &Hard Link..."
-msgstr "Crea collegamento rigido"
+msgstr "Crea collegamento &rigido"
 
 #: TFRMMAIN.ACTHELPINDEX.CAPTION
 msgid "&Contents"
@@ -2419,7 +2419,7 @@ msgstr "Minimizza la finestra"
 
 #: TFRMMAIN.ACTMULTIRENAME.CAPTION
 msgid "Multi &Rename Tool"
-msgstr "Multirinomina"
+msgstr "&Multirinomina"
 
 #: TFRMMAIN.ACTNETWORKCONNECT.CAPTION
 msgid "Network &Connect..."
@@ -2572,7 +2572,7 @@ msgstr "&Cerca..."
 #: TFRMMAIN.ACTSETFILEPROPERTIES.CAPTION
 msgctxt "TFRMMAIN.ACTSETFILEPROPERTIES.CAPTION"
 msgid "Change &Attributes..."
-msgstr "Cambia attributi..."
+msgstr "Cambia attri&buti..."
 
 # Concerne les onglets
 # (menu onglets > options)
@@ -2644,7 +2644,7 @@ msgstr "Attiva/disattiva lista file/cartelle ignorate"
 #: TFRMMAIN.ACTSYMLINK.CAPTION
 msgctxt "TFRMMAIN.ACTSYMLINK.CAPTION"
 msgid "Create Symbolic &Link..."
-msgstr "Crea link simbolico..."
+msgstr "Crea &link simbolico..."
 
 #: TFRMMAIN.ACTTARGETEQUALSOURCE.CAPTION
 msgid "Target &= Source"
@@ -3076,7 +3076,7 @@ msgstr "Elimina"
 #: TFRMMAIN.TBEDIT.CAPTION
 msgctxt "TFRMMAIN.TBEDIT.CAPTION"
 msgid "Edit"
-msgstr "Ediar"
+msgstr "Edita"
 
 #: TFRMMAIN.TBPASTE.CAPTION
 msgctxt "TFRMMAIN.TBPASTE.CAPTION"
@@ -3319,7 +3319,7 @@ msgstr "[E] Estensione"
 #: TFRMMULTIRENAME.FRMMULTIRENAME.CAPTION
 msgctxt "TFRMMULTIRENAME.FRMMULTIRENAME.CAPTION"
 msgid "MultiRename"
-msgstr "Multirinomina"
+msgstr "&Multirinomina"
 
 # Option de la boite de dialogue de l'outil pour renomer par lot
 # => Titre d'un cadre
@@ -5109,7 +5109,7 @@ msgstr "&OK"
 #: TFRMSYMLINK.CAPTION
 #, fuzzy
 msgid "Create symbolic link"
-msgstr "Crea un link simbolico"
+msgstr "Crea link simbolico"
 
 #: TFRMSYMLINK.LBLEXISTINGFILE.CAPTION
 #, fuzzy
@@ -5924,7 +5924,7 @@ msgstr "Si"
 #: ulng.rsdlgcalcstatistics
 #, fuzzy
 msgid "Calculate files and folders"
-msgstr "Calcula file e cartelle"
+msgstr "Calcola file e cartelle"
 
 # Boite de dialogue lors de la vérification de la somme de contrôle (?)
 # => Titre de la boite
