@@ -580,7 +580,7 @@ begin
 
   // Below needed until after we switch to Lazarus 0.9.31.
   nbNotebook.TabStop := True;
-  {$if (lcl_release) < 31}
+  {$if (lcl_major < 1) and (lcl_release < 31)}
   nbNotebook.ShowTabs := False;
   nbNotebook.OnPageChanged := @nbNotebookPageChanged;
   {$endif}
