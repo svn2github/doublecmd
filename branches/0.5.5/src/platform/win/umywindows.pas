@@ -3,7 +3,7 @@
     -------------------------------------------------------------------------
     This unit contains specific WINDOWS functions.
 
-    Copyright (C) 2006-2012  Koblov Alexander (Alexx2000@mail.ru)
+    Copyright (C) 2006-2013  Koblov Alexander (Alexx2000@mail.ru)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -149,6 +149,8 @@ function IsUserAdmin: LongBool;
 function ExtractFileAttributes(const FindData: TWin32FindDataW): DWORD;
 
 procedure InitErrorMode;
+
+procedure FixCommandLineToUTF8;
 
 implementation
 
@@ -644,6 +646,49 @@ end;
 procedure InitErrorMode;
 begin
   SetErrorMode(SEM_FAILCRITICALERRORS or SEM_NOOPENFILEERRORBOX);
+end;
+
+procedure FixCommandLineToUTF8;
+var
+  I, nArgs: Integer;
+  sTemp: UTF8String;
+  szArgList: PPWideChar;
+  pwcCommandLine: PWideChar;
+  lpFileName: array[0..Pred(MaxSmallInt)] of WideChar;
+begin
+  pwcCommandLine:= GetCommandLineW();
+  for I:= 0 to lstrlenW(pwcCommandLine) - 1 do
+  begin
+    if (pwcCommandLine[I] = PathDelim) and (pwcCommandLine[I + 1] = '"') then
+    begin
+      pwcCommandLine[I]:= '"';
+      pwcCommandLine[I + 1]:= #32;
+    end;
+  end;
+  szArgList:= CommandLineToArgvW(pwcCommandLine, @nArgs);
+  if Assigned(szArgList) then
+  begin
+    if (nArgs > argc) then
+    begin
+      SysReAllocMem(argv, nArgs * SizeOf(Pointer));
+      FillChar(argv[argc], (nArgs - argc) * Sizeof(Pointer), #0);
+      argc:= nArgs;
+    end;
+    // Special case for ParamStr(0)
+    I:= GetModuleFileNameW(0, lpFileName, MaxSmallInt);
+    lpFileName[I]:= #0; // to be safe
+    sTemp:= UTF8Encode(WideString(lpFileName));
+    SysReAllocMem(argv[0], Length(sTemp) + 1);
+    StrPCopy(argv[0], sTemp);
+    // Process all other parameters
+    for I:= 1 to nArgs - 1 do
+    begin
+      sTemp:= UTF8Encode(WideString(szArgList[I]));
+      SysReAllocMem(argv[I], Length(sTemp) + 1);
+      StrPCopy(argv[I], sTemp);
+    end;
+    LocalFree(HLOCAL(szArgList));
+  end;
 end;
 
 end.
