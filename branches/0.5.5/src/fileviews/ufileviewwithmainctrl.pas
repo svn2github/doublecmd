@@ -27,7 +27,7 @@ unit uFileViewWithMainCtrl;
 interface
 
 uses
-  Classes, SysUtils, Controls, ExtCtrls, StdCtrls, LCLType,
+  Classes, SysUtils, Controls, ExtCtrls, StdCtrls, LCLType, LMessages,
   uFile,
   uFileViewWorker,
   uOrderedFileView,
@@ -59,11 +59,13 @@ type
     // stops internal dragging and starts external.
     procedure TransformDraggingToExternal(ScreenPoint: TPoint);
 
+    procedure edtRenameEnter(Sender: TObject);
     procedure edtRenameExit(Sender: TObject);
     procedure edtRenameKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 
   protected
     edtRename: TEdit;
+    FWindowProc: TWndMethod;
     // Used to register as a drag and drop source and target.
     FDragDropSource: uDragDropEx.TDragDropSource;
     FDragDropTarget: uDragDropEx.TDragDropTarget;
@@ -122,6 +124,7 @@ type
     procedure MainControlMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure MainControlShowHint(Sender: TObject; HintInfo: PHintInfo);
     procedure MainControlUTF8KeyPress(Sender: TObject; var UTF8Key: TUTF8Char);
+    procedure MainControlWindowProc(var TheMessage: TLMessage);
     {en
        Updates the drop row index, which is used to draw a rectangle
        on directories during drag&drop operations.
@@ -201,6 +204,7 @@ begin
   edtRename.TabStop := False;
   edtRename.AutoSize := False;
   edtRename.OnKeyDown := @edtRenameKeyDown;
+  edtRename.OnEnter := @edtRenameEnter;
   edtRename.OnExit := @edtRenameExit;
 
   tmContextMenu := TTimer.Create(Self);
@@ -814,6 +818,18 @@ begin
     Exit;
 end;
 
+procedure TFileViewWithMainCtrl.MainControlWindowProc(var TheMessage: TLMessage);
+begin
+  // Cancel rename if user scroll file list by mouse
+  if (TheMessage.Msg = LM_VSCROLL) or (TheMessage.Msg = LM_HSCROLL) or
+     (TheMessage.Msg = LM_MOUSEWHEEL) then
+  begin
+    edtRename.Hide;
+    SetFocus;
+  end;
+  FWindowProc(TheMessage);
+end;
+
 function TFileViewWithMainCtrl.OnExDragBegin: Boolean;
 begin
   Result := True;
@@ -1058,9 +1074,16 @@ begin
   end;
 end;
 
+procedure TFileViewWithMainCtrl.edtRenameEnter(Sender: TObject);
+begin
+  FWindowProc:= MainControl.WindowProc;
+  MainControl.WindowProc:= @MainControlWindowProc;
+end;
+
 procedure TFileViewWithMainCtrl.edtRenameExit(Sender: TObject);
 begin
   edtRename.Visible := False;
+  MainControl.WindowProc:= FWindowProc;
 
   // OnEnter don't called automatically (bug?)
   // TODO: Check on which widgetset/OS this is needed.
