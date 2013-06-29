@@ -34,7 +34,7 @@ uses
 {$I revision.inc} // Lazarus revision number
 
 const
-  dcVersion   = '0.5.5 alpha';
+  dcVersion   = '0.5.5 beta';
   dcBuildDate = {$I %DATE%};
   lazVersion  = lcl_version;         // Lazarus version (major.minor.micro)
   lazRevision = RevisionStr;         // Lazarus SVN revision
@@ -445,8 +445,8 @@ begin
 
   {$IFDEF LCLQT}
   {$IF RevisionStr >= qtLibQt4PasRev}
-  // Only since Lazarus 0.9.29 QT bindings v2.1.
-  WSVersion := 'QT ' + QtVersion + ', libQt4Pas ';
+  // Only since Lazarus 0.9.29 Qt bindings v2.1.
+  WSVersion := 'Qt ' + QtVersion + ', libQt4Pas ';
   {$ELSE}
   WSVersion := 'libqt4intf ';
   {$ENDIF}
