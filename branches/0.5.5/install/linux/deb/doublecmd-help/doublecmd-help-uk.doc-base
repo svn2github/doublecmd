@@ -5,6 +5,6 @@ Abstract: This manual describes how to use Double Commander.
 Section: File Management
 
 Format: HTML
-Index: /usr/share/doublecmd/doc/uk/index.html
-Files: /usr/share/doublecmd/doc/uk/*.html
+Index: /usr/share/doublecmd/doc/uk_UA/index.html
+Files: /usr/share/doublecmd/doc/uk_UA/*.html
 

@@ -9,4 +9,4 @@ rm -rf %DC_HELP_INSTALL_DIR%\
 rem Copy Russian help files
 xcopy /E doc\ru %DC_HELP_INSTALL_DIR%\ru\
 rem Copy Ukrainian help files
-xcopy /E doc\uk %DC_HELP_INSTALL_DIR%\uk\
+xcopy /E doc\uk_UA %DC_HELP_INSTALL_DIR%\uk_UA\
