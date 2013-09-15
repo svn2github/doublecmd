@@ -547,7 +547,6 @@ type
     procedure AddVirtualDriveButton(dskPanel: TKASToolBar);
     procedure AddSpecialButtons(dskPanel: TKASToolBar);
     procedure HideToTray;
-    procedure LoadMainToolbar;
     procedure RestoreFromTray;
     procedure ShowTrayIcon(bShow: Boolean);
     procedure HideTrayIconDelayed(Data: PtrInt);
@@ -648,6 +647,7 @@ type
     procedure LoadTabsCommandLine(Params: TCommandLineParams);
     procedure LoadWindowState;
     procedure SaveWindowState;
+    procedure LoadMainToolbar;
     procedure SaveMainToolBar;
     function  IsCommandLineVisible: Boolean;
     procedure ShowDrivesList(APanel: TFilePanelSelect);
@@ -986,7 +986,7 @@ begin
   begin
     if mbFileExists(BarFileName) then
     begin
-      ToolBarLoader := TKASToolBarIniLoader.Create;
+      ToolBarLoader := TKASToolBarIniLoader.Create(Commands.Commands);
       try
         ToolBarLoader.Load(BarFileName, MainToolBar, nil, @ConvertIniToolbarItem);
         SaveMainToolBar;
@@ -1258,12 +1258,6 @@ begin
   // Close all tabs.
   CloseNotebook(LeftTabs);
   CloseNotebook(RightTabs);
-
-  if gSaveConfiguration then
-    begin
-      // Save main toolbar
-      SaveMainToolBar;
-    end;
 
   FreeAndNil(DrivesList);
 
@@ -1698,24 +1692,6 @@ begin
   SetPanelDrive(fpLeft, DriveItem.Drive, True);
 end;
 
-procedure TfrmMain.LoadMainToolbar;
-var
-  ToolBarLoader: TKASToolBarExtendedLoader;
-  ToolBarNode: TXmlNode;
-begin
-  MainToolBar.BeginUpdate;
-  ToolBarLoader := TKASToolBarExtendedLoader.Create;
-  try
-    MainToolBar.Clear;
-    ToolBarNode := gConfig.FindNode(gConfig.RootNode, 'Toolbars/MainToolbar', False);
-    if Assigned(ToolBarNode) then
-      MainToolBar.LoadConfiguration(gConfig, ToolBarNode, ToolBarLoader);
-  finally
-    ToolBarLoader.Free;
-    MainToolBar.EndUpdate;
-  end;
-end;
-
 procedure TfrmMain.MainToolBarDragDrop(Sender, Source: TObject; X, Y: Integer);
 var
   aFile: TFile;
@@ -1833,12 +1809,14 @@ begin
 
   if gSaveConfiguration then
   try
+    DebugLn('Saving configuration');
     if Assigned(gIni) then
       uGlobs.ConvertIniToXml;
     if gSaveCmdLineHistory then
       glsCmdLineHistory.Assign(edtCommand.Items);
     SaveWindowState;
-    SaveGlobs;
+    SaveMainToolBar;
+    SaveGlobs; // Should be last, writes configuration file
   except
     on E: Exception do
       DebugLn('Cannot save main configuration: ', e.Message);
@@ -1942,6 +1920,8 @@ begin
 
   if MenuItem = miCloseTab then
     Commands.DoCloseTab(NoteBook, pmTabMenu.Tag)
+  else if MenuItem = miRenameTab then
+    Commands.DoRenameTab(NoteBook.Page[pmTabMenu.Tag])
   else if MenuItem = miTabOptionNormal then
     NoteBook.Page[pmTabMenu.Tag].LockState := tlsNormal
   else if MenuItem = miTabOptionPathLocked then
@@ -2311,10 +2291,10 @@ procedure TfrmMain.CreateDefaultToolbar;
   var
     CommandItem: TKASCommandItem;
   begin
-    CommandItem := TKASCommandItem.Create;
+    CommandItem := TKASCommandItem.Create(Commands.Commands);
     CommandItem.Icon := Icon;
     CommandItem.Command := Command;
-    CommandItem.Hint := Commands.Commands.GetCommandCaption(Command, cctLong);
+    // Leave CommandItem.Hint empty. It will be loaded at startup based on language.
     MainToolBar.AddButton(CommandItem);
   end;
   procedure AddSeparator;
@@ -4402,7 +4382,7 @@ begin
     begin
       Stream.Position := Length(DCToolItemClipboardHeader);
       Serializer := TKASToolBarSerializer.Create;
-      Loader := TKASToolBarExtendedLoader.Create;
+      Loader := TKASToolBarExtendedLoader.Create(Commands.Commands);
       try
         ToolItem := Serializer.Deserialize(Stream, Loader);
         MainToolBar.InsertButton(Button, ToolItem);
@@ -4698,6 +4678,24 @@ begin
   end;
   gConfig.SetValue(ANode, 'Maximized', (WindowState = wsMaximized));
   gConfig.SetValue(ANode, 'Splitter', FMainSplitterPos);
+end;
+
+procedure TfrmMain.LoadMainToolbar;
+var
+  ToolBarLoader: TKASToolBarExtendedLoader;
+  ToolBarNode: TXmlNode;
+begin
+  MainToolBar.BeginUpdate;
+  ToolBarLoader := TKASToolBarExtendedLoader.Create(Commands.Commands);
+  try
+    MainToolBar.Clear;
+    ToolBarNode := gConfig.FindNode(gConfig.RootNode, 'Toolbars/MainToolbar', False);
+    if Assigned(ToolBarNode) then
+      MainToolBar.LoadConfiguration(gConfig, ToolBarNode, ToolBarLoader);
+  finally
+    ToolBarLoader.Free;
+    MainToolBar.EndUpdate;
+  end;
 end;
 
 procedure TfrmMain.SaveMainToolBar;
