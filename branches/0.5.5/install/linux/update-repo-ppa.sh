@@ -14,7 +14,7 @@ DC_SOURCE_DIR=$DC_TEMP_DIR/doublecmd-$DC_VER
 # Directory for DC help
 DC_HELP_DIR=$DC_TEMP_DIR/doublecmd-help-$DC_VER
 # DC revision number
-DC_REVISION=$(svnversion -n ../../)
+DC_REVISION=$(svnversion ../../ | sed -e 's/\([0-9]*\).*/\1/')
 
 # Recreate temp directory
 rm -rf $DC_TEMP_DIR
@@ -54,7 +54,7 @@ update_doublecmd()
   do
     # Update changelog file
     pushd $DC_SOURCE_DIR/debian
-    dch -m -D $DIST -v $DC_VER-$DC_REVISION~$DIST "Update to revision $DC_REVISION"
+    dch -m -D $DIST -v $DC_VER-0+svn$DC_REVISION~$DIST "Update to revision $DC_REVISION"
     popd
 
     # Create archive with source code
@@ -92,7 +92,7 @@ update_doublecmd_svn()
   do
     # Update changelog file
     pushd $DC_SOURCE_DIR/debian
-    dch -m -D $DIST -v $DC_VER-$DC_REVISION~$DIST "Update to revision $DC_REVISION"
+    dch -m -D $DIST -v $DC_VER-0+svn$DC_REVISION~$DIST "Update to revision $DC_REVISION"
     popd
 
     # Create archive with source code
