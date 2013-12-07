@@ -216,6 +216,7 @@ type
     constructor Create(TheOwner: TComponent); override;
     destructor Destroy; override;
     procedure ClearFilter;
+    procedure ClearResults;
 
     procedure ThreadTerminate(Sender:TObject);
   end;
@@ -580,6 +581,14 @@ begin
   FUpdating := False;
 end;
 
+procedure TfrmFindDlg.ClearResults;
+begin
+  lsFoundedFiles.Clear;
+  lsFoundedFiles.Tag:= 0;
+  lsFoundedFiles.ScrollWidth:= 0;
+  FoundedStringCopy.Clear;
+end;
+
 procedure TfrmFindDlg.btnSearchLoadClick(Sender: TObject);
 begin
   LoadSelectedTemplate;
@@ -670,8 +679,7 @@ procedure TfrmFindDlg.btnNewSearchClick(Sender: TObject);
 begin
   StopSearch;
   pgcSearch.PageIndex:= 0;
-  lsFoundedFiles.Clear;
-  FoundedStringCopy.Clear;
+  ClearResults;
   miShowAllFound.Enabled:=False;
   lblStatus.Caption:= EmptyStr;
   lblCurrent.Caption:= EmptyStr;
@@ -910,8 +918,7 @@ begin
   if lsFoundedFiles.CanFocus then
     lsFoundedFiles.SetFocus;
 
-  lsFoundedFiles.Items.Clear;
-  FoundedStringCopy.Clear;
+  ClearResults;
   miShowAllFound.Enabled:=False;
 
   FSearchingActive := True;
@@ -964,9 +971,23 @@ begin
   end;
 end;
 procedure TfrmFindDlg.FoundedStringCopyChanged(Sender: TObject);
+var
+  sText: String;
+  iTemp: Integer;
 begin
   if FoundedStringCopy.Count > 0 then
-    lsFoundedFiles.Items.Add(FoundedStringCopy[FoundedStringCopy.Count - 1]);
+  begin
+    sText:= FoundedStringCopy[FoundedStringCopy.Count - 1];
+    iTemp:= Length(sText);
+    if iTemp > lsFoundedFiles.Tag then
+    begin
+      lsFoundedFiles.Tag:= iTemp;
+      iTemp:= lsFoundedFiles.Canvas.TextWidth(sText);
+      if iTemp > lsFoundedFiles.ScrollWidth then
+        lsFoundedFiles.ScrollWidth:= iTemp + 32;
+    end;
+    lsFoundedFiles.Items.Add(sText);
+  end;
 end;
 
 procedure TfrmFindDlg.btnViewClick(Sender: TObject);
@@ -1173,6 +1194,7 @@ begin
   cmbExcludeDirectories.Items.Assign(glsSearchExcludeDirectories);
 
   cbFindText.Checked := False;
+  lsFoundedFiles.Canvas.Font := lsFoundedFiles.Font;
 
   cmbPlugin.Clear;
   for I:= 0 to DSXPlugins.Count-1 do
