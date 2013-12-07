@@ -7734,6 +7734,10 @@ msgstr "Le fichier %s a été modifié, le sauvegarder ?"
 msgid "File %s exists, overwrite?"
 msgstr "Le fichier %s existe déjà, l'écraser ?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr "Opérations sur les fichiers en cours"
@@ -8896,4 +8900,4 @@ msgstr "Encodage"
 #: ulng.rsviewnotfound
 msgid "%s not found!"
 msgstr "%s introuvable !"
-
+

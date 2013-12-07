@@ -7372,6 +7372,10 @@ msgstr "Soubor %s byl změněn, uložit?"
 msgid "File %s exists, overwrite?"
 msgstr "Soubor %s existuje, přepsat?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr "Aktivní souborové operace)"

@@ -7890,6 +7890,10 @@ msgstr "%s 파일이 변경되었습니다. 저장할까요?"
 msgid "File %s exists, overwrite?"
 msgstr "%s 파일이 존재합니다. 덮어쓸까요?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr "파일 작업 활성화"

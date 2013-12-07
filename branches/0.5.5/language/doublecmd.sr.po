@@ -7220,6 +7220,10 @@ msgstr "Fajl %s promenjen, snimiti?"
 msgid "File %s exists, overwrite?"
 msgstr "Fajl %s postoji, prepisati?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr "Operacije nad fajlovima aktivne"
@@ -8355,4 +8359,4 @@ msgstr "Enkodiranje"
 #: ulng.rsviewnotfound
 msgid "%s not found!"
 msgstr "%s nije pronađen!"
-
+

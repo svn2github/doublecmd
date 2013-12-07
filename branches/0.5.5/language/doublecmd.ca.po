@@ -7678,6 +7678,10 @@ msgstr "%s ha canviat, desar?"
 msgid "File %s exists, overwrite?"
 msgstr "%s existeix ¿sobreescriure"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr "Operacions d'Arxiu actives"
@@ -8817,4 +8821,4 @@ msgstr "Codificació"
 #: ulng.rsviewnotfound
 msgid "%s not found!"
 msgstr "%s no trobat!"
-
+

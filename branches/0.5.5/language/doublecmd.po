@@ -6912,6 +6912,10 @@ msgstr ""
 msgid "File %s exists, overwrite?"
 msgstr ""
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr ""
@@ -8046,4 +8050,4 @@ msgstr ""
 #: ulng.rsviewnotfound
 msgid "%s not found!"
 msgstr ""
-
+

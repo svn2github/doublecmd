@@ -7216,6 +7216,10 @@ msgstr ""
 "Filen \"%s\" findes allerede.\n"
 "Vil du overskrive?\n"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr "Aktive filhandlinger"

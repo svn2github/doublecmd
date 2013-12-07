@@ -7581,6 +7581,10 @@ msgstr "文件 %s 已修改, 是否保存?"
 msgid "File %s exists, overwrite?"
 msgstr "文件 %s 已存在, 是否覆盖?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr ""
@@ -8718,4 +8722,4 @@ msgstr ""
 #: ulng.rsviewnotfound
 msgid "%s not found!"
 msgstr ""
-
+

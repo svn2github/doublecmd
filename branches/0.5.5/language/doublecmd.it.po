@@ -3610,8 +3610,8 @@ msgctxt "TFRMOPTIONSARCHIVERS.LBLARCHIVEADD.CAPTION"
 msgid "Add&ing:"
 msgstr "Agg&iungi:"
 
-#: tfrmoptionsarchivers.lblarchiveextension.caption:"
-msgctxt "TFRMOPTIONSARCHIVERS.LBLARCHIVEEXTENSION.CAPTION"
+#: tfrmoptionsarchivers.lblarchiveextension.caption
+msgctxt "tfrmoptionsarchivers.lblarchiveextension.caption"
 msgid "E&xtension:"
 msgstr "E&stensione:"
 
@@ -6913,6 +6913,10 @@ msgstr "Il file %s è stato modificato, salvarlo?"
 msgid "File %s exists, overwrite?"
 msgstr "Il file %s esiste, sovrascriverlo?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr "Operazioni sul file in corso"
@@ -7197,7 +7201,7 @@ msgstr "Eseguire la cancellazione sicura per la selezione \"%s\"?"
 #: ulng.rsmulrenfilenamestylelist
 msgid "No change;UPPERCASE;lowercase;First char uppercase;First Char Of Every Word Uppercase;"
 msgstr "Nessuna modifica;MAIUSCOLE;minuscole;Primo carattere maiusc.;Primo caratt. di ogni parola maiusc.;"
-								    
+
 #: ulng.rsoperaborted
 msgid "Aborted"
 msgstr "Annullato"
@@ -7313,7 +7317,9 @@ msgid "Packing"
 msgstr "Compressione"
 
 #: ulng.rsoperpackingfromto
-msgid "Compressione da \"%s\" a \"%s\""
+#, fuzzy
+#| msgid "Compressione da \"%s\" a \"%s\""
+msgid "Packing from \"%s\" to \"%s\""
 msgstr "Compressione da \"%s\" a \"%s\""
 
 #: ulng.rsoperpackingsomethingto

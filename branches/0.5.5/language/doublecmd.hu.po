@@ -7277,6 +7277,10 @@ msgstr "A fájl %s megváltozott, menti?"
 msgid "File %s exists, overwrite?"
 msgstr "A fájl %s már létezik, felülírja?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr "Aktív fájl műveletek"

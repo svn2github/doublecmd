@@ -6981,6 +6981,10 @@ msgstr "Файл %s изменён, сохранить?"
 msgid "File %s exists, overwrite?"
 msgstr "Файл %s существует, переписать?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr "Активные файловые операции"

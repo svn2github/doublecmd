@@ -7743,6 +7743,10 @@ msgstr "Súbor %s bol zmenený, uložiť?"
 msgid "File %s exists, overwrite?"
 msgstr "Súbor %s existuje, prepísať?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr "Sú aktívne súborové operácie"
@@ -8888,4 +8892,4 @@ msgstr "Kódovanie"
 #: ulng.rsviewnotfound
 msgid "%s not found!"
 msgstr "%s nebol nájdený!"
-
+

@@ -7535,6 +7535,10 @@ msgstr "Bestand %s gewijzigd, opslaan?"
 msgid "File %s exists, overwrite?"
 msgstr "Bestand %s bestaat, overschrijven?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr ""
@@ -8672,4 +8676,4 @@ msgstr ""
 #: ulng.rsviewnotfound
 msgid "%s not found!"
 msgstr ""
-
+

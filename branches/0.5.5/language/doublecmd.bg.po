@@ -7675,6 +7675,10 @@ msgstr "Фаълът %s е променен. Да бъде ли съхранен
 msgid "File %s exists, overwrite?"
 msgstr "Съществува файл %s. Да бъде ли заменен?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr ""

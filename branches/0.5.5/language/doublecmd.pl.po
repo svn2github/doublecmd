@@ -7685,6 +7685,10 @@ msgstr "Plik %s zmieniono, zapisać?"
 msgid "File %s exists, overwrite?"
 msgstr "Plik o nazwie %s istnieje, zastąpić?"
 
+#: ulng.rsmsgfilenotfound
+msgid "File \"%s\" not found."
+msgstr ""
+
 #: ulng.rsmsgfileoperationsactive
 msgid "File operations active"
 msgstr "Aktywne operacje na plikach"
@@ -8818,4 +8822,4 @@ msgstr "Kodowanie"
 #: ulng.rsviewnotfound
 msgid "%s not found!"
 msgstr "%s nie znaleziony!"
-
+
