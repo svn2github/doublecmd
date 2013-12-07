@@ -28,12 +28,9 @@ msgstr "Erreur en exécutant %s%s%s : %s%s"
 msgid "Unable to find a HTML browser."
 msgstr "Impossible de trouver un navigateur HTML."
 
-# Le chemin défini pour la config n'existe pas dans la version 0.5.1 pour linux !!!
-#: lclstrconsts.hhshelpnohtmlbrowserfoundpleasedefineoneinhelpconfigurehe
-#, fuzzy
-#| msgid "No HTML Browser found.%sPlease define one in Help -> Configure Help -> Viewers"
-msgid "No HTML Browser found.%sPlease define one in Environment -> Options -> Help -> Help Options"
-msgstr "Aucun navigateur HTML trouvé.%sDéfinissez en un dans Aide -> Configurer l'aide -> Visionneuses"
+#: lclstrconsts.hhshelpnohtmlbrowserfoundpleasedefineone
+msgid "No HTML Browser found.%sPlease define one in Tools -> Options -> Help -> Help Options"
+msgstr ""
 
 #: lclstrconsts.hhshelpthehelpdatabasewasunabletofindfile
 msgid "The help database %s%s%s was unable to find file %s%s%s."
@@ -75,6 +72,10 @@ msgstr "Majuscule"
 #: lclstrconsts.ifsvk_clear
 msgid "Clear"
 msgstr "Effacer"
+
+#: lclstrconsts.ifsvk_cmd
+msgid "Cmd"
+msgstr ""
 
 #: lclstrconsts.ifsvk_control
 msgid "Control"
@@ -119,7 +120,6 @@ msgstr "Hanja"
 msgid "Help"
 msgstr "Aide"
 
-# Je préfère traduire par "Origine" plutôt que par "Maison"...
 #: lclstrconsts.ifsvk_home
 msgctxt "lclstrconsts.ifsvk_home"
 msgid "Home"
@@ -160,6 +160,10 @@ msgctxt "lclstrconsts.ifsvk_menu"
 msgid "Menu"
 msgstr "Menu"
 
+#: lclstrconsts.ifsvk_meta
+msgid "Meta"
+msgstr ""
+
 #: lclstrconsts.ifsvk_modechange
 msgid "Mode Change"
 msgstr "Changement de mode"
@@ -189,7 +193,6 @@ msgstr "Touche pause"
 msgid "Print"
 msgstr "Imprimer"
 
-# Dans quel contexte ???
 #: lclstrconsts.ifsvk_prior
 #, fuzzy
 msgctxt "lclstrconsts.ifsvk_prior"
@@ -233,7 +236,10 @@ msgstr "Capture d'écran"
 msgid "Space key"
 msgstr "Barre d'espace"
 
-# ???
+#: lclstrconsts.ifsvk_super
+msgid "Super"
+msgstr ""
+
 #: lclstrconsts.ifsvk_tab
 msgctxt "lclstrconsts.ifsvk_tab"
 msgid "Tab"
@@ -251,6 +257,10 @@ msgstr "Haut"
 #: lclstrconsts.liscannotexecute
 msgid "can not execute %s"
 msgstr "impossible d'exécuter %s"
+
+#: lclstrconsts.liscefilter
+msgid "(filter)"
+msgstr ""
 
 #: lclstrconsts.lislclresourcesnotfound
 msgctxt "lclstrconsts.lislclresourcesnotfound"
@@ -287,7 +297,6 @@ msgstr "Champ actif"
 msgid "All files (%s)|%s|%s"
 msgstr "Tous les fichiers (%s)|%s|%s"
 
-# Dans quel contexte ???
 #: lclstrconsts.rsappworkspacecolorcaption
 msgid "Application Workspace"
 msgstr "Espace de travail de l'application"
@@ -304,7 +313,6 @@ msgstr "Bureau"
 msgid "Backward"
 msgstr "Arrière"
 
-# ??? Attention car c'es t un mode de représentation des images...
 #: lclstrconsts.rsbitmaps
 #, fuzzy
 msgid "Bitmaps"
@@ -371,6 +379,10 @@ msgstr "Le contrôle de la classe '%s' ne peut pas avoir le contrôle sur la cla
 msgid "Control '%s' has no parent window"
 msgstr "Le contrôle '%s' n'a pas de fenêtre parente"
 
+#: lclstrconsts.rscontrolisnotaparent
+msgid "'%s' is not a parent of '%s'"
+msgstr ""
+
 #: lclstrconsts.rscreamcolorcaption
 msgid "Cream"
 msgstr "Crême"
@@ -408,12 +420,10 @@ msgstr "Supprimer"
 msgid "Direction"
 msgstr "Direction"
 
-# Je pense que "Dossier" est maintenant plus utilisé que "Répertoire"...
 #: lclstrconsts.rsdirectory
 msgid "&Directory"
 msgstr "&Dossier"
 
-# ???
 #: lclstrconsts.rsdocking
 msgid "Docking"
 msgstr "Amarrage"
@@ -436,7 +446,6 @@ msgctxt "lclstrconsts.rserror"
 msgid "Error"
 msgstr "Erreur"
 
-# ??? Quel est le contexte de ce message ?
 #: lclstrconsts.rserrorcreatingdevicecontext
 #, fuzzy
 msgid "Error creating device context for %s.%s"
@@ -463,7 +472,6 @@ msgstr "Erreur en sauvegardant l'image."
 msgid "Exception"
 msgstr "Exception"
 
-# Je pense que "Dossier" est maintenant plus utilisé que "Répertoire"...
 #: lclstrconsts.rsfddirectorymustexist
 msgid "Directory must exist"
 msgstr "Le dossier doit exister"
@@ -548,7 +556,10 @@ msgstr "\"FixedRows\" ne peut pas être supérieur \"RowCount\""
 msgid "Form"
 msgstr "Formulaire"
 
-# ??? Flux de "fiche" ?
+#: lclstrconsts.rsformresourcesnotfoundforresourcelessformscreatenew
+msgid "Form resource %s not found. For resourceless forms CreateNew constructor must be used. See the global variable RequireDerivedFormResource."
+msgstr ""
+
 #: lclstrconsts.rsformstreamingerror
 #, fuzzy
 msgid "Form streaming \"%s\" error: %s"
@@ -586,7 +597,6 @@ msgstr "Gradient du champ inactif"
 msgid "Gradient Inactive Caption"
 msgstr "Gradient du champ inactif"
 
-# Dans quel contexte ???
 #: lclstrconsts.rsgraphic
 msgid "Graphic"
 msgstr "Graphique"
@@ -668,11 +678,15 @@ msgid "%s: Already registered"
 msgstr "%s : Déjà enregistré"
 
 #: lclstrconsts.rshelpcontextnotfound
-msgid "Help Context not found"
+#, fuzzy
+#| msgid "Help Context not found"
+msgid "A help database was found for this topic, but this topic was not found"
 msgstr "Contexte d'aide non trouvé"
 
 #: lclstrconsts.rshelpdatabasenotfound
-msgid "Help Database not found"
+#, fuzzy
+#| msgid "Help Database not found"
+msgid "There is no help database installed for this topic"
 msgstr "Base de données d'aide non trouvée"
 
 #: lclstrconsts.rshelperror
@@ -695,6 +709,14 @@ msgstr "La base de données d'aide %s%s%s n'a pas trouvé une visionneuse pour u
 msgid "Help Database %s%s%s not found"
 msgstr "Base de données d'aide %s%s%s non trouvée"
 
+#: lclstrconsts.rshelphelpfordirectivenotfound
+msgid "Help for directive %s%s%s not found."
+msgstr ""
+
+#: lclstrconsts.rshelphelpfordirectivenotfoundindatabase
+msgid "Help for directive %s%s%s not found in Database %s%s%s."
+msgstr ""
+
 #: lclstrconsts.rshelphelpkeywordnotfound
 msgid "Help keyword %s%s%s not found."
 msgstr "Mot-clé d'aide %s%s%s non trouvé."
@@ -712,11 +734,15 @@ msgid "No help found for line %d, column %d of %s."
 msgstr "Aucune aide trouvée pour la ligne %d, colonne %d de %s."
 
 #: lclstrconsts.rshelpnohelpnodesavailable
-msgid "No help nodes available"
+#, fuzzy
+#| msgid "No help nodes available"
+msgid "No help entries available for this topic"
 msgstr "Aucuns nœuds d'aide disponibles"
 
 #: lclstrconsts.rshelpnotfound
-msgid "Help not found"
+#, fuzzy
+#| msgid "Help not found"
+msgid "No help found for this topic"
 msgstr "Aide non trouvée"
 
 #: lclstrconsts.rshelpnotregistered
@@ -736,7 +762,9 @@ msgid "Help Viewer Error"
 msgstr "Erreur de la visionneuse d'aide"
 
 #: lclstrconsts.rshelpviewernotfound
-msgid "Help Viewer not found"
+#, fuzzy
+#| msgid "Help Viewer not found"
+msgid "No viewer was found for this type of help content"
 msgstr "Visionneuse d'aide non trouvée"
 
 #: lclstrconsts.rshighlightcolorcaption
@@ -752,7 +780,9 @@ msgid "Hot Light"
 msgstr "\"Lumière chaude\""
 
 #: lclstrconsts.rsicns
-msgid "OSX Icon Resource"
+#, fuzzy
+#| msgid "OSX Icon Resource"
+msgid "Mac OS X Icon"
 msgstr "Ressource d'icône OSX"
 
 #: lclstrconsts.rsicon
@@ -826,7 +856,6 @@ msgstr "Date invalide : %s"
 msgid "Invalid Date: %s. Must be between %s and %s"
 msgstr "Date invalide : %s. Doit être entre %s et %s"
 
-# ??? Objet "fiche" ?
 #: lclstrconsts.rsinvalidformobjectstream
 #, fuzzy
 msgid "invalid Form object stream"
@@ -1012,7 +1041,6 @@ msgstr "Olive"
 msgid "Select a date"
 msgstr "Choisir une date"
 
-# ??? Pas de meilleure traduction ?
 #: lclstrconsts.rspixmap
 msgid "Pixmap"
 msgstr "Pixmap"
@@ -1033,7 +1061,6 @@ msgstr "Portable Network Graphic"
 msgid "Portable PixMap"
 msgstr "Portable PixMap"
 
-# Dans quel contexte ???
 #: lclstrconsts.rspostrecordhint
 #, fuzzy
 msgid "Post"
@@ -1049,6 +1076,10 @@ msgstr "%s%s Pressez OK pour ignorer et risquer des données corruption.%s Press
 msgctxt "lclstrconsts.rspriorrecordhint"
 msgid "Prior"
 msgstr "Précédent"
+
+#: lclstrconsts.rspromptonreplace
+msgid "Prompt on replace"
+msgstr ""
 
 #: lclstrconsts.rspropertydoesnotexist
 msgid "Property %s does not exist"
@@ -1146,7 +1177,6 @@ msgstr ""
 msgid "-visual TrueColor, forces the application to use a TrueColor visual on an 8-bit display."
 msgstr ""
 
-# ??? Dans quel contexte ?
 #: lclstrconsts.rsrasterimageendupdate
 msgid "Endupdate while no update in progress"
 msgstr ""
@@ -1208,6 +1238,10 @@ msgstr "  taille "
 msgid "Sky Blue"
 msgstr "Bleu ciel"
 
+#: lclstrconsts.rstcustomtabcontrolaccessibilitydescription
+msgid "A control with tabs"
+msgstr ""
+
 #: lclstrconsts.rstealcolorcaption
 msgid "Teal"
 msgstr "Sarcelle"
@@ -1219,6 +1253,18 @@ msgstr "Texte"
 #: lclstrconsts.rstiff
 msgid "Tagged Image File Format"
 msgstr "Tagged Image File Format"
+
+#: lclstrconsts.rstpanelaccessibilitydescription
+msgid "Panel"
+msgstr ""
+
+#: lclstrconsts.rstsplitteraccessibilitydescription
+msgid "A grip to control how much size to give two parts of an area"
+msgstr ""
+
+#: lclstrconsts.rsttreeviewaccessibilitydescription
+msgid "A tree of items"
+msgstr ""
 
 #: lclstrconsts.rsunabletoloaddefaultfont
 msgid "Unable to load default font"
@@ -1240,7 +1286,6 @@ msgstr "Format d'image inconnu"
 msgid "Unsupported bitmap format."
 msgstr "Format bitmap non supporté."
 
-# Dans quelle contexte ?
 #: lclstrconsts.rsunsupportedclipboardformat
 #, fuzzy
 msgid "Unsupported clipboard format: %s"
@@ -1334,6 +1379,10 @@ msgstr "Taille d'image non valide"
 msgid "Invalid ImageList Index"
 msgstr "Index de liste d'images non valide"
 
+#: lclstrconsts.smaskeditnomatch
+msgid "The current text does not match the specified mask."
+msgstr ""
+
 #: lclstrconsts.smenuindexerror
 msgid "Menu index out of range"
 msgstr "Index de menu hors limites"
@@ -1380,7 +1429,6 @@ msgstr "Entrée"
 msgid "Esc"
 msgstr "Esc"
 
-# Je préfère traduire par "Origine" plutôt que par "Maison"...
 #: lclstrconsts.smkchome
 msgctxt "lclstrconsts.smkchome"
 msgid "Home"
@@ -1420,7 +1468,6 @@ msgstr "Shift+"
 msgid "Space"
 msgstr "Espace"
 
-# ???
 #: lclstrconsts.smkctab
 msgctxt "lclstrconsts.smkctab"
 msgid "Tab"
@@ -1452,7 +1499,9 @@ msgid "Invalid integer number: %s"
 msgstr "Nombre entier non valide : %s"
 
 #: lclstrconsts.sparlocinfo
-msgid " (at %d,%d, stream offset %.8x)"
+#, fuzzy
+#| msgid " (at %d,%d, stream offset %.8x)"
+msgid " (at %d,%d, stream offset %d)"
 msgstr " (à %d,%d, stream offset %.8x)"
 
 #: lclstrconsts.sparunterminatedbinvalue
