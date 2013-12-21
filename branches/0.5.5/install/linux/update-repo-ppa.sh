@@ -3,7 +3,7 @@
 # This script updates Double Commander Personal Package Archive (PPA) repository
 
 # Set Double Commander version
-DC_VER=0.5.7
+DC_VER=0.5.8
 # Set Ubuntu series
 DISTRO=( precise quantal raring saucy )
 
@@ -38,7 +38,7 @@ update_doublecmd()
   # Remove help files
   rm -rf $DC_SOURCE_DIR/doc/en
   rm -rf $DC_SOURCE_DIR/doc/ru
-  rm -rf $DC_SOURCE_DIR/doc/uk
+  rm -rf $DC_SOURCE_DIR/doc/uk_UA
 
   # Create doublecmd-x.x.x.orig.tar.gz
   pushd $DC_SOURCE_DIR/..
@@ -80,7 +80,7 @@ update_doublecmd_svn()
   # Remove help files
   rm -rf $DC_SOURCE_DIR/doc/en
   rm -rf $DC_SOURCE_DIR/doc/ru
-  rm -rf $DC_SOURCE_DIR/doc/uk
+  rm -rf $DC_SOURCE_DIR/doc/uk_UA
 
   # Prepare debian directory
   mkdir -p $DC_SOURCE_DIR/debian
