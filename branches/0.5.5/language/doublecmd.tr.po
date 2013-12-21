@@ -2852,10 +2852,9 @@ msgid "Wipe"
 msgstr "Temizle"
 
 #: tfrmmain.btnf10.caption
-#, fuzzy
-#| msgid "Exit F10"
+msgctxt "tfrmmain.btnf10.caption"
 msgid "Exit"
-msgstr "Çıkış F10"
+msgstr "Çıkış"
 
 #: tfrmmain.btnf8.caption
 msgctxt "tfrmmain.btnf8.caption"
@@ -4897,9 +4896,7 @@ msgid "Fi&le system plugins allow access to disks inaccessible by operating syst
 msgstr "Dosya sistemi eklentileri işletim sistemi tarafından ulaşılmaz disklere veya (Palm/PocketPC) gibi harici cihazlara erişim sağlar"
 
 #: tfrmoptionsplugins.lblwlxdescription.caption
-#, fuzzy
-#| msgid "Viewer plugins allow to display file formats like images, spreadsheets, databases etc. in Viewer (F3, Ctrl+Q)"
-msgctxt "TFRMOPTIONSPLUGINS.LBLWLXDESCRIPTION.CAPTION"dosya tipi imgeleri ğibigörüntülemek için izin verresimlerin"
+msgctxt "TFRMOPTIONSPLUGINS.LBLWLXDESCRIPTION.CAPTION"
 msgid "Vie&wer plugins allow to display file formats like images, spreadsheets, databases etc. in Viewer (F3, Ctrl+Q)"
 msgstr "Görüntüleyici eklentilerine izin ver, dosya tipleri,resimler,elektronik tablolar, veritabanları vb. gibi.gösterilmesini sağlar(F3, Ctrl+Q)"
 

@@ -1,8 +1,8 @@
- Slovenian translations for double-commander.
- Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
- This file is distributed under the same license as the double-commander package.
-
- Matej Urbančič <mateju@svn.gnome.org>, 2011 - 2013.
+# Slovenian translations for double-commander.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# This file is distributed under the same license as the double-commander package.
+#
+# Matej Urbančič <mateju@svn.gnome.org>, 2011 - 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: double-commander 0.5.5 alpha\n"
@@ -7194,7 +7194,7 @@ msgstr "Uporabniško ime (požarni zid):"
 msgid "Volume label:"
 msgstr "Oznaka dela arhiva:"
 
- This should be multiple plural !!!!
+# This should be multiple plural !!!!
 #: ulng.rsmsgvolumesizeenter
 msgid "Please enter the volume size:"
 msgstr "Velikost dela arhiva:"
@@ -8057,12 +8057,6 @@ msgctxt "ulng.rsviewencoding"
 msgid "Encoding"
 msgstr "Nabor znakov"
 
-~ msgctxt "tfrmoptionsmisc.dblthumbnails.caption"
-~ msgid "Thumbnails"
-~ msgstr "Sličice"
-~ msgctxt "tfrmoptionsmisc.lblthumbseparator.caption"
-~ msgid "X"
-~ msgstr "X"
 #: ulng.rsviewnotfound
 msgid "%s not found!"
 msgstr "%s ni mogoče najti!"
