@@ -1127,7 +1127,7 @@ begin
                 ToolItem.StartPath := aFile.Path;
                 ToolItem.Icon := aFile.FullPath;
                 ToolItem.Hint := ExtractOnlyFileName(aFile.Name);
-                ToolItem.Text := ExtractOnlyFileName(aFile.Name);
+                // ToolItem.Text := ExtractOnlyFileName(aFile.Name);
                 MainToolBar.InsertButton(Sender as TKASToolButton, ToolItem);
 
                 NumberOfMoveButton := (Sender as TSpeedButton).Tag;
@@ -1707,7 +1707,7 @@ begin
           ToolItem.Command := aFile.FullPath;
           ToolItem.StartPath := aFile.Path;
           ToolItem.Hint := ExtractOnlyFileName(aFile.Name);
-          ToolItem.Text := ExtractOnlyFileName(aFile.Name);
+          // ToolItem.Text := ExtractOnlyFileName(aFile.Name);
           ToolItem.Icon := aFile.FullPath;
           MainToolBar.AddButton(ToolItem);
         end;
@@ -5188,6 +5188,14 @@ end;
 procedure TfrmMain.OnDriveWatcherEvent(EventType: TDriveWatcherEvent; const ADrive: PDrive);
 begin
   UpdateDiskCount;
+
+  if (EventType = dweDriveRemoved) and Assigned(ADrive) then
+  begin
+    if IsInPath(ADrive^.Path, ActiveFrame.CurrentPath, True, True) then
+      ActiveFrame.CurrentPath:= gpExePath
+    else if IsInPath(ADrive^.Path, NotActiveFrame.CurrentPath, True, True) then
+      NotActiveFrame.CurrentPath:= gpExePath;
+  end;
 end;
 
 procedure TfrmMain.AppActivate(Sender: TObject);
