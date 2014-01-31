@@ -7320,7 +7320,7 @@ msgstr "Vel.: %s/s"
 #, fuzzy
 #| msgid "Speed %s/s, time remaining s%"
 msgid "Speed %s/s, time remaining %s"
-msgstr "Vel.: %s/s, queda: s%"
+msgstr "Velocidad: %s/s, tiempo restante: %s"
 
 #: ulng.rsdlgsplit
 #, fuzzy
