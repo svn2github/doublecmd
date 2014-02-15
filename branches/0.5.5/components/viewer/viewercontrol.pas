@@ -38,7 +38,7 @@
    a) File mapping blocks writing into file by other processes.
       Either:
       + Open small text files by reading them all into memory (done).
-      - Change file mapping to custom loading/caching portions of file in memory
+      - Add optional custom loading/caching portions of file in memory
         and only reading from file when neccessary.
 
    b) Searching in Unicode encodings and case-insensitive searching.
@@ -152,7 +152,7 @@ type
   { TViewerControl }
 
   TViewerControl = class(TCustomControl)
-  private
+  protected
     FEncoding:           TViewerEncoding;
     FViewerMode:         TViewerMode;
     FFileName:           UTF8String;
@@ -188,7 +188,7 @@ type
     procedure SetPercent(const AValue: Integer);
     procedure SetBlockBegin(const AValue: PtrInt);
     procedure SetBlockEnd(const AValue: PtrInt);
-    procedure SetPosition(Value: PtrInt);
+    procedure SetPosition(Value: PtrInt); virtual;
     procedure SetHPosition(Value: Integer);
     procedure SetPosition(Value: PtrInt; Force: Boolean); overload;
     procedure SetHPosition(Value: Integer; Force: Boolean); overload;
@@ -270,7 +270,7 @@ type
     procedure OutHex(x, y: Integer; sText: string; StartPos: PtrInt; DataLength: Integer);
     procedure OutBin(x, y: Integer; sText: string; StartPos: PtrInt; DataLength: Integer);
     procedure WriteText;
-    procedure WriteHex;
+    procedure WriteHex; virtual;
     procedure WriteBin;
     function TransformText(const sText: UTF8String; const Xoffset: Integer): UTF8String;
     function TransformHex(var aPosition: PtrInt; aLimit: PtrInt): AnsiString;

@@ -1,6 +1,6 @@
 {
    Copyright (C) 2004  Flavio Etrusco
-   Copyright (C) 2011  Koblov Alexander (Alexx2000@mail.ru)
+   Copyright (C) 2011-2014  Alexander Koblov (alexx2000@mail.ru)
 
    All rights reserved.
 
@@ -96,31 +96,21 @@ uses
 { TSynDiffHighlighter }
 
 procedure TSynDiffHighlighter.ComputeTokens(const aOldLine, aNewLine: String);
-const
-  skipChar = #10;
 var
   I: Integer;
-  lastKind: TChangeKind;
-  lastToken: String;
+  LastKind: TChangeKind;
+  LastToken: String;
+  FirstToken: Boolean = True;
 
   procedure AddTokenIfNeed(Symbol: Char; Kind: TChangeKind);
   begin
-    if (Kind = lastKind) then // Same Kind, no need to change colors
-    begin
-      if Symbol = skipChar then
-        lastToken:= #32
-      else
-        lastToken := lastToken + Symbol;
-    end
-    else
-      begin
-        fTokens.AddObject(lastToken, TObject(PtrInt(lastKind)));
-        if Symbol = skipChar then
-          lastToken:= #32
-        else
-          lastToken := Symbol;
-        lastKind := Kind;
-      end;
+    if (Kind = LastKind) then // Same Kind, no need to change colors
+      LastToken := LastToken + Symbol
+    else begin
+      fTokens.AddObject(LastToken, TObject(PtrInt(LastKind)));
+      LastToken := Symbol;
+      LastKind := Kind;
+    end;
   end;
 
 begin
@@ -131,8 +121,7 @@ begin
     fDiff.Execute(PChar(aOldLine), PChar(aNewLine), Length(aOldLine), Length(aNewLine));
 
   // Prepare diffs to display
-  lastKind := ckNone;
-  lastToken:= EmptyStr;
+  LastToken:= EmptyStr;
 
   for I := 0 to fDiff.Count - 1 do
     with fDiff.Compares[I] do
@@ -140,24 +129,32 @@ begin
       if not Assigned(Editor.OriginalFile) then // Original file
         begin
           // Show changes for original file
-          // with spaces for adds to align with modified file
-          if Kind = ckAdd then
-            AddTokenIfNeed(skipChar, Kind)
-          else
+          if Kind <> ckAdd then
+          begin
+            if FirstToken then
+            begin
+              LastKind:= Kind;
+              FirstToken:= False;
+            end;
             AddTokenIfNeed(chr1, Kind);
+          end;
         end
       else if not Assigned(Editor.ModifiedFile) then // Modified file
         begin
           // Show changes for modified file
-          // with spaces for deletes to align with original file
-          if Kind = ckDelete then
-            AddTokenIfNeed(skipChar, Kind)
-          else
+          if Kind <> ckDelete then
+          begin
+            if FirstToken then
+            begin
+              LastKind:= Kind;
+              FirstToken:= False;
+            end;
             AddTokenIfNeed(chr2, Kind);
+          end;
         end;
     end;
   // Add last token
-  fTokens.AddObject(lastToken, TObject(PtrInt(lastKind)));
+  fTokens.AddObject(LastToken, TObject(PtrInt(LastKind)));
 end;
 
 constructor TSynDiffHighlighter.Create(aOwner: TComponent);
@@ -305,7 +302,7 @@ begin
       vOtherEdit := Editor.ModifiedFile;
     end;
 
-  if Editor.DiffKind[aLineNumber] = ckModify then
+  if Editor.Lines.Kind[aLineNumber] = ckModify then
     fDefaultAttriPointer := fUnmodifiedAttribute
   else
     fDefaultAttriPointer := fWhitespaceAttribute;
@@ -315,7 +312,7 @@ begin
   vNewLine := aNewValue;
   if Length(vNewLine) <> 0 then
     begin
-      if (Length(vOldLine) <> 0) and (Editor.DiffKind[aLineNumber] = ckModify) then
+      if (Length(vOldLine) <> 0) and (Editor.Lines.Kind[aLineNumber] = ckModify) then
         ComputeTokens(vOldLine, vNewLine)
       else
         fTokens.Add(vNewLine);
@@ -354,4 +351,4 @@ begin
 end;
 
 end.
-
+
