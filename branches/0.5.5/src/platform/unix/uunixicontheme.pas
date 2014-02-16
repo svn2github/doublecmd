@@ -3,7 +3,7 @@
     -------------------------------------------------------------------------
     Some useful functions for Icon Theme implementation
 
-    Copyright (C) 2009-2010  Koblov Alexander (Alexx2000@mail.ru)
+    Copyright (C) 2009-2014  Alexander Koblov (alexx2000@mail.ru)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -36,6 +36,15 @@ var
   UnixIconThemesBaseDirList: array of String;
 
 function GetCurrentIconTheme: String;
+
+  TUnixIconTheme = class(TIconTheme)
+  protected
+    function CreateParentTheme(const sThemeName: String): TIconTheme; override;
+  public
+    constructor Create; reintroduce;
+    constructor Create(sThemeName: String; BaseDirList: array of String); override;
+    function Load: Boolean; override;
+  end;
 
 implementation
 
@@ -179,15 +188,60 @@ begin
     Result:= DEFAULT_THEME_NAME;
 end;
 
+var
+  FDesktopEnvironment: Cardinal;
+  UnixIconThemesBaseDirList: array of String;
+
 procedure InitIconThemesBaseDirList;
+var
+  Home: String;
+  I: Integer = 1;
 begin
+  Home := GetHomeDir;
   SetLength(UnixIconThemesBaseDirList, 6);
-  UnixIconThemesBaseDirList[0] := GetHomeDir + '/.icons';
-  UnixIconThemesBaseDirList[1] := GetHomeDir + '/.local/share/icons';
-  UnixIconThemesBaseDirList[2] := '/usr/local/share/icons';
-  UnixIconThemesBaseDirList[3] := '/usr/local/share/pixmaps';
-  UnixIconThemesBaseDirList[4] := '/usr/share/icons';
-  UnixIconThemesBaseDirList[5] := '/usr/share/pixmaps';
+  FDesktopEnvironment := GetDesktopEnvironment;
+  UnixIconThemesBaseDirList[0] := Home + '/.icons';
+  UnixIconThemesBaseDirList[1] := Home + '/.local/share/icons';
+  if FDesktopEnvironment = DE_KDE then
+  begin
+    I:= 3;
+    SetLength(UnixIconThemesBaseDirList, 8);
+    UnixIconThemesBaseDirList[2] := Home + '/.kde/share/icons';
+    UnixIconThemesBaseDirList[3] := Home + '/.kde4/share/icons';
+  end;
+  UnixIconThemesBaseDirList[I + 1] := '/usr/local/share/icons';
+  UnixIconThemesBaseDirList[I + 2] := '/usr/local/share/pixmaps';
+  UnixIconThemesBaseDirList[I + 3] := '/usr/share/icons';
+  UnixIconThemesBaseDirList[I + 4] := '/usr/share/pixmaps';
+end;
+
+{ TUnixIconTheme }
+
+function TUnixIconTheme.CreateParentTheme(const sThemeName: String): TIconTheme;
+begin
+  Result:= TUnixIconTheme.Create(sThemeName, FBaseDirListAtCreate);
+end;
+
+constructor TUnixIconTheme.Create;
+begin
+  inherited Create(GetCurrentIconTheme, UnixIconThemesBaseDirList);
+end;
+
+constructor TUnixIconTheme.Create(sThemeName: String;
+  BaseDirList: array of String);
+begin
+  inherited Create(sThemeName, BaseDirList);
+end;
+
+function TUnixIconTheme.Load: Boolean;
+begin
+  Result:= inherited Load;
+  // add default theme if needed
+  if Result and Assigned(FInherits) then
+  begin
+    LoadParentTheme(DEFAULT_THEME_NAME);
+    if (FDesktopEnvironment = DE_KDE) then LoadParentTheme(DEFAULT_THEME_KDE4);
+  end;
 end;
 
 initialization
