@@ -9,7 +9,7 @@
    
    contributors:
    
-   Copyright (C) 2006-2011  Koblov Alexander (Alexx2000@mail.ru)
+   Copyright (C) 2006-2013  Koblov Alexander (Alexx2000@mail.ru)
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
@@ -270,7 +270,7 @@ type
     }
     function GetIconByFile(AFile: TFile; DirectAccess: Boolean; LoadIcon: Boolean;
                            IconsMode: TShowIconsMode; GetIconWithLink: Boolean): PtrInt;
-    {$IF DEFINED(MSWINDOWS)}
+    {$IF DEFINED(MSWINDOWS) OR DEFINED(RabbitVCS)}
     {en
        Retrieves overlay icon index for a file.
 
@@ -305,21 +305,24 @@ implementation
 uses
   LCLIntf, LCLType, LCLProc, Forms, uGlobsPaths, WcxPlugin,
   DCStrUtils, uDCUtils, uFileSystemFileSource, uReSample, uDebug,
-  DCOSUtils
+  DCOSUtils, DCClassesUtf8
   {$IFDEF LCLGTK2}
     , uPixMapGtk, gdk2pixbuf, gdk2, glib2
   {$ENDIF}
   {$IFDEF MSWINDOWS}
     , CommCtrl, ShellAPI, Windows, uIcoFiles, uGdiPlus, IntfGraphics, uShlObjAdditional
   {$ELSE}
-    , StrUtils, DCBasicTypes, DCClassesUtf8
+    , StrUtils, DCBasicTypes
   {$ENDIF}
   {$IFDEF DARWIN}
     , CocoaAll, MacOSAll, uClassesEx
   {$ENDIF}
+  {$IFDEF RabbitVCS}
+  , Math, uRabbitVCS
+  {$ENDIF}
   ;
 
-{$IFDEF MSWINDOWS}
+{$IF DEFINED(MSWINDOWS) OR DEFINED(RabbitVCS)}
 const
   SystemIconIndexStart: PtrInt = High(PtrInt) div 2;
 {$ENDIF}
@@ -1208,7 +1211,7 @@ end;
 
 procedure TPixMapManager.Load(const sFileName: String);
 var
-  slPixmapList: TStringList;
+  slPixmapList: TStringListEx;
   s:String;
   sExt, sPixMap:String;
   iekv:integer;
@@ -1309,7 +1312,7 @@ begin
   // Load icons from pixmaps.txt only if "Only standart icons" enabled
   if (gShowIcons = sim_standart) and mbFileExists(sFileName) then
   try
-    slPixmapList:= TStringList.Create;
+    slPixmapList:= TStringListEx.Create;
     try
       slPixmapList.LoadFromFile(sFileName);
       for I:= 0 to slPixmapList.Count - 1 do
@@ -1526,13 +1529,15 @@ begin
           Result:= DrawBitmap(FiEmblemUnreadableID, Canvas, X + I, Y + I, I, I);
       end;
     end
-  {$IFDEF MSWINDOWS}
+  {$IF DEFINED(MSWINDOWS) OR DEFINED(RabbitVCS)}
   else
     // Windows XP doesn't draw link overlay icon for soft links (don't know about Vista or 7).
     if DirectAccess then
     begin
       if AFile.IconOverlayID >= SystemIconIndexStart then
-        Result:= DrawBitmap(AFile.IconOverlayID, Canvas, X, Y);
+        Result:= DrawBitmap(AFile.IconOverlayID
+                            {$IFDEF RabbitVCS} - SystemIconIndexStart {$ENDIF},
+                            Canvas, X, Y);
     end;
   {$ENDIF}
     ;
@@ -1752,6 +1757,21 @@ begin
   else
     Result:= -1;
 end;
+{$ELSEIF DEFINED(RabbitVCS)}
+function TPixMapManager.GetIconOverlayByFile(AFile: TFile; DirectAccess: Boolean): PtrInt;
+var
+  Emblem: String;
+begin
+  if RabbitVCS and DirectAccess then
+  begin
+    Emblem:= CheckStatus(AFile.FullPath);
+    if Length(Emblem) = 0 then Exit(0);
+    Result:= CheckAddThemePixmap(Emblem);
+    Result:= IfThen(Result < 0, 0, Result + SystemIconIndexStart);
+  end
+  else
+    Result:= 0;
+end;
 {$ENDIF}
 
 function TPixMapManager.GetIconByName(const AIconName: UTF8String): PtrInt;
@@ -1951,4 +1971,4 @@ finalization
   end;
 
 end.
-
+
