@@ -3,7 +3,7 @@
    -------------------------------------------------------------------------
    Path edit class with auto complete feature
 
-   Copyright (C) 2012  Alexander Koblov (alexx2000@mail.ru)
+   Copyright (C) 2012-2014  Alexander Koblov (alexx2000@mail.ru)
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
@@ -195,6 +195,7 @@ begin
     FPanel.Width:= Width;
     FPanel.Visible:= True;
 
+    Application.AddOnDeactivateHandler(FormChangeBoundsEvent, True);
     GetParentForm(Self).AddHandlerOnChangeBounds(FormChangeBoundsEvent, True);
   end;
 end;
@@ -206,6 +207,7 @@ begin
     FPanel.Visible:= False;
     FListBox.Parent:= nil;
     FreeAndNil(FPanel);
+    Application.RemoveOnDeactivateHandler(FormChangeBoundsEvent);
     GetParentForm(Self).RemoveHandlerOnChangeBounds(FormChangeBoundsEvent);
   end;
 end;
@@ -281,7 +283,13 @@ end;
 procedure TKASPathEdit.KeyUpAfterInterface(var Key: Word; Shift: TShiftState);
 begin
   if (FKeyDown = Key) and FAutoComplete and not (Key in [VK_ESCAPE, VK_RETURN, VK_SELECT, VK_UP, VK_DOWN]) then
-    AutoComplete(Text);
+  begin
+    if Modified then
+    begin
+      Modified:= False;
+      AutoComplete(Text);
+    end;
+  end;
   inherited KeyUpAfterInterface(Key, Shift);
 {$IF DEFINED(LCLWIN32)}
   // Windows auto-completer eats the TAB so LCL doesn't get it and doesn't move to next control.

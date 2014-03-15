@@ -8,7 +8,7 @@
 
    contributors:
 
-   Copyright (C) 2007-2013  Koblov Alexander (Alexx2000@mail.ru)
+   Copyright (C) 2007-2014  Koblov Alexander (Alexx2000@mail.ru)
 }
 
 unit fMultiRename;
@@ -763,9 +763,7 @@ procedure TfrmMultiRename.btnNameMenuClick(Sender: TObject);
 begin
   ppNameMenu.AutoPopup:= False;
   FillContentFieldMenu(miPlugin, @miPluginClick);
-  ppNameMenu.Popup(gbMaska.Parent.Left+gbMaska.Left+
-                    btnNameMenu.Left,gbMaska.Parent.Top+
-                    gbMaska.Top+btnNameMenu.Top);
+  btnNameMenu.PopupMenu.PopUp;
   ppNameMenu.Tag:= 0;
 end;
 
@@ -773,9 +771,7 @@ procedure TfrmMultiRename.btnExtMenuClick(Sender: TObject);
 begin
   ppNameMenu.AutoPopup:= False;
   FillContentFieldMenu(miPlugin, @miPluginClick);
-  ppNameMenu.Popup(gbMaska.Parent.Left+gbMaska.Left+
-                    btnExtMenu.Left,gbMaska.Parent.Top+
-                    gbMaska.Top+btnExtMenu.Top);
+  btnExtMenu.PopupMenu.PopUp;
   ppNameMenu.Tag:= 1;
 end;
 
@@ -786,21 +782,21 @@ end;
 
 procedure TfrmMultiRename.NameXClick(Sender: TObject);
 var
-  iSelStart, iSelFinish: LongInt;
+  ASelection: TPoint;
 begin
-  if ShowSelectTextRangeDlg(Caption, FFiles[0].NameNoExt, iSelStart, iSelFinish) then
+  if ShowSelectTextRangeDlg(Self, Caption, FFiles[0].NameNoExt, ASelection) then
   begin
-    InsertMask('[N' + IntToStr(iSelStart) + ']', ppNameMenu.Tag);
+    InsertMask('[N' + IntToStr(ASelection.X) + ']', ppNameMenu.Tag);
   end;
 end;
 
 procedure TfrmMultiRename.NameXXClick(Sender: TObject);
 var
-  iSelStart, iSelFinish: LongInt;
+  ASelection: TPoint;
 begin
-  if ShowSelectTextRangeDlg(Caption, FFiles[0].NameNoExt, iSelStart, iSelFinish) then
+  if ShowSelectTextRangeDlg(Self, Caption, FFiles[0].NameNoExt, ASelection) then
   begin
-    InsertMask('[N' + IntToStr(iSelStart) + ':' + IntToStr(iSelFinish) + ']', ppNameMenu.Tag);
+    InsertMask('[N' + IntToStr(ASelection.X) + ':' + IntToStr(ASelection.Y) + ']', ppNameMenu.Tag);
   end;
 end;
 
@@ -811,21 +807,21 @@ end;
 
 procedure TfrmMultiRename.ExtensionXClick(Sender: TObject);
 var
-  iSelStart, iSelFinish: LongInt;
+  ASelection: TPoint;
 begin
-  if ShowSelectTextRangeDlg(Caption, FFiles[0].Extension, iSelStart, iSelFinish) then
+  if ShowSelectTextRangeDlg(Self, Caption, FFiles[0].Extension, ASelection) then
   begin
-    InsertMask('[E' + IntToStr(iSelStart) + ']', ppNameMenu.Tag);
+    InsertMask('[E' + IntToStr(ASelection.X) + ']', ppNameMenu.Tag);
   end;
 end;
 
 procedure TfrmMultiRename.ExtensionXXClick(Sender: TObject);
 var
-  iSelStart, iSelFinish: LongInt;
+  ASelection: TPoint;
 begin
-  if ShowSelectTextRangeDlg(Caption, FFiles[0].Extension, iSelStart, iSelFinish) then
+  if ShowSelectTextRangeDlg(Self, Caption, FFiles[0].Extension, ASelection) then
   begin
-    InsertMask('[E' + IntToStr(iSelStart) + ':' + IntToStr(iSelFinish) + ']', ppNameMenu.Tag);
+    InsertMask('[E' + IntToStr(ASelection.X) + ':' + IntToStr(ASelection.Y) + ']', ppNameMenu.Tag);
   end;
 end;
 

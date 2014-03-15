@@ -6,17 +6,20 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ButtonPanel, Buttons;
+  ButtonPanel, Buttons, uOSForms;
 
 type
 
   { TfrmSelectTextRange }
 
-  TfrmSelectTextRange = class(TForm)
+  TfrmSelectTextRange = class(TModalForm)
     btpPanel: TButtonPanel;
     edtSelectText: TEdit;
     lblSelectText: TLabel;
-    procedure edtSelectTextExit(Sender: TObject);
+    procedure edtSelectTextKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure edtSelectTextMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
     FSelStart,
     FSelFinish: LongInt;
@@ -24,17 +27,17 @@ type
     { public declarations }
   end; 
 
-function ShowSelectTextRangeDlg(const ACaption, AText: UTF8String;
-                                out iSelStart, iSelFinish: LongInt): Boolean;
+function ShowSelectTextRangeDlg(TheOwner: TCustomForm; const ACaption,
+                                AText: UTF8String; out ASelection: TPoint): Boolean;
 
 implementation
 
 {$R *.lfm}
 
-function ShowSelectTextRangeDlg(const ACaption, AText: UTF8String;
-                                out iSelStart, iSelFinish: LongInt): Boolean;
+function ShowSelectTextRangeDlg(TheOwner: TCustomForm; const ACaption,
+                                AText: UTF8String; out ASelection: TPoint): Boolean;
 begin
-  with TfrmSelectTextRange.Create(Application) do
+  with TfrmSelectTextRange.Create(TheOwner) do
   try
      Caption:= ACaption;
      edtSelectText.Text:= AText;
@@ -43,8 +46,8 @@ begin
 
      if Result then
      begin
-       iSelStart:= FSelStart;
-       iSelFinish:= FSelFinish;
+       ASelection.X:= FSelStart;
+       ASelection.Y:= FSelFinish;
        Result:= (FSelFinish >= FSelStart);
      end;
   finally
@@ -54,7 +57,15 @@ end;
 
 { TfrmSelectTextRange }
 
-procedure TfrmSelectTextRange.edtSelectTextExit(Sender: TObject);
+procedure TfrmSelectTextRange.edtSelectTextKeyUp(Sender: TObject;
+  var Key: Word; Shift: TShiftState);
+begin
+  FSelStart:= edtSelectText.SelStart + 1;
+  FSelFinish:= edtSelectText.SelStart + edtSelectText.SelLength;
+end;
+
+procedure TfrmSelectTextRange.edtSelectTextMouseUp(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
   FSelStart:= edtSelectText.SelStart + 1;
   FSelFinish:= edtSelectText.SelStart + edtSelectText.SelLength;
