@@ -34,7 +34,7 @@ uses
 {$I revision.inc} // Lazarus revision number
 
 const
-  dcVersion   = '0.5.8 beta';
+  dcVersion   = '0.5.9 beta';
   dcBuildDate = {$I %DATE%};
   lazVersion  = lcl_version;         // Lazarus version (major.minor.micro)
   lazRevision = RevisionStr;         // Lazarus SVN revision
