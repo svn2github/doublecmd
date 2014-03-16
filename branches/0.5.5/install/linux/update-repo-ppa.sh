@@ -5,7 +5,7 @@
 # Set Double Commander version
 DC_VER=0.5.9
 # Set Ubuntu series
-DISTRO=( precise quantal raring saucy )
+DISTRO=( precise quantal saucy trusty )
 
 # Temp directory
 DC_TEMP_DIR=/var/tmp/doublecmd-$(date +%y.%m.%d)
@@ -54,7 +54,7 @@ update_doublecmd()
   do
     # Update changelog file
     pushd $DC_SOURCE_DIR/debian
-    dch -m -D $DIST -v $DC_VER-0+svn$DC_REVISION~$DIST "Update to revision $DC_REVISION"
+    dch -D $DIST -v $DC_VER-0+svn$DC_REVISION~$DIST "Non-maintainer upload (revision $DC_REVISION)"
     popd
 
     # Create archive with source code
@@ -92,7 +92,7 @@ update_doublecmd_svn()
   do
     # Update changelog file
     pushd $DC_SOURCE_DIR/debian
-    dch -m -D $DIST -v $DC_VER-0+svn$DC_REVISION~$DIST "Update to revision $DC_REVISION"
+    dch -D $DIST -v $DC_VER-0+svn$DC_REVISION~$DIST "Non-maintainer upload (revision $DC_REVISION)"
     popd
 
     # Create archive with source code
