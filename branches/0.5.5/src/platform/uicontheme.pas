@@ -90,7 +90,11 @@ type
 implementation
 
 uses
-  LCLProc, StrUtils, uDebug, uFindEx, DCBasicTypes, DCOSUtils, DCStrUtils;
+  LCLProc, StrUtils, uDebug, uFindEx, DCBasicTypes, DCOSUtils, DCStrUtils
+  {$IF DEFINED(UNIX) AND NOT DEFINED(DARWIN)}
+  , uUnixIconTheme
+  {$ENDIF}
+  ;
 
 var
   IconExtensionList: TDynamicStringArray;
