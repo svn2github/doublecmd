@@ -465,6 +465,7 @@ type
     procedure frmMainShow(Sender: TObject);
     procedure mnuDropClick(Sender: TObject);
     procedure mnuSplitterPercentClick(Sender: TObject);
+    procedure mnuTabMenuExecute(Sender: TObject);
     procedure mnuTabMenuClick(Sender: TObject);
     procedure nbPageAfterMouseDown(Data: PtrInt);
     procedure nbPageMouseDown(Sender: TObject; Button: TMouseButton;
@@ -758,11 +759,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
     Result.OnCloseTabClicked := @NotebookCloseTabClicked;
     Result.OnMouseDown := @nbPageMouseDown;
     Result.OnMouseUp := @nbPageMouseUp;
-    {$IF DECLARED(lcl_fullversion) and (lcl_fullversion >= 093100) and (lazRevision >= lazRevOnPageChangedRemoved)}
     Result.OnChange := @nbPageChanged;
-    {$ELSE}
-    Result.OnPageChanged := @nbPageChanged;
-    {$ENDIF}
     Result.OnDblClick := @pnlLeftRightDblClick;
   end;
   function GenerateTitle():String;
@@ -1907,6 +1904,11 @@ begin
   end;
 end;
 
+procedure TfrmMain.mnuTabMenuExecute(Sender: TObject);
+begin
+  (Sender as TAction).OnExecute:= @actExecute;
+end;
+
 procedure TfrmMain.mnuTabMenuClick(Sender: TObject);
 var
   Cmd: String;
@@ -1937,6 +1939,10 @@ begin
 
     Commands.Commands.ExecuteCommand(Cmd, NoteBook.Name);
   end;
+  {$IF (lcl_fullversion >= 1020000)}
+  // On click first the OnClick and then the Action.OnExecute is called
+  MenuItem.Action.OnExecute:= @mnuTabMenuExecute;
+  {$ENDIF}
 end;
 
 procedure TfrmMain.nbPageAfterMouseDown(Data: PtrInt);
