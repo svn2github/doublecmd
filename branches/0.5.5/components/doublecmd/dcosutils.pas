@@ -3,7 +3,7 @@
     -------------------------------------------------------------------------
     This unit contains platform dependent functions dealing with operating system.
 
-    Copyright (C) 2006-2012  Koblov Alexander (Alexx2000@mail.ru)
+    Copyright (C) 2006-2014  Koblov Alexander (Alexx2000@mail.ru)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -48,11 +48,6 @@ type
 const
   faInvalidAttributes: TFileAttrs = TFileAttrs(-1);
   CopyAttributesOptionCopyAll = [caoCopyAttributes, caoCopyTime, caoCopyOwnership];
-
-// From Lazarus LCL.
-// Once switched to Lazarus 1.0 we can use package LazUtils instead and remove those.
-function UTF8ToSys(const s: string): string;// as UTF8ToAnsi but more independent of widestringmanager
-function SysToUTF8(const s: string): string;// as AnsiToUTF8 but more independent of widestringmanager
 
 {en
    Is file a directory
@@ -121,6 +116,7 @@ function mbFileCreate(const FileName: UTF8String): System.THandle; overload;
 function mbFileCreate(const FileName: UTF8String; ShareMode: Longint): System.THandle; overload;
 function mbFileCreate(const FileName: UTF8String; ShareMode: Longint; Rights: Longint): System.THandle; overload;
 function mbFileAge(const FileName: UTF8String): DCBasicTypes.TFileTime;
+function mbFileSame(const FirstName, SecondName: UTF8String): Boolean;
 // On success returns True.
 function mbFileGetTime(const FileName: UTF8String;
                        var ModificationTime: DCBasicTypes.TFileTime;
@@ -139,8 +135,9 @@ function mbFileSetTime(const FileName: UTF8String;
 }
 function mbFileExists(const FileName: UTF8String): Boolean;
 function mbFileAccess(const FileName: UTF8String; Mode: Word): Boolean;
-function mbFileGetAttr(const FileName: UTF8String): TFileAttrs;
-function mbFileSetAttr (const FileName: UTF8String; Attr: TFileAttrs) : LongInt;
+function mbFileGetAttr(const FileName: UTF8String): TFileAttrs; overload;
+function mbFileSetAttr(const FileName: UTF8String; Attr: TFileAttrs) : LongInt;
+function mbFileGetAttr(const FileName: UTF8String; out Attr: TSearchRec): Boolean; overload;
 {en
    If any operation in Options is performed and does not succeed it is included
    in the result set. If all performed operations succeed the function returns empty set.
@@ -181,20 +178,20 @@ function SafeGetProcAddress(Lib: TLibHandle; const ProcName: AnsiString): Pointe
 
 implementation
 
-{$IF DEFINED(MSWINDOWS)}
 uses
-  Windows, JwaWinNetWk;
+{$IF DEFINED(MSWINDOWS)}
+  Windows, JwaWinNetWk, DCDateTimeUtils,
 {$ENDIF}
 {$IF DEFINED(UNIX)}
   {$IF DEFINED(BSD)}
     {$DEFINE FPC_USE_LIBC}
   {$ENDIF}
-uses
   {$IF (NOT DEFINED(FPC_USE_LIBC)) OR (DEFINED(BSD) AND NOT DEFINED(DARWIN))}
   SysCall,
   {$ENDIF}
-  BaseUnix, Unix, dl, DCStrUtils;
+  BaseUnix, Unix, dl,
 {$ENDIF}
+  DCStrUtils, LazUTF8;
 
 {$IFDEF UNIX}
 function SetModeReadOnly(mode: TMode; ReadOnly: Boolean): TMode;
@@ -239,89 +236,6 @@ begin
 end;
 {$ENDIF}
 {$ENDIF}
-
-//////////
-// From Lazarus, remove once switched to Lazarus 1.0, use LazUtils instead.
-var
-  FNeedRTLAnsi: boolean = false;
-  FNeedRTLAnsiValid: boolean = false;
-
-function NeedRTLAnsi: boolean;
-{$IFDEF WinCE}
-// CP_UTF8 is missing in the windows unit of the Windows CE RTL
-const
-  CP_UTF8 = 65001;
-{$ENDIF}
-{$IFNDEF Windows}
-var
-  Lang: String;
-  i: LongInt;
-  Encoding: String;
-{$ENDIF}
-begin
-  if FNeedRTLAnsiValid then
-    exit(FNeedRTLAnsi);
-  {$IFDEF Windows}
-  FNeedRTLAnsi:=GetACP<>CP_UTF8;
-  {$ELSE}
-  FNeedRTLAnsi:=false;
-  Lang := SysUtils.GetEnvironmentVariable('LC_ALL');
-  if lang = '' then
-  begin
-    Lang := SysUtils.GetEnvironmentVariable('LC_MESSAGES');
-    if Lang = '' then
-    begin
-      Lang := SysUtils.GetEnvironmentVariable('LANG');
-    end;
-  end;
-  i:=System.Pos('.',Lang);
-  if (i>0) then begin
-    Encoding:=copy(Lang,i+1,length(Lang)-i);
-    FNeedRTLAnsi:=(SysUtils.CompareText(Encoding,'UTF-8')<>0)
-              and (SysUtils.CompareText(Encoding,'UTF8')<>0);
-  end;
-  {$ENDIF}
-  FNeedRTLAnsiValid:=true;
-  Result:=FNeedRTLAnsi;
-end;
-
-procedure SetNeedRTLAnsi(NewValue: boolean);
-begin
-  FNeedRTLAnsi:=NewValue;
-  FNeedRTLAnsiValid:=true;
-end;
-
-function IsASCII(const s: string): boolean; inline;
-var
-  i: Integer;
-begin
-  for i:=1 to length(s) do if ord(s[i])>127 then exit(false);
-  Result:=true;
-end;
-
-function UTF8ToSys(const s: string): string;
-begin
-  if NeedRTLAnsi and (not IsASCII(s)) then
-    Result:=UTF8ToAnsi(s)
-  else
-    Result:=s;
-end;
-
-function SysToUTF8(const s: string): string;
-begin
-  if NeedRTLAnsi and (not IsASCII(s)) then
-  begin
-    Result:=AnsiToUTF8(s);
-    {$ifdef FPC_HAS_CPSTRING}
-    // prevent UTF8 codepage appear in the strings - we don't need codepage
-    // conversion magic in LCL code
-    SetCodePage(RawByteString(Result), StringCodePage(s), False);
-    {$endif}
-  end
-  else
-    Result:=s;
-end;
-//////////
 
 (*Is Directory*)
 
@@ -440,8 +354,8 @@ begin
     begin
       if caoCopyTime in Options then
       begin
-        utb.actime  := StatInfo.st_atime;  // last access time
-        utb.modtime := StatInfo.st_mtime;  // last modification time
+        utb.actime  := time_t(StatInfo.st_atime);  // last access time
+        utb.modtime := time_t(StatInfo.st_mtime);  // last modification time
         if fputime(PChar(UTF8ToSys(sDst)), @utb) <> 0 then
           Include(Result, caoCopyTime);
       end;
@@ -699,6 +613,48 @@ begin
 end;
 {$ENDIF}
 
+function mbFileSame(const FirstName, SecondName: UTF8String): Boolean;
+{$IFDEF MSWINDOWS}
+var
+  Handle: System.THandle;
+  lpFirstFileInfo,
+  lpSecondFileInfo: TByHandleFileInformation;
+begin
+  // Read first file info
+  Handle:= CreateFileW(PWideChar(UTF8Decode(FirstName)), FILE_READ_ATTRIBUTES,
+                       FILE_SHARE_READ or FILE_SHARE_WRITE or FILE_SHARE_DELETE,
+                       nil, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, 0);
+  if Handle = INVALID_HANDLE_VALUE then Exit(False);
+  Result:= GetFileInformationByHandle(Handle, lpFirstFileInfo);
+  CloseHandle(Handle);
+  if not Result then Exit;
+  // Read second file info
+  Handle:= CreateFileW(PWideChar(UTF8Decode(SecondName)), FILE_READ_ATTRIBUTES,
+                       FILE_SHARE_READ or FILE_SHARE_WRITE or FILE_SHARE_DELETE,
+                       nil, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, 0);
+  if Handle = INVALID_HANDLE_VALUE then Exit(False);
+  Result:= GetFileInformationByHandle(Handle, lpSecondFileInfo);
+  CloseHandle(Handle);
+  if not Result then Exit;
+  // Compare file info
+  Result:= CompareByte(lpFirstFileInfo, lpSecondFileInfo,
+                       SizeOf(TByHandleFileInformation)) = 0;
+end;
+{$ELSE}
+var
+  FirstStat,
+  SecondStat: BaseUnix.Stat;
+begin
+  // Read first file info
+  if fpStat(UTF8ToSys(FirstName), FirstStat) < 0 then Exit(False);
+  // Read second file info
+  if fpStat(UTF8ToSys(SecondName), SecondStat) < 0 then Exit(False);
+  // Compare file info
+  Result:= (FirstStat.st_dev = SecondStat.st_dev) and
+           (FirstStat.st_ino = SecondStat.st_ino);
+end;
+{$ENDIF}
+
 function mbFileGetTime(const FileName: UTF8String;
                        var ModificationTime: DCBasicTypes.TFileTime;
                        var CreationTime    : DCBasicTypes.TFileTime;
@@ -791,8 +747,8 @@ end;
 var
   t: TUTimBuf;
 begin
-  t.actime := LastAccessTime;
-  t.modtime := ModificationTime;
+  t.actime := time_t(LastAccessTime);
+  t.modtime := time_t(ModificationTime);
   Result := (fputime(PChar(UTF8ToSys(FileName)), @t) <> -1);
 end;
 {$ENDIF}
@@ -895,6 +851,35 @@ end;
 {$ELSE}
 begin
   Result:= fpchmod(PChar(UTF8ToSys(FileName)), Attr);
+end;
+{$ENDIF}
+
+function mbFileGetAttr(const FileName: UTF8String; out Attr: TSearchRec): Boolean;
+{$IFDEF MSWINDOWS}
+var
+  FileInfo: Windows.TWin32FileAttributeData;
+begin
+  Result:= GetFileAttributesExW(PWideChar(UTF8Decode(FileName)),
+                                GetFileExInfoStandard, @FileInfo);
+  if Result then
+  begin
+    WinToDosTime(FileInfo.ftLastWriteTime, Attr.Time);
+    Int64Rec(Attr.Size).Lo:= FileInfo.nFileSizeLow;
+    Int64Rec(Attr.Size).Hi:= FileInfo.nFileSizeHigh;
+    Attr.Attr:= FileInfo.dwFileAttributes;
+  end;
+end;
+{$ELSE}
+var
+  StatInfo: BaseUnix.Stat;
+begin
+  Result:= fpLStat(PAnsiChar(UTF8ToSys(FileName)), StatInfo) >= 0;
+  if Result then
+  begin
+    Attr.Time:= StatInfo.st_mtime;
+    Attr.Size:= StatInfo.st_size;
+    Attr.Attr:= StatInfo.st_mode;
+  end;
 end;
 {$ENDIF}
 
