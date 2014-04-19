@@ -57,7 +57,7 @@ uses
    , BSD, BaseUnix, StrUtils, FileUtil
    {$ENDIF}
    {$IFDEF LINUX}
-   , uUDisks, uMountWatcher, DCStrUtils, uOSUtils, FileUtil
+   , uUDisks, uUDev, uMountWatcher, DCStrUtils, uOSUtils, FileUtil
    {$ENDIF}
   {$ENDIF}
   {$IFDEF MSWINDOWS}
@@ -231,7 +231,12 @@ begin
   end
   else
   begin
-    DCDebug('Detecting devices through /proc/self/mounts');
+    if HasUdev then
+    begin
+      if uUDev.Initialize then
+        uUDev.AddObserver(@FakeClass.OnUDisksNotify);
+    end;
+    DCDebug('Detecting mounts through /proc/self/mounts');
     MountWatcher:= TMountWatcher.Create(True);
     MountWatcher.OnMountEvent:= @FakeClass.OnMountWatcherNotify;
     MountWatcher.Start;
@@ -262,6 +267,11 @@ begin
     uUDisks.RemoveObserver(@FakeClass.OnUDisksNotify);
     uUDisks.Finalize;
     IsUDisksAvailable := False;
+  end
+  else if HasUdev then
+  begin
+    uUDev.RemoveObserver(@FakeClass.OnUDisksNotify);
+    uUDev.Finalize;
   end;
   FreeAndNil(MountWatcher);
   if Assigned(FakeClass) then
@@ -330,10 +340,15 @@ begin
     end;
     Result := False;
   end
-  else
+  else if IsUDisksAvailable then
   begin
     // Devices not supplied, retrieve info from UDisks.
     Result := uUDisks.GetDeviceInfo(DeviceObjectPath, DeviceInfo);
+  end
+  else
+  begin
+    // Devices not supplied, retrieve info from UDev.
+    Result := uUDev.GetDeviceInfo(DeviceObjectPath, DeviceInfo);
   end;
 end;
 
@@ -670,6 +685,39 @@ var
     Result := False;
   end;
 
+  function UDisksGetDevice(const UDisksDevices: TUDisksDevicesInfos;
+                           var DeviceFile: String; out UDisksDeviceObject: UTF8String): Boolean;
+  begin
+    // Handle "/dev/", "UUID=" and "LABEL=" through UDisks if available.
+    if StrBegins(DeviceFile, 'UUID=') then
+    begin
+      UDisksDeviceObject := UDisksGetDeviceObjectByUUID(
+          GetStrMaybeQuoted(Copy(DeviceFile, 6, MaxInt)), UDisksDevices);
+      if UDisksDeviceObject <> EmptyStr then
+        DeviceFile := '/dev/' + ExtractFileName(UDisksDeviceObject);
+      Result := True;
+    end
+    else if StrBegins(DeviceFile, 'LABEL=') then
+    begin
+      UDisksDeviceObject := UDisksGetDeviceObjectByLabel(
+          GetStrMaybeQuoted(Copy(DeviceFile, 7, MaxInt)), UDisksDevices);
+      if UDisksDeviceObject <> EmptyStr then
+        DeviceFile := '/dev/' + ExtractFileName(UDisksDeviceObject);
+      Result := True;
+    end
+    else if StrBegins(DeviceFile, '/dev/') then
+    begin
+      DeviceFile := mbCheckReadLinks(DeviceFile);
+      if StrBegins(DeviceFile, '/dev/') and IsUDisksAvailable then
+        UDisksDeviceObject := DeviceFileToUDisksObjectPath(DeviceFile)
+      else
+        UDisksDeviceObject := UDisksGetDeviceObjectByDeviceFile(DeviceFile, UDisksDevices);
+      Result := True;
+    end
+    else
+      Result := False;
+  end;
+
 const
   MntEntFileList: array[1..2] of PChar = (_PATH_FSTAB, _PATH_MOUNTED);
 var
@@ -691,7 +739,9 @@ begin
     AddedMountPoints := TStringList.Create;
 
     if IsUDisksAvailable then
-      HaveUDisksDevices := uUDisks.EnumerateDevices(UDisksDevices);
+      HaveUDisksDevices := uUDisks.EnumerateDevices(UDisksDevices)
+    else if HasUdev then
+      HaveUDisksDevices := uUDev.EnumerateDevices(UDisksDevices);
 
     // Storage devices have to be in fstab or mtab and reported by UDisks.
     for I:= Low(MntEntFileList) to High(MntEntFileList) do
@@ -710,34 +760,7 @@ begin
 
           if HaveUDisksDevices then
           begin
-            // Handle "/dev/", "UUID=" and "LABEL=" through UDisks if available.
-            if StrBegins(DeviceFile, 'UUID=') then
-            begin
-              UDisksDeviceObject := UDisksGetDeviceObjectByUUID(
-                  GetStrMaybeQuoted(Copy(DeviceFile, 6, MaxInt)), UDisksDevices);
-              if UDisksDeviceObject <> EmptyStr then
-                DeviceFile := '/dev/' + ExtractFileName(UDisksDeviceObject);
-              HandledByUDisks := True;
-            end
-            else if StrBegins(DeviceFile, 'LABEL=') then
-            begin
-              UDisksDeviceObject := UDisksGetDeviceObjectByLabel(
-                  GetStrMaybeQuoted(Copy(DeviceFile, 7, MaxInt)), UDisksDevices);
-              if UDisksDeviceObject <> EmptyStr then
-                DeviceFile := '/dev/' + ExtractFileName(UDisksDeviceObject);
-              HandledByUDisks := True;
-            end
-            else if StrBegins(DeviceFile, '/dev/') then
-            begin
-              DeviceFile := mbCheckReadLinks(DeviceFile);
-              if StrBegins(DeviceFile, '/dev/') then
-                UDisksDeviceObject := DeviceFileToUDisksObjectPath(DeviceFile)
-              else
-                UDisksDeviceObject := UDisksGetDeviceObjectByDeviceFile(DeviceFile, UDisksDevices);
-              HandledByUDisks := True;
-            end
-            else
-              HandledByUDisks := False;
+            HandledByUDisks := UDisksGetDevice(UDisksDevices, DeviceFile, UDisksDeviceObject);
 
             if HandledByUDisks then
             begin
@@ -834,6 +857,14 @@ begin
             DCDebug('Adding drive "' + DeviceFile + '" with mount point "' + MountPoint + '"');
             {$ENDIF}
           end;
+        end
+        // Add root drive in added list to skip it later
+        else if HasUdev and (pme^.mnt_dir = PathDelim) then
+        begin
+          DeviceFile := StrPas(pme^.mnt_fsname);
+          UDisksGetDevice(UDisksDevices, DeviceFile, UDisksDeviceObject);
+          AddedDevices.Add(DeviceFile);
+          AddedMountPoints.Add(PathDelim);
         end;
         pme:= getmntent(fstab);
       end;
@@ -847,10 +878,12 @@ begin
         // Add drives not having a partition table which are usually devices
         // with removable media like CDROM, floppy - they can be mounted.
         // Don't add drives with partition table because they cannot be mounted.
-        // Don't add drives with loop device because they cannot be mounted.
+        // Don't add drives with ram and loop device because they cannot be mounted.
         // Add devices reported as "filesystem".
         if ((UDisksDevices[i].DeviceIsDrive and not UDisksDevices[i].DeviceIsPartitionTable) or
            (UDisksDevices[i].IdUsage = 'filesystem')) and
+           (StrBegins(UDisksDevices[i].DeviceFile, '/dev/ram') = False) and
+           (StrBegins(UDisksDevices[i].DeviceFile, '/dev/zram') = False) and
            (StrBegins(UDisksDevices[i].DeviceFile, '/dev/loop') = False) and
            (not UDisksDevices[i].DevicePresentationHide) then
         begin
@@ -1064,10 +1097,16 @@ end;
 
 procedure TFakeClass.OnUDisksNotify(Reason: TUDisksMethod; const ObjectPath: UTF8String);
 var
+  Result: Boolean;
   ADrive: PDrive = nil;
   DeviceInfo: TUDisksDeviceInfo;
 begin
-  if uUDisks.GetDeviceInfo(ObjectPath, DeviceInfo) then
+  if IsUDisksAvailable = False then
+    Result:= uUDev.GetDeviceInfo(ObjectPath, DeviceInfo)
+  else
+    Result:= uUDisks.GetDeviceInfo(ObjectPath, DeviceInfo);
+
+  if Result then
     UDisksDeviceToDrive(nil, DeviceInfo, ADrive);
   try
     case Reason of
@@ -1204,4 +1243,4 @@ end;
 {$ENDIF}
 
 end.
-
+
