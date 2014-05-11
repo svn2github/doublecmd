@@ -814,10 +814,10 @@ begin
     if Aborted then
       Exit;
 
-    FWorkingFile := FFileList.Files[i];
-    FWorkingUserData := FFileList.Data[i];
-
     try
+      FWorkingFile := FFileList.Files[i];
+      FWorkingUserData := FFileList.Data[i];
+
       if FFileSource.CanRetrieveProperties(FWorkingFile.FSFile, FFilePropertiesNeeded) then
         FFileSource.RetrieveProperties(FWorkingFile.FSFile, FFilePropertiesNeeded);
 
@@ -848,6 +848,7 @@ begin
       TThread.Synchronize(Thread, @DoUpdateFile);
 
     except
+      on EListError do;
       on EFileNotFound do;
     end;
   end;
