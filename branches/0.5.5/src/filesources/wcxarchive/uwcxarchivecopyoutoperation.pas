@@ -29,7 +29,6 @@ type
     FRenameNameMask, FRenameExtMask: String;
 
     // Options.
-    FFileExistsOption: TFileSourceOperationOptionFileExists;
     FExtractWithoutPath: Boolean;
 
     {en
@@ -85,7 +84,6 @@ type
     function GetDescription(Details: TFileSourceOperationDescriptionDetails): String; override;
     class function GetOptionsUIClass: TFileSourceOperationOptionsUIClass; override;
 
-    property FileExistsOption: TFileSourceOperationOptionFileExists read FFileExistsOption write FFileExistsOption;
     property ExtractWithoutPath: Boolean read FExtractWithoutPath write FExtractWithoutPath;
   end;
 
