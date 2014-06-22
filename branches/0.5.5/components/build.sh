@@ -4,12 +4,19 @@
 # This script run from main build.sh script
 # If you run it direct, set up $lazbuild first
 
-# Rebuild widget dependent packages
-if [ -d /usr/lib/lazarus/default ]
-  then
+# Rebuild widget dependent packages (only for lazarus < 1.2)
+if [ -f /usr/lib/lazarus/default/ideintf/ideintf.lpk ] ; then
+  if [ ! -d ~ ] ; then
+    mkdir -p ${HOME}
+  fi
+  if [ ! -f ~/.fpc.cfg ] ; then
+    cp /etc/fpc.cfg ~/.fpc.cfg
+    echo -Fu~/.lazarus/lib/LazControls/lib/\$fpctarget/qt/ >> ~/.fpc.cfg
+    echo -Fu~/.lazarus/lib/IDEIntf/units/\$fpctarget/qt/ >> ~/.fpc.cfg
+  fi
   $lazbuild /usr/lib/lazarus/default/components/lazcontrols/lazcontrols.lpk $DC_ARCH -B
-  $lazbuild /usr/lib/lazarus/default/components/synedit/synedit.lpk $DC_ARCH -B
   $lazbuild /usr/lib/lazarus/default/ideintf/ideintf.lpk $DC_ARCH -B
+  $lazbuild /usr/lib/lazarus/default/components/synedit/synedit.lpk $DC_ARCH -B
 fi
 
 # Build components
