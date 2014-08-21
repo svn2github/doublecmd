@@ -242,7 +242,7 @@ implementation
 
 uses
   LCLProc, LCLType, LConvEncoding, StrUtils, HelpIntfs, fViewer, fMain,
-  uLng, uGlobs, uShowForm, uDCUtils, uFileSource,
+  uLng, uGlobs, uShowForm, uDCUtils, uFileSource, uFileSourceUtil,
   uSearchResultFileSource, uFile, uFileSystemFileSource,
   uFileViewNotebook, uKeyboard,
   DCOSUtils, SynRegExpr;
@@ -693,7 +693,7 @@ begin
   if lsFoundedFiles.ItemIndex <> -1 then
   begin
     StopSearch;
-    frmMain.ActiveFrame.CurrentPath := ExtractFilePath(lsFoundedFiles.Items[lsFoundedFiles.ItemIndex]);
+    SetFileSystemPath(frmMain.ActiveFrame, ExtractFilePath(lsFoundedFiles.Items[lsFoundedFiles.ItemIndex]));
     frmMain.ActiveFrame.SetActiveFile(ExtractFileName(lsFoundedFiles.Items[lsFoundedFiles.ItemIndex]));
     Close;
   end;
@@ -970,6 +970,7 @@ begin
     raise;
   end;
 end;
+
 procedure TfrmFindDlg.FoundedStringCopyChanged(Sender: TObject);
 var
   sText: String;
