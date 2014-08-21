@@ -760,6 +760,16 @@ procedure TMainCommands.cm_OpenDirInNewTab(const Params: array of string);
       NewPage.MakeActive;
   end;
 
+  procedure OpenArchive(const aFile: TFile);
+  var
+    NewPage: TFileViewPage;
+  begin
+    NewPage := FrmMain.ActiveNotebook.NewPage(FrmMain.ActiveFrame);
+    ChooseArchive(NewPage.FileView, aFile);
+    if tb_open_new_in_foreground in gDirTabOptions then
+      NewPage.MakeActive;
+  end;
+
 var
   aFile: TFile;
 begin
@@ -768,6 +778,8 @@ begin
   try
     if aFile.IsNameValid and (aFile.IsDirectory or aFile.IsLinkToDirectory) then
       OpenTab(aFile.FullPath)
+    else if FileIsArchive(aFile.FullPath) then
+      OpenArchive(aFile)
     else
       OpenTab(FrmMain.ActiveFrame.CurrentPath);
   finally

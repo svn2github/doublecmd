@@ -231,6 +231,10 @@ begin
 
   if Assigned(FileSource) then
   begin
+    if not mbCompareFileNames(aFileView.CurrentPath, aFile.Path) then
+    begin
+      SetFileSystemPath(aFileView, aFile.Path);
+    end;
     aFileView.AddFileSource(FileSource, FileSource.GetRootDir);
     Exit(True);
   end;
