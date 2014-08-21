@@ -309,7 +309,7 @@ var
   NewSorting: TFileSortings;
   SortFunctions: TFileFunctions;
 begin
-  if not IsColumn then Exit;
+  if (not IsColumn) or (not gTabHeader) then Exit;
 
   ColumnsClass := GetColumnsClass;
   Column := ColumnsClass.GetColumnItem(Index);
