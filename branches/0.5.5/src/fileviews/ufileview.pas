@@ -2580,16 +2580,6 @@ begin
 
     EnableWatcher(False);
 
-    // Workaround for Search Result File Source
-    if FileSource is TSearchResultFileSource then
-    begin
-      FHistory.Clear;
-      if NotebookPage is TFileViewPage then
-      begin
-        (NotebookPage as TFileViewPage).PermanentTitle:= EmptyStr;
-      end;
-    end;
-
     FHistory.Add(aFileSource, aPath);
 
     AfterChangePath;
@@ -2626,15 +2616,6 @@ begin
       begin
         FileSource.RemoveReloadEventListener(@ReloadEvent);
         EnableWatcher(False);
-
-        // Workaround for Search Result File Source
-        if FileSource is TSearchResultFileSource then
-        begin
-          if NotebookPage is TFileViewPage then
-          begin
-            (NotebookPage as TFileViewPage).PermanentTitle:= EmptyStr;
-          end;
-        end;
 
         FHistory.Clear;
         AfterChangePath;
