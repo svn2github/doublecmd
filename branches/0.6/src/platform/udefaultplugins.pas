@@ -140,11 +140,98 @@ begin
   else
     gWCXPlugins.Flags[I]:= 95;
 
+  I:= gWCXPlugins.IndexOfName('xz');
+  if I < 0 then
+    gWCXPlugins.Add('xz', 91, Folder + 'zip' + PathDelim + 'zip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('txz');
+  if I < 0 then
+    gWCXPlugins.Add('txz', 95, Folder + 'zip' + PathDelim + 'zip.wcx');
+
+  {$IF DEFINED(MSWINDOWS)}
   I:= gWCXPlugins.IndexOfName('cpio');
   if I < 0 then
-    gWCXPlugins.Add('cpio', 0, Folder + 'cpio' + PathDelim + 'cpio.wcx')
+    gWCXPlugins.Add('cpio', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx')
+  else begin
+    gWCXPlugins.Flags[I]:= 4;
+    // For cpio used another plugin, so update path too
+    gWCXPlugins.FileName[I]:= Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx';
+  end;
+
+  I:= gWCXPlugins.IndexOfName('7z');
+  if I < 0 then
+    gWCXPlugins.Add('7z', 607, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('arj');
+  if I < 0 then
+    gWCXPlugins.Add('arj', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('cab');
+  if I < 0 then
+    gWCXPlugins.Add('cab', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('cramfs');
+  if I < 0 then
+    gWCXPlugins.Add('cramfs', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('dmg');
+  if I < 0 then
+    gWCXPlugins.Add('dmg', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('fat');
+  if I < 0 then
+    gWCXPlugins.Add('fat', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('hfs');
+  if I < 0 then
+    gWCXPlugins.Add('hfs', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('iso');
+  if I < 0 then
+    gWCXPlugins.Add('iso', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('lha');
+  if I < 0 then
+    gWCXPlugins.Add('lha', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('lzh');
+  if I < 0 then
+    gWCXPlugins.Add('lzh', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('ntfs');
+  if I < 0 then
+    gWCXPlugins.Add('ntfs', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('squashfs');
+  if I < 0 then
+    gWCXPlugins.Add('squashfs', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('taz');
+  if I < 0 then
+    gWCXPlugins.Add('taz', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('vhd');
+  if I < 0 then
+    gWCXPlugins.Add('vhd', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('wim');
+  if I < 0 then
+    gWCXPlugins.Add('wim', 85, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('xar');
+  if I < 0 then
+    gWCXPlugins.Add('xar', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+
+  I:= gWCXPlugins.IndexOfName('z');
+  if I < 0 then
+    gWCXPlugins.Add('z', 4, Folder + 'sevenzip' + PathDelim + 'sevenzip.wcx');
+  {$ELSE}
+  I:= gWCXPlugins.IndexOfName('cpio');
+  if I < 0 then
+    gWCXPlugins.Add('cpio', 4, Folder + 'cpio' + PathDelim + 'cpio.wcx')
   else
-    gWCXPlugins.Flags[I]:= 0;
+    gWCXPlugins.Flags[I]:= 4;
+  {$ENDIF}
 
   I:= gWCXPlugins.IndexOfName('deb');
   if I < 0 then
