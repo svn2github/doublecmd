@@ -401,8 +401,11 @@ resourcestring
   rsPropsContains = 'Files: %d, folders: %d';
   rsPropsErrChMod = 'Can not change access rights for "%s"';
   rsPropsErrChOwn = 'Can not change owner for "%s"';
-  //Compare by content Dialog
-  rsCompareDiffs = 'Number of changes:';
+  // Compare by content Dialog
+  rsDiffMatches = ' Matches: ';
+  rsDiffModifies = ' Modifies: ';
+  rsDiffAdds = ' Adds: ';
+  rsDiffDeletes = ' Deletes: ';
   // Find files dialog
   rsFindSearchFiles = 'Find files';
   rsFindDefineTemplate = 'Define template';
@@ -584,6 +587,8 @@ resourcestring
   rsOptFileSizeFormat = 'float;B;K;M;G';
   // Keyboard
   rsOptLetters = 'None;Command Line;Quick Search;Quick Filter';
+  // Directory hotlist
+  rsOptAddFromMainPanel = 'Add at beginning;Add at the end;Smart add';
 
   // Quick Search/Filter
   rsOptSearchItems = '&Files;Di&rectories;Files a&nd Directories';

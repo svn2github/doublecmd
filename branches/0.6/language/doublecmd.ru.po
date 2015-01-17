@@ -4015,8 +4015,8 @@ msgid "Always expand tree"
 msgstr "Всегда разворачивать дерево"
 
 #: tfrmoptionsdirectoryhotlist.cbshowonlyvalidenv.caption
-msgid "Show only valid %env_var%"
-msgstr "Показывать только приемлемые переменные %env_var%"
+msgid "Show only valid environment variables"
+msgstr "Показывать только приемлемые переменные окружения"
 
 #: tfrmoptionsdirectoryhotlist.cbshowpathinpopup.caption
 msgid "In popup, show [path also]"
@@ -5918,7 +5918,7 @@ msgstr "добавить в текущую панель инструментов
 
 #: tfrmoptionstoolbar.miimportdcbaraddmenucurrent.caption
 msgctxt "tfrmoptionstoolbar.miimportdcbaraddmenucurrent.caption"
-msgid "to add to a new toobar to current toolbar"
+msgid "to add to a new toolbar to current toolbar"
 msgstr "добавить в новую панель в текущей панели инструментов"
 
 #: tfrmoptionstoolbar.miimportdcbaraddmenutop.caption
@@ -7602,10 +7602,6 @@ msgctxt "ulng.rscolsize"
 msgid "Size"
 msgstr "Размер"
 
-#: ulng.rscomparediffs
-msgid "Number of changes:"
-msgstr "Число изменений:"
-
 #: ulng.rsconfcolalign
 msgid "Align"
 msgstr "Выравн."
@@ -7676,6 +7672,22 @@ msgstr ""
 #: ulng.rsdefaultsuffixdroppedtextunicodeutf8filename
 msgid "_DroppedUnicodeUTF8text"
 msgstr ""
+
+#: ulng.rsdiffadds
+msgid " Adds: "
+msgstr " Добавлено: "
+
+#: ulng.rsdiffdeletes
+msgid " Deletes: "
+msgstr " Удалено: "
+
+#: ulng.rsdiffmatches
+msgid " Matches: "
+msgstr " Совпало: "
+
+#: ulng.rsdiffmodifies
+msgid " Modifies: "
+msgstr " Изменено: "
 
 #: ulng.rsdlgallopcomplete
 msgid "All operations completed"
@@ -9285,6 +9297,10 @@ msgstr "Стирание \"%s\""
 msgid "Working"
 msgstr "Работа"
 
+#: ulng.rsoptaddfrommainpanel
+msgid "Add at beginning;Add at the end;Smart add"
+msgstr "Добавлять в начало;Добавлять в конец;Добавлять по логике"
+
 #: ulng.rsoptarchivedelete
 msgctxt "ulng.rsoptarchivedelete"
 msgid "Delete:"
@@ -9632,7 +9648,7 @@ msgstr "Панель инструментов"
 
 #: ulng.rsoptionseditortoolbarcomplement
 msgid "Complements"
-msgstr ""
+msgstr "Дополнения"
 
 #: ulng.rsoptionseditortools
 msgctxt "ulng.rsoptionseditortools"
@@ -9714,7 +9730,7 @@ msgstr "Разд&елитель;Внутрення&я команда;Вне&шн
 
 #: ulng.rsopttypeofduplicatedrename
 msgid "DC legacy - Copy (x) filename.ext;Windows - filename (x).ext;Other - filename(x).ext"
-msgstr ""
+msgstr "родной DC - Copy (x) filename.ext;Windows - filename (x).ext;другой - filename(x).ext"
 
 #: ulng.rsoptupdatedfilesposition
 msgid "don't change position;use the same setting as for new files;to sorted position"
