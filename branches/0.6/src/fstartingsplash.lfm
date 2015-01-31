@@ -1,9 +1,10 @@
 object frmStartingSplash: TfrmStartingSplash
-  Left = 544
+  Left = 528
   Height = 298
-  Top = 503
+  Top = 242
   Width = 217
   Anchors = []
+  AutoSize = True
   BorderIcons = []
   BorderStyle = bsNone
   Caption = 'Double Commander'
@@ -1017,7 +1018,7 @@ object frmStartingSplash: TfrmStartingSplash
   }
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.2.2.0'
+  LCLVersion = '1.2.6.0'
   object pnlInfo: TPanel
     AnchorSideLeft.Control = Owner
     AnchorSideLeft.Side = asrCenter

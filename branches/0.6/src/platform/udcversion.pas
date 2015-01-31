@@ -31,13 +31,11 @@ uses
   Classes, SysUtils, LCLVersion;
 
 {$I dcrevision.inc} // Double Commander revision number
-{$I revision.inc} // Lazarus revision number
 
 const
   dcVersion   = '0.6.0 alpha';
   dcBuildDate = {$I %DATE%};
   lazVersion  = lcl_version;         // Lazarus version (major.minor.micro)
-  lazRevision = RevisionStr;         // Lazarus SVN revision
   fpcVersion  = {$I %FPCVERSION%};   // FPC version (major.minor.micro)
   TargetCPU   = {$I %FPCTARGETCPU%}; // Target CPU of FPC
   TargetOS    = {$I %FPCTARGETOS%};  // Target Operating System of FPC
