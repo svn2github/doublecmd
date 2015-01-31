@@ -491,15 +491,19 @@ msgstr "&ОК"
 
 #: tfrmchecksumcalc.caption
 msgctxt "tfrmchecksumcalc.caption"
-msgid "Calculate check sum..."
+msgid "Calculate checksum..."
 msgstr "Посчитать контрольные суммы..."
+
+#: tfrmchecksumcalc.cbopenafterjobiscomplete.caption
+msgid "Open checksum file after job is completed"
+msgstr "Открыть файл контрольной суммы после расчета"
 
 #: tfrmchecksumcalc.cbseparatefile.caption
 msgid "C&reate separate checksum file for each file"
 msgstr "Д&ля каждого файла создать отдельный файл контрольной суммы"
 
 #: tfrmchecksumcalc.lblsaveto.caption
-msgid "&Save check sum file(s) to:"
+msgid "&Save checksum file(s) to:"
 msgstr "&Сохранить файл(ы) контрольных сумм как:"
 
 #: tfrmchecksumverify.btnclose.caption
@@ -4173,12 +4177,12 @@ msgstr "в файл Избранные каталоги (.hotlist)"
 #: tfrmoptionsdirectoryhotlist.miexporttototalcommanderk.caption
 msgctxt "tfrmoptionsdirectoryhotlist.miexporttototalcommanderk.caption"
 msgid "to a \"wincmd.ini\" of TC (keep existing)"
-msgstr "в фвйл \"wincmd.ini\" от TC (оставить существующий)"
+msgstr "в файл \"wincmd.ini\" от TC (оставить существующий)"
 
 #: tfrmoptionsdirectoryhotlist.miexporttototalcommandernk.caption
 msgctxt "tfrmoptionsdirectoryhotlist.miexporttototalcommandernk.caption"
 msgid "to a \"wincmd.ini\" of TC (erase existing)"
-msgstr "в фвйл \"wincmd.ini\" от TC (удалить существующий)"
+msgstr "в файл \"wincmd.ini\" от TC (удалить существующий)"
 
 #: tfrmoptionsdirectoryhotlist.migotoconfiguretcinfo1.caption
 msgctxt "tfrmoptionsdirectoryhotlist.migotoconfiguretcinfo1.caption"
@@ -4204,7 +4208,7 @@ msgstr "из файла \"wincmd.ini\" от TC"
 
 #: tfrmoptionsdirectoryhotlist.miopenallbranches.caption
 msgid "Open all branches"
-msgstr "Оькрыть все ветки"
+msgstr "Открыть все ветки"
 
 #: tfrmoptionsdirectoryhotlist.mipasteselection.caption
 msgctxt "tfrmoptionsdirectoryhotlist.mipasteselection.caption"
@@ -5802,12 +5806,12 @@ msgstr "в файл TC .BAR (удалить существующий)"
 #: tfrmoptionstoolbar.miexportcurrenttotcinikeep.caption
 msgctxt "tfrmoptionstoolbar.miexportcurrenttotcinikeep.caption"
 msgid "to a \"wincmd.ini\" of TC (keep existing)"
-msgstr "в фвйл \"wincmd.ini\" от TC (оставить существующий)"
+msgstr "в файл \"wincmd.ini\" от TC (оставить существующий)"
 
 #: tfrmoptionstoolbar.miexportcurrenttotcininokeep.caption
 msgctxt "tfrmoptionstoolbar.miexportcurrenttotcininokeep.caption"
 msgid "to a \"wincmd.ini\" of TC (erase existing)"
-msgstr "в фвйл \"wincmd.ini\" от TC (удалить существующий)"
+msgstr "в файл \"wincmd.ini\" от TC (удалить существующий)"
 
 #: tfrmoptionstoolbar.miexportseparator1.caption
 msgctxt "tfrmoptionstoolbar.miexportseparator1.caption"
@@ -5855,12 +5859,12 @@ msgstr "в файл TC .BAR (удалить существующий)"
 #: tfrmoptionstoolbar.miexporttoptotcinikeep.caption
 msgctxt "tfrmoptionstoolbar.miexporttoptotcinikeep.caption"
 msgid "to a \"wincmd.ini\" of TC (keep existing)"
-msgstr "в фвйл \"wincmd.ini\" от TC (оставить существующий)"
+msgstr "в файл \"wincmd.ini\" от TC (оставить существующий)"
 
 #: tfrmoptionstoolbar.miexporttoptotcininokeep.caption
 msgctxt "tfrmoptionstoolbar.miexporttoptotcininokeep.caption"
 msgid "to a \"wincmd.ini\" of TC (erase existing)"
-msgstr "в фвйл \"wincmd.ini\" от TC (удалить существующий)"
+msgstr "в файл \"wincmd.ini\" от TC (удалить существующий)"
 
 #: tfrmoptionstoolbar.miexternalcommandaftercurrent.caption
 msgctxt "tfrmoptionstoolbar.miexternalcommandaftercurrent.caption"
@@ -6417,6 +6421,44 @@ msgstr "Фильтр"
 msgid "Toggle between search or filter"
 msgstr "Поиск или фильтр"
 
+#: tfrmsearchplugin.btnadd.caption
+msgid "&More rules"
+msgstr "Добавить правило"
+
+#: tfrmsearchplugin.btndelete.caption
+msgid "L&ess rules"
+msgstr "Удалить правило"
+
+#: tfrmsearchplugin.chkuseplugins.caption
+msgid "Use &content plugins, combine with:"
+msgstr "Использовать контентные плагины, объединять:"
+
+#: tfrmsearchplugin.headercontrol.sections[0].text
+msgctxt "tfrmsearchplugin.headercontrol.sections[0].text"
+msgid "Plugin"
+msgstr "Плагин"
+
+#: tfrmsearchplugin.headercontrol.sections[1].text
+msgid "Field"
+msgstr "Поле"
+
+#: tfrmsearchplugin.headercontrol.sections[2].text
+msgid "Operator"
+msgstr "Оператор"
+
+#: tfrmsearchplugin.headercontrol.sections[3].text
+msgctxt "tfrmsearchplugin.headercontrol.sections[3].text"
+msgid "Value"
+msgstr "Значение"
+
+#: tfrmsearchplugin.rband.caption
+msgid "&AND (all match)"
+msgstr "И (все правила)"
+
+#: tfrmsearchplugin.rbor.caption
+msgid "&OR (any match)"
+msgstr "ИЛИ (любое правило)"
+
 #: tfrmselecttextrange.btppanel.cancelbutton.caption
 msgctxt "TFRMSELECTTEXTRANGE.BTPPANEL.CANCELBUTTON.CAPTION"
 msgid "Cancel"
@@ -6591,10 +6633,19 @@ msgctxt "TFRMSPLITTER.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "&ОК"
 
+#: tfrmsplitter.btnrelativeftchoice.hint
+msgctxt "tfrmsplitter.btnrelativeftchoice.hint"
+msgid "Some functions to select appropriate path"
+msgstr "Некоторые функции для выбора подходящего пути"
+
 #: tfrmsplitter.caption
 msgctxt "TFRMSPLITTER.CAPTION"
 msgid "Splitter"
 msgstr "Разбиение"
+
+#: tfrmsplitter.cbrequireacrc32verificationfile.caption
+msgid "Require a CRC32 verification file"
+msgstr "Создать файл контрольной суммы"
 
 #: tfrmsplitter.cmbxsize.text
 msgid "1457664B - 3.5\""
@@ -6620,6 +6671,10 @@ msgstr "&Исходный файл"
 #: tfrmsplitter.lblnumberparts.caption
 msgid "&Number of parts"
 msgstr "Ко&л-во частей"
+
+#: tfrmsplitter.rbtnbyte.caption
+msgid "&Bytes"
+msgstr "Байт"
 
 #: tfrmsplitter.rbtngigab.caption
 msgctxt "TFRMSPLITTER.RBTNGIGAB.CAPTION"
@@ -9371,6 +9426,7 @@ msgid "Archive type name:"
 msgstr "Наименование типа архива:"
 
 #: ulng.rsoptarchivevalue
+msgctxt "ulng.rsoptarchivevalue"
 msgid "Value"
 msgstr "Значение"
 

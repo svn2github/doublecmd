@@ -493,16 +493,24 @@ msgid "&OK"
 msgstr "&OK"
 
 #: tfrmchecksumcalc.caption
+#, fuzzy
+#| msgid "Calculate check sum..."
 msgctxt "TFRMCHECKSUMCALC.CAPTION"
-msgid "Calculate check sum..."
+msgid "Calculate checksum..."
 msgstr "Oblicz sumę kontrolną..."
+
+#: tfrmchecksumcalc.cbopenafterjobiscomplete.caption
+msgid "Open checksum file after job is completed"
+msgstr ""
 
 #: tfrmchecksumcalc.cbseparatefile.caption
 msgid "C&reate separate checksum file for each file"
 msgstr "Dla każdego pliku utwó&rz oddzielny plik sumy kontrolnej"
 
 #: tfrmchecksumcalc.lblsaveto.caption
-msgid "&Save check sum file(s) to:"
+#, fuzzy
+#| msgid "&Save check sum file(s) to:"
+msgid "&Save checksum file(s) to:"
 msgstr "Zapi&sz plik(i) sumy kontrolnej do:"
 
 #: tfrmchecksumverify.btnclose.caption
@@ -6345,6 +6353,44 @@ msgstr "Filtr"
 msgid "Toggle between search or filter"
 msgstr "Przełączanie między wyszukiwaniem lub filtrowaniem"
 
+#: tfrmsearchplugin.btnadd.caption
+msgid "&More rules"
+msgstr ""
+
+#: tfrmsearchplugin.btndelete.caption
+msgid "L&ess rules"
+msgstr ""
+
+#: tfrmsearchplugin.chkuseplugins.caption
+msgid "Use &content plugins, combine with:"
+msgstr ""
+
+#: tfrmsearchplugin.headercontrol.sections[0].text
+msgctxt "tfrmsearchplugin.headercontrol.sections[0].text"
+msgid "Plugin"
+msgstr "Wtyczka"
+
+#: tfrmsearchplugin.headercontrol.sections[1].text
+msgid "Field"
+msgstr ""
+
+#: tfrmsearchplugin.headercontrol.sections[2].text
+msgid "Operator"
+msgstr ""
+
+#: tfrmsearchplugin.headercontrol.sections[3].text
+msgctxt "tfrmsearchplugin.headercontrol.sections[3].text"
+msgid "Value"
+msgstr "Wartość"
+
+#: tfrmsearchplugin.rband.caption
+msgid "&AND (all match)"
+msgstr ""
+
+#: tfrmsearchplugin.rbor.caption
+msgid "&OR (any match)"
+msgstr ""
+
 #: tfrmselecttextrange.btppanel.cancelbutton.caption
 msgctxt "TFRMSELECTTEXTRANGE.BTPPANEL.CANCELBUTTON.CAPTION"
 msgid "Cancel"
@@ -6519,10 +6565,19 @@ msgctxt "TFRMSPLITTER.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "OK"
 
+#: tfrmsplitter.btnrelativeftchoice.hint
+msgctxt "tfrmsplitter.btnrelativeftchoice.hint"
+msgid "Some functions to select appropriate path"
+msgstr ""
+
 #: tfrmsplitter.caption
 msgctxt "TFRMSPLITTER.CAPTION"
 msgid "Splitter"
 msgstr "Dzielenie"
+
+#: tfrmsplitter.cbrequireacrc32verificationfile.caption
+msgid "Require a CRC32 verification file"
+msgstr ""
 
 #: tfrmsplitter.cmbxsize.text
 msgid "1457664B - 3.5\""
@@ -6548,6 +6603,10 @@ msgstr "Plik źródłowy"
 #: tfrmsplitter.lblnumberparts.caption
 msgid "&Number of parts"
 msgstr "Liczba części"
+
+#: tfrmsplitter.rbtnbyte.caption
+msgid "&Bytes"
+msgstr ""
 
 #: tfrmsplitter.rbtngigab.caption
 msgctxt "TFRMSPLITTER.RBTNGIGAB.CAPTION"
@@ -9277,6 +9336,7 @@ msgid "Archive type name:"
 msgstr "Nazwa rodzaju archiwum:"
 
 #: ulng.rsoptarchivevalue
+msgctxt "ulng.rsoptarchivevalue"
 msgid "Value"
 msgstr "Wartość"
 

@@ -496,16 +496,24 @@ msgid "&OK"
 msgstr "&OK"
 
 #: tfrmchecksumcalc.caption
+#, fuzzy
+#| msgid "Calculate check sum..."
 msgctxt "TFRMCHECKSUMCALC.CAPTION"
-msgid "Calculate check sum..."
+msgid "Calculate checksum..."
 msgstr "Calculează suma de control..."
+
+#: tfrmchecksumcalc.cbopenafterjobiscomplete.caption
+msgid "Open checksum file after job is completed"
+msgstr ""
 
 #: tfrmchecksumcalc.cbseparatefile.caption
 msgid "C&reate separate checksum file for each file"
 msgstr "C&rează sume de control separate pentru fiecare fișier"
 
 #: tfrmchecksumcalc.lblsaveto.caption
-msgid "&Save check sum file(s) to:"
+#, fuzzy
+#| msgid "&Save check sum file(s) to:"
+msgid "&Save checksum file(s) to:"
 msgstr "&Salvează fișier(e) sumă de control la:"
 
 #: tfrmchecksumverify.btnclose.caption
@@ -6348,6 +6356,44 @@ msgstr "Filtru"
 msgid "Toggle between search or filter"
 msgstr "Comută între căutare și filtru"
 
+#: tfrmsearchplugin.btnadd.caption
+msgid "&More rules"
+msgstr ""
+
+#: tfrmsearchplugin.btndelete.caption
+msgid "L&ess rules"
+msgstr ""
+
+#: tfrmsearchplugin.chkuseplugins.caption
+msgid "Use &content plugins, combine with:"
+msgstr ""
+
+#: tfrmsearchplugin.headercontrol.sections[0].text
+msgctxt "tfrmsearchplugin.headercontrol.sections[0].text"
+msgid "Plugin"
+msgstr "Modul"
+
+#: tfrmsearchplugin.headercontrol.sections[1].text
+msgid "Field"
+msgstr ""
+
+#: tfrmsearchplugin.headercontrol.sections[2].text
+msgid "Operator"
+msgstr ""
+
+#: tfrmsearchplugin.headercontrol.sections[3].text
+msgctxt "tfrmsearchplugin.headercontrol.sections[3].text"
+msgid "Value"
+msgstr "Valoare"
+
+#: tfrmsearchplugin.rband.caption
+msgid "&AND (all match)"
+msgstr ""
+
+#: tfrmsearchplugin.rbor.caption
+msgid "&OR (any match)"
+msgstr ""
+
 #: tfrmselecttextrange.btppanel.cancelbutton.caption
 msgctxt "TFRMSELECTTEXTRANGE.BTPPANEL.CANCELBUTTON.CAPTION"
 msgid "Cancel"
@@ -6522,10 +6568,19 @@ msgctxt "TFRMSPLITTER.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "&OK"
 
+#: tfrmsplitter.btnrelativeftchoice.hint
+msgctxt "tfrmsplitter.btnrelativeftchoice.hint"
+msgid "Some functions to select appropriate path"
+msgstr ""
+
 #: tfrmsplitter.caption
 msgctxt "TFRMSPLITTER.CAPTION"
 msgid "Splitter"
 msgstr "Separator"
+
+#: tfrmsplitter.cbrequireacrc32verificationfile.caption
+msgid "Require a CRC32 verification file"
+msgstr ""
 
 #: tfrmsplitter.cmbxsize.text
 msgid "1457664B - 3.5\""
@@ -6551,6 +6606,10 @@ msgstr "&Sursă fișier"
 #: tfrmsplitter.lblnumberparts.caption
 msgid "&Number of parts"
 msgstr "&Număr de părți"
+
+#: tfrmsplitter.rbtnbyte.caption
+msgid "&Bytes"
+msgstr ""
 
 #: tfrmsplitter.rbtngigab.caption
 msgctxt "TFRMSPLITTER.RBTNGIGAB.CAPTION"
@@ -9280,6 +9339,7 @@ msgid "Archive type name:"
 msgstr "Numele tipului de arhivă"
 
 #: ulng.rsoptarchivevalue
+msgctxt "ulng.rsoptarchivevalue"
 msgid "Value"
 msgstr "Valoare"
 

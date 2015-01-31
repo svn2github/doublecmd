@@ -529,9 +529,15 @@ msgid "&OK"
 msgstr "&Accepta"
 
 #: tfrmchecksumcalc.caption
+#, fuzzy
+#| msgid "Calculate check sum..."
 msgctxt "tfrmchecksumcalc.caption"
-msgid "Calculate check sum..."
+msgid "Calculate checksum..."
 msgstr "Calcula suma de comprovació"
+
+#: tfrmchecksumcalc.cbopenafterjobiscomplete.caption
+msgid "Open checksum file after job is completed"
+msgstr ""
 
 #: tfrmchecksumcalc.cbseparatefile.caption
 #, fuzzy
@@ -541,8 +547,8 @@ msgstr "Crea un fitxer por cada comprobació"
 
 #: tfrmchecksumcalc.lblsaveto.caption
 #, fuzzy
-#| msgid "Save check sum file(s) to:"
-msgid "&Save check sum file(s) to:"
+#| msgid "&Save check sum file(s) to:"
+msgid "&Save checksum file(s) to:"
 msgstr "Desa fitxer de comprobació en:"
 
 #: tfrmchecksumverify.btnclose.caption
@@ -7039,6 +7045,44 @@ msgstr "Filtre"
 msgid "Toggle between search or filter"
 msgstr "Canvi entre recerca i filtre"
 
+#: tfrmsearchplugin.btnadd.caption
+msgid "&More rules"
+msgstr ""
+
+#: tfrmsearchplugin.btndelete.caption
+msgid "L&ess rules"
+msgstr ""
+
+#: tfrmsearchplugin.chkuseplugins.caption
+msgid "Use &content plugins, combine with:"
+msgstr ""
+
+#: tfrmsearchplugin.headercontrol.sections[0].text
+msgctxt "tfrmsearchplugin.headercontrol.sections[0].text"
+msgid "Plugin"
+msgstr "Complement"
+
+#: tfrmsearchplugin.headercontrol.sections[1].text
+msgid "Field"
+msgstr ""
+
+#: tfrmsearchplugin.headercontrol.sections[2].text
+msgid "Operator"
+msgstr ""
+
+#: tfrmsearchplugin.headercontrol.sections[3].text
+msgctxt "tfrmsearchplugin.headercontrol.sections[3].text"
+msgid "Value"
+msgstr "Valor"
+
+#: tfrmsearchplugin.rband.caption
+msgid "&AND (all match)"
+msgstr ""
+
+#: tfrmsearchplugin.rbor.caption
+msgid "&OR (any match)"
+msgstr ""
+
 #: tfrmselecttextrange.btppanel.cancelbutton.caption
 msgctxt "tfrmselecttextrange.btppanel.cancelbutton.caption"
 msgid "Cancel"
@@ -7221,10 +7265,19 @@ msgctxt "TFRMSPLITTER.BTNOK.CAPTION"
 msgid "&OK"
 msgstr "&Accepta"
 
+#: tfrmsplitter.btnrelativeftchoice.hint
+msgctxt "tfrmsplitter.btnrelativeftchoice.hint"
+msgid "Some functions to select appropriate path"
+msgstr ""
+
 #: tfrmsplitter.caption
 msgctxt "tfrmsplitter.caption"
 msgid "Splitter"
 msgstr "Separador"
+
+#: tfrmsplitter.cbrequireacrc32verificationfile.caption
+msgid "Require a CRC32 verification file"
+msgstr ""
 
 #: tfrmsplitter.cmbxsize.text
 msgid "1457664B - 3.5\""
@@ -7258,6 +7311,10 @@ msgstr "Fitxer orígen"
 #| msgid "Number of parts"
 msgid "&Number of parts"
 msgstr "Número de parts"
+
+#: tfrmsplitter.rbtnbyte.caption
+msgid "&Bytes"
+msgstr ""
 
 #: tfrmsplitter.rbtngigab.caption
 msgctxt "TFRMSPLITTER.RBTNGIGAB.CAPTION"
@@ -10041,6 +10098,7 @@ msgid "Archive type name:"
 msgstr "Nom del tipus de fitxer:"
 
 #: ulng.rsoptarchivevalue
+msgctxt "ulng.rsoptarchivevalue"
 msgid "Value"
 msgstr "Valor"
 
