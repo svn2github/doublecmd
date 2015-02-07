@@ -8,8 +8,8 @@ inherited frmOptionsDirectoryHotlist: TfrmOptionsDirectoryHotlist
   ParentShowHint = False
   PopupMenu = pmTreeView
   ShowHint = True
-  DesignLeft = 710
-  DesignTop = 159
+  DesignLeft = 539
+  DesignTop = 77
   object gbDirectoryHotlist: TGroupBox[0]
     AnchorSideLeft.Control = Owner
     AnchorSideRight.Side = asrBottom
@@ -158,13 +158,17 @@ inherited frmOptionsDirectoryHotlist: TfrmOptionsDirectoryHotlist
       TabOrder = 7
     end
     object rgWhereToAdd: TRadioGroup
+      AnchorSideLeft.Control = tvDirectoryHotlist
+      AnchorSideLeft.Side = asrBottom
       AnchorSideRight.Side = asrBottom
       Left = 263
-      Height = 90
+      Height = 87
       Top = 160
       Width = 313
-      Anchors = [akTop, akRight]
+      Anchors = [akTop, akLeft, akRight]
       AutoFill = True
+      AutoSize = True
+      BorderSpacing.Left = 7
       BorderSpacing.Top = 10
       Caption = 'Addition from main panel:'
       ChildSizing.LeftRightSpacing = 6
@@ -175,7 +179,7 @@ inherited frmOptionsDirectoryHotlist: TfrmOptionsDirectoryHotlist
       ChildSizing.ShrinkVertical = crsScaleChilds
       ChildSizing.Layout = cclLeftToRightThenTopToBottom
       ChildSizing.ControlsPerLine = 1
-      ClientHeight = 72
+      ClientHeight = 69
       ClientWidth = 309
       Items.Strings = (
         'Add at beginning'
@@ -185,22 +189,29 @@ inherited frmOptionsDirectoryHotlist: TfrmOptionsDirectoryHotlist
       TabOrder = 15
     end
     object gbHotlistOtherOptions: TGroupBox
+      AnchorSideLeft.Control = tvDirectoryHotlist
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = rgWhereToAdd
+      AnchorSideTop.Side = asrBottom
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Side = asrBottom
       Left = 263
-      Height = 126
-      Top = 260
+      Height = 112
+      Top = 247
       Width = 313
-      Anchors = [akTop, akRight]
-      BorderSpacing.Left = 3
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      BorderSpacing.Left = 7
       Caption = 'Other options'
-      ClientHeight = 108
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.TopBottomSpacing = 6
+      ClientHeight = 94
       ClientWidth = 309
       TabOrder = 16
       object cbAddTarget: TCheckBox
-        Left = 8
+        Left = 6
         Height = 19
-        Top = 0
+        Top = 6
         Width = 225
         Caption = 'When adding directory, add also target'
         TabOrder = 0
@@ -209,9 +220,9 @@ inherited frmOptionsDirectoryHotlist: TfrmOptionsDirectoryHotlist
         AnchorSideLeft.Control = cbAddTarget
         AnchorSideTop.Control = cbAddTarget
         AnchorSideTop.Side = asrBottom
-        Left = 8
+        Left = 6
         Height = 19
-        Top = 21
+        Top = 27
         Width = 121
         BorderSpacing.Top = 2
         Caption = 'Always expand tree'
@@ -222,9 +233,9 @@ inherited frmOptionsDirectoryHotlist: TfrmOptionsDirectoryHotlist
         AnchorSideLeft.Control = cbAddTarget
         AnchorSideTop.Control = cbFullExpandTree
         AnchorSideTop.Side = asrBottom
-        Left = 8
+        Left = 6
         Height = 19
-        Top = 42
+        Top = 48
         Width = 161
         BorderSpacing.Top = 2
         Caption = 'In popup, show [path also]'
@@ -235,9 +246,9 @@ inherited frmOptionsDirectoryHotlist: TfrmOptionsDirectoryHotlist
         AnchorSideLeft.Control = cbAddTarget
         AnchorSideTop.Control = cbShowPathInPopup
         AnchorSideTop.Side = asrBottom
-        Left = 8
+        Left = 6
         Height = 19
-        Top = 63
+        Top = 69
         Width = 223
         BorderSpacing.Top = 2
         Caption = 'Show only valid environment variables'
