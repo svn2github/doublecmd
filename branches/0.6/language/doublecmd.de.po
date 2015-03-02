@@ -540,7 +540,7 @@ msgstr "Berechne Prüfsumme..."
 
 #: tfrmchecksumcalc.cbopenafterjobiscomplete.caption
 msgid "Open checksum file after job is completed"
-msgstr ""
+msgstr "Öffne Checksum-Datei nachdem der Job beendet ist"
 
 #: tfrmchecksumcalc.cbseparatefile.caption
 #, fuzzy
@@ -2275,7 +2275,7 @@ msgstr "Wird ein Untermenü ausgewählt, wird das ganze Menü ausgewählt"
 
 #: tfrmhotdirexportimport.lblhintholdcontrol.caption
 msgid "Hold CTRL and click entries to select multiple ones"
-msgstr ""
+msgstr "Halte STRG und klicke auf Einträge um mehrere auszuwählen"
 
 #: tfrmlinker.btnexit.caption
 #, fuzzy
@@ -2981,7 +2981,7 @@ msgstr "Nach &Name sortieren"
 #, fuzzy
 #| msgid "Sort by size"
 msgid "Sort by &Size"
-msgstr "Nach &Grösse sortieren"
+msgstr "Nach &Größe sortieren"
 
 #: tfrmmain.actswitchignorelist.caption
 msgid "Enable/disable ignore list file to not show file names"
@@ -3574,7 +3574,7 @@ msgstr "Verhältnis"
 #: tfrmmodview.caption
 msgctxt "TFRMMODVIEW.CAPTION"
 msgid "New Size"
-msgstr "Neue Grösse"
+msgstr "Neue Größe"
 
 #: tfrmmodview.lblheight.caption
 msgid "Height :"
@@ -4256,7 +4256,7 @@ msgstr "Ausgerichtet (mit TAB)"
 
 #: tfrmoptionsbriefview.rbdirectly.caption
 msgid "di&rectly after filename"
-msgstr "Ubnmittelbar hinter dem Dateinamen"
+msgstr "Unmittelba&r hinter dem Dateinamen"
 
 #: tfrmoptionscolumnsview.cbcuttexttocolwidth.caption
 #, fuzzy
@@ -7272,15 +7272,15 @@ msgstr "Umschalten zwischen Suchen und Filtern"
 
 #: tfrmsearchplugin.btnadd.caption
 msgid "&More rules"
-msgstr ""
+msgstr "&Mehr Regeln"
 
 #: tfrmsearchplugin.btndelete.caption
 msgid "L&ess rules"
-msgstr ""
+msgstr "W&eniger Regeln"
 
 #: tfrmsearchplugin.chkuseplugins.caption
 msgid "Use &content plugins, combine with:"
-msgstr ""
+msgstr "Nutze Inhalt-Plugins, kombiniere mit:"
 
 #: tfrmsearchplugin.headercontrol.sections[0].text
 msgctxt "tfrmsearchplugin.headercontrol.sections[0].text"
@@ -7289,7 +7289,7 @@ msgstr ""
 
 #: tfrmsearchplugin.headercontrol.sections[1].text
 msgid "Field"
-msgstr ""
+msgstr "Feld"
 
 #: tfrmsearchplugin.headercontrol.sections[2].text
 msgid "Operator"
@@ -7302,11 +7302,11 @@ msgstr "Wert"
 
 #: tfrmsearchplugin.rband.caption
 msgid "&AND (all match)"
-msgstr ""
+msgstr "&UND (alles muss passen)"
 
 #: tfrmsearchplugin.rbor.caption
 msgid "&OR (any match)"
-msgstr ""
+msgstr "&ODER (alle passen)"
 
 #: tfrmselecttextrange.btppanel.cancelbutton.caption
 msgctxt "TFRMSELECTTEXTRANGE.BTPPANEL.CANCELBUTTON.CAPTION"
@@ -7508,7 +7508,7 @@ msgstr "Teiler"
 
 #: tfrmsplitter.cbrequireacrc32verificationfile.caption
 msgid "Require a CRC32 verification file"
-msgstr ""
+msgstr "Benötigt eine CRC32 Datei zum Verifizieren"
 
 #: tfrmsplitter.cmbxsize.text
 msgid "1457664B - 3.5\""
@@ -9648,7 +9648,7 @@ msgid ""
 "Answering NO will delete only menu delimiters but will keep element inside sub-menu.\n"
 msgstr ""
 "Sollen alle Elemente innerhalb der Untermenüs gelöscht werden [%s]?\n"
-"JA als Antwort löscht nur Unterteilungen innerhalb der Untermenüs, aber erhält die Elemente in den Untermenüs.\n"
+"NEIN als Antwort löscht nur Unterteilungen innerhalb der Untermenüs, aber erhält die Elemente in den Untermenüs.\n"
 
 #: ulng.rsmsghotdirwheretosave
 msgid "Enter location and filename where to save a Directory Hotlist file"
@@ -9992,49 +9992,51 @@ msgstr ""
 msgid ""
 "Error! Cannot find the TC configuration executable:\n"
 "%s\n"
-msgstr ""
+msgstr "Fehler! Kann die Datei zum Ausführen der TC-Konfiguration nicht finden:\n"
 
 #: ulng.rsmsgtcisrunning
 msgid ""
 "Error! TC is still running but it should be closed for this operation.\n"
 "Close it and press OK or press CANCEL to abort.\n"
-msgstr ""
+msgstr "Fehler! TC läuft noch aber sollte geschlossen werden, während dieses Vorganges.\n"
+"Bitte TC schließen und OK drücken oder ABBRUCH um abzubrechen.\n"
 
 #: ulng.rsmsgtctoolbarnotfound
 msgid ""
 "Error! Cannot find the desired wanted TC toolbar output folder:\n"
 "%s\n"
-msgstr ""
+msgstr "Fehler! Kann den angegebenen gewünschten TC-Toolbar Ausgabeordner nicht finden:\n"
 
 #: ulng.rsmsgtctoolbarwheretosave
 msgid "Enter location and filename where to save a TC Toolbar file"
-msgstr ""
+msgstr "Bitte Speicherort und Dateinamenangeben unter dem die TC-Toolbardatei gespeichert werden soll"
 
 #: ulng.rsmsgtoolbarerrornotsaved
 msgid "Error! Problem saving toolbar!"
-msgstr ""
+msgstr "Fehler! Problem beim Speichern der Toolbar!"
 
 #: ulng.rsmsgtoolbarlocatedctoolbarfile
 msgid "Locate \".toolbar\" file to import"
-msgstr ""
+msgstr "\".toolbar\"-Datei angeben zum Importieren"
 
 #: ulng.rsmsgtoolbarlocatetctoolbarfile
 msgid "Locate \".BAR\" file to import"
-msgstr ""
+msgstr "\".BAR\"-Datei angeben zum Importieren"
 
 #: ulng.rsmsgtoolbarmodifiedwanttosave
 msgid "Toolbar has been modified. Do you want to save before to exit?"
-msgstr ""
+msgstr "Die Toolbar wurde verändert. Soll sie vor dem Beenden gespeichert werden?"
 
 #: ulng.rsmsgtoolbarrestorewhat
 msgid "Enter location and filename of Toolbar to restore"
-msgstr ""
+msgstr "Speicherort und Dateinamen der Toolbar zum Wiederherstellen angeben"
 
 #: ulng.rsmsgtoolbarsaved
 msgid ""
 "Saved!\n"
 "Toolbar filename: %s\n"
-msgstr ""
+msgstr "Gespeichert!\n"
+"Name der Toolbar: %s\n"
 
 #: ulng.rsmsgtoomanyfilesselected
 msgid "Too many files selected."
