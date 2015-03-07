@@ -62,6 +62,8 @@ function Utf32BEToUtf8(const s: string): string; // UTF32-BE 4 byte big endian
 function Utf8ToUtf16LE(const s: string): string; // UTF16-LE 2 or 4 byte little endian
 function Utf8ToUtf16BE(const s: string): string; // UTF16-BE 2 or 4 byte big endian
 
+function UTF8ToUCS4(const UTF8Text: String): UCS4String;
+
 {en
    Replaces invalid UTF-8 characters with '?'.
 }
@@ -457,6 +459,27 @@ begin
         end;
       end;
     end;
+end;
+
+function UTF8ToUCS4(const UTF8Text: String): UCS4String;
+var
+  Len: PtrInt;
+  Index: Integer;
+  CharLen: Integer;
+  SrcPos: PAnsiChar;
+begin
+  Len:= Length(UTF8Text);
+  SetLength(Result, Len);
+  if Len = 0 then Exit;
+  Index:= 0;
+  SrcPos:= PAnsiChar(UTF8Text);
+  while Len > 0 do begin
+    Result[Index]:= UTF8CharacterToUnicode(SrcPos, CharLen);
+    Inc(SrcPos, CharLen);
+    Dec(Len, CharLen);
+    Inc(Index);
+  end;
+  SetLength(Result, Index);
 end;
 
 function Utf8ReplaceBroken(const s: UTF8String): UTF8String;
