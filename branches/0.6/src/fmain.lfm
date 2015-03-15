@@ -1126,15 +1126,16 @@ object frmMain: TfrmMain
     end
     object mnuNetwork: TMenuItem
       Caption = 'Network'
-      Visible = False
       object miNetworkConnect: TMenuItem
         Action = actNetworkConnect
       end
       object miNetworkQuickConnect: TMenuItem
         Action = actNetworkQuickConnect
+        Visible = False
       end
       object miNetworkDisconnect: TMenuItem
         Action = actNetworkDisconnect
+        Enabled = False
       end
     end
     object mnuTabs: TMenuItem

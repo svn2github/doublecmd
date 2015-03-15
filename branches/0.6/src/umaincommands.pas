@@ -255,7 +255,7 @@ uses Forms, Controls, Dialogs, Clipbrd, strutils, LCLProc, HelpIntfs, StringHash
      fViewOperations, uVfsModule, uMultiListFileSource, uExceptions,
      DCOSUtils, DCStrUtils, DCBasicTypes, uFileSourceCopyOperation, fSyncDirsDlg,
      uHotDir, DCXmlConfig, dmCommonData, fOptionsFrame, foptionsDirectoryHotlist,
-	 fOptionsToolbar
+     fOptionsToolbar, uConnectionManager
      {$IFDEF COLUMNSFILEVIEW_VTV}
      , uColumnsFileViewVtv
      {$ENDIF}
@@ -3173,21 +3173,12 @@ end;
 
 procedure TMainCommands.cm_NetworkConnect(const Params: array of string);
 begin
-  {
-  ShowConnectionManager(frmMain.ActiveFrame);
-  }
+  DoOpenVirtualFileSystemList(frmMain.ActiveFrame);
 end;
 
 procedure TMainCommands.cm_NetworkDisconnect(const Params: array of string);
 begin
-  {
-  if frmMain.ActiveFrame.FileSource.IsClass(TWfxPluginFileSource) then
-  with frmMain.ActiveFrame.FileSource as IWfxPluginFileSource do
-  begin
-    if param <> EmptyStr then
-      WfxModule.WfxNetworkCloseConnection(param);
-  end;
-  }
+  CloseNetworkConnection();
 end;
 
 procedure TMainCommands.cm_HorizontalFilePanels(const Params: array of string);

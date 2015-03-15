@@ -6,7 +6,7 @@ unit uWfxPluginFileSource;
 interface
 
 uses
-  Classes, SysUtils, uWFXModule, WfxPlugin,
+  Classes, SysUtils, URIParser, uWFXModule, WfxPlugin,
   uFile, uFileSourceProperty, uFileSourceOperationTypes,
   uFileProperty, uFileSource, uFileSourceOperation;
 
@@ -87,6 +87,7 @@ type
     function WfxCopyMove(sSourceFile, sTargetFile: UTF8String; Flags: LongInt;
                          RemoteInfo: PRemoteInfo; Internal, CopyMoveIn: Boolean): LongInt;
   public
+    constructor Create(const URI: TURI); override;
     constructor Create(aModuleFileName, aPluginRootName: UTF8String); reintroduce;
     destructor Destroy; override;
 
@@ -119,6 +120,7 @@ type
 
     function GetLocalName(var aFile: TFile): Boolean; override;
 
+    class function IsSupportedPath(const Path: String): Boolean; override;
     class function CreateByRootName(aRootName: String): IWfxPluginFileSource;
 
     function GetConnection(Operation: TFileSourceOperation): TFileSourceConnection; override;
@@ -155,7 +157,7 @@ implementation
 uses
   LCLProc, FileUtil, StrUtils, {} LCLType, uShowMsg, {} uGlobs, DCStrUtils, uDCUtils, uLog,
   uDebug, uLng, uCryptProc, DCFileAttributes, uConnectionManager, contnrs, syncobjs,
-  uWfxPluginCopyInOperation, uWfxPluginCopyOutOperation,  uWfxPluginMoveOperation,
+  uWfxPluginCopyInOperation, uWfxPluginCopyOutOperation,  uWfxPluginMoveOperation, uVfsModule,
   uWfxPluginExecuteOperation, uWfxPluginListOperation, uWfxPluginCreateDirectoryOperation,
   uWfxPluginDeleteOperation, uWfxPluginSetFilePropertyOperation, uWfxPluginCopyOperation;
 
@@ -223,10 +225,10 @@ end;
 procedure MainLogProc(PluginNr, MsgType: Integer; LogString: UTF8String);
 var
   I: Integer;
-  sMsg: UTF8String;
-  LogMsgType: TLogMsgType = lmtInfo;
   bLogFile: Boolean;
-  sName: UTF8String;
+  sMsg, sName, sPath: String;
+  bLogWindow: Boolean = True;
+  LogMsgType: TLogMsgType = lmtInfo;
   CallbackDataClass: TCallbackDataClass;
 Begin
   sMsg:= rsMsgLogInfo;
@@ -236,22 +238,24 @@ Begin
     msgtype_connect:
       begin
         if Assigned(CallbackDataClass) then
-          begin
-            I:= Pos(#32, LogString);
-            sName:= WfxOperationList[PluginNr] + ':' + Copy(LogString, I, MaxInt);
-            AddNetworkConnection(sName, CallbackDataClass.FileSource);
-          end;
+        begin
+          I:= Pos(#32, LogString);
+          sName:= WfxOperationList[PluginNr];
+          sPath:= Copy(LogString, I + 1, MaxInt);
+          AddNetworkConnection(sName, sPath, CallbackDataClass.FileSource);
+        end;
         sMsg:= sMsg + '[' + IntToStr(MsgType) + ']';
-        ShowLogWindow(True);
       end;
     msgtype_disconnect:
       begin
         if Assigned(CallbackDataClass) then
-          begin
-            I:= Pos(#32, LogString);
-            sName:= WfxOperationList[PluginNr] + Copy(LogString, I, MaxInt);
-            RemoveNetworkConnection(sName);
-          end;
+        begin
+          bLogWindow:= False;
+          I:= Pos(#32, LogString);
+          sName:= WfxOperationList[PluginNr];
+          sPath:= Copy(LogString, I + 1, MaxInt);
+          RemoveNetworkConnection(sName, sPath);
+        end;
       end;
     msgtype_details,
     msgtype_operationcomplete,
@@ -260,13 +264,13 @@ Begin
       sMsg:= sMsg + '[' + IntToStr(MsgType) + ']';
     msgtype_importanterror:
       begin
-        sMsg:= rsMsgLogError + '[' + IntToStr(MsgType) + ']';
         LogMsgType:= lmtError;
+        sMsg:= rsMsgLogError + '[' + IntToStr(MsgType) + ']';
         bLogFile:= (log_vfs_op in gLogOptions) and (log_errors in gLogOptions);
       end;
   end;
   // write log info
-  logWrite(sMsg + ', ' + logString, LogMsgType, True, bLogFile);
+  logWrite(sMsg + ', ' + logString, LogMsgType, bLogWindow, bLogFile);
 
   //DCDebug('MainLogProc ('+ sMsg + ',' + logString + ')');
 end;
@@ -721,6 +725,22 @@ begin
   end;
 end;
 
+constructor TWfxPluginFileSource.Create(const URI: TURI);
+var
+  sModuleFileName: UTF8String;
+begin
+  if gWFXPlugins.Count = 0 then Exit;
+  // Check if there is a registered plugin for the name of the file system plugin.
+  sModuleFileName:= gWFXPlugins.Values[URI.Host];
+  if sModuleFileName <> EmptyStr then
+    begin
+      sModuleFileName:= GetCmdDirFromEnvVar(sModuleFileName);
+      Create(sModuleFileName, URI.Host);
+
+      DCDebug('Found registered plugin ' + sModuleFileName + ' for file system ' + URI.Host);
+    end;
+end;
+
 function TWfxPluginFileSource.CreateListOperation(TargetPath: String): TFileSourceOperation;
 var
   TargetFileSource: IFileSource;
@@ -821,6 +841,12 @@ begin
       aFile.FullPath:= sFileName;
       Result:= True;
     end;
+end;
+
+class function TWfxPluginFileSource.IsSupportedPath(const Path: String
+  ): Boolean;
+begin
+  Result:= Pos('wfx://', Path) = 1;
 end;
 
 class function TWfxPluginFileSource.CreateByRootName(aRootName: String): IWfxPluginFileSource;
@@ -1039,6 +1065,7 @@ initialization
   WfxConnectionsLock := TCriticalSection.Create;
   WfxOperationsQueue := TObjectList.Create(False); // False = don't destroy operations (only store references)
   WfxOperationsQueueLock := TCriticalSection.Create;
+  RegisterVirtualFileSource('WfxPlugin', TWfxPluginFileSource, False);
 
 finalization
   FreeThenNil(WfxOperationList);
