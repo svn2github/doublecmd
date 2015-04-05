@@ -563,6 +563,7 @@ type
     // for dragging buttons and etc
     NumberOfMoveButton, NumberOfNewMoveButton: integer;
     Draging : boolean;
+    FUpdateDiskCount: Boolean;
 
     procedure CheckCommandLine(ShiftEx: TShiftState; var Key: Word);
     function ExecuteCommandFromEdit(sCmd: String; bRunInTerm: Boolean): Boolean;
@@ -1570,6 +1571,12 @@ end;
 
 procedure TfrmMain.FormWindowStateChange(Sender: TObject);
 begin
+  if FUpdateDiskCount and (WindowState <> wsMinimized) then
+  begin
+    UpdateDiskCount;
+    FUpdateDiskCount:= False;
+  end;
+
   if WindowState = wsMinimized then
   begin  // Minimized
     MainToolBar.Top:= 0; // restore toolbar position
@@ -5419,7 +5426,14 @@ end;
 
 procedure TfrmMain.OnDriveWatcherEvent(EventType: TDriveWatcherEvent; const ADrive: PDrive);
 begin
-  UpdateDiskCount;
+  // Update disk panel does not work correctly when main
+  // window is minimized. So set FUpdateDiskCount flag instead
+  // and update disk count later in WindowStateChange event
+  if WindowState = wsMinimized then
+    FUpdateDiskCount:= True
+  else begin
+    UpdateDiskCount;
+  end;
 
   if (EventType = dweDriveRemoved) and Assigned(ADrive) then
   begin
