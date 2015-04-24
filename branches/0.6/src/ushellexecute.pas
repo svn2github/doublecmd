@@ -3,7 +3,7 @@
     -------------------------------------------------------------------------
     This unit contains some functions for open files in associated applications.
 
-    Copyright (C) 2006-2011  Koblov Alexander (Alexx2000@mail.ru)
+    Copyright (C) 2006-2015 Alexander Koblov (alexx2000@mail.ru)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ unit uShellExecute;
 interface
 
 uses
-  Classes, SysUtils, uFile, uFileView;
+  Classes, uFile, uFileView;
 
 type
   TPrepareParameterOption = (ppoNormalizePathDelims, ppoReplaceTilde);
@@ -58,8 +58,8 @@ function ShellExecuteEx(sCmd, sFileName, sActiveDir: String): Boolean;
 implementation
 
 uses
-  Process, UTF8Process, uDCUtils, uShowForm, uGlobs, uOSUtils,
-  uFileSystemFileSource, DCOSUtils, DCStrUtils;
+  SysUtils, Process, UTF8Process, LazUTF8, LConvEncoding, uDCUtils, uShowForm, uGlobs,
+  uOSUtils, uFileSystemFileSource, DCOSUtils, DCStrUtils, DCClassesUtf8, UnicodeUtils;
 
 function PrepareParameter(sParam: String;
                           leftPanel: TFileView;
@@ -97,6 +97,16 @@ end;
   %a - address + path + filename
   %D - current path in active or chosen panel
   %A - current address in active or chosen panel
+  %F - file list with file name only
+  %L - file list with full file name
+  %F, %L - create a list file in the TEMP directory with the names of the selected
+           files and directories, and appends the name of the list file to the command line
+
+  Choosing quoting and encoding (if not given, system encoding used):
+    %X[U|W][Q] - where X is function %F or %L
+                   U - UTF-8,
+                   W - UTF-16 (with byte order marker),
+                   Q - quote file name by double quotes
 
   Choosing panel (if not given, active panel is used):
     %X[l|r|s|t] - where X is function (l - left, r - right, s - source, t - target)
@@ -115,6 +125,7 @@ end;
   Above parameters can be combined together.
   Order of params:
   - %function
+  - quoting and encoding (only for %F, %L)
   - left or right or source or target panel (optional)
   - nr of file (optional)
   - prefix, postfix (optional)
@@ -138,7 +149,9 @@ function ReplaceVarParams(sSourceStr: String;
                           rightPanel: TFileView;
                           activePanel: TFileView): String;
 type
-  TFunctType = (ftNone, ftName, ftDir, ftPath, ftSingleDir, ftSource, ftSourcePath);
+  TFunctType = (ftNone, ftName, ftDir, ftPath, ftSingleDir, ftSource, ftSourcePath,
+                ftFileFullList, ftFileNameList);
+  TFuncModifiers = set of (fmQuote, fmUTF8, fmUTF16);
   TStatePos = (spNone, spPercent, spFunction, spPrefix, spPostfix,
                spGotPrefix, spSide, spIndex, spComplete);
 
@@ -146,6 +159,7 @@ type
     pos: TStatePos;
     functStartIndex: Integer;
     funct: TFunctType;
+    functMod: TFuncModifiers;
     files: TFiles;
     dir: String;
     address: String;
@@ -205,6 +219,53 @@ var
     end;
   end;
 
+  function BuildFile(aFile: TFile): String;
+  begin
+    if state.funct = ftFileFullList then
+      Result := aFile.FullPath
+    else begin
+      Result := aFile.Name;
+    end;
+    if (fmQuote in state.functMod) then begin
+      Result := '"' + Result + '"';
+    end;
+    if (fmUTF16 in state.functMod) then
+      Result := Utf8ToUtf16LE(Result)
+    else if not (fmUTF8 in state.functMod) then begin
+      Result := UTF8ToSys(Result);
+    end;
+  end;
+
+  function BuildFileList: UTF8String;
+  var
+    I: Integer;
+    FileName: AnsiString;
+    FileList: TFileStreamEx;
+    LineEndingA: AnsiString = LineEnding;
+  begin
+    Result := GetTempName(GetTempFolderDeletableAtTheEnd);
+    try
+      FileList:= TFileStreamEx.Create(Result, fmCreate);
+      try
+        if fmUTF16 in state.functMod then
+        begin
+          FileName:= UTF16LEBOM;
+          LineEndingA:= Utf8ToUtf16LE(LineEnding)
+        end;
+        for I := 0 to state.files.Count - 2 do
+        begin
+          FileName += BuildFile(state.files[I]) + LineEndingA;
+        end;
+        FileName += BuildFile(state.files[state.files.Count - 1]);
+        FileList.Write(FileName[1], Length(FileName));
+      finally
+        FileList.Free;
+      end;
+    except
+      Result:= EmptyStr;
+    end;
+  end;
+
   procedure ResetState(var aState: TState);
   begin
     with aState do
@@ -215,6 +276,7 @@ var
       address := activeAddress;
       sFileIndex := '';
       funct := ftNone;
+      functMod := [];
       functStartIndex := 0;
       prefix := '';
       postfix := '';
@@ -255,7 +317,10 @@ var
       if state.funct in [ftName, ftPath, ftDir, ftSourcePath] then
         sOutput := sOutput + BuildAllNames
       else if state.funct in [ftSingleDir, ftSource] then // only single current dir
-        sOutput := sOutput + BuildName(nil);
+        sOutput := sOutput + BuildName(nil)
+      else if state.funct in [ftFileFullList, ftFileNameList] then begin
+        sOutput:= sOutput + BuildFileList;
+      end;
     end;
 
     ResetState(state);
@@ -352,6 +417,16 @@ begin
                 state.funct := ftSourcePath;
                 state.pos := spFunction;
               end;
+            'L':
+              begin
+                state.funct := ftFileFullList;
+                state.pos := spFunction;
+              end;
+            'F':
+              begin
+                state.funct := ftFileNameList;
+                state.pos := spFunction;
+              end;
             else
               ResetState(state);
           end;
@@ -388,6 +463,24 @@ begin
                 state.dir := inactiveDir;
                 state.address := inactiveAddress;
                 state.pos := spSide;
+              end;
+
+            'U':
+              begin
+                state.functMod += [fmUTF8];
+                state.pos := spFunction;
+              end;
+
+            'W':
+              begin
+                state.functMod += [fmUTF16];
+                state.pos := spFunction;
+              end;
+
+            'Q':
+              begin
+                state.functMod += [fmQuote];
+                state.pos := spFunction;
               end;
 
             '0'..'9':

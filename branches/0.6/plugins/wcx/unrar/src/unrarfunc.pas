@@ -4,7 +4,7 @@
    WCX plugin for unpacking RAR archives
    This is simple wrapper for unrar.dll or libunrar.so
 
-   Copyright (C) 2008-2012  Koblov Alexander (Alexx2000@mail.ru)
+   Copyright (C) 2008-2015 Alexander Koblov (alexx2000@mail.ru)
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
@@ -308,26 +308,12 @@ begin
 {$ENDIF}
 end;
 
-function GetSystemSpecificFileTime(HostOS: RarHostSystem; FileTime: LongInt) : LongInt;
-var
-  DateTime: TDateTime;
+function GetSystemSpecificFileTime(FileTime: LongInt) : LongInt;
 begin
   Result := FileTime;
 
-{$IFDEF MSWINDOWS}
-  if (HostOS = HOST_UNIX) then
-  begin
-    DateTime := UnixFileTimeToDateTime(Result);
-    Result   := LongInt(DateTimeToDosFileTime(DateTime));
-  end;
-{$ENDIF}
-
 {$IFDEF UNIX}
-  if HostOS in [HOST_MSDOS, HOST_WIN32] then
-  begin
-    DateTime := DosFileTimeToDateTime(TDosFileTime(Result));
-    Result   := LongInt(DateTimeToUnixFileTime(DateTime));
-  end;
+  Result := LongInt(DateTimeToUnixFileTime(DosFileTimeToDateTime(TDosFileTime(Result))));
 {$ENDIF}
 end;
 
@@ -495,9 +481,7 @@ begin
       HeaderData.FileAttr :=
           GetSystemSpecificAttributes(RarHostSystem(HeaderData.HostOS),
                                       HeaderData.FileAttr);
-      HeaderData.FileTime :=
-          GetSystemSpecificFileTime(RarHostSystem(HeaderData.HostOS),
-                                    HeaderData.FileTime);
+      HeaderData.FileTime := GetSystemSpecificFileTime(HeaderData.FileTime);
 {$POP}
       Move(HeaderData.FileName, ProcessedFileName, SizeOf(HeaderData.FileName));
       ProcessedFileNameW := '';
@@ -548,9 +532,7 @@ begin
       HeaderData.FileAttr :=
           GetSystemSpecificAttributes(RarHostSystem(HeaderData.HostOS),
                                       HeaderData.FileAttr);
-      HeaderData.FileTime :=
-          GetSystemSpecificFileTime(RarHostSystem(HeaderData.HostOS),
-                                    HeaderData.FileTime);
+      HeaderData.FileTime := GetSystemSpecificFileTime(HeaderData.FileTime);
 {$POP}
       ProcessedFileName := HeaderData.FileName;
       ProcessedFileNameW := '';
@@ -601,9 +583,7 @@ begin
       HeaderData.FileAttr :=
           GetSystemSpecificAttributes(RarHostSystem(HeaderData.HostOS),
                                       HeaderData.FileAttr);
-      HeaderData.FileTime :=
-          GetSystemSpecificFileTime(RarHostSystem(HeaderData.HostOS),
-                                    HeaderData.FileTime);
+      HeaderData.FileTime := GetSystemSpecificFileTime(HeaderData.FileTime);
 {$POP}
       ProcessedFileName := RarHeader.FileName;
       ProcessedFileNameW := HeaderData.FileName;
