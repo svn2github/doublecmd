@@ -81,6 +81,7 @@ type
     function GetRootDir: String; override; overload;
     function GetPathType(sPath : String): TPathType; override;
 
+    function CreateDirectory(const Path: String): Boolean; override;
     function GetFreeSpace(Path: String; out FreeSize, TotalSize : Int64) : Boolean; override;
 
     function CreateListOperation(TargetPath: String): TFileSourceOperation; override;
@@ -121,7 +122,7 @@ type
 implementation
 
 uses
-  uOSUtils, DCOSUtils, DCDateTimeUtils, uGlobs, uGlobsPaths,
+  uOSUtils, DCOSUtils, DCDateTimeUtils, uGlobs, uGlobsPaths, uLog, uLng,
 {$IFDEF MSWINDOWS}
   uMyWindows, Windows,
 {$ENDIF}
@@ -711,6 +712,20 @@ end;
 function TFileSystemFileSource.GetPathType(sPath : String): TPathType;
 begin
   Result := DCStrUtils.GetPathType(sPath);
+end;
+
+function TFileSystemFileSource.CreateDirectory(const Path: String): Boolean;
+begin
+  Result := mbCreateDir(Path);
+  if Result then
+  begin
+    if (log_dir_op in gLogOptions) and (log_success in gLogOptions) then
+      logWrite(Format(rsMsgLogSuccess + rsMsgLogMkDir, [Path]), lmtSuccess);
+  end
+  else begin
+    if (log_dir_op in gLogOptions) and (log_errors in gLogOptions) then
+      logWrite(Format(rsMsgLogError + rsMsgLogMkDir, [Path]), lmtError);
+  end;
 end;
 
 function TFileSystemFileSource.GetFreeSpace(Path: String; out FreeSize, TotalSize : Int64) : Boolean;

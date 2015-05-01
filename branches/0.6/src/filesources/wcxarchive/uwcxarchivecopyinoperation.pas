@@ -131,31 +131,29 @@ begin
     begin
       CurrentFileFrom:= FileName;
 
-      if Size >= 0 then
+      // Get the number of bytes processed since the previous call
+      if Size > 0 then
       begin
-        CurrentFileDoneBytes := CurrentFileDoneBytes + Size;
         DoneBytes := DoneBytes + Size;
+        if TotalFiles = 1 then begin
+          CurrentFileDoneBytes := DoneBytes;
+          CurrentFileTotalBytes := TotalBytes;
+        end;
       end
-      else // For plugins which unpack in CloseArchive
+      // Get progress percent value to directly set progress bar
+      else if Size < 0 then
       begin
-        if (Size >= -100) and (Size <= -1) then // first percent bar
-          begin
-            CurrentFileDoneBytes := CurrentFileTotalBytes * (-Size) div 100;
-            CurrentFileTotalBytes := 100;
-
-{            if Size = -100 then // File finished
-              DoneBytes := DoneBytes + WcxCopyOutOperation.FCurrentFileSize;}
-            //DCDebug('Working ' + FileName + ' Percent1 = ' + IntToStr(FFileOpDlg.iProgress1Pos));
-          end
-        else if (Size >= -1100) and (Size <= -1000) then // second percent bar
-          begin
-            DoneBytes := TotalBytes * Int64(-Size - 1000) div 100;
-            //DCDebug('Working ' + FileName + ' Percent2 = ' + IntToStr(FFileOpDlg.iProgress2Pos));
-          end
-        else
-          begin
-//            DoneBytes := DoneBytes + WcxCopyOutOperation.FCurrentFileSize;
-          end;
+        // Total operation percent
+        if (Size >= -100) and (Size <= -1) then
+        begin
+          DoneBytes := TotalBytes * Int64(-Size) div 100;
+        end
+        // Current file percent
+        else if (Size >= -1100) and (Size <= -1000) then
+        begin
+          CurrentFileTotalBytes := 100;
+          CurrentFileDoneBytes := Int64(-Size) - 1000;
+        end;
       end;
 
       WcxCopyInOperation.UpdateStatistics(WcxCopyInOperation.FStatistics);
@@ -220,6 +218,7 @@ begin
 
   // Get initialized statistics; then we change only what is needed.
   FStatistics := RetrieveStatistics;
+  FStatistics.CurrentFileDoneBytes := -1;
 
   FillAndCount(SourceFiles, False, False,
                FFullFilesTree,
@@ -244,6 +243,7 @@ begin
 
   with FStatistics do
   begin
+    if FTarBefore then CurrentFileDoneBytes := -1;
     CurrentFileTo:= FWcxArchiveFileSource.ArchiveFileName;
     UpdateStatistics(FStatistics);
   end;

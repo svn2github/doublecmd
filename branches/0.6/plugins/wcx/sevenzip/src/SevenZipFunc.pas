@@ -3,7 +3,7 @@
   -------------------------------------------------------------------------
   SevenZip archiver plugin
 
-  Copyright (C) 2014 Alexander Koblov (alexx2000@mail.ru)
+  Copyright (C) 2014-2015 Alexander Koblov (alexx2000@mail.ru)
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -49,7 +49,7 @@ implementation
 
 uses
   JwaWinBase, Windows, SysUtils, Classes, JclCompression, SevenZip, SevenZipAdv,
-  SevenZipDlg, SevenZipLng, SevenZipOpt, LazFileUtils;
+  SevenZipDlg, SevenZipLng, SevenZipOpt, LazFileUtils, SyncObjs;
 
 type
 
@@ -61,7 +61,19 @@ type
 
   { TSevenZipUpdate }
 
-  TSevenZipUpdate = class
+  TSevenZipUpdate = class(TThread)
+    FPercent: Int64;
+    FFileName: WideString;
+    FPause: TEventObject;
+    FProgress: TEventObject;
+    FArchive: TJclCompressionArchive;
+  public
+    constructor Create; overload;
+    constructor Create(Archive: TJclCompressionArchive); overload;
+    destructor Destroy; override;
+  public
+    procedure Execute; override;
+    function Update: Integer; virtual;
     procedure JclCompressionPassword(Sender: TObject; var Password: WideString);
     procedure JclCompressionProgress(Sender: TObject; const Value, MaxValue: Int64); virtual;
   end;
@@ -77,10 +89,11 @@ type
     ArchiveName: UTF8String;
     ProcessArray: TCardinalArray;
     FileName: array of UTF8String;
-    Archive: TJclDecompressArchive;
     ProcessDataProc: TProcessDataProcW;
   public
-    procedure JclCompressionProgress(Sender: TObject; const Value, MaxValue: Int64); override;
+    procedure Execute; override;
+    function Update: Integer; override;
+    procedure SetArchive(AValue: TJclDecompressArchive);
     function JclCompressionExtract(Sender: TObject; AIndex: Integer;
       var AFileName: TFileName; var Stream: TStream; var AOwnsStream: Boolean): Boolean;
   end;
@@ -115,11 +128,12 @@ end;
 function OpenArchiveW(var ArchiveData : tOpenArchiveDataW) : TArcHandle; stdcall;
 var
   I: Integer;
-  Handle: TSevenZipHandle;
+  ResultHandle: TSevenZipHandle;
+  Archive: TJclDecompressArchive;
   AFormats: TJclDecompressArchiveClassArray;
 begin
-  Handle:= TSevenZipHandle.Create;
-  with Handle do
+  ResultHandle:= TSevenZipHandle.Create;
+  with ResultHandle do
   begin
     Index:= 0;
     ProcessIndex:= 0;
@@ -130,10 +144,8 @@ begin
     begin
       Archive := AFormats[I].Create(ArchiveName, 0, False);
       try
-        Archive.OnPassword:= JclCompressionPassword;
-        Archive.OnProgress := JclCompressionProgress;
+        SetArchive(Archive);
 
-        Archive.OnExtract:= JclCompressionExtract;
         Archive.ListFiles;
 
         Count:= Archive.ItemCount;
@@ -146,7 +158,7 @@ begin
 
         ArchiveData.OpenResult:= E_SUCCESS;
 
-        Exit(TArcHandle(Handle));
+        Exit(TArcHandle(ResultHandle));
       except
         on E: Exception do
         begin
@@ -169,7 +181,7 @@ begin
   with Handle do
   begin
     if Index >= Count then Exit(E_END_ARCHIVE);
-    Item:= Archive.Items[Index];
+    Item:= FArchive.Items[Index];
     HeaderData.FileName:= Item.PackedName;
     HeaderData.UnpSize:= Int64Rec(Item.FileSize).Lo;
     HeaderData.UnpSizeHigh:= Int64Rec(Item.FileSize).Hi;
@@ -226,16 +238,14 @@ var
 begin
   Result:= E_SUCCESS;
   if (hArcData <> wcxInvalidHandle) then
-  with Handle do begin
+  with Handle do
+  begin
     if OpenMode = PK_OM_EXTRACT then
-    try
-      SetLength(ProcessArray, ProcessIndex);
-      TJclSevenzipDecompressArchive(Archive).ProcessSelected(ProcessArray, OperationMode = PK_TEST);
-    except
-      on E: Exception do
-        Result:= GetArchiveError(E);
+    begin
+      Start;
+      Result:= Update;
     end;
-    Archive.Free;
+    FArchive.Free;
     Free;
   end;
 end;
@@ -282,9 +292,7 @@ begin
   begin
     Archive := AFormats[I].Create(FileNameUTF8, 0, False);
     try
-      AProgress:= TSevenZipUpdate.Create;
-      Archive.OnPassword:= AProgress.JclCompressionPassword;
-      Archive.OnProgress:= AProgress.JclCompressionProgress;
+      AProgress:= TSevenZipUpdate.Create(Archive);
 
       if (Flags and PK_PACK_ENCRYPT) <> 0 then
       begin
@@ -328,13 +336,9 @@ begin
           Break;
         Inc(AddList, Length(FileName) + 1);
       end;
-      try
-        Archive.Compress;
-      except
-        on E: Exception do
-          Exit(GetArchiveError(E));
-      end;
-      Exit(E_SUCCESS);
+
+      AProgress.Start;
+      Exit(AProgress.Update);
     finally
       Archive.Free;
       AProgress.Free;
@@ -360,9 +364,7 @@ begin
   begin
     Archive := AFormats[I].Create(FileNameUTF8, 0, False);
     try
-      AProgress:= TSevenZipUpdate.Create;
-      Archive.OnPassword:= AProgress.JclCompressionPassword;
-      Archive.OnProgress:= AProgress.JclCompressionProgress;
+      AProgress:= TSevenZipUpdate.Create(Archive);
 
       try
         Archive.ListFiles;
@@ -386,13 +388,9 @@ begin
         if FileList^ = #0 then
           Break;  // end of list
       end;
-      try
-        Archive.Compress;
-      except
-        on E: Exception do
-          Exit(GetArchiveError(E));
-      end;
-      Exit(E_SUCCESS);
+
+      AProgress.Start;
+      Exit(AProgress.Update);
     finally
       Archive.Free;
       AProgress.Free;
@@ -412,10 +410,18 @@ var
 begin
   // Save configuration file name
   ConfigFile:= ExtractFilePath(dps^.DefaultIniName) + 'sevenzip.ini';
-  // Load library from plugin path
-  if GetModulePath(ModulePath) and FileExists(ModulePath + SevenzipDefaultLibraryName) then
+  // Load plugin configuration
+  LoadConfiguration;
+  // Try to find library path
+  if FileExists(LibraryPath) then
+    SevenzipLibraryName:= LibraryPath
+  else if GetModulePath(ModulePath) then
   begin
-    SevenzipLibraryName:= ModulePath + SevenzipDefaultLibraryName;
+    if FileExists(ModulePath + TargetCPU + PathDelim + SevenzipDefaultLibraryName) then
+      SevenzipLibraryName:= ModulePath + TargetCPU + PathDelim + SevenzipDefaultLibraryName
+    else if FileExists(ModulePath + SevenzipDefaultLibraryName) then begin
+      SevenzipLibraryName:= ModulePath + SevenzipDefaultLibraryName;
+    end;
   end;
   // Process Xz files as archives
   GetArchiveFormats.RegisterFormat(TJclXzDecompressArchive);
@@ -429,8 +435,6 @@ begin
   begin
     MessageBoxW(0, PWideChar(UTF8Decode(rsSevenZipLoadError)), 'SevenZip', MB_OK or MB_ICONERROR);
   end;
-  // Load plugin configuration
-  LoadConfiguration;
 end;
 
 procedure ConfigurePacker(Parent: WcxPlugin.HWND; DllInstance: THandle); stdcall;
@@ -439,6 +443,58 @@ begin
 end;
 
 { TSevenZipUpdate }
+
+constructor TSevenZipUpdate.Create;
+begin
+  inherited Create(True);
+  FPause:= TEventObject.Create(nil, False, False, '');
+  FProgress:= TEventObject.Create(nil, False, False, '');
+end;
+
+constructor TSevenZipUpdate.Create(Archive: TJclCompressionArchive);
+begin
+  Create;
+  FArchive:= Archive;
+  Archive.OnPassword:= JclCompressionPassword;
+end;
+
+destructor TSevenZipUpdate.Destroy;
+begin
+  FPause.Free;
+  FProgress.Free;
+  inherited Destroy;
+end;
+
+procedure TSevenZipUpdate.Execute;
+begin
+  try
+    (FArchive as TJclCompressArchive).Compress;
+    ReturnValue:= E_SUCCESS;
+  except
+    on E: Exception do
+      ReturnValue:= GetArchiveError(E);
+  end;
+  Terminate;
+  FProgress.SetEvent;
+end;
+
+function TSevenZipUpdate.Update: Integer;
+var
+  AllowCancel: Boolean;
+begin
+  FArchive.OnProgress:= JclCompressionProgress;
+  AllowCancel:= not (FArchive is TJclUpdateArchive);
+  while not Terminated do
+  begin
+    // Wait progress event
+    FProgress.WaitFor(INFINITE);
+    // If the user has clicked on Cancel, the function returns zero
+    FArchive.CancelCurrentOperation:= (ProcessDataProcT(PWideChar(FFileName), -FPercent) = 0) and AllowCancel;
+    // Drop pause
+    FPause.SetEvent;
+  end;
+  Result:= ReturnValue;
+end;
 
 procedure TSevenZipUpdate.JclCompressionPassword(Sender: TObject;
   var Password: WideString);
@@ -449,34 +505,59 @@ begin
     raise ESevenZipAbort.Create(EmptyStr);
 end;
 
-procedure TSevenZipUpdate.JclCompressionProgress(Sender: TObject; const Value,
-  MaxValue: Int64);
-var
-  Percent: Int64;
-  Archive: TJclUpdateArchive absolute Sender;
+procedure TSevenZipUpdate.JclCompressionProgress(Sender: TObject; const Value, MaxValue: Int64);
 begin
-  if Assigned(ProcessDataProcT) then
-  begin
-    Percent:= 1000 + (Value * 100) div MaxValue;
-    // If the user has clicked on Cancel, the function returns zero
-    Archive.CancelCurrentOperation:= ProcessDataProcT(PWideChar(Archive.Items[Archive.CurrentItemIndex].PackedName), -Percent) = 0;
+  if MaxValue > 0 then begin
+    FPercent:= (Value * 100) div MaxValue;
   end;
+  if FArchive.ItemCount > 0 then begin
+    FFileName:= FArchive.Items[FArchive.CurrentItemIndex].PackedName;
+  end;
+  // Fire progress event
+  FProgress.SetEvent;
+  // Check pause progress
+  FPause.WaitFor(INFINITE);
 end;
 
 { TSevenZipHandle }
 
-procedure TSevenZipHandle.JclCompressionProgress(Sender: TObject; const Value,
-  MaxValue: Int64);
-var
-  Percent: Int64;
-  Archive: TJclDecompressArchive absolute Sender;
+procedure TSevenZipHandle.Execute;
 begin
-  if Assigned(ProcessDataProc) then
-  begin
-    Percent:= 1000 + (Value * 100) div MaxValue;
-    // If the user has clicked on Cancel, the function returns zero
-    Archive.CancelCurrentOperation:= ProcessDataProc(PWideChar(Archive.Items[Archive.CurrentItemIndex].PackedName), -Percent) = 0;
+  try
+    SetLength(ProcessArray, ProcessIndex);
+    TJclSevenzipDecompressArchive(FArchive).ProcessSelected(ProcessArray, OperationMode = PK_TEST);
+    ReturnValue:= E_SUCCESS;
+  except
+    on E: Exception do
+      ReturnValue:= GetArchiveError(E);
   end;
+  Terminate;
+  FProgress.SetEvent;
+end;
+
+function TSevenZipHandle.Update: Integer;
+begin
+  FArchive.OnProgress:= JclCompressionProgress;
+  while not Terminated do
+  begin
+    // Wait progress event
+    FProgress.WaitFor(INFINITE);
+    if Assigned(ProcessDataProc) then
+    begin
+      // If the user has clicked on Cancel, the function returns zero
+      FArchive.CancelCurrentOperation:= ProcessDataProc(PWideChar(FFileName), -FPercent) = 0;
+    end;
+    // Drop pause
+    FPause.SetEvent;
+  end;
+  Result:= ReturnValue;
+end;
+
+procedure TSevenZipHandle.SetArchive(AValue: TJclDecompressArchive);
+begin
+  FArchive:= AValue;
+  AValue.OnPassword := JclCompressionPassword;
+  AValue.OnExtract  := JclCompressionExtract;
 end;
 
 function TSevenZipHandle.JclCompressionExtract(Sender: TObject; AIndex: Integer;

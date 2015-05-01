@@ -113,30 +113,22 @@ begin
     begin
       CurrentFile := FileName;
 
-      if Size >= 0 then
+      // Get the number of bytes processed since the previous call
+      if Size > 0 then
       begin
+        TotalFiles := 100;
         DoneBytes := DoneBytes + Size;
-        DoneFiles := DoneFiles + 1;
+        DoneFiles := DoneBytes * 100 div TotalBytes;
       end
-      else // For plugins which unpack in CloseArchive
+      // Get progress percent value to directly set progress bar
+      else if Size < 0 then
       begin
-        if (Size >= -100) and (Size <= -1) then // first percent bar
-          begin
-            if Size = -100 then // File finished
-            begin
-              //DoneBytes := DoneBytes + {FileSize(FileName)};
-              DoneFiles := DoneFiles + 1;
-            end;
-          end
-        else if (Size >= -1100) and (Size <= -1000) then // second percent bar
-          begin
-            DoneBytes := TotalBytes * Int64(-Size - 1000) div 100;
-            DoneFiles := DoneFiles + 1;
-          end
-        else
-          begin
-            DoneFiles := DoneFiles + 1;
-          end;
+        // Total operation percent
+        if (Size >= -100) and (Size <= -1) then
+        begin
+          TotalFiles := 100;
+          DoneFiles := -Size;
+        end;
       end;
 
       WcxDeleteOperation.UpdateStatistics(WcxDeleteOperation.FStatistics);
