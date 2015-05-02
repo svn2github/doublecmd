@@ -705,6 +705,15 @@ end;
 
 
 function TOrderedFileView.SetActiveFileNow(aFilePath: String): Boolean;
+
+  procedure SetUpdate(Index: PtrInt);
+  begin
+    FUpdatingActiveFile := True;
+    SetActiveFile(Index);
+    FUpdatingActiveFile := False;
+    SetLastActiveFile(Index);
+  end;
+
 var
   Index: PtrInt;
 begin
@@ -716,10 +725,7 @@ begin
       begin
         if FFiles[Index].FSFile.FullPath = aFilePath then
         begin
-          FUpdatingActiveFile := True;
-          SetActiveFile(Index);
-          FUpdatingActiveFile := False;
-          SetLastActiveFile(Index);
+          SetUpdate(Index);
           Exit(True);
         end;
       end;
@@ -730,14 +736,17 @@ begin
       begin
         if FFiles[Index].FSFile.Name = aFilePath then
         begin
-          FUpdatingActiveFile := True;
-          SetActiveFile(Index);
-          FUpdatingActiveFile := False;
-          SetLastActiveFile(Index);
+          SetUpdate(Index);
           Exit(True);
         end;
       end;
     end;
+    if (FLastActiveFileIndex >= FFiles.Count) then
+      SetUpdate(FFiles.Count - 1)
+    else begin
+      SetUpdate(FLastActiveFileIndex);
+    end;
+    Exit(True);
   end;
   Result := False;
 end;
