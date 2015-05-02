@@ -1761,7 +1761,7 @@ msgstr ""
 #: tfrmfileproperties.lblsymlinkstr.caption
 #| msgid "Symlink:"
 msgid "Symlink to:"
-msgstr "Симв.ссылка"
+msgstr "Симв. ссылка"
 
 #: tfrmfileproperties.lbltype.caption
 msgctxt "TFRMFILEPROPERTIES.LBLTYPE.CAPTION"
@@ -7651,7 +7651,7 @@ msgstr "Всего:"
 
 #: ulng.rsclipboardcontainsinvalidtoolbardata
 msgid "Clipboard doesn't contain any valid toolbar data."
-msgstr "Буфер омена не содержит данных панели инструментов"
+msgstr "Буфер обмена не содержит данных панели инструментов"
 
 #: ulng.rscolattr
 msgid "Attr"
@@ -8753,7 +8753,7 @@ msgstr "Некорректный путь"
 
 #: ulng.rsmsginvalidpathlong
 msgid "Path %s contains forbidden characters."
-msgstr "Путь %s содержит запрещенные симаолы"
+msgstr "Путь %s содержит запрещенные символы"
 
 #: ulng.rsmsginvalidplugin
 msgid "This is not a valid plugin!"
