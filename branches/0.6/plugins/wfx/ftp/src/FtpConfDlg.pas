@@ -37,7 +37,7 @@ function ShowFtpConfDlg: Boolean;
 implementation
 
 uses
-  FtpFunc, FtpUtils, blcksock, ssl_openssl_lib;
+  LazUTF8, FtpFunc, FtpUtils, blcksock, ssl_openssl_lib;
 
 function DlgProc (pDlg: PtrUInt; DlgItemName: PAnsiChar; Msg, wParam, lParam: PtrInt): PtrInt; dcpcall;
 var
@@ -73,7 +73,7 @@ begin
               Data:= PtrInt(PAnsiChar(Text));
               SendDlgMsg(pDlg, 'edtPassword', DM_SETTEXT, Data, 0);
             end;
-          Text:= gConnection.Path;
+          Text:= SysToUTF8(gConnection.Path);
           Data:= PtrInt(PAnsiChar(Text));
           SendDlgMsg(pDlg, 'edtRemoteDir', DM_SETTEXT, Data, 0);
           Text:= gConnection.InitCommands;
@@ -155,7 +155,7 @@ begin
             gConnection.MasterPassword:= Boolean(Data);
             Data:= SendDlgMsg(pDlg, 'edtRemoteDir', DM_GETTEXT, 0, 0);
             Text:= PAnsiChar(Data);
-            gConnection.Path:= Text;
+            gConnection.Path:= UTF8ToSys(Text);
             Data:= SendDlgMsg(pDlg, 'edtInitCommands', DM_GETTEXT, 0, 0);
             Text:= PAnsiChar(Data);
             gConnection.InitCommands:= Text;
