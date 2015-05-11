@@ -275,7 +275,11 @@ end;
 procedure TfrmOptionsFonts.RunDialogFont(aDCFont: TDCFont);
 begin
   dlgFnt.Font := GetFont(aDCFont);
+  if not (aDCFont in [dcfMain, dcfViewerBook]) then begin
+    dlgFnt.Options:= dlgFnt.Options + [fdFixedPitchOnly];
+  end;
   if dlgFnt.Execute then SetFont(aDCFont, dlgFnt.Font);
+  dlgFnt.Options:= dlgFnt.Options - [fdFixedPitchOnly];
 end;
 
 
