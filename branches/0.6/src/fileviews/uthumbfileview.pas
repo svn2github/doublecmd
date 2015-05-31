@@ -348,8 +348,11 @@ begin
             ColWidths[ACol]:= ARow;
         end;
         // Restore active file index
-        IndexToCell(AIndex, ACol, ARow);
-        MoveExtend(False, ACol, ARow);
+        if AIndex >= 0 then
+        begin
+          IndexToCell(AIndex, ACol, ARow);
+          MoveExtend(False, ACol, ARow);
+        end;
       end;
     end;
   finally
@@ -373,7 +376,7 @@ end;
 
 procedure TThumbDrawGrid.IndexToCell(Index: Integer; out ACol, ARow: Integer);
 begin
-  if (Index < 0) or (Index >= FFileView.DisplayFiles.Count) then
+  if (Index < 0) or (Index >= FFileView.DisplayFiles.Count) or (ColCount = 0) then
     begin
       ACol:= -1;
       ARow:= -1;

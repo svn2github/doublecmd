@@ -123,8 +123,11 @@ begin
       RowCount := ARowCount;
       ColCount := (FBriefView.FFiles.Count + ARowCount - 1) div ARowCount;
       // Restore active file index
-      IndexToCell(AIndex, ACol, ARow);
-      MoveExtend(False, ACol, ARow);
+      if AIndex >= 0 then
+      begin
+        IndexToCell(AIndex, ACol, ARow);
+        MoveExtend(False, ACol, ARow);
+      end;
     end;
   end;
   Invalidate;
@@ -173,7 +176,7 @@ end;
 
 procedure TBriefDrawGrid.IndexToCell(Index: Integer; out ACol, ARow: Integer);
 begin
-  if (Index < 0) or (Index >= FBriefView.FFiles.Count) then
+  if (Index < 0) or (Index >= FBriefView.FFiles.Count) or (RowCount = 0) then
     begin
       ACol:= -1;
       ARow:= -1;
