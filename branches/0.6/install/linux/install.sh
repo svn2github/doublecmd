@@ -108,7 +108,7 @@ if [ -z $CK_PORTABLE ]
     install -c -m 644 install/linux/*.1    $DC_INSTALL_PREFIX/usr/share/man/man1
     # Copy documentation
     install -d                $DC_INSTALL_PREFIX/usr/share/doublecmd/doc
-    install -m 644 doc/*.txt  $DC_INSTALL_PREFIX/usr/share/doublecmd/doc
+    install -m 644 doc/*.*    $DC_INSTALL_PREFIX/usr/share/doublecmd/doc
     ln -sf ../../share/doublecmd/doc $DC_INSTALL_DIR/doc
     # Copy scripts
     cp -r scripts $DC_INSTALL_DIR/
