@@ -3240,8 +3240,8 @@ begin
     end;
   finally
     SourceList.Free;
-    ActiveFrame.UpdateView;
-    NotActiveFrame.UpdateView;
+    ActiveFrame.Repaint;
+    NotActiveFrame.Repaint;
   end;
 end;
 
