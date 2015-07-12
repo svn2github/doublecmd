@@ -3,9 +3,9 @@
 # This script updates Double Commander Personal Package Archive (PPA) repository
 
 # Set Double Commander version
-DC_VER=0.6.3
+DC_VER=0.6.4
 # Set Ubuntu series
-DISTRO=( trusty utopic vivid )
+DISTRO=( trusty utopic vivid wily )
 
 # Temp directory
 DC_TEMP_DIR=/var/tmp/doublecmd-$(date +%y.%m.%d)
