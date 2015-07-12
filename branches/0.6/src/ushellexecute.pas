@@ -252,11 +252,10 @@ var
           FileName:= UTF16LEBOM;
           LineEndingA:= Utf8ToUtf16LE(LineEnding)
         end;
-        for I := 0 to state.files.Count - 2 do
+        for I := 0 to state.files.Count - 1 do
         begin
           FileName += BuildFile(state.files[I]) + LineEndingA;
         end;
-        FileName += BuildFile(state.files[state.files.Count - 1]);
         FileList.Write(FileName[1], Length(FileName));
       finally
         FileList.Free;
