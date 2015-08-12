@@ -1,7 +1,7 @@
 {
   GnuTLS to OpenSSL wrapper (based on GNUTLS-EXTRA)
 
-  Copyright (c) 2013 Alexander Koblov <alexx2000@mail.ru>
+  Copyright (c) 2013-2015 Alexander Koblov <alexx2000@mail.ru>
   Copyright (c) 2004, 2005, 2006 Free Software Foundation
   Copyright (c) 2002 Andrew McDonald <andrew@mcdonald.org.uk>
 
@@ -27,11 +27,8 @@ unit ssl_gnutls_lib;
 
 interface
 
-implementation
-
 uses
-  SysUtils, CTypes, DynLibs,
-  ssl_openssl_lib, ssl_openssl, blcksock, windows;
+  CTypes;
 
 type
   gnutls_protocol_t =
@@ -169,6 +166,40 @@ type
     verify_mode: cint;
   end;
 
+function SSL_library_init (): cint; cdecl;
+function SSL_CTX_new (method: PSSL_METHOD): PSSL_CTX; cdecl;
+procedure SSL_CTX_free (ctx: PSSL_CTX); cdecl;
+function SSL_CTX_use_certificate_file (ctx: PSSL_CTX; const certfile: PAnsiChar; certtype: gnutls_x509_crt_fmt_t): cint; cdecl;
+function SSL_CTX_use_PrivateKey_file (ctx: PSSL_CTX; const keyfile: PAnsiChar; keytype: gnutls_x509_crt_fmt_t): cint; cdecl;
+procedure SSL_CTX_set_verify (ctx: PSSL_CTX; verify_mode: cint;
+  		            verify_callback: pointer); cdecl;
+function SSL_new (ctx: PSSL_CTX): PSSL; cdecl;
+procedure SSL_free (ssl: PSSL); cdecl;
+function SSL_get_error (ssl: PSSL; ret: cint): cint; cdecl;
+function SSL_set_fd (ssl: PSSL; fd: cint): cint; cdecl;
+function SSL_pending (ssl: PSSL): cint; cdecl;
+function SSL_connect (ssl: PSSL): cint; cdecl;
+function SSL_shutdown (ssl: PSSL): cint; cdecl;
+function SSL_read (ssl: PSSL; buf: PByte; len: cint): cint; cdecl;
+function SSL_write (ssl: PSSL; const buf: PByte; len: cint): cint; cdecl;
+function SSLv23_method(): PSSL_METHOD; cdecl;
+function SSLv2_method(): PSSL_METHOD; cdecl;
+function SSLv3_method(): PSSL_METHOD; cdecl;
+function TLSv1_method(): PSSL_METHOD; cdecl;
+function TLSv1_1_method(): PSSL_METHOD; cdecl;
+function TLSv1_2_method(): PSSL_METHOD; cdecl;
+function SSL_get_current_cipher (ssl: PSSL): PSSL_CIPHER; cdecl;
+function SSL_CIPHER_get_name (cipher: PSSL_CIPHER): PAnsiChar; cdecl;
+function SSL_CIPHER_get_bits (cipher: PSSL_CIPHER; bits: pcint): cint; cdecl;
+function ERR_get_error (): culong; cdecl;
+function ERR_error_string (e: culong; buf: PAnsiChar): PAnsiChar; cdecl;
+
+implementation
+
+uses
+  SysUtils, DynLibs,
+  ssl_openssl_lib, ssl_openssl, blcksock, dl;
+
 threadvar
   last_error: cint;
 
@@ -206,6 +237,8 @@ var
   gnutls_cipher_get_key_size: function(algorithm: gnutls_cipher_algorithm_t): csize_t; cdecl;
 
   gnutls_strerror: function(error: cint): PAnsiChar; cdecl;
+
+  gnutls_check_version: function(const req_version: PAnsiChar): PAnsiChar; cdecl;
 
 (* Library initialisation functions *)
 
@@ -316,7 +349,7 @@ end;
 
 function SSL_set_fd (ssl: PSSL; fd: cint): cint; cdecl;
 begin
-  {$PUSH}{$HINTS OFF}
+  {$PUSH}{$HINTS OFF}{$WARNINGS OFF}
   gnutls_transport_set_ptr (ssl^.gnutls_state, Pointer(fd));
   {$POP}
   Result := 1;
@@ -423,6 +456,26 @@ begin
   end;
 end;
 
+function TLSv1_1_method: PSSL_METHOD; cdecl;
+begin
+  Result := GetMem(SizeOf(SSL_METHOD));
+  if Assigned(Result) then
+  begin
+    Result^.connend := GNUTLS_CLIENT;
+    Result^.priorities := 'NONE:+VERS-TLS1.1:+CIPHER-ALL:+COMP-ALL:+RSA:+DHE-RSA:+DHE-DSS:+MAC-ALL';
+  end;
+end;
+
+function TLSv1_2_method: PSSL_METHOD; cdecl;
+begin
+  Result := GetMem(SizeOf(SSL_METHOD));
+  if Assigned(Result) then
+  begin
+    Result^.connend := GNUTLS_CLIENT;
+    Result^.priorities := 'NONE:+VERS-TLS1.2:+CIPHER-ALL:+COMP-ALL:+RSA:+DHE-RSA:+DHE-DSS:+MAC-ALL';
+  end;
+end;
+
 (* SSL_CIPHER functions *)
 
 function SSL_get_current_cipher (ssl: PSSL): PSSL_CIPHER; cdecl;
@@ -469,91 +522,78 @@ begin
   Result := gnutls_strerror (-1 * cint(e));
 end;
 
-exports
-  SSL_library_init,
-  SSL_set_fd,
-  SSL_CTX_new,
-  SSL_CTX_free,
-  SSL_new,
-  SSL_free,
-  SSL_connect,
-  SSL_shutdown,
-  SSL_read,
-  SSL_write,
-  SSL_pending,
-  SSLv23_method,
-  SSLv2_method,
-  SSLv3_method,
-  TLSv1_method,
-  SSL_CTX_set_verify,
-  SSL_CTX_use_certificate_file,
-  SSL_CTX_use_PrivateKey_file,
-  SSL_get_error,
-  SSL_get_current_cipher,
-  SSL_CIPHER_get_name,
-  SSL_CIPHER_get_bits,
-  ERR_get_error,
-  ERR_error_string;
-
 function SafeGetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
 begin
   Result:= GetProcedureAddress(Lib, ProcName);
   if (Result = nil) then raise Exception.Create(EmptyStr);
 end;
 
+const
+  libgnutls: array[0..2] of String = ('30', '28', '26');
 var
+  index: Integer;
+  dlinfo: dl_info;
   gnutls: TLibHandle = NilHandle;
-  lpBuffer: TMemoryBasicInformation;
 begin
-  gnutls:= LoadLibrary('libgnutls-28.dll');
-
-  if (gnutls <> NilHandle) then
-  begin
-    @gnutls_global_init:= SafeGetProcAddress(gnutls, 'gnutls_global_init');
-
-    @gnutls_init:= SafeGetProcAddress(gnutls, 'gnutls_init');
-    @gnutls_deinit:= SafeGetProcAddress(gnutls, 'gnutls_deinit');
-
-    @gnutls_priority_set_direct:= SafeGetProcAddress(gnutls, 'gnutls_priority_set_direct');
-    @gnutls_credentials_set:= SafeGetProcAddress(gnutls, 'gnutls_credentials_set');
-    @gnutls_certificate_set_x509_trust_file:= SafeGetProcAddress(gnutls, 'gnutls_certificate_set_x509_trust_file');
-    @gnutls_certificate_set_x509_key_file:= SafeGetProcAddress(gnutls, 'gnutls_certificate_set_x509_key_file');
-
-    @gnutls_certificate_allocate_credentials:= SafeGetProcAddress(gnutls, 'gnutls_certificate_allocate_credentials');
-    @gnutls_certificate_free_credentials:= SafeGetProcAddress(gnutls, 'gnutls_certificate_free_credentials');
-
-    @gnutls_transport_set_ptr:= SafeGetProcAddress(gnutls, 'gnutls_transport_set_ptr');
-    @gnutls_record_check_pending:= SafeGetProcAddress(gnutls, 'gnutls_record_check_pending');
-
-    @gnutls_handshake:= SafeGetProcAddress(gnutls, 'gnutls_handshake');
-    @gnutls_bye:= SafeGetProcAddress(gnutls, 'gnutls_bye');
-
-    @gnutls_record_send:= SafeGetProcAddress(gnutls, 'gnutls_record_send');
-    @gnutls_record_recv:= SafeGetProcAddress(gnutls, 'gnutls_record_recv');
-
-    @gnutls_protocol_get_version:= SafeGetProcAddress(gnutls, 'gnutls_protocol_get_version');
-    @gnutls_cipher_get:= SafeGetProcAddress(gnutls, 'gnutls_cipher_get');
-    @gnutls_kx_get:= SafeGetProcAddress(gnutls, 'gnutls_kx_get');
-    @gnutls_mac_get:= SafeGetProcAddress(gnutls, 'gnutls_mac_get');
-    @gnutls_compression_get:= SafeGetProcAddress(gnutls, 'gnutls_compression_get');
-    @gnutls_certificate_type_get:= SafeGetProcAddress(gnutls, 'gnutls_certificate_type_get');
-    @gnutls_cipher_suite_get_name:= SafeGetProcAddress(gnutls, 'gnutls_cipher_suite_get_name');
-    @gnutls_cipher_get_key_size:= SafeGetProcAddress(gnutls, 'gnutls_cipher_get_key_size');
-
-    @gnutls_strerror:= SafeGetProcAddress(gnutls, 'gnutls_strerror');
-  end;
-
   if (IsSSLloaded = False) then
   begin
-    if VirtualQuery(@lpBuffer, @lpBuffer, SizeOf(lpBuffer)) = SizeOf(lpBuffer) then
+    for index:= Low(libgnutls) to High(libgnutls) do
     begin
-      SetLength(DLLSSLName, MAX_PATH);
-      SetLength(DLLSSLName, GetModuleFileName(THandle(lpBuffer.AllocationBase),
-                                              PAnsiChar(DLLSSLName), MAX_PATH));
-      DLLUtilName := DLLSSLName;
+      gnutls:= LoadLibrary('libgnutls.so.' + libgnutls[index]);
+      if gnutls <> NilHandle then Break;
+    end;
 
-      if InitSSLInterface then
-        SSLImplementation := TSSLOpenSSL;
+    if (gnutls <> NilHandle) then
+    try
+      @gnutls_check_version:= SafeGetProcAddress(gnutls, 'gnutls_check_version');
+
+      if (gnutls_check_version('3.0.0') = nil) then raise Exception.Create(EmptyStr);
+
+      @gnutls_global_init:= SafeGetProcAddress(gnutls, 'gnutls_global_init');
+
+      @gnutls_init:= SafeGetProcAddress(gnutls, 'gnutls_init');
+      @gnutls_deinit:= SafeGetProcAddress(gnutls, 'gnutls_deinit');
+
+      @gnutls_priority_set_direct:= SafeGetProcAddress(gnutls, 'gnutls_priority_set_direct');
+      @gnutls_credentials_set:= SafeGetProcAddress(gnutls, 'gnutls_credentials_set');
+      @gnutls_certificate_set_x509_trust_file:= SafeGetProcAddress(gnutls, 'gnutls_certificate_set_x509_trust_file');
+      @gnutls_certificate_set_x509_key_file:= SafeGetProcAddress(gnutls, 'gnutls_certificate_set_x509_key_file');
+
+      @gnutls_certificate_allocate_credentials:= SafeGetProcAddress(gnutls, 'gnutls_certificate_allocate_credentials');
+      @gnutls_certificate_free_credentials:= SafeGetProcAddress(gnutls, 'gnutls_certificate_free_credentials');
+
+      @gnutls_transport_set_ptr:= SafeGetProcAddress(gnutls, 'gnutls_transport_set_ptr');
+      @gnutls_record_check_pending:= SafeGetProcAddress(gnutls, 'gnutls_record_check_pending');
+
+      @gnutls_handshake:= SafeGetProcAddress(gnutls, 'gnutls_handshake');
+      @gnutls_bye:= SafeGetProcAddress(gnutls, 'gnutls_bye');
+
+      @gnutls_record_send:= SafeGetProcAddress(gnutls, 'gnutls_record_send');
+      @gnutls_record_recv:= SafeGetProcAddress(gnutls, 'gnutls_record_recv');
+
+      @gnutls_protocol_get_version:= SafeGetProcAddress(gnutls, 'gnutls_protocol_get_version');
+      @gnutls_cipher_get:= SafeGetProcAddress(gnutls, 'gnutls_cipher_get');
+      @gnutls_kx_get:= SafeGetProcAddress(gnutls, 'gnutls_kx_get');
+      @gnutls_mac_get:= SafeGetProcAddress(gnutls, 'gnutls_mac_get');
+      @gnutls_compression_get:= SafeGetProcAddress(gnutls, 'gnutls_compression_get');
+      @gnutls_certificate_type_get:= SafeGetProcAddress(gnutls, 'gnutls_certificate_type_get');
+      @gnutls_cipher_suite_get_name:= SafeGetProcAddress(gnutls, 'gnutls_cipher_suite_get_name');
+      @gnutls_cipher_get_key_size:= SafeGetProcAddress(gnutls, 'gnutls_cipher_get_key_size');
+
+      @gnutls_strerror:= SafeGetProcAddress(gnutls, 'gnutls_strerror');
+
+
+      FillChar(dlinfo, SizeOf(dlinfo), 0);
+      if dladdr(@dlinfo, @dlinfo) <> 0 then
+      begin
+        DLLSSLName:= dlinfo.dli_fname;
+        DLLUtilName:= DLLSSLName;
+
+        if InitSSLInterface then
+          SSLImplementation:= TSSLOpenSSL;
+      end;
+    except
+      FreeLibrary(gnutls);
     end;
   end;
 

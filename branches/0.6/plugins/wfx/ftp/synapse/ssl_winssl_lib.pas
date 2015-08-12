@@ -2,7 +2,7 @@
   SChannel to OpenSSL wrapper
 
   Copyright (c) 2008 Boris Krasnovskiy
-  Copyright (c) 2013 Alexander Koblov (pascal port)
+  Copyright (c) 2013-2015 Alexander Koblov (pascal port)
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU General Public License
@@ -24,38 +24,8 @@ unit ssl_winssl_lib;
 
 interface
 
-implementation
-
 uses
-  Windows, JwaSspi, JwaWinError, CTypes, SynSock,
-  ssl_openssl_lib, blcksock, ssl_openssl;
-
-const
-  SCHANNEL_CRED_VERSION = $00000004;
-
-const
-  SCH_CRED_MANUAL_CRED_VALIDATION = $00000008;
-  SCH_CRED_NO_DEFAULT_CREDS       = $00000010;
-
-const
-  SCHANNEL_SHUTDOWN               = 1;   // gracefully close down a connection
-
-const
-  SP_PROT_SSL2_SERVER       =      $00000004;
-  SP_PROT_SSL2_CLIENT       =      $00000008;
-  SP_PROT_SSL2              =      (SP_PROT_SSL2_SERVER or SP_PROT_SSL2_CLIENT);
-
-  SP_PROT_SSL3_SERVER       =      $00000010;
-  SP_PROT_SSL3_CLIENT       =      $00000020;
-  SP_PROT_SSL3              =      (SP_PROT_SSL3_SERVER or SP_PROT_SSL3_CLIENT);
-
-  SP_PROT_TLS1_SERVER       =      $00000040;
-  SP_PROT_TLS1_CLIENT       =      $00000080;
-  SP_PROT_TLS1              =      (SP_PROT_TLS1_SERVER or SP_PROT_TLS1_CLIENT);
-
-const
-  UNISP_NAME_A = AnsiString('Microsoft Unified Security Protocol Provider');
-  UNISP_NAME_W = WideString('Microsoft Unified Security Protocol Provider');
+  Windows, SynSock, JwaSspi, CTypes;
 
 type
   PSSL_CTX = ^SSL_CTX;
@@ -84,6 +54,69 @@ type
     exIoBuffer: BOOL;
     rmshtdn: BOOL;
   end;
+
+function SSL_library_init(): cint; cdecl;
+function SSL_set_fd(ssl: PSSL; fd: cint): cint; cdecl;
+function SSL_CTX_new(method: PSSL_METHOD): PSSL_CTX; cdecl;
+procedure SSL_CTX_free(ctx: PSSL_CTX); cdecl;
+function SSL_new(ctx: PSSL_CTX): PSSL; cdecl;
+procedure SSL_free(ssl: PSSL); cdecl;
+function SSL_connect(ssl: PSSL): cint; cdecl;
+function SSL_shutdown(ssl: PSSL): cint; cdecl;
+function SSL_read(ssl: PSSL; buf: PByte; num: cint): cint; cdecl;
+function SSL_write(ssl: PSSL; const buf: PByte; num: cint): cint; cdecl;
+function SSL_pending(ssl: PSSL): cint; cdecl;
+function SSLv23_method(): PSSL_METHOD; cdecl;
+function SSLv2_method(): PSSL_METHOD; cdecl;
+function SSLv3_method(): PSSL_METHOD; cdecl;
+function TLSv1_method(): PSSL_METHOD; cdecl;
+function TLSv1_1_method(): PSSL_METHOD; cdecl;
+function TLSv1_2_method(): PSSL_METHOD; cdecl;
+procedure SSL_CTX_set_verify(ctx: PSSL_CTX; mode: cint; func: Pointer); cdecl;
+function SSL_get_error (ssl: PSSL; ret: cint): cint; cdecl;
+
+implementation
+
+uses
+  JwaWinError,
+  ssl_openssl_lib, blcksock, ssl_openssl;
+
+const
+  SCHANNEL_CRED_VERSION = $00000004;
+
+const
+  SCH_CRED_MANUAL_CRED_VALIDATION = $00000008;
+  SCH_CRED_NO_DEFAULT_CREDS       = $00000010;
+
+const
+  SCHANNEL_SHUTDOWN               = 1;   // gracefully close down a connection
+
+const
+  SP_PROT_SSL2_SERVER       =      $00000004;
+  SP_PROT_SSL2_CLIENT       =      $00000008;
+  SP_PROT_SSL2              =      (SP_PROT_SSL2_SERVER or SP_PROT_SSL2_CLIENT);
+
+  SP_PROT_SSL3_SERVER       =      $00000010;
+  SP_PROT_SSL3_CLIENT       =      $00000020;
+  SP_PROT_SSL3              =      (SP_PROT_SSL3_SERVER or SP_PROT_SSL3_CLIENT);
+
+  SP_PROT_TLS1_SERVER       =      $00000040;
+  SP_PROT_TLS1_CLIENT       =      $00000080;
+  SP_PROT_TLS1              =      (SP_PROT_TLS1_SERVER or SP_PROT_TLS1_CLIENT);
+
+  SP_PROT_TLS1_1_SERVER     =      $00000100;
+  SP_PROT_TLS1_1_CLIENT     =      $00000200;
+  SP_PROT_TLS1_1            =      (SP_PROT_TLS1_1_SERVER or SP_PROT_TLS1_1_CLIENT);
+
+  SP_PROT_TLS1_2_SERVER     =      $00000400;
+  SP_PROT_TLS1_2_CLIENT     =      $00000800;
+  SP_PROT_TLS1_2            =      (SP_PROT_TLS1_2_SERVER or SP_PROT_TLS1_2_CLIENT);
+
+const
+  UNISP_NAME_A = AnsiString('Microsoft Unified Security Protocol Provider');
+  UNISP_NAME_W = WideString('Microsoft Unified Security Protocol Provider');
+
+
 
 type
   ALG_ID = type cuint;
@@ -836,6 +869,16 @@ begin
   Result := PSSL_METHOD(SP_PROT_TLS1);
 end;
 
+function TLSv1_1_method(): PSSL_METHOD; cdecl;
+begin
+  Result := PSSL_METHOD(SP_PROT_TLS1_1);
+end;
+
+function TLSv1_2_method(): PSSL_METHOD; cdecl;
+begin
+  Result := PSSL_METHOD(SP_PROT_TLS1_2);
+end;
+
 procedure SSL_CTX_set_verify(ctx: PSSL_CTX; mode: cint; func: Pointer); cdecl;
 begin
   if (ctx <> nil) then ctx^.bVerify := mode <> 0;
@@ -848,25 +891,6 @@ begin
   else
     Result := SSL_ERROR_ZERO_RETURN;
 end;
-
-exports
-  SSL_library_init,
-  SSL_set_fd,
-  SSL_CTX_new,
-  SSL_CTX_free,
-  SSL_new,
-  SSL_free,
-  SSL_connect,
-  SSL_shutdown,
-  SSL_read,
-  SSL_write,
-  SSL_pending,
-  SSLv23_method,
-  SSLv2_method,
-  SSLv3_method,
-  TLSv1_method,
-  SSL_CTX_set_verify,
-  SSL_get_error;
 
 var
   lpBuffer: TMemoryBasicInformation;

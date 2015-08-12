@@ -76,6 +76,7 @@ type
     FUnicode: Boolean;
   protected
     function Connect: Boolean; override;
+    function DataSocket: Boolean; override;
     procedure DoStatus(Response: Boolean; const Value: string); override;
   public
     ClientToServer,
@@ -83,6 +84,8 @@ type
   public
     constructor Create; reintroduce;
     function Login: Boolean; override;
+    function List(Directory: String; NameList: Boolean): Boolean; override;
+    function SetTime(const FileName: String; FileTime: TDateTime): Boolean;
     function StoreFile(const FileName: string; Restore: Boolean): Boolean; override;
     function RetrieveFile(const FileName: string; FileSize: Int64; Restore: Boolean): Boolean; overload;
     function NetworkError(): Boolean;
@@ -157,6 +160,14 @@ begin
   if Result then LogProc(PluginNumber, MSGTYPE_CONNECT, nil);
 end;
 
+function TFTPSendEx.DataSocket: Boolean;
+begin
+  Result:= inherited DataSocket;
+  if FDSock.LastError <> 0 then begin
+    LogProc(PluginNumber, msgtype_importanterror, PAnsiChar('DSOCK ERROR ' + FDSock.LastErrorDesc));
+  end;
+end;
+
 procedure TFTPSendEx.DoStatus(Response: Boolean; const Value: string);
 var
   Index: Integer;
@@ -170,13 +181,14 @@ begin
   end;
   LogProc(PluginNumber, msgtype_details, PAnsiChar(Message));
   if FSock.LastError <> 0 then begin
-    LogProc(PluginNumber, msgtype_details, PAnsiChar('Network error: ' + FSock.LastErrorDesc));
+    LogProc(PluginNumber, msgtype_importanterror, PAnsiChar('CSOCK ERROR ' + FSock.LastErrorDesc));
   end;
 end;
 
 constructor TFTPSendEx.Create;
 begin
   inherited Create;
+  FTimeout:= 30000;
   FDirectFile:= True;
   ClientToServer:= @Dummy;
   ServerToClient:= @Dummy;
@@ -204,6 +216,27 @@ begin
       end;
     end;
   end;
+end;
+
+function TFTPSendEx.List(Directory: String; NameList: Boolean): Boolean;
+var
+  Message: String;
+begin
+  Result:= inherited List(Directory, NameList);
+  if (Result = False) and (FSock.WaitingData > 0) then
+  begin
+    Message:= FSock.RecvPacket(1000);
+    LogProc(PluginNumber, msgtype_importanterror, PAnsiChar(Message));
+  end;
+end;
+
+function TFTPSendEx.SetTime(const FileName: String; FileTime: TDateTime): Boolean;
+var
+  Time: String;
+begin
+  if not FSetTime then Exit(False);
+  Time:= FormatDateTime('yyyymmddhhnnss', FileTime);
+  Result:= FTPCommand('MFMT ' + Time + ' ' + FileName) = 213;
 end;
 
 function TFTPSendEx.StoreFile(const FileName: string; Restore: Boolean): Boolean;
