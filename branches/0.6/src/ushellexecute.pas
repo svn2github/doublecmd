@@ -188,11 +188,11 @@ var
       ftName:
         Result := aFile.Name;
       ftDir:
-        Result := ExcludeTrailingPathDelimiter(aFile.Path);
+        Result := ExcludeBackPathDelimiter(aFile.Path);
       ftPath:
         Result := aFile.FullPath;
       ftSingleDir:
-        Result := ExcludeTrailingPathDelimiter(state.dir);
+        Result := ExcludeBackPathDelimiter(state.dir);
       ftSource:
         Result := state.address;
       ftSourcePath:
