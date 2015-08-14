@@ -3,7 +3,7 @@
 # This script updates Double Commander Personal Package Archive (PPA) repository
 
 # Set Double Commander version
-DC_VER=0.6.4
+DC_VER=0.6.5
 # Set Ubuntu series
 DISTRO=( trusty utopic vivid wily )
 

@@ -33,7 +33,7 @@ uses
 {$I dcrevision.inc} // Double Commander revision number
 
 const
-  dcVersion   = '0.6.4 beta';
+  dcVersion   = '0.6.5 beta';
   dcBuildDate = {$I %DATE%};
   lazVersion  = lcl_version;         // Lazarus version (major.minor.micro)
   fpcVersion  = {$I %FPCVERSION%};   // FPC version (major.minor.micro)
