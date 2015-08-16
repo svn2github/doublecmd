@@ -74,6 +74,7 @@ type
   TFTPSendEx = class(TFTPSend)
   private
     FUnicode: Boolean;
+    FSetTime: Boolean;
   protected
     function Connect: Boolean; override;
     function DataSocket: Boolean; override;
@@ -205,14 +206,14 @@ begin
     begin
       for Index:= 0 to FFullResult.Count - 1 do
       begin
-        FUnicode:= Pos('UTF8', FFullResult[Index]) > 0;
-        if FUnicode then
-        begin
-          FTPCommand('OPTS UTF8 ON');
-          ClientToServer:= @SysToUTF8;
-          ServerToClient:= @UTF8ToSys;
-          Exit;
-        end;
+        if not FUnicode then FUnicode:= Pos('UTF8', FFullResult[Index]) > 0;
+        if not FSetTime then FSetTime:= Pos('MFMT', FFullResult[Index]) > 0;
+      end;
+      if FUnicode then
+      begin
+        FTPCommand('OPTS UTF8 ON');
+        ClientToServer:= @SysToUTF8;
+        ServerToClient:= @UTF8ToSys;
       end;
     end;
   end;
