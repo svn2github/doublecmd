@@ -5,7 +5,7 @@
 # Set Double Commander version
 DC_VER=0.6.5
 # Set Ubuntu series
-DISTRO=( trusty utopic vivid wily )
+DISTRO=( trusty vivid wily )
 
 # Temp directory
 DC_TEMP_DIR=/var/tmp/doublecmd-$(date +%y.%m.%d)
