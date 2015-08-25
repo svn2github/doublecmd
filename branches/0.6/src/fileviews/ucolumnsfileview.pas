@@ -132,6 +132,7 @@ type
     procedure BeforeMakeFileList; override;
     procedure ClearAfterDragDrop; override;
     procedure DisplayFileListChanged; override;
+    procedure DoColumnResized(Sender: TObject; ColumnIndex: Integer; ColumnNewSize: Integer);
     procedure DoFileUpdated(AFile: TDisplayFile; UpdatedProperties: TFilePropertiesTypes = []); override;
     procedure DoHandleKeyDown(var Key: Word; Shift: TShiftState); override;
     procedure DoMainControlShowHint(FileIndex: PtrInt; X, Y: Integer); override;
@@ -190,6 +191,7 @@ uses
   uKeyboard,
   uFileFunctions,
   uFormCommands,
+  uFileViewNotebook,
   fOptionsCustomColumns;
 
 type
@@ -305,7 +307,7 @@ begin
 end;
 
 procedure TColumnsFileView.dgPanelHeaderClick(Sender: TObject;
-  IsColumn: Boolean; Index: Integer);
+  IsColumn: Boolean; index: Integer);
 var
   ShiftState : TShiftState;
   SortingDirection : TSortDirection;
@@ -774,6 +776,11 @@ begin
 
   pmColumnsMenu := TPopupMenu.Create(Self);
   pmColumnsMenu.Parent := Self;
+
+  if Assigned(NotebookPage) then
+  begin
+    FOnColumnResized:= @DoColumnResized;
+  end;
 end;
 
 destructor TColumnsFileView.Destroy;
@@ -860,6 +867,33 @@ begin
   Notify([fvnVisibleFilePropertiesChanged]);
 
   inherited;
+end;
+
+procedure TColumnsFileView.DoColumnResized(Sender: TObject;
+  ColumnIndex: Integer; ColumnNewSize: Integer);
+
+  procedure UpdateWidth(Notebook: TFileViewNotebook);
+  var
+    I: Integer;
+    ColumnsView: TColumnsFileView;
+  begin
+    for I:= 0 to Notebook.PageCount - 1 do
+    begin
+      if Notebook.View[I] is TColumnsFileView then
+      begin
+        ColumnsView:= TColumnsFileView(Notebook.View[I]);
+        if ColumnsView.ActiveColm = ActiveColm then
+        begin
+          ColumnsView.dgPanel.ColWidths[ColumnIndex]:= ColumnNewSize;
+        end;
+      end;
+    end;
+  end;
+
+begin
+  GetColumnsClass.SetColumnWidth(ColumnIndex, ColumnNewSize);
+  UpdateWidth(frmMain.LeftTabs);
+  UpdateWidth(frmMain.RightTabs);
 end;
 
 procedure TColumnsFileView.MakeColumnsStrings(AFile: TDisplayFile);
@@ -1549,7 +1583,7 @@ begin
   if Button = mbRight then
     begin
       { If right click on header }
-      if (Y < GetHeaderHeight) then
+      if (Y >= 0) and (Y < GetHeaderHeight) then
         begin
           //Load Columns into menu
           ColumnsView.pmColumnsMenu.Items.Clear;
