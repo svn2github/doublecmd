@@ -3,7 +3,10 @@
   -------------------------------------------------------------------------
   SevenZip archiver plugin, dialogs unit
 
-  Copyright (C) 2014 Alexander Koblov (alexx2000@mail.ru)
+  Copyright (C) 2014-2015 Alexander Koblov (alexx2000@mail.ru)
+
+  Based on 7-Zip 15.06 (http://7-zip.org)
+  7-Zip Copyright (C) 1999-2015 Igor Pavlov
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -27,7 +30,7 @@ unit SevenZipDlg;
 interface
 
 uses
-  Classes, SysUtils, Windows, SevenZipOpt, SevenZipLng, JclCompression;
+  Classes, SysUtils, Windows, Math, SevenZipOpt, SevenZipLng, JclCompression;
 
 procedure ShowConfigurationDialog(Parent: HWND);
 function ShowPasswordQuery(var Encrypt: Boolean; var Password: WideString): Boolean;
@@ -53,6 +56,8 @@ const
   IDC_COMP_THREAD = 1082;
   IDC_MAX_THREAD = 1083;
   IDC_PARAMETERS = 1091;
+  IDC_MEMORY_COMP = 1027;
+  IDC_MEMORY_DECOMP = 1028;
 
 function GetComboBox(hwndDlg: HWND; ItemID: Integer): PtrInt;
 var
@@ -105,6 +110,109 @@ begin
   Text:= UTF8Decode(ItemText);
   Result:= SendDlgItemMessageW(hwndDlg, ItemID, CB_ADDSTRING, 0, LPARAM(PWideChar(Text)));
   SendDlgItemMessage(hwndDlg, ItemID, CB_SETITEMDATA, Result, ItemData);
+end;
+
+function GetMemoryUsage(hwndDlg: HWND; out decompressMemory: Int64): Int64;
+var
+  size: Int64 = 0;
+  Dictionary, hs,
+  numThreads, numThreads1,
+  numBlockThreads: Cardinal;
+  size1, chunkSize: Int64;
+  Level: TCompressionLevel;
+  Method: TJclCompressionMethod;
+begin
+  Level := TCompressionLevel(GetComboBox(hwndDlg, IDC_COMP_LEVEL));
+  if (level = clStore) then
+  begin
+    decompressMemory := (1 shl 20);
+    Exit(decompressMemory);
+  end;
+
+  decompressMemory := -1;
+  Dictionary := GetComboBox(hwndDlg, IDC_COMP_DICT);
+  Method := TJclCompressionMethod(GetComboBox(hwndDlg, IDC_COMP_METHOD));
+
+  if (Method <> cmDeflate) and (Method <> cmDeflate64) and (level >= clUltra) then
+    size += (12 shl 20) * 2 + (5 shl 20);
+
+  numThreads := GetComboBox(hwndDlg, IDC_COMP_THREAD);
+
+  case (method) of
+    cmLZMA,
+    cmLZMA2:
+      begin
+        hs := dictionary - 1;
+        hs := hs or (hs shr 1);
+        hs := hs or (hs shr 2);
+        hs := hs or (hs shr 4);
+        hs := hs or (hs shr 8);
+        hs := hs shr 1;
+        hs := hs or $FFFF;
+        if (hs > (1 shl 24)) then
+          hs := hs shr 1;
+        Inc(hs);
+        size1 := Int64(hs) * 4;
+        size1 += Int64(dictionary) * 4;
+        if (level >= clNormal) then
+          size1 += Int64(dictionary) * 4;
+        size1 += (2 shl 20);
+
+        numThreads1 := 1;
+        if (numThreads > 1) and (level >= clNormal) then
+        begin
+          size1 += (2 shl 20) + (4 shl 20);
+          numThreads1 := 2;
+        end;
+
+        numBlockThreads := numThreads div numThreads1;
+
+        if (method = cmLZMA) or (numBlockThreads = 1) then
+          size1 += Int64(dictionary) * 3 div 2
+        else
+        begin
+          chunkSize := Int64(dictionary) shl 2;
+          chunkSize := Max(chunkSize, Int64(1 shl 20));
+          chunkSize := Min(chunkSize, Int64(1 shl 28));
+          chunkSize := Max(chunkSize, Int64(dictionary));
+          size1 += chunkSize * 2;
+        end;
+        size += size1 * numBlockThreads;
+
+        decompressMemory := Int64(dictionary) + (2 shl 20);
+        Exit(size);
+      end;
+    cmPPMd:
+    begin
+      decompressMemory := Int64(dictionary) + (2 shl 20);
+      Exit(size + decompressMemory);
+    end;
+    cmDeflate,
+    cmDeflate64:
+      begin
+        if (level >= clMaximum) then
+          size += (1 shl 20);
+        size += 3 shl 20;
+        decompressMemory := (2 shl 20);
+        Exit(size);
+      end;
+    cmBZip2:
+      begin
+        decompressMemory := (7 shl 20);
+        size1 := (10 shl 20);
+        Exit(size + size1 * numThreads);
+      end;
+  end;
+  Result := -1;
+end;
+
+procedure UpdateMemoryUsage(hwndDlg: HWND);
+var
+  Comp, Decomp: Int64;
+begin
+  Comp := GetMemoryUsage(hwndDlg, Decomp);
+  SetDlgItemText(hwndDlg, IDC_MEMORY_COMP, PAnsiChar(IntToStr(Comp div cMega) + 'Mb'));
+  SetDlgItemText(hwndDlg, IDC_MEMORY_DECOMP, PAnsiChar(IntToStr(Decomp div cMega) + 'Mb'));
 end;
 
 procedure SetDefaultOptions(hwndDlg: HWND);
@@ -219,12 +327,13 @@ begin
        clUltra:
          begin
            SetComboBox(hwndDlg, IDC_COMP_DICT, 192 * cMega);
-           SetComboBox(hwndDlg, IDC_COMP_WORD, 32);
+           SetComboBox(hwndDlg, IDC_COMP_WORD, 16);
            SetComboBox(hwndDlg, IDC_COMP_SOLID, 4 * cMega);
          end;
        end;
      end;
   end;
+  UpdateMemoryUsage(hwndDlg);
 end;
 
 procedure UpdateSolid(hwndDlg: HWND);
@@ -253,20 +362,22 @@ procedure UpdateThread(hwndDlg: HWND; dwAlgoThreadMax: LongWord);
 var
   Index: LongWord;
   dwMaxThread: LongWord;
+  dwDefaultValue: DWORD;
   wsMaxThread: WideString;
-  dwNumberOfProcessors: DWORD;
+  dwHardwareThreads: DWORD;
 begin
   SendDlgItemMessage(hwndDlg, IDC_COMP_THREAD, CB_RESETCONTENT, 0, 0);
-  dwNumberOfProcessors:= GetNumberOfProcessors;
-  dwMaxThread:= dwNumberOfProcessors * 2;
+  dwHardwareThreads:= GetNumberOfProcessors;
+  dwDefaultValue:= dwHardwareThreads;
+  dwMaxThread:= dwHardwareThreads * 2;
   if dwMaxThread > dwAlgoThreadMax then dwMaxThread:= dwAlgoThreadMax;
-  if dwAlgoThreadMax < dwNumberOfProcessors then dwNumberOfProcessors:= dwAlgoThreadMax;
+  if dwAlgoThreadMax < dwDefaultValue then dwDefaultValue:= dwAlgoThreadMax;
   for Index:= 1 to dwMaxThread do
   begin
-    ComboBoxAdd(hwndDlg, IDC_COMP_THREAD, IntToStr(Index), 0);
+    ComboBoxAdd(hwndDlg, IDC_COMP_THREAD, IntToStr(Index), Index);
   end;
-  wsMaxThread:= '/ ' + IntToStr(dwMaxThread);
-  SendDlgItemMessage(hwndDlg, IDC_COMP_THREAD, CB_SETCURSEL, dwNumberOfProcessors - 1, 0);
+  wsMaxThread:= '/ ' + IntToStr(dwHardwareThreads);
+  SendDlgItemMessage(hwndDlg, IDC_COMP_THREAD, CB_SETCURSEL, dwDefaultValue - 1, 0);
   SendDlgItemMessageW(hwndDlg, IDC_MAX_THREAD, WM_SETTEXT, 0, LPARAM(PWideChar(wsMaxThread)));
 end;
 
@@ -274,6 +385,7 @@ procedure UpdateMethod(hwndDlg: HWND);
 var
   Index: Integer;
   Format: TArchiveFormat;
+  dwAlgoThreadMax: LongWord = 1;
   Method: TJclCompressionMethod;
 begin
   // Clear comboboxes
@@ -296,7 +408,6 @@ begin
       begin
         ComboBoxAdd(hwndDlg, IDC_COMP_WORD, IntToStr(DeflateWordSize[Index]), PtrInt(DeflateWordSize[Index]));
       end;
-      UpdateThread(hwndDlg, 1);
     end;
   cmDeflate64:
     begin
@@ -308,7 +419,6 @@ begin
       begin
         ComboBoxAdd(hwndDlg, IDC_COMP_WORD, IntToStr(Deflate64WordSize[Index]), PtrInt(Deflate64WordSize[Index]));
       end;
-      UpdateThread(hwndDlg, 128);
     end;
   cmLZMA,
   cmLZMA2:
@@ -321,7 +431,7 @@ begin
       begin
         ComboBoxAdd(hwndDlg, IDC_COMP_WORD, IntToStr(LZMAWordSize[Index]), PtrInt(LZMAWordSize[Index]));
       end;
-      UpdateThread(hwndDlg, 2);
+      dwAlgoThreadMax:= IfThen(Method = cmLZMA, 2, 32);
     end;
   cmBZip2:
     begin
@@ -329,7 +439,7 @@ begin
       begin
         ComboBoxAdd(hwndDlg, IDC_COMP_DICT, FormatFileSize(BZip2Dict[Index]), PtrInt(BZip2Dict[Index]));
       end;
-      UpdateThread(hwndDlg, 32);
+      dwAlgoThreadMax:= 32;
     end;
   cmPPMd:
     begin
@@ -341,12 +451,10 @@ begin
       begin
         ComboBoxAdd(hwndDlg, IDC_COMP_WORD, IntToStr(PPMdWordSize[Index]), PtrInt(PPMdWordSize[Index]));
       end;
-      UpdateThread(hwndDlg, 1);
-    end;
-    else begin
-      UpdateThread(hwndDlg, 1);
     end;
   end;
+  if Format = afZip then dwAlgoThreadMax:= 128;
+  UpdateThread(hwndDlg, dwAlgoThreadMax);
 end;
 
 procedure FillMethod(hwndDlg: HWND);
@@ -456,7 +564,7 @@ begin
 
   EnableWindow(GetDlgItem(hwndDlg, IDC_COMP_DICT), Level <> clStore);
   EnableWindow(GetDlgItem(hwndDlg, IDC_COMP_WORD), Level <> clStore);
-  EnableWindow(GetDlgItem(hwndDlg, IDC_COMP_SOLID), Level <> clStore);
+  EnableWindow(GetDlgItem(hwndDlg, IDC_COMP_SOLID), (Format = afSevenZip) and (Level <> clStore));
 
   if Level = clStore then
   begin
@@ -495,6 +603,7 @@ begin
   SetComboBox(hwndDlg, IDC_COMP_SOLID, PluginConfig[Format].SolidSize);
   SetComboBox(hwndDlg, IDC_COMP_THREAD, PluginConfig[Format].ThreadCount);
   SetDlgItemTextW(hwndDlg, IDC_PARAMETERS, PWideChar(PluginConfig[Format].Parameters));
+  UpdateMemoryUsage(hwndDlg);
 end;
 
 function DialogProc(hwndDlg: HWND; uMsg: UINT; wParam: WPARAM; lParam: LPARAM): INT_PTR; stdcall;
@@ -532,6 +641,13 @@ begin
         begin
           UpdateLevel(hwndDlg, False);
           SetDefaultOptions(hwndDlg);
+        end;
+      IDC_COMP_DICT,
+      IDC_COMP_WORD,
+      IDC_COMP_THREAD:
+        if (HIWORD(wParam) = CBN_SELCHANGE) then
+        begin
+          UpdateMemoryUsage(hwndDlg);
         end;
       IDOK:
         begin

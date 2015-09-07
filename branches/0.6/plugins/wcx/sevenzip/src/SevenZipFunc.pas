@@ -49,7 +49,7 @@ implementation
 
 uses
   JwaWinBase, Windows, SysUtils, Classes, JclCompression, SevenZip, SevenZipAdv,
-  SevenZipDlg, SevenZipLng, SevenZipOpt, LazFileUtils, SyncObjs;
+  SevenZipDlg, SevenZipLng, SevenZipOpt, LazFileUtils, SyncObjs, LazUTF8;
 
 type
 
@@ -308,14 +308,14 @@ begin
         end;
       end;
 
-      SetArchiveOptions(Archive);
-
       if (Archive is TJclUpdateArchive) then
       try
         TJclUpdateArchive(Archive).ListFiles;
       except
         Continue;
       end;
+
+      SetArchiveOptions(Archive);
 
       if Assigned(SubPath) then
       begin
@@ -409,17 +409,24 @@ var
   ModulePath: AnsiString;
 begin
   // Save configuration file name
-  ConfigFile:= ExtractFilePath(dps^.DefaultIniName) + 'sevenzip.ini';
+  ConfigFile:= ExtractFilePath(dps^.DefaultIniName) + DefaultIniName;
+  // Get plugin path
+  if GetModulePath(ModulePath) then
+  begin
+    // Use configuration from plugin path
+    if FileExistsUTF8(ModulePath + DefaultIniName) then
+      ConfigFile:= UTF8ToSys(ModulePath) + DefaultIniName;
+  end;
   // Load plugin configuration
   LoadConfiguration;
   // Try to find library path
-  if FileExists(LibraryPath) then
+  if FileExistsUTF8(LibraryPath) then
     SevenzipLibraryName:= LibraryPath
-  else if GetModulePath(ModulePath) then
+  else if Length(ModulePath) > 0 then
   begin
-    if FileExists(ModulePath + TargetCPU + PathDelim + SevenzipDefaultLibraryName) then
+    if FileExistsUTF8(ModulePath + TargetCPU + PathDelim + SevenzipDefaultLibraryName) then
       SevenzipLibraryName:= ModulePath + TargetCPU + PathDelim + SevenzipDefaultLibraryName
-    else if FileExists(ModulePath + SevenzipDefaultLibraryName) then begin
+    else if FileExistsUTF8(ModulePath + SevenzipDefaultLibraryName) then begin
       SevenzipLibraryName:= ModulePath + SevenzipDefaultLibraryName;
     end;
   end;
