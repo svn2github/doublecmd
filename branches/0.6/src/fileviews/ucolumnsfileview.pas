@@ -45,6 +45,8 @@ type
     procedure InitializeWnd; override;
     procedure FinalizeWnd; override;
 
+    procedure DrawColumnText(aCol, aRow: Integer; aRect: TRect; aState: TGridDrawState); override;
+
     procedure DrawCell(aCol, aRow: Integer; aRect: TRect;
               aState: TGridDrawState); override;
 
@@ -188,7 +190,7 @@ type
 implementation
 
 uses
-  LCLProc, Clipbrd, DCStrUtils, uLng, uGlobs, uPixmapManager, uDebug,
+  LCLProc, Buttons, Clipbrd, DCStrUtils, uLng, uGlobs, uPixmapManager, uDebug,
   uDCUtils, math, fMain, fOptions,
   uOrderedFileView,
   uFileSourceProperty,
@@ -898,9 +900,12 @@ procedure TColumnsFileView.DoColumnResized(Sender: TObject;
   end;
 
 begin
-  GetColumnsClass.SetColumnWidth(ColumnIndex, ColumnNewSize);
-  UpdateWidth(frmMain.LeftTabs);
-  UpdateWidth(frmMain.RightTabs);
+  if gColumnsAutoSaveWidth then
+  begin
+    GetColumnsClass.SetColumnWidth(ColumnIndex, ColumnNewSize);
+    UpdateWidth(frmMain.LeftTabs);
+    UpdateWidth(frmMain.RightTabs);
+  end;
 end;
 
 procedure TColumnsFileView.MakeColumnsStrings(AFile: TDisplayFile);
@@ -1163,10 +1168,10 @@ begin
 
   DoubleBuffered := True;
   Align := alClient;
-  Options := [goFixedVertLine, goFixedHorzLine, goTabs, goRowSelect,
-              goColSizing, goThumbTracking, goSmoothScroll];
+  Options := [goFixedVertLine, goFixedHorzLine, goTabs, goRowSelect, goColSizing,
+              goThumbTracking, goSmoothScroll, goHeaderHotTracking, goHeaderPushedLook];
 
-  TitleStyle := tsStandard;
+  TitleStyle := gColumnsTitleStyle;
   TabStop := False;
 
   Self.Parent := AParent;
@@ -1289,6 +1294,25 @@ begin
   inherited FinalizeWnd;
 end;
 
+procedure TDrawGridEx.DrawColumnText(aCol, aRow: Integer; aRect: TRect;
+  aState: TGridDrawState);
+var
+  SortingDirection: TSortDirection;
+begin
+  SortingDirection := ColumnsView.FColumnsSortDirections[ACol];
+
+  if SortingDirection <> sdNone then
+  begin
+    PixMapManager.DrawBitmap(
+        PixMapManager.GetIconBySortingDirection(SortingDirection),
+        Canvas,
+        aRect.Left, aRect.Top + (RowHeights[aRow] - gIconsSize) div 2);
+    aRect.Left += gIconsSize;
+  end;
+
+  DrawCellText(aCol, aRow, aRect, aState, GetColumnTitle(aCol));
+end;
+
 function TDrawGridEx.GetFullVisibleRows: TRange;
 begin
   Result.First := GCache.FullVisibleGrid.Top;
@@ -1306,52 +1330,24 @@ var
   ColumnsSet: TPanelColumnsClass;
 
   //------------------------------------------------------
-  //begin subprocedures
+  // begin subprocedures
   //------------------------------------------------------
 
   procedure DrawFixed;
   //------------------------------------------------------
   var
-    SortingDirection: TSortDirection;
-    TitleX: Integer;
+    TextStyle: TTextStyle;
   begin
-    // Draw background.
-    Canvas.Brush.Color := GetColumnColor(ACol, True);
-    Canvas.FillRect(aRect);
-
     SetCanvasFont(GetColumnFont(aCol, True));
+    Canvas.Brush.Color := GetColumnColor(ACol, True);
 
-    iTextTop := aRect.Top + (RowHeights[aRow] - Canvas.TextHeight('Wg')) div 2;
+    TextStyle := Canvas.TextStyle;
+    TextStyle.Layout := tlCenter;
+    Canvas.TextStyle := TextStyle;
 
-    TitleX := 0;
-    s      := ColumnsSet.GetColumnTitle(ACol);
-
-    SortingDirection := ColumnsView.FColumnsSortDirections[ACol];
-    if SortingDirection <> sdNone then
-    begin
-      TitleX := TitleX + gIconsSize;
-      PixMapManager.DrawBitmap(
-          PixMapManager.GetIconBySortingDirection(SortingDirection),
-          Canvas,
-          aRect.Left, aRect.Top + (RowHeights[aRow] - gIconsSize) div 2);
-    end;
-
-    TitleX := max(TitleX, 4);
-
-    if gCutTextToColWidth then
-    begin
-      if (aRect.Right - aRect.Left) < TitleX then
-        // Column too small to display text.
-        Exit
-      else
-        while Canvas.TextWidth(s) - ((aRect.Right - aRect.Left) - TitleX) > 0 do
-          UTF8Delete(s, UTF8Length(s), 1);
-    end;
-
-    Canvas.TextOut(aRect.Left + TitleX, iTextTop, s);
+    DefaultDrawCell(aCol, aRow, aRect, aState);
   end; // of DrawHeader
   //------------------------------------------------------
-
 
   procedure DrawIconCell;
   //------------------------------------------------------
@@ -1545,8 +1541,8 @@ begin
 
   if gdFixed in aState then
   begin
-    DrawFixed;  // Draw column headers
-    DrawCellGrid(aCol,aRow,aRect,aState);
+    DrawFixed; // Draw column headers
+    if TitleStyle <> tsNative then DrawCellGrid(aCol, aRow, aRect, aState);
   end
   else if ColumnsView.FFiles.Count > 0 then
   begin

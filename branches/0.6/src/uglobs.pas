@@ -25,10 +25,11 @@ unit uGlobs;
 interface
 
 uses
-  Classes, SysUtils, Controls, Forms, Types, uExts, uColorExt, Graphics, DCClassesUtf8,
-  uMultiArc, uColumns, uHotkeyManager, uSearchTemplate, uFileSourceOperationOptions,
-  uWFXModule, uWCXModule, uWDXModule, uwlxmodule, udsxmodule, DCXmlConfig,
-  uInfoToolTip, fQuickSearch, uTypes, uClassesEx, uHotDir, uSpecialDir;
+  Classes, SysUtils, Controls, Forms, Grids, Types, uExts, uColorExt, Graphics,
+  DCClassesUtf8, uMultiArc, uColumns, uHotkeyManager, uSearchTemplate,
+  uFileSourceOperationOptions, uWFXModule, uWCXModule, uWDXModule, uwlxmodule,
+  udsxmodule, DCXmlConfig, uInfoToolTip, fQuickSearch, uTypes, uClassesEx,
+  uHotDir, uSpecialDir;
 
 type
   { Configuration options }
@@ -200,6 +201,8 @@ var
 
   gAutoFillColumns: Boolean;
   gAutoSizeColumn: Integer;
+  gColumnsAutoSaveWidth: Boolean;
+  gColumnsTitleStyle: TTitleStyle;
   
   gSpecialDirList:TSpecialDirList=nil;
   gDirectoryHotlist:TDirectoryHotlist;
@@ -1071,6 +1074,8 @@ begin
   gWheelScrollLines:= Mouse.WheelScrollLines;
   gAutoFillColumns := False;
   gAutoSizeColumn := 1;
+  gColumnsAutoSaveWidth := True;
+  gColumnsTitleStyle := {$IFDEF LCLWIN32}tsNative{$ELSE}tsStandard{$ENDIF};
   gDateTimeFormat := DefaultDateTimeFormat;
   gCutTextToColWidth := True;
   gShowSystemFiles := False;
@@ -2211,6 +2216,12 @@ begin
         gNewFilesPosition := TNewFilesPosition(GetValue(SubNode, 'NewFilesPosition', Integer(gNewFilesPosition)));
         gUpdatedFilesPosition := TUpdatedFilesPosition(GetValue(SubNode, 'UpdatedFilesPosition', Integer(gUpdatedFilesPosition)));
       end;
+      SubNode := FindNode(Node, 'ColumnsView');
+      if Assigned(SubNode) then
+      begin
+        gColumnsAutoSaveWidth := GetValue(SubNode, 'AutoSaveWidth', gColumnsAutoSaveWidth);
+        gColumnsTitleStyle := TTitleStyle(GetValue(SubNode, 'TitleStyle', Integer(gColumnsTitleStyle)));
+      end;
     end;
 
     { Keys page }
@@ -2615,6 +2626,9 @@ begin
     SetValue(SubNode, 'SortFolderMode', Integer(gSortFolderMode));
     SetValue(SubNode, 'NewFilesPosition', Integer(gNewFilesPosition));
     SetValue(SubNode, 'UpdatedFilesPosition', Integer(gUpdatedFilesPosition));
+    SubNode := FindNode(Node, 'ColumnsView', True);
+    SetValue(SubNode, 'AutoSaveWidth', gColumnsAutoSaveWidth);
+    SetValue(SubNode, 'TitleStyle', Integer(gColumnsTitleStyle));
 
     { Keys page }
     Node := FindNode(Root, 'Keyboard', True);
