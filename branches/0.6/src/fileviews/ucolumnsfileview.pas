@@ -72,6 +72,8 @@ type
     property GridHorzLine: Boolean read GetGridHorzLine write SetGridHorzLine;
   end;
 
+  TColumnResized = procedure (Sender: TObject; ColumnIndex: Integer; ColumnNewsize: integer) of object;
+
   { TColumnsFileView }
 
   TColumnsFileView = class(TFileViewWithMainCtrl)
@@ -83,6 +85,7 @@ type
 
     pmColumnsMenu: TPopupMenu;
     dgPanel: TDrawGridEx;
+    FOnColumnResized: TColumnResized;
 
     function GetColumnsClass: TPanelColumnsClass;
 
@@ -124,6 +127,7 @@ type
     procedure dgPanelSelection(Sender: TObject; aCol, aRow: Integer);
     procedure dgPanelTopLeftChanged(Sender: TObject);
     procedure dgPanelResize(Sender: TObject);
+    procedure dgPanelHeaderSized(Sender: TObject; IsColumn: Boolean; index: Integer);
     procedure ColumnsMenuClick(Sender: TObject);
 
   protected
@@ -175,6 +179,7 @@ type
 
     procedure UpdateColumnsView;
 
+    property OnColumnResized: TColumnResized read FOnColumnResized write FOnColumnResized;
   published
     procedure cm_CopyFileDetailsToClip(const Params: array of string);
 
@@ -731,6 +736,7 @@ end;
 constructor TColumnsFileView.Create(AOwner: TWinControl; AFileSource: IFileSource; APath: String; AFlags: TFileViewFlags = []);
 begin
   ActiveColm := 'Default';
+  FOnColumnResized := nil;
   inherited Create(AOwner, AFileSource, APath, AFlags);
 end;
 
@@ -773,6 +779,7 @@ begin
 {$ENDIF}
   dgPanel.OnTopLeftChanged:= @dgPanelTopLeftChanged;
   dgpanel.OnResize:= @dgPanelResize;
+  dgPanel.OnHeaderSized:= @dgPanelHeaderSized;
 
   pmColumnsMenu := TPopupMenu.Create(Self);
   pmColumnsMenu.Parent := Self;
@@ -1078,6 +1085,15 @@ begin
     Exit
   else if not AFile.FSFile.IsDirectory then // without name
     dgPanel.Hint:= #32;
+end;
+
+procedure TColumnsFileView.dgPanelHeaderSized(Sender: TObject; IsColumn: Boolean; index: Integer);
+begin
+  if IsColumn then
+    if Assigned(FOnColumnResized) then
+      begin
+        FOnColumnResized(Self, index, dgPanel.ColWidths[index]);
+      end;
 end;
 
 procedure TColumnsFileView.cm_CopyFileDetailsToClip(const Params: array of string);
