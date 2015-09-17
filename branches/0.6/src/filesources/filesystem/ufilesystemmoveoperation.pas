@@ -168,8 +168,8 @@ end;
 
 procedure TFileSystemMoveOperation.Finalize;
 begin
-  if Assigned(FOperationHelper) then
-    FreeAndNil(FOperationHelper);
+  FileExistsOption := FOperationHelper.FileExistsOption;
+  FreeAndNil(FOperationHelper);
 end;
 
 class function TFileSystemMoveOperation.GetOptionsUIClass: TFileSourceOperationOptionsUIClass;
