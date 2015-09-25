@@ -4,7 +4,7 @@
     General Hash Unit: This unit defines the common types, functions,
     and procedures
 
-    Copyright (C) 2009-2011  Koblov Alexander (Alexx2000@mail.ru)
+    Copyright (C) 2009-2015 Alexander Koblov (alexx2000@mail.ru)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -55,7 +55,7 @@ function FileExtToHashAlg(const FileExt: String): THashAlgorithm;
 implementation
 
 uses
-  DCPhaval, DCPmd4, DCPmd5, DCPripemd128, DCPripemd160, DCPsfv, DCPsha1,
+  LazUTF8, DCPhaval, DCPmd4, DCPmd5, DCPripemd128, DCPripemd160, DCPsfv, DCPsha1,
   DCPsha256, DCPsha512, DCPtiger;
 
 procedure HashInit(out Context: THashContext; const Algorithm: THashAlgorithm);
@@ -98,9 +98,8 @@ end;
 
 function HashString(const Line: String; IgnoreCase, IgnoreWhiteSpace: Boolean): LongWord;
 var
-  CRC: LongWord;
-  I, J, L: Integer;
   S: String;
+  I, J, L: Integer;
 begin
   S := Line;
   if IgnoreWhiteSpace then
@@ -118,10 +117,10 @@ begin
     end;
     SetLength(S, J - 1);
   end;
-  if IgnoreCase then S := AnsiLowerCase(S);
+  if IgnoreCase then S := UTF8LowerCase(S);
 
-  CRC := crc32(0, nil, 0);
-  Result := crc32(CRC, PByte(S), Length(S));
+  Result := crc32(0, nil, 0);
+  Result := crc32(Result, PByte(S), Length(S));
 end;
 
 function FileExtIsHash(const FileExt: String): Boolean;
