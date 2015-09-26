@@ -697,8 +697,8 @@ procedure DoLoadLng;
 implementation
 
 uses
-  Classes, SysUtils, StrUtils, GetText, Translations, uGlobs, uGlobsPaths, uTranslator,
-  uDebug, uFileProcs, DCOSUtils, DCStrUtils;
+  Forms, Classes, SysUtils, StrUtils, GetText, Translations, uGlobs, uGlobsPaths,
+  uTranslator, uDebug, uFileProcs, DCOSUtils, DCStrUtils;
 
 function GetLanguageName(poFileName : String) : String;
 var
@@ -731,6 +731,14 @@ begin
 end;
 
 procedure TranslateLCL(poFileName: String);
+const
+  BidiModeMap: array[Boolean] of TBiDiMode = (bdLeftToRight,
+    {$IF DEFINED(LCLWIN32)}
+    bdRightToLeftNoAlign // see http://bugs.freepascal.org/view.php?id=28483
+    {$ELSE}
+    bdRightToLeft
+    {$ENDIF}
+  );
 var
   UserLang, LCLLngDir: String;
   Lang, FallbackLang: String;
@@ -739,6 +747,7 @@ begin
   if NumCountChars('.', poFileName) >= 2 then
     begin
       UserLang:= ExtractDelimited(2, poFileName, ['.']);
+      Application.BidiMode:= BidiModeMap[Application.IsRTLLang(UserLang)];
       poFileName:= LCLLngDir + Format('lclstrconsts.%s.po', [UserLang]);
       if not mbFileExists(poFileName) then
         begin
