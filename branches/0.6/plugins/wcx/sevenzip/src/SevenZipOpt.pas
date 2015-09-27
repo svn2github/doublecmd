@@ -187,7 +187,7 @@ const
 const
   DefaultConfig: array[TArchiveFormat] of TFormatOptions =
   (
-   (Level: PtrInt(clNormal); Method: PtrInt(cmLZMA); Dictionary: cMega * 16; WordSize: 32; SolidSize: cMega * 2; ThreadCount: 2; ArchiveCLSID: @CLSID_CFormat7z; Parameters: '';),
+   (Level: PtrInt(clNormal); Method: PtrInt(cmLZMA2); Dictionary: cMega * 16; WordSize: 32; SolidSize: cMega * 2; ThreadCount: 2; ArchiveCLSID: @CLSID_CFormat7z; Parameters: '';),
    (Level: PtrInt(clNormal); Method: PtrInt(cmBZip2); Dictionary: cKilo * 900; WordSize: 0; SolidSize: 0; ThreadCount: 2; ArchiveCLSID: @CLSID_CFormatBZ2; Parameters: '';),
    (Level: PtrInt(clNormal); Method: PtrInt(cmDeflate); Dictionary: cKilo * 32; WordSize: 32; SolidSize: 0; ThreadCount: 1; ArchiveCLSID: @CLSID_CFormatGZip; Parameters: '';),
    (Level: PtrInt(clStore); Method: 0; Dictionary: 0; WordSize: 0; SolidSize: 0; ThreadCount: 1; ArchiveCLSID: @CLSID_CFormatTar; Parameters: '';),
@@ -265,13 +265,26 @@ var
 
   procedure AddOption(Finish: Integer);
   var
+    C: WideChar;
+    PropValue: TPropVariant;
     Option, Value: WideString;
   begin
     Option:= Copy(Parameters, Start, Finish - Start);
     Start:= Pos('=', Option);
     if Start = 0 then
     begin
-      AddProperty(Option, TPropVariant(NULL));
+      PropValue.vt:= VT_EMPTY;
+      C:= Option[Length(Option)];
+      if C = '+' then
+        Variant(PropValue):= True
+      else if C = '-' then begin
+        Variant(PropValue):= False;
+      end;
+      if (PropValue.vt <> VT_EMPTY) then
+      begin
+        Delete(Option, Length(Option), 1);
+      end;
+      AddProperty(Option, PropValue);
     end
     else begin
       Value:= Copy(Option, Start + 1, MaxInt);
