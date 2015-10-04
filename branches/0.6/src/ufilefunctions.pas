@@ -385,7 +385,6 @@ begin
       MI:= TMenuItem.Create(MenuItem);
       MI.Tag:= 1;
       MI.Caption:= Module.FieldList[J];
-      MI.OnClick:= OnMenuItemClick;
       MenuItem.Items[1].Items[MenuItem.Items[1].Count - 1].Add(MI);
       with TWdxField(Module.FieldList.Objects[J]) do
       if FType <> ft_multiplechoice then
@@ -400,6 +399,7 @@ begin
           MI.Add(MI2);
         end;
       end;
+      if MI.Count = 0 then MI.OnClick:= OnMenuItemClick;
     end;
   end;
 end;
