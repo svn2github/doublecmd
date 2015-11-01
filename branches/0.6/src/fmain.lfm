@@ -29,6 +29,7 @@ object frmMain: TfrmMain
     Width = 760
     AutoSize = True
     Constraints.MinHeight = 20
+    EdgeBorders = []
     Flat = True
     TabOrder = 2
     OnDragDrop = MainToolBarDragDrop
@@ -45,12 +46,13 @@ object frmMain: TfrmMain
   object pnlDisk: TPanel
     AnchorSideTop.Control = MainToolBar
     Left = 0
-    Height = 26
+    Height = 24
     Top = 20
     Width = 760
     Align = alTop
     AutoSize = True
-    ClientHeight = 26
+    BevelOuter = bvNone
+    ClientHeight = 24
     ClientWidth = 760
     FullRepaint = False
     TabOrder = 0
@@ -58,9 +60,9 @@ object frmMain: TfrmMain
     object pnlDskLeft: TPanel
       AnchorSideLeft.Control = pnlDisk
       AnchorSideTop.Control = pnlDisk
-      Left = 1
+      Left = 0
       Height = 24
-      Top = 1
+      Top = 0
       Width = 170
       BevelOuter = bvNone
       ClientHeight = 24
@@ -74,6 +76,7 @@ object frmMain: TfrmMain
         Width = 170
         AutoSize = True
         Constraints.MinHeight = 20
+        EdgeBorders = [ebTop, ebBottom]
         Flat = True
         ShowCaptions = True
         TabOrder = 0
@@ -89,9 +92,9 @@ object frmMain: TfrmMain
       AnchorSideTop.Control = pnlDisk
       AnchorSideRight.Control = pnlDisk
       AnchorSideRight.Side = asrBottom
-      Left = 171
+      Left = 172
       Height = 24
-      Top = 1
+      Top = 0
       Width = 588
       Anchors = [akTop, akRight]
       BevelOuter = bvNone
@@ -106,6 +109,7 @@ object frmMain: TfrmMain
         Width = 588
         AutoSize = True
         Constraints.MinHeight = 20
+        EdgeBorders = [ebTop, ebBottom]
         Flat = True
         ShowCaptions = True
         TabOrder = 0
@@ -120,23 +124,24 @@ object frmMain: TfrmMain
   end
   object pnlNotebooks: TPanel
     Left = 0
-    Height = 163
-    Top = 46
+    Height = 167
+    Top = 44
     Width = 760
     Align = alClient
-    ClientHeight = 163
+    BevelOuter = bvNone
+    ClientHeight = 167
     ClientWidth = 760
     FullRepaint = False
     TabOrder = 1
     OnResize = pnlNotebooksResize
     object pnlLeft: TPanel
-      Left = 1
-      Height = 161
-      Top = 1
+      Left = 0
+      Height = 167
+      Top = 0
       Width = 511
       Align = alLeft
       BevelOuter = bvNone
-      ClientHeight = 161
+      ClientHeight = 167
       ClientWidth = 511
       TabOrder = 0
       OnDblClick = pnlLeftRightDblClick
@@ -256,14 +261,14 @@ object frmMain: TfrmMain
       end
     end
     object pnlRight: TPanel
-      Left = 512
-      Height = 161
-      Top = 1
-      Width = 247
+      Left = 511
+      Height = 167
+      Top = 0
+      Width = 249
       Align = alClient
       BevelOuter = bvNone
-      ClientHeight = 161
-      ClientWidth = 247
+      ClientHeight = 167
+      ClientWidth = 249
       TabOrder = 1
       OnDblClick = pnlLeftRightDblClick
       OnResize = pnlRightResize
@@ -271,7 +276,7 @@ object frmMain: TfrmMain
         Left = 0
         Height = 10
         Top = 0
-        Width = 247
+        Width = 249
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 1
@@ -281,12 +286,12 @@ object frmMain: TfrmMain
         Left = 0
         Height = 24
         Top = 10
-        Width = 247
+        Width = 249
         Align = alTop
         AutoSize = True
         BevelOuter = bvNone
         ClientHeight = 24
-        ClientWidth = 247
+        ClientWidth = 249
         TabOrder = 0
         object btnRightDrive: TSpeedButton
           Left = 0
@@ -299,7 +304,7 @@ object frmMain: TfrmMain
           OnMouseUp = btnDriveMouseUp
         end
         object btnRightHome: TSpeedButton
-          Left = 201
+          Left = 203
           Height = 24
           Top = 0
           Width = 23
@@ -308,7 +313,7 @@ object frmMain: TfrmMain
           OnClick = btnRightClick
         end
         object btnRightUp: TSpeedButton
-          Left = 178
+          Left = 180
           Height = 24
           Top = 0
           Width = 23
@@ -317,7 +322,7 @@ object frmMain: TfrmMain
           OnClick = btnRightClick
         end
         object btnRightRoot: TSpeedButton
-          Left = 155
+          Left = 157
           Height = 24
           Top = 0
           Width = 23
@@ -326,7 +331,7 @@ object frmMain: TfrmMain
           OnClick = btnRightClick
         end
         object btnRightDirectoryHotlist: TSpeedButton
-          Left = 132
+          Left = 134
           Height = 24
           Hint = 'Directory Hotlist'
           Top = 0
@@ -336,7 +341,7 @@ object frmMain: TfrmMain
           OnClick = btnRightDirectoryHotlistClick
         end
         object btnRightEqualLeft: TSpeedButton
-          Left = 224
+          Left = 226
           Height = 24
           Hint = 'Show current directory of the left panel in the right panel'
           Top = 0
@@ -354,7 +359,7 @@ object frmMain: TfrmMain
           Left = 52
           Height = 10
           Top = 1
-          Width = 78
+          Width = 80
           Anchors = [akTop, akLeft, akRight]
           BorderSpacing.Left = 2
           BorderSpacing.Right = 2
@@ -368,7 +373,7 @@ object frmMain: TfrmMain
           Left = 50
           Height = 1
           Top = 0
-          Width = 82
+          Width = 84
           Alignment = taCenter
           Anchors = [akTop, akLeft, akRight]
           BorderSpacing.Left = 2
@@ -397,7 +402,7 @@ object frmMain: TfrmMain
   object PanelAllProgress: TPanel
     Left = 0
     Height = 0
-    Top = 209
+    Top = 211
     Width = 760
     Align = alBottom
     AutoSize = True
@@ -408,7 +413,7 @@ object frmMain: TfrmMain
     Cursor = crVSplit
     Left = 0
     Height = 3
-    Top = 209
+    Top = 211
     Width = 760
     Align = alBottom
     AutoSnap = False
@@ -419,27 +424,27 @@ object frmMain: TfrmMain
   object pnlCommand: TPanel
     AnchorSideBottom.Control = LogSplitter
     Left = 0
-    Height = 83
-    Top = 212
+    Height = 81
+    Top = 214
     Width = 760
     Align = alBottom
     AutoSize = True
-    BevelOuter = bvLowered
-    ClientHeight = 83
+    BevelOuter = bvNone
+    ClientHeight = 81
     ClientWidth = 760
     FullRepaint = False
     TabOrder = 8
     object pnlCmdLine: TPanel
-      Left = 1
+      Left = 0
       Height = 27
-      Top = 55
-      Width = 758
+      Top = 54
+      Width = 760
       Align = alClient
       AutoSize = True
       BevelOuter = bvNone
       ChildSizing.TopBottomSpacing = 2
       ClientHeight = 27
-      ClientWidth = 758
+      ClientWidth = 760
       TabOrder = 1
       object lblCommandPath: TLabel
         AnchorSideTop.Control = edtCommand
@@ -461,7 +466,7 @@ object frmMain: TfrmMain
         Left = 28
         Height = 23
         Top = 2
-        Width = 730
+        Width = 732
         Anchors = [akTop, akLeft, akRight]
         BorderSpacing.Left = 4
         ItemHeight = 15
@@ -472,10 +477,10 @@ object frmMain: TfrmMain
       end
     end
     object nbConsole: TPageControl
-      Left = 1
+      Left = 0
       Height = 54
-      Top = 1
-      Width = 758
+      Top = 0
+      Width = 760
       TabStop = False
       ActivePage = pgConsole
       Align = alTop
@@ -869,7 +874,7 @@ object frmMain: TfrmMain
     Top = 350
     Width = 760
     Align = alBottom
-    BevelOuter = bvLowered
+    BevelOuter = bvNone
     ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
     ChildSizing.EnlargeVertical = crsHomogenousChildResize
     ChildSizing.ShrinkHorizontal = crsHomogenousChildResize
