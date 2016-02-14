@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# Set Double Commander version
+DC_VER=0.7.0
+
+# The new package will be saved here
+PACK_DIR=$(pwd)/darwin/release
+
+# Temp dir for creating *.dmg package
+BUILD_PACK_DIR=/var/tmp/doublecmd-$(date +%y.%m.%d)
+
+# Create temp dir for building
+BUILD_DC_TMP_DIR=/var/tmp/doublecmd-$DC_VER
+
+# Export from SVN
+rm -rf $BUILD_DC_TMP_DIR
+svn export ../ $BUILD_DC_TMP_DIR
+
+# Save revision number
+DC_REVISION=$(linux/update-revision.sh ../ $BUILD_DC_TMP_DIR)
+
+# Set processor architecture
+if [ -z $CPU_TARGET ]; then
+  export CPU_TARGET=$(fpc -iTP)
+fi
+
+# Set widgetset
+if [ -z $lcl ]; then
+  # Use Qt4 when build 64 bit
+  if [ "$CPU_TARGET" = "x86_64" ]
+    then
+      export lcl=qt
+    else
+      export lcl=carbon
+  fi
+fi
+
+# Set minimal Mac OS X target version
+export MACOSX_DEPLOYMENT_TARGET=10.5
+
+# Copy libraries
+cp -a darwin/lib/$CPU_TARGET/*.dylib         $BUILD_DC_TMP_DIR/
+cp -a darwin/lib/$CPU_TARGET/$lcl/*.dylib    $BUILD_DC_TMP_DIR/
+
+cd $BUILD_DC_TMP_DIR
+
+# Build all components of Double Commander
+./build.sh beta
+
+# Update application bundle version
+defaults write $(pwd)/doublecmd.app/Contents/Info CFBundleVersion $DC_REVISION
+defaults write $(pwd)/doublecmd.app/Contents/Info CFBundleShortVersionString $DC_VER
+plutil -convert xml1 $(pwd)/doublecmd.app/Contents/Info.plist
+
+# Create *.dmg package
+mkdir -p $BUILD_PACK_DIR
+install/darwin/install.sh $BUILD_PACK_DIR
+cd $BUILD_PACK_DIR
+if [ "$lcl" = "qt" ]; then
+  macdeployqt doublecmd.app
+fi
+mv doublecmd.app 'Double Commander.app'
+hdiutil create -anyowners -volname "Double Commander" -imagekey zlib-level=9 -format UDZO -srcfolder 'Double Commander.app' $PACK_DIR/doublecmd-$DC_VER-$DC_REVISION.$lcl.$CPU_TARGET.dmg
+
+# Clean DC build dir
+rm -rf $BUILD_DC_TMP_DIR
+rm -rf $BUILD_PACK_DIR

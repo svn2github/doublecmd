@@ -1,0 +1,257 @@
+ jcl/source/common/JclCompression.pas | 67 +++++++++++++++++++++++++++++++-----
+ jcl/source/windows/sevenzip.pas      |  8 ++---
+ 2 files changed, 63 insertions(+), 12 deletions(-)
+
+diff --git a/jcl/source/common/JclCompression.pas b/jcl/source/common/JclCompression.pas
+index e5e6a2f..5934880 100644
+--- a/jcl/source/common/JclCompression.pas
++++ b/jcl/source/common/JclCompression.pas
+@@ -44,8 +44,7 @@
+
+ unit JclCompression;
+
+-{$I jcl.inc}
+-{$I crossplatform.inc}
++{$mode delphi}
+
+ interface
+
+@@ -75,7 +74,10 @@ uses
+   ZLib,
+   {$ENDIF ZLIB_RTL}
+   {$ENDIF ~HAS_UNITSCOPE}
+-  zlibh, bzip2, JclWideStrings, JclBase, JclStreams;
++  {$IFNDEF FPC}
++  zlibh, bzip2,
++  {$ENDIF FPC}
++  DCJclAlternative; // Must be after Classes, SysUtils, Windows
+
+ {$IFDEF RTL230_UP}
+ {$HPPEMIT '// To avoid ambiguity with System::Zlib::z_stream_s we force using ours'}
+@@ -180,6 +182,9 @@ uses
+ **************************************************************************************************}
+
+ type
++
++{$IFNDEF FPC}
++
+   TJclCompressionStream = class(TJclStream)
+   private
+     FOnProgress: TNotifyEvent;
+@@ -562,8 +567,12 @@ type
+     function Seek(const Offset: Int64; Origin: TSeekOrigin): Int64; override;
+   end;
+
++{$ENDIF FPC}
++
+   EJclCompressionError = class(EJclError);
+
++{$IFNDEF FPC}
++
+   // callback type used in helper functions below:
+   TJclCompressStreamProgressCallback = procedure(FileSize, Position: Int64; UserData: Pointer) of object;
+
+@@ -586,6 +595,8 @@ procedure BZip2Stream(SourceStream, DestinationStream: TStream; CompressionLevel
+ procedure UnBZip2Stream(SourceStream, DestinationStream: TStream;
+   ProgressCallback: TJclCompressStreamProgressCallback = nil; UserData: Pointer = nil);
+
++{$ENDIF FPC}
++
+ // archive ancestor classes
+ {$IFDEF MSWINDOWS}
+ type
+@@ -595,6 +606,7 @@ type
+     var AVolumeMaxSize: Int64) of object;
+   TJclCompressionProgressEvent = procedure(Sender: TObject; const Value, MaxValue: Int64) of object;
+   TJclCompressionRatioEvent = procedure(Sender: TObject; const InSize, OutSize: Int64) of object;
++  TJclCompressionPasswordEvent = procedure(Sender: TObject; var Password: WideString) of object;
+
+   TJclCompressionItemProperty = (ipPackedName, ipPackedSize, ipPackedExtension,
+     ipFileSize, ipFileName, ipAttributes, ipCreationTime, ipLastAccessTime,
+@@ -770,6 +782,7 @@ type
+     FOnRatio: TJclCompressionRatioEvent;
+     FOnVolume: TJclCompressionVolumeEvent;
+     FOnVolumeMaxSize: TJclCompressionVolumeMaxSizeEvent;
++    FOnPassword: TJclCompressionPasswordEvent;
+     FPassword: WideString;
+     FVolumeIndex: Integer;
+     FVolumeIndexOffset: Integer;
+@@ -804,6 +817,9 @@ type
+     function _AddRef: Integer; stdcall;
+     function _Release: Integer; stdcall;
+   public
++    PropNames: array of WideString;
++    PropValues: array of TPropVariant;
++  public
+     class function MultipleItemContainer: Boolean; virtual;
+     class function VolumeAccess: TJclStreamAccess; virtual;
+     function ItemAccess: TJclStreamAccess; virtual;
+@@ -855,6 +871,7 @@ type
+     property OnVolume: TJclCompressionVolumeEvent read FOnVolume write FOnVolume;
+     property OnVolumeMaxSize: TJclCompressionVolumeMaxSizeEvent read FOnVolumeMaxSize
+       write FOnVolumeMaxSize;
++    property OnPassword: TJclCompressionPasswordEvent read FOnPassword write FOnPassword;
+     property Password: WideString read FPassword write FPassword;
+
+     property SupportsNestedArchive: Boolean read GetSupportsNestedArchive;
+@@ -1193,6 +1210,7 @@ function GetArchiveFormats: TJclCompressionArchiveFormats;
+ type
+   TJclSevenzipCompressArchive = class(TJclCompressArchive, IInterface)
+   private
++    FSfxModule: String;
+     FOutArchive: IOutArchive;
+   protected
+     function GetItemClass: TJclCompressionItemClass; override;
+@@ -1203,6 +1221,7 @@ type
+     destructor Destroy; override;
+     procedure Compress; override;
+     property OutArchive: IOutArchive read GetOutArchive;
++    property SfxModule: String read FSfxModule write FSfxModule;
+   end;
+
+   // file formats
+@@ -2206,8 +2225,7 @@ const
+ implementation
+
+ uses
+-  JclUnicode, // WideSameText
+-  JclDateTime, JclFileUtils, JclResources, JclStrings, JclSysUtils;
++  DCJclResources, DCJclCompression;
+
+ const
+   JclDefaultBufferSize = 131072; // 128k
+@@ -2218,6 +2236,8 @@ var
+   GlobalStreamFormats: TObject;
+   GlobalArchiveFormats: TObject;
+
++{$IFNDEF FPC}
++
+ //=== { TJclCompressionStream } ==============================================
+
+ constructor TJclCompressionStream.Create(AStream: TStream);
+@@ -3743,6 +3763,8 @@ begin
+   end;
+ end;
+
++{$ENDIF FPC}
++
+ {$IFDEF MSWINDOWS}
+
+ function OpenFileStream(const FileName: TFileName; StreamAccess: TJclStreamAccess): TStream;
+@@ -3887,7 +3909,7 @@ end;
+ function TJclCompressionItem.GetNestedArchiveName: WideString;
+ var
+   ParentArchiveExtension, ArchiveFileName, ArchiveExtension: WideString;
+-  ExtensionMap: TJclWideStrings;
++  ExtensionMap: TStrings;
+ begin
+   if ipPackedName in ValidProperties then
+     Result := PackedName
+@@ -3914,7 +3936,7 @@ begin
+     else
+     if ArchiveFileName <> '' then
+     begin
+-      ExtensionMap := TJclWideStringList.Create;
++      ExtensionMap := TStringList.Create;
+       try
+         ExtensionMap.Delimiter := ';';
+         ExtensionMap.DelimitedText := Archive.ArchiveSubExtensions;
+@@ -6117,6 +6139,8 @@ end;
+
+ procedure SetSevenzipArchiveCompressionProperties(AJclArchive: IInterface; ASevenzipArchive: IInterface);
+ var
++  Index: Integer;
++  JclArchive: TJclCompressionArchive;
+   PropertySetter: Sevenzip.ISetProperties;
+   InArchive, OutArchive: Boolean;
+   Unused: IInterface;
+@@ -6254,9 +6278,18 @@ begin
+         else
+           AddWideStringProperty('S', IntToStr(Solid.SolidBlockSize) + 'F');
+       end;
++
++      JclArchive := AJclArchive as TJclCompressionArchive;
++      for Index := Low(JclArchive.PropNames) to High(JclArchive.PropNames) do
++      begin
++        AddProperty(PWideChar(JclArchive.PropNames[Index]), JclArchive.PropValues[Index]);
++      end;
+     end;
+     if Length(PropNames) > 0 then
++    begin
+       SevenZipCheck(PropertySetter.SetProperties(@PropNames[0], @PropValues[0], Length(PropNames)));
++      SetLength(JclArchive.PropNames, 0); SetLength(JclArchive.PropValues, 0);
++    end;
+   end;
+ end;
+
+@@ -6692,7 +6725,11 @@ begin
+     SplitStream := TJclDynamicSplitStream.Create(False);
+     SplitStream.OnVolume := NeedStream;
+     SplitStream.OnVolumeMaxSize := NeedStreamMaxSize;
+-    OutStream := TJclSevenzipOutStream.Create(SplitStream, True, False);
++    if Length(FSfxModule) > 0 then
++      OutStream := TSfxSevenzipOutStream.Create(SplitStream, FSfxModule)
++    else begin
++      OutStream := TJclSevenzipOutStream.Create(SplitStream, True, False);
++    end;
+     UpdateCallback := TJclSevenzipUpdateCallback.Create(Self);
+
+     SetSevenzipArchiveCompressionProperties(Self, OutArchive);
+@@ -7422,7 +7459,14 @@ function TJclSevenzipOpenCallback.CryptoGetTextPassword(
+   password: PBStr): HRESULT;
+ begin
+   if Assigned(password) then
++  begin
++    if Length(FArchive.FPassword) = 0 then
++    begin
++      if Assigned(FArchive.OnPassword) then
++        FArchive.OnPassword(FArchive, FArchive.FPassword);
++    end;
+     password^ := SysAllocString(PWideChar(FArchive.Password));
++  end;
+   Result := S_OK;
+ end;
+
+@@ -7456,7 +7500,14 @@ function TJclSevenzipExtractCallback.CryptoGetTextPassword(
+   password: PBStr): HRESULT;
+ begin
+   if Assigned(password) then
++  begin
++    if Length(FArchive.FPassword) = 0 then
++    begin
++      if Assigned(FArchive.OnPassword) then
++        FArchive.OnPassword(FArchive, FArchive.FPassword);
++    end;
+     password^ := SysAllocString(PWideChar(FArchive.Password));
++  end;
+   Result := S_OK;
+ end;
+
+diff --git a/jcl/source/windows/sevenzip.pas b/jcl/source/windows/sevenzip.pas
+index 06fb94f..0853a85 100644
+--- a/jcl/source/windows/sevenzip.pas
++++ b/jcl/source/windows/sevenzip.pas
+@@ -53,10 +53,11 @@
+
+ unit sevenzip;
+
++{$mode delphi}
++
+ interface
+
+-{$I jcl.inc}
+-{$I windowsonly.inc}
++{$DEFINE 7ZIP_LINKONREQUEST}
+
+ uses
+   {$IFDEF HAS_UNITSCOPE}
+@@ -67,8 +68,7 @@ uses
+   {$IFDEF UNITVERSIONING}
+   JclUnitVersioning,
+   {$ENDIF UNITVERSIONING}
+-  JclBase,
+-  JclSysUtils;
++  DCJclAlternative;
+
+ //DOM-IGNORE-BEGIN
+
