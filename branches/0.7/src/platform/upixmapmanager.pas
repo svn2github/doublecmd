@@ -49,7 +49,7 @@ uses
   uFile, uIconTheme, uDrive, uDisplayFile, uGlobs, uDCReadPSD
   {$IF DEFINED(UNIX)}
     {$IF NOT DEFINED(DARWIN)}
-    , contnrs, uDCReadSVG
+    , contnrs, uDCReadSVG, uGio, uOSUtils
       {$IFDEF LCLGTK2}
       , gtk2
       {$ELSE}
@@ -129,6 +129,7 @@ type
     {$ELSE}
     FIconTheme: TIconTheme;
     {$ENDIF}
+    FHomeFolder: String;
     {$ENDIF}
     {en
        Maps theme icon name to index of bitmap (in FPixmapList) for this icon.
@@ -1183,6 +1184,7 @@ begin
   if not FUseSystemTheme then FUseSystemTheme:= not (systemVersion < $1060);
   {$ELSEIF DEFINED(UNIX)}
   FExtToMimeIconName := TFPDataHashTable.Create;
+  FHomeFolder := IncludeTrailingBackslash(GetHomeDir);
   {$ENDIF}
 
   FThemePixmapsFileNames := TStringHashList.Create(True);
@@ -1655,8 +1657,9 @@ begin
          (not (DirectAccess and (IsSysFile or FileIsReadOnly(Attributes)) and mbFileExists(FullPath + '\desktop.ini'))) or
          (GetDeviceCaps(Application.MainForm.Canvas.Handle, BITSPIXEL) < 16) then
       {$ELSEIF DEFINED(UNIX) AND NOT DEFINED(DARWIN)}
-      if (IconsMode = sim_all_and_exe) and
-         (DirectAccess and mbFileAccess(Path + Name + '/.directory', fmOpenRead)) then
+      if (IconsMode = sim_all_and_exe) and (DirectAccess) then
+      begin
+        if mbFileAccess(Path + Name + '/.directory', fmOpenRead) then
         begin
           if LoadIcon then
             Result := GetIconByDesktopFile(Path + Name + '/.directory', FiDirIconID)
@@ -1664,6 +1667,16 @@ begin
             Result := -1;
           Exit;
         end
+        else if (FHomeFolder = Path) then
+        begin
+          if LoadIcon then
+            Result := CheckAddThemePixmap(GioFileGetIcon(FullPath))
+          else
+            Result := -1;
+          Exit;
+        end
+        else Exit(FiDirIconID);
+      end
       else
       {$ELSEIF DEFINED(DARWIN)}
       if (IconsMode = sim_all_and_exe) and
