@@ -31,7 +31,7 @@ interface
 
 uses
   Graphics, SysUtils, Classes, Controls, Forms, Dialogs, StdCtrls, ComCtrls,
-  ExtCtrls, Menus, EditBtn, Spin, Buttons, ZVDateTimePicker, KASComboBox,
+  ExtCtrls, Menus, EditBtn, Spin, Buttons, DateTimePicker, KASComboBox,
   fAttributesEdit, uDsxModule, DsxPlugin, uFindThread, uFindFiles,
   uSearchTemplate, fSearchPlugin, uFileView, types, DCStrUtils,ShellCtrls,
   uOSForms,uShellContextMenu,uExceptions,uFileSystemFileSource;
@@ -132,10 +132,10 @@ type
     tsAdvanced: TTabSheet;
     PopupMenuFind: TPopupMenu;
     miShowInViewer: TMenuItem;
-    ZVDateFrom: TZVDateTimePicker;
-    ZVDateTo: TZVDateTimePicker;
-    ZVTimeFrom: TZVDateTimePicker;
-    ZVTimeTo: TZVDateTimePicker;
+    ZVDateFrom: TDateTimePicker;
+    ZVDateTo: TDateTimePicker;
+    ZVTimeFrom: TDateTimePicker;
+    ZVTimeTo: TDateTimePicker;
 
     procedure btnAddAttributeClick(Sender: TObject);
     procedure btnAttrsHelpClick(Sender: TObject);

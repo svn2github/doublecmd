@@ -682,7 +682,7 @@ object frmFindDlg: TfrmFindDlg
           Shape = bsTopLine
           Style = bsRaised
         end
-        object ZVDateFrom: TZVDateTimePicker
+        object ZVDateFrom: TDateTimePicker
           AnchorSideLeft.Control = tsAdvanced
           AnchorSideTop.Control = cbDateFrom
           AnchorSideTop.Side = asrBottom
@@ -707,7 +707,7 @@ object frmFindDlg: TfrmFindDlg
           UseDefaultSeparators = True
           OnChange = ZVDateFromChange
         end
-        object ZVDateTo: TZVDateTimePicker
+        object ZVDateTo: TDateTimePicker
           AnchorSideLeft.Control = ZVDateFrom
           AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = ZVDateFrom
@@ -733,7 +733,7 @@ object frmFindDlg: TfrmFindDlg
           UseDefaultSeparators = True
           OnChange = ZVDateToChange
         end
-        object ZVTimeFrom: TZVDateTimePicker
+        object ZVTimeFrom: TDateTimePicker
           AnchorSideLeft.Control = ZVDateTo
           AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = ZVDateFrom
@@ -761,7 +761,7 @@ object frmFindDlg: TfrmFindDlg
           UseDefaultSeparators = True
           OnChange = ZVTimeFromChange
         end
-        object ZVTimeTo: TZVDateTimePicker
+        object ZVTimeTo: TDateTimePicker
           AnchorSideLeft.Control = ZVTimeFrom
           AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = ZVDateFrom
