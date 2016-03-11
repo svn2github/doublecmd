@@ -26,11 +26,6 @@ update_doublecmd()
   # Save revision number
   DC_REVISION=`$(pwd)/update-revision.sh ../../ $DC_SOURCE_DIR`
 
-  # Remove help files
-  rm -rf $DC_SOURCE_DIR/doc/en
-  rm -rf $DC_SOURCE_DIR/doc/ru
-  rm -rf $DC_SOURCE_DIR/doc/uk
-
   # Create doublecmd-x.x.x.orig.tar.gz
   pushd $DC_SOURCE_DIR/..
   tar -cvzf $DC_TEMP_DIR/doublecmd_$DC_VER.orig.tar.gz doublecmd-$DC_VER
@@ -67,11 +62,6 @@ update_doublecmd_svn()
 
   # Save revision number
   DC_REVISION=`$(pwd)/update-revision.sh ../../ $DC_SOURCE_DIR`
-
-  # Remove help files
-  rm -rf $DC_SOURCE_DIR/doc/en
-  rm -rf $DC_SOURCE_DIR/doc/ru
-  rm -rf $DC_SOURCE_DIR/doc/uk
 
   # Prepare debian directory
   mkdir -p $DC_SOURCE_DIR/debian
