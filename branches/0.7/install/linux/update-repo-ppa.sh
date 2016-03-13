@@ -95,14 +95,16 @@ update_doublecmd_svn()
 
 update_doublecmd_help()
 {
-  # Export from SVN
-  svn export ../../doc $DC_HELP_DIR
-
-  # Remove text files
-  rm -f $DC_HELP_DIR/*.txt
+  # Create output folder
+  mkdir -p $DC_HELP_DIR
 
   # Save revision number
   DC_REVISION=`$(pwd)/update-revision.sh ../../ $DC_SOURCE_DIR`
+
+  # Copy help files
+  cp -r ../../doc/en $DC_HELP_DIR/
+  cp -r ../../doc/ru $DC_HELP_DIR/
+  cp -r ../../doc/uk $DC_HELP_DIR/
 
   # Create doublecmd-help-x.x.x.orig.tar.gz
   pushd $DC_HELP_DIR/..
