@@ -101,6 +101,9 @@ update_doublecmd_help()
   # Remove text files
   rm -f $DC_HELP_DIR/*.txt
 
+  # Save revision number
+  DC_REVISION=`$(pwd)/update-revision.sh ../../ $DC_SOURCE_DIR`
+
   # Create doublecmd-help-x.x.x.orig.tar.gz
   pushd $DC_HELP_DIR/..
   tar -cvzf $DC_TEMP_DIR/doublecmd-help_$DC_VER.orig.tar.gz doublecmd-help-$DC_VER
