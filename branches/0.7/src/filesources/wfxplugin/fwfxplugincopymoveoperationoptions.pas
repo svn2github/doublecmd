@@ -102,7 +102,7 @@ begin
     if not cbWorkInBackground.Checked then
       QueueIdentifier:= ModalQueueId
     else begin
-      QueueIdentifier:= FreeOperationsQueueId;
+      QueueIdentifier:= SingleQueueId;
     end;
     btnAddToQueue.Visible:= cbWorkInBackground.Checked;
     btnCreateSpecialQueue.Visible:= btnAddToQueue.Visible;
@@ -169,12 +169,13 @@ begin
   inherited Create(AOwner, AFileSource);
   with (AFileSource as IWfxPluginFileSource) do
   begin
-    cbWorkInBackground.Visible:= (WfxModule.BackgroundFlags and CAN_UPLOAD <> 0);
+    cbWorkInBackground.Visible:= (WfxModule.BackgroundFlags and CAN_UPLOAD) = CAN_UPLOAD;
     if cbWorkInBackground.Visible then
       cbWorkInBackground.Checked:= False
     else
       cbWorkInBackground.Checked:= (WfxModule.BackgroundFlags and BG_UPLOAD <> 0);
   end;
+  cbWorkInBackgroundChange(cbWorkInBackground);
 end;
 
 { TWfxPluginCopyOutOperationOptionsUI }
@@ -187,12 +188,13 @@ begin
   inherited Create(AOwner, AFileSource);
   with (AFileSource as IWfxPluginFileSource) do
   begin
-    cbWorkInBackground.Visible:= (WfxModule.BackgroundFlags and CAN_DOWNLOAD <> 0);
+    cbWorkInBackground.Visible:= (WfxModule.BackgroundFlags and CAN_DOWNLOAD) = CAN_DOWNLOAD;
     if cbWorkInBackground.Visible then
       cbWorkInBackground.Checked:= False
     else
       cbWorkInBackground.Checked:= (WfxModule.BackgroundFlags and BG_DOWNLOAD <> 0);
   end;
+  cbWorkInBackgroundChange(cbWorkInBackground);
 end;
 
 end.
