@@ -540,6 +540,7 @@ begin
       sSearchNameNoExt := '*' + sSearchNameNoExt;
     if not (qsmEnding in SearchOptions.Match) then
       sSearchNameNoExt := sSearchNameNoExt + '*';
+    if sSearchExt = '' then sSearchExt := sSearchName;
     sSearchName := sSearchNameNoExt + sSearchExt + '*';
   end
   else
