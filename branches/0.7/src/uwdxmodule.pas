@@ -274,7 +274,7 @@ const
 function StrToVar(const Value: String; FieldType: Integer): Variant;
 begin
   case FieldType of
-  ft_fieldempty: Result := Null;
+  ft_fieldempty: Result := Unassigned;
   ft_numeric_32: Result := StrToInt(Value);
   ft_numeric_64: Result := StrToInt64(Value);
   ft_numeric_floating: Result := StrToFloat(Value);
@@ -288,7 +288,7 @@ begin
   ft_fulltext,
   ft_stringw: Result := Value;
   else
-    Result := Null;
+    Result := Unassigned;
   end;
 end;
 
@@ -758,19 +758,16 @@ begin
 end;
 
 function TPluginWDX.CallContentGetDetectString: String;
-var
-  pacDetectString: PAnsiChar;
+const
+  MAX_LEN = 2048; // See contentplugin.hlp for details
 begin
-  if Assigned(ContentGetDetectString) then
-  begin
-    GetMem(pacDetectString, MAX_PATH);
-    FillChar(pacDetectString^, MAX_PATH, #0);
-    ContentGetDetectString(pacDetectString, MAX_PATH);
-    Result := StrPas(pacDetectString);
-    FreeMem(pacDetectString);
-  end
-  else
-    Result := '';
+  if not Assigned(ContentGetDetectString) then
+    Result := EmptyStr
+  else begin
+    Result := StringOfChar(#0, MAX_LEN);
+    ContentGetDetectString(PAnsiChar(Result), MAX_LEN);
+    Result := PAnsiChar(Result);
+  end;
 end;
 
 function TPluginWDX.CallContentGetValueV(FileName: String; FieldName: String;
@@ -786,7 +783,7 @@ begin
     Result := CallContentGetValuev(FileName, FieldIndex, UnitIndex, flags);
   end
   else
-    Result := Null;
+    Result := Unassigned;
 end;
 
 function TPluginWDX.CallContentGetValueV(FileName: String; FieldIndex,
@@ -807,7 +804,7 @@ begin
     Rez := ContentGetValue(PAnsiChar(CeUtf8ToSys(FileName)), FieldIndex, UnitIndex, @Buf, SizeOf(buf), flags);
 
   case Rez of
-    ft_fieldempty: Result := Null;
+    ft_fieldempty: Result := Unassigned;
     ft_numeric_32: Result := fnval;
     ft_numeric_64: Result := fnval64;
     ft_numeric_floating: Result := ffval;
@@ -821,7 +818,7 @@ begin
     ft_fulltext: Result := CeSysToUtf8(AnsiString(PAnsiChar(@Buf[0])));
     ft_stringw: Result := UTF16ToUTF8(UnicodeString(PWideChar(@Buf[0])));
     else
-      Result := Null;
+      Result := Unassigned;
   end;
 
 end;
