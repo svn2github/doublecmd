@@ -266,7 +266,7 @@ implementation
 
 uses
   StrUtils, LazUTF8, uGlobs, uGlobsPaths, FileUtil, uDebug, uDCUtils, uOSUtils,
-  DCBasicTypes, DCOSUtils, DCDateTimeUtils, DCConvertEncoding;
+  DCBasicTypes, DCOSUtils, DCDateTimeUtils, DCConvertEncoding, uLuaPas;
 
 const
   WdxIniFileName = 'wdx.ini';
@@ -981,6 +981,8 @@ begin
 
   luaL_openlibs(L);
 
+  RegisterPackages(L);
+
   if DoScript(Self.FFileName) = 0 then
     Result := True
   else
@@ -1134,13 +1136,13 @@ end;
 function TLuaWdx.CallContentGetValueV(FileName: String; FieldName: String;
   UnitName: String; flags: Integer): Variant;
 begin
-  Result := Unassigned;
+  Result := CallContentGetValue(FileName, FieldName, UnitName, flags);
 end;
 
 function TLuaWdx.CallContentGetValueV(FileName: String; FieldIndex,
   UnitIndex: Integer; flags: Integer): Variant;
 begin
-  Result := Unassigned;
+  Result := CallContentGetValue(FileName, FieldIndex, UnitIndex, flags);
 end;
 
 function TLuaWdx.CallContentGetValue(FileName: String; FieldName: String; UnitName: String; flags: Integer): String;
