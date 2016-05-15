@@ -1518,7 +1518,7 @@ object frmMain: TfrmMain
     object actWorkWithDirectoryHotlist: TAction
       Tag = 5
       Category = 'Configuration'
-      Caption = 'Work with Directory Hotlist and paramters'
+      Caption = 'Work with Directory Hotlist and parameters'
       OnExecute = actExecute
     end
     object actFileAssoc: TAction

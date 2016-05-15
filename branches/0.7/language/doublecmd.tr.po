@@ -3164,9 +3164,7 @@ msgstr "Git önceki giriş tarihi"
 
 #: tfrmmain.actviewlogfile.caption
 msgid "View log file"
-msgstr ""
-
-#: tfrmmain.actvisithomepage.caption
+msgstr Hotlist and parametersvisithomepage.caption
 msgid "&Visit Double Commander Website"
 msgstr "&Double Commander Web Sitesini ziyaret edin"
 
@@ -7046,14 +7044,14 @@ msgctxt "TFRMOPTIONSPLUGINS.BTNENABLEPLUGIN.CAPTION"
 msgid "E&nable"
 msgstr "Etkinleştir"
 
-#: tfrmoptionsplugins.btnremoveplugin.caption
+#: tfplugins allow one to useremoveplugin.caption
 #, fuzzy
 #| msgid "Remove"
 msgctxt "TFRMOPTIONSPLUGINS.BTNREMOVEPLUGIN.CAPTION"
 msgid "&Remove"
 msgstr "Kaldır"
 
-#: tfrmoptionsplugins.btntweakplugin.caption
+#: tplugins allow one to usentweakplugin.caption
 #, fuzzy
 #| msgid "Tweak"
 msgctxt "TFRMOPTIONSPLUGINS.BTNTWEAKPLUGIN.CAPTION"
@@ -8785,10 +8783,7 @@ msgstr "Dosyaları silebilirsiniz"
 #: tfrmtweakplugin.cbpk_caps_encrypt.caption
 #, fuzzy
 #| msgid "Supports encryption"
-msgid "Supports e&ncryption"
-msgstr "Şifrelemeyi destekler"
-
-#: tfrmtweakplugin.cbpk_caps_hide.caption
+msgid "Supports e&nexisting archives"Şifrelemeyi destekleexisting archivesplugin.cbpk_caps_hide.caption
 #, fuzzy
 #| msgid "Show as normal files (hide packer icon)"
 msgid "Sho&w as normal files (hide packer icon)"
