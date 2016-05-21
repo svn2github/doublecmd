@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.7.0 alpha\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-03-12 20:10+0400\n"
+"PO-Revision-Date: 2016-05-16 03:19+0400\n"
 "Last-Translator: Alexander Koblov <alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -2502,7 +2502,7 @@ msgstr "Настройка файловых &ассоциаций"
 
 #: tfrmmain.actfilelinker.caption
 msgid "Com&bine Files..."
-msgstr "&Склеить файлы..."
+msgstr "Объединить &файлы..."
 
 #: tfrmmain.actfileproperties.caption
 msgid "Show &File Properties"
@@ -3456,7 +3456,7 @@ msgstr "Вк&ладки"
 
 #: tfrmmain.tbchangedir.caption
 msgid "CD"
-msgstr ""
+msgstr "cd"
 
 #: tfrmmain.tbcopy.caption
 msgctxt "TFRMMAIN.TBCOPY.CAPTION"
@@ -4733,7 +4733,7 @@ msgstr "&Настроить набор:"
 
 #: tfrmoptionscustomcolumns.lblcurrentcolumn.caption
 msgid "[Current Column Name]"
-msgstr ""
+msgstr "[Имя текущей колонки]"
 
 #: tfrmoptionscustomcolumns.lblcursorcolor.caption
 msgctxt "tfrmoptionscustomcolumns.lblcursorcolor.caption"
@@ -6640,11 +6640,11 @@ msgstr "Некоторые функции для выбора подходяще
 #: tfrmoptionslog.btnviewlogfile.hint
 msgctxt "tfrmoptionslog.btnviewlogfile.hint"
 msgid "View log file content"
-msgstr "Просмотреть содержимое файла журнала"
+msgstr "Просмотреть содержимое файла отчёта"
 
 #: tfrmoptionslog.cbincludedateinlogfilename.caption
 msgid "Include date in log filename"
-msgstr "Добавлять дату в имя файла журнала"
+msgstr "Добавлять дату в имя файла отчёта"
 
 #: tfrmoptionslog.cblogarcop.caption
 msgctxt "TFRMOPTIONSLOG.CBLOGARCOP.CAPTION"
@@ -6741,7 +6741,7 @@ msgstr "&Удалить эскизы для отсутствующих файл�
 #: tfrmoptionsmisc.btnviewconfigfile.hint
 msgctxt "tfrmoptionsmisc.btnviewconfigfile.hint"
 msgid "View log file content"
-msgstr "Просмотреть содержимое файла журнала"
+msgstr "Просмотреть содержимое файла отчёта"
 
 #: tfrmoptionsmisc.chkgotoroot.caption
 msgid "Always &go to the root of a drive when changing drives"
@@ -8293,7 +8293,7 @@ msgstr "&ОК"
 
 #: tfrmsymlink.caption
 msgid "Create symbolic link"
-msgstr "Создать симв. ссылку"
+msgstr "Создать символьную ссылку"
 
 #: tfrmsymlink.lblexistingfile.caption
 msgctxt "TFRMSYMLINK.LBLEXISTINGFILE.CAPTION"
@@ -9155,11 +9155,11 @@ msgid ""
 "Could you make it available and press \"OK\" when ready,\n"
 "or press \"CANCEL\" to continue without it?\n"
 msgstr ""
-"Этот файл не может быть найден и можно помочь принять окончательную комбинацию файлов:\n"
+"Файл с контрольной суммой поможет объединить файлы, но не был найден:\n"
 "%s\n"
 "\n"
-"Можете ли вы сделать это доступным и нажать \"OK\" когда будете готовы,\n"
-"или нажать \"ОТМЕНА\" чтобы продолжить без этого?\n"
+"Вы можете сделать его доступным и нажать \"OK\", когда будете готовы,\n"
+"или нажать \"ОТМЕНА\" чтобы продолжить объединение без него.\n"
 
 #: ulng.rscancelfilter
 msgid "Cancel Quick Filter"
@@ -9767,7 +9767,7 @@ msgid ""
 "\n"
 "Are you sure you want to proceed?\n"
 msgstr ""
-"Внимание! Когда восстановите из резервного файла .hotlist, очистится существующий список и заменится импортированным.\n"
+"Внимание! Восстановление из резервного файла .hotlist очистит существующий список и заменит его импортированным.\n"
 "\n"
 "Вы уверены что хотите продолжить?\n"
 
@@ -11943,7 +11943,7 @@ msgstr "Выберите каталог:"
 
 #: ulng.rssymerrcreate
 msgid "Error creating symlink."
-msgstr "Ошибка создания симв. ссылки."
+msgstr "Ошибка создания символьной ссылки."
 
 #: ulng.rssyndefaulttext
 msgctxt "ulng.rssyndefaulttext"
