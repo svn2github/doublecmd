@@ -376,7 +376,7 @@ begin
               BackgroundColor := gMarkColor
             else
               BackgroundColor := gInactiveMarkColor;
-            TextColor := TextColor;
+            TextColor := gBackColor;
           end;
         //------------------------------------------------------
       end

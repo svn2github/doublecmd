@@ -2070,7 +2070,8 @@ begin
   if bPlugin then
     begin
       iSearchParameter:= 0;
-      if FFindDialog.cbCaseSens.Checked then iSearchParameter:= lcs_matchcase;
+      if bSearchBackwards then iSearchParameter:= lcs_backwards;
+      if FFindDialog.cbCaseSens.Checked then iSearchParameter:= iSearchParameter or lcs_matchcase;
       WlxPlugins.GetWLxModule(ActivePlugin).CallListSearchText(sSearchTextU, iSearchParameter);
     end
   else
