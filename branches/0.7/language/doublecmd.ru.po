@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.7.0 alpha\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-05-16 03:19+0400\n"
+"PO-Revision-Date: 2016-06-14 14:24+0300\n"
 "Last-Translator: Alexander Koblov <alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -6324,17 +6324,17 @@ msgstr "..."
 
 #: tfrmoptionsfonts.lblconsolefont.caption
 msgid "&Console font"
-msgstr "&Консоли"
+msgstr "&Консоль"
 
 #: tfrmoptionsfonts.lbleditorfont.caption
 msgctxt "TFRMOPTIONSFONTS.LBLEDITORFONT.CAPTION"
 msgid "&Editor font"
-msgstr "&Редактора"
+msgstr "&Редактор"
 
 #: tfrmoptionsfonts.lbllogfont.caption
 msgctxt "TFRMOPTIONSFONTS.LBLLOGFONT.CAPTION"
 msgid "&Log font"
-msgstr "Протоко&ла"
+msgstr "Протоко&л"
 
 #: tfrmoptionsfonts.lblmainfont.caption
 msgctxt "TFRMOPTIONSFONTS.LBLMAINFONT.CAPTION"
@@ -6344,12 +6344,12 @@ msgstr "О&сновной"
 #: tfrmoptionsfonts.lblviewerbookfont.caption
 msgctxt "TFRMOPTIONSFONTS.LBLVIEWERBOOKFONT.CAPTION"
 msgid "Viewer&Book Font"
-msgstr "Просмотрщика (режим \"&Книга\")"
+msgstr "Просмотрщик в режиме \"&Книга\""
 
 #: tfrmoptionsfonts.lblviewerfont.caption
 msgctxt "TFRMOPTIONSFONTS.LBLVIEWERFONT.CAPTION"
 msgid "&Viewer font"
-msgstr "Прос&мотрщика"
+msgstr "Прос&мотрщик"
 
 #: tfrmoptionshotkeys.btnaddhotkey.caption
 msgid "Add &hotkey"
@@ -6527,7 +6527,7 @@ msgstr "&Буквы"
 #: tfrmoptionslayout.cbflatdiskpanel.caption
 msgctxt "TFRMOPTIONSLAYOUT.CBFLATDISKPANEL.CAPTION"
 msgid "&Flat buttons"
-msgstr "П&лоские"
+msgstr "П&лоские кнопки"
 
 #: tfrmoptionslayout.cbflatinterface.caption
 msgctxt "TFRMOPTIONSLAYOUT.CBFLATINTERFACE.CAPTION"
@@ -6537,7 +6537,7 @@ msgstr "Плоский инт&ерфейс"
 #: tfrmoptionslayout.cbflattoolbar.caption
 msgctxt "TFRMOPTIONSLAYOUT.CBFLATTOOLBAR.CAPTION"
 msgid "Flat b&uttons"
-msgstr "Пло&ские"
+msgstr "Пло&ские кнопки"
 
 #: tfrmoptionslayout.cbfreespaceind.caption
 msgctxt "TFRMOPTIONSLAYOUT.CBFREESPACEIND.CAPTION"
@@ -6595,7 +6595,7 @@ msgstr "&Главное меню"
 
 #: tfrmoptionslayout.cbshowmaintoolbar.caption
 msgctxt "TFRMOPTIONSLAYOUT.CBSHOWMAINTOOLBAR.CAPTION"
-msgid "Show tool&bar"
+msgid "Show &button bar"
 msgstr "П&анель инструментов"
 
 #: tfrmoptionslayout.cbshowshortdrivefreespace.caption
