@@ -65,15 +65,6 @@ type
 {$if defined(Win32) or defined(WinCE) or defined(Win64)}
     FindData : Windows.TWin32FindDataW;
 {$endif}
-{$ifdef netware_clib}
-    FindData : TNetwareFindData;
-{$endif}
-{$ifdef netware_libc}
-    FindData : TNetwareLibcFindData;
-{$endif}
-{$ifdef MacOS}
-    FindData : TMacOSFindData;
-{$endif}
   end;
 
 function FindFirstEx (const Path : String; Attr : TFileAttrs; out SearchRec : TSearchRecEx) : Longint;
@@ -84,12 +75,12 @@ function CheckAttrMask(DefaultAttr : TFileAttrs; sAttr : String; Attr : TFileAtt
 implementation
 
 uses
-  LCLProc, uDebug
+  LazUTF8, uDebug
   {$IFDEF MSWINDOWS}
-  , LazUTF8, uMyWindows
+  , uMyWindows
   {$ENDIF}
   {$IFDEF UNIX}
-  , uMyUnix, Unix, FileUtil, DCOSUtils, DCFileAttributes
+  , Unix, DCOSUtils, DCFileAttributes, DCConvertEncoding, uMyUnix
   {$ENDIF};
 
 const
@@ -188,7 +179,7 @@ begin
         Mask := TMask.Create(SearchRec.Name);
       end;
 
-    DirPtr:= fpOpenDir(PChar(UTF8ToSys(sPath)));
+    DirPtr:= fpOpenDir(PChar(CeUtf8ToSys(sPath)));
   end;
   Result:= FindNextEx(SearchRec);
 end;
@@ -215,7 +206,7 @@ begin
   PtrDirEnt:= fpReadDir(UnixFindData^.DirPtr);
   while PtrDirEnt <> nil do
   begin
-    SearchRec.Name:= SysToUTF8(PtrDirEnt^.d_name);
+    SearchRec.Name:= CeSysToUtf8(PtrDirEnt^.d_name);
     Result:= mbFindMatchingFile(SearchRec);
     if Result = 0 then // if found then exit
       Exit
