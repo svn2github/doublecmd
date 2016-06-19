@@ -67,6 +67,9 @@ function FsDeleteFileW(RemoteName: PWideChar): BOOL; dcpcall;
 function FsMkDirW(RemoteDir: PWideChar): BOOL; dcpcall;
 function FsRemoveDirW(RemoteName: PWideChar): BOOL; dcpcall;
 
+function FsSetTimeW(RemoteName: PWideChar; CreationTime, LastAccessTime,
+                    LastWriteTime: PFileTime): BOOL; dcpcall;
+
 function FsDisconnectW(DisconnectRoot: PWideChar): BOOL; dcpcall;
 
 procedure FsSetCryptCallbackW(pCryptProc: TCryptProcW; CryptoNr, Flags: Integer); dcpcall;
@@ -583,6 +586,7 @@ var
   ListRec: PListRec;
   sPath: AnsiString;
   FtpSend: TFTPSendEx;
+  Directory: UnicodeString;
 begin
   New(ListRec);
   ListRec.Path := Path;
@@ -599,7 +603,10 @@ begin
     begin
       ListLock.Acquire;
       try
-        if GetConnectionByPath(Path + PathDelim, FtpSend, sPath) then
+        Directory:= Path;
+        if Directory[Length(Directory)] <> PathDelim then
+          Directory:= Directory + PathDelim;
+        if GetConnectionByPath(Directory, FtpSend, sPath) then
         begin
           ListRec.FtpSend := FtpSend;
           // Get directory listing
@@ -860,6 +867,20 @@ begin
   Result := False;
   if GetConnectionByPath(RemoteName, FtpSend, sPath) then
     Result := FtpSend.DeleteDir(sPath);
+end;
+
+function FsSetTimeW(RemoteName: PWideChar; CreationTime, LastAccessTime,
+  LastWriteTime: PFileTime): BOOL; dcpcall;
+var
+  sPath: AnsiString;
+  FtpSend: TFTPSendEx;
+begin
+  Result := False;
+  if Assigned(LastWriteTime) then
+  begin
+    if GetConnectionByPath(RemoteName, FtpSend, sPath) then
+      Result := FtpSend.SetTime(sPath, LastWriteTime^);
+  end;
 end;
 
 function FsDisconnectW(DisconnectRoot: PWideChar): BOOL; dcpcall;
