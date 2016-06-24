@@ -5,7 +5,7 @@ object frmEditor: TfrmEditor
   Width = 640
   ActiveControl = Editor
   Caption = 'Editor'
-  ClientHeight = 460
+  ClientHeight = 456
   ClientWidth = 640
   Icon.Data = {
     7E04000000000100010010100000010020006804000016000000280000001000
@@ -55,10 +55,10 @@ object frmEditor: TfrmEditor
   OnMouseWheelUp = FormMouseWheelUp
   SessionProperties = 'Height;Width;WindowState;Left;Top'
   ShowInTaskBar = stAlways
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.0.4'
   object StatusBar: TStatusBar
     Left = 0
-    Height = 23
+    Height = 19
     Top = 437
     Width = 640
     Panels = <    
@@ -97,7 +97,7 @@ object frmEditor: TfrmEditor
     OnMouseWheelDown = EditorMouseWheelDown
     OnMouseWheelUp = EditorMouseWheelUp
     BookMarkOptions.Xoffset = 48
-    Gutter.Width = 57
+    Gutter.Width = 67
     Gutter.MouseActions = <    
       item
         ClickCount = ccAny
@@ -537,7 +537,7 @@ object frmEditor: TfrmEditor
         MouseActions = <>
       end
       object SynGutterLineNumber1: TSynGutterLineNumber
-        Width = 17
+        Width = 27
         MouseActions = <>
         MarkupInfo.Background = clBtnFace
         MarkupInfo.Foreground = clNone
@@ -1591,7 +1591,6 @@ object frmEditor: TfrmEditor
       Hint = 'Delete'
       ImageIndex = 14
       OnExecute = actEditDeleteExecute
-      ShortCut = 46
     end
     object actEditFindNext: TAction
       Category = 'Edit'
@@ -1836,7 +1835,7 @@ object frmEditor: TfrmEditor
         00008F9391FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
         88FF858A88FF858A88FF858A88FF8F9391FF0000000000000000
       }
-      OnClick = actEditDeleteExecute
+      ShortCut = 46
     end
     object miSeparator2: TMenuItem
       Caption = '-'
