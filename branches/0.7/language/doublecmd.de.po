@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Double Commander 0.7.2 beta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-20 12:40+0300\n"
-"PO-Revision-Date: 2016-06-10 11:49+0200\n"
+"PO-Revision-Date: 2016-06-23 14:02+0200\n"
 "Last-Translator: Claudio <linuxbastler@users.sourceforge.net>\n"
 "Language-Team: Deutsch <linuxbastler@users.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -324,7 +324,7 @@ msgstr "In die Zwischenablage kopieren"
 #: tfrmabout.caption
 msgctxt "TFRMABOUT.CAPTION"
 msgid "About"
-msgstr "&Über"
+msgstr "Über"
 
 #: tfrmabout.lblbuild.caption
 msgctxt "tfrmabout.lblbuild.caption"
@@ -1173,7 +1173,7 @@ msgstr "&Öffnen"
 #: tfrmeditor.actfileopen.hint
 msgctxt "tfrmeditor.actfileopen.hint"
 msgid "Open"
-msgstr "Öffne"
+msgstr "Öffnen"
 
 #: tfrmeditor.actfilesave.caption
 msgctxt "TFRMEDITOR.ACTFILESAVE.CAPTION"
@@ -1296,7 +1296,7 @@ msgstr "Strikt nach S&chreibweise"
 
 #: tfrmeditsearchreplace.cbsearchfromcursor.caption
 msgid "S&earch from caret"
-msgstr "Suche von &caret"
+msgstr "Suche von &Cursor"
 
 #: tfrmeditsearchreplace.cbsearchregexp.caption
 msgctxt "TFRMEDITSEARCHREPLACE.CBSEARCHREGEXP.CAPTION"
@@ -1330,7 +1330,7 @@ msgstr "Richtung"
 #: tfrmextractdlg.caption
 msgctxt "TFRMEXTRACTDLG.CAPTION"
 msgid "Unpack files"
-msgstr "Entpacke Datei(en)"
+msgstr "Entpacke Dateien"
 
 #: tfrmextractdlg.cbextractpath.caption
 msgid "&Unpack path names if stored with files"
@@ -1339,7 +1339,7 @@ msgstr "&Pfad mit entpacken (falls gespeichert)"
 #: tfrmextractdlg.cbfilemask.text
 msgctxt "tfrmextractdlg.cbfilemask.text"
 msgid "*.*"
-msgstr "*"
+msgstr "*.*"
 
 #: tfrmextractdlg.cbinseparatefolder.caption
 msgid "Unpack each archive to a &separate subdir (name of the archive)"
@@ -1347,15 +1347,15 @@ msgstr "Jedes Archiv in &separaten Ordner entpacken (mit Namen des Archivs)"
 
 #: tfrmextractdlg.cboverwrite.caption
 msgid "O&verwrite existing files"
-msgstr "&Vorhandene Datei(en) überschreiben"
+msgstr "&Vorhandene Dateien überschreiben"
 
 #: tfrmextractdlg.lblextractto.caption
 msgid "To the &directory:"
-msgstr "Entpacke &Datei(en) nach:"
+msgstr "Entpacke Dateien &nach"
 
 #: tfrmextractdlg.lblfilemask.caption
 msgid "&Extract files matching file mask:"
-msgstr "Entpacken von &Dateien anhand von Vorgaben:"
+msgstr "Entpacke &Dateien anhand Auswahl"
 
 #: tfrmextractdlg.lblpassword.caption
 msgid "&Password for encrypted files:"
@@ -1377,7 +1377,7 @@ msgstr "&Abwärts"
 #: tfrmfileassoc.btnok.caption
 msgctxt "TFRMFILEASSOC.BTNOK.CAPTION"
 msgid "&OK"
-msgstr "&Ok"
+msgstr "&OK"
 
 #: tfrmfileassoc.btnremoveact.caption
 msgctxt "TFRMFILEASSOC.BTNREMOVEACT.CAPTION"
@@ -1881,7 +1881,7 @@ msgstr "Füge in &Listbox ein"
 #: tfrmfinddlg.caption
 msgctxt "tfrmfinddlg.caption"
 msgid "Find files"
-msgstr "Suche Datei(en)"
+msgstr "Dateien suchen"
 
 #: tfrmfinddlg.cbcasesens.caption
 msgid "Case sens&itive"
@@ -1910,7 +1910,7 @@ msgstr "In &Archiv(en) suchen"
 #: tfrmfinddlg.cbfindtext.caption
 msgctxt "TFRMFINDDLG.CBFINDTEXT.CAPTION"
 msgid "Find &text in file"
-msgstr "Suche in Da&tei"
+msgstr "&Text suchen"
 
 #: tfrmfinddlg.cbfollowsymlinks.caption
 msgid "Follow s&ymlinks"
@@ -1999,7 +1999,7 @@ msgstr "&Kodierung:"
 
 #: tfrmfinddlg.lblexcludedirectories.caption
 msgid "E&xclude subdirectories"
-msgstr "Unter&verzeichnisse ausschließen"
+msgstr "Unterverzeichnisse &ausschließen"
 
 #: tfrmfinddlg.lblexcludefiles.caption
 msgid "&Exclude files"
@@ -2015,7 +2015,7 @@ msgstr "Verzeichnis in dem &Double Commander suchen soll"
 
 #: tfrmfinddlg.lblsearchdepth.caption
 msgid "Search su&bdirectories:"
-msgstr "Suche Unter&verzeichnissen"
+msgstr "Unter&verzeichnisse durchsuchen:"
 
 #: tfrmfinddlg.lbltemplateheader.caption
 msgid "&Previous searches:"
@@ -2242,7 +2242,7 @@ msgstr "Log-Fenster leeren"
 #: tfrmmain.actclosealltabs.caption
 msgctxt "tfrmmain.actclosealltabs.caption"
 msgid "Close &All Tabs"
-msgstr "&Alle Reiter schließen"
+msgstr "&Alle Tabs schließen"
 
 #: tfrmmain.actcloseduplicatetabs.caption
 msgid "Close Duplicate Tabs"
@@ -2250,7 +2250,7 @@ msgstr "Doppelte Tabs schließen"
 
 #: tfrmmain.actclosetab.caption
 msgid "&Close Tab"
-msgstr "Reiter &schließen"
+msgstr "Tab &schließen"
 
 #: tfrmmain.actcmdlinenext.caption
 msgid "Next Command Line"
@@ -2571,7 +2571,7 @@ msgstr "Netzwerk schnell &verbinden..."
 
 #: tfrmmain.actnewtab.caption
 msgid "&New Tab"
-msgstr "Ne&uer Reiter"
+msgstr "Ne&uer Tab"
 
 #: tfrmmain.actnextfavoritetabs.caption
 msgid "Load the Next Favorite Tabs in the list"
@@ -2579,7 +2579,7 @@ msgstr "Nächsten Tab aus der Liste laden"
 
 #: tfrmmain.actnexttab.caption
 msgid "Switch to Nex&t Tab"
-msgstr "Zum n&ächsten Reiter wechseln"
+msgstr "Zum n&ächsten Tab wechseln"
 
 #: tfrmmain.actopen.caption
 msgctxt "TFRMMAIN.ACTOPEN.CAPTION"
@@ -2596,7 +2596,7 @@ msgstr "Leisten-Datei öffnen"
 
 #: tfrmmain.actopendirinnewtab.caption
 msgid "Open &Folder in a New Tab"
-msgstr "Verzeichnis in neue&m Reiter öffnen"
+msgstr "Verzeichnis in neue&m Tab öffnen"
 
 #: tfrmmain.actopenvirtualfilesystemlist.caption
 msgid "Open &VFS List"
@@ -2628,7 +2628,7 @@ msgstr "Vorherigen Tab aus der Liste laden"
 
 #: tfrmmain.actprevtab.caption
 msgid "Switch to &Previous Tab"
-msgstr "Zum v&orherigen Reiter wechseln"
+msgstr "Zum v&orherigen Tab wechseln"
 
 #: tfrmmain.actquickfilter.caption
 msgid "Quick filter"
@@ -2667,7 +2667,7 @@ msgstr "Umbenennen"
 
 #: tfrmmain.actrenametab.caption
 msgid "&Rename Tab"
-msgstr "&Reiter umbenennen"
+msgstr "&Tab umbenennen"
 
 #: tfrmmain.actresavefavoritetabs.caption
 msgid "Resave on the last Favorite Tabs loaded"
@@ -2972,7 +2972,7 @@ msgstr "~"
 
 #: tfrmmain.btnlefthome.hint
 msgid "Go to home directory"
-msgstr "Zu 'Eigene Dateien' wechseln"
+msgstr "zu Benutzerverzeichnis wechseln"
 
 #: tfrmmain.btnleftroot.caption
 msgctxt "TFRMMAIN.BTNLEFTROOT.CAPTION"
@@ -3247,7 +3247,7 @@ msgstr "Erstelle symbolischen Link"
 
 #: tfrmmain.mitaboptions.caption
 msgid "Tab options"
-msgstr "Reiter-Optionen"
+msgstr "Tab-Optionen"
 
 #: tfrmmain.mitrayiconexit.caption
 msgctxt "TFRMMAIN.MITRAYICONEXIT.CAPTION"
@@ -3320,11 +3320,11 @@ msgstr "&Anzeigen"
 #: tfrmmain.mnutaboptions.caption
 msgctxt "TFRMMAIN.MNUTABOPTIONS.CAPTION"
 msgid "Tab &Options"
-msgstr "Tab &Optionen"
+msgstr "Tab &Optionen..."
 
 #: tfrmmain.mnutabs.caption
 msgid "&Tabs"
-msgstr "&Reiter"
+msgstr "&Tabs"
 
 #: tfrmmain.tbchangedir.caption
 msgid "CD"
@@ -5881,7 +5881,7 @@ msgstr "Auf Standard-Einstellungen zurücksetzen"
 #: tfrmoptionsfilepanelscolors.cbbuseframecursor.caption
 msgctxt "TFRMOPTIONSFILEPANELSCOLORS.CBBUSEFRAMECURSOR.CAPTION"
 msgid "Use &Frame Cursor"
-msgstr "&Cursor nur als Rahmen darstellen"
+msgstr "&Cursor nur als Rahmen"
 
 #: tfrmoptionsfilepanelscolors.cbbusegradientind.caption
 msgid "Use &Gradient Indicator"
@@ -5956,7 +5956,7 @@ msgstr "&Markierungsfarbe"
 
 #: tfrmoptionsfilepanelscolors.lblpreview.caption
 msgid "Below is a preview. You may move cursor, select file and get immediately an actual look and feel of the various settings."
-msgstr "Unten ist eine Vorschau. Der Cursor kann bewegt werden und Dateien markiert um einen sofortigen Eindruck von den verschieden Einstellungen zu bekommen."
+msgstr "Vorschau: Cursor bewegen und Dateien markieren, um einen sofortigen Eindruck von den verschieden Einstellungen zu bekommen."
 
 #: tfrmoptionsfilepanelscolors.lbltextcolor.caption
 msgctxt "TFRMOPTIONSFILEPANELSCOLORS.LBLTEXTCOLOR.CAPTION"
@@ -5965,7 +5965,7 @@ msgstr "T&extfarbe"
 
 #: tfrmoptionsfilesviews.cbdelayloadingtabs.caption
 msgid "Do&n't load file list until a tab is activated"
-msgstr "Dateiliste &nicht laden bis ein Reiter aktiviert ist"
+msgstr "Dateiliste &nicht laden bis ein Tab aktiviert ist"
 
 #: tfrmoptionsfilesviews.cbdirbrackets.caption
 msgctxt "TFRMOPTIONSFILESVIEWS.CBDIRBRACKETS.CAPTION"
@@ -6403,7 +6403,7 @@ msgstr "Zeige Ta&bstop-Zeile"
 #: tfrmoptionslayout.cbshowtabs.caption
 msgctxt "TFRMOPTIONSLAYOUT.CBSHOWTABS.CAPTION"
 msgid "Sho&w folder tabs"
-msgstr "Zeige &Verzeichnis-Reiter"
+msgstr "Zeige &Verzeichnis-Tabs"
 
 #: tfrmoptionslayout.cbtermwindow.caption
 msgctxt "TFRMOPTIONSLAYOUT.CBTERMWINDOW.CAPTION"
@@ -6638,7 +6638,7 @@ msgstr "Pack&er-PlugIns werden benutzt um mit Archiven zu arbeiten."
 
 #: tfrmoptionsplugins.lblwdxdescription.caption
 msgctxt "TFRMOPTIONSPLUGINS.LBLWDXDESCRIPTION.CAPTION"
-msgid "Content plu&gins allow one to display extended file details like mp3 tags or image attributes in file lists, or use them in search and multi-rename tool"
+msgid "Content plu&gins allow to display extended file details like mp3 tags or image attributes in file lists, or use them in search and multi-rename tool"
 msgstr "Inhalt-Plu&gins erlauben es, weitere Details (wie z.B. MP3-Tags) in Dateilisten anzuzeigen, oder sie zur Suche oder Umbenennung zu nutzen"
 
 #: tfrmoptionsplugins.lblwfxdescription.caption
@@ -6648,7 +6648,7 @@ msgstr "Dateisystem-P&lugins erlauben auf Dateisysteme oder externe Laufwerke zu
 
 #: tfrmoptionsplugins.lblwlxdescription.caption
 msgctxt "TFRMOPTIONSPLUGINS.LBLWLXDESCRIPTION.CAPTION"
-msgid "Vie&wer plugins allow one to display file formats like images, spreadsheets, databases etc. in Viewer (F3, Ctrl+Q)"
+msgid "Vie&wer plugins allow to display file formats like images, spreadsheets, databases etc. in Viewer (F3, Ctrl+Q)"
 msgstr "Be&trachter-Plugins erlauben die Anzeige von Bilder, Tabellen, Datenbanken o.ä. mit dem Betrachter (F3 oder Strg+Q)."
 
 #: tfrmoptionsplugins.stgplugins.columns[0].title.caption
@@ -6730,7 +6730,7 @@ msgstr "Ziel-&Panel auswählen, wenn eines seiner Tabs angeklickt wird"
 #: tfrmoptionstabs.cbtabsalwaysvisible.caption
 msgctxt "TFRMOPTIONSTABS.CBTABSALWAYSVISIBLE.CAPTION"
 msgid "&Show tab header also when there is only one tab"
-msgstr "&Reiter-Titel auch zeigen wenn nur einer vorhanden"
+msgstr "&Tab-Titel auch zeigen wenn nur einer vorhanden"
 
 #: tfrmoptionstabs.cbtabscloseduplicatewhenclosing.caption
 msgid "Close duplicate tabs when closing application"
@@ -6739,7 +6739,7 @@ msgstr "Doppelte Tabs schließen wenn DC geschlossen wird"
 #: tfrmoptionstabs.cbtabsconfirmcloseall.caption
 msgctxt "TFRMOPTIONSTABS.CBTABSCONFIRMCLOSEALL.CAPTION"
 msgid "Con&firm close all tabs"
-msgstr "&Schließen aller Reiter bestätigen"
+msgstr "&Schließen aller Tabs bestätigen"
 
 #: tfrmoptionstabs.cbtabsconfirmcloselocked.caption
 msgid "Confirm close locked tabs"
@@ -6748,12 +6748,12 @@ msgstr "Schließen von gesperrten Tabs bestätigen"
 #: tfrmoptionstabs.cbtabslimitoption.caption
 msgctxt "TFRMOPTIONSTABS.CBTABSLIMITOPTION.CAPTION"
 msgid "&Limit tab title length to"
-msgstr "Begrenze Reiter-Tite&lzeile auf"
+msgstr "Begrenze Tab-Tite&lzeile auf"
 
 #: tfrmoptionstabs.cbtabslockedasterisk.caption
 msgctxt "TFRMOPTIONSTABS.CBTABSLOCKEDASTERISK.CAPTION"
 msgid "Show locked tabs &with an asterisk *"
-msgstr "Alle gesperrten Reiter mit Sternchen * markieren"
+msgstr "Alle gesperrten Tabs mit Stern * markieren"
 
 #: tfrmoptionstabs.cbtabsmultilines.caption
 msgctxt "TFRMOPTIONSTABS.CBTABSMULTILINES.CAPTION"
@@ -6763,12 +6763,12 @@ msgstr "Rei&ter-Titel auf mehrere Zeilen verteilen"
 #: tfrmoptionstabs.cbtabsopenforeground.caption
 msgctxt "TFRMOPTIONSTABS.CBTABSOPENFOREGROUND.CAPTION"
 msgid "Ctrl+&Up opens new tab in foreground"
-msgstr "Strg+Pf&eil hoch öffnet einen neuen Reiter im Vordergrund"
+msgstr "Strg+Pf&eil hoch öffnet einen neuen Tab im Vordergrund"
 
 #: tfrmoptionstabs.cbtabsopennearcurrent.caption
 msgctxt "TFRMOPTIONSTABS.CBTABSOPENNEARCURRENT.CAPTION"
 msgid "Open &new tabs near current tab"
-msgstr "&Neuen Reiter neben aktuellem Reiter einfügen"
+msgstr "&Neuen Tab neben aktuellem Tab einfügen"
 
 #: tfrmoptionstabs.cbtabsreusetabwhenpossible.caption
 msgid "Reuse existing tab when possible"
@@ -6786,7 +6786,7 @@ msgstr "Laufwerksbuchstaben im Tab-Titel immer zeigen"
 #: tfrmoptionstabs.gbtabs.caption
 msgctxt "TFRMOPTIONSTABS.GBTABS.CAPTION"
 msgid "Folder tabs headers"
-msgstr "Verzeichnisreiter-Titel"
+msgstr "Verzeichnis-Tab-Titel"
 
 #: tfrmoptionstabs.lblchar.caption
 msgctxt "TFRMOPTIONSTABS.LBLCHAR.CAPTION"
@@ -6883,7 +6883,7 @@ msgstr "Befehl:"
 #: tfrmoptionsterminal.ledtrunintermcloseparams.editlabel.caption
 msgctxt "tfrmoptionsterminal.ledtrunintermcloseparams.editlabel.caption"
 msgid "Parameters:"
-msgstr "Parameter:"
+msgstr "Parameter"
 
 #: tfrmoptionsterminal.ledtrunintermcloseparams.hint
 msgctxt "tfrmoptionsterminal.ledtrunintermcloseparams.hint"
@@ -6898,7 +6898,7 @@ msgstr "Befehl"
 #: tfrmoptionsterminal.ledtrunintermstayopenparams.editlabel.caption
 msgctxt "tfrmoptionsterminal.ledtrunintermstayopenparams.editlabel.caption"
 msgid "Parameters:"
-msgstr "Parameter:"
+msgstr "Parameter"
 
 #: tfrmoptionsterminal.ledtrunintermstayopenparams.hint
 msgid "{command} should normally be present here to reflect the command to be run in terminal"
@@ -6907,7 +6907,7 @@ msgstr "{Befehl} sollte normalerweise hier angezeigt werden um den Befehl im Ter
 #: tfrmoptionsterminal.ledtruntermparams.editlabel.caption
 msgctxt "tfrmoptionsterminal.ledtruntermparams.editlabel.caption"
 msgid "Parameters:"
-msgstr "Parameter:"
+msgstr "Parameter"
 
 #: tfrmoptionsterminal.ledtruntermparams.hint
 msgctxt "tfrmoptionsterminal.ledtruntermparams.hint"
@@ -7775,7 +7775,7 @@ msgstr "Zeichen zum Einfügen au&swählen:"
 #: tfrmsetfileproperties.btnok.caption
 msgctxt "TFRMSETFILEPROPERTIES.BTNOK.CAPTION"
 msgid "&OK"
-msgstr "&Ok"
+msgstr "&OK"
 
 #: tfrmsetfileproperties.caption
 msgid "Change attributes"
@@ -8557,7 +8557,7 @@ msgstr "Betrachten"
 
 #: tfrmviewer.lblhightlight.caption
 msgid "0x0"
-msgstr ""
+msgstr "0x0"
 
 #: tfrmviewer.mi180.caption
 msgid "+ 180"
@@ -8932,7 +8932,7 @@ msgstr "Datum"
 
 #: ulng.rscolext
 msgid "Ext"
-msgstr "Endung"
+msgstr "Erw."
 
 #: ulng.rscolname
 msgctxt "ulng.rscolname"
@@ -9316,7 +9316,7 @@ msgstr "%s Level(s)"
 
 #: ulng.rsfinddepthall
 msgid "all (unlimited depth)"
-msgstr "Alle (ohne Einschränkung der Verzeichnistiefe)"
+msgstr "Alle (Verzeichnistiefe unbegrenzt)"
 
 #: ulng.rsfinddepthcurdir
 msgid "current dir only"
@@ -9349,7 +9349,7 @@ msgstr "Suche"
 #: ulng.rsfindsearchfiles
 msgctxt "ulng.rsfindsearchfiles"
 msgid "Find files"
-msgstr "Suche Datei(en)"
+msgstr "Dateien suchen"
 
 #: ulng.rsfindtimeofscan
 msgid "Time of scan: "
@@ -9480,7 +9480,7 @@ msgstr "Editor"
 #: ulng.rshotkeycategoryfindfiles
 msgctxt "ulng.rshotkeycategoryfindfiles"
 msgid "Find files"
-msgstr "Suche Datei(en)"
+msgstr "Dateien suchen"
 
 #: ulng.rshotkeycategorymain
 msgid "Main"
@@ -9551,7 +9551,7 @@ msgstr "Auswerfen"
 
 #: ulng.rsmnuextracthere
 msgid "Extract here..."
-msgstr "hierher entpacken..."
+msgstr "Archiv hier entpacken..."
 
 #: ulng.rsmnumapnetworkdrive
 msgid "Map Network Drive..."
@@ -9816,7 +9816,7 @@ msgstr "Fehler beim Laden der Konfiguration"
 
 #: ulng.rsmsgerrregexpsyntax
 msgid "Syntax error in regular expression!"
-msgstr "Syntax-fehler im regulären Ausdruck!"
+msgstr "Syntaxfehler im regulären Ausdruck!"
 
 #: ulng.rsmsgerrrename
 msgid "Cannot rename file %s to %s"
@@ -9832,11 +9832,11 @@ msgstr "Kann Datei nicht speichern"
 
 #: ulng.rsmsgerrsetattribute
 msgid "Can not set attributes for \"%s\""
-msgstr "Kann Attribut für  \"%s\" nicht setzen"
+msgstr "Kann Attribut für \"%s\" nicht setzen"
 
 #: ulng.rsmsgerrsetdatetime
 msgid "Can not set date/time for \"%s\""
-msgstr "Kann Datum/Zeit für  \"%s\" nicht setzen"
+msgstr "Kann Datum/Zeit für \"%s\" nicht setzen"
 
 #: ulng.rsmsgerrsetownership
 msgid "Can not set owner/group for \"%s\""
@@ -10603,11 +10603,11 @@ msgstr "Dieser Tab (%s) ist gesperrt! Verzeichnis in anderem Tab öffnen?"
 
 #: ulng.rsmsgtabrenamecaption
 msgid "Rename tab"
-msgstr "Reiter umbenennen"
+msgstr "Tab umbenennen"
 
 #: ulng.rsmsgtabrenameprompt
 msgid "New tab name:"
-msgstr "Neuer Reiter-Name"
+msgstr "Neuer Tab-Name"
 
 #: ulng.rsmsgtabsextraoptionsmodifiedwanttosave
 msgid ""
@@ -11282,7 +11282,7 @@ msgstr "Dateitypen"
 #: ulng.rsoptionseditorfoldertabs
 msgctxt "ulng.rsoptionseditorfoldertabs"
 msgid "Folder tabs"
-msgstr "Verzeichnisreiter"
+msgstr "Verzeichnis-Tabs"
 
 #: ulng.rsoptionseditorfoldertabsextra
 msgid "Folder tabs extra"
