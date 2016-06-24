@@ -117,7 +117,7 @@ type
 
 const
   { Default hotkey list version number }
-  hkVersion     = 23;
+  hkVersion     = 38;  // 26
 
   // Previously existing names if reused must check for ConfigVersion >= X.
   // History:
@@ -762,6 +762,7 @@ end;
 procedure LoadDefaultHotkeyBindings;
 var
   HMForm: THMForm;
+  HMHotKey: THotkey;
   HMControl: THMControl;
 begin
   // Note: Increase hkVersion if you change default hotkeys list
@@ -806,7 +807,6 @@ begin
       AddIfNotExists(['Ctrl+T'],[],'cm_NewTab');
       AddIfNotExists(['Ctrl+U'],[],'cm_Exchange');
       AddIfNotExists(['Ctrl+W'],[],'cm_CloseTab');
-      AddIfNotExists(['Ctrl+Z'],[],'cm_EditComment');
       AddIfNotExists(['Ctrl+F1'],[],'cm_BriefView');
       AddIfNotExists(['Ctrl+F2'],[],'cm_ColumnsView');
       AddIfNotExists(['Ctrl+F3'],[],'cm_SortByName');
@@ -848,6 +848,13 @@ begin
       AddIfNotExists(['Alt+Right'],[],'cm_ViewHistoryNext');
       AddIfNotExists(['Alt+Shift+Enter'],[],'cm_CountDirContent');
       AddIfNotExists(['Alt+Shift+F9'],[],'cm_TestArchive');
+
+      if HotMan.Version < 38 then
+      begin
+        HMHotKey:= FindByCommand('cm_EditComment');
+        if Assigned(HMHotKey) and HMHotKey.SameShortcuts(['Ctrl+Z']) then
+          Remove(HMHotKey);
+      end;
     end;
 
   HMControl := HMForm.Controls.FindOrCreate('Files Panel');
@@ -866,6 +873,7 @@ begin
       AddIfNotExists(['Ctrl+C'],[],'cm_CopyToClipboard');
       AddIfNotExists(['Ctrl+V'],[],'cm_PasteFromClipboard');
       AddIfNotExists(['Ctrl+X'],[],'cm_CutToClipboard');
+      AddIfNotExists(['Ctrl+Z'],[],'cm_EditComment');
       AddIfNotExists(['Ctrl+Home'],[],'cm_ChangeDirToHome');
       AddIfNotExists(['Ctrl+Left'],[],'cm_TransferLeft');
       AddIfNotExists(['Ctrl+Right'],[],'cm_TransferRight');
