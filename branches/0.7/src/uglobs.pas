@@ -458,6 +458,7 @@ var
   gTextPosition:PtrInt;
 
   { Editor }
+  gEditWaitTime: Integer;
   gEditorSynEditOptions: TSynEditorOptions;
 
   {SyncDirs}
@@ -1432,6 +1433,7 @@ begin
   gViewerMode:= 0;
 
   { Editor }
+  gEditWaitTime := 2000;
   gEditorSynEditOptions := SYNEDIT_DEFAULT_OPTIONS;
 
   {SyncDirs}
@@ -2565,6 +2567,7 @@ begin
     Node := Root.FindNode('Editor');
     if Assigned(Node) then
     begin
+      gEditWaitTime := GetValue(Node, 'EditWaitTime', gEditWaitTime);
       gEditorSynEditOptions := TSynEditorOptions(GetValue(Node, 'SynEditOptions', Integer(gEditorSynEditOptions)));
     end;
 
@@ -2973,6 +2976,7 @@ begin
 
     { Editor }
     Node := FindNode(Root, 'Editor',True);
+    SetValue(Node, 'EditWaitTime', gEditWaitTime);
     SetValue(Node, 'SynEditOptions', Integer(gEditorSynEditOptions));
 
     { SyncDirs }
