@@ -366,6 +366,7 @@ var
   gDragAndDropSaveUnicodeTextInUFT8: Boolean;
   gOverwriteFolder: Boolean;
   gNtfsHourTimeDelay: Boolean;
+  gAutoExtractOpenMask: String;
   gFileOperationsProgressKind: TFileOperationsProgressKind;
   gFileOperationsConfirmations: TFileOperationsConfirmations;
 
@@ -1311,6 +1312,7 @@ begin
   gDragAndDropSaveUnicodeTextInUFT8 := True;
   gOverwriteFolder := False;
   gNtfsHourTimeDelay := False;
+  gAutoExtractOpenMask := EmptyStr;
   gFileOperationsProgressKind := fopkSeparateWindow;
   gFileOperationsConfirmations := [focCopy, focMove, focDelete, focDeleteToTrash];
 
@@ -2386,6 +2388,7 @@ begin
       gDragAndDropSaveUnicodeTextInUFT8 := GetValue(Node, 'DragAndDropSaveUnicodeTextInUFT8', gDragAndDropSaveUnicodeTextInUFT8);
       gOverwriteFolder := GetValue(Node, 'OverwriteFolder', gOverwriteFolder);
       gNtfsHourTimeDelay := GetValue(Node, 'NtfsHourTimeDelay', gNtfsHourTimeDelay);
+      gAutoExtractOpenMask := GetValue(Node, 'AutoExtractOpenMask', gAutoExtractOpenMask);
       gSearchDefaultTemplate := GetValue(Node, 'SearchDefaultTemplate', gSearchDefaultTemplate);
       gFileOperationsProgressKind := TFileOperationsProgressKind(GetValue(Node, 'ProgressKind', Integer(gFileOperationsProgressKind)));
       gFileOperationsConfirmations := TFileOperationsConfirmations(GetValue(Node, 'Confirmations', Integer(gFileOperationsConfirmations)));
@@ -2860,6 +2863,7 @@ begin
     SetValue(Node, 'DragAndDropSaveUnicodeTextInUFT8', gDragAndDropSaveUnicodeTextInUFT8);
     SetValue(Node, 'OverwriteFolder', gOverwriteFolder);
     SetValue(Node, 'NtfsHourTimeDelay', gNtfsHourTimeDelay);
+    SetValue(Node, 'AutoExtractOpenMask', gAutoExtractOpenMask);
     SetValue(Node, 'SearchDefaultTemplate', gSearchDefaultTemplate);
     SetValue(Node, 'ProgressKind', Integer(gFileOperationsProgressKind));
     SetValue(Node, 'Confirmations', Integer(gFileOperationsConfirmations));

@@ -938,7 +938,11 @@ begin
           CalcStatisticsOperation.SkipErrors := True;
           CalcStatisticsOperation.SymLinkOption := fsooslDontFollow;
 
-          FOperation.Execute; // blocks until finished
+          if fspListOnMainThread in FFileSource.Properties then
+            TThread.Synchronize(Thread, @FOperation.Execute)
+          else begin
+            FOperation.Execute; // blocks until finished
+          end;
 
           if FOperation.Result = fsorFinished then
           begin
