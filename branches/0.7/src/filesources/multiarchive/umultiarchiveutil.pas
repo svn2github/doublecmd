@@ -86,7 +86,7 @@ implementation
 
 uses
   LCLProc, LazUTF8, StrUtils, DCClassesUtf8, uDCUtils, DCOSUtils, uOSUtils,
-  DCDateTimeUtils, uDebug, uShowMsg, uLng, DCFileAttributes;
+  DCDateTimeUtils, uDebug, uShowMsg, uLng, DCFileAttributes, DCConvertEncoding;
 
 function GetUnixFileName(const Str: String): String;
 var
@@ -423,7 +423,7 @@ var
     if (fmUTF8 in state.FuncModifiers) then
       Exit;
     if (fmAnsi in state.FuncModifiers) then
-      Result := UTF8ToSys(Result)
+      Result := CeUtf8ToSys(Result)
     else
       Result := UTF8ToConsole(Result);
   end;
