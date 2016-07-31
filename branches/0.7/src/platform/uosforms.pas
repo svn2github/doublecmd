@@ -324,6 +324,7 @@ begin
         if HandleAllocated then RecreateWnd(Self);
         Show;
         try
+          EnableWindow(Handle, True);
           // Activate must happen after show
           Perform(CM_ACTIVATE, 0, 0);
           TWSCustomFormClass(WidgetSetClass).ShowModal(Self);
