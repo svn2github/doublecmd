@@ -435,6 +435,7 @@ var
   gOperationOptionCopyTime: Boolean;
   gOperationOptionCopyOwnership: Boolean;
   gOperationOptionCopyPermissions: Boolean;
+  gOperationOptionExcludeEmptyDirectories: Boolean;
 
   {Error file}
   gErrorFile: String;
@@ -1328,6 +1329,7 @@ begin
   gOperationOptionCopyTime := True;
   gOperationOptionCopyOwnership := False;
   gOperationOptionCopyPermissions := False;
+  gOperationOptionExcludeEmptyDirectories := True;
 
 
   { Tabs page }
@@ -2407,6 +2409,7 @@ begin
         gOperationOptionCopyTime := GetValue(SubNode, 'CopyTime', gOperationOptionCopyTime);
         gOperationOptionCopyOwnership := GetValue(SubNode, 'CopyOwnership', gOperationOptionCopyOwnership);
         gOperationOptionCopyPermissions := GetValue(SubNode, 'CopyPermissions', gOperationOptionCopyPermissions);
+        gOperationOptionExcludeEmptyDirectories := GetValue(SubNode, 'ExcludeEmptyTemplateDirectories', gOperationOptionExcludeEmptyDirectories);
       end;
     end;
 
@@ -2880,6 +2883,7 @@ begin
     SetValue(SubNode, 'CopyTime', gOperationOptionCopyTime);
     SetValue(SubNode, 'CopyOwnership', gOperationOptionCopyOwnership);
     SetValue(SubNode, 'CopyPermissions', gOperationOptionCopyPermissions);
+    SetValue(SubNode, 'ExcludeEmptyTemplateDirectories', gOperationOptionExcludeEmptyDirectories);
 
     { Tabs page }
     Node := FindNode(Root, 'Tabs', True);
