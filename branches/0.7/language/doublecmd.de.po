@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Double Commander 0.7.2 beta\n"
+"Project-Id-Version: Double Commander 0.7.3 beta Rev. 6979\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-20 12:40+0300\n"
-"PO-Revision-Date: 2016-06-23 14:02+0200\n"
+"PO-Revision-Date: 2016-08-12 12:00+0200\n"
 "Last-Translator: Claudio <linuxbastler@users.sourceforge.net>\n"
 "Language-Team: Deutsch <linuxbastler@users.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1149,7 +1149,7 @@ msgstr "Schließen"
 #: tfrmeditor.actfileexit.caption
 msgctxt "TFRMEDITOR.ACTFILEEXIT.CAPTION"
 msgid "E&xit"
-msgstr "En&de"
+msgstr "&Beenden"
 
 #: tfrmeditor.actfileexit.hint
 msgctxt "tfrmeditor.actfileexit.hint"
@@ -1232,7 +1232,7 @@ msgstr "&Bearbeiten"
 #: tfrmeditor.miencoding.caption
 msgctxt "TFRMEDITOR.MIENCODING.CAPTION"
 msgid "En&coding"
-msgstr "&Kodiere"
+msgstr "&Kodierung"
 
 #: tfrmeditor.miencodingin.caption
 msgid "Open as"
@@ -1249,7 +1249,7 @@ msgstr "&Datei"
 
 #: tfrmeditor.mihighlight.caption
 msgid "Syntax highlight"
-msgstr "S&yntax hervorheben"
+msgstr "S&yntaxhervorhebung"
 
 #: tfrmeditor.milineendtype.caption
 msgid "End Of Line"
@@ -1292,7 +1292,7 @@ msgstr "&OK"
 
 #: tfrmeditsearchreplace.cbsearchcasesensitive.caption
 msgid "C&ase sensitivity"
-msgstr "Strikt nach S&chreibweise"
+msgstr "Groß/Kleins&chreibung"
 
 #: tfrmeditsearchreplace.cbsearchfromcursor.caption
 msgid "S&earch from caret"
@@ -8356,7 +8356,7 @@ msgstr "Datei verschieben"
 #: tfrmviewer.actreload.caption
 msgctxt "TFRMVIEWER.ACTRELOAD.CAPTION"
 msgid "Reload"
-msgstr "Neu laden"
+msgstr "Neu &laden"
 
 #: tfrmviewer.actreload.hint
 msgid "Reload current file"
@@ -8561,7 +8561,7 @@ msgstr "0x0"
 
 #: tfrmviewer.mi180.caption
 msgid "+ 180"
-msgstr ""
+msgstr "+ 180"
 
 #: tfrmviewer.mi270.caption
 msgctxt "TFRMVIEWER.MI270.CAPTION"
@@ -8624,12 +8624,12 @@ msgstr "&Bearbeiten"
 #: tfrmviewer.miencoding.caption
 msgctxt "TFRMVIEWER.MIENCODING.CAPTION"
 msgid "En&coding"
-msgstr "&Kodiere"
+msgstr "&Kodierung"
 
 #: tfrmviewer.miexit.caption
 msgctxt "TFRMVIEWER.MIEXIT.CAPTION"
 msgid "E&xit"
-msgstr "En&de"
+msgstr "&Beenden"
 
 #: tfrmviewer.mifile.caption
 msgctxt "TFRMVIEWER.MIFILE.CAPTION"
@@ -8734,7 +8734,7 @@ msgstr "A&ls Text anzeigen"
 #: tfrmviewer.miview.caption
 msgctxt "TFRMVIEWER.MIVIEW.CAPTION"
 msgid "&View"
-msgstr "&Betrachten"
+msgstr "&Anzeigen"
 
 #: tfrmviewer.miwraptext.caption
 msgid "Show as &Wrap text"
