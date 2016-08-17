@@ -60,8 +60,8 @@ unit fEditSearch;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, StdCtrls, ExtCtrls, Buttons, uOSForms,
-  DCClassesUtf8;
+  Classes, SysUtils, Forms, Controls, StdCtrls, ExtCtrls, Buttons, ButtonPanel,
+  uOSForms, DCClassesUtf8;
 
 type
   { TEditSearchDialogOption }
@@ -77,8 +77,7 @@ type
 
   { TfrmEditSearchReplace }
   TfrmEditSearchReplace = class(TModalForm)
-    btnOK: TBitBtn;
-    btnCancel: TBitBtn;
+    ButtonPanel: TButtonPanel;
     cbSearchText: TComboBox;
     cbSearchCaseSensitive: TCheckBox;
     cbSearchWholeWords: TCheckBox;
@@ -94,6 +93,7 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure RequestAlign(Data: PtrInt);
   private
     function GetSearchBackwards: boolean;
     function GetSearchCaseSensitive: boolean;
@@ -144,7 +144,7 @@ implementation
 {$R *.lfm}
 
 uses
-  math, uGlobs, uLng, uDCUtils;
+  Math, Graphics, uGlobs, uLng, uDCUtils;
 
 function GetSimpleSearchAndReplaceString(AOwner:TComponent; OptionAllowed:TEditSearchDialogOption; var sSearchText:string; var sReplaceText:string; var OptionsToReturn:TEditSearchDialogOption; PastSearchList:TStringListEx; PastReplaceList:TStringListEx):boolean;
 var
@@ -244,6 +244,15 @@ begin
         cbSearchText.Text:= cbSearchText.Items[0];
     end;
   cbSearchText.SelectAll;
+
+  // Fixes AutoSize under Qt
+  Application.QueueAsyncCall(@RequestAlign, 0);
+end;
+
+procedure TfrmEditSearchReplace.RequestAlign(Data: PtrInt);
+begin
+  Width := Width + 1;
+  Width := Width - 1;
 end;
 
 function TfrmEditSearchReplace.GetSearchBackwards: boolean;
@@ -357,6 +366,7 @@ end;
 constructor TfrmEditSearchReplace.Create(AOwner: TComponent; AReplace: Boolean);
 begin
   inherited Create(AOwner);
+  Color:= clForm;
   if AReplace then
     begin
       Caption:= rsEditSearchReplace;
