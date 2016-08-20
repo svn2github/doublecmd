@@ -3,7 +3,7 @@
 # This script updates Double Commander Personal Package Archive (PPA) repository
 
 # Set Double Commander version
-DC_VER=0.7.3
+DC_VER=0.7.4
 # Set Ubuntu series
 DISTRO=( wily xenial )
 
