@@ -1814,6 +1814,9 @@ var
   dScaleFactor : Double;
   iLeft, iTop, iWidth, iHeight : Integer;
 begin
+  if (Image.Picture = nil) then Exit;
+  if (Image.Picture.Width = 0) or (Image.Picture.Height = 0) then Exit;
+
   dScaleFactor:= FZoomFactor;
 
   // Place and resize image
