@@ -547,9 +547,13 @@ end;
 
 procedure TfrmEditor.EditorFixShortCuts;
 
-  function KeyAndShiftToShortCut(Key: Word; Shift: TShiftState): TShortCut; inline;
+  function KeyAndShiftToShortCut(Key: Word; Shift: TShiftState): TShortCut;
   begin
-    Result:= TextToShortCut(KeyAndShiftStateToKeyString(Key, Shift));
+    Result:= Key;
+    if (ssAlt in Shift) then Result:= Result or scAlt;
+    if (ssCtrl in Shift) then Result:= Result or scCtrl;
+    if (ssMeta in Shift) then Result:= Result or scMeta;
+    if (ssShift in Shift) then Result:= Result or scShift;
   end;
 
 begin
