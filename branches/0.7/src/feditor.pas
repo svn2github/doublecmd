@@ -177,6 +177,7 @@ type
     }
     function SaveFile(const aFileName: String): Boolean;
     procedure SetFileName(const AValue: String);
+    procedure EditorFixShortCuts;
 
   public
     { Public declarations }
@@ -210,7 +211,7 @@ implementation
 {$R *.lfm}
 
 uses
-  dmCommonData, dmHigh, SynEditTypes, LCLType, LConvEncoding,
+  LCLProc, dmCommonData, dmHigh, SynEditTypes, LCLType, LConvEncoding,
   uLng, uShowMsg, fEditSearch, uGlobs, fOptions, DCClassesUtf8,
   uOSUtils, uConvEncoding, fOptionsToolsEditor, uDCUtils;
 
@@ -245,6 +246,7 @@ var
 begin
   InitPropStorage(Self);
 
+  EditorFixShortCuts;
   Editor.Options:= gEditorSynEditOptions;
   FontOptionsToFont(gFonts[dcfEditor], Editor.Font);
 
@@ -541,6 +543,27 @@ begin
 
   FFileName := AValue;
   Caption := FFileName;
+end;
+
+procedure TfrmEditor.EditorFixShortCuts;
+
+  function KeyAndShiftToShortCut(Key: Word; Shift: TShiftState): TShortCut; inline;
+  begin
+    Result:= TextToShortCut(KeyAndShiftStateToKeyString(Key, Shift));
+  end;
+
+begin
+  actEditCut.ShortCut:= KeyAndShiftToShortCut(VK_X, [ssModifier]);
+  actFileNew.ShortCut:= KeyAndShiftToShortCut(VK_N, [ssModifier]);
+  actFileOpen.ShortCut:= KeyAndShiftToShortCut(VK_O, [ssModifier]);
+  actEditCopy.ShortCut:= KeyAndShiftToShortCut(VK_C, [ssModifier]);
+  actEditUndo.ShortCut:= KeyAndShiftToShortCut(VK_Z, [ssModifier]);
+  actEditFind.ShortCut:= KeyAndShiftToShortCut(VK_F, [ssModifier]);
+  actEditRplc.ShortCut:= KeyAndShiftToShortCut(VK_R, [ssModifier]);
+  actEditPaste.ShortCut:= KeyAndShiftToShortCut(VK_V, [ssModifier]);
+  actEditGotoLine.ShortCut:= KeyAndShiftToShortCut(VK_G, [ssModifier]);
+  actEditSelectAll.ShortCut:= KeyAndShiftToShortCut(VK_A, [ssModifier]);
+  actEditRedo.ShortCut:= KeyAndShiftToShortCut(VK_Z, [ssModifier, ssShift]);
 end;
 
 destructor TfrmEditor.Destroy;
