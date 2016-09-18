@@ -3,7 +3,7 @@
    -------------------------------------------------------------------------
    Verify checksum dialog
 
-   Copyright (C) 2009-2013  Alexander Koblov (alexx2000@mail.ru)
+   Copyright (C) 2009-2016  Alexander Koblov (alexx2000@mail.ru)
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Buttons, SynEdit, uOSForms,
-  Graphics, uFileSourceCalcChecksumOperation, DCBasicTypes;
+  Graphics, uFileSourceCalcChecksumOperation, DCBasicTypes, Controls;
 
 type
 
@@ -39,6 +39,7 @@ type
     btnClose: TBitBtn;
     seCheckSumVerify: TSynEdit;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure seCheckSumVerifySpecialLineColors(Sender: TObject; Line: integer;
       var Special: boolean; var FG, BG: TColor);
   private
@@ -98,6 +99,11 @@ end;
 procedure TfrmCheckSumVerify.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   CloseAction:= caFree;
+end;
+
+procedure TfrmCheckSumVerify.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = 27 then Close;
 end;
 
 procedure TfrmCheckSumVerify.seCheckSumVerifySpecialLineColors(Sender: TObject; Line: integer;
