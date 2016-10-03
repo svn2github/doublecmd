@@ -8,7 +8,7 @@
     (http://www.freedesktop.org/wiki/Specifications/mime-apps-spec)
 
     Copyright (C) 2009-2010  Przemyslaw Nagay (cobines@gmail.com)
-    Copyright (C) 2011-2015  Alexander Koblov (alexx2000@mail.ru)
+    Copyright (C) 2011-2016  Alexander Koblov (alexx2000@mail.ru)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -79,8 +79,8 @@ function TranslateAppExecToCmdLine(const entry: PDesktopFileEntry;
 implementation
 
 uses
-  Unix, DCBasicTypes, DCClassesUtf8, DCStrUtils, uDCUtils, uGlib2,
-  uIconTheme, uClipboard, DCOSUtils, uKeyFile, uGio, uXdg, uMimeType;
+  Unix, DCBasicTypes, DCClassesUtf8, DCStrUtils, uDCUtils, uGlib2, uFileProcs,
+  uIconTheme, uClipboard, DCOSUtils, uKeyFile, uGio, uXdg, uMimeType, uDebug;
 
 type
   TMimeAppsGroup = (magDefault, magAdded, magRemoved);
@@ -560,6 +560,7 @@ var
 begin
   CustomFile:= DesktopEntry;
   UserDataDir:= GetUserDataDir;
+  mbForceDirectory(UserDataDir + '/applications');
   if (StrEnds(DesktopEntry, '.desktop') = False) then
   begin
     // Create new desktop entry file for user command
@@ -604,7 +605,11 @@ begin
       DesktopFile.Free;
     end;
   except
-    Result:= False;
+    on E: Exception do
+    begin
+      Result:= False;
+      DCDebug(E.Message);
+    end;
   end;
 end;
 
