@@ -32,6 +32,7 @@ resourcestring
   // File operations.
   rsMsgNotDelete = 'Can not delete file %s';
   rsMsgCannotDeleteDirectory = 'Cannot delete directory %s';
+  rsMsgCannotOverwriteDirectory = 'Cannot overwrite directory "%s" with non-directory "%s"';
   rsMsgErrDirExists = 'Directory %s exists!';
   rsMsgErrRename = 'Cannot rename file %s to %s';
   rsMsgErrCannotCopyFile = 'Cannot copy file %s to %s';
@@ -40,7 +41,7 @@ resourcestring
   rsMsgFileExistsFileInfo = '%s bytes, %s';
   rsMsgFileExistsRwrt = 'File %s exists, overwrite?';
   rsMsgFileChangedSave = 'File %s changed, save?';
-  rsMsgFolderExistsRwrt = 'Folder %s exists, overwrite?';
+  rsMsgFolderExistsRwrt = 'Folder %s exists, merge?';
   rsMsgFileReadOnly = 'File %s is marked as read-only/hidden/system. Delete it?';
   rsMsgNewFile = 'New file';
   rsMsgDelFlDr = 'Delete %d selected files/directories?';
@@ -316,8 +317,8 @@ resourcestring
   rsDlgButtonAppend = 'A&ppend';
   rsDlgButtonResume = '&Resume';
   rsDlgButtonRename = 'R&ename';
-  rsDlgButtonCopyInto = 'Copy &Into';
-  rsDlgButtonCopyIntoAll = 'Copy Into &All';
+  rsDlgButtonCopyInto = '&Merge';
+  rsDlgButtonCopyIntoAll = 'Mer&ge All';
   rsDlgButtonOverwrite = '&Overwrite';
   rsDlgButtonOverwriteAll = 'Overwrite &All';
   rsDlgButtonOverwriteOlder = 'Overwrite All Ol&der';
@@ -384,8 +385,8 @@ resourcestring
   rsDlgWipe = 'Wipe file(s)';
 
   // File operations
+  rsFileOpDirectoryExistsOptions = 'Ask;Merge;Skip';
   rsFileOpFileExistsOptions = 'Ask;Overwrite;Overwrite Older;Skip';
-  rsFileOpDirectoryExistsOptions = 'Ask;Overwrite;Copy into;Skip';
   rsFileOpSetPropertyErrorOptions = 'Ask;Don''t set anymore;Ignore errors';
 
   // Viewer

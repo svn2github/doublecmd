@@ -23,7 +23,7 @@ procedure ChooseFile(aFileView: TFileView; aFile: TFile);
 }
 function ChooseFileSource(aFileView: TFileView; aFile: TFile): Boolean; overload;
 
-function ChooseFileSource(aFileView: TFileView; const aPath: String): Boolean; overload;
+function ChooseFileSource(aFileView: TFileView; const aPath: String; bLocal: Boolean = False): Boolean; overload;
 
 function ChooseArchive(aFileView: TFileView; aFile: TFile; bForce: Boolean = False): Boolean;
 
@@ -176,7 +176,8 @@ begin
   end;
 end;
 
-function ChooseFileSource(aFileView: TFileView; const aPath: String): Boolean;
+function ChooseFileSource(aFileView: TFileView; const aPath: String;
+  bLocal: Boolean): Boolean;
 var
   URI: TURI;
   RemotePath: String;
@@ -210,7 +211,7 @@ begin
         aFileView.AddFileSource(aFileSourceClass.Create, aPath);
     end
   // If current FileSource has address
-  else if Length(aFileView.CurrentAddress) > 0 then
+  else if bLocal and (Length(aFileView.CurrentAddress) > 0) then
      aFileView.CurrentPath := aPath
   // Else use FileSystemFileSource
   else
@@ -284,30 +285,13 @@ begin
 end;
 
 procedure SetFileSystemPath(aFileView: TFileView; aPath: String);
-var
-  i: Integer;
 begin
-  // Search for filesystem file source in this view, and remove others.
   with aFileView do
   begin
-    for i := FileSourcesCount - 1 downto 0 do
-    begin
-      // Search FileSource with same class name, we can not use "is"
-      // operator because it also works for descendant classes
-      if TFileSystemFileSource.ClassNameIs(FileSources[i].ClassName) then
-      begin
-        CurrentPath := aPath;
-        Break;
-      end
-      else
-        RemoveCurrentFileSource;
-    end;
-
-    if FileSourcesCount = 0 then
-    begin
-      // If not found, get a new filesystem file source.
+    if TFileSystemFileSource.ClassNameIs(FileSource.ClassName) then
+      CurrentPath := aPath
+    else
       AddFileSource(TFileSystemFileSource.GetFileSource, aPath);
-    end;
   end;
 end;
 
