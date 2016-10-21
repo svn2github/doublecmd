@@ -7,7 +7,6 @@ msgstr ""
 "Last-Translator: Sangjin <comsem1104@naver.com>\n"
 "Language-Team: Language <email@address>\n"
 "MIME-Version: 1.0\n"
-
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Native-Language: 한국어\n"
@@ -1054,8 +1053,10 @@ msgid "Delete"
 msgstr "삭제"
 
 #: tfrmeditor.acteditfind.caption
+#, fuzzy
+#| msgid "&Find "
 msgctxt "tfrmeditor.acteditfind.caption"
-msgid "&Find "
+msgid "&Find"
 msgstr "&찾기"
 
 #: tfrmeditor.acteditfind.hint
@@ -1796,66 +1797,6 @@ msgstr "파일속성"
 msgctxt "TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION"
 msgid "Properties"
 msgstr "속성"
-
-#: tfrmfinddlg.actcancel.caption
-msgid "actCancel"
-msgstr "실행취소"
-
-#: tfrmfinddlg.actclose.caption
-msgid "actClose"
-msgstr "실행닫기"
-
-#: tfrmfinddlg.actedit.caption
-msgid "actEdit"
-msgstr "실행편집"
-
-#: tfrmfinddlg.actfeedtolistbox.caption
-msgid "actFeedToListbox"
-msgstr "목록상자에 실행"
-
-#: tfrmfinddlg.actgotofile.caption
-msgid "actGoToFile"
-msgstr "파일로 가기 실행"
-
-#: tfrmfinddlg.actintellifocus.caption
-msgid "actIntelliFocus"
-msgstr "actIntelliFocus"
-
-#: tfrmfinddlg.actlastsearch.caption
-msgid "actLastSearch"
-msgstr "마지막 검색 실행"
-
-#: tfrmfinddlg.actnewsearch.caption
-msgid "actNewSearch"
-msgstr "새 검색 실행"
-
-#: tfrmfinddlg.actpageadvanced.caption
-msgid "actPageAdvanced"
-msgstr "페이지 어드반스드 실행"
-
-#: tfrmfinddlg.actpageloadsave.caption
-msgid "actPageLoadSave"
-msgstr "actPageLoadSave"
-
-#: tfrmfinddlg.actpageplugins.caption
-msgid "actPagePlugins"
-msgstr "actPagePlugins"
-
-#: tfrmfinddlg.actpageresults.caption
-msgid "actPageResults"
-msgstr "actPageResults"
-
-#: tfrmfinddlg.actpagestandard.caption
-msgid "actPageStandard"
-msgstr "actPageStandard"
-
-#: tfrmfinddlg.actstart.caption
-msgid "actStart"
-msgstr "actStart"
-
-#: tfrmfinddlg.actview.caption
-msgid "actView"
-msgstr "actView"
 
 #: tfrmfinddlg.btnaddattribute.caption
 msgctxt "tfrmfinddlg.btnaddattribute.caption"
@@ -3002,7 +2943,9 @@ msgid "Wipe"
 msgstr "영구 삭제(휴지통X)"
 
 #: tfrmmain.actworkwithdirectoryhotlist.caption
-msgid "Work with Directory Hotlist and paramters"
+#, fuzzy
+#| msgid "Work with Directory Hotlist and paramters"
+msgid "Work with Directory Hotlist and parameters"
 msgstr "폴더 바로 가기 및 매개변수 작업"
 
 #: tfrmmain.btnf10.caption
@@ -6406,8 +6349,10 @@ msgid " Icon size "
 msgstr "아이콘 크기"
 
 #: tfrmoptionsicons.gbshowiconsmode.caption
+#, fuzzy
+#| msgid "Show icons to the left of the filename "
 msgctxt "TFRMOPTIONSICONS.GBSHOWICONSMODE.CAPTION"
-msgid "Show icons to the left of the filename "
+msgid " Show icons to the left of the filename "
 msgstr "파일명 왼쪽에 아이콘 표시기"
 
 #: tfrmoptionsicons.rbiconsshowall.caption
@@ -6582,8 +6527,10 @@ msgid "Show two drive button bars (fi&xed width, above file windows)"
 msgstr "(파일창위에 고정폭으로)두 개의 버튼 바 표시"
 
 #: tfrmoptionslayout.gbscreenlayout.caption
+#, fuzzy
+#| msgid "Screen layout "
 msgctxt "TFRMOPTIONSLAYOUT.GBSCREENLAYOUT.CAPTION"
-msgid "Screen layout "
+msgid " Screen layout "
 msgstr "화면구성"
 
 #: tfrmoptionslog.btnrelativelogfile.hint
@@ -6797,8 +6744,10 @@ msgid "&Tweak"
 msgstr "&조정"
 
 #: tfrmoptionsplugins.lbldsxdescription.caption
+#, fuzzy
+#| msgid "Searc&h plugins allow to use alternative search algorithms or external tools (like \"locate\", etc.)"
 msgctxt "TFRMOPTIONSPLUGINS.LBLDSXDESCRIPTION.CAPTION"
-msgid "Searc&h plugins allow to use alternative search algorithms or external tools (like \"locate\", etc.)"
+msgid "Searc&h plugins allow one to use alternative search algorithms or external tools (like \"locate\", etc.)"
 msgstr " 다른 검색 알고리듬 또는 외부프로그램(예,\"locate\"처럼) &검색 플러그인 허용"
 
 #: tfrmoptionsplugins.lblwcxdescription.caption
@@ -6807,8 +6756,10 @@ msgid "Pack&er plugins are used to work with archives"
 msgstr "압축파일에 외부 압축 플러그인 사용"
 
 #: tfrmoptionsplugins.lblwdxdescription.caption
+#, fuzzy
+#| msgid "Content plu&gins allow to display extended file details like mp3 tags or image attributes in file lists, or use them in search and multi-rename tool"
 msgctxt "TFRMOPTIONSPLUGINS.LBLWDXDESCRIPTION.CAPTION"
-msgid "Content plu&gins allow to display extended file details like mp3 tags or image attributes in file lists, or use them in search and multi-rename tool"
+msgid "Content plu&gins allow one to display extended file details like mp3 tags or image attributes in file lists, or use them in search and multi-rename tool"
 msgstr "Mp3태그나 이미지 속성 표시, 검색, 파일명 변경도구 플러그인 허용"
 
 #: tfrmoptionsplugins.lblwfxdescription.caption
@@ -6817,8 +6768,10 @@ msgid "Fi&le system plugins allow access to disks inaccessible by operating syst
 msgstr "다른 운영체제나 팜(Palm)/포켓PC(PocketPC)처럼 외부 디바이스 파일에 접근할 수 있는 플러그인 허용  "
 
 #: tfrmoptionsplugins.lblwlxdescription.caption
+#, fuzzy
+#| msgid "Vie&wer plugins allow to display file formats like images, spreadsheets, databases etc. in Viewer (F3, Ctrl+Q)"
 msgctxt "TFRMOPTIONSPLUGINS.LBLWLXDESCRIPTION.CAPTION"
-msgid "Vie&wer plugins allow to display file formats like images, spreadsheets, databases etc. in Viewer (F3, Ctrl+Q)"
+msgid "Vie&wer plugins allow one to display file formats like images, spreadsheets, databases etc. in Viewer (F3, Ctrl+Q)"
 msgstr "이미지, 스프레드 시트, 데이타베이스 &뷰어 플러그인 허용(F3, Ctrl+Q)"
 
 #: tfrmoptionsplugins.stgplugins.columns[0].title.caption
@@ -7270,12 +7223,12 @@ msgstr "TC.BAR 파일로(기존 파일 지우기)"
 #: tfrmoptionstoolbar.miexportcurrenttotcinikeep.caption
 msgctxt "TFRMOPTIONSTOOLBAR.MIEXPORTCURRENTTOTCINIKEEP.CAPTION"
 msgid "to a \"wincmd.ini\" of TC (keep existing)"
-msgstr "TC(토탈커맨더)\"wincmd.ini\로 (기존파일 유지)""
+msgstr "TC(토탈커맨더)\"wincmd.ini로 (기존파일 유지)\""
 
 #: tfrmoptionstoolbar.miexportcurrenttotcininokeep.caption
 msgctxt "TFRMOPTIONSTOOLBAR.MIEXPORTCURRENTTOTCININOKEEP.CAPTION"
 msgid "to a \"wincmd.ini\" of TC (erase existing)"
-msgstr "TC(토탈커맨더)\"wincmd.ini\로 (기존파일 지우기)"
+msgstr "TC(토탈커맨더)\"wincmd.ini로 (기존파일 지우기)"
 
 #: tfrmoptionstoolbar.miexportseparator1.caption
 msgctxt "TFRMOPTIONSTOOLBAR.MIEXPORTSEPARATOR1.CAPTION"
@@ -7323,12 +7276,12 @@ msgstr "TC(토탈커맨더).BAR 파일로(기존파일 지우기)"
 #: tfrmoptionstoolbar.miexporttoptotcinikeep.caption
 msgctxt "TFRMOPTIONSTOOLBAR.MIEXPORTTOPTOTCINIKEEP.CAPTION"
 msgid "to a \"wincmd.ini\" of TC (keep existing)"
-msgstr "TC(토탈커맨더)\"wincmd.ini\로 (기존파일 유지)"
+msgstr "TC(토탈커맨더)\"wincmd.ini로 (기존파일 유지)"
 
 #: tfrmoptionstoolbar.miexporttoptotcininokeep.caption
 msgctxt "TFRMOPTIONSTOOLBAR.MIEXPORTTOPTOTCININOKEEP.CAPTION"
 msgid "to a \"wincmd.ini\" of TC (erase existing)"
-msgstr "TC(토탈커맨더)\"wincmd.ini\로 (기존파일 지우기)"
+msgstr "TC(토탈커맨더)\"wincmd.ini로 (기존파일 지우기)"
 
 #: tfrmoptionstoolbar.miexternalcommandaftercurrent.caption
 msgctxt "TFRMOPTIONSTOOLBAR.MIEXTERNALCOMMANDAFTERCURRENT.CAPTION"
@@ -8442,7 +8395,9 @@ msgid "Supports pac&king in memory"
 msgstr "메모리에서 압축 지원"
 
 #: tfrmtweakplugin.cbpk_caps_modify.caption
-msgid "Can &modify exisiting archives"
+#, fuzzy
+#| msgid "Can &modify exisiting archives"
+msgid "Can &modify existing archives"
 msgstr "압축파일 수정 가능"
 
 #: tfrmtweakplugin.cbpk_caps_multiple.caption
@@ -9095,6 +9050,7 @@ msgstr ""
 "\n"
 "파일이 준비되어 가능하게 되면 \"OK\"를 누르세요,\n"
 "또는 이 파일을 빼고 계속하려면 \"취소\" 를 누르세요.\n"
+
 #: ulng.rscancelfilter
 msgid "Cancel Quick Filter"
 msgstr "빠른 필터 취소"
@@ -9312,11 +9268,15 @@ msgid "&Continue"
 msgstr "&계속"
 
 #: ulng.rsdlgbuttoncopyinto
-msgid "Copy &Into"
+#, fuzzy
+#| msgid "Copy &Into"
+msgid "&Merge"
 msgstr "&여기로 복사"
 
 #: ulng.rsdlgbuttoncopyintoall
-msgid "Copy Into &All"
+#, fuzzy
+#| msgid "Copy Into &All"
+msgid "Mer&ge All"
 msgstr "&모두 여기로 복사"
 
 #: ulng.rsdlgbuttonexitprogram
@@ -9535,7 +9495,9 @@ msgid "Exported_from_DC"
 msgstr "DC에서 내보내기된"
 
 #: ulng.rsfileopdirectoryexistsoptions
-msgid "Ask;Overwrite;Copy into;Skip"
+#, fuzzy
+#| msgid "Ask;Overwrite;Copy into;Skip"
+msgid "Ask;Merge;Skip"
 msgstr "묻기;덮어쓰기;복사해 넣기;건너뛰기"
 
 #: ulng.rsfileopfileexistsoptions
@@ -9597,10 +9559,6 @@ msgstr "파일 찾는중"
 msgctxt "ulng.rsfindsearchfiles"
 msgid "Find files"
 msgstr "파일 찾기"
-
-#: ulng.rsfindtimeofscan
-msgid "Time of scan: "
-msgstr "파일을 찾은 시간: "
 
 #: ulng.rsfindwherebeg
 msgid "Begin at"
@@ -9703,8 +9661,8 @@ msgid ""
 "\n"
 "Are you sure you want to proceed?\n"
 msgstr ""
-"경고! a.hotlist 백업 파일, 불러오기한.\n으로 대체되어 삭제됩니다."
-"\n"
+"경고! a.hotlist 백업 파일, 불러오기한.\n"
+"으로 대체되어 삭제됩니다.\n"
 "계속 하기를 원합니까?\n"
 
 #: ulng.rshotkeycategorycopymovedialog
@@ -9719,16 +9677,6 @@ msgstr "파일 비교"
 #: ulng.rshotkeycategoryeditcommentdialog
 msgid "Edit Comment Dialog"
 msgstr "주석 대화상자 편집"
-
-#: ulng.rshotkeycategoryeditor
-msgctxt "ulng.rshotkeycategoryeditor"
-msgid "Editor"
-msgstr "편집기"
-
-#: ulng.rshotkeycategoryfindfiles
-msgctxt "ulng.rshotkeycategoryfindfiles"
-msgid "Find files"
-msgstr "파일 찾기"
 
 #: ulng.rshotkeycategorymain
 msgid "Main"
@@ -9874,8 +9822,13 @@ msgid "You can not copy/move a file \"%s\" to itself!"
 msgstr "\"%s\"파일 자체를 복사/이동할 수 없습니다."
 
 #: ulng.rsmsgcannotdeletedirectory
+#, fuzzy,badformat
 msgid "Cannot delete directory %s"
 msgstr "폴더(디렉토리)삭제 할 수 없음"
+
+#: ulng.rsmsgcannotoverwritedirectory
+msgid "Cannot overwrite directory \"%s\" with non-directory \"%s\""
+msgstr ""
 
 #: ulng.rsmsgchdirfailed
 msgid "ChDir to [%s] failed!"
@@ -10036,6 +9989,7 @@ msgid "Error writing to file"
 msgstr "파일에 쓰기 오류"
 
 #: ulng.rsmsgerrforcedir
+#, fuzzy,badformat
 msgid "Can not create directory %s!"
 msgstr "폴더(디렉토리)를 생성할 수 없음"
 
@@ -10081,7 +10035,7 @@ msgstr "파일을 저장할 수 없음"
 
 #: ulng.rsmsgerrsetattribute
 msgid "Can not set attributes for \"%s\""
-msgstr "\"%s\ 속성을 설정할 수 없음"
+msgstr "\"%s 속성을 설정할 수 없음"
 
 #: ulng.rsmsgerrsetdatetime
 msgid "Can not set date/time for \"%s\""
@@ -10109,7 +10063,7 @@ msgstr "압축 포맷 알 수 없음"
 
 #: ulng.rsmsgfavoritetabsdeleteallentries
 msgid "Are you sure you want to remove all entries of your Favorite Tabs? (There is no \"undo\" to this action!)"
-msgstr "즐겨찾기탭 목록을 모두 삭제하시겠습니까? (\"되돌리기\" 실행되지 않음!)
+msgstr "즐겨찾기탭 목록을 모두 삭제하시겠습니까? (\"되돌리기\" 실행되지 않음!"
 
 #: ulng.rsmsgfavoritetabsdraghereentry
 msgid "Drag here other entries"
@@ -10214,7 +10168,6 @@ msgid ""
 "File extension associations extra options have been modified.\n"
 "\n"
 "Do you want to save before to exit?\n"
-
 msgstr ""
 "파일 확장자 연결이 수정됨.\n"
 "\n"
@@ -10277,7 +10230,9 @@ msgstr ""
 "종료하기전 저장하시겠습니까?\n"
 
 #: ulng.rsmsgfilereadonly
-msgid "File %s is marked as read-only. Delete it?"
+#, fuzzy
+#| msgid "File %s is marked as read-only. Delete it?"
+msgid "File %s is marked as read-only/hidden/system. Delete it?"
 msgstr "선택된 %s 파일은 읽기 속성입니다. 삭제할까요?"
 
 #: ulng.rsmsgfilesizetoobig
@@ -10285,7 +10240,9 @@ msgid "The file size of \"%s\" is too big for destination file system!"
 msgstr "\"%s\" 파일 크기가 복사될 파일시스템에는 너무 큽니다."
 
 #: ulng.rsmsgfolderexistsrwrt
-msgid "Folder %s exists, overwrite?"
+#, fuzzy
+#| msgid "Folder %s exists, overwrite?"
+msgid "Folder %s exists, merge?"
 msgstr "%s 폴더가 있습니다, 덮어쓸까요?"
 
 #: ulng.rsmsgfollowsymlink
@@ -10323,7 +10280,7 @@ msgstr "폴더 바로 가기 환경설정"
 
 #: ulng.rsmsghotdirdeleteallentries
 msgid "Are you sure you want to remove all entries of your Directory Hotlist? (There is no \"undo\" to this action!)"
-msgstr "폴더 바로 가기 설정을 모두 삭제할까요?(\"되돌리기\" 실행 안됨)
+msgstr "폴더 바로 가기 설정을 모두 삭제할까요?(\"되돌리기\" 실행 안됨"
 
 #: ulng.rsmsghotdirdemocommand
 msgid "This will execute the following command:"
@@ -10500,7 +10457,6 @@ msgid ""
 "\"%s\"\n"
 "\n"
 "Number of bytes still to write: %d\n"
-
 msgstr ""
 "다음 디스크를 삽입하세요.\n"
 "\n"
@@ -10534,6 +10490,7 @@ msgid "This is not a valid plugin!"
 msgstr "유효한 플러그인 아님"
 
 #: ulng.rsmsginvalidpluginarchitecture
+#, fuzzy,badformat
 msgid "This plugin is built for Double Commander for %s.%sIt can not work with Double Commander for %s!"
 msgstr "이것은 더블커맨더 %를 위한 플러그인입니다."
 
@@ -10602,7 +10559,6 @@ msgid ""
 "Options regarding log have been modified.\n"
 "\n"
 "Do you want to save them before to exit?\n"
-
 msgstr ""
 "로그와 관련된 옶션 수정됨.\n"
 "\n"
@@ -10613,6 +10569,7 @@ msgid "Pack to file %s"
 msgstr "%s 파일로 압축"
 
 #: ulng.rsmsglogrmdir
+#, fuzzy,badformat
 msgid "Remove directory %s"
 msgstr "폴더(디렉토리) 제거"
 

@@ -1207,7 +1207,7 @@ msgid "Save"
 msgstr "Сохранить"
 
 #: tfrmeditor.actfilesaveas.caption
-msgid "Save &As..."
+msgid "Save &As.."
 msgstr "Сохранить &как..."
 
 #: tfrmeditor.actfilesaveas.hint
@@ -1797,76 +1797,6 @@ msgstr "Атрибуты"
 msgctxt "TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION"
 msgid "Properties"
 msgstr "Свойства"
-
-#: tfrmfinddlg.actcancel.caption
-msgctxt "tfrmfinddlg.actcancel.caption"
-msgid "Cancel"
-msgstr "Отмена"
-
-#: tfrmfinddlg.actcancelclose.caption
-msgid "Cancel search and close window"
-msgstr "Отменить поиск и зыкрыть окно поиска"
-
-#: tfrmfinddlg.actclose.caption
-msgctxt "tfrmfinddlg.actclose.caption"
-msgid "Close"
-msgstr "Закрыть"
-
-#: tfrmfinddlg.actedit.caption
-msgctxt "tfrmfinddlg.actedit.caption"
-msgid "Edit"
-msgstr "Редактровать"
-
-#: tfrmfinddlg.actfeedtolistbox.caption
-msgid "Feed to listbox"
-msgstr "Файлы на панель"
-
-#: tfrmfinddlg.actgotofile.caption
-msgid "Go to file"
-msgstr "Перейти к файлу"
-
-#: tfrmfinddlg.actintellifocus.caption
-msgctxt "tfrmfinddlg.actintellifocus.caption"
-msgid "Find Data"
-msgstr ""
-
-#: tfrmfinddlg.actlastsearch.caption
-msgid "Last search"
-msgstr "Последний поиск"
-
-#: tfrmfinddlg.actnewsearch.caption
-msgid "New search"
-msgstr "Новый поиск"
-
-#: tfrmfinddlg.actpageadvanced.caption
-msgid "Go to page \"Advanced\""
-msgstr "Перейти к вкладке \"Расширенный\""
-
-#: tfrmfinddlg.actpageloadsave.caption
-msgid "Go to page \"Load/Save\""
-msgstr "Перейти к вкладке \"Загрузить/Сохранить\""
-
-#: tfrmfinddlg.actpageplugins.caption
-msgid "Go to page \"Plugins\""
-msgstr "Перейти к вкладке \"Плагины\""
-
-#: tfrmfinddlg.actpageresults.caption
-msgid "Go to page \"Results\""
-msgstr "Перейти к вкладке \"Загрузить/Сохранить\""
-
-#: tfrmfinddlg.actpagestandard.caption
-msgid "Go to page \"Standard\""
-msgstr "Перейти к вкладке \"Стандартный\""
-
-#: tfrmfinddlg.actstart.caption
-msgctxt "tfrmfinddlg.actstart.caption"
-msgid "Start"
-msgstr "Старт"
-
-#: tfrmfinddlg.actview.caption
-msgctxt "tfrmfinddlg.actview.caption"
-msgid "View"
-msgstr "Просмотр"
 
 #: tfrmfinddlg.btnaddattribute.caption
 msgctxt "tfrmfinddlg.btnaddattribute.caption"
@@ -8980,7 +8910,7 @@ msgstr "Найти далее"
 
 #: tfrmviewer.misearchprev.caption
 msgctxt "tfrmviewer.misearchprev.caption"
-msgid "Search previous"
+msgid "Search prev"
 msgstr "Найти предыдущее"
 
 #: tfrmviewer.miselectall.caption
@@ -9378,12 +9308,12 @@ msgid "&Continue"
 msgstr "&Продолжить"
 
 #: ulng.rsdlgbuttoncopyinto
-msgid "Copy &Into"
-msgstr "&Копировать в"
+msgid "&Merge"
+msgstr "&Объединить"
 
 #: ulng.rsdlgbuttoncopyintoall
-msgid "Copy Into &All"
-msgstr "К&опировать в (для всех)"
+msgid "Mer&ge All"
+msgstr "Объ&единить (для всех)"
 
 #: ulng.rsdlgbuttonexitprogram
 msgid "E&xit program"
@@ -9601,8 +9531,8 @@ msgid "Exported_from_DC"
 msgstr ""
 
 #: ulng.rsfileopdirectoryexistsoptions
-msgid "Ask;Overwrite;Copy into;Skip"
-msgstr "Спрашивать;Перезаписывать;Копировать в;Пропускать"
+msgid "Ask;Merge;Skip"
+msgstr "Спрашивать;Объединять;Пропускать"
 
 #: ulng.rsfileopfileexistsoptions
 msgid "Ask;Overwrite;Overwrite Older;Skip"
@@ -9661,10 +9591,6 @@ msgstr "Сканирование"
 msgctxt "ulng.rsfindsearchfiles"
 msgid "Find files"
 msgstr "Поиск файлов"
-
-#: ulng.rsfindtimeofscan
-msgid "Time of scan: "
-msgstr "Время сканирования: "
 
 #: ulng.rsfindwherebeg
 msgid "Begin at"
@@ -9783,16 +9709,6 @@ msgstr "Поиск различий"
 #: ulng.rshotkeycategoryeditcommentdialog
 msgid "Edit Comment Dialog"
 msgstr "Диалог редактирования комментария"
-
-#: ulng.rshotkeycategoryeditor
-msgctxt "ulng.rshotkeycategoryeditor"
-msgid "Editor"
-msgstr "Редактор"
-
-#: ulng.rshotkeycategoryfindfiles
-msgctxt "ulng.rshotkeycategoryfindfiles"
-msgid "Find files"
-msgstr "Поиск файлов"
 
 #: ulng.rshotkeycategorymain
 msgid "Main"
@@ -9940,6 +9856,10 @@ msgstr "Нельзя скопировать/переместить файл \"%s
 #: ulng.rsmsgcannotdeletedirectory
 msgid "Cannot delete directory %s"
 msgstr "Нельзя удалить каталог %s"
+
+#: ulng.rsmsgcannotoverwritedirectory
+msgid "Cannot overwrite directory \"%s\" with non-directory \"%s\""
+msgstr "Невозможно перезаписать каталог \"%s\" файлом, не являющимся каталогом \"%s\""
 
 #: ulng.rsmsgchdirfailed
 msgid "ChDir to [%s] failed!"
@@ -10340,16 +10260,16 @@ msgstr ""
 "Хотите сохранить настройки перед тем как выйти?\n"
 
 #: ulng.rsmsgfilereadonly
-msgid "File %s is marked as read-only. Delete it?"
-msgstr "Файл %s помечен как доступный только для чтения. Удалить?"
+msgid "File %s is marked as read-only/hidden/system. Delete it?"
+msgstr "Файл %s помечен как доступный только для чтения/скрытый/системный. Удалить?"
 
 #: ulng.rsmsgfilesizetoobig
 msgid "The file size of \"%s\" is too big for destination file system!"
 msgstr "Размер файла \"%s\" слишком большой для файловой системы получателя!"
 
 #: ulng.rsmsgfolderexistsrwrt
-msgid "Folder %s exists, overwrite?"
-msgstr "Каталог %s существует, переписать?"
+msgid "Folder %s exists, merge?"
+msgstr "Каталог %s существует, объединить?"
 
 #: ulng.rsmsgfollowsymlink
 msgid "Follow symlink \"%s\"?"

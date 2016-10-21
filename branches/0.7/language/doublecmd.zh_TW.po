@@ -1120,9 +1120,9 @@ msgstr "刪除"
 
 #: tfrmeditor.acteditfind.caption
 #, fuzzy
-#| msgid "&Find"
+#| msgid "&Find "
 msgctxt "tfrmeditor.acteditfind.caption"
-msgid "&Find "
+msgid "&Find"
 msgstr "尋找 (&F)"
 
 #: tfrmeditor.acteditfind.hint
@@ -1902,66 +1902,6 @@ msgstr "屬性"
 msgctxt "TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION"
 msgid "Properties"
 msgstr "內容"
-
-#: tfrmfinddlg.actcancel.caption
-msgid "actCancel"
-msgstr ""
-
-#: tfrmfinddlg.actclose.caption
-msgid "actClose"
-msgstr ""
-
-#: tfrmfinddlg.actedit.caption
-msgid "actEdit"
-msgstr ""
-
-#: tfrmfinddlg.actfeedtolistbox.caption
-msgid "actFeedToListbox"
-msgstr ""
-
-#: tfrmfinddlg.actgotofile.caption
-msgid "actGoToFile"
-msgstr ""
-
-#: tfrmfinddlg.actintellifocus.caption
-msgid "actIntelliFocus"
-msgstr ""
-
-#: tfrmfinddlg.actlastsearch.caption
-msgid "actLastSearch"
-msgstr ""
-
-#: tfrmfinddlg.actnewsearch.caption
-msgid "actNewSearch"
-msgstr ""
-
-#: tfrmfinddlg.actpageadvanced.caption
-msgid "actPageAdvanced"
-msgstr ""
-
-#: tfrmfinddlg.actpageloadsave.caption
-msgid "actPageLoadSave"
-msgstr ""
-
-#: tfrmfinddlg.actpageplugins.caption
-msgid "actPagePlugins"
-msgstr ""
-
-#: tfrmfinddlg.actpageresults.caption
-msgid "actPageResults"
-msgstr ""
-
-#: tfrmfinddlg.actpagestandard.caption
-msgid "actPageStandard"
-msgstr ""
-
-#: tfrmfinddlg.actstart.caption
-msgid "actStart"
-msgstr ""
-
-#: tfrmfinddlg.actview.caption
-msgid "actView"
-msgstr ""
 
 #: tfrmfinddlg.btnaddattribute.caption
 msgctxt "tfrmfinddlg.btnaddattribute.caption"
@@ -10131,11 +10071,15 @@ msgid "&Continue"
 msgstr "繼續 (&C)"
 
 #: ulng.rsdlgbuttoncopyinto
-msgid "Copy &Into"
+#, fuzzy
+#| msgid "Copy &Into"
+msgid "&Merge"
 msgstr "複製進去 (&I)"
 
 #: ulng.rsdlgbuttoncopyintoall
-msgid "Copy Into &All"
+#, fuzzy
+#| msgid "Copy Into &All"
+msgid "Mer&ge All"
 msgstr "全部複製進去 (&A)"
 
 #: ulng.rsdlgbuttonexitprogram
@@ -10360,7 +10304,9 @@ msgid "Exported_from_DC"
 msgstr ""
 
 #: ulng.rsfileopdirectoryexistsoptions
-msgid "Ask;Overwrite;Copy into;Skip"
+#, fuzzy
+#| msgid "Ask;Overwrite;Copy into;Skip"
+msgid "Ask;Merge;Skip"
 msgstr "詢問;覆蓋;複製進去;略過"
 
 #: ulng.rsfileopfileexistsoptions
@@ -10420,10 +10366,6 @@ msgstr "掃描"
 msgctxt "ulng.rsfindsearchfiles"
 msgid "Find files"
 msgstr "尋找檔案"
-
-#: ulng.rsfindtimeofscan
-msgid "Time of scan: "
-msgstr ""
 
 #: ulng.rsfindwherebeg
 msgid "Begin at"
@@ -10539,18 +10481,6 @@ msgstr "比對器"
 #: ulng.rshotkeycategoryeditcommentdialog
 msgid "Edit Comment Dialog"
 msgstr ""
-
-#: ulng.rshotkeycategoryeditor
-#, fuzzy
-msgctxt "ulng.rshotkeycategoryeditor"
-msgid "Editor"
-msgstr "編輯器"
-
-#: ulng.rshotkeycategoryfindfiles
-#, fuzzy
-msgctxt "ulng.rshotkeycategoryfindfiles"
-msgid "Find files"
-msgstr "尋找檔案"
 
 #: ulng.rshotkeycategorymain
 msgid "Main"
@@ -10698,6 +10628,10 @@ msgstr "你不能複製/移動檔案【%s】到相同目錄"
 #: ulng.rsmsgcannotdeletedirectory
 msgid "Cannot delete directory %s"
 msgstr "無法刪除資料夾【%s】"
+
+#: ulng.rsmsgcannotoverwritedirectory
+msgid "Cannot overwrite directory \"%s\" with non-directory \"%s\""
+msgstr ""
 
 #: ulng.rsmsgchdirfailed
 msgid "ChDir to [%s] failed!"
@@ -11087,7 +11021,9 @@ msgid ""
 msgstr ""
 
 #: ulng.rsmsgfilereadonly
-msgid "File %s is marked as read-only. Delete it?"
+#, fuzzy
+#| msgid "File %s is marked as read-only. Delete it?"
+msgid "File %s is marked as read-only/hidden/system. Delete it?"
 msgstr "檔案 %s 是唯讀檔。仍要刪除嗎？"
 
 #: ulng.rsmsgfilesizetoobig
@@ -11095,7 +11031,9 @@ msgid "The file size of \"%s\" is too big for destination file system!"
 msgstr "這個檔案【%s】的容量對於目標檔案系統來說太大!"
 
 #: ulng.rsmsgfolderexistsrwrt
-msgid "Folder %s exists, overwrite?"
+#, fuzzy
+#| msgid "Folder %s exists, overwrite?"
+msgid "Folder %s exists, merge?"
 msgstr "資料夾 %s 已存在, 是否要覆蓋?"
 
 #: ulng.rsmsgfollowsymlink

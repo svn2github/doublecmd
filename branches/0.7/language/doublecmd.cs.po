@@ -1058,9 +1058,9 @@ msgstr "Vymazat"
 
 #: tfrmeditor.acteditfind.caption
 #, fuzzy
-#| msgid "&Find"
+#| msgid "&Find "
 msgctxt "tfrmeditor.acteditfind.caption"
-msgid "&Find "
+msgid "&Find"
 msgstr "&Hledat"
 
 #: tfrmeditor.acteditfind.hint
@@ -1802,66 +1802,6 @@ msgstr "Atributy"
 msgctxt "TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION"
 msgid "Properties"
 msgstr "Vlastnosti"
-
-#: tfrmfinddlg.actcancel.caption
-msgid "actCancel"
-msgstr ""
-
-#: tfrmfinddlg.actclose.caption
-msgid "actClose"
-msgstr ""
-
-#: tfrmfinddlg.actedit.caption
-msgid "actEdit"
-msgstr ""
-
-#: tfrmfinddlg.actfeedtolistbox.caption
-msgid "actFeedToListbox"
-msgstr ""
-
-#: tfrmfinddlg.actgotofile.caption
-msgid "actGoToFile"
-msgstr ""
-
-#: tfrmfinddlg.actintellifocus.caption
-msgid "actIntelliFocus"
-msgstr ""
-
-#: tfrmfinddlg.actlastsearch.caption
-msgid "actLastSearch"
-msgstr ""
-
-#: tfrmfinddlg.actnewsearch.caption
-msgid "actNewSearch"
-msgstr ""
-
-#: tfrmfinddlg.actpageadvanced.caption
-msgid "actPageAdvanced"
-msgstr ""
-
-#: tfrmfinddlg.actpageloadsave.caption
-msgid "actPageLoadSave"
-msgstr ""
-
-#: tfrmfinddlg.actpageplugins.caption
-msgid "actPagePlugins"
-msgstr ""
-
-#: tfrmfinddlg.actpageresults.caption
-msgid "actPageResults"
-msgstr ""
-
-#: tfrmfinddlg.actpagestandard.caption
-msgid "actPageStandard"
-msgstr ""
-
-#: tfrmfinddlg.actstart.caption
-msgid "actStart"
-msgstr ""
-
-#: tfrmfinddlg.actview.caption
-msgid "actView"
-msgstr ""
 
 #: tfrmfinddlg.btnaddattribute.caption
 msgctxt "tfrmfinddlg.btnaddattribute.caption"
@@ -9340,11 +9280,15 @@ msgid "&Continue"
 msgstr "&Pokračovat"
 
 #: ulng.rsdlgbuttoncopyinto
-msgid "Copy &Into"
+#, fuzzy
+#| msgid "Copy &Into"
+msgid "&Merge"
 msgstr "Kopírovat &do"
 
 #: ulng.rsdlgbuttoncopyintoall
-msgid "Copy Into &All"
+#, fuzzy
+#| msgid "Copy Into &All"
+msgid "Mer&ge All"
 msgstr "Kopírovat do &Vše"
 
 #: ulng.rsdlgbuttonexitprogram
@@ -9563,7 +9507,9 @@ msgid "Exported_from_DC"
 msgstr "Exportováno_z_DC"
 
 #: ulng.rsfileopdirectoryexistsoptions
-msgid "Ask;Overwrite;Copy into;Skip"
+#, fuzzy
+#| msgid "Ask;Overwrite;Copy into;Skip"
+msgid "Ask;Merge;Skip"
 msgstr "Zeptat se;Přepsat;Kopírovat do;Přeskočit"
 
 #: ulng.rsfileopfileexistsoptions
@@ -9625,10 +9571,6 @@ msgstr "Prohledávám"
 msgctxt "ulng.rsfindsearchfiles"
 msgid "Find files"
 msgstr "Hledat soubory"
-
-#: ulng.rsfindtimeofscan
-msgid "Time of scan: "
-msgstr ""
 
 #: ulng.rsfindwherebeg
 msgid "Begin at"
@@ -9747,18 +9689,6 @@ msgstr "Rozdílné"
 #: ulng.rshotkeycategoryeditcommentdialog
 msgid "Edit Comment Dialog"
 msgstr "Dialogové okno upravit komentář"
-
-#: ulng.rshotkeycategoryeditor
-#, fuzzy
-msgctxt "ulng.rshotkeycategoryeditor"
-msgid "Editor"
-msgstr "Editor"
-
-#: ulng.rshotkeycategoryfindfiles
-#, fuzzy
-msgctxt "ulng.rshotkeycategoryfindfiles"
-msgid "Find files"
-msgstr "Hledat soubory"
 
 #: ulng.rshotkeycategorymain
 msgid "Main"
@@ -9906,6 +9836,10 @@ msgstr "Nemůžete kopírovat/přesunout soubor \"%s\" do sebe!"
 #: ulng.rsmsgcannotdeletedirectory
 msgid "Cannot delete directory %s"
 msgstr "Nelze odstranit adresář %s"
+
+#: ulng.rsmsgcannotoverwritedirectory
+msgid "Cannot overwrite directory \"%s\" with non-directory \"%s\""
+msgstr ""
 
 #: ulng.rsmsgchdirfailed
 msgid "ChDir to [%s] failed!"
@@ -10307,7 +10241,9 @@ msgstr ""
 "Chcete je před ukončením uložit?\n"
 
 #: ulng.rsmsgfilereadonly
-msgid "File %s is marked as read-only. Delete it?"
+#, fuzzy
+#| msgid "File %s is marked as read-only. Delete it?"
+msgid "File %s is marked as read-only/hidden/system. Delete it?"
 msgstr "Soubor %s je pouze ke čtení! Přesto vymazat?"
 
 #: ulng.rsmsgfilesizetoobig
@@ -10315,7 +10251,9 @@ msgid "The file size of \"%s\" is too big for destination file system!"
 msgstr "Velikost souboru \"%s\" je příliš velká pro cílový souborový systém!"
 
 #: ulng.rsmsgfolderexistsrwrt
-msgid "Folder %s exists, overwrite?"
+#, fuzzy
+#| msgid "Folder %s exists, overwrite?"
+msgid "Folder %s exists, merge?"
 msgstr "Složka %s existuje, přepsat?"
 
 #: ulng.rsmsgfollowsymlink

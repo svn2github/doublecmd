@@ -1070,9 +1070,9 @@ msgstr "Slet"
 
 #: tfrmeditor.acteditfind.caption
 #, fuzzy
-#| msgid "&Find"
+#| msgid "&Find "
 msgctxt "tfrmeditor.acteditfind.caption"
-msgid "&Find "
+msgid "&Find"
 msgstr "S&øg..."
 
 #: tfrmeditor.acteditfind.hint
@@ -1825,66 +1825,6 @@ msgstr "Attributter"
 msgctxt "TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION"
 msgid "Properties"
 msgstr "Egenskaber"
-
-#: tfrmfinddlg.actcancel.caption
-msgid "actCancel"
-msgstr ""
-
-#: tfrmfinddlg.actclose.caption
-msgid "actClose"
-msgstr ""
-
-#: tfrmfinddlg.actedit.caption
-msgid "actEdit"
-msgstr ""
-
-#: tfrmfinddlg.actfeedtolistbox.caption
-msgid "actFeedToListbox"
-msgstr ""
-
-#: tfrmfinddlg.actgotofile.caption
-msgid "actGoToFile"
-msgstr ""
-
-#: tfrmfinddlg.actintellifocus.caption
-msgid "actIntelliFocus"
-msgstr ""
-
-#: tfrmfinddlg.actlastsearch.caption
-msgid "actLastSearch"
-msgstr ""
-
-#: tfrmfinddlg.actnewsearch.caption
-msgid "actNewSearch"
-msgstr ""
-
-#: tfrmfinddlg.actpageadvanced.caption
-msgid "actPageAdvanced"
-msgstr ""
-
-#: tfrmfinddlg.actpageloadsave.caption
-msgid "actPageLoadSave"
-msgstr ""
-
-#: tfrmfinddlg.actpageplugins.caption
-msgid "actPagePlugins"
-msgstr ""
-
-#: tfrmfinddlg.actpageresults.caption
-msgid "actPageResults"
-msgstr ""
-
-#: tfrmfinddlg.actpagestandard.caption
-msgid "actPageStandard"
-msgstr ""
-
-#: tfrmfinddlg.actstart.caption
-msgid "actStart"
-msgstr ""
-
-#: tfrmfinddlg.actview.caption
-msgid "actView"
-msgstr ""
 
 #: tfrmfinddlg.btnaddattribute.caption
 msgctxt "tfrmfinddlg.btnaddattribute.caption"
@@ -9570,11 +9510,15 @@ msgid "&Continue"
 msgstr "Fortsæt"
 
 #: ulng.rsdlgbuttoncopyinto
-msgid "Copy &Into"
+#, fuzzy
+#| msgid "Copy &Into"
+msgid "&Merge"
 msgstr "Kopier ind i"
 
 #: ulng.rsdlgbuttoncopyintoall
-msgid "Copy Into &All"
+#, fuzzy
+#| msgid "Copy Into &All"
+msgid "Mer&ge All"
 msgstr "Kopier ind i alle"
 
 #: ulng.rsdlgbuttonexitprogram
@@ -9797,7 +9741,9 @@ msgid "Exported_from_DC"
 msgstr "Eksporteret_fra_DC"
 
 #: ulng.rsfileopdirectoryexistsoptions
-msgid "Ask;Overwrite;Copy into;Skip"
+#, fuzzy
+#| msgid "Ask;Overwrite;Copy into;Skip"
+msgid "Ask;Merge;Skip"
 msgstr "Spørg bruger;Overskriv alle filer;Kopier alle filer;Spring alle filer over"
 
 #: ulng.rsfileopfileexistsoptions
@@ -9860,10 +9806,6 @@ msgstr "Skanner"
 msgctxt "ulng.rsfindsearchfiles"
 msgid "Find files"
 msgstr "Find filer"
-
-#: ulng.rsfindtimeofscan
-msgid "Time of scan: "
-msgstr ""
 
 #: ulng.rsfindwherebeg
 msgid "Begin at"
@@ -9980,18 +9922,6 @@ msgstr "Sammenligningsprogram"
 #: ulng.rshotkeycategoryeditcommentdialog
 msgid "Edit Comment Dialog"
 msgstr "Rediger kommentar dialog"
-
-#: ulng.rshotkeycategoryeditor
-#, fuzzy
-msgctxt "ulng.rshotkeycategoryeditor"
-msgid "Editor"
-msgstr "Editor"
-
-#: ulng.rshotkeycategoryfindfiles
-#, fuzzy
-msgctxt "ulng.rshotkeycategoryfindfiles"
-msgid "Find files"
-msgstr "Find filer"
 
 #: ulng.rshotkeycategorymain
 msgid "Main"
@@ -10136,6 +10066,10 @@ msgstr "Du kan ikke kopiere/flytte filen \"%s\" til sig selv!"
 #: ulng.rsmsgcannotdeletedirectory
 msgid "Cannot delete directory %s"
 msgstr "Kan ikke slette mappen %s"
+
+#: ulng.rsmsgcannotoverwritedirectory
+msgid "Cannot overwrite directory \"%s\" with non-directory \"%s\""
+msgstr ""
 
 #: ulng.rsmsgchdirfailed
 msgid "ChDir to [%s] failed!"
@@ -10533,7 +10467,9 @@ msgid ""
 msgstr ""
 
 #: ulng.rsmsgfilereadonly
-msgid "File %s is marked as read-only. Delete it?"
+#, fuzzy
+#| msgid "File %s is marked as read-only. Delete it?"
+msgid "File %s is marked as read-only/hidden/system. Delete it?"
 msgstr "Filen %s er markeret som skrivebeskyttet. Vil du slette den?"
 
 #: ulng.rsmsgfilesizetoobig
@@ -10541,7 +10477,9 @@ msgid "The file size of \"%s\" is too big for destination file system!"
 msgstr "Størrelsen på filen \"%s\" er for stor til destinationens filsystem!"
 
 #: ulng.rsmsgfolderexistsrwrt
-msgid "Folder %s exists, overwrite?"
+#, fuzzy
+#| msgid "Folder %s exists, overwrite?"
+msgid "Folder %s exists, merge?"
 msgstr ""
 "Mappen %s eksisterer.\n"
 "Vil du overskrive?\n"

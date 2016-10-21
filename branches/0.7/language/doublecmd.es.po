@@ -1151,9 +1151,9 @@ msgstr "Borrar"
 
 #: tfrmeditor.acteditfind.caption
 #, fuzzy
-#| msgid "&Find"
+#| msgid "&Find "
 msgctxt "tfrmeditor.acteditfind.caption"
-msgid "&Find "
+msgid "&Find"
 msgstr "&Buscar"
 
 #: tfrmeditor.acteditfind.hint
@@ -1937,66 +1937,6 @@ msgstr "Atributos"
 msgctxt "TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION"
 msgid "Properties"
 msgstr "Propiedades"
-
-#: tfrmfinddlg.actcancel.caption
-msgid "actCancel"
-msgstr ""
-
-#: tfrmfinddlg.actclose.caption
-msgid "actClose"
-msgstr ""
-
-#: tfrmfinddlg.actedit.caption
-msgid "actEdit"
-msgstr ""
-
-#: tfrmfinddlg.actfeedtolistbox.caption
-msgid "actFeedToListbox"
-msgstr ""
-
-#: tfrmfinddlg.actgotofile.caption
-msgid "actGoToFile"
-msgstr ""
-
-#: tfrmfinddlg.actintellifocus.caption
-msgid "actIntelliFocus"
-msgstr ""
-
-#: tfrmfinddlg.actlastsearch.caption
-msgid "actLastSearch"
-msgstr ""
-
-#: tfrmfinddlg.actnewsearch.caption
-msgid "actNewSearch"
-msgstr ""
-
-#: tfrmfinddlg.actpageadvanced.caption
-msgid "actPageAdvanced"
-msgstr ""
-
-#: tfrmfinddlg.actpageloadsave.caption
-msgid "actPageLoadSave"
-msgstr ""
-
-#: tfrmfinddlg.actpageplugins.caption
-msgid "actPagePlugins"
-msgstr ""
-
-#: tfrmfinddlg.actpageresults.caption
-msgid "actPageResults"
-msgstr ""
-
-#: tfrmfinddlg.actpagestandard.caption
-msgid "actPageStandard"
-msgstr ""
-
-#: tfrmfinddlg.actstart.caption
-msgid "actStart"
-msgstr ""
-
-#: tfrmfinddlg.actview.caption
-msgid "actView"
-msgstr ""
 
 #: tfrmfinddlg.btnaddattribute.caption
 msgctxt "tfrmfinddlg.btnaddattribute.caption"
@@ -10314,11 +10254,15 @@ msgid "&Continue"
 msgstr "&Continuar"
 
 #: ulng.rsdlgbuttoncopyinto
-msgid "Copy &Into"
+#, fuzzy
+#| msgid "Copy &Into"
+msgid "&Merge"
 msgstr "Copiar en"
 
 #: ulng.rsdlgbuttoncopyintoall
-msgid "Copy Into &All"
+#, fuzzy
+#| msgid "Copy Into &All"
+msgid "Mer&ge All"
 msgstr "Copi&ar en todo"
 
 #: ulng.rsdlgbuttonexitprogram
@@ -10550,7 +10494,9 @@ msgid "Exported_from_DC"
 msgstr "Exportado_desde_DC"
 
 #: ulng.rsfileopdirectoryexistsoptions
-msgid "Ask;Overwrite;Copy into;Skip"
+#, fuzzy
+#| msgid "Ask;Overwrite;Copy into;Skip"
+msgid "Ask;Merge;Skip"
 msgstr "Preguntar;Sobrescribir;Copiar en;Saltar"
 
 #: ulng.rsfileopfileexistsoptions
@@ -10610,10 +10556,6 @@ msgstr "Escaneando"
 msgctxt "ulng.rsfindsearchfiles"
 msgid "Find files"
 msgstr "Buscar archivos"
-
-#: ulng.rsfindtimeofscan
-msgid "Time of scan: "
-msgstr ""
 
 #: ulng.rsfindwherebeg
 msgid "Begin at"
@@ -10737,18 +10679,6 @@ msgstr "Differ (comparar)"
 #: ulng.rshotkeycategoryeditcommentdialog
 msgid "Edit Comment Dialog"
 msgstr "Editar Comentario Diálogo"
-
-#: ulng.rshotkeycategoryeditor
-#, fuzzy
-msgctxt "ulng.rshotkeycategoryeditor"
-msgid "Editor"
-msgstr "Editor"
-
-#: ulng.rshotkeycategoryfindfiles
-#, fuzzy
-msgctxt "ulng.rshotkeycategoryfindfiles"
-msgid "Find files"
-msgstr "Buscar archivos"
 
 #: ulng.rshotkeycategorymain
 msgid "Main"
@@ -10905,6 +10835,10 @@ msgstr "No se puede copiar/mover un archivo \"%s\" dentro de sí mismo!"
 #: ulng.rsmsgcannotdeletedirectory
 msgid "Cannot delete directory %s"
 msgstr "No se puede borrar directorio %s"
+
+#: ulng.rsmsgcannotoverwritedirectory
+msgid "Cannot overwrite directory \"%s\" with non-directory \"%s\""
+msgstr ""
 
 #: ulng.rsmsgchdirfailed
 msgid "ChDir to [%s] failed!"
@@ -11298,7 +11232,9 @@ msgid ""
 msgstr ""
 
 #: ulng.rsmsgfilereadonly
-msgid "File %s is marked as read-only. Delete it?"
+#, fuzzy
+#| msgid "File %s is marked as read-only. Delete it?"
+msgid "File %s is marked as read-only/hidden/system. Delete it?"
 msgstr "El archivo %s esta marcado como de sólo lectura. Quiere borrarlo?"
 
 #: ulng.rsmsgfilesizetoobig
@@ -11306,7 +11242,9 @@ msgid "The file size of \"%s\" is too big for destination file system!"
 msgstr "El tamaño del archivo de \"%s\" es demasiado grande para el sistema de archivo destino!"
 
 #: ulng.rsmsgfolderexistsrwrt
-msgid "Folder %s exists, overwrite?"
+#, fuzzy
+#| msgid "Folder %s exists, overwrite?"
+msgid "Folder %s exists, merge?"
 msgstr "La carpeta %s existe, quiere sobrescribirla?"
 
 #: ulng.rsmsgfollowsymlink

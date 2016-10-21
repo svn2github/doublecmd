@@ -1069,9 +1069,9 @@ msgstr "Apagar"
 
 #: tfrmeditor.acteditfind.caption
 #, fuzzy
-#| msgid "&Find"
+#| msgid "&Find "
 msgctxt "tfrmeditor.acteditfind.caption"
-msgid "&Find "
+msgid "&Find"
 msgstr "&Localizar"
 
 #: tfrmeditor.acteditfind.hint
@@ -1812,66 +1812,6 @@ msgstr "Atributos"
 msgctxt "TFRMFILEPROPERTIES.TSPROPERTIES.CAPTION"
 msgid "Properties"
 msgstr "Propriedades"
-
-#: tfrmfinddlg.actcancel.caption
-msgid "actCancel"
-msgstr ""
-
-#: tfrmfinddlg.actclose.caption
-msgid "actClose"
-msgstr ""
-
-#: tfrmfinddlg.actedit.caption
-msgid "actEdit"
-msgstr ""
-
-#: tfrmfinddlg.actfeedtolistbox.caption
-msgid "actFeedToListbox"
-msgstr ""
-
-#: tfrmfinddlg.actgotofile.caption
-msgid "actGoToFile"
-msgstr ""
-
-#: tfrmfinddlg.actintellifocus.caption
-msgid "actIntelliFocus"
-msgstr ""
-
-#: tfrmfinddlg.actlastsearch.caption
-msgid "actLastSearch"
-msgstr ""
-
-#: tfrmfinddlg.actnewsearch.caption
-msgid "actNewSearch"
-msgstr ""
-
-#: tfrmfinddlg.actpageadvanced.caption
-msgid "actPageAdvanced"
-msgstr ""
-
-#: tfrmfinddlg.actpageloadsave.caption
-msgid "actPageLoadSave"
-msgstr ""
-
-#: tfrmfinddlg.actpageplugins.caption
-msgid "actPagePlugins"
-msgstr ""
-
-#: tfrmfinddlg.actpageresults.caption
-msgid "actPageResults"
-msgstr ""
-
-#: tfrmfinddlg.actpagestandard.caption
-msgid "actPageStandard"
-msgstr ""
-
-#: tfrmfinddlg.actstart.caption
-msgid "actStart"
-msgstr ""
-
-#: tfrmfinddlg.actview.caption
-msgid "actView"
-msgstr ""
 
 #: tfrmfinddlg.btnaddattribute.caption
 msgctxt "tfrmfinddlg.btnaddattribute.caption"
@@ -9440,11 +9380,15 @@ msgid "&Continue"
 msgstr "&Continuar"
 
 #: ulng.rsdlgbuttoncopyinto
-msgid "Copy &Into"
+#, fuzzy
+#| msgid "Copy &Into"
+msgid "&Merge"
 msgstr "Cop&iar para"
 
 #: ulng.rsdlgbuttoncopyintoall
-msgid "Copy Into &All"
+#, fuzzy
+#| msgid "Copy Into &All"
+msgid "Mer&ge All"
 msgstr "Copi&ar todos para"
 
 #: ulng.rsdlgbuttonexitprogram
@@ -9666,7 +9610,9 @@ msgid "Exported_from_DC"
 msgstr ""
 
 #: ulng.rsfileopdirectoryexistsoptions
-msgid "Ask;Overwrite;Copy into;Skip"
+#, fuzzy
+#| msgid "Ask;Overwrite;Copy into;Skip"
+msgid "Ask;Merge;Skip"
 msgstr "Perguntar;Substituir;Copiar para;Saltar"
 
 #: ulng.rsfileopfileexistsoptions
@@ -9728,10 +9674,6 @@ msgstr "A pesquisar"
 msgctxt "ulng.rsfindsearchfiles"
 msgid "Find files"
 msgstr "Localizar ficheiros"
-
-#: ulng.rsfindtimeofscan
-msgid "Time of scan: "
-msgstr ""
 
 #: ulng.rsfindwherebeg
 msgid "Begin at"
@@ -9847,18 +9789,6 @@ msgstr "Diferenciar"
 #: ulng.rshotkeycategoryeditcommentdialog
 msgid "Edit Comment Dialog"
 msgstr ""
-
-#: ulng.rshotkeycategoryeditor
-#, fuzzy
-msgctxt "ulng.rshotkeycategoryeditor"
-msgid "Editor"
-msgstr "Editor"
-
-#: ulng.rshotkeycategoryfindfiles
-#, fuzzy
-msgctxt "ulng.rshotkeycategoryfindfiles"
-msgid "Find files"
-msgstr "Localizar ficheiros"
 
 #: ulng.rshotkeycategorymain
 msgid "Main"
@@ -10003,6 +9933,10 @@ msgstr "Não pode copiar/mover um ficheiro \"%s\" para si próprio!"
 #: ulng.rsmsgcannotdeletedirectory
 msgid "Cannot delete directory %s"
 msgstr "Impossível apagar a pasta %s"
+
+#: ulng.rsmsgcannotoverwritedirectory
+msgid "Cannot overwrite directory \"%s\" with non-directory \"%s\""
+msgstr ""
 
 #: ulng.rsmsgchdirfailed
 msgid "ChDir to [%s] failed!"
@@ -10393,7 +10327,9 @@ msgid ""
 msgstr ""
 
 #: ulng.rsmsgfilereadonly
-msgid "File %s is marked as read-only. Delete it?"
+#, fuzzy
+#| msgid "File %s is marked as read-only. Delete it?"
+msgid "File %s is marked as read-only/hidden/system. Delete it?"
 msgstr "O ficheiro %s é só de leitura. Quer apagá-lo?"
 
 #: ulng.rsmsgfilesizetoobig
@@ -10401,7 +10337,9 @@ msgid "The file size of \"%s\" is too big for destination file system!"
 msgstr "O tamanho de \"%s\" é demasiado grande para o sistema de ficheiros destino!"
 
 #: ulng.rsmsgfolderexistsrwrt
-msgid "Folder %s exists, overwrite?"
+#, fuzzy
+#| msgid "Folder %s exists, overwrite?"
+msgid "Folder %s exists, merge?"
 msgstr "A pasta %s já existe! Substituir?"
 
 #: ulng.rsmsgfollowsymlink
