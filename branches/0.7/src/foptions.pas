@@ -78,6 +78,7 @@ type
     procedure LoadSettings;
     procedure SelectEditor(EditorClassName: String);
     function CompareTwoNodeOfConfigurationOptionTree(Node1, Node2: TTreeNode): integer;
+    procedure MakeVisible(Data: PtrInt);
   public
     constructor Create(TheOwner: TComponent); override;
     constructor Create(TheOwner: TComponent; EditorClass: TOptionsEditorClass); overload;
@@ -304,6 +305,7 @@ begin
       if Assigned(FOptionsEditorList[I].TreeNode) then
       begin
         FOptionsEditorList[I].TreeNode.Selected := True;
+        Application.QueueAsyncCall(@MakeVisible, PtrInt(FOptionsEditorList[I].TreeNode));
         Break;
       end;
   end;
@@ -407,6 +409,13 @@ begin
     MessageDlg(rsMsgRestartForApplyChanges, mtInformation, [mbOK], 0);
 
   frmMain.UpdateWindowView;
+end;
+
+procedure TfrmOptions.MakeVisible(Data: PtrInt);
+var
+  TreeNode: TTreeNode absolute Data;
+begin
+  TreeNode.MakeVisible;
 end;
 
 end.
