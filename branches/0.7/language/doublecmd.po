@@ -1230,11 +1230,6 @@ msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
 msgstr ""
 
-#: tfrmeditor.menuitem1.caption
-msgctxt "TFRMEDITOR.MENUITEM1.CAPTION"
-msgid "-"
-msgstr ""
-
 #: tfrmeditor.midiv.caption
 msgctxt "TFRMEDITOR.MIDIV.CAPTION"
 msgid "-"
@@ -11199,22 +11194,6 @@ msgstr ""
 
 #: ulng.rsoptenterext
 msgid "Enter extension"
-msgstr ""
-
-#: ulng.rsoptexamplecursor
-msgid "Cursor"
-msgstr ""
-
-#: ulng.rsoptexamplemark
-msgid "Mark"
-msgstr ""
-
-#: ulng.rsoptexamplemarkcursor
-msgid "Mark + Cursor"
-msgstr ""
-
-#: ulng.rsoptexampletext
-msgid "Text"
 msgstr ""
 
 #: ulng.rsoptfavoritetabswheretoaddinlist

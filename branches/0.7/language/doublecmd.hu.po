@@ -1246,12 +1246,6 @@ msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
 msgstr "&Súgó"
 
-#: tfrmeditor.menuitem1.caption
-#, fuzzy
-msgctxt "tfrmeditor.menuitem1.caption"
-msgid "-"
-msgstr "-"
-
 #: tfrmeditor.midiv.caption
 msgctxt "TFRMEDITOR.MIDIV.CAPTION"
 msgid "-"
@@ -11415,22 +11409,6 @@ msgstr "Engedélyezés"
 #: ulng.rsoptenterext
 msgid "Enter extension"
 msgstr "Kiterjesztés megadása"
-
-#: ulng.rsoptexamplecursor
-msgid "Cursor"
-msgstr "Kurzor"
-
-#: ulng.rsoptexamplemark
-msgid "Mark"
-msgstr "Kijelölés"
-
-#: ulng.rsoptexamplemarkcursor
-msgid "Mark + Cursor"
-msgstr "Kijelölés +  kurzor"
-
-#: ulng.rsoptexampletext
-msgid "Text"
-msgstr "Szöveg"
 
 #: ulng.rsoptfavoritetabswheretoaddinlist
 msgid "Add at beginning;Add at the end;Alphabetical sort"

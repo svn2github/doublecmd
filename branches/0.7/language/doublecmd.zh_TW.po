@@ -1299,12 +1299,6 @@ msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
 msgstr "說明 (&H)"
 
-#: tfrmeditor.menuitem1.caption
-#, fuzzy
-msgctxt "tfrmeditor.menuitem1.caption"
-msgid "-"
-msgstr "-"
-
 #: tfrmeditor.midiv.caption
 msgctxt "TFRMEDITOR.MIDIV.CAPTION"
 msgid "-"
@@ -12061,22 +12055,6 @@ msgstr "啟用"
 #: ulng.rsoptenterext
 msgid "Enter extension"
 msgstr "輸入副檔名"
-
-#: ulng.rsoptexamplecursor
-msgid "Cursor"
-msgstr "指標"
-
-#: ulng.rsoptexamplemark
-msgid "Mark"
-msgstr "標記"
-
-#: ulng.rsoptexamplemarkcursor
-msgid "Mark + Cursor"
-msgstr "反白 + 指標"
-
-#: ulng.rsoptexampletext
-msgid "Text"
-msgstr "文字"
 
 #: ulng.rsoptfavoritetabswheretoaddinlist
 msgid "Add at beginning;Add at the end;Alphabetical sort"

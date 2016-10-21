@@ -1235,11 +1235,6 @@ msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
 msgstr "Βοήθεια"
 
-#: tfrmeditor.menuitem1.caption
-msgctxt "tfrmeditor.menuitem1.caption"
-msgid "-"
-msgstr "-"
-
 #: tfrmeditor.midiv.caption
 msgctxt "TFRMEDITOR.MIDIV.CAPTION"
 msgid "-"
@@ -11274,22 +11269,6 @@ msgstr "Ενεργοποίηση"
 #: ulng.rsoptenterext
 msgid "Enter extension"
 msgstr "Εισάγετε επέκταση"
-
-#: ulng.rsoptexamplecursor
-msgid "Cursor"
-msgstr "Κέρσορας"
-
-#: ulng.rsoptexamplemark
-msgid "Mark"
-msgstr "Επιλογή"
-
-#: ulng.rsoptexamplemarkcursor
-msgid "Mark + Cursor"
-msgstr "Επιλογέας + Κέρσορας"
-
-#: ulng.rsoptexampletext
-msgid "Text"
-msgstr "Κείμενο"
 
 #: ulng.rsoptfavoritetabswheretoaddinlist
 msgid "Add at beginning;Add at the end;Alphabetical sort"

@@ -1232,11 +1232,6 @@ msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
 msgstr "&도움말"
 
-#: tfrmeditor.menuitem1.caption
-msgctxt "TFRMEDITOR.MENUITEM1.CAPTION"
-msgid "-"
-msgstr "-"
-
 #: tfrmeditor.midiv.caption
 msgctxt "TFRMEDITOR.MIDIV.CAPTION"
 msgid "-"
@@ -11287,22 +11282,6 @@ msgstr "가능"
 #: ulng.rsoptenterext
 msgid "Enter extension"
 msgstr "확장자 입력"
-
-#: ulng.rsoptexamplecursor
-msgid "Cursor"
-msgstr "커서"
-
-#: ulng.rsoptexamplemark
-msgid "Mark"
-msgstr "마크"
-
-#: ulng.rsoptexamplemarkcursor
-msgid "Mark + Cursor"
-msgstr "마크+커서"
-
-#: ulng.rsoptexampletext
-msgid "Text"
-msgstr "텍스트"
 
 #: ulng.rsoptfavoritetabswheretoaddinlist
 msgid "Add at beginning;Add at the end;Alphabetical sort"

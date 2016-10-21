@@ -610,11 +610,7 @@ resourcestring
   rsOptAutoSizeColumn = 'First;Last;';
   rsOptTabsPosition = 'Top;Bottom;';
   rsOptArchiveTypeName = 'Archive type name:';
-  //-------------------------------
-  rsOptExampleMark = 'Mark';
-  rsOptExampleText = 'Text';
-  rsOptExampleCursor = 'Cursor';
-  rsOptExampleMarkCursor = 'Mark + Cursor';
+
   // Hotkeys
   rsOptHotkeysAddDeleteShortcutLong =
     'Shortcut %s for cm_Delete will be registered, so it can be used to reverse this setting.';

@@ -1249,12 +1249,6 @@ msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
 msgstr "По&моћ"
 
-#: tfrmeditor.menuitem1.caption
-#, fuzzy
-msgctxt "tfrmeditor.menuitem1.caption"
-msgid "-"
-msgstr "-"
-
 #: tfrmeditor.midiv.caption
 msgctxt "TFRMEDITOR.MIDIV.CAPTION"
 msgid "-"
@@ -11438,22 +11432,6 @@ msgstr "Омогући"
 #: ulng.rsoptenterext
 msgid "Enter extension"
 msgstr "Унесите наставак"
-
-#: ulng.rsoptexamplecursor
-msgid "Cursor"
-msgstr "Показивач"
-
-#: ulng.rsoptexamplemark
-msgid "Mark"
-msgstr "Ознака"
-
-#: ulng.rsoptexamplemarkcursor
-msgid "Mark + Cursor"
-msgstr "Ознака + показивач"
-
-#: ulng.rsoptexampletext
-msgid "Text"
-msgstr "Текст"
 
 #: ulng.rsoptfavoritetabswheretoaddinlist
 msgid "Add at beginning;Add at the end;Alphabetical sort"

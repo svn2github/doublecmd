@@ -1234,12 +1234,6 @@ msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
 msgstr "ヘルプ(&H)"
 
-#: tfrmeditor.menuitem1.caption
-#, fuzzy
-msgctxt "tfrmeditor.menuitem1.caption"
-msgid "-"
-msgstr "-"
-
 #: tfrmeditor.midiv.caption
 msgctxt "TFRMEDITOR.MIDIV.CAPTION"
 msgid "-"
@@ -11308,22 +11302,6 @@ msgstr "有効にする"
 #: ulng.rsoptenterext
 msgid "Enter extension"
 msgstr "拡張子を入力"
-
-#: ulng.rsoptexamplecursor
-msgid "Cursor"
-msgstr "カーソル"
-
-#: ulng.rsoptexamplemark
-msgid "Mark"
-msgstr "マーク"
-
-#: ulng.rsoptexamplemarkcursor
-msgid "Mark + Cursor"
-msgstr "マーク＋カーソル"
-
-#: ulng.rsoptexampletext
-msgid "Text"
-msgstr "テキスト"
 
 #: ulng.rsoptfavoritetabswheretoaddinlist
 msgid "Add at beginning;Add at the end;Alphabetical sort"

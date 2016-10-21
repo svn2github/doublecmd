@@ -1248,12 +1248,6 @@ msgctxt "TFRMEDITOR.HELP1.CAPTION"
 msgid "&Help"
 msgstr "Po&moć"
 
-#: tfrmeditor.menuitem1.caption
-#, fuzzy
-msgctxt "tfrmeditor.menuitem1.caption"
-msgid "-"
-msgstr "-"
-
 #: tfrmeditor.midiv.caption
 msgctxt "TFRMEDITOR.MIDIV.CAPTION"
 msgid "-"
@@ -11437,22 +11431,6 @@ msgstr "Omogući"
 #: ulng.rsoptenterext
 msgid "Enter extension"
 msgstr "Unesite nastavak"
-
-#: ulng.rsoptexamplecursor
-msgid "Cursor"
-msgstr "Pokazivač"
-
-#: ulng.rsoptexamplemark
-msgid "Mark"
-msgstr "Oznaka"
-
-#: ulng.rsoptexamplemarkcursor
-msgid "Mark + Cursor"
-msgstr "Oznaka + pokazivač"
-
-#: ulng.rsoptexampletext
-msgid "Text"
-msgstr "Tekst"
 
 #: ulng.rsoptfavoritetabswheretoaddinlist
 msgid "Add at beginning;Add at the end;Alphabetical sort"
