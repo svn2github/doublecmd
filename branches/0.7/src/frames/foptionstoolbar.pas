@@ -472,7 +472,7 @@ begin
   end;
 
   //Let's display the menuitem related with a subtoolbar only if current selected toolbar is a subtoolbar.
-  miExportCurrent.Enabled := (FCurrentButton.ToolBar.Tag > 1);
+  miExportCurrent.Enabled := Assigned(FCurrentButton) and (FCurrentButton.ToolBar.Tag > 1);
   {$IFDEF MSWINDOWS}
   miImportTCINIAddCurrent.Enabled := miExportCurrent.Enabled;
   miImportTCINIAddMenuCurrent.Enabled := miExportCurrent.Enabled;
@@ -749,9 +749,12 @@ begin
     IndexWhereToAdd:=0;
     if (ToolBar.ButtonCount=0) then IndexWhereToAdd:=-1;
     if (IndexWhereToAdd=0) AND  (WhereToAdd=4) then IndexWhereToAdd:=-1;
-    if (IndexWhereToAdd=0) AND  (WhereToAdd=3) AND (FCurrentButton.Tag=pred(ToolBar.ButtonCount)) then IndexWhereToAdd:=-1;
-    if (IndexWhereToAdd=0) AND  (WhereToAdd=3) then IndexWhereToAdd:=(FCurrentButton.Tag+1);
-    if (IndexWhereToAdd=0) AND  (WhereToAdd=2) then IndexWhereToAdd:=FCurrentButton.Tag;
+    if Assigned(FCurrentButton) then
+    begin
+      if (IndexWhereToAdd=0) AND  (WhereToAdd=3) AND (FCurrentButton.Tag=pred(ToolBar.ButtonCount)) then IndexWhereToAdd:=-1;
+      if (IndexWhereToAdd=0) AND  (WhereToAdd=3) then IndexWhereToAdd:=(FCurrentButton.Tag+1);
+      if (IndexWhereToAdd=0) AND  (WhereToAdd=2) then IndexWhereToAdd:=FCurrentButton.Tag;
+    end;
 
     if IndexWhereToAdd=-1 then
     begin
@@ -914,19 +917,22 @@ var
   NormalItem: TKASNormalItem;
   I: Integer;
 begin
-  ToolItem := FCurrentButton.ToolItem;
-  if ToolItem is TKASNormalItem then
+  if Assigned(FCurrentButton) then
   begin
-    NormalItem := TKASNormalItem(ToolItem);
-    HMForm := HotMan.Forms.Find('Main');
-    if Assigned(HMForm) then
+    ToolItem := FCurrentButton.ToolItem;
+    if ToolItem is TKASNormalItem then
     begin
-      RemoveHotkey(HMForm.Hotkeys, NormalItem);
-      for I := 0 to HMForm.Controls.Count - 1 do
-        RemoveHotkey(HMForm.Controls[I].Hotkeys, NormalItem);
+      NormalItem := TKASNormalItem(ToolItem);
+      HMForm := HotMan.Forms.Find('Main');
+      if Assigned(HMForm) then
+      begin
+        RemoveHotkey(HMForm.Hotkeys, NormalItem);
+        for I := 0 to HMForm.Controls.Count - 1 do
+          RemoveHotkey(HMForm.Controls[I].Hotkeys, NormalItem);
+      end;
+      LoadCurrentButton;
+      FUpdateHotKey:= True;
     end;
-    LoadCurrentButton;
-    FUpdateHotKey:= True;
   end;
 end;
 
@@ -985,42 +991,45 @@ var
   AControls: TDynamicStringArray = nil;
   I: Integer;
 begin
-  if not Assigned(FEditForm) then
-    FEditForm := TfrmEditHotkey.Create(Self);
-
-  ToolItem := FCurrentButton.ToolItem;
-  if ToolItem is TKASNormalItem then
+  if Assigned(FCurrentButton) then
   begin
-    NormalItem := TKASNormalItem(ToolItem);
-    TemplateHotkey := THotkey.Create;
-    try
-      TemplateHotkey.Command := cHotKeyCommand;
-      SetValue(TemplateHotkey.Params, 'ToolItemID', NormalItem.ID);
+    if not Assigned(FEditForm) then
+      FEditForm := TfrmEditHotkey.Create(Self);
 
-      HMForm := HotMan.Forms.Find('Main');
-      if Assigned(HMForm) then
-      begin
-        Hotkey := FindHotkey(NormalItem, HMForm.Hotkeys);
-        if Assigned(Hotkey) then
-          TemplateHotkey.Shortcuts := Hotkey.Shortcuts;
-        for I := 0 to HMForm.Controls.Count - 1 do
+    ToolItem := FCurrentButton.ToolItem;
+    if ToolItem is TKASNormalItem then
+    begin
+      NormalItem := TKASNormalItem(ToolItem);
+      TemplateHotkey := THotkey.Create;
+      try
+        TemplateHotkey.Command := cHotKeyCommand;
+        SetValue(TemplateHotkey.Params, 'ToolItemID', NormalItem.ID);
+
+        HMForm := HotMan.Forms.Find('Main');
+        if Assigned(HMForm) then
         begin
-          Hotkey := FindHotkey(NormalItem, HMForm.Controls[I].Hotkeys);
+          Hotkey := FindHotkey(NormalItem, HMForm.Hotkeys);
           if Assigned(Hotkey) then
-          begin
             TemplateHotkey.Shortcuts := Hotkey.Shortcuts;
-            AddString(AControls, HMForm.Controls[I].Name);
+          for I := 0 to HMForm.Controls.Count - 1 do
+          begin
+            Hotkey := FindHotkey(NormalItem, HMForm.Controls[I].Hotkeys);
+            if Assigned(Hotkey) then
+            begin
+              TemplateHotkey.Shortcuts := Hotkey.Shortcuts;
+              AddString(AControls, HMForm.Controls[I].Name);
+            end;
           end;
         end;
-      end;
 
-      if FEditForm.Execute(True, 'Main', cHotKeyCommand, TemplateHotkey, AControls, [ehoHideParams]) then
-      begin
-        LoadCurrentButton;
-        FUpdateHotKey:= True;
+        if FEditForm.Execute(True, 'Main', cHotKeyCommand, TemplateHotkey, AControls, [ehoHideParams]) then
+        begin
+          LoadCurrentButton;
+          FUpdateHotKey:= True;
+        end;
+      finally
+        TemplateHotkey.Free;
       end;
-    finally
-      TemplateHotkey.Free;
     end;
   end;
 end;
@@ -1232,13 +1241,16 @@ var
   ToolItem: TKASToolItem;
   NormalItem: TKASNormalItem;
 begin
-  // Refresh icon on the toolbar.
-  ToolItem := FCurrentButton.ToolItem;
-  if ToolItem is TKASNormalItem then
+  if Assigned(FCurrentButton) then
   begin
-    NormalItem := TKASNormalItem(ToolItem);
-    NormalItem.Icon := Icon;
-    FCurrentButton.ToolBar.UpdateIcon(FCurrentButton);
+    // Refresh icon on the toolbar.
+    ToolItem := FCurrentButton.ToolItem;
+    if ToolItem is TKASNormalItem then
+    begin
+      NormalItem := TKASNormalItem(ToolItem);
+      NormalItem.Icon := Icon;
+      FCurrentButton.ToolBar.UpdateIcon(FCurrentButton);
+    end;
   end;
 end;
 
@@ -1789,7 +1801,8 @@ begin
 
       ACTION_WITH_CURRENT_BAR:
       begin
-        Toolbar := FCurrentButton.ToolBar;
+        if Assigned(FCurrentButton) then
+          Toolbar := FCurrentButton.ToolBar;
         if Toolbar = nil then
           ToolBar := GetTopToolbar;
       end;
@@ -1806,7 +1819,8 @@ begin
 
           IMPORT_IN_CURRENT_BAR_TO_NEW_SUB_BAR:
           begin
-            Toolbar := FCurrentButton.ToolBar;
+            if Assigned(FCurrentButton) then
+              Toolbar := FCurrentButton.ToolBar;
             if Toolbar = nil then
               ToolBar := GetTopToolbar;
           end;
