@@ -77,6 +77,8 @@ type
     FUnicode: Boolean;
     FSetTime: Boolean;
     FMachine: Boolean;
+    FShowHidden: String;
+    FCanAllocate: Boolean;
   private
     ConvertToUtf8: TConvertEncodingFunction;
     ConvertFromUtf8: TConvertUTF8ToEncodingFunc;
@@ -470,6 +472,15 @@ begin
         FTPCommand('OPTS UTF8 ON');
       end;
     end;
+    if not FMachine then
+    begin
+      if inherited List('-la', False) then
+        FShowHidden:= '-la'
+      else begin
+        DoStatus(False, 'Server does not seem to support LIST -a');
+      end;
+    end;
+    FCanAllocate:= (FTPCommand('ALLO') <> 500);
   end;
 end;
 
@@ -497,7 +508,7 @@ begin
     if FMachine then
       Result:= ListMachine(EmptyStr)
     else begin
-      Result:= inherited List(EmptyStr, NameList);
+      Result:= inherited List(FShowHidden, NameList);
     end;
     if (Result = False) and (FSock.WaitingData > 0) then
     begin
@@ -550,7 +561,7 @@ begin
     end;
     SendStream.FileSize := StorSize;
     SendStream.DoneSize := RestoreAt;
-    FTPCommand('ALLO ' + IntToStr(StorSize - RestoreAt));
+    if FCanAllocate then FTPCommand('ALLO ' + IntToStr(StorSize - RestoreAt));
     if FCanResume then
     begin
       if (FTPCommand('REST ' + IntToStr(RestoreAt)) div 100) <> 3 then
