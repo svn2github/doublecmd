@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.7.6 beta\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-10-23 21:35+0300\n"
+"PO-Revision-Date: 2016-12-04 00:05+0400\n"
 "Last-Translator: Alexander Koblov <alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -2000,11 +2000,11 @@ msgstr "Ко&дировка:"
 
 #: tfrmfinddlg.lblexcludedirectories.caption
 msgid "E&xclude subdirectories"
-msgstr "Искл&ючать подкаталоги"
+msgstr "Искл&ючить подкаталоги"
 
 #: tfrmfinddlg.lblexcludefiles.caption
 msgid "&Exclude files"
-msgstr "&Исключать файлы:"
+msgstr "&Исключить файлы:"
 
 #: tfrmfinddlg.lblfindfilemask.caption
 msgid "&File mask"
@@ -2241,7 +2241,7 @@ msgstr "Проверить ко&нтрольные суммы..."
 
 #: tfrmmain.actclearlogfile.caption
 msgid "Clear log file"
-msgstr "Очистить лог файл"
+msgstr "Очистить файл протокола"
 
 #: tfrmmain.actclearlogwindow.caption
 msgid "Clear log window"
@@ -2287,7 +2287,7 @@ msgstr "Колоночный вид"
 
 #: tfrmmain.actcomparecontents.caption
 msgid "Compare by &Contents"
-msgstr "Сравнивать п&о содержимому"
+msgstr "Сравнить п&о содержимому"
 
 #: tfrmmain.actcomparedirectories.caption
 msgctxt "TFRMMAIN.ACTCOMPAREDIRECTORIES.CAPTION"
@@ -2817,7 +2817,7 @@ msgstr "Открыть, используя системные ассоциаци
 
 #: tfrmmain.actshowbuttonmenu.caption
 msgid "Show button menu"
-msgstr "Показать кнопочное меню"
+msgstr "Показать панель инструментов"
 
 #: tfrmmain.actshowcmdlinehistory.caption
 msgid "Show command line history"
@@ -2831,7 +2831,7 @@ msgstr "Меню"
 #: tfrmmain.actshowsysfiles.caption
 msgctxt "TFRMMAIN.ACTSHOWSYSFILES.CAPTION"
 msgid "Show &Hidden/System Files"
-msgstr "По&казывать системные файлы"
+msgstr "По&казать скрытые/системные файлы"
 
 #: tfrmmain.actsortbyattr.caption
 msgid "Sort by &Attributes"
@@ -2859,7 +2859,7 @@ msgstr "Открыть список дисков"
 
 #: tfrmmain.actswitchignorelist.caption
 msgid "Enable/disable ignore list file to not show file names"
-msgstr "Функция исключений файловых имён: вкл/выкл"
+msgstr "Функция исключения имён файлов: вкл/выкл"
 
 #: tfrmmain.actsymlink.caption
 msgctxt "TFRMMAIN.ACTSYMLINK.CAPTION"
@@ -2930,7 +2930,7 @@ msgstr "Перейти к предыдущему элементу истории
 
 #: tfrmmain.actviewlogfile.caption
 msgid "View log file"
-msgstr "Просмотреть содержимое лог-файла"
+msgstr "Просмотреть содержимое файла протокола"
 
 #: tfrmmain.actvisithomepage.caption
 msgid "&Visit Double Commander Website"
@@ -3008,7 +3008,7 @@ msgstr ""
 
 #: tfrmmain.btnleftup.hint
 msgid "Go to parent directory"
-msgstr "Перейти в вышестоящий каталог"
+msgstr "Перейти в родительский каталог"
 
 #: tfrmmain.btnrightdirectoryhotlist.caption
 msgctxt "TFRMMAIN.BTNRIGHTDIRECTORYHOTLIST.CAPTION"
@@ -3443,7 +3443,7 @@ msgstr "Выбрать все категории по умолчанию"
 
 #: tfrmmaincommandsdlg.gbselection.caption
 msgid "Selection:"
-msgstr "Выбор:"
+msgstr "Выделенная:"
 
 #: tfrmmaincommandsdlg.lblcategory.caption
 msgid "&Categories:"
@@ -5130,7 +5130,7 @@ msgstr "При перетаскивании текста, генерироват
 
 #: tfrmoptionsdragdrop.cbshowconfirmationdialog.caption
 msgid "&Show confirmation dialog after drop"
-msgstr "По&казать диалог подтверждения после окончания перетаскивания"
+msgstr "По&казать диалог подтверждения при перетаскивании"
 
 #: tfrmoptionsdragdrop.gbtextdraganddroprelatedoptions.caption
 msgid "When drag && dropping text into panels:"
@@ -5884,7 +5884,7 @@ msgstr "Показ&ывать панель выбора вкладок в диа
 #: tfrmoptionsfileoperations.cbskipfileoperror.caption
 msgctxt "TFRMOPTIONSFILEOPERATIONS.CBSKIPFILEOPERROR.CAPTION"
 msgid "S&kip file operations errors and write them to log window"
-msgstr "Пропускать о&шибки при файловых операциях и выводить их в окно лога"
+msgstr "Пропускать о&шибки при файловых операциях и выводить их в окно протокола"
 
 #: tfrmoptionsfileoperations.dbtextsearch.caption
 msgid "Text search in files"
@@ -6117,7 +6117,7 @@ msgstr "За&гружать иконки после списка файлов"
 
 #: tfrmoptionsfilesviews.cbshowsystemfiles.caption
 msgid "Show s&ystem and hidden files"
-msgstr "Показывать систе&мные файлы"
+msgstr "Показывать систе&мные и скрытые файлы"
 
 #: tfrmoptionsfilesviews.cbspacemovesdown.caption
 msgctxt "TFRMOPTIONSFILESVIEWS.CBSPACEMOVESDOWN.CAPTION"
@@ -6565,11 +6565,11 @@ msgstr "Некоторые функции для выбора подходяще
 #: tfrmoptionslog.btnviewlogfile.hint
 msgctxt "tfrmoptionslog.btnviewlogfile.hint"
 msgid "View log file content"
-msgstr "Просмотреть содержимое файла отчёта"
+msgstr "Просмотреть содержимое файла протокола"
 
 #: tfrmoptionslog.cbincludedateinlogfilename.caption
 msgid "Include date in log filename"
-msgstr "Добавлять дату в имя файла отчёта"
+msgstr "Добавлять дату в имя файла протокола"
 
 #: tfrmoptionslog.cblogarcop.caption
 msgctxt "TFRMOPTIONSLOG.CBLOGARCOP.CAPTION"
@@ -6603,7 +6603,7 @@ msgstr "О&шибки"
 #: tfrmoptionslog.cblogfile.caption
 msgctxt "TFRMOPTIONSLOG.CBLOGFILE.CAPTION"
 msgid "C&reate a log file:"
-msgstr "Соз&дать файл отчёта:"
+msgstr "Соз&дать файл протокола:"
 
 #: tfrmoptionslog.cbloginfo.caption
 msgctxt "TFRMOPTIONSLOG.CBLOGINFO.CAPTION"
@@ -6666,7 +6666,7 @@ msgstr "&Удалить эскизы для отсутствующих файл�
 #: tfrmoptionsmisc.btnviewconfigfile.hint
 msgctxt "tfrmoptionsmisc.btnviewconfigfile.hint"
 msgid "View log file content"
-msgstr "Просмотреть содержимое файла отчёта"
+msgstr "Просмотреть содержимое файла протокола"
 
 #: tfrmoptionsmisc.chkgotoroot.caption
 msgid "Always &go to the root of a drive when changing drives"
@@ -6847,7 +6847,7 @@ msgstr "&Начало (имя должно начинаться с набран�
 #: tfrmoptionsquicksearchfilter.cbexactending.caption
 msgctxt "TFRMOPTIONSQUICKSEARCHFILTER.CBEXACTENDING.CAPTION"
 msgid "En&ding (last character before a typed dot . must match)"
-msgstr "&Конец (последние символы до набранной точки '.' должны совпадать)"
+msgstr "&Конец (последние символы до набранной точки \".\" должны совпадать)"
 
 #: tfrmoptionsquicksearchfilter.cgpoptions.caption
 msgctxt "TFRMOPTIONSQUICKSEARCHFILTER.CGPOPTIONS.CAPTION"
@@ -7838,7 +7838,7 @@ msgstr "Аа"
 
 #: tfrmquicksearch.sbcasesensitive.hint
 msgid "Case Sensitive"
-msgstr "Регистрозависимый"
+msgstr "Учитывать регистр"
 
 #: tfrmquicksearch.sbdirectories.caption
 msgid "D"
@@ -9210,7 +9210,7 @@ msgstr "Настроить файловые ассоциации"
 
 #: ulng.rsconfirmexecution
 msgid "Confirming command line and parameters"
-msgstr "Подтвердить командную строку и параметры"
+msgstr "Подтверждение командной строки и параметров"
 
 #: ulng.rscopynametemplate
 msgid "Copy (%d) %s"
@@ -9707,7 +9707,7 @@ msgstr "Диалог редактирования комментария"
 
 #: ulng.rshotkeycategorymain
 msgid "Main"
-msgstr "Основной"
+msgstr "Основные"
 
 #: ulng.rshotkeycategoryviewer
 msgctxt "ulng.rshotkeycategoryviewer"
@@ -10614,11 +10614,11 @@ msgstr "Стирание каталога %s"
 
 #: ulng.rsmsgmasterpassword
 msgid "Master Password"
-msgstr "Мастер пароль:"
+msgstr "Главный пароль:"
 
 #: ulng.rsmsgmasterpasswordenter
 msgid "Please enter the master password:"
-msgstr "Введите мастер пароль:"
+msgstr "Введите главный пароль:"
 
 #: ulng.rsmsgmiscellaneousmodifiedwanttosave
 msgid "Miscellaneous options have been modified. Do you want to save before to exit?"
@@ -10887,7 +10887,7 @@ msgid ""
 "Error! TC is still running but it should be closed for this operation.\n"
 "Close it and press OK or press CANCEL to abort.\n"
 msgstr ""
-"Ошибка! TC всё ещё запущен, но он должен быть закрыт для этой операции.\n"
+"Ошибка! TC всё ещё запущен, но для этой операции он должен быть закрыт.\n"
 "Закройте его и нажмите OK или нажмите ОТМЕНА для прекращения.\n"
 
 #: ulng.rsmsgtctoolbarnotfound
@@ -10914,7 +10914,7 @@ msgstr ""
 
 #: ulng.rsmsgthisisnowinclipboard
 msgid "\"%s\" is now in the clipboard"
-msgstr "\"%s\" скопирован в буфер обмена"
+msgstr "В буфер обмена скопировано: \"%s\""
 
 #: ulng.rsmsgtitleextnotinfiletype
 msgid "Extension of selected file is not in any recognized file types"
