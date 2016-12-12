@@ -102,7 +102,7 @@ begin
       end;
 
       WcxTestArchiveOperation.UpdateStatistics(WcxTestArchiveOperation.FStatistics);
-      WcxTestArchiveOperation.CheckOperationState;
+      if not WcxTestArchiveOperation.CheckOperationStateSafe then Exit(0);
     end;
   end;
 end;
@@ -244,11 +244,9 @@ begin
       FreeAndNil(Header);
     end;
 
-    WcxModule.CloseArchive(ArcHandle);
-
   finally
-    if Assigned(Files) then
-      FreeAndNil(Files);
+    WcxModule.CloseArchive(ArcHandle);
+    FreeAndNil(Files);
   end;
 end;
 
