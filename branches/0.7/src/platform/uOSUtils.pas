@@ -84,6 +84,12 @@ type
     constructor Create; reintroduce;
   end;
 
+{$IF DEFINED(MSWINDOWS) and DEFINED(FPC_HAS_CPSTRING)}
+  NativeString = UnicodeString;
+{$ELSE}
+  NativeString = String;
+{$ENDIF}
+
 function NtfsHourTimeDelay(const SourceName, TargetName: String): Boolean;
 function FileIsLinkToFolder(const FileName: String; out LinkTarget: String): Boolean;
 function FileIsLinkToDirectory(const FileName: String; Attr: TFileAttrs): Boolean;
@@ -199,6 +205,10 @@ function mbFileGetAttrNoLinks(const FileName: String): TFileAttrs;
    current locale then use short file name under Windows.
 }
 function mbFileNameToSysEnc(const LongPath: String): String;
+{en
+   Converts file name to native representation
+}
+function mbFileNameToNative(const FileName: String): NativeString; inline;
 function mbGetEnvironmentVariable(const sName: String): String;
 function mbSetEnvironmentVariable(const sName, sValue: String): Boolean;
 {en
@@ -232,7 +242,7 @@ uses
   fConfirmCommandLine, uLog, DCConvertEncoding
   {$IF DEFINED(MSWINDOWS)}
   , JwaWinCon, Windows, LazUTF8, uNTFSLinks, uMyWindows, JwaWinNetWk,
-    uShlObjAdditional, shlobj
+    uShlObjAdditional, shlobj, DCWindows
   {$ENDIF}
   {$IF DEFINED(UNIX)}
   , BaseUnix, Unix, uMyUnix, dl
@@ -1166,6 +1176,17 @@ end;
 {$ELSEIF DEFINED(UNIX)}
 begin
   Result:= SysToUTF8(GetHostName);
+end;
+{$ENDIF}
+
+function mbFileNameToNative(const FileName: String): NativeString;
+{$IF DEFINED(MSWINDOWS) and DEFINED(FPC_HAS_CPSTRING)}
+begin
+  Result:= UnicodeLongName(FileName);
+end;
+{$ELSE}
+begin
+  Result:= Utf8ToSys(FileName);
 end;
 {$ENDIF}
 

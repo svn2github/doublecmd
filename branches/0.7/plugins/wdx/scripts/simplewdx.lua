@@ -25,7 +25,14 @@ function ContentGetDetectString()
 end
 
 function ContentGetValue(FileName, FieldIndex, UnitIndex, flags)
-return "test"; --return string
+  if (FieldIndex == 0) then
+    return "FieldValue0"; -- return string
+  elseif (FieldIndex == 1) then
+    return "FieldValue1";
+  elseif (FieldIndex == 2) then
+    return "FieldValue2";
+  end
+  return nil; -- invalid
 end
 
 --function ContentGetSupportedFieldFlags(FieldIndex)
