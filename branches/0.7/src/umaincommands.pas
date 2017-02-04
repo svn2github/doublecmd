@@ -694,8 +694,9 @@ begin
     if not Panel.HasSelectedFiles then
     begin
       aFile:= Panel.CloneActiveFile;
-      if Assigned(aFile) then
-      begin
+      if not Assigned(aFile) then
+        Background:= True
+      else begin
         sName:= aFile.Name;
         FreeAndNil(aFile);
       end;
@@ -793,6 +794,7 @@ begin
           if not ChooseFileSource(TargetPage.FileView, aFile) then
             TargetPage.FileView.AddFileSource(SourcePage.FileView.FileSource,
                                               SourcePage.FileView.CurrentPath);
+          TargetPage.FileView.SetActiveFile(aFile.Name);
         except
           on e: EFileSourceException do
             MessageDlg('Error', e.Message, mtError, [mbOK], 0);
@@ -2814,12 +2816,16 @@ procedure TMainCommands.cm_Search(const Params: array of string);
 var
   TemplateName: String;
 begin
-  if Length(Params) > 0 then
-    TemplateName:= Params[0]
+  if not frmMain.ActiveFrame.FileSource.IsClass(TFileSystemFileSource) then
+    msgError(rsMsgErrNotSupported)
   else begin
-    TemplateName:= gSearchDefaultTemplate;
+    if Length(Params) > 0 then
+      TemplateName:= Params[0]
+    else begin
+      TemplateName:= gSearchDefaultTemplate;
+    end;
+    ShowFindDlg(frmMain.ActiveFrame, TemplateName);
   end;
-  ShowFindDlg(frmMain.ActiveFrame, TemplateName);
 end;
 
 procedure TMainCommands.cm_SyncDirs(const Params: array of string);
