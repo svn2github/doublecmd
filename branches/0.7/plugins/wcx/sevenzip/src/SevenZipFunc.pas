@@ -178,6 +178,7 @@ end;
 
 function ReadHeaderExW(hArcData : TArcHandle; var HeaderData: THeaderDataExW) : Integer; stdcall;
 var
+  FileNameW: UnicodeString;
   Item: TJclCompressionItem;
   Handle: TSevenZipHandle absolute hArcData;
 begin
@@ -185,13 +186,19 @@ begin
   begin
     if Index >= Count then Exit(E_END_ARCHIVE);
     Item:= FArchive.Items[Index];
-    HeaderData.FileName:= Item.PackedName;
+    FileNameW:= Item.PackedName;
     HeaderData.UnpSize:= Int64Rec(Item.FileSize).Lo;
     HeaderData.UnpSizeHigh:= Int64Rec(Item.FileSize).Hi;
     HeaderData.PackSize:= Int64Rec(Item.PackedSize).Lo;
     HeaderData.PackSizeHigh:= Int64Rec(Item.PackedSize).Hi;
     HeaderData.FileAttr:= Item.Attributes;
     WinToDosTime(Item.LastWriteTime, LongWord(HeaderData.FileTime));
+    // Special case for absolute file name
+    if (Length(FileNameW) > 0) and (FileNameW[1] = PathDelim) then
+      HeaderData.FileName:= Copy(FileNameW, 2, Length(FileNameW) - 1)
+    else begin
+      HeaderData.FileName:= FileNameW;
+    end;
     // Special case for BZip2, GZip and Xz archives
     if (HeaderData.FileName[0] = #0) then
     begin
@@ -513,17 +520,14 @@ begin
 end;
 
 function TSevenZipUpdate.Update: Integer;
-var
-  AllowCancel: Boolean;
 begin
   FArchive.OnProgress:= JclCompressionProgress;
-  AllowCancel:= not (FArchive is TJclUpdateArchive);
   while not Terminated do
   begin
     // Wait progress event
     FProgress.WaitFor(INFINITE);
     // If the user has clicked on Cancel, the function returns zero
-    FArchive.CancelCurrentOperation:= (ProcessDataProcT(PWideChar(FFileName), -FPercent) = 0) and AllowCancel;
+    FArchive.CancelCurrentOperation:= (ProcessDataProcT(PWideChar(FFileName), -FPercent) = 0);
     // Drop pause
     FPause.SetEvent;
   end;
