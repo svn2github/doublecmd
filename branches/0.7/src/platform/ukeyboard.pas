@@ -341,12 +341,37 @@ end;
 {$ENDIF}
 
 function GetKeyShiftStateEx: TShiftState;
+
   function IsKeyDown(Key: Integer): Boolean;
   begin
     Result := (GetKeyState(Key) and $8000)<>0;
   end;
+
+  procedure GetMouseButtonState;
+  var
+    bSwapButton: Boolean;
+  begin
+    bSwapButton:= GetSystemMetrics(SM_SWAPBUTTON) <> 0;
+    if IsKeyDown(VK_LBUTTON) then
+    begin
+      if bSwapButton then
+        Include(Result, ssRight)
+      else
+        Include(Result, ssLeft);
+    end;
+    if IsKeyDown(VK_RBUTTON) then
+    begin
+      if bSwapButton then
+        Include(Result, ssLeft)
+      else
+        Include(Result, ssRight);
+    end;
+  end;
+
 begin
   Result:=[];
+
+  GetMouseButtonState;
 
 {$IFDEF MSWINDOWS}
   if HasKeyboardAltGrKey then
