@@ -1,0 +1,1152 @@
+inherited frmOptionsDirectoryHotlist: TfrmOptionsDirectoryHotlist
+  Height = 658
+  Width = 730
+  ClientHeight = 658
+  ClientWidth = 730
+  Constraints.MinHeight = 520
+  Constraints.MinWidth = 600
+  ParentShowHint = False
+  ShowHint = True
+  DesignLeft = 185
+  DesignTop = 243
+  object gbDirectoryHotlist: TGroupBox[0]
+    Left = 6
+    Height = 646
+    Top = 6
+    Width = 718
+    Align = alClient
+    BorderSpacing.Around = 6
+    Caption = 'Directory Hotlist (reorder by drag && drop)'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ClientHeight = 626
+    ClientWidth = 714
+    Color = clForm
+    Constraints.MinHeight = 460
+    Constraints.MinWidth = 548
+    ParentColor = False
+    TabOrder = 0
+    object pnlClient: TPanel
+      AnchorSideLeft.Control = gbDirectoryHotlist
+      AnchorSideTop.Control = gbDirectoryHotlist
+      AnchorSideRight.Control = gbDirectoryHotlist
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = pnlBottom
+      Left = 6
+      Height = 524
+      Top = 6
+      Width = 702
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BevelOuter = bvNone
+      ClientHeight = 524
+      ClientWidth = 702
+      TabOrder = 0
+      object tvDirectoryHotlist: TTreeView
+        AnchorSideLeft.Control = pnlClient
+        AnchorSideTop.Control = pnlClient
+        AnchorSideRight.Control = gbHotlistOtherOptions
+        AnchorSideBottom.Control = pnlClient
+        AnchorSideBottom.Side = asrBottom
+        Left = 0
+        Height = 524
+        Top = 0
+        Width = 382
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        BorderSpacing.Right = 6
+        BackgroundColor = clForm
+        DragMode = dmAutomatic
+        HotTrack = True
+        MultiSelect = True
+        MultiSelectStyle = [msControlSelect, msShiftSelect, msVisibleOnly, msSiblingOnly]
+        ParentColor = True
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        SelectionColor = clBtnShadow
+        TabOrder = 0
+        ToolTips = False
+        OnDragDrop = tvDirectoryHotlistDragDrop
+        OnDragOver = tvDirectoryHotlistDragOver
+        OnEnter = tvDirectoryHotlistEnter
+        OnExit = tvDirectoryHotlistExit
+        OnSelectionChanged = tvDirectoryHotlistSelectionChanged
+        Options = [tvoAllowMultiselect, tvoAutoItemHeight, tvoHideSelection, tvoHotTrack, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot]
+      end
+      object pnlButtons: TPanel
+        AnchorSideLeft.Control = gbHotlistOtherOptions
+        AnchorSideTop.Control = pnlClient
+        AnchorSideRight.Control = pnlClient
+        AnchorSideRight.Side = asrBottom
+        Left = 388
+        Height = 161
+        Top = 0
+        Width = 314
+        Anchors = [akTop, akLeft, akRight]
+        BevelOuter = bvNone
+        ClientHeight = 161
+        ClientWidth = 314
+        Color = clForm
+        ParentColor = False
+        TabOrder = 1
+        OnResize = pnlButtonsResize
+        object btnInsert: TBitBtn
+          Tag = 1
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = pnlButtons
+          AnchorSideRight.Control = btnExport
+          Left = 8
+          Height = 25
+          Top = 0
+          Width = 150
+          Anchors = [akTop, akRight]
+          BorderSpacing.Right = 6
+          Caption = '&Insert...'
+          OnClick = btnActionClick
+          TabOrder = 0
+        end
+        object btnDelete: TBitBtn
+          Tag = 3
+          AnchorSideTop.Control = btnAdd
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = btnBackup
+          Left = 8
+          Height = 25
+          Top = 62
+          Width = 150
+          Anchors = [akTop, akRight]
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 6
+          Caption = 'De&lete...'
+          OnClick = btnActionClick
+          TabOrder = 2
+        end
+        object btnExport: TBitBtn
+          Tag = 4
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = pnlButtons
+          AnchorSideRight.Control = pnlButtons
+          AnchorSideRight.Side = asrBottom
+          Left = 164
+          Height = 25
+          Top = 0
+          Width = 150
+          Anchors = [akTop, akRight]
+          Caption = 'E&xport...'
+          OnClick = btnActionClick
+          TabOrder = 5
+        end
+        object btnImport: TBitBtn
+          Tag = 5
+          AnchorSideTop.Control = btnExport
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = pnlButtons
+          AnchorSideRight.Side = asrBottom
+          Left = 164
+          Height = 25
+          Top = 31
+          Width = 150
+          Anchors = [akTop, akRight]
+          BorderSpacing.Top = 6
+          Caption = 'Impo&rt...'
+          OnClick = btnActionClick
+          TabOrder = 6
+        end
+        object btnBackup: TBitBtn
+          Tag = 6
+          AnchorSideTop.Control = btnImport
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = pnlButtons
+          AnchorSideRight.Side = asrBottom
+          Left = 164
+          Height = 25
+          Top = 62
+          Width = 150
+          Anchors = [akTop, akRight]
+          BorderSpacing.Top = 6
+          Caption = 'Bac&kup...'
+          OnClick = btnActionClick
+          TabOrder = 7
+        end
+        object btnMiscellaneous: TBitBtn
+          Tag = 7
+          AnchorSideTop.Control = btnSort
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = btnHelp
+          Left = 8
+          Height = 25
+          Top = 124
+          Width = 150
+          Anchors = [akTop, akRight]
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 6
+          Caption = '&Miscellaneous...'
+          OnClick = btnActionClick
+          TabOrder = 4
+        end
+        object btnAdd: TBitBtn
+          Tag = 2
+          AnchorSideTop.Control = btnInsert
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = btnImport
+          Left = 8
+          Height = 25
+          Top = 31
+          Width = 150
+          Anchors = [akTop, akRight]
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 6
+          Caption = 'A&dd...'
+          OnClick = btnActionClick
+          TabOrder = 1
+        end
+        object btnSort: TBitBtn
+          Tag = 8
+          AnchorSideTop.Control = btnDelete
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = btnBackup
+          Left = 8
+          Height = 25
+          Top = 93
+          Width = 150
+          Anchors = [akTop, akRight]
+          BorderSpacing.Top = 6
+          BorderSpacing.Right = 6
+          Caption = '&Sort...'
+          OnClick = btnActionClick
+          TabOrder = 3
+        end
+        object btnHelp: TBitBtn
+          AnchorSideTop.Control = btnMiscellaneous
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = pnlButtons
+          AnchorSideRight.Side = asrBottom
+          Left = 164
+          Height = 25
+          Top = 124
+          Width = 150
+          Anchors = [akTop, akRight]
+          Caption = '&Help'
+          OnClick = btnHelpClick
+          TabOrder = 8
+        end
+      end
+      object rgWhereToAdd: TRadioGroup
+        AnchorSideLeft.Control = gbHotlistOtherOptions
+        AnchorSideTop.Control = pnlButtons
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = pnlClient
+        AnchorSideRight.Side = asrBottom
+        Left = 388
+        Height = 89
+        Top = 164
+        Width = 314
+        Anchors = [akTop, akLeft, akRight]
+        AutoFill = True
+        AutoSize = True
+        BorderSpacing.Top = 3
+        Caption = 'Addition from main panel'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.TopBottomSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 69
+        ClientWidth = 310
+        Items.Strings = (
+          'Add at beginning'
+          'Add at the end'
+          'Smart add'
+        )
+        TabOrder = 2
+      end
+      object gbHotlistOtherOptions: TGroupBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = rgWhereToAdd
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = pnlClient
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Side = asrBottom
+        Left = 388
+        Height = 114
+        Top = 253
+        Width = 314
+        Anchors = [akTop, akRight]
+        AutoSize = True
+        Caption = 'Other options'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.TopBottomSpacing = 6
+        ClientHeight = 94
+        ClientWidth = 310
+        Constraints.MinWidth = 314
+        TabOrder = 3
+        object cbAddTarget: TCheckBox
+          Left = 6
+          Height = 19
+          Top = 6
+          Width = 225
+          Caption = '&When adding directory, add also target'
+          TabOrder = 0
+        end
+        object cbFullExpandTree: TCheckBox
+          AnchorSideLeft.Control = cbAddTarget
+          AnchorSideTop.Control = cbAddTarget
+          AnchorSideTop.Side = asrBottom
+          Left = 6
+          Height = 19
+          Top = 27
+          Width = 121
+          BorderSpacing.Top = 2
+          Caption = 'Alwa&ys expand tree'
+          OnChange = cbFullExpandTreeChange
+          TabOrder = 1
+        end
+        object cbShowPathInPopup: TCheckBox
+          AnchorSideLeft.Control = cbAddTarget
+          AnchorSideTop.Control = cbFullExpandTree
+          AnchorSideTop.Side = asrBottom
+          Left = 6
+          Height = 19
+          Top = 48
+          Width = 161
+          BorderSpacing.Top = 2
+          Caption = 'In pop&up, show [path also]'
+          TabOrder = 2
+        end
+        object cbShowOnlyValidEnv: TCheckBox
+          AnchorSideLeft.Control = cbAddTarget
+          AnchorSideTop.Control = cbShowPathInPopup
+          AnchorSideTop.Side = asrBottom
+          Left = 6
+          Height = 19
+          Top = 69
+          Width = 223
+          BorderSpacing.Top = 2
+          Caption = 'Show only &valid environment variables'
+          TabOrder = 3
+        end
+      end
+    end
+    object pnlBottom: TPanel
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = gbDirectoryHotlist
+      AnchorSideBottom.Side = asrBottom
+      Left = 6
+      Height = 90
+      Top = 530
+      Width = 702
+      Anchors = [akLeft, akRight, akBottom]
+      AutoSize = True
+      BevelOuter = bvNone
+      ClientHeight = 90
+      ClientWidth = 702
+      TabOrder = 1
+      object lbleditHotDirName: TLabeledEdit
+        Tag = 1
+        AnchorSideTop.Control = pnlBottom
+        Left = 104
+        Height = 23
+        Top = 9
+        Width = 598
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 9
+        BorderSpacing.Bottom = 6
+        EditLabel.AnchorSideTop.Control = lbleditHotDirName
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = lbleditHotDirName
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 66
+        EditLabel.Height = 15
+        EditLabel.Top = 13
+        EditLabel.Width = 35
+        EditLabel.Caption = 'Name:'
+        EditLabel.ParentColor = False
+        EditLabel.ParentFont = False
+        LabelPosition = lpLeft
+        ParentFont = False
+        TabOrder = 0
+        OnChange = lbleditHotDirNameChange
+      end
+      object lbleditHotDirPath: TLabeledEdit
+        Tag = 2
+        AnchorSideTop.Control = cbSortHotDirPath
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = btnRelativePath
+        Left = 104
+        Height = 23
+        Top = 38
+        Width = 449
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 2
+        EditLabel.Tag = 2
+        EditLabel.AnchorSideTop.Control = lbleditHotDirPath
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = lbleditHotDirPath
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 74
+        EditLabel.Height = 15
+        EditLabel.Top = 42
+        EditLabel.Width = 27
+        EditLabel.Caption = 'Path:'
+        EditLabel.ParentColor = False
+        EditLabel.ParentFont = False
+        EditLabel.OnClick = anyRelativeAbsolutePathClick
+        LabelPosition = lpLeft
+        ParentFont = False
+        TabOrder = 1
+        OnChange = lbleditHotDirNameChange
+      end
+      object btnRelativePath: TSpeedButton
+        Tag = 2
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = lbleditHotDirPath
+        AnchorSideRight.Control = cbSortHotDirPath
+        AnchorSideBottom.Control = lbleditHotDirPath
+        AnchorSideBottom.Side = asrBottom
+        Left = 555
+        Height = 23
+        Hint = 'Some functions to select appropriate path'
+        Top = 38
+        Width = 23
+        Anchors = [akTop, akRight, akBottom]
+        BorderSpacing.Right = 2
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          20000000000000040000640000006400000000000000000000002C86D8702D88
+          D8A62D87D8EA2D88D8F72D88D8F72D88D8F72D88D8F72D88D8F72D88D8F72D88
+          D8F72D88D8F72D87D8F72D88D8F12C86D893FFFFFF00FFFFFF00338ED9E6DCF0
+          FAF0A7DDF4FD9EDBF4FF96DAF3FF8ED8F3FF86D7F3FF7FD4F2FF79D3F2FF72D2
+          F1FF6CD0F1FF69CFF1FFC2EAF8FE338ED9F0FFFFFF00FFFFFF003594DAF7EFFA
+          FEFFA1E9F9FF91E5F8FF81E1F7FF72DEF6FF63DAF5FF54D7F4FF47D3F3FF39D0
+          F2FF2ECDF1FF26CBF0FFCAF2FBFF3594DAF7FFFFFF00FFFFFF00369ADAF8F2FA
+          FDFFB3EDFAFFA4E9F9FF95E6F8FF85E2F7FF81E1F7FF7AE0F7FF7CE0F7FF62DA
+          F5FF54D6F3FF47D3F2FFE8F9FDFF3594DAFFFFFFFF00FFFFFF0036A1DAF9F6FC
+          FEFFC8F2FCFFB9EFFBFF94DFEFFF8CE4F8FF99CED3FF91D0D8FF82E1F7FF6DDD
+          F6FF61DAF5FF57D7F4FFE7F8FDFF3594DAFFFFFFFF00FFFFFF0037A6DAFAFEFF
+          FFFFF8FDFFFFF6FDFFFFF4F4F2FFE8FAFEFFB6D7D8FFAAC7C5FF92D8E4FF7DE0
+          F7FF72DDF6FF68DBF5FFE9F9FDFF3594DAFFFFFFFF00FFFFFF0035ABDAFAE8F6
+          FBFF7EC5EAFF4AA3DFFF5E97C2FF4DA3DEFFF2F1EDFFF3EFECFFEDE5DFFFEDEB
+          E8FFF1F9FDFFF0F9FDFFFFFFFFFF3594DAFFFFFFFF00FFFFFF0036AADAF2F1FA
+          FDFF94DEF5FF93DCF4FFACBFBFFFBC9F90FF64A1CFFF3594DAFF3594DAFF3594
+          DAFF3594DAFF3594DAFF3594DAFF3594DAFFFFFFFF00FFFFFF0035AFDAF0F7FC
+          FEFF8EE4F8FF91DEF5FF9FE0F5FFC5C7C2FFDFA583FFEDC8B3FFEDCDB8FFE9BE
+          A3FFD58E64FFEEFBFEFFFAFDFFF936AFDAD4FFFFFF00FFFFFF0036B3DAF8FDFE
+          FEFFFEFFFFFFFEFEFFFFFDFEFFFFFEFFFFFFE7D6C9FFE0A987FFEBC7B0FFDDA1
+          7CFFBCA595FF839DA5FC7BAEBEEC6395A58E81818117FFFFFF0034B4D9D05EC2
+          E1FA60C3E2FA60C3E2FA60C3E2FA5FC3E2FA3CB6DBDDD5B1968CDDAB8DF9C4AF
+          A3FFD5D5D5FFBBBBBBFFA6A6A6FFA0A0A0FF848484E482828262FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00969696029494
+          94C5CBCBCBFFD2D2D2FFC9C9C9FFD2D2D2FFC6C6C6FF858585E8FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009898
+          9855B2B2B2FFD6D6D6FF919191DA8E8E8EF5C0C0C0FF898989FDFFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009B9B
+          9B54B5B5B5FFE6E6E6FF949494EF929292AF8F8F8FA68D8D8D90FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009E9E
+          9E1B9C9C9CE4E1E1E1FFD2D2D2FF969696ABFFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF009E9E9E629D9D9DE89B9B9BF999999992FFFFFF00FFFFFF00
+        }
+        OnClick = anyRelativeAbsolutePathClick
+        ParentFont = False
+      end
+      object cbSortHotDirPath: TComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = lbleditHotDirName
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Side = asrBottom
+        Left = 580
+        Height = 23
+        Top = 38
+        Width = 122
+        Anchors = [akTop, akRight]
+        BorderSpacing.Bottom = 6
+        DropDownCount = 10
+        ItemHeight = 15
+        ItemIndex = 1
+        Items.Strings = (
+          'none'
+          'Name, a-z'
+          'Name, z-a'
+          'Ext, a-z'
+          'Ext, z-a'
+          'Size 9-0'
+          'Size 0-9'
+          'Date 9-0'
+          'Date 0-9'
+        )
+        OnChange = cbSortHotDirPathChange
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 3
+        Text = 'Name, a-z'
+      end
+      object lbleditHotDirTarget: TLabeledEdit
+        Tag = 3
+        AnchorSideTop.Control = cbSortHotDirTarget
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = btnRelativeTarget
+        Left = 104
+        Height = 23
+        Top = 67
+        Width = 449
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 2
+        EditLabel.Tag = 3
+        EditLabel.AnchorSideTop.Control = lbleditHotDirTarget
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = lbleditHotDirTarget
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 65
+        EditLabel.Height = 15
+        EditLabel.Top = 71
+        EditLabel.Width = 36
+        EditLabel.Caption = '&Target:'
+        EditLabel.ParentColor = False
+        EditLabel.ParentFont = False
+        EditLabel.OnClick = anyRelativeAbsolutePathClick
+        LabelPosition = lpLeft
+        ParentFont = False
+        TabOrder = 2
+        OnChange = lbleditHotDirNameChange
+      end
+      object btnRelativeTarget: TSpeedButton
+        Tag = 3
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = lbleditHotDirTarget
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = cbSortHotDirTarget
+        AnchorSideBottom.Side = asrBottom
+        Left = 555
+        Height = 23
+        Hint = 'Some functions to select appropriate target'
+        Top = 67
+        Width = 23
+        Anchors = [akTop, akRight]
+        BorderSpacing.Right = 2
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          20000000000000040000640000006400000000000000000000002C86D8702D88
+          D8A62D87D8EA2D88D8F72D88D8F72D88D8F72D88D8F72D88D8F72D88D8F72D88
+          D8F72D88D8F72D87D8F72D88D8F12C86D893FFFFFF00FFFFFF00338ED9E6DCF0
+          FAF0A7DDF4FD9EDBF4FF96DAF3FF8ED8F3FF86D7F3FF7FD4F2FF79D3F2FF72D2
+          F1FF6CD0F1FF69CFF1FFC2EAF8FE338ED9F0FFFFFF00FFFFFF003594DAF7EFFA
+          FEFFA1E9F9FF91E5F8FF81E1F7FF72DEF6FF63DAF5FF54D7F4FF47D3F3FF39D0
+          F2FF2ECDF1FF26CBF0FFCAF2FBFF3594DAF7FFFFFF00FFFFFF00369ADAF8F2FA
+          FDFFB3EDFAFFA4E9F9FF95E6F8FF85E2F7FF81E1F7FF7AE0F7FF7CE0F7FF62DA
+          F5FF54D6F3FF47D3F2FFE8F9FDFF3594DAFFFFFFFF00FFFFFF0036A1DAF9F6FC
+          FEFFC8F2FCFFB9EFFBFF94DFEFFF8CE4F8FF99CED3FF91D0D8FF82E1F7FF6DDD
+          F6FF61DAF5FF57D7F4FFE7F8FDFF3594DAFFFFFFFF00FFFFFF0037A6DAFAFEFF
+          FFFFF8FDFFFFF6FDFFFFF4F4F2FFE8FAFEFFB6D7D8FFAAC7C5FF92D8E4FF7DE0
+          F7FF72DDF6FF68DBF5FFE9F9FDFF3594DAFFFFFFFF00FFFFFF0035ABDAFAE8F6
+          FBFF7EC5EAFF4AA3DFFF5E97C2FF4DA3DEFFF2F1EDFFF3EFECFFEDE5DFFFEDEB
+          E8FFF1F9FDFFF0F9FDFFFFFFFFFF3594DAFFFFFFFF00FFFFFF0036AADAF2F1FA
+          FDFF94DEF5FF93DCF4FFACBFBFFFBC9F90FF64A1CFFF3594DAFF3594DAFF3594
+          DAFF3594DAFF3594DAFF3594DAFF3594DAFFFFFFFF00FFFFFF0035AFDAF0F7FC
+          FEFF8EE4F8FF91DEF5FF9FE0F5FFC5C7C2FFDFA583FFEDC8B3FFEDCDB8FFE9BE
+          A3FFD58E64FFEEFBFEFFFAFDFFF936AFDAD4FFFFFF00FFFFFF0036B3DAF8FDFE
+          FEFFFEFFFFFFFEFEFFFFFDFEFFFFFEFFFFFFE7D6C9FFE0A987FFEBC7B0FFDDA1
+          7CFFBCA595FF839DA5FC7BAEBEEC6395A58E81818117FFFFFF0034B4D9D05EC2
+          E1FA60C3E2FA60C3E2FA60C3E2FA5FC3E2FA3CB6DBDDD5B1968CDDAB8DF9C4AF
+          A3FFD5D5D5FFBBBBBBFFA6A6A6FFA0A0A0FF848484E482828262FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00969696029494
+          94C5CBCBCBFFD2D2D2FFC9C9C9FFD2D2D2FFC6C6C6FF858585E8FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009898
+          9855B2B2B2FFD6D6D6FF919191DA8E8E8EF5C0C0C0FF898989FDFFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009B9B
+          9B54B5B5B5FFE6E6E6FF949494EF929292AF8F8F8FA68D8D8D90FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009E9E
+          9E1B9C9C9CE4E1E1E1FFD2D2D2FF969696ABFFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF009E9E9E629D9D9DE89B9B9BF999999992FFFFFF00FFFFFF00
+        }
+        OnClick = anyRelativeAbsolutePathClick
+        ParentFont = False
+      end
+      object cbSortHotDirTarget: TComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = cbSortHotDirPath
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Side = asrBottom
+        Left = 580
+        Height = 23
+        Top = 67
+        Width = 122
+        Anchors = [akTop, akRight]
+        DropDownCount = 10
+        ItemHeight = 15
+        ItemIndex = 1
+        Items.Strings = (
+          'none'
+          'Name, a-z'
+          'Name, z-a'
+          'Ext, a-z'
+          'Ext, z-a'
+          'Size 9-0'
+          'Size 0-9'
+          'Date 9-0'
+          'Date 0-9'
+        )
+        OnChange = cbSortHotDirTargetChange
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 4
+        Text = 'Name, a-z'
+      end
+    end
+  end
+  object actList: TActionList[1]
+    left = 256
+    top = 336
+    object actInsertBrowsedDir: TAction
+      Tag = 1
+      Category = 'Edition'
+      Caption = 'Insert directory I will bro&wse to'
+      OnExecute = actInsertOrAddSomethingExecute
+    end
+    object actInsertTypedDir: TAction
+      Tag = 2
+      Category = 'Edition'
+      Caption = 'Insert directory I will type'
+      OnExecute = actInsertOrAddSomethingExecute
+      ShortCut = 120
+    end
+    object actInsertActiveFrameDir: TAction
+      Tag = 3
+      Category = 'Edition'
+      Caption = 'Insert directory of the &active frame'
+      OnExecute = actInsertOrAddSomethingExecute
+    end
+    object actInsertBothFrameDir: TAction
+      Tag = 4
+      Category = 'Edition'
+      Caption = 'Insert &directories of the active && inactive frames'
+      OnExecute = actInsertOrAddSomethingExecute
+    end
+    object actInsertSelectionsFromFrame: TAction
+      Tag = 9
+      Category = 'Edition'
+      Caption = 'Insert current &selected or active directories of active frame'
+      OnExecute = actInsertOrAddSomethingExecute
+    end
+    object actInsertCopyOfEntry: TAction
+      Tag = 7
+      Category = 'Edition'
+      Caption = 'Insert a copy of the selected entry'
+      OnExecute = actInsertOrAddSomethingExecute
+      ShortCut = 116
+    end
+    object actInsertSeparator: TAction
+      Tag = 5
+      Category = 'Edition'
+      Caption = 'Insert a separator'
+      OnExecute = actInsertOrAddSomethingExecute
+      ShortCut = 121
+    end
+    object actInsertSubMenu: TAction
+      Tag = 6
+      Category = 'Edition'
+      Caption = 'Insert sub menu'
+      OnExecute = actInsertOrAddSomethingExecute
+      ShortCut = 118
+    end
+    object actAddBrowsedDir: TAction
+      Tag = 17
+      Category = 'Edition'
+      Caption = 'Add directory I will bro&wse to'
+      OnExecute = actInsertOrAddSomethingExecute
+    end
+    object actAddTypedDir: TAction
+      Tag = 18
+      Category = 'Edition'
+      Caption = 'Add directory I will type'
+      OnExecute = actInsertOrAddSomethingExecute
+      ShortCut = 16504
+    end
+    object actAddActiveFrameDir: TAction
+      Tag = 19
+      Category = 'Edition'
+      Caption = 'Add directory of the &active frame'
+      OnExecute = actInsertOrAddSomethingExecute
+    end
+    object actAddBothFrameDir: TAction
+      Tag = 20
+      Category = 'Edition'
+      Caption = 'Add &directories of the active && inactive frames'
+      OnExecute = actInsertOrAddSomethingExecute
+    end
+    object actAddSelectionsFromFrame: TAction
+      Tag = 25
+      Category = 'Edition'
+      Caption = 'Add current &selected or active directories of active frame'
+      OnExecute = actInsertOrAddSomethingExecute
+    end
+    object actAddCopyOfEntry: TAction
+      Tag = 23
+      Category = 'Edition'
+      Caption = 'Add a copy of the selected entry'
+      OnExecute = actInsertOrAddSomethingExecute
+      ShortCut = 16500
+    end
+    object actAddSeparator: TAction
+      Tag = 21
+      Category = 'Edition'
+      Caption = 'Add a separator'
+      OnExecute = actInsertOrAddSomethingExecute
+      ShortCut = 16505
+    end
+    object actAddSubMenu: TAction
+      Tag = 22
+      Category = 'Edition'
+      Caption = 'Add a sub menu'
+      OnExecute = actInsertOrAddSomethingExecute
+      ShortCut = 16502
+    end
+    object actDeleteSelectedItem: TAction
+      Tag = 1
+      Category = 'Edition'
+      Caption = 'Delete selected item'
+      OnExecute = actDeleteSomethingExecute
+      ShortCut = 119
+    end
+    object actDeleteSubMenuKeepElem: TAction
+      Tag = 2
+      Category = 'Edition'
+      Caption = 'Delete just sub-menu but keep elements'
+      OnExecute = actDeleteSomethingExecute
+      ShortCut = 16503
+    end
+    object actDeleteSubMenuAndElem: TAction
+      Tag = 3
+      Category = 'Edition'
+      Caption = 'Delete sub-menu and all its elements'
+      OnExecute = actDeleteSomethingExecute
+      ShortCut = 24695
+    end
+    object actDeleteAll: TAction
+      Category = 'Edition'
+      Caption = 'Delete all!'
+      OnExecute = actDeleteAllExecute
+      ShortCut = 57463
+    end
+    object actMoveToPrevious: TAction
+      Category = 'Edition'
+      Caption = 'Move to previous'
+      OnExecute = actMoveToPreviousExecute
+      ShortCut = 16422
+    end
+    object actMoveToNext: TAction
+      Category = 'Edition'
+      Caption = 'Move to next'
+      OnExecute = actMoveToNextExecute
+      ShortCut = 16424
+    end
+    object actPaste: TAction
+      Category = 'Edition'
+      Caption = 'Paste what was cut'
+      Enabled = False
+      OnExecute = actPasteExecute
+      ShortCut = 24662
+    end
+    object actCut: TAction
+      Category = 'Edition'
+      Caption = 'Cut selection of entries'
+      OnExecute = actCutExecute
+      ShortCut = 24664
+    end
+    object actSearchAndReplaceInPath: TAction
+      Tag = 1
+      Category = 'Edition'
+      Caption = 'Search && replace in &path'
+      OnExecute = actSearchAndReplaceExecute
+    end
+    object actSearchAndReplaceInTargetPath: TAction
+      Tag = 2
+      Category = 'Edition'
+      Caption = 'Search && replace in &target path'
+      OnExecute = actSearchAndReplaceExecute
+    end
+    object actSearchAndReplaceInPathAndTarget: TAction
+      Tag = 3
+      Category = 'Edition'
+      Caption = 'Search && replace in both path and target'
+      OnExecute = actSearchAndReplaceExecute
+      ShortCut = 32886
+    end
+    object actFocusTreeWindow: TAction
+      Category = 'Navigation'
+      Caption = 'Focus tree window'
+      OnExecute = actFocusTreeWindowExecute
+      ShortCut = 113
+    end
+    object actGotoFirstItem: TAction
+      Category = 'Navigation'
+      Caption = 'Goto first item'
+      OnExecute = actGotoFirstItemExecute
+      ShortCut = 16420
+    end
+    object actGoToPreviousItem: TAction
+      Category = 'Navigation'
+      Caption = 'Go to previous item'
+      OnExecute = actGoToPreviousItemExecute
+      ShortCut = 38
+    end
+    object actGoToNextItem: TAction
+      Category = 'Navigation'
+      Caption = 'Go to next item'
+      OnExecute = actGoToNextItemExecute
+      ShortCut = 40
+    end
+    object actGotoLastItem: TAction
+      Category = 'Navigation'
+      Caption = 'Goto last item'
+      OnExecute = actGotoLastItemExecute
+      ShortCut = 16419
+    end
+    object actExpandItem: TAction
+      Category = 'Navigation'
+      Caption = 'Expand item'
+      OnExecute = actExpandItemExecute
+      ShortCut = 16423
+    end
+    object actOpenAllBranches: TAction
+      Category = 'Navigation'
+      Caption = 'Open all branches'
+      OnExecute = actOpenAllBranchesExecute
+    end
+    object actCollapseItem: TAction
+      Category = 'Navigation'
+      Caption = 'Collapse item'
+      OnExecute = actCollapseItemExecute
+      ShortCut = 16421
+    end
+    object actCollapseAll: TAction
+      Category = 'Navigation'
+      Caption = 'Collapse all'
+      OnExecute = actCollapseAllExecute
+    end
+    object actTweakPath: TAction
+      Tag = 2
+      Category = 'Edition'
+      Caption = 'Tweak path'
+      OnExecute = actTweakPathExecute
+      ShortCut = 24656
+    end
+    object actTweakTargetPath: TAction
+      Tag = 3
+      Category = 'Edition'
+      Caption = 'Tweak target path'
+      OnExecute = actTweakPathExecute
+      ShortCut = 24660
+    end
+  end
+  object pmInsertDirectoryHotlist: TPopupMenu[2]
+    left = 80
+    top = 56
+    object miInsertBrowsedDir: TMenuItem
+      Action = actInsertBrowsedDir
+    end
+    object miInsertTypedDir: TMenuItem
+      Action = actInsertTypedDir
+    end
+    object miInsertActiveFrameDir: TMenuItem
+      Action = actInsertActiveFrameDir
+    end
+    object miInsertBothFrameDir: TMenuItem
+      Action = actInsertBothFrameDir
+    end
+    object miInsertSelectionsFromFrame: TMenuItem
+      Action = actInsertSelectionsFromFrame
+    end
+    object miInsertCopyOfEntry: TMenuItem
+      Action = actInsertCopyOfEntry
+    end
+    object miSeparator1: TMenuItem
+      Caption = '-'
+    end
+    object miInsertSeparator: TMenuItem
+      Action = actInsertSeparator
+    end
+    object miInsertSubMenu: TMenuItem
+      Tag = 6
+      Action = actInsertSubMenu
+    end
+  end
+  object pmAddDirectoryHotlist: TPopupMenu[3]
+    left = 80
+    top = 112
+    object miAddBrowsedDir: TMenuItem
+      Action = actAddBrowsedDir
+    end
+    object miAddTypedDir: TMenuItem
+      Action = actAddTypedDir
+    end
+    object miAddActiveFrameDir: TMenuItem
+      Action = actAddActiveFrameDir
+    end
+    object miAddBothFrameDir: TMenuItem
+      Action = actAddBothFrameDir
+    end
+    object miAddSelectionsFromFrame: TMenuItem
+      Action = actAddSelectionsFromFrame
+    end
+    object miAddCopyOfEntry: TMenuItem
+      Action = actAddCopyOfEntry
+    end
+    object miSeparator2: TMenuItem
+      Caption = '-'
+    end
+    object miAddSeparator: TMenuItem
+      Action = actAddSeparator
+    end
+    object miAddSubMenu: TMenuItem
+      Tag = 6
+      Action = actAddSubMenu
+    end
+  end
+  object pmDeleteDirectoryHotlist: TPopupMenu[4]
+    left = 80
+    top = 168
+    object miDeleteSelectedItem: TMenuItem
+      Tag = 1
+      Action = actDeleteSelectedItem
+    end
+    object miSeparator3: TMenuItem
+      Caption = '-'
+    end
+    object miDeleteSubMenuKeepElem: TMenuItem
+      Tag = 2
+      Action = actDeleteSubMenuKeepElem
+    end
+    object miDeleteSubMenuAndElem: TMenuItem
+      Tag = 3
+      Action = actDeleteSubMenuAndElem
+    end
+    object miSeparator4: TMenuItem
+      Caption = '-'
+    end
+    object miDeleteAll: TMenuItem
+      Action = actDeleteAll
+    end
+  end
+  object pmSortDirectoryHotlist: TPopupMenu[5]
+    left = 80
+    top = 224
+    object miSortSingleGroup: TMenuItem
+      Tag = 1
+      Caption = '...single &group of item(s) only'
+      OnClick = miSortDirectoryHotlistClick
+    end
+    object miCurrentLevelOfItemOnly: TMenuItem
+      Tag = 2
+      Caption = '...current le&vel of item(s) selected only'
+      OnClick = miSortDirectoryHotlistClick
+    end
+    object miSortSingleSubMenu: TMenuItem
+      Tag = 3
+      Caption = '...&content of submenu(s) selected, no sublevel'
+      OnClick = miSortDirectoryHotlistClick
+    end
+    object miSortSubMenuAndSubLevel: TMenuItem
+      Tag = 4
+      Caption = '...content of submenu(s) selected and &all sublevels'
+      OnClick = miSortDirectoryHotlistClick
+    end
+    object miSortEverything: TMenuItem
+      Tag = 5
+      Caption = '...everything, from A to &Z!'
+      OnClick = miSortDirectoryHotlistClick
+    end
+  end
+  object pmMiscellaneousDirectoryHotlist: TPopupMenu[6]
+    left = 80
+    top = 280
+    object miTestResultingHotlistMenu: TMenuItem
+      Caption = 'Test resultin&g menu'
+      OnClick = miTestResultingHotlistMenuClick
+    end
+    object miSeparator5: TMenuItem
+      Caption = '-'
+    end
+    object miNavigate: TMenuItem
+      Caption = '&Navigate...'
+      object miFocusTreeWindow: TMenuItem
+        Action = actFocusTreeWindow
+      end
+      object miSeparator10: TMenuItem
+        Caption = '-'
+      end
+      object miGotoFirstItem: TMenuItem
+        Action = actGotoFirstItem
+      end
+      object miGoToPreviousItem: TMenuItem
+        Action = actGoToPreviousItem
+      end
+      object miGoToNextItem: TMenuItem
+        Action = actGoToNextItem
+      end
+      object miGotoLastItem: TMenuItem
+        Action = actGotoLastItem
+      end
+      object miSeparator11: TMenuItem
+        Caption = '-'
+      end
+      object miExpandItem: TMenuItem
+        Action = actExpandItem
+      end
+      object miOpenAllBranches: TMenuItem
+        Action = actOpenAllBranches
+      end
+      object miCollapseItem: TMenuItem
+        Action = actCollapseItem
+      end
+      object miCollapseAll: TMenuItem
+        Action = actCollapseAll
+      end
+      object miSeparator12: TMenuItem
+        Caption = '-'
+      end
+      object miMoveToPrevious: TMenuItem
+        Action = actMoveToPrevious
+      end
+      object miMoveToNext: TMenuItem
+        Action = actMoveToNext
+      end
+    end
+    object miSeparator6: TMenuItem
+      Caption = '-'
+    end
+    object miCut: TMenuItem
+      Action = actCut
+    end
+    object miPaste: TMenuItem
+      Action = actPaste
+    end
+    object miSeparator7: TMenuItem
+      Caption = '-'
+    end
+    object miSearchAndReplace: TMenuItem
+      Caption = 'Search and &replace...'
+      object miSearchAndReplaceInPath: TMenuItem
+        Action = actSearchAndReplaceInPath
+      end
+      object miSearchAndReplaceInTargetPath: TMenuItem
+        Action = actSearchAndReplaceInTargetPath
+      end
+      object miSearchInReplaceInBothPaths: TMenuItem
+        Action = actSearchAndReplaceInPathAndTarget
+      end
+    end
+    object miSeparator8: TMenuItem
+      Caption = '-'
+    end
+    object miTweakPath: TMenuItem
+      Action = actTweakPath
+      Caption = 'Tweak &path'
+    end
+    object miTweakTargetPath: TMenuItem
+      Action = actTweakTargetPath
+      Caption = 'Tweak &target path'
+    end
+    object miSeparator9: TMenuItem
+      Caption = '-'
+    end
+    object miDetectIfPathExist: TMenuItem
+      Tag = 1
+      Caption = 'Scan all &hotdir''s path to validate the ones that actually exist'
+      OnClick = miDetectIfPathExistClick
+    end
+    object miDetectIfPathTargetExist: TMenuItem
+      Tag = 2
+      Caption = '&Scan all hotdir''s path && target to validate the ones that actually exist'
+      OnClick = miDetectIfPathExistClick
+    end
+  end
+  object pmExportDirectoryHotlist: TPopupMenu[7]
+    left = 256
+    top = 56
+    object miExportToHotlistFile: TMenuItem
+      Tag = 1
+      Caption = 'to a Directory &Hotlist file (.hotlist)'
+      OnClick = miExportToAnythingClick
+    end
+    object miSeparator13: TMenuItem
+      Caption = '-'
+    end
+    object miExportToTotalCommanderk: TMenuItem
+      Caption = 'to a "wincmd.ini" of TC (&keep existing)'
+      OnClick = miExportToAnythingClick
+    end
+    object miExportToTotalCommandernk: TMenuItem
+      Tag = 128
+      Caption = 'to a "wincmd.ini" of TC (&erase existing)'
+      OnClick = miExportToAnythingClick
+    end
+    object miGotoConfigureTCInfo1: TMenuItem
+      Caption = 'Go to &configure TC related info'
+      OnClick = miGotoConfigureTCInfoClick
+    end
+  end
+  object pmImportDirectoryHotlist: TPopupMenu[8]
+    left = 256
+    top = 112
+    object miImportFromHotlistFile: TMenuItem
+      Tag = 1
+      Caption = 'from a Directory &Hotlist file (.hotlist)'
+      OnClick = miImportFromAnythingClick
+    end
+    object miSeparator14: TMenuItem
+      Caption = '-'
+    end
+    object miImportTotalCommander: TMenuItem
+      Caption = 'from "&wincmd.ini" of TC'
+      OnClick = miImportFromAnythingClick
+    end
+    object miGotoConfigureTCInfo2: TMenuItem
+      Caption = 'Go to &configure TC related info'
+      OnClick = miGotoConfigureTCInfoClick
+    end
+  end
+  object pmBackupDirectoryHotlist: TPopupMenu[9]
+    left = 256
+    top = 168
+    object miSaveBackupHotlist: TMenuItem
+      Tag = 2
+      Caption = '&Save a backup of current Directory Hotlist'
+      OnClick = miExportToAnythingClick
+    end
+    object miRestoreBackupHotlist: TMenuItem
+      Tag = 2
+      Caption = '&Restore a backup of Directory Hotlist'
+      OnClick = miImportFromAnythingClick
+    end
+  end
+  object pmHotDirTestMenu: TPopupMenu[10]
+    left = 80
+    top = 336
+    object miHotDirTestMenu: TMenuItem
+      Caption = 'HotDirTestMenu'
+    end
+  end
+  object pmPathHelper: TPopupMenu[11]
+    left = 256
+    top = 504
+  end
+  object OpenDialog: TOpenDialog[12]
+    DefaultExt = '.hotlist'
+    Filter = 'Directory Hotlist files|*.hotlist|.xml Config files|*.xml|Any files|*.*'
+    Options = [ofPathMustExist, ofFileMustExist, ofEnableSizing, ofViewDetail]
+    left = 80
+    top = 504
+  end
+  object SaveDialog: TSaveDialog[13]
+    DefaultExt = '.hotlist'
+    Filter = 'Directory Hotlist|*.hotlist'
+    Options = [ofOverwritePrompt, ofPathMustExist, ofEnableSizing, ofViewDetail]
+    left = 80
+    top = 448
+  end
+end

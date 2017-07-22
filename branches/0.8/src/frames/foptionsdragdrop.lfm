@@ -1,0 +1,121 @@
+inherited frmOptionsDragDrop: TfrmOptionsDragDrop
+  Height = 467
+  Width = 845
+  ChildSizing.LeftRightSpacing = 6
+  ChildSizing.TopBottomSpacing = 6
+  ClientHeight = 467
+  ClientWidth = 845
+  DesignLeft = 65
+  DesignTop = 245
+  object cbShowConfirmationDialog: TCheckBox[0]
+    Left = 8
+    Height = 19
+    Top = 8
+    Width = 212
+    Caption = '&Show confirmation dialog after drop'
+    TabOrder = 0
+  end
+  object gbTextDragAndDropRelatedOptions: TGroupBox[1]
+    AnchorSideLeft.Control = cbShowConfirmationDialog
+    AnchorSideTop.Control = cbShowConfirmationDialog
+    AnchorSideTop.Side = asrBottom
+    Left = 8
+    Height = 218
+    Top = 39
+    Width = 488
+    AutoSize = True
+    BorderSpacing.Top = 12
+    Caption = 'When drag && dropping text into panels:'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ClientHeight = 198
+    ClientWidth = 484
+    TabOrder = 1
+    Visible = False
+    object lblMostDesiredTextFormat1: TLabel
+      Left = 6
+      Height = 15
+      Top = 6
+      Width = 324
+      Caption = 'Place the most desired format on top of list (use dag && drop):'
+      ParentColor = False
+    end
+    object lblMostDesiredTextFormat2: TLabel
+      AnchorSideLeft.Control = lblMostDesiredTextFormat1
+      AnchorSideTop.Control = lblMostDesiredTextFormat1
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 15
+      Top = 21
+      Width = 354
+      Caption = '(if the most desired is not present, we''ll take second one and so on)'
+      ParentColor = False
+    end
+    object lbMostDesiredTextFormat: TListBox
+      AnchorSideLeft.Control = lblMostDesiredTextFormat1
+      AnchorSideTop.Control = lblMostDesiredTextFormat2
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 72
+      Top = 36
+      Width = 208
+      DragMode = dmAutomatic
+      Items.Strings = (
+        'Rich test'
+        'HTML text'
+        'Unicode text'
+        'ANSI text'
+      )
+      ItemHeight = 15
+      OnDragDrop = lbMostDesiredTextFormatDragDrop
+      OnDragOver = lbMostDesiredTextFormatDragOver
+      ScrollWidth = 190
+      TabOrder = 0
+    end
+    object cbDragAndDropAskFormatEachTime: TCheckBox
+      AnchorSideLeft.Control = lblMostDesiredTextFormat1
+      AnchorSideTop.Control = lbMostDesiredTextFormat
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 19
+      Top = 108
+      Width = 358
+      Caption = 'From all the supported formats, ask which one to use every time'
+      TabOrder = 1
+    end
+    object cbDragAndDropTextAutoFilename: TCheckBox
+      AnchorSideLeft.Control = lblMostDesiredTextFormat1
+      AnchorSideTop.Control = lblWarningForAskFormat
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 19
+      Top = 154
+      Width = 472
+      BorderSpacing.Top = 12
+      Caption = 'When dropping text, generate filename automatically (otherwise will prompt the user)'
+      TabOrder = 2
+    end
+    object cbDragAndDropSaveUnicodeTextInUFT8: TCheckBox
+      AnchorSideLeft.Control = lblMostDesiredTextFormat1
+      AnchorSideTop.Control = cbDragAndDropTextAutoFilename
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 19
+      Top = 173
+      Width = 413
+      Caption = 'When saving Unicode text, save it in UTF8 format (will be UTF16 otherwise)'
+      TabOrder = 3
+    end
+    object lblWarningForAskFormat: TLabel
+      AnchorSideLeft.Control = lblMostDesiredTextFormat1
+      AnchorSideTop.Control = cbDragAndDropAskFormatEachTime
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 15
+      Top = 127
+      Width = 389
+      Caption = '(will not work with some source application, so try to uncheck if problem)'
+      ParentColor = False
+    end
+  end
+end

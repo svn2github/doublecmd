@@ -1,0 +1,157 @@
+inherited frmOptionsColumnsView: TfrmOptionsColumnsView
+  Height = 344
+  Width = 659
+  ClientHeight = 344
+  ClientWidth = 659
+  DesignTop = 20
+  object grpAutosizeColumns: TGroupBox[0]
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = gbShowGrid
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 84
+    Top = 88
+    Width = 647
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Around = 6
+    Caption = 'Auto-size columns'
+    ChildSizing.LeftRightSpacing = 12
+    ChildSizing.TopBottomSpacing = 6
+    ClientHeight = 64
+    ClientWidth = 643
+    TabOrder = 1
+    object chkAutoFillColumns: TCheckBox
+      AnchorSideTop.Side = asrBottom
+      Left = 12
+      Height = 19
+      Top = 6
+      Width = 111
+      Caption = 'A&uto fill columns'
+      TabOrder = 0
+    end
+    object lblAutoSizeColumn: TLabel
+      AnchorSideLeft.Control = chkAutoFillColumns
+      AnchorSideTop.Control = cmbAutoSizeColumn
+      AnchorSideTop.Side = asrCenter
+      Left = 12
+      Height = 15
+      Top = 39
+      Width = 95
+      Caption = 'Auto si&ze column:'
+      FocusControl = cmbAutoSizeColumn
+      ParentColor = False
+    end
+    object cmbAutoSizeColumn: TComboBox
+      AnchorSideLeft.Control = lblAutoSizeColumn
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = chkAutoFillColumns
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = grpAutosizeColumns
+      AnchorSideRight.Side = asrBottom
+      Left = 119
+      Height = 23
+      Top = 35
+      Width = 512
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 12
+      BorderSpacing.Top = 10
+      BorderSpacing.Right = 10
+      ItemHeight = 15
+      Items.Strings = (
+        'First'
+        'Last'
+      )
+      Style = csDropDownList
+      TabOrder = 1
+    end
+  end
+  object gbShowGrid: TGroupBox[1]
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 76
+    Top = 6
+    Width = 647
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Around = 6
+    Caption = 'Show grid'
+    ChildSizing.LeftRightSpacing = 12
+    ChildSizing.TopBottomSpacing = 6
+    ClientHeight = 56
+    ClientWidth = 643
+    TabOrder = 0
+    object cbGridVertLine: TCheckBox
+      AnchorSideLeft.Control = gbShowGrid
+      AnchorSideTop.Control = gbShowGrid
+      Left = 12
+      Height = 19
+      Top = 6
+      Width = 86
+      Caption = '&Vertical lines'
+      OnChange = cbGridVertLineChange
+      TabOrder = 0
+    end
+    object cbGridHorzLine: TCheckBox
+      AnchorSideLeft.Control = gbShowGrid
+      AnchorSideTop.Control = cbGridVertLine
+      AnchorSideTop.Side = asrBottom
+      Left = 12
+      Height = 19
+      Top = 31
+      Width = 102
+      BorderSpacing.Top = 6
+      Caption = '&Horizontal lines'
+      TabOrder = 1
+    end
+  end
+  object grpMisc: TGroupBox[2]
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = grpAutosizeColumns
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 76
+    Top = 178
+    Width = 647
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Around = 6
+    ChildSizing.LeftRightSpacing = 12
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 56
+    ClientWidth = 643
+    TabOrder = 2
+    object cbCutTextToColWidth: TCheckBox
+      AnchorSideLeft.Control = grpMisc
+      AnchorSideTop.Control = grpMisc
+      Left = 12
+      Height = 19
+      Top = 6
+      Width = 152
+      Caption = 'Cut &text to column width'
+      TabOrder = 0
+    end
+    object cbExtendCellWidth: TCheckBox
+      AnchorSideLeft.Control = grpMisc
+      AnchorSideTop.Control = cbCutTextToColWidth
+      AnchorSideTop.Side = asrBottom
+      Left = 12
+      Height = 19
+      Top = 31
+      Width = 276
+      BorderSpacing.Top = 6
+      Caption = '&Extend cell width if text is not fitting into column'
+      OnChange = cbExtendCellWidthChange
+      TabOrder = 1
+    end
+  end
+end

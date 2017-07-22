@@ -1,0 +1,781 @@
+object frmFileProperties: TfrmFileProperties
+  Left = 764
+  Height = 471
+  Top = 123
+  Width = 458
+  ActiveControl = pcPageControl
+  Caption = 'Properties'
+  ClientHeight = 471
+  ClientWidth = 458
+  Constraints.MinHeight = 432
+  Constraints.MinWidth = 458
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poScreenCenter
+  SessionProperties = 'Height;Width'
+  LCLVersion = '1.6.0.4'
+  object pcPageControl: TPageControl
+    AnchorSideBottom.Control = gbOwner
+    Left = 8
+    Height = 295
+    Top = 8
+    Width = 440
+    ActivePage = tsProperties
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 6
+    TabIndex = 0
+    TabOrder = 0
+    object tsProperties: TTabSheet
+      Caption = 'Properties'
+      ClientHeight = 267
+      ClientWidth = 436
+      object pnlData: TPanel
+        Left = 0
+        Height = 267
+        Top = 0
+        Width = 436
+        Align = alClient
+        BevelOuter = bvNone
+        ChildSizing.LeftRightSpacing = 10
+        ChildSizing.TopBottomSpacing = 10
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 2
+        ClientHeight = 267
+        ClientWidth = 436
+        Color = clForm
+        ParentColor = False
+        TabOrder = 0
+        object pnlIcon: TPanel
+          Left = 10
+          Height = 32
+          Top = 12
+          Width = 116
+          BevelOuter = bvNone
+          ClientHeight = 32
+          ClientWidth = 116
+          TabOrder = 0
+          object imgFileIcon: TImage
+            Left = 0
+            Height = 32
+            Top = 0
+            Width = 32
+          end
+        end
+        object lblFileName: TLabel
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 136
+          Height = 32
+          Top = 12
+          Width = 19
+          BorderSpacing.Left = 10
+          BorderSpacing.Top = 12
+          BorderSpacing.Right = 10
+          Caption = '???'
+          Layout = tlCenter
+          ParentColor = False
+          ShowAccelChar = False
+        end
+        object lblFolderStr: TLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 10
+          Height = 18
+          Top = 64
+          Width = 116
+          BorderSpacing.Top = 20
+          Caption = 'Path:'
+          ParentColor = False
+        end
+        object lblFolder: TLabel
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 136
+          Height = 18
+          Top = 64
+          Width = 19
+          BorderSpacing.Top = 6
+          Caption = '???'
+          ParentColor = False
+          ShowAccelChar = False
+        end
+        object lblTypeStr: TLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 10
+          Height = 18
+          Top = 88
+          Width = 116
+          BorderSpacing.Top = 6
+          Caption = 'Type:'
+          ParentColor = False
+        end
+        object lblType: TLabel
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 136
+          Height = 18
+          Top = 88
+          Width = 19
+          BorderSpacing.Top = 6
+          Caption = '???'
+          ParentColor = False
+          ShowAccelChar = False
+        end
+        object lblSymlinkStr: TLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 10
+          Height = 18
+          Top = 112
+          Width = 116
+          BorderSpacing.Top = 6
+          Caption = 'Symlink to:'
+          ParentColor = False
+        end
+        object lblSymlink: TLabel
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 136
+          Height = 18
+          Top = 112
+          Width = 19
+          BorderSpacing.Top = 6
+          Caption = '???'
+          ParentColor = False
+          ShowAccelChar = False
+        end
+        object lblSizeStr: TLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 10
+          Height = 18
+          Top = 136
+          Width = 116
+          BorderSpacing.Top = 6
+          Caption = 'Size:'
+          ParentColor = False
+        end
+        object lblSize: TLabel
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 136
+          Height = 18
+          Top = 136
+          Width = 19
+          BorderSpacing.Top = 6
+          Caption = '???'
+          ParentColor = False
+          ShowAccelChar = False
+        end
+        object lblContainsStr: TLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 10
+          Height = 18
+          Top = 160
+          Width = 116
+          BorderSpacing.Top = 6
+          Caption = 'Contains:'
+          ParentColor = False
+        end
+        object lblContains: TLabel
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 136
+          Height = 18
+          Top = 160
+          Width = 19
+          BorderSpacing.Top = 6
+          Caption = '???'
+          ParentColor = False
+          ShowAccelChar = False
+        end
+        object lblLastAccessStr: TLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 10
+          Height = 18
+          Top = 190
+          Width = 116
+          BorderSpacing.Top = 12
+          Caption = 'Last access:'
+          ParentColor = False
+        end
+        object lblLastAccess: TLabel
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 136
+          Height = 18
+          Top = 190
+          Width = 19
+          BorderSpacing.Top = 12
+          Caption = '???'
+          ParentColor = False
+          ShowAccelChar = False
+        end
+        object lblLastModifStr: TLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 10
+          Height = 18
+          Top = 214
+          Width = 116
+          BorderSpacing.Top = 6
+          Caption = 'Last modification:'
+          ParentColor = False
+        end
+        object lblLastModif: TLabel
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 136
+          Height = 18
+          Top = 214
+          Width = 19
+          BorderSpacing.Top = 6
+          Caption = '???'
+          ParentColor = False
+          ShowAccelChar = False
+        end
+        object lblLastStChangeStr: TLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 10
+          Height = 18
+          Top = 238
+          Width = 116
+          BorderSpacing.Top = 6
+          Caption = 'Last status change:'
+          ParentColor = False
+        end
+        object lblLastStChange: TLabel
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 136
+          Height = 18
+          Top = 238
+          Width = 19
+          BorderSpacing.Top = 6
+          Caption = '???'
+          ParentColor = False
+          ShowAccelChar = False
+        end
+      end
+    end
+    object tsAttributes: TTabSheet
+      Caption = 'Attributes'
+      ClientHeight = 267
+      ClientWidth = 436
+      object lblFileStr: TLabel
+        AnchorSideTop.Control = tsAttributes
+        Left = 8
+        Height = 18
+        Top = 12
+        Width = 58
+        BorderSpacing.Top = 12
+        Caption = 'File name'
+        ParentColor = False
+      end
+      object lblFile: TLabel
+        AnchorSideTop.Control = tsAttributes
+        Left = 104
+        Height = 18
+        Top = 12
+        Width = 58
+        BorderSpacing.Top = 12
+        Caption = 'File name'
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblAttrOwnerStr: TLabel
+        AnchorSideTop.Control = cbReadOwner
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 18
+        Top = 71
+        Width = 42
+        Caption = 'Owner'
+        ParentColor = False
+      end
+      object lblWrite: TLabel
+        AnchorSideTop.Control = DividerBevel1
+        AnchorSideTop.Side = asrBottom
+        Left = 176
+        Height = 18
+        Top = 50
+        Width = 33
+        Caption = 'Write'
+        ParentColor = False
+      end
+      object lblRead: TLabel
+        AnchorSideTop.Control = DividerBevel1
+        AnchorSideTop.Side = asrBottom
+        Left = 104
+        Height = 18
+        Top = 50
+        Width = 30
+        Caption = 'Read'
+        ParentColor = False
+      end
+      object lblExec: TLabel
+        AnchorSideTop.Control = DividerBevel1
+        AnchorSideTop.Side = asrBottom
+        Left = 240
+        Height = 18
+        Top = 50
+        Width = 48
+        Caption = 'Execute'
+        ParentColor = False
+      end
+      object lblAttrGroupStr: TLabel
+        AnchorSideTop.Control = cbReadGroup
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 18
+        Top = 90
+        Width = 39
+        Caption = 'Group'
+        ParentColor = False
+      end
+      object lblAttrOtherStr: TLabel
+        AnchorSideTop.Control = cbReadOther
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 18
+        Top = 109
+        Width = 37
+        Caption = 'Other'
+        ParentColor = False
+      end
+      object lblAttrTextStr: TLabel
+        AnchorSideLeft.Control = edtOctal
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = edtOctal
+        AnchorSideTop.Side = asrCenter
+        Left = 204
+        Height = 18
+        Top = 206
+        Width = 30
+        BorderSpacing.Left = 12
+        BorderSpacing.Top = 6
+        Caption = 'Text:'
+        ParentColor = False
+      end
+      object lblAttrText: TLabel
+        AnchorSideLeft.Control = lblAttrTextStr
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = lblAttrTextStr
+        AnchorSideTop.Side = asrCenter
+        Left = 242
+        Height = 18
+        Top = 206
+        Width = 45
+        BorderSpacing.Left = 8
+        Caption = '-----------'
+        ParentColor = False
+        ParentFont = False
+      end
+      object lblAttrBitsStr: TLabel
+        AnchorSideTop.Control = cbSuid
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 18
+        Top = 147
+        Width = 26
+        Caption = 'Bits:'
+        ParentColor = False
+      end
+      object lblOctal: TLabel
+        AnchorSideLeft.Control = tsAttributes
+        AnchorSideTop.Control = edtOctal
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 18
+        Top = 206
+        Width = 35
+        BorderSpacing.Left = 8
+        Caption = 'Octal:'
+        FocusControl = edtOctal
+        ParentColor = False
+      end
+      object cbReadOwner: TCheckBox
+        AnchorSideTop.Control = lblRead
+        AnchorSideTop.Side = asrBottom
+        Left = 112
+        Height = 13
+        Top = 74
+        Width = 13
+        BorderSpacing.Top = 6
+        OnClick = cbChangeModeClick
+        TabOrder = 0
+      end
+      object cbWriteOwner: TCheckBox
+        AnchorSideTop.Control = lblWrite
+        AnchorSideTop.Side = asrBottom
+        Left = 184
+        Height = 13
+        Top = 74
+        Width = 13
+        BorderSpacing.Top = 6
+        OnClick = cbChangeModeClick
+        TabOrder = 1
+      end
+      object cbExecOwner: TCheckBox
+        AnchorSideTop.Control = lblExec
+        AnchorSideTop.Side = asrBottom
+        Left = 256
+        Height = 13
+        Top = 74
+        Width = 13
+        BorderSpacing.Top = 6
+        OnClick = cbChangeModeClick
+        TabOrder = 2
+      end
+      object cbReadGroup: TCheckBox
+        AnchorSideTop.Control = cbReadOwner
+        AnchorSideTop.Side = asrBottom
+        Left = 112
+        Height = 13
+        Top = 93
+        Width = 13
+        BorderSpacing.Top = 6
+        OnClick = cbChangeModeClick
+        TabOrder = 3
+      end
+      object cbWriteGroup: TCheckBox
+        AnchorSideTop.Control = cbWriteOwner
+        AnchorSideTop.Side = asrBottom
+        Left = 184
+        Height = 13
+        Top = 93
+        Width = 13
+        BorderSpacing.Top = 6
+        OnClick = cbChangeModeClick
+        TabOrder = 4
+      end
+      object cbExecGroup: TCheckBox
+        AnchorSideTop.Control = cbExecOwner
+        AnchorSideTop.Side = asrBottom
+        Left = 256
+        Height = 13
+        Top = 93
+        Width = 13
+        BorderSpacing.Top = 6
+        OnClick = cbChangeModeClick
+        TabOrder = 5
+      end
+      object cbReadOther: TCheckBox
+        AnchorSideTop.Control = cbReadGroup
+        AnchorSideTop.Side = asrBottom
+        Left = 112
+        Height = 13
+        Top = 112
+        Width = 13
+        BorderSpacing.Top = 6
+        OnClick = cbChangeModeClick
+        TabOrder = 6
+      end
+      object cbWriteOther: TCheckBox
+        AnchorSideTop.Control = cbWriteGroup
+        AnchorSideTop.Side = asrBottom
+        Left = 184
+        Height = 13
+        Top = 112
+        Width = 13
+        BorderSpacing.Top = 6
+        OnClick = cbChangeModeClick
+        TabOrder = 7
+      end
+      object cbExecOther: TCheckBox
+        AnchorSideTop.Control = cbReadGroup
+        AnchorSideTop.Side = asrBottom
+        Left = 256
+        Height = 13
+        Top = 112
+        Width = 13
+        BorderSpacing.Top = 6
+        OnClick = cbChangeModeClick
+        TabOrder = 8
+      end
+      object cbSuid: TCheckBox
+        AnchorSideLeft.Control = cbReadOther
+        AnchorSideTop.Control = DividerBevel2
+        AnchorSideTop.Side = asrBottom
+        Left = 112
+        Height = 23
+        Top = 145
+        Width = 55
+        Caption = 'SUID'
+        OnClick = cbChangeModeClick
+        TabOrder = 9
+      end
+      object cbSgid: TCheckBox
+        AnchorSideLeft.Control = cbWriteOther
+        AnchorSideTop.Control = DividerBevel2
+        AnchorSideTop.Side = asrBottom
+        Left = 184
+        Height = 23
+        Top = 145
+        Width = 54
+        Caption = 'SGID'
+        OnClick = cbChangeModeClick
+        TabOrder = 10
+      end
+      object cbSticky: TCheckBox
+        AnchorSideLeft.Control = cbExecOther
+        AnchorSideTop.Control = DividerBevel2
+        AnchorSideTop.Side = asrBottom
+        Left = 256
+        Height = 23
+        Top = 145
+        Width = 60
+        Caption = 'Sticky'
+        OnClick = cbChangeModeClick
+        TabOrder = 11
+      end
+      object edtOctal: TEdit
+        AnchorSideLeft.Control = cbSuid
+        AnchorSideTop.Control = chkExecutable
+        AnchorSideTop.Side = asrBottom
+        Left = 112
+        Height = 24
+        Top = 203
+        Width = 80
+        BorderSpacing.Top = 6
+        MaxLength = 4
+        OnKeyPress = edtOctalKeyPress
+        OnKeyUp = edtOctalKeyUp
+        TabOrder = 13
+      end
+      object chkExecutable: TCheckBox
+        AnchorSideLeft.Control = cbSuid
+        AnchorSideTop.Control = cbSuid
+        AnchorSideTop.Side = asrBottom
+        Left = 112
+        Height = 23
+        Top = 174
+        Width = 212
+        BorderSpacing.Top = 6
+        Caption = 'Allow &executing file as program'
+        OnClick = chkExecutableChange
+        TabOrder = 12
+      end
+      object lblExecutable: TLabel
+        AnchorSideLeft.Control = lblAttrBitsStr
+        AnchorSideTop.Control = chkExecutable
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 18
+        Top = 176
+        Width = 51
+        Caption = 'Execute:'
+        ParentColor = False
+      end
+      object DividerBevel1: TDividerBevel
+        AnchorSideLeft.Control = tsAttributes
+        AnchorSideTop.Control = lblFile
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = tsAttributes
+        AnchorSideRight.Side = asrBottom
+        Left = 8
+        Height = 18
+        Top = 32
+        Width = 420
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 8
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 8
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object DividerBevel2: TDividerBevel
+        AnchorSideLeft.Control = DividerBevel1
+        AnchorSideTop.Control = cbWriteOther
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = DividerBevel1
+        AnchorSideRight.Side = asrBottom
+        Left = 8
+        Height = 18
+        Top = 127
+        Width = 420
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 2
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object tsImage: TTabSheet
+      Caption = 'Image'
+      ClientHeight = 218
+      ClientWidth = 434
+      TabVisible = False
+      object sgImage: TStringGrid
+        Left = 0
+        Height = 218
+        Top = 0
+        Width = 434
+        Align = alClient
+        AutoEdit = False
+        AutoFillColumns = True
+        ColCount = 2
+        Columns = <        
+          item
+            ReadOnly = True
+            Title.Caption = 'Name'
+            Width = 215
+          end        
+          item
+            Title.Caption = 'Value'
+            Width = 215
+          end>
+        FixedCols = 0
+        TabOrder = 0
+        ColWidths = (
+          215
+          215
+        )
+      end
+    end
+  end
+  object gbOwner: TGroupBox
+    AnchorSideLeft.Control = pcPageControl
+    AnchorSideRight.Control = pcPageControl
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = btnSetProperties
+    Left = 8
+    Height = 86
+    Top = 309
+    Width = 440
+    Anchors = [akLeft, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Bottom = 6
+    Caption = 'Owner'
+    ClientHeight = 64
+    ClientWidth = 436
+    TabOrder = 1
+    object lblOwnerStr: TLabel
+      AnchorSideLeft.Control = gbOwner
+      AnchorSideTop.Control = cbxUsers
+      AnchorSideTop.Side = asrCenter
+      Left = 24
+      Height = 18
+      Top = 9
+      Width = 42
+      BorderSpacing.Left = 24
+      Caption = 'O&wner'
+      FocusControl = cbxUsers
+      ParentColor = False
+    end
+    object lblGroupStr: TLabel
+      AnchorSideLeft.Control = gbOwner
+      AnchorSideTop.Control = cbxGroups
+      AnchorSideTop.Side = asrCenter
+      Left = 24
+      Height = 18
+      Top = 37
+      Width = 39
+      BorderSpacing.Left = 24
+      Caption = '&Group'
+      FocusControl = cbxGroups
+      ParentColor = False
+    end
+    object cbxUsers: TComboBox
+      AnchorSideTop.Control = gbOwner
+      Left = 135
+      Height = 24
+      Top = 6
+      Width = 227
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      ItemHeight = 18
+      Sorted = True
+      TabOrder = 0
+    end
+    object cbxGroups: TComboBox
+      AnchorSideTop.Control = cbxUsers
+      AnchorSideTop.Side = asrBottom
+      Left = 135
+      Height = 24
+      Top = 34
+      Width = 227
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 4
+      BorderSpacing.Bottom = 6
+      ItemHeight = 18
+      Sorted = True
+      TabOrder = 1
+    end
+  end
+  object btnSetProperties: TBitBtn
+    AnchorSideRight.Control = btnSetPropertiesToAllFiles
+    AnchorSideBottom.Control = btnSetPropertiesToAllFiles
+    AnchorSideBottom.Side = asrBottom
+    Left = 35
+    Height = 30
+    Top = 401
+    Width = 123
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 6
+    Caption = '&Set properties'
+    Default = True
+    Kind = bkOK
+    OnClick = btnSetPropertiesClick
+    TabOrder = 2
+  end
+  object btnSetPropertiesToAllFiles: TBitBtn
+    AnchorSideRight.Control = btnSkipFile
+    AnchorSideBottom.Control = btnSkipFile
+    AnchorSideBottom.Side = asrBottom
+    Left = 164
+    Height = 30
+    Top = 401
+    Width = 168
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 6
+    Caption = 'Set to &all selected files'
+    Kind = bkAll
+    OnClick = btnSetPropertiesToAllFilesClick
+    TabOrder = 3
+  end
+  object btnSkipFile: TBitBtn
+    AnchorSideRight.Control = btnClose
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = btnClose
+    Left = 338
+    Height = 30
+    Top = 401
+    Width = 110
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Bottom = 4
+    Caption = 'Ski&p this file'
+    Kind = bkIgnore
+    ModalResult = 5
+    OnClick = btnSkipFileClick
+    TabOrder = 4
+  end
+  object btnClose: TBitBtn
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 377
+    Height = 30
+    Top = 435
+    Width = 71
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 6
+    Cancel = True
+    Caption = '&Close'
+    Kind = bkClose
+    ModalResult = 2
+    OnClick = btnCloseClick
+    TabOrder = 5
+  end
+  object tmUpdateFolderSize: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = tmUpdateFolderSizeTimer
+    left = 360
+    top = 88
+  end
+end

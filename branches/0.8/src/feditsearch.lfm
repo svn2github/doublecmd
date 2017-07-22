@@ -1,0 +1,225 @@
+object frmEditSearchReplace: TfrmEditSearchReplace
+  Left = 606
+  Height = 255
+  Top = 251
+  Width = 385
+  ActiveControl = cbSearchText
+  AutoSize = True
+  BorderIcons = []
+  ChildSizing.TopBottomSpacing = 6
+  ClientHeight = 255
+  ClientWidth = 385
+  Constraints.MinWidth = 385
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  SessionProperties = 'Left;Top;Width;Height'
+  LCLVersion = '1.6.0.4'
+  object lblSearchFor: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = cbSearchText
+    AnchorSideTop.Side = asrCenter
+    Left = 12
+    Height = 14
+    Top = 15
+    Width = 66
+    BorderSpacing.Left = 12
+    Caption = '&Search for:'
+    FocusControl = cbSearchText
+    ParentColor = False
+  end
+  object lblReplaceWith: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = cbReplaceText
+    AnchorSideTop.Side = asrCenter
+    Left = 12
+    Height = 14
+    Top = 41
+    Width = 80
+    BorderSpacing.Left = 12
+    Caption = '&Replace with:'
+    FocusControl = cbReplaceText
+    ParentColor = False
+  end
+  object cbSearchText: TComboBox
+    AnchorSideLeft.Control = lblSearchFor
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 84
+    Height = 20
+    Top = 12
+    Width = 293
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 12
+    BorderSpacing.Right = 8
+    ItemHeight = 14
+    TabOrder = 0
+  end
+  object gbSearchOptions: TGroupBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = cbReplaceText
+    AnchorSideTop.Side = asrBottom
+    Left = 12
+    Height = 133
+    Top = 70
+    Width = 162
+    AutoSize = True
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 12
+    BorderSpacing.Right = 6
+    Caption = 'Option'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ClientHeight = 115
+    ClientWidth = 158
+    TabOrder = 2
+    object cbSearchCaseSensitive: TCheckBox
+      AnchorSideLeft.Control = gbSearchOptions
+      AnchorSideTop.Control = gbSearchOptions
+      Left = 8
+      Height = 19
+      Top = 6
+      Width = 117
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 2
+      Caption = 'C&ase sensitivity'
+      TabOrder = 0
+    end
+    object cbSearchWholeWords: TCheckBox
+      AnchorSideLeft.Control = gbSearchOptions
+      AnchorSideTop.Control = cbSearchCaseSensitive
+      AnchorSideTop.Side = asrBottom
+      Left = 8
+      Height = 19
+      Top = 27
+      Width = 131
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 2
+      Caption = '&Whole words only'
+      TabOrder = 1
+    end
+    object cbSearchSelectedOnly: TCheckBox
+      AnchorSideLeft.Control = gbSearchOptions
+      AnchorSideTop.Control = cbSearchWholeWords
+      AnchorSideTop.Side = asrBottom
+      Left = 8
+      Height = 19
+      Top = 48
+      Width = 134
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 2
+      Caption = 'Selected &text only'
+      TabOrder = 2
+    end
+    object cbSearchFromCursor: TCheckBox
+      AnchorSideLeft.Control = gbSearchOptions
+      AnchorSideTop.Control = cbSearchSelectedOnly
+      AnchorSideTop.Side = asrBottom
+      Left = 8
+      Height = 19
+      Top = 69
+      Width = 134
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 2
+      Caption = 'S&earch from caret'
+      TabOrder = 3
+    end
+    object cbSearchRegExp: TCheckBox
+      AnchorSideLeft.Control = gbSearchOptions
+      AnchorSideTop.Control = cbSearchFromCursor
+      AnchorSideTop.Side = asrBottom
+      Left = 8
+      Height = 19
+      Top = 90
+      Width = 144
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 2
+      Caption = '&Regular expressions'
+      TabOrder = 4
+    end
+  end
+  object rgSearchDirection: TRadioGroup
+    AnchorSideLeft.Control = gbSearchOptions
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = cbReplaceText
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = cbSearchText
+    AnchorSideRight.Side = asrBottom
+    Left = 180
+    Height = 70
+    Top = 70
+    Width = 197
+    Anchors = [akTop, akLeft, akRight]
+    AutoFill = True
+    AutoSize = True
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 12
+    Caption = 'Direction'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 52
+    ClientWidth = 193
+    Items.Strings = (
+      '&Forward'
+      '&Backward'
+    )
+    TabOrder = 3
+  end
+  object cbReplaceText: TComboBox
+    AnchorSideLeft.Control = lblReplaceWith
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = cbSearchText
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 98
+    Height = 20
+    Top = 38
+    Width = 279
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 8
+    ItemHeight = 14
+    TabOrder = 1
+  end
+  object ButtonPanel: TButtonPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = gbSearchOptions
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 28
+    Top = 213
+    Width = 373
+    Align = alNone
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    OKButton.Name = 'OKButton'
+    OKButton.Caption = '&OK'
+    OKButton.DefaultCaption = False
+    OKButton.OnClick = btnOKClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.Caption = '&Cancel'
+    CancelButton.DefaultCaption = False
+    TabOrder = 4
+    Spacing = 12
+    ShowButtons = [pbOK, pbCancel]
+    ShowBevel = False
+  end
+end
