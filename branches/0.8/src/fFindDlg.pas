@@ -376,7 +376,7 @@ uses
   uLng, uGlobs, uShowForm, uDCUtils, uFileSource, uFileSourceUtil,
   uSearchResultFileSource, uFile,
   uFileViewNotebook, uKeyboard, uOSUtils, uArchiveFileSourceUtil,
-  DCOSUtils, RegExpr, uDebug, uShowMsg;
+  DCOSUtils, RegExpr, uDebug, uShowMsg, uConvEncoding;
 
 const
   TimeUnitToComboIndex: array[TTimeUnit] of integer = (0, 1, 2, 3, 4, 5, 6);
@@ -652,7 +652,8 @@ begin
   GetSupportedEncodings(cmbEncoding.Items);
   I := cmbEncoding.Items.IndexOf('UTF-8BOM');
   if I >= 0 then cmbEncoding.Items.Delete(I);
-  cmbEncoding.ItemIndex := cmbEncoding.Items.IndexOf(EncodingAnsi);
+  cmbEncoding.Items.Insert(0, 'Default');
+  cmbEncoding.ItemIndex := 0;
 
   // gray disabled fields
   cbUsePluginChange(Sender);
@@ -704,11 +705,8 @@ end;
 
 { TfrmFindDlg.cmbEncodingSelect }
 procedure TfrmFindDlg.cmbEncodingSelect(Sender: TObject);
-var
-  AEncoding: string;
 begin
-  AEncoding := NormalizeEncoding(cmbEncoding.Text);
-  cbTextRegExp.Enabled := (AEncoding = EncodingAnsi);
+  cbTextRegExp.Enabled := cbFindText.Checked and SingleByteEncoding(cmbEncoding.Text);
   if not cbTextRegExp.Enabled then cbTextRegExp.Checked := False;
 end;
 
@@ -773,6 +771,7 @@ begin
   EnableControl(cbTextRegExp, cbFindText.Checked);
   lblEncoding.Enabled := cbFindText.Checked;
   cbReplaceText.Checked := False;
+  cmbEncodingSelect(nil);
 
   if not FUpdating and cmbFindText.Enabled and cmbFindText.CanFocus and (Sender = cbFindText) then
   begin
@@ -845,7 +844,8 @@ begin
   cbReplaceText.Checked := False;
   cbCaseSens.Checked := False;
   cbNotContainingText.Checked := False;
-  cmbEncoding.ItemIndex := cmbEncoding.Items.IndexOf(EncodingAnsi);
+  cmbEncoding.ItemIndex := 0;
+  cmbEncodingSelect(nil);
 
   // plugins
   cmbPlugin.Text := '';
