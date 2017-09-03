@@ -324,7 +324,7 @@ implementation
 uses
   GraphType, LCLIntf, LCLType, LCLProc, Forms, uGlobsPaths, WcxPlugin,
   DCStrUtils, uDCUtils, uFileSystemFileSource, uReSample, uDebug,
-  DCOSUtils, DCClassesUtf8, LazUTF8
+  DCOSUtils, DCClassesUtf8, LazUTF8, uGraphics
   {$IFDEF LCLGTK2}
     , uPixMapGtk, gdk2pixbuf, gdk2, glib2
   {$ENDIF}
@@ -1988,6 +1988,11 @@ begin
     begin
       Result := GetBuiltInDriveIcon(Drive, IconSize, clBackColor);
     end;
+
+  if Assigned(Result) and (gDiskIconsAlpha in [1..99]) and (not Drive^.IsMounted) then
+  begin
+    BitmapAlpha(Result, gDiskIconsAlpha / 100);
+  end;
 end;
 
 function TPixMapManager.GetBuiltInDriveIcon(Drive : PDrive; IconSize : Integer; clBackColor : TColor) : Graphics.TBitmap;
