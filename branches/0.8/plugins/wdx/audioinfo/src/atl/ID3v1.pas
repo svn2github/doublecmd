@@ -698,7 +698,7 @@ begin
   aTAG_MusicGenre[64] := 'Native American';
   aTAG_MusicGenre[65] := 'Cabaret';
   aTAG_MusicGenre[66] := 'New Wave';
-  aTAG_MusicGenre[67] := 'Psychadelic';
+  aTAG_MusicGenre[67] := 'Psychedelic';
   aTAG_MusicGenre[68] := 'Rave';
   aTAG_MusicGenre[69] := 'Showtunes';
   aTAG_MusicGenre[70] := 'Trailer';
