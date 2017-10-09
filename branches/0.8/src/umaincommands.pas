@@ -651,12 +651,14 @@ begin
         case TypeOfCopy of
           cfntcPathAndFileNames, cfntcJustPathWithSeparator, cfntcPathWithoutSeparator:
             begin
+              PathToAdd:= SelectedFiles[I].Path;
+
               // Workaround for not fully implemented TMultiListFileSource.
-              if not FileView.FileSource.IsClass(TMultiListFileSource) then
-                PathToAdd := FileView.CurrentAddress
-              else
-                PathToAdd := '';
-              PathToAdd := PathToAdd + SelectedFiles[I].Path;
+              if (Pos(FileView.CurrentAddress, PathToAdd) <> 1) and
+                 (not FileView.FileSource.IsClass(TMultiListFileSource)) then
+              begin
+                PathToAdd := FileView.CurrentAddress + PathToAdd;
+              end;
 
               if TypeOfCopy=cfntcPathWithoutSeparator then PathToAdd:=ExcludeTrailingPathDelimiter(PathToAdd);
             end;
@@ -2656,7 +2658,7 @@ var
 begin
   with frmMain do
   begin
-    // For now work only for filesystem.
+    // For now works only for file source with direct access.
     // Later use temporary file system for other file sources.
 
     try
@@ -2671,8 +2673,8 @@ begin
       end
       else
       begin
-        // For now work only for filesystem.
-        if not (ActiveFrame.FileSource.IsClass(TFileSystemFileSource)) then
+        // For now works only for file source with direct access.
+        if not (fspDirectAccess in ActiveFrame.FileSource.Properties) then
         begin
           msgWarning(rsMsgNotImplemented);
           Exit;
@@ -2701,8 +2703,8 @@ begin
 
             if NotActiveSelectedFiles.Count = 1 then
             begin
-              // For now work only for filesystem.
-              if not (NotActiveFrame.FileSource.IsClass(TFileSystemFileSource)) then
+              // For now works only for file source with direct access.
+              if not (fspDirectAccess in NotActiveFrame.FileSource.Properties) then
               begin
                 msgWarning(rsMsgNotImplemented);
                 Exit;

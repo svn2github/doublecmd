@@ -30,6 +30,7 @@ uses
   Classes, SysUtils, lua;
 
 procedure RegisterPackages(L : Plua_State);
+procedure SetPackagePath(L: Plua_State; const Path: String);
 function LuaPCall(L : Plua_State; nargs, nresults : Integer): Boolean;
 function ExecuteScript(const FileName: String; Args: array of String): Boolean;
 
@@ -460,7 +461,21 @@ begin
     luaP_register(L, 'getenv', @luaGetEnvironmentVariable);
   lua_pop(L, 1);
 
-  ReplaceLib(L);
+  if not luaJIT then ReplaceLib(L);
+end;
+
+procedure SetPackagePath(L: Plua_State; const Path: String);
+var
+  APath: String;
+begin
+  lua_getglobal(L, 'package');
+    lua_getfield(L, -1, 'path');
+      APath := lua_tostring(L, -1);
+      APath := APath + ';' + Path + '?.lua';
+    lua_pop(L, 1);
+    lua_pushstring(L, PAnsiChar(APath));
+    lua_setfield(L, -2, 'path');
+  lua_pop(L, 1);
 end;
 
 function LuaPCall(L: Plua_State; nargs, nresults: Integer): Boolean;
