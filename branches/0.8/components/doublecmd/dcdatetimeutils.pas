@@ -95,6 +95,8 @@ function UnixFileTimeToDosTime(UnixTime: TUnixFileTime): TDosFileTime;
 function UnixFileTimeToWinTime(UnixTime: TUnixFileTime): TWinFileTime;
 function WinFileTimeToUnixTime(WinTime: TWinFileTime) : TUnixFileTime;
 
+function UnixFileTimeToWcxTime(UnixTime: TUnixFileTime): LongInt;
+
 function GetTimeZoneBias: LongInt;
 
 {en
@@ -499,6 +501,19 @@ end;
 function WinFileTimeToUnixTime(WinTime: TWinFileTime): TUnixFileTime;
 begin
   Result:= TUnixFileTime((WinTime - $019DB1DED53E8000) div 10000000);
+end;
+
+function UnixFileTimeToWcxTime(UnixTime: TUnixFileTime): LongInt;
+begin
+{$IF DEFINED(MSWINDOWS)}
+  Result := UnixFileTimeToDosTime(UnixTime);
+{$ELSEIF DEFINED(UNIX)}
+{$PUSH}{$R-}
+  Result := UnixTime;
+{$POP}
+{$ELSE}
+  Result := 0;
+{$ENDIF}
 end;
 
 function GetTimeZoneBias: LongInt;
