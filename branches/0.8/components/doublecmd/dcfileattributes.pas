@@ -84,8 +84,18 @@ const
   S_ISGID  = $0400;
   S_ISVTX  = $0200;
 
+  // Generic attributes
+{$IF DEFINED(MSWINDOWS)}
+  GENERIC_ATTRIBUTE_FILE   = FILE_ATTRIBUTE_ARCHIVE;
+  GENERIC_ATTRIBUTE_FOLDER = GENERIC_ATTRIBUTE_FILE or FILE_ATTRIBUTE_DIRECTORY;
+{$ELSEIF DEFINED(UNIX)}
+  GENERIC_ATTRIBUTE_FILE   = S_IRUSR or S_IWUSR or S_IRGRP or S_IROTH;
+  GENERIC_ATTRIBUTE_FOLDER = GENERIC_ATTRIBUTE_FILE or S_IFDIR or S_IXUGO;
+{$ENDIF}
+
   function WinToUnixFileAttr(Attr: TFileAttrs): TFileAttrs;
   function UnixToWinFileAttr(Attr: TFileAttrs): TFileAttrs;
+  function UnixToWcxFileAttr(Attr: TFileAttrs): TFileAttrs;
   function UnixToWinFileAttr(const FileName: String; Attr: TFileAttrs): TFileAttrs;
 
   function SingleStrToFileAttr(sAttr: String): TFileAttrs;
@@ -199,6 +209,17 @@ begin
 
   if (Attr and S_IWUSR) = 0 then
     Result := Result or faReadOnly;
+end;
+
+function UnixToWcxFileAttr(Attr: TFileAttrs): TFileAttrs;
+begin
+{$IF DEFINED(MSWINDOWS)}
+  Result := UnixToWinFileAttr(Attr);
+{$ELSEIF DEFINED(UNIX)}
+  Result := Attr;
+{$ELSE}
+  Result := 0;
+{$ENDIF}
 end;
 
 function UnixToWinFileAttr(const FileName: String; Attr: TFileAttrs): TFileAttrs;
