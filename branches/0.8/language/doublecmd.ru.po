@@ -5515,12 +5515,12 @@ msgid "Name of the action. It is never passed to the system, it's just a mnemoni
 msgstr "Название действия. Оно никогда не передаётся в систему, это просто выбранное вами мнемоническое имя, для вас"
 
 #: tfrmoptionsfileassoc.edtparams.hint
-msgid "Parameter to pass to the command. Long filename with spaces should be quoted."
-msgstr "Параметр команды. Длинное имя файла с пробелами должно быть заключено в кавычки."
+msgid "Parameter to pass to the command. Long filename with spaces should be quoted (manually entering)."
+msgstr "Параметр команды. Длинное имя файла с пробелами должно быть заключено в кавычки (при ручном вводе)."
 
 #: tfrmoptionsfileassoc.fnecommand.hint
-msgid "Command to execute. Long filename with space should be quoted."
-msgstr "Команда для выполнения. Длинное имя файла с пробелами должно быть заключено в кавычки."
+msgid "Command to execute. Never quote this string."
+msgstr "Команда для выполнения. Не использовать кавычки."
 
 #: tfrmoptionsfileassoc.gbactiondescription.caption
 msgid "Action description:"
@@ -5582,11 +5582,6 @@ msgctxt "tfrmoptionsfileassoc.lblstartpath.caption"
 msgid "Start pat&h:"
 msgstr "П&уть запуска:"
 
-#: tfrmoptionsfileassoc.menuitem1.caption
-msgctxt "tfrmoptionsfileassoc.menuitem1.caption"
-msgid "-"
-msgstr "-"
-
 #: tfrmoptionsfileassoc.menuitem3.caption
 msgid "Custom with..."
 msgstr "Пользовательское с..."
@@ -5630,11 +5625,6 @@ msgstr "Открыть"
 #: tfrmoptionsfileassoc.miopenwith.caption
 msgid "Open with..."
 msgstr "Открыть с помощью..."
-
-#: tfrmoptionsfileassoc.miseparator.caption
-msgctxt "tfrmoptionsfileassoc.miseparator.caption"
-msgid "-"
-msgstr "-"
 
 #: tfrmoptionsfileassoc.mishell.caption
 msgctxt "tfrmoptionsfileassoc.mishell.caption"

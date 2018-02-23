@@ -1488,7 +1488,7 @@ msgstr "&Nieuwe zoekopdracht"
 
 #: tfrmfinddlg.actnewsearchclearfilters.caption
 msgid "New search (clear filters)"
-msgstr "Nieuwe zoekopdracht (maak filters leeg)\t"
+msgstr "Nieuwe zoekopdracht (maak filters leeg)	"
 
 #: tfrmfinddlg.actpageadvanced.caption
 msgid "Go to page \"Advanced\""
@@ -5386,11 +5386,15 @@ msgid "Name of the action. It is never passed to the system, it's just a mnemoni
 msgstr "Naam van de actie. Niet voor het systeem, alleen voor u"
 
 #: tfrmoptionsfileassoc.edtparams.hint
-msgid "Parameter to pass to the command. Long filename with spaces should be quoted."
+#, fuzzy
+#| msgid "Parameter to pass to the command. Long filename with spaces should be quoted."
+msgid "Parameter to pass to the command. Long filename with spaces should be quoted (manually entering)."
 msgstr "Parameter om mee te geven aan de opdracht. Let op juiste omgang met spaties in bestandnamen."
 
 #: tfrmoptionsfileassoc.fnecommand.hint
-msgid "Command to execute. Long filename with space should be quoted."
+#, fuzzy
+#| msgid "Command to execute. Long filename with space should be quoted."
+msgid "Command to execute. Never quote this string."
 msgstr "Opdracht om uit te voeren. Let op juiste omgang met spaties in bestandnamen."
 
 #: tfrmoptionsfileassoc.gbactiondescription.caption
@@ -5449,11 +5453,6 @@ msgctxt "tfrmoptionsfileassoc.lblstartpath.caption"
 msgid "Start pat&h:"
 msgstr "&Beginpad:"
 
-#: tfrmoptionsfileassoc.menuitem1.caption
-msgctxt "TFRMOPTIONSFILEASSOC.MENUITEM1.CAPTION"
-msgid "-"
-msgstr "-"
-
 #: tfrmoptionsfileassoc.menuitem3.caption
 msgid "Custom with..."
 msgstr "Aangepast met..."
@@ -5495,11 +5494,6 @@ msgstr "Openen"
 #: tfrmoptionsfileassoc.miopenwith.caption
 msgid "Open with..."
 msgstr "Openen met..."
-
-#: tfrmoptionsfileassoc.miseparator.caption
-msgctxt "TFRMOPTIONSFILEASSOC.MISEPARATOR.CAPTION"
-msgid "-"
-msgstr "-"
 
 #: tfrmoptionsfileassoc.mishell.caption
 msgid "Run in terminal"
@@ -8120,10 +8114,6 @@ msgstr "&OK"
 msgid "Create symbolic link"
 msgstr "Maak symbolische koppeling"
 
-#: tfrmsymlink.chkuserelativepath.caption
-msgid "Use &relative path when possible"
-msgstr "Gebruik relatief pad wanneer mogelijk"
-
 #: tfrmsymlink.lblexistingfile.caption
 msgctxt "TFRMSYMLINK.LBLEXISTINGFILE.CAPTION"
 msgid "&Destination that the link will point to"
@@ -9631,14 +9621,6 @@ msgstr "Geef nieuwe aangepaste kolommennaam"
 msgctxt "ulng.rsmnuactions"
 msgid "Actions"
 msgstr "Acties"
-
-#: ulng.rsmnucontentdefault
-msgid "<Default>"
-msgstr "<Standaard>"
-
-#: ulng.rsmnucontentoctal
-msgid "Octal"
-msgstr "Octaal"
 
 #: ulng.rsmnucopynetnamestoclip
 msgid "Copy names with UNC path"
@@ -11995,3 +11977,4 @@ msgstr "Aantal vervangingen: %d"
 #: ulng.rszeroreplacement
 msgid "No replacement took place."
 msgstr "Er vond geen vervanging plaats."
+

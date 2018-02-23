@@ -5536,11 +5536,15 @@ msgid "Name of the action. It is never passed to the system, it's just a mnemoni
 msgstr "Nom de l'action. Ce ne sera jamais passé au système, c'est simplement un nom idenitifant l'action choisi par vous et pour vous."
 
 #: tfrmoptionsfileassoc.edtparams.hint
-msgid "Parameter to pass to the command. Long filename with spaces should be quoted."
+#, fuzzy
+#| msgid "Parameter to pass to the command. Long filename with spaces should be quoted."
+msgid "Parameter to pass to the command. Long filename with spaces should be quoted (manually entering)."
 msgstr "Paramètre à passe à la commande. Les noms longs de fichier doivent être entre guillemets."
 
 #: tfrmoptionsfileassoc.fnecommand.hint
-msgid "Command to execute. Long filename with space should be quoted."
+#, fuzzy
+#| msgid "Command to execute. Long filename with space should be quoted."
+msgid "Command to execute. Never quote this string."
 msgstr "Command à exécuter. Les noms long doivent être entre guillemets."
 
 #: tfrmoptionsfileassoc.gbactiondescription.caption
@@ -5603,11 +5607,6 @@ msgctxt "tfrmoptionsfileassoc.lblstartpath.caption"
 msgid "Start pat&h:"
 msgstr "&Chemin de démarrage :"
 
-#: tfrmoptionsfileassoc.menuitem1.caption
-msgctxt "tfrmoptionsfileassoc.menuitem1.caption"
-msgid "-"
-msgstr "-"
-
 #: tfrmoptionsfileassoc.menuitem3.caption
 msgid "Custom with..."
 msgstr "Personalisé avec..."
@@ -5651,11 +5650,6 @@ msgstr "Ouvrir"
 #: tfrmoptionsfileassoc.miopenwith.caption
 msgid "Open with..."
 msgstr "Ouvir avec..."
-
-#: tfrmoptionsfileassoc.miseparator.caption
-msgctxt "tfrmoptionsfileassoc.miseparator.caption"
-msgid "-"
-msgstr "-"
 
 #: tfrmoptionsfileassoc.mishell.caption
 msgctxt "tfrmoptionsfileassoc.mishell.caption"
@@ -6250,7 +6244,7 @@ msgctxt "tfrmoptionshotkeys.actedithotkey.caption"
 msgid "&Edit hotkey"
 msgstr ""
 "Éditer raccourci-\n"
-"clavier"
+"clavier\n"
 
 #: tfrmoptionshotkeys.actnextcategory.caption
 msgid "Next category"
@@ -12365,3 +12359,4 @@ msgstr "Nombre de remplacements : %d"
 #: ulng.rszeroreplacement
 msgid "No replacement took place."
 msgstr "Aucun remplacement n'a eu lieu."
+

@@ -5484,11 +5484,15 @@ msgid "Name of the action. It is never passed to the system, it's just a mnemoni
 msgstr "Name der Aktion. Wird nicht an das System übergeben, sondern dient nur der Identifizierung."
 
 #: tfrmoptionsfileassoc.edtparams.hint
-msgid "Parameter to pass to the command. Long filename with spaces should be quoted."
+#, fuzzy
+#| msgid "Parameter to pass to the command. Long filename with spaces should be quoted."
+msgid "Parameter to pass to the command. Long filename with spaces should be quoted (manually entering)."
 msgstr "Parameter für den Befehl. Lange Pfade mit Leerzeichen sollten in Anführungsstriche gesetzt werden."
 
 #: tfrmoptionsfileassoc.fnecommand.hint
-msgid "Command to execute. Long filename with space should be quoted."
+#, fuzzy
+#| msgid "Command to execute. Long filename with space should be quoted."
+msgid "Command to execute. Never quote this string."
 msgstr "Befehl zum Ausführen. Lange Pfade mit Leerzeichen sollten in Anführungsstriche gesetzt werden."
 
 #: tfrmoptionsfileassoc.gbactiondescription.caption
@@ -5551,11 +5555,6 @@ msgctxt "tfrmoptionsfileassoc.lblstartpath.caption"
 msgid "Start pat&h:"
 msgstr "Start&pfad"
 
-#: tfrmoptionsfileassoc.menuitem1.caption
-msgctxt "tfrmoptionsfileassoc.menuitem1.caption"
-msgid "-"
-msgstr "-"
-
 #: tfrmoptionsfileassoc.menuitem3.caption
 msgid "Custom with..."
 msgstr "Angepasst mit..."
@@ -5599,11 +5598,6 @@ msgstr "Öffnen"
 #: tfrmoptionsfileassoc.miopenwith.caption
 msgid "Open with..."
 msgstr "Öffnen mit..."
-
-#: tfrmoptionsfileassoc.miseparator.caption
-msgctxt "tfrmoptionsfileassoc.miseparator.caption"
-msgid "-"
-msgstr "-"
 
 #: tfrmoptionsfileassoc.mishell.caption
 msgctxt "tfrmoptionsfileassoc.mishell.caption"
