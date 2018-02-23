@@ -4,7 +4,7 @@
 
 Name:		doublecmd-qt5
 Summary:	Twin-panel (commander-style) file manager (Qt5)
-Version:	0.8.1
+Version:	0.8.2
 Release:	1
 URL:		http://doublecmd.sourceforge.net
 Source0:	%{doublecmd}-%{version}.tar.gz
@@ -53,5 +53,5 @@ install/linux/install.sh --install-prefix=%{buildroot}
 %{_datadir}/icons/hicolor/scalable/apps/%{doublecmd}.svg
 
 %changelog
-* Sun Jan 01 2017 - Alexander Koblov <Alexx2000@mail.ru> - 0.8.1
-- Initial package, version 0.8.1
+* Sun Jan 01 2017 - Alexander Koblov <Alexx2000@mail.ru> - 0.8.2
+- Initial package, version 0.8.2
