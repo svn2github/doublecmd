@@ -195,7 +195,6 @@ inherited frmOptionsCustomColumns: TfrmOptionsCustomColumns
         AnchorSideBottom.Side = asrBottom
         Left = 806
         Height = 25
-        Hint = 'Reset to default'
         Top = 4
         Width = 113
         AutoSize = True
