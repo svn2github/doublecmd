@@ -814,7 +814,7 @@ function TFileSystemOperationHelper.MoveFile(SourceFile: TFile; TargetFileName: 
   Mode: TFileSystemOperationHelperCopyMode): Boolean;
 var
   Message: String;
-  RetryDelete: Boolean = True;
+  RetryDelete: Boolean;
 begin
   if (Mode in [fsohcmAppend, fsohcmResume]) or
      (not mbRenameFile(SourceFile.FullPath, TargetFileName)) then
@@ -823,12 +823,12 @@ begin
     if CopyFile(SourceFile, TargetFileName, Mode) then
     begin
       repeat
+        RetryDelete := True;
         if FileIsReadOnly(SourceFile.Attributes) then
           mbFileSetReadOnly(SourceFile.FullPath, False);
         Result := mbDeleteFile(SourceFile.FullPath);
         if (not Result) and (FDeleteFileOption = fsourInvalid) then
         begin
-          RetryDelete := True;
           Message := Format(rsMsgNotDelete, [WrapTextSimple(SourceFile.FullPath, 100)]) + LineEnding + LineEnding + mbSysErrorMessage;
           case AskQuestion('', Message, [fsourSkip, fsourRetry, fsourAbort, fsourSkipAll], fsourSkip, fsourAbort) of
             fsourAbort: AbortOperation;
@@ -883,7 +883,7 @@ begin
     if mbSameFile(TargetName, aFile.FullPath) then
     begin
       if (FMode = fsohmCopy) and FAutoRenameItSelf then
-        TargetName := GetNextCopyName(TargetName)
+        TargetName := GetNextCopyName(TargetName, aFile.IsDirectory or aFile.IsLinkToDirectory)
       else
         case AskQuestion(Format(rsMsgCanNotCopyMoveItSelf, [TargetName]), '',
                          [fsourAbort, fsourSkip], fsourAbort, fsourSkip) of
@@ -1451,7 +1451,7 @@ begin
             begin
               Result:= fsoofeAutoRenameSource;
               FFileExistsOption:= fsoofeAutoRenameSource;
-              AbsoluteTargetFileName:= GetNextCopyName(AbsoluteTargetFileName);
+              AbsoluteTargetFileName:= GetNextCopyName(AbsoluteTargetFileName, aFile.IsDirectory or aFile.IsLinkToDirectory);
             end;
           fsourRenameSource:
             begin
@@ -1483,7 +1483,7 @@ begin
     fsoofeAutoRenameSource:
       begin
         Result:= fsoofeAutoRenameSource;
-        AbsoluteTargetFileName:= GetNextCopyName(AbsoluteTargetFileName);
+        AbsoluteTargetFileName:= GetNextCopyName(AbsoluteTargetFileName, aFile.IsDirectory or aFile.IsLinkToDirectory);
       end;
 
     else
