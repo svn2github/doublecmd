@@ -3,7 +3,7 @@
 # This script updates Double Commander Personal Package Archive (PPA) repository
 
 # Set Double Commander version
-DC_VER=0.8.2
+DC_VER=0.8.3
 # Set Ubuntu series
 DISTRO=( xenial zesty artful )
 
