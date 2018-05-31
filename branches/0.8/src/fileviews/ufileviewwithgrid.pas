@@ -466,6 +466,9 @@ begin
   DoubleBuffered := True;
   Align := alClient;
   MouseWheelOption:= mwGrid;
+{$if lcl_fullversion >= 1080004}
+  AllowOutboundEvents := False;
+{$endif}
   Options := [goTabs, goThumbTracking];
   TabStop := False;
 
