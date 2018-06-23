@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.8.0 beta\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-05-31 10:57+0300\n"
+"PO-Revision-Date: 2018-06-20 20:42+0300\n"
 "Last-Translator: Alexander Koblov <alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -1186,7 +1186,7 @@ msgstr "В &каталог:"
 
 #: tfrmextractdlg.lblfilemask.caption
 msgid "&Extract files matching file mask:"
-msgstr "&Распаковать файлы согласно маске:"
+msgstr "&Распаковать файлы по маске:"
 
 #: tfrmextractdlg.lblpassword.caption
 msgid "&Password for encrypted files:"
@@ -2404,7 +2404,7 @@ msgstr "Загрузить следующие в списке избранные
 
 #: tfrmmain.actnexttab.caption
 msgid "Switch to Nex&t Tab"
-msgstr "Переключиться на с&ледующую вкладку"
+msgstr "Переключиться на &следующую вкладку"
 
 #: tfrmmain.actopen.caption
 msgctxt "TFRMMAIN.ACTOPEN.CAPTION"
@@ -2421,7 +2421,7 @@ msgstr "Открыть bar-файл"
 
 #: tfrmmain.actopendirinnewtab.caption
 msgid "Open &Folder in a New Tab"
-msgstr "Открыть &каталог в новой вкладке"
+msgstr "Открыть пап&ку в новой вкладке"
 
 #: tfrmmain.actopenvirtualfilesystemlist.caption
 msgctxt "TFRMMAIN.ACTOPENVIRTUALFILESYSTEMLIST.CAPTION"
@@ -3132,7 +3132,7 @@ msgstr "Создать символьную сс&ылку..."
 
 #: tfrmmain.mitaboptions.caption
 msgid "Tab options"
-msgstr "Параметры вкладки"
+msgstr "Опции вкладки"
 
 #: tfrmmain.mitrayiconexit.caption
 msgctxt "TFRMMAIN.MITRAYICONEXIT.CAPTION"
@@ -3890,7 +3890,7 @@ msgstr "Ре&жим отладки"
 #: tfrmoptionsarchivers.chkmultiarcenabled.caption
 msgctxt "TFRMOPTIONSARCHIVERS.CHKMULTIARCENABLED.CAPTION"
 msgid "E&nabled"
-msgstr "В&ключен"
+msgstr "В&ключить"
 
 #: tfrmoptionsarchivers.chkmultiarcoutput.caption
 msgctxt "TFRMOPTIONSARCHIVERS.CHKMULTIARCOUTPUT.CAPTION"
@@ -5754,7 +5754,7 @@ msgstr "Ра&змер буфера для файловых операций (К�
 
 #: tfrmoptionsfileoperations.lblhashbuffersize.caption
 msgid "Buffer size for &hash calculation (in KB):"
-msgstr "Размер буфера для вычисления &хэш (Кб):"
+msgstr "Размер буфера для вычисления &хэша (Кб):"
 
 #: tfrmoptionsfileoperations.lblprogresskind.caption
 msgid "Show operations progress &initially in"
@@ -7882,7 +7882,7 @@ msgstr "&Цвет фона     "
 #: tfrmoptionsviewer.lblfontcolorviewerbook.caption
 msgctxt "TFRMOPTIONSVIEWER.LBLFONTCOLORVIEWERBOOK.CAPTION"
 msgid "&Font color in book viewer"
-msgstr "&Шрифт"
+msgstr "Цвет &текста"
 
 #: tfrmoptionsviewer.lblnumbercolumnsviewer.caption
 msgctxt "TFRMOPTIONSVIEWER.LBLNUMBERCOLUMNSVIEWER.CAPTION"
@@ -8300,7 +8300,7 @@ msgstr "Имя файла"
 
 #: tfrmsplitter.grbxsize.caption
 msgid "Size and number of parts"
-msgstr "Размер и кол-во частей"
+msgstr "Размер и количество частей"
 
 #: tfrmsplitter.lbdirtarget.caption
 msgid "Directory &target"
@@ -8312,7 +8312,7 @@ msgstr "&Исходный файл"
 
 #: tfrmsplitter.lblnumberparts.caption
 msgid "&Number of parts"
-msgstr "Ко&л-во частей"
+msgstr "Ко&личество частей"
 
 #: tfrmsplitter.rbtnbyte.caption
 msgid "&Bytes"
@@ -10584,10 +10584,10 @@ msgid ""
 msgstr ""
 "Пожалуйста, вставьте следующий диск или что-то похожее.\n"
 "\n"
-"Это разрешит запись этого файла:\n"
+"Это позволит записать файл:\n"
 "\"%s\"\n"
 "\n"
-"Число байтов оставшихся для записи: %d\n"
+"Число оставшихся для записи байт: %d\n"
 
 #: ulng.rsmsginvalidcommandline
 msgid "Error in command line"
@@ -11352,7 +11352,7 @@ msgstr "Проверить:"
 
 #: ulng.rsoptarchivetypename
 msgid "Archive type name:"
-msgstr "Наименование типа архива:"
+msgstr "Имя типа архива:"
 
 #: ulng.rsoptarchivevalue
 msgctxt "ulng.rsoptarchivevalue"
