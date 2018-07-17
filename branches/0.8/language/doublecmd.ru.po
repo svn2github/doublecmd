@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.8.0 beta\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-06-20 20:42+0300\n"
+"PO-Revision-Date: 2018-07-06 23:41+0300\n"
 "Last-Translator: Alexander Koblov <alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -2417,7 +2417,7 @@ msgstr "Попробовать открыть архив"
 
 #: tfrmmain.actopenbar.caption
 msgid "Open bar file"
-msgstr "Открыть bar-файл"
+msgstr "Открыть BAR-файл"
 
 #: tfrmmain.actopendirinnewtab.caption
 msgid "Open &Folder in a New Tab"
@@ -3283,7 +3283,7 @@ msgstr "&Категории:"
 
 #: tfrmmaincommandsdlg.lblcommandname.caption
 msgid "Command &name:"
-msgstr "&Название команды:"
+msgstr "Кома&нда:"
 
 #: tfrmmaincommandsdlg.lbledtfilter.editlabel.caption
 msgid "&Filter:"
@@ -3668,11 +3668,11 @@ msgstr "[MM] Месяц (2 цифры)"
 
 #: tfrmmultirename.mimonth2.caption
 msgid "[MMM] Month name (short, e.g., \"jan\")"
-msgstr "[MMM] Наименование месяца (краткий, т.е., \"янв\")"
+msgstr "[MMM] Название месяца (краткое, т.е., \"янв\")"
 
 #: tfrmmultirename.mimonth3.caption
 msgid "[MMMM] Month name (long, e.g., \"january\")"
-msgstr "[MMMM] Наименование месяца (полный, т.е., \"Январь\")"
+msgstr "[MMMM] Название месяца (полное, т.е., \"Январь\")"
 
 #: tfrmmultirename.miname.caption
 msgid "[N] Name"
@@ -3850,7 +3850,7 @@ msgstr "Настройки"
 
 #: tfrmoptions.lblemptyeditor.caption
 msgid "Please select one of the subpages, this page does not contain any settings."
-msgstr "Выберите одну из подстраниц, эта страница не содержит никаких настроек"
+msgstr "Выберите одну из подстраниц, эта страница не содержит никаких настроек."
 
 #: tfrmoptionsarchivers.btnautoconfig.caption
 msgctxt "TFRMOPTIONSARCHIVERS.BTNAUTOCONFIG.CAPTION"
@@ -4757,7 +4757,7 @@ msgstr "Развернуть все ветки"
 
 #: tfrmoptionsdirectoryhotlist.actpaste.caption
 msgid "Paste what was cut"
-msgstr "Вставить вырезаннное"
+msgstr "Вставить вырезанное"
 
 #: tfrmoptionsdirectoryhotlist.actsearchandreplaceinpath.caption
 msgid "Search && replace in &path"
@@ -7658,7 +7658,7 @@ msgstr "&Маска:"
 #: tfrmoptionstooltips.lblfieldsname.caption
 msgctxt "TFRMOPTIONSTOOLTIPS.LBLFIELDSNAME.CAPTION"
 msgid "Category &name:"
-msgstr "&Наименование:"
+msgstr "&Имя:"
 
 #: tfrmoptionstreeviewmenu.ckbdirectoryhotlistfromdoubleclick.caption
 msgid "With double-click on the bar on top of a file panel"
@@ -12129,7 +12129,7 @@ msgstr "Проcмотр"
 
 #: ulng.rsunhandledexceptionmessage
 msgid "Please report this error to the bug tracker with a description of what you were doing and the following file:%sPress %s to continue or %s to abort the program."
-msgstr "Пожалуйста, сообщите о данной ошибке на багтрекер с описанием ваших действий и файлом:%sНажмите %s для продолжения работы или %s для выхода из программы."
+msgstr "Пожалуйста, сообщите о данной ошибке на баг-трекер с описанием ваших действий и файлом:%sНажмите %s для продолжения работы или %s для выхода из программы."
 
 #: ulng.rsvarbothpanelactivetoinactive
 msgid "Both panels, from active to inactive"
