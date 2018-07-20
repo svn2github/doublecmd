@@ -1106,23 +1106,21 @@ end;
 procedure TfrmMain.btnF3MouseWheelDown(Sender: TObject; Shift: TShiftState;
   MousePos: TPoint; var Handled: Boolean);
 begin
-  if (ssCtrl in Shift) and (gFonts[dcfFunctionButtons].Size>MIN_FONT_SIZE_FUNCTION_BUTTONS) then
+  if (ssCtrl in Shift) and (gFonts[dcfFunctionButtons].Size > MIN_FONT_SIZE_FUNCTION_BUTTONS) then
   begin
-    dec(gFonts[dcfFunctionButtons].Size);
-    pnlKeys.Height:=pnlKeys.Height-1;
+    Dec(gFonts[dcfFunctionButtons].Size);
+    UpdateGUIFunctionKeys;
   end;
-  UpdateGUIFunctionKeys;
 end;
 
 procedure TfrmMain.btnF3MouseWheelUp(Sender: TObject; Shift: TShiftState;
   MousePos: TPoint; var Handled: Boolean);
 begin
-  if (ssCtrl in Shift) and (gFonts[dcfFunctionButtons].Size<MAX_FONT_SIZE_FUNCTION_BUTTONS) then
+  if (ssCtrl in Shift) and (gFonts[dcfFunctionButtons].Size < MAX_FONT_SIZE_FUNCTION_BUTTONS) then
   begin
-    inc(gFonts[dcfFunctionButtons].Size);
-    pnlKeys.Height:=pnlKeys.Height+1;
+    Inc(gFonts[dcfFunctionButtons].Size);
+    UpdateGUIFunctionKeys;
   end;
-  UpdateGUIFunctionKeys;
 end;
 
 procedure TfrmMain.btnF8MouseDown(Sender: TObject; Button: TMouseButton;
@@ -4893,7 +4891,6 @@ begin
     pnlKeys.Visible := gKeyButtons;
     if gKeyButtons then
     begin
-      pnlKeys.Height := Canvas.TextHeight('Wg') + 4;
       pnlKeys.Top:= Height * 2;
       HMForm := HotMan.Forms.Find('Main');
       for I := 0 to pnlKeys.ControlCount - 1 do
@@ -4910,6 +4907,7 @@ begin
           end;
         end;
       end;
+      UpdateGUIFunctionKeys;
     end;
 
     UpdateNoteBook(nbLeft);
@@ -5627,19 +5625,20 @@ end;
 
 procedure TfrmMain.UpdateGUIFunctionKeys;
 var
-  i,c1,c2:integer;
+  I: Integer;
+  H: Integer = 0;
+  AButton: TSpeedButton;
 begin
-  i:=0;
-  c1:=pnlKeys.ControlCount;
-  c2:=pnlKeys.ComponentCount;
-  while(i<pnlKeys.ControlCount)do
+  for I:= 0 to pnlKeys.ControlCount - 1 do
   begin
-      if pnlKeys.Controls[i] is TSpeedButton then
-      begin
-        TSpeedButton(pnlKeys.Controls[i]).Font.Size:=gFonts[dcfFunctionButtons].Size;
-      end;
-  inc(i);
+    if pnlKeys.Controls[I] is TSpeedButton then
+    begin
+      AButton:= TSpeedButton(pnlKeys.Controls[I]);
+      AButton.Font.Size := gFonts[dcfFunctionButtons].Size;
+      H:= Max(H, AButton.Canvas.TextHeight(AButton.Caption));
+    end;
   end;
+  pnlKeys.Height := H + 4;
 end;
 
 procedure TfrmMain.ShowDrivesList(APanel: TFilePanelSelect);
