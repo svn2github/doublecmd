@@ -750,6 +750,7 @@ end;
 
 function TOrderedFileView.SetActiveFileNow(aFilePath: String): Boolean;
 
+
   procedure SetUpdate(Index: PtrInt);
   begin
     FUpdatingActiveFile := True;
@@ -782,6 +783,20 @@ begin
         begin
           SetUpdate(Index);
           Exit(True);
+        end;
+      end;
+    end;
+    if (FLastActiveFileIndex > -1) then
+    begin
+      if IsInPath(CurrentPath, LastActiveFile, False, False) then
+      begin
+        if (PathIsAbsolute and mbCompareFileNames(LastActiveFile, aFilePath)) or
+           (mbCompareFileNames(LastActiveFile, CurrentPath + aFilePath)) then
+        begin
+          if FLastActiveFileIndex < FFiles.Count then
+            SetUpdate(FLastActiveFileIndex)
+          else
+            SetUpdate(FFiles.Count - 1);
         end;
       end;
     end;
