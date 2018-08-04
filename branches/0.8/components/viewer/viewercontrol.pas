@@ -634,7 +634,12 @@ end;
 procedure TViewerControl.Paint;
 begin
   if not IsFileOpen then
+  begin
+    Canvas.Pen.Color := Canvas.Font.Color;
+    Canvas.Line(0, 0, ClientWidth - 1, ClientHeight - 1);
+    Canvas.Line(0, ClientHeight - 1, ClientWidth - 1, 0);
     Exit;
+  end;
 
   Canvas.Font := Self.Font;
   Canvas.Brush.Color := Self.Color;
@@ -668,19 +673,20 @@ begin
   begin
     FLineList.Clear; // do not use cache from previous mode
 
+    FViewerControlMode := Value;
+    case FViewerControlMode of
+      vcmHex: FCustom := FHex;
+      vcmDec: FCustom := FDec;
+    else
+      FCustom := nil;
+    end;
+
+    if not IsFileOpen then
+      Exit;
+
     // Take limits into account for selection.
     FBlockBeg := FBlockBeg + (GetDataAdr - FMappedFile);
     FBlockEnd := FBlockEnd + (GetDataAdr - FMappedFile);
-
-    FViewerControlMode := Value;
-    case FViewerControlMode of
-      vcmHex: FCustom:=FHex;
-      vcmDec: FCustom:=FDec;
-    else
-      FCustom:=nil;
-    end;
-
-
 
     FHPosition := 0;
     FBOMLength := GetBomLength;
@@ -731,6 +737,8 @@ function TViewerControl.Scroll(iLines: Integer): Boolean;
 var
   aPosition: PtrInt;
 begin
+  if not IsFileOpen then
+    Exit;
   aPosition := FPosition;
   Result := ScrollPosition(aPosition, iLines);
   if aPosition <> FPosition then
@@ -741,6 +749,8 @@ function TViewerControl.HScroll(iSymbols: Integer): Boolean;
 var
   newPos: Integer;
 begin
+  if not IsFileOpen then
+    Exit;
   newPos := FHPosition + iSymbols;
   if newPos < 0 then
     newPos := 0

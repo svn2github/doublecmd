@@ -2114,7 +2114,7 @@ begin
       if FFindDialog.cbCaseSens.Checked then iSearchParameter:= iSearchParameter or lcs_matchcase;
       WlxPlugins.GetWLxModule(ActivePlugin).CallListSearchText(sSearchTextU, iSearchParameter);
     end
-  else
+  else if ViewerControl.IsFileOpen then
     begin
       T:= GetTickCount64;
       sSearchTextA:= ViewerControl.ConvertFromUTF8(sSearchTextU);
