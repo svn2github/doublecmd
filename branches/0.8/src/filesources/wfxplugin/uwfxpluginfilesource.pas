@@ -477,6 +477,8 @@ end;
 { TWfxPluginFileSource }
 
 constructor TWfxPluginFileSource.Create(aModuleFileName, aPluginRootName: String);
+var
+  AFlags: Integer;
 begin
   inherited Create;
   FPluginNumber:= -1;
@@ -503,10 +505,16 @@ begin
 
       VFSInit;
 
+      if not PasswordStore.MasterKeySet then
+        AFlags:= 0
+      else begin
+        AFlags:= FS_CRYPTOPT_MASTERPASS_SET;
+      end;
+
       if Assigned(FsSetCryptCallbackW) then
-        FsSetCryptCallbackW(@CryptProcW, FPluginNumber, 0);
+        FsSetCryptCallbackW(@CryptProcW, FPluginNumber, AFlags);
       if Assigned(FsSetCryptCallback) then
-        FsSetCryptCallback(@CryptProcA, FPluginNumber, 0);
+        FsSetCryptCallback(@CryptProcA, FPluginNumber, AFlags);
     end;
   end;
 
