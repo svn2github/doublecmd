@@ -747,9 +747,7 @@ begin
   end;
 end;
 
-
 function TOrderedFileView.SetActiveFileNow(aFilePath: String): Boolean;
-
 
   procedure SetUpdate(Index: PtrInt);
   begin
@@ -761,29 +759,21 @@ function TOrderedFileView.SetActiveFileNow(aFilePath: String): Boolean;
 
 var
   Index: PtrInt;
+  PathIsAbsolute: Boolean;
 begin
   if aFilePath <> '' then // find correct cursor position in Panel (drawgrid)
   begin
-    if FileSource.GetPathType(aFilePath) = ptAbsolute then
+    PathIsAbsolute := FileSource.GetPathType(aFilePath) = ptAbsolute;
+    for Index := 0 to FFiles.Count - 1 do
     begin
-      for Index := 0 to FFiles.Count - 1 do
+      if PathIsAbsolute then
+        Result := (FFiles[Index].FSFile.FullPath = aFilePath)
+      else
+        Result := (FFiles[Index].FSFile.Name = aFilePath);
+      if Result then
       begin
-        if FFiles[Index].FSFile.FullPath = aFilePath then
-        begin
           SetUpdate(Index);
           Exit(True);
-        end;
-      end;
-    end
-    else
-    begin
-      for Index := 0 to FFiles.Count - 1 do
-      begin
-        if FFiles[Index].FSFile.Name = aFilePath then
-        begin
-          SetUpdate(Index);
-          Exit(True);
-        end;
       end;
     end;
     if (FLastActiveFileIndex > -1) then
