@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Double Commander 0.8.0 beta\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-07-06 23:41+0300\n"
+"PO-Revision-Date: 2018-08-26 23:41+0300\n"
 "Last-Translator: Alexander Koblov <alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -4122,7 +4122,7 @@ msgstr "Каталоги"
 #: tfrmoptionsconfiguration.gblocconfigfiles.caption
 msgctxt "TFRMOPTIONSCONFIGURATION.GBLOCCONFIGFILES.CAPTION"
 msgid "Location of configuration files"
-msgstr "Месторасположение файлов конфигурации"
+msgstr "Расположение файлов конфигурации"
 
 #: tfrmoptionsconfiguration.gbsaveonexit.caption
 msgctxt "TFRMOPTIONSCONFIGURATION.GBSAVEONEXIT.CAPTION"
@@ -5728,7 +5728,7 @@ msgstr "О&брабатывать комментарии с файлами/па�
 #: tfrmoptionsfileoperations.cbrenameselonlyname.caption
 msgctxt "TFRMOPTIONSFILEOPERATIONS.CBRENAMESELONLYNAME.CAPTION"
 msgid "Select &file name without extension when renaming"
-msgstr "П&ри переименовании выделять имя файла без расширения"
+msgstr "П&ри переименовании выделять только имя файла, без расширения"
 
 #: tfrmoptionsfileoperations.cbshowcopytabselectpanel.caption
 msgctxt "TFRMOPTIONSFILEOPERATIONS.CBSHOWCOPYTABSELECTPANEL.CAPTION"
@@ -5968,11 +5968,11 @@ msgstr "Помощ&ь"
 
 #: tfrmoptionsfilesviews.cbdblclicktoparent.caption
 msgid "Enable changing to &parent folder when double-clicking on empty part of file view"
-msgstr "Разрешить переход в родительский каталог двойным кликом по свободному месту в файловой панели"
+msgstr "Разрешить переход в родительский каталог двойным щелчком по свободному месту в файловой панели"
 
 #: tfrmoptionsfilesviews.cbdelayloadingtabs.caption
 msgid "Do&n't load file list until a tab is activated"
-msgstr "&Не загружать список файлов, пока вкладка активируется"
+msgstr "&Не загружать список файлов, пока вкладка не будет активирована"
 
 #: tfrmoptionsfilesviews.cbdirbrackets.caption
 msgctxt "TFRMOPTIONSFILESVIEWS.CBDIRBRACKETS.CAPTION"
@@ -5985,7 +5985,7 @@ msgstr "По&дсвечивать новые и изменённые файлы"
 
 #: tfrmoptionsfilesviews.cbinplacerename.caption
 msgid "Enable inplace &renaming when clicking twice on a name"
-msgstr "Включить &переименование прямо в строке по двойному клику по имени"
+msgstr "Разрешить &переименование при щелчке по имени файла под курсором"
 
 #: tfrmoptionsfilesviews.cblistfilesinthread.caption
 msgctxt "TFRMOPTIONSFILESVIEWS.CBLISTFILESINTHREAD.CAPTION"
@@ -6859,7 +6859,7 @@ msgstr "Сохранять изменённое имя при разблокир
 #: tfrmoptionstabs.cbtabsactivateonclick.caption
 msgctxt "TFRMOPTIONSTABS.CBTABSACTIVATEONCLICK.CAPTION"
 msgid "Activate target &panel when clicking on one of its Tabs"
-msgstr "Делат&ь панель активной при клике по одной из её вкладок"
+msgstr "Делат&ь панель активной при щелчке по одной из её вкладок"
 
 #: tfrmoptionstabs.cbtabsalwaysvisible.caption
 msgctxt "TFRMOPTIONSTABS.CBTABSALWAYSVISIBLE.CAPTION"
@@ -6929,7 +6929,7 @@ msgstr "символов"
 
 #: tfrmoptionstabs.lbltabsactionondoubleclick.caption
 msgid "Action to do when double click on a tab:"
-msgstr "Действие по двойному клику на вкладке:"
+msgstr "Действие двойного щелчка по вкладке:"
 
 #: tfrmoptionstabs.lbltabsposition.caption
 msgctxt "TFRMOPTIONSTABS.LBLTABSPOSITION.CAPTION"
@@ -7662,7 +7662,7 @@ msgstr "&Имя:"
 
 #: tfrmoptionstreeviewmenu.ckbdirectoryhotlistfromdoubleclick.caption
 msgid "With double-click on the bar on top of a file panel"
-msgstr "Двойной клик по верхней полосе файловой панели"
+msgstr "Двойной щелчок по верхней полосе файловой панели"
 
 #: tfrmoptionstreeviewmenu.ckbdirectoryhotlistfrommenucommand.caption
 msgctxt "tfrmoptionstreeviewmenu.ckbdirectoryhotlistfrommenucommand.caption"
@@ -7671,7 +7671,7 @@ msgstr "С помощью меню и внутренней команды"
 
 #: tfrmoptionstreeviewmenu.ckbdoubleclickselect.caption
 msgid "Double click in tree select and exit"
-msgstr "Двойной клик по выбранному в дереве и выход"
+msgstr "Двойной щелчок по выбранному в дереве и выход"
 
 #: tfrmoptionstreeviewmenu.ckbfavoritatabsfrommenucommand.caption
 msgctxt "tfrmoptionstreeviewmenu.ckbfavoritatabsfrommenucommand.caption"
@@ -7680,7 +7680,7 @@ msgstr "С помощью меню и внутренней команды"
 
 #: tfrmoptionstreeviewmenu.ckbfavoritetabsfromdoubleclick.caption
 msgid "With double-click on a tab (if configured for it)"
-msgstr "Двойной клик по вкладке"
+msgstr "Двойной щелчок по вкладке"
 
 #: tfrmoptionstreeviewmenu.ckbshortcutselectandclose.caption
 msgid "When using the keyboard shortcut, it will exit the window returning the current choice"
@@ -7688,7 +7688,7 @@ msgstr "Если используется комбинация клавиш - в
 
 #: tfrmoptionstreeviewmenu.ckbsingleclickselect.caption
 msgid "Single mouse click in tree select and exit"
-msgstr "Клик мыши по выбранному в дереве и выход"
+msgstr "Щелчок мыши по выбранному в дереве и выход"
 
 #: tfrmoptionstreeviewmenu.ckbuseforcommandlinehistory.caption
 msgid "Use it for Command Line History"
@@ -7937,7 +7937,7 @@ msgstr "Имя архива:"
 
 #: tfrmpackdlg.rgpacker.caption
 msgid "Packer"
-msgstr " Архиватор "
+msgstr "Архиватор"
 
 #: tfrmpackinfodlg.btnclose.caption
 msgctxt "TFRMPACKINFODLG.BTNCLOSE.CAPTION"
@@ -11782,11 +11782,11 @@ msgstr "Файлов: %d, папок: %d"
 
 #: ulng.rspropserrchmod
 msgid "Can not change access rights for \"%s\""
-msgstr "Не удалось изменить права доступа для  \"%s\""
+msgstr "Не удалось изменить права доступа для \"%s\""
 
 #: ulng.rspropserrchown
 msgid "Can not change owner for \"%s\""
-msgstr "Не могу изменить владельца для  \"%s\""
+msgstr "Не удалось изменить владельца для \"%s\""
 
 #: ulng.rspropsfile
 msgctxt "ulng.rspropsfile"
