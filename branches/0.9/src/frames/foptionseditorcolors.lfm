@@ -1,0 +1,1213 @@
+inherited frmOptionsEditorColors: TfrmOptionsEditorColors
+  Height = 357
+  Width = 680
+  ClientHeight = 357
+  ClientWidth = 680
+  DesignLeft = 322
+  DesignTop = 122
+  object pnlTop: TPanel[0]
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 680
+    Align = alTop
+    AutoSize = True
+    BevelOuter = bvNone
+    ChildSizing.HorizontalSpacing = 3
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsHomogenousChildResize
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 4
+    ClientHeight = 26
+    ClientWidth = 680
+    Constraints.MaxWidth = 1000
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    object cmbLanguage: TComboBox
+      AnchorSideTop.Side = asrBottom
+      Left = 0
+      Height = 23
+      Top = 3
+      Width = 326
+      BorderSpacing.Top = 3
+      ItemHeight = 15
+      OnChange = cmbLanguageChange
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object pnlFileExtensions: TPanel
+      AnchorSideBottom.Side = asrBottom
+      Left = 329
+      Height = 23
+      Top = 3
+      Width = 351
+      AutoSize = True
+      BevelOuter = bvNone
+      ClientHeight = 23
+      ClientWidth = 351
+      TabOrder = 1
+      object edtFileExtensions: TEdit
+        Left = 0
+        Height = 23
+        Top = 0
+        Width = 305
+        Align = alClient
+        TabOrder = 0
+      end
+      object btnResetMask: TSpeedButton
+        Left = 328
+        Height = 23
+        Hint = 'Reset'
+        Top = 0
+        Width = 23
+        Align = alRight
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000064000000640000000000000000000000000000000000
+          000200000008000000120000001D000000271212126315151575151515751515
+          157515151575151515751515157515151575151515751212125E000000000000
+          000100000004000000090000000F0000001438383871ECECECFFE8E8E8FFE8E8
+          E8FFE8E8E8FFE8E8E8FFE8E8E8FFE8E8E8FFECECECFF38383871000000000000
+          0000000000000000000000000000373737004949496EEAEAEAFFCBCBCBFFCBCB
+          CBFFCBCBCBFFCBCBCBFFEAEAEAFF666666FFEAEAEAFF4949496E0B0B0B000404
+          040000000000000000003E3E3E00525252005252526DEEEEEEFFC8C8C8FFFFFF
+          FFFFFFFFFFFFC8C8C8FFF1F1F1FFEDEDEDFFEEEEEEFF5252526D151515000D0D
+          0D00191919581515157515151575151515752D2D2DAF8C8C8CFF747474FF9494
+          94FF949494FF7C7C7CFFC4C4C4FFC4C4C4FFF1F1F1FF5C5C5C6C151515000D0D
+          0D0038383871ECECECFFE8E8E8FFE8E8E8FFE8E8E8FFE8E8E8FFE8E8E8FFE8E8
+          E8FFECECECFFD8D8D8FFFFFFFFFFC0C0C0FFF6F6F6FF6464646A191919581515
+          1575353535B1EAEAEAFF262626FF262626FF262626FF262626FFEAEAEAFF6666
+          66FFEAEAEAFFD8D8D8FFFFFFFFFFBBBBBBFFF9F9F9FF6C6C6C6938383871ECEC
+          ECFFA8A8A8FFEEEEEEFF2A2A2AFF3C3C3CFF3C3C3CFF2A2A2AFFF1F1F1FFEDED
+          EDFFEEEEEEFF9F9F9FFFADADADFFADADADFFFDFDFDFF747474684949496EEAEA
+          EAFFADA639FFF1F1F1FF2E2E2EFF424242FF424242FF343434FF2E2E2EFF2E2E
+          2EFFF1F1F1FFD8D8D8FFFFFFFFFFFFFFFFFFFFFFFFFF7A7A7A675252526DEEEE
+          EEFFB2AB3CFFF6F6F6FF333333FF4A4A4AFF4A4A4AFF4A4A4AFF4A4A4AFF3333
+          33FFF6F6F6FF7F7F7F947F7F7F667F7F7F667F7F7F667F7F7F4D5C5C5C6CF1F1
+          F1FFB6AE3FFFF9F9F9FF383838FF505050FF505050FF505050FF505050FF3838
+          38FFF9F9F9FF7F7F7F4D8080800080808000808080007F7F7F006464646AF6F6
+          F6FFB9B242FFFDFDFDFF3B3B3BFF3B3B3BFF3B3B3BFF3B3B3BFF3B3B3BFF3B3B
+          3BFFFDFDFDFF747474688080800080808000808080007F7F7F006C6C6C69F9F9
+          F9FFBCB544FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF7A7A7A677C7C7C0080808000808080007F7F7F0074747468FDFD
+          FDFFC9C13CFFBFB745FFBFB745FFBFB745FFBFB745FFBFB745FFCBCBCBFF7B7B
+          7BA47F7F7F667F7F7F4D747474007E7E7E00808080007F7F7F007A7A7A67FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7A7A
+          7A677A7A7A007A7A7A007A7A7A007A7A7A007F7F7F007F7F7F007F7F7F4D7F7F
+          7F667F7F7F667F7F7F667F7F7F667F7F7F667F7F7F667F7F7F667F7F7F667F7F
+          7F4D7E7E7E007E7E7E007E7E7E005F5F5F000000000000000000
+        }
+        OnClick = btnResetMaskClick
+      end
+      object btnSaveMask: TSpeedButton
+        Left = 305
+        Height = 23
+        Hint = 'Save'
+        Top = 0
+        Width = 23
+        Align = alRight
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000064000000640000000000000000000000BA6A368FB969
+          35B5B86935EEB76835FFB56835FFB46734FFB26634FFB06533FFAE6433FFAC63
+          32FFAA6232FFA96132FFA86031FFA76031FEA66031F1A86131C4BA6A35DEEBC6
+          ADFFEAC5ADFFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFB
+          F8FFFEFBF8FFFEFBF8FFFEFBF8FFC89A7CFFC79879FFA76031EDBA6B37FEEDCA
+          B3FFE0A27AFFFEFAF7FF62C088FF62C088FF62C088FF62C088FF62C088FF62C0
+          88FF62C088FF62C088FFFDF9F6FFCA8D65FFC99B7CFFA76031FEBB6C38FFEECC
+          B6FFE1A27AFFFEFAF7FFBFDCC2FFBFDCC2FFBFDCC2FFBFDCC2FFBFDCC2FFBFDC
+          C2FFBFDCC2FFBFDCC2FFFDF9F6FFCD9068FFCC9E81FFA86132FFBB6B38FFEFCE
+          B8FFE1A279FFFEFAF7FF62C088FF62C088FF62C088FF62C088FF62C088FF62C0
+          88FF62C088FF62C088FFFDF9F6FFCF936AFFCEA384FFAA6132FFBA6A36FFEFD0
+          BBFFE2A27AFFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFBF8FFFEFB
+          F8FFFEFBF8FFFEFBF8FFFEFBF8FFD3966DFFD2A78AFFAB6232FFBB6A36FFF0D2
+          BEFFE2A37AFFE2A37AFFE1A37AFFE2A37BFFE1A37BFFE0A178FFDE9F77FFDD9F
+          76FFDC9D74FFD99B72FFD89971FFD69970FFD5AB8EFFAD6333FFBB6A36FFF2D5
+          C2FFE3A37AFFE3A37AFFE2A37BFFE2A37BFFE2A47BFFE1A279FFE0A178FFDEA0
+          77FFDE9E75FFDC9D74FFDA9B73FFD99B73FFDAB095FFAF6433FFBB6A36FFF2D8
+          C5FFE3A47BFFE3A37AFFE3A47AFFE2A47BFFE2A37BFFE1A37BFFE1A279FFDFA0
+          77FFDE9F76FFDD9E74FFDB9C72FFDC9D74FFDDB59AFFB16534FFBB6B36FFF4D9
+          C7FFE6A67DFFC88C64FFC98D65FFC98E67FFCB926CFFCB926DFFCA9069FFC88C
+          65FFC88C64FFC88C64FFC88C64FFDA9C74FFE1BA9FFFB36634FFBB6B36FEF4DC
+          C9FFE7A77DFFF9ECE1FFF9ECE1FFF9EDE3FFFCF4EEFFFDFAF7FFFDF7F3FFFAED
+          E5FFF7E7DBFFF7E5D9FFF6E5D8FFDEA077FFE4BEA4FFB46734FFBC6B36FAF5DD
+          CCFFE7A87EFFFAF0E8FFFAF0E8FFC98D66FFFAF0E9FFFDF8F3FFFEFAF8FFFCF4
+          EFFFF9E9DFFFF7E7DBFFF7E5D9FFE0A278FFE7C2A9FFB66835FFBC6B36F0F6DF
+          D0FFE8A87EFFFCF6F1FFFCF6F1FFC88C64FFFAF1E9FFFBF4EEFFFDFAF7FFFDF9
+          F6FFFAF0E8FFF8E8DDFFF7E6DBFFE1A37AFFEFD5C3FFB76935FEBC6B36D8F6DF
+          D1FFE9AA80FFFEFAF6FFFDFAF6FFC88C64FFFBF3EEFFFBF1EAFFFCF6F2FFFEFB
+          F8FFFCF6F1FFF9ECE2FFF8E7DBFFEED0BAFFECD0BDFFBB703EF8BC6B369BF6E0
+          D1FFF7E0D1FFFEFBF8FFFEFBF7FFFDF9F6FFFCF5F0FFFAF0EAFFFBF2EDFFFDF9
+          F6FFFDFAF7FFFBF1EBFFF8E9DFFEECD0BDFBC9895EECB5693563BC6B3671BC6B
+          3690BC6B36CCBC6B36EEBC6B36FABB6B36FEBB6B36FFBB6A36FFBB6A36FFBC6C
+          39FFBD6E3BFFBB6D3AFFBB6B38EFBB703ECBB6693554FFFFFF00
+        }
+        OnClick = btnSaveMaskClick
+      end
+    end
+  end
+  object PnlTop2: TPanel[1]
+    Left = 0
+    Height = 131
+    Top = 26
+    Width = 680
+    Align = alTop
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 131
+    ClientWidth = 680
+    TabOrder = 1
+    inline ColorPreview: TSynEdit
+      Left = 211
+      Height = 130
+      Top = 1
+      Width = 469
+      Align = alClient
+      BorderSpacing.Left = 1
+      BorderSpacing.Top = 1
+      Font.Height = -16
+      Font.Name = 'courier'
+      Font.Pitch = fpFixed
+      Font.Quality = fqNonAntialiased
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 0
+      TabStop = False
+      BookMarkOptions.Xoffset = 30
+      Gutter.Width = 59
+      Gutter.MouseActions = <>
+      RightGutter.Width = 0
+      RightGutter.MouseActions = <>
+      Keystrokes = <      
+        item
+          Command = ecUp
+          ShortCut = 38
+        end      
+        item
+          Command = ecSelUp
+          ShortCut = 8230
+        end      
+        item
+          Command = ecScrollUp
+          ShortCut = 16422
+        end      
+        item
+          Command = ecDown
+          ShortCut = 40
+        end      
+        item
+          Command = ecSelDown
+          ShortCut = 8232
+        end      
+        item
+          Command = ecScrollDown
+          ShortCut = 16424
+        end      
+        item
+          Command = ecLeft
+          ShortCut = 37
+        end      
+        item
+          Command = ecSelLeft
+          ShortCut = 8229
+        end      
+        item
+          Command = ecWordLeft
+          ShortCut = 16421
+        end      
+        item
+          Command = ecSelWordLeft
+          ShortCut = 24613
+        end      
+        item
+          Command = ecRight
+          ShortCut = 39
+        end      
+        item
+          Command = ecSelRight
+          ShortCut = 8231
+        end      
+        item
+          Command = ecWordRight
+          ShortCut = 16423
+        end      
+        item
+          Command = ecSelWordRight
+          ShortCut = 24615
+        end      
+        item
+          Command = ecPageDown
+          ShortCut = 34
+        end      
+        item
+          Command = ecSelPageDown
+          ShortCut = 8226
+        end      
+        item
+          Command = ecPageBottom
+          ShortCut = 16418
+        end      
+        item
+          Command = ecSelPageBottom
+          ShortCut = 24610
+        end      
+        item
+          Command = ecPageUp
+          ShortCut = 33
+        end      
+        item
+          Command = ecSelPageUp
+          ShortCut = 8225
+        end      
+        item
+          Command = ecPageTop
+          ShortCut = 16417
+        end      
+        item
+          Command = ecSelPageTop
+          ShortCut = 24609
+        end      
+        item
+          Command = ecLineStart
+          ShortCut = 36
+        end      
+        item
+          Command = ecSelLineStart
+          ShortCut = 8228
+        end      
+        item
+          Command = ecEditorTop
+          ShortCut = 16420
+        end      
+        item
+          Command = ecSelEditorTop
+          ShortCut = 24612
+        end      
+        item
+          Command = ecLineEnd
+          ShortCut = 35
+        end      
+        item
+          Command = ecSelLineEnd
+          ShortCut = 8227
+        end      
+        item
+          Command = ecEditorBottom
+          ShortCut = 16419
+        end      
+        item
+          Command = ecSelEditorBottom
+          ShortCut = 24611
+        end      
+        item
+          Command = ecToggleMode
+          ShortCut = 45
+        end      
+        item
+          Command = ecCopy
+          ShortCut = 16429
+        end      
+        item
+          Command = ecPaste
+          ShortCut = 8237
+        end      
+        item
+          Command = ecDeleteChar
+          ShortCut = 46
+        end      
+        item
+          Command = ecCut
+          ShortCut = 8238
+        end      
+        item
+          Command = ecDeleteLastChar
+          ShortCut = 8
+        end      
+        item
+          Command = ecDeleteLastChar
+          ShortCut = 8200
+        end      
+        item
+          Command = ecDeleteLastWord
+          ShortCut = 16392
+        end      
+        item
+          Command = ecUndo
+          ShortCut = 32776
+        end      
+        item
+          Command = ecRedo
+          ShortCut = 40968
+        end      
+        item
+          Command = ecLineBreak
+          ShortCut = 13
+        end      
+        item
+          Command = ecSelectAll
+          ShortCut = 16449
+        end      
+        item
+          Command = ecCopy
+          ShortCut = 16451
+        end      
+        item
+          Command = ecBlockIndent
+          ShortCut = 24649
+        end      
+        item
+          Command = ecLineBreak
+          ShortCut = 16461
+        end      
+        item
+          Command = ecInsertLine
+          ShortCut = 16462
+        end      
+        item
+          Command = ecDeleteWord
+          ShortCut = 16468
+        end      
+        item
+          Command = ecBlockUnindent
+          ShortCut = 24661
+        end      
+        item
+          Command = ecPaste
+          ShortCut = 16470
+        end      
+        item
+          Command = ecCut
+          ShortCut = 16472
+        end      
+        item
+          Command = ecDeleteLine
+          ShortCut = 16473
+        end      
+        item
+          Command = ecDeleteEOL
+          ShortCut = 24665
+        end      
+        item
+          Command = ecUndo
+          ShortCut = 16474
+        end      
+        item
+          Command = ecRedo
+          ShortCut = 24666
+        end      
+        item
+          Command = ecGotoMarker0
+          ShortCut = 16432
+        end      
+        item
+          Command = ecGotoMarker1
+          ShortCut = 16433
+        end      
+        item
+          Command = ecGotoMarker2
+          ShortCut = 16434
+        end      
+        item
+          Command = ecGotoMarker3
+          ShortCut = 16435
+        end      
+        item
+          Command = ecGotoMarker4
+          ShortCut = 16436
+        end      
+        item
+          Command = ecGotoMarker5
+          ShortCut = 16437
+        end      
+        item
+          Command = ecGotoMarker6
+          ShortCut = 16438
+        end      
+        item
+          Command = ecGotoMarker7
+          ShortCut = 16439
+        end      
+        item
+          Command = ecGotoMarker8
+          ShortCut = 16440
+        end      
+        item
+          Command = ecGotoMarker9
+          ShortCut = 16441
+        end      
+        item
+          Command = ecSetMarker0
+          ShortCut = 24624
+        end      
+        item
+          Command = ecSetMarker1
+          ShortCut = 24625
+        end      
+        item
+          Command = ecSetMarker2
+          ShortCut = 24626
+        end      
+        item
+          Command = ecSetMarker3
+          ShortCut = 24627
+        end      
+        item
+          Command = ecSetMarker4
+          ShortCut = 24628
+        end      
+        item
+          Command = ecSetMarker5
+          ShortCut = 24629
+        end      
+        item
+          Command = ecSetMarker6
+          ShortCut = 24630
+        end      
+        item
+          Command = ecSetMarker7
+          ShortCut = 24631
+        end      
+        item
+          Command = ecSetMarker8
+          ShortCut = 24632
+        end      
+        item
+          Command = ecSetMarker9
+          ShortCut = 24633
+        end      
+        item
+          Command = ecNormalSelect
+          ShortCut = 24654
+        end      
+        item
+          Command = ecColumnSelect
+          ShortCut = 24643
+        end      
+        item
+          Command = ecLineSelect
+          ShortCut = 24652
+        end      
+        item
+          Command = ecTab
+          ShortCut = 9
+        end      
+        item
+          Command = ecShiftTab
+          ShortCut = 8201
+        end      
+        item
+          Command = ecMatchBracket
+          ShortCut = 24642
+        end>
+      MouseActions = <>
+      MouseTextActions = <>
+      MouseSelActions = <>
+      Lines.Strings = (
+        'ColorPreview'
+      )
+      VisibleSpecialChars = [vscSpace, vscTabAtLast]
+      SelectedColor.BackPriority = 50
+      SelectedColor.ForePriority = 50
+      SelectedColor.FramePriority = 50
+      SelectedColor.BoldPriority = 50
+      SelectedColor.ItalicPriority = 50
+      SelectedColor.UnderlinePriority = 50
+      SelectedColor.StrikeOutPriority = 50
+      BracketHighlightStyle = sbhsBoth
+      BracketMatchColor.Background = clNone
+      BracketMatchColor.Foreground = clNone
+      BracketMatchColor.Style = [fsBold]
+      FoldedCodeColor.Background = clNone
+      FoldedCodeColor.Foreground = clGray
+      FoldedCodeColor.FrameColor = clGray
+      MouseLinkColor.Background = clNone
+      MouseLinkColor.Foreground = clBlue
+      LineHighlightColor.Background = clNone
+      LineHighlightColor.Foreground = clNone
+      inline TSynGutterPartList
+        object TSynGutterMarks
+          Width = 24
+          MouseActions = <>
+        end
+        object TSynGutterLineNumber
+          Width = 19
+          MouseActions = <>
+          MarkupInfo.Background = clBtnFace
+          MarkupInfo.Foreground = clNone
+          DigitCount = 2
+          ShowOnlyLineNumbersMultiplesOf = 1
+          ZeroStart = False
+          LeadingZeros = False
+        end
+        object TSynGutterChanges
+          Width = 4
+          MouseActions = <>
+          ModifiedColor = 59900
+          SavedColor = clGreen
+        end
+        object TSynGutterSeparator
+          Width = 2
+          MouseActions = <>
+          MarkupInfo.Background = clWhite
+          MarkupInfo.Foreground = clGray
+        end
+        object TSynGutterCodeFolding
+          MouseActions = <>
+          MarkupInfo.Background = clNone
+          MarkupInfo.Foreground = clGray
+          MouseActionsExpanded = <>
+          MouseActionsCollapsed = <>
+        end
+      end
+    end
+    object Splitter1: TSplitter
+      Left = 205
+      Height = 131
+      Top = 0
+      Width = 5
+    end
+    object ColorElementTree: TTreeView
+      Left = 0
+      Height = 131
+      Top = 0
+      Width = 205
+      Align = alLeft
+      DefaultItemHeight = 18
+      ReadOnly = True
+      RowSelect = True
+      ScrollBars = ssAutoBoth
+      ShowButtons = False
+      ShowRoot = False
+      TabOrder = 2
+      OnAdvancedCustomDrawItem = ColorElementTreeAdvancedCustomDrawItem
+      OnChange = ColorElementTreeChange
+      Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoRowSelect, tvoShowLines, tvoToolTips, tvoThemedDraw]
+    end
+  end
+  object pnlElementAttributes: TPanel[2]
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = PnlTop2
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 200
+    Top = 157
+    Width = 680
+    Anchors = [akLeft, akRight, akBottom]
+    AutoSize = True
+    BevelOuter = bvNone
+    ClientHeight = 200
+    ClientWidth = 680
+    Constraints.MinHeight = 200
+    TabOrder = 2
+    OnResize = pnlElementAttributesResize
+    object ForeGroundLabel: TLabel
+      AnchorSideLeft.Control = pnlElementAttributes
+      AnchorSideTop.Control = ForegroundColorBox
+      AnchorSideTop.Side = asrCenter
+      Left = 6
+      Height = 15
+      Top = 46
+      Width = 62
+      BorderSpacing.Left = 6
+      Caption = 'Fo&reground'
+      FocusControl = ForegroundColorBox
+      ParentColor = False
+      Visible = False
+    end
+    object BackGroundLabel: TLabel
+      AnchorSideLeft.Control = pnlElementAttributes
+      AnchorSideTop.Control = BackGroundColorBox
+      AnchorSideTop.Side = asrCenter
+      Left = 6
+      Height = 15
+      Top = 71
+      Width = 64
+      BorderSpacing.Left = 6
+      Caption = 'Bac&kground'
+      FocusControl = BackGroundColorBox
+      ParentColor = False
+      Visible = False
+    end
+    object ForeGroundUseDefaultCheckBox: TCheckBox
+      AnchorSideLeft.Control = pnlElementAttributes
+      AnchorSideTop.Control = ForegroundColorBox
+      AnchorSideTop.Side = asrCenter
+      Left = 6
+      Height = 19
+      Top = 44
+      Width = 82
+      BorderSpacing.Left = 6
+      Caption = 'Fo&reground'
+      OnChange = GeneralCheckBoxOnChange
+      TabOrder = 0
+    end
+    object ForegroundColorBox: TColorBox
+      AnchorSideLeft.Control = ColumnPosBevel
+      AnchorSideTop.Control = ToolBar1
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = pnlElementAttributes
+      AnchorSideRight.Side = asrBottom
+      Left = 94
+      Height = 22
+      Top = 42
+      Width = 200
+      DefaultColorColor = clWhite
+      Style = [cbStandardColors, cbExtendedColors, cbSystemColors, cbIncludeDefault, cbCustomColor, cbPrettyNames, cbCustomColors]
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 3
+      Constraints.MaxWidth = 200
+      ItemHeight = 16
+      OnChange = ForegroundColorBoxChange
+      TabOrder = 1
+    end
+    object BackGroundColorBox: TColorBox
+      AnchorSideLeft.Control = ColumnPosBevel
+      AnchorSideTop.Control = ForegroundColorBox
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = pnlElementAttributes
+      AnchorSideRight.Side = asrBottom
+      Left = 94
+      Height = 22
+      Top = 67
+      Width = 200
+      DefaultColorColor = clWhite
+      Style = [cbStandardColors, cbExtendedColors, cbSystemColors, cbIncludeDefault, cbCustomColor, cbPrettyNames, cbCustomColors]
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 3
+      Constraints.MaxWidth = 200
+      ItemHeight = 16
+      OnChange = ForegroundColorBoxChange
+      TabOrder = 3
+    end
+    object BackGroundUseDefaultCheckBox: TCheckBox
+      AnchorSideLeft.Control = pnlElementAttributes
+      AnchorSideTop.Control = BackGroundColorBox
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Side = asrBottom
+      Left = 6
+      Height = 19
+      Top = 69
+      Width = 84
+      BorderSpacing.Left = 6
+      Caption = 'Bac&kground'
+      OnChange = GeneralCheckBoxOnChange
+      TabOrder = 2
+    end
+    object FrameColorBox: TColorBox
+      AnchorSideLeft.Control = ColumnPosBevel
+      AnchorSideTop.Control = BackGroundColorBox
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = pnlElementAttributes
+      AnchorSideRight.Side = asrBottom
+      Left = 94
+      Height = 22
+      Top = 92
+      Width = 200
+      DefaultColorColor = clWhite
+      Style = [cbStandardColors, cbExtendedColors, cbSystemColors, cbIncludeDefault, cbCustomColor, cbPrettyNames, cbCustomColors]
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 3
+      Constraints.MaxWidth = 200
+      ItemHeight = 16
+      OnChange = ForegroundColorBoxChange
+      TabOrder = 5
+    end
+    object FrameColorUseDefaultCheckBox: TCheckBox
+      AnchorSideLeft.Control = pnlElementAttributes
+      AnchorSideTop.Control = FrameColorBox
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Side = asrBottom
+      Left = 6
+      Height = 19
+      Top = 94
+      Width = 74
+      BorderSpacing.Left = 6
+      Caption = '&Text-mark'
+      OnChange = GeneralCheckBoxOnChange
+      TabOrder = 4
+    end
+    object bvlAttributeSection: TDividerBevel
+      Left = 0
+      Height = 15
+      Top = 0
+      Width = 680
+      Caption = 'Element Attributes'
+      Align = alTop
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object pnlUnderline: TPanel
+      AnchorSideLeft.Control = pnlElementAttributes
+      AnchorSideTop.Control = FrameEdgesBox
+      AnchorSideTop.Side = asrBottom
+      Left = 6
+      Height = 40
+      Top = 141
+      Width = 134
+      AutoSize = True
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 3
+      BevelOuter = bvNone
+      ClientHeight = 40
+      ClientWidth = 134
+      TabOrder = 6
+      object TextUnderlineRadioPanel: TPanel
+        AnchorSideLeft.Control = TextUnderlineCheckBox
+        AnchorSideTop.Control = TextUnderlineCheckBox
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Side = asrBottom
+        Left = 0
+        Height = 21
+        Top = 19
+        Width = 134
+        AutoSize = True
+        BevelInner = bvLowered
+        BevelOuter = bvNone
+        ClientHeight = 21
+        ClientWidth = 134
+        TabOrder = 0
+        object TextUnderlineRadioOn: TRadioButton
+          Tag = 3
+          AnchorSideLeft.Control = TextUnderlineRadioPanel
+          AnchorSideTop.Control = TextUnderlineRadioPanel
+          AnchorSideRight.Control = TextUnderlineRadioOff
+          Left = 4
+          Height = 19
+          Top = 1
+          Width = 36
+          BorderSpacing.Left = 3
+          BorderSpacing.Right = 3
+          Caption = 'O&n'
+          Checked = True
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 0
+          TabStop = True
+        end
+        object TextUnderlineRadioOff: TRadioButton
+          Tag = 3
+          AnchorSideLeft.Control = TextUnderlineRadioOn
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = TextUnderlineRadioOn
+          AnchorSideRight.Control = TextUnderlineRadioInvert
+          Left = 43
+          Height = 19
+          Top = 1
+          Width = 37
+          BorderSpacing.Left = 3
+          BorderSpacing.Right = 3
+          Caption = 'O&ff'
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 1
+        end
+        object TextUnderlineRadioInvert: TRadioButton
+          Tag = 3
+          AnchorSideLeft.Control = TextUnderlineRadioOff
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = TextUnderlineRadioPanel
+          AnchorSideRight.Control = TextUnderlineRadioPanel
+          AnchorSideRight.Side = asrBottom
+          Left = 83
+          Height = 19
+          Top = 1
+          Width = 50
+          BorderSpacing.Left = 3
+          Caption = 'In&vert'
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 2
+        end
+      end
+      object TextUnderlineCheckBox: TCheckBox
+        AnchorSideLeft.Control = pnlUnderline
+        AnchorSideTop.Control = pnlUnderline
+        Left = 0
+        Height = 19
+        Top = 0
+        Width = 71
+        Caption = '&Underline'
+        OnChange = GeneralCheckBoxOnChange
+        TabOrder = 1
+      end
+    end
+    object pnlBold: TPanel
+      AnchorSideLeft.Control = pnlUnderline
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = pnlUnderline
+      Left = 146
+      Height = 40
+      Top = 141
+      Width = 134
+      AutoSize = True
+      BorderSpacing.Left = 6
+      BevelOuter = bvNone
+      ClientHeight = 40
+      ClientWidth = 134
+      TabOrder = 7
+      object TextBoldRadioPanel: TPanel
+        AnchorSideLeft.Control = TextBoldCheckBox
+        AnchorSideTop.Control = TextBoldCheckBox
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Side = asrBottom
+        Left = 0
+        Height = 21
+        Top = 19
+        Width = 134
+        AutoSize = True
+        BevelInner = bvLowered
+        BevelOuter = bvNone
+        ClientHeight = 21
+        ClientWidth = 134
+        TabOrder = 0
+        object TextBoldRadioInvert: TRadioButton
+          Tag = 2
+          AnchorSideLeft.Control = TextBoldRadioOff
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = TextBoldRadioPanel
+          AnchorSideRight.Control = TextBoldRadioPanel
+          AnchorSideRight.Side = asrBottom
+          Left = 83
+          Height = 19
+          Top = 1
+          Width = 50
+          BorderSpacing.Left = 3
+          Caption = 'In&vert'
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 2
+        end
+        object TextBoldRadioOn: TRadioButton
+          Tag = 2
+          AnchorSideLeft.Control = TextBoldRadioPanel
+          AnchorSideTop.Control = TextBoldRadioPanel
+          AnchorSideRight.Control = TextBoldRadioOff
+          Left = 4
+          Height = 19
+          Top = 1
+          Width = 36
+          BorderSpacing.Left = 3
+          BorderSpacing.Right = 3
+          Caption = 'O&n'
+          Checked = True
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 0
+          TabStop = True
+        end
+        object TextBoldRadioOff: TRadioButton
+          Tag = 2
+          AnchorSideLeft.Control = TextBoldRadioOn
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = TextBoldRadioPanel
+          AnchorSideRight.Control = TextBoldRadioInvert
+          Left = 43
+          Height = 19
+          Top = 1
+          Width = 37
+          BorderSpacing.Left = 3
+          BorderSpacing.Right = 3
+          Caption = 'O&ff'
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 1
+        end
+      end
+      object TextBoldCheckBox: TCheckBox
+        AnchorSideLeft.Control = pnlBold
+        AnchorSideTop.Control = pnlBold
+        Left = 0
+        Height = 19
+        Top = 0
+        Width = 44
+        Caption = '&Bold'
+        OnChange = GeneralCheckBoxOnChange
+        TabOrder = 1
+      end
+    end
+    object pnlItalic: TPanel
+      AnchorSideLeft.Control = pnlBold
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = pnlUnderline
+      Left = 286
+      Height = 40
+      Top = 141
+      Width = 134
+      AutoSize = True
+      BorderSpacing.Left = 6
+      BevelOuter = bvNone
+      ClientHeight = 40
+      ClientWidth = 134
+      TabOrder = 8
+      object TextItalicRadioPanel: TPanel
+        AnchorSideLeft.Control = TextItalicCheckBox
+        AnchorSideTop.Control = TextItalicCheckBox
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Side = asrBottom
+        Left = 0
+        Height = 21
+        Top = 19
+        Width = 134
+        AutoSize = True
+        BevelInner = bvLowered
+        BevelOuter = bvNone
+        ClientHeight = 21
+        ClientWidth = 134
+        TabOrder = 0
+        object TextItalicRadioInvert: TRadioButton
+          Tag = 2
+          AnchorSideLeft.Control = TextItalicRadioOff
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = TextItalicRadioPanel
+          AnchorSideRight.Control = TextItalicRadioPanel
+          AnchorSideRight.Side = asrBottom
+          Left = 83
+          Height = 19
+          Top = 1
+          Width = 50
+          BorderSpacing.Left = 3
+          Caption = 'In&vert'
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 2
+        end
+        object TextItalicRadioOn: TRadioButton
+          Tag = 2
+          AnchorSideLeft.Control = TextItalicRadioPanel
+          AnchorSideTop.Control = TextItalicRadioPanel
+          AnchorSideRight.Control = TextItalicRadioOff
+          Left = 4
+          Height = 19
+          Top = 1
+          Width = 36
+          BorderSpacing.Left = 3
+          BorderSpacing.Right = 3
+          Caption = 'O&n'
+          Checked = True
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 0
+          TabStop = True
+        end
+        object TextItalicRadioOff: TRadioButton
+          Tag = 2
+          AnchorSideLeft.Control = TextItalicRadioOn
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = TextItalicRadioPanel
+          AnchorSideRight.Control = TextItalicRadioInvert
+          Left = 43
+          Height = 19
+          Top = 1
+          Width = 37
+          BorderSpacing.Left = 3
+          BorderSpacing.Right = 3
+          Caption = 'O&ff'
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 1
+        end
+      end
+      object TextItalicCheckBox: TCheckBox
+        AnchorSideLeft.Control = pnlItalic
+        AnchorSideTop.Control = pnlItalic
+        Left = 0
+        Height = 19
+        Top = 0
+        Width = 45
+        Caption = '&Italic'
+        OnChange = GeneralCheckBoxOnChange
+        TabOrder = 1
+      end
+    end
+    object FrameStyleBox: TComboBox
+      AnchorSideLeft.Control = FrameEdgesBox
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = FrameEdgesBox
+      Left = 197
+      Height = 21
+      Top = 117
+      Width = 97
+      BorderSpacing.Left = 6
+      ItemHeight = 15
+      Items.Strings = (
+        'slsSolid'
+        'slsDashed'
+        'slsDotted'
+        'slsWaved'
+      )
+      OnChange = ForegroundColorBoxChange
+      OnDrawItem = FrameStyleBoxDrawItem
+      ReadOnly = True
+      Style = csOwnerDrawFixed
+      TabOrder = 9
+    end
+    object FrameEdgesBox: TComboBox
+      AnchorSideLeft.Control = FrameColorBox
+      AnchorSideTop.Control = FrameColorBox
+      AnchorSideTop.Side = asrBottom
+      Left = 94
+      Height = 21
+      Top = 117
+      Width = 97
+      BorderSpacing.Top = 3
+      ItemHeight = 15
+      Items.Strings = (
+        'Around'
+        'Bottom'
+        'Left'
+      )
+      OnChange = ForegroundColorBoxChange
+      OnDrawItem = FrameEdgesBoxDrawItem
+      ReadOnly = True
+      Style = csOwnerDrawFixed
+      TabOrder = 10
+    end
+    object ColumnPosBevel: TPanel
+      AnchorSideLeft.Control = ForeGroundUseDefaultCheckBox
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = pnlUnderline
+      AnchorSideTop.Side = asrBottom
+      AnchorSideBottom.Control = pnlElementAttributes
+      AnchorSideBottom.Side = asrBottom
+      Left = 94
+      Height = 1
+      Top = 181
+      Width = 50
+      AutoSize = True
+      BorderSpacing.Left = 6
+      BevelOuter = bvNone
+      Constraints.MinHeight = 1
+      Constraints.MinWidth = 50
+      TabOrder = 11
+    end
+    object pnlStrikeOut: TPanel
+      AnchorSideLeft.Control = pnlItalic
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = pnlUnderline
+      Left = 426
+      Height = 40
+      Top = 141
+      Width = 134
+      AutoSize = True
+      BorderSpacing.Left = 6
+      BevelOuter = bvNone
+      ClientHeight = 40
+      ClientWidth = 134
+      TabOrder = 12
+      object TextStrikeOutRadioPanel: TPanel
+        AnchorSideLeft.Control = TextStrikeOutCheckBox
+        AnchorSideTop.Control = TextStrikeOutCheckBox
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Side = asrBottom
+        Left = 0
+        Height = 21
+        Top = 19
+        Width = 134
+        AutoSize = True
+        BevelInner = bvLowered
+        BevelOuter = bvNone
+        ClientHeight = 21
+        ClientWidth = 134
+        TabOrder = 0
+        object TextStrikeOutRadioInvert: TRadioButton
+          Tag = 2
+          AnchorSideLeft.Control = TextStrikeOutRadioOff
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = TextStrikeOutRadioPanel
+          AnchorSideRight.Control = TextStrikeOutRadioPanel
+          AnchorSideRight.Side = asrBottom
+          Left = 83
+          Height = 19
+          Top = 1
+          Width = 50
+          BorderSpacing.Left = 3
+          Caption = 'In&vert'
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 2
+        end
+        object TextStrikeOutRadioOn: TRadioButton
+          Tag = 2
+          AnchorSideLeft.Control = TextStrikeOutRadioPanel
+          AnchorSideTop.Control = TextStrikeOutRadioPanel
+          AnchorSideRight.Control = TextStrikeOutRadioOff
+          Left = 4
+          Height = 19
+          Top = 1
+          Width = 36
+          BorderSpacing.Left = 3
+          BorderSpacing.Right = 3
+          Caption = 'O&n'
+          Checked = True
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 0
+          TabStop = True
+        end
+        object TextStrikeOutRadioOff: TRadioButton
+          Tag = 2
+          AnchorSideLeft.Control = TextStrikeOutRadioOn
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = TextStrikeOutRadioPanel
+          AnchorSideRight.Control = TextStrikeOutRadioInvert
+          Left = 43
+          Height = 19
+          Top = 1
+          Width = 37
+          BorderSpacing.Left = 3
+          BorderSpacing.Right = 3
+          Caption = 'O&ff'
+          OnChange = TextStyleRadioOnChange
+          TabOrder = 1
+        end
+      end
+      object TextStrikeOutCheckBox: TCheckBox
+        AnchorSideLeft.Control = pnlStrikeOut
+        AnchorSideTop.Control = pnlStrikeOut
+        Left = 0
+        Height = 19
+        Top = 0
+        Width = 72
+        Caption = '&Strike Out'
+        OnChange = GeneralCheckBoxOnChange
+        TabOrder = 1
+      end
+    end
+    object ToolBar1: TToolBar
+      Left = 3
+      Height = 24
+      Top = 15
+      Width = 674
+      AutoSize = True
+      BorderSpacing.Left = 3
+      BorderSpacing.Right = 3
+      EdgeBorders = [ebBottom]
+      ParentShowHint = False
+      ShowCaptions = True
+      ShowHint = True
+      TabOrder = 13
+      object tbtnGlobal: TToolButton
+        Tag = 1
+        Left = 1
+        Top = 0
+        AutoSize = True
+        Caption = 'Use (and edit) &global scheme settings'
+        Down = True
+        Grouped = True
+        OnClick = tbtnGlobalClick
+        Style = tbsCheck
+      end
+      object tbtnLocal: TToolButton
+        Tag = 1
+        Left = 216
+        Top = 0
+        AutoSize = True
+        Caption = 'Use &local scheme settings'
+        Grouped = True
+        OnClick = tbtnGlobalClick
+        Style = tbsCheck
+      end
+      object ToolButton3: TToolButton
+        Left = 206
+        Height = 22
+        Top = 0
+        Width = 10
+        Style = tbsSeparator
+      end
+    end
+  end
+end

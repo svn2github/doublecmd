@@ -1,0 +1,185 @@
+object frmQuickSearch: TfrmQuickSearch
+  Left = 0
+  Height = 43
+  Top = 0
+  Width = 436
+  AutoSize = True
+  ClientHeight = 43
+  ClientWidth = 436
+  OnExit = FrameExit
+  TabOrder = 0
+  DesignLeft = 134
+  DesignTop = 120
+  object edtSearch: TEdit
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = tglFilter
+    Left = 2
+    Height = 23
+    Hint = 'Enter text to search for or filter by'
+    Top = 2
+    Width = 211
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Around = 2
+    OnChange = edtSearchChange
+    OnKeyDown = edtSearchKeyDown
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+  end
+  object tglFilter: TToggleBox
+    AnchorSideTop.Control = edtSearch
+    AnchorSideRight.Control = pnlOptions
+    AnchorSideBottom.Control = edtSearch
+    AnchorSideBottom.Side = asrBottom
+    Left = 215
+    Height = 23
+    Hint = 'Toggle between search or filter'
+    Top = 2
+    Width = 46
+    Anchors = [akTop, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 2
+    Caption = 'Filter'
+    OnChange = tglFilterChange
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    TabStop = False
+  end
+  object btnCancel: TButton
+    AnchorSideTop.Control = edtSearch
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = edtSearch
+    AnchorSideBottom.Side = asrBottom
+    Left = 399
+    Height = 23
+    Hint = 'Close filter panel'
+    Top = 2
+    Width = 33
+    Anchors = [akTop, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 4
+    Cancel = True
+    Caption = 'X'
+    OnClick = btnCancelClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+    TabStop = False
+  end
+  object pnlOptions: TPanel
+    AnchorSideTop.Control = edtSearch
+    AnchorSideRight.Control = btnCancel
+    AnchorSideBottom.Control = edtSearch
+    AnchorSideBottom.Side = asrBottom
+    Left = 263
+    Height = 23
+    Top = 2
+    Width = 132
+    Anchors = [akTop, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 4
+    BevelOuter = bvNone
+    ClientHeight = 23
+    ClientWidth = 132
+    TabOrder = 2
+    object sbMatchBeginning: TSpeedButton
+      AnchorSideLeft.Control = pnlOptions
+      AnchorSideTop.Control = pnlOptions
+      AnchorSideTop.Side = asrCenter
+      Left = 0
+      Height = 24
+      Hint = 'Match Beginning'
+      Top = -1
+      Width = 24
+      AllowAllUp = True
+      Caption = '{'
+      GroupIndex = 1
+      OnClick = sbMatchBeginningClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbMatchEnding: TSpeedButton
+      AnchorSideLeft.Control = sbMatchBeginning
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = sbMatchBeginning
+      AnchorSideBottom.Control = sbMatchBeginning
+      AnchorSideBottom.Side = asrBottom
+      Left = 26
+      Height = 24
+      Hint = 'Match Ending'
+      Top = -1
+      Width = 24
+      AllowAllUp = True
+      Anchors = [akTop, akLeft, akBottom]
+      BorderSpacing.Left = 2
+      Caption = '}'
+      GroupIndex = 2
+      OnClick = sbMatchEndingClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbCaseSensitive: TSpeedButton
+      AnchorSideLeft.Control = sbMatchEnding
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = sbMatchBeginning
+      AnchorSideBottom.Control = sbMatchBeginning
+      AnchorSideBottom.Side = asrBottom
+      Left = 54
+      Height = 24
+      Hint = 'Case Sensitive'
+      Top = -1
+      Width = 24
+      AllowAllUp = True
+      Anchors = [akTop, akLeft, akBottom]
+      BorderSpacing.Left = 4
+      Caption = 'Aa'
+      GroupIndex = 3
+      OnClick = sbCaseSensitiveClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbFiles: TSpeedButton
+      AnchorSideLeft.Control = sbCaseSensitive
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = sbMatchBeginning
+      AnchorSideBottom.Control = sbMatchBeginning
+      AnchorSideBottom.Side = asrBottom
+      Left = 82
+      Height = 24
+      Hint = 'Files'
+      Top = -1
+      Width = 24
+      AllowAllUp = True
+      Anchors = [akTop, akLeft, akBottom]
+      BorderSpacing.Left = 4
+      Caption = 'F'
+      GroupIndex = 4
+      OnClick = sbFilesAndDirectoriesClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object sbDirectories: TSpeedButton
+      AnchorSideLeft.Control = sbFiles
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = sbMatchBeginning
+      AnchorSideBottom.Control = sbMatchBeginning
+      AnchorSideBottom.Side = asrBottom
+      Left = 108
+      Height = 24
+      Hint = 'Directories'
+      Top = -1
+      Width = 24
+      AllowAllUp = True
+      Anchors = [akTop, akLeft, akBottom]
+      BorderSpacing.Left = 2
+      Caption = 'D'
+      GroupIndex = 5
+      OnClick = sbFilesAndDirectoriesClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+  end
+end

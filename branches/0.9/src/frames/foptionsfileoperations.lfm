@@ -1,0 +1,323 @@
+inherited frmOptionsFileOperations: TfrmOptionsFileOperations
+  Height = 649
+  Width = 734
+  ChildSizing.LeftRightSpacing = 6
+  ClientHeight = 649
+  ClientWidth = 734
+  DesignLeft = 608
+  DesignTop = 181
+  object gbUserInterface: TGroupBox[0]
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = gbExecutingOperations
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 357
+    Top = 0
+    Width = 722
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    Caption = 'User interface'
+    ChildSizing.LeftRightSpacing = 10
+    ChildSizing.TopBottomSpacing = 10
+    ChildSizing.HorizontalSpacing = 4
+    ChildSizing.VerticalSpacing = 4
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 332
+    ClientWidth = 718
+    TabOrder = 0
+    object lblProgressKind: TLabel
+      AnchorSideLeft.Control = gbUserInterface
+      AnchorSideTop.Control = cbProgressKind
+      AnchorSideTop.Side = asrCenter
+      Left = 10
+      Height = 20
+      Top = 14
+      Width = 240
+      BorderSpacing.Bottom = 10
+      Caption = 'Show operations progress &initially in'
+      FocusControl = cbProgressKind
+      ParentColor = False
+    end
+    object cbProgressKind: TComboBoxAutoWidth
+      AnchorSideLeft.Control = lblProgressKind
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = gbUserInterface
+      AnchorSideRight.Side = asrBottom
+      Left = 254
+      Height = 28
+      Top = 10
+      Width = 100
+      ItemHeight = 20
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object cbDropReadOnlyFlag: TCheckBox
+      AnchorSideLeft.Control = lblProgressKind
+      AnchorSideTop.Control = cbProgressKind
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 24
+      Top = 42
+      Width = 150
+      Caption = 'D&rop readonly flag'
+      TabOrder = 1
+    end
+    object cbRenameSelOnlyName: TCheckBox
+      AnchorSideLeft.Control = lblProgressKind
+      AnchorSideTop.Control = cbDropReadOnlyFlag
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 24
+      Top = 70
+      Width = 357
+      Caption = 'Select &file name without extension when renaming'
+      TabOrder = 2
+    end
+    object cbShowCopyTabSelectPanel: TCheckBox
+      AnchorSideLeft.Control = lblProgressKind
+      AnchorSideTop.Control = cbRenameSelOnlyName
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 24
+      Top = 98
+      Width = 311
+      Caption = 'Sho&w tab select panel in copy/move dialog'
+      TabOrder = 3
+    end
+    object cbDeleteToTrash: TCheckBox
+      AnchorSideLeft.Control = lblProgressKind
+      AnchorSideTop.Control = cbShowCopyTabSelectPanel
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 24
+      Top = 126
+      Width = 364
+      Caption = 'Dele&te to recycle bin (Shift key reverses this setting)'
+      OnChange = cbDeleteToTrashChange
+      TabOrder = 4
+    end
+    object cbCopyConfirmation: TCheckBox
+      AnchorSideLeft.Control = lblProgressKind
+      AnchorSideTop.Control = bvlConfirmations
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 24
+      Top = 186
+      Width = 127
+      Caption = 'Cop&y operation'
+      TabOrder = 5
+    end
+    object cbMoveConfirmation: TCheckBox
+      AnchorSideLeft.Control = lblProgressKind
+      AnchorSideTop.Control = cbCopyConfirmation
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 24
+      Top = 214
+      Width = 130
+      Caption = '&Move operation'
+      TabOrder = 6
+    end
+    object cbDeleteConfirmation: TCheckBox
+      AnchorSideLeft.Control = lblProgressKind
+      AnchorSideTop.Control = cbMoveConfirmation
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 24
+      Top = 242
+      Width = 137
+      Caption = '&Delete operation'
+      TabOrder = 7
+    end
+    object cbDeleteToTrashConfirmation: TCheckBox
+      AnchorSideLeft.Control = lblProgressKind
+      AnchorSideTop.Control = cbDeleteConfirmation
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 24
+      Top = 270
+      Width = 191
+      Caption = 'D&elete to trash operation'
+      TabOrder = 8
+    end
+    object bvlConfirmations: TDividerBevel
+      AnchorSideLeft.Control = lblProgressKind
+      AnchorSideTop.Control = cbDeleteToTrash
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = gbUserInterface
+      AnchorSideRight.Side = asrBottom
+      Left = 10
+      Height = 20
+      Top = 162
+      Width = 698
+      Caption = 'Show confirmation window for:'
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 12
+      ParentFont = False
+    end
+    object cbVerifyChecksumConfirmation: TCheckBox
+      AnchorSideLeft.Control = cbDeleteToTrashConfirmation
+      AnchorSideTop.Control = cbDeleteToTrashConfirmation
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 24
+      Top = 298
+      Width = 199
+      Caption = 'Verify checksum operation'
+      TabOrder = 9
+    end
+  end
+  object gbExecutingOperations: TGroupBox[1]
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = gbUserInterface
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 225
+    Top = 363
+    Width = 722
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Around = 6
+    Caption = 'Executing operations'
+    ChildSizing.LeftRightSpacing = 10
+    ChildSizing.TopBottomSpacing = 10
+    ChildSizing.HorizontalSpacing = 4
+    ChildSizing.VerticalSpacing = 4
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 200
+    ClientWidth = 718
+    TabOrder = 1
+    object lblBufferSize: TLabel
+      AnchorSideLeft.Control = gbExecutingOperations
+      AnchorSideTop.Control = edtBufferSize
+      AnchorSideTop.Side = asrCenter
+      Left = 10
+      Height = 20
+      Top = 14
+      Width = 243
+      BorderSpacing.Bottom = 10
+      Caption = '&Buffer size for file operations (in KB):'
+      FocusControl = edtBufferSize
+      ParentColor = False
+    end
+    object edtBufferSize: TEdit
+      AnchorSideLeft.Control = lblBufferSize
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = gbExecutingOperations
+      AnchorSideBottom.Side = asrCenter
+      Left = 257
+      Height = 28
+      Top = 10
+      Width = 80
+      TabOrder = 0
+    end
+    object lblWipePassNumber: TLabel
+      AnchorSideLeft.Control = lblBufferSize
+      AnchorSideTop.Control = seWipePassNumber
+      AnchorSideTop.Side = asrCenter
+      AnchorSideBottom.Side = asrBottom
+      Left = 10
+      Height = 20
+      Top = 78
+      Width = 158
+      BorderSpacing.Bottom = 10
+      Caption = '&Number of wipe passes:'
+      FocusControl = seWipePassNumber
+      ParentColor = False
+    end
+    object seWipePassNumber: TSpinEdit
+      AnchorSideLeft.Control = lblWipePassNumber
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = edtHashBufferSize
+      AnchorSideTop.Side = asrBottom
+      Left = 172
+      Height = 28
+      Top = 74
+      Width = 50
+      TabOrder = 2
+    end
+    object cbProcessComments: TCheckBox
+      AnchorSideLeft.Control = lblBufferSize
+      AnchorSideTop.Control = seWipePassNumber
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 24
+      Top = 106
+      Width = 261
+      Caption = '&Process comments with files/folders'
+      TabOrder = 3
+    end
+    object cbSkipFileOpError: TCheckBox
+      AnchorSideLeft.Control = lblBufferSize
+      AnchorSideTop.Control = cbProcessComments
+      AnchorSideTop.Side = asrBottom
+      Left = 10
+      Height = 24
+      Top = 134
+      Width = 398
+      Caption = 'S&kip file operations errors and write them to log window'
+      TabOrder = 4
+    end
+    object lblTypeOfDuplicatedRename: TLabel
+      AnchorSideLeft.Control = cbSkipFileOpError
+      AnchorSideTop.Control = cmbTypeOfDuplicatedRename
+      AnchorSideTop.Side = asrCenter
+      Left = 10
+      Height = 20
+      Top = 166
+      Width = 241
+      Caption = 'Duplicated name auto-rename style:'
+      ParentColor = False
+    end
+    object cmbTypeOfDuplicatedRename: TComboBoxAutoWidth
+      AnchorSideLeft.Control = lblTypeOfDuplicatedRename
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = cbSkipFileOpError
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Side = asrBottom
+      Left = 255
+      Height = 28
+      Top = 162
+      Width = 100
+      BorderSpacing.Top = 4
+      ItemHeight = 20
+      Items.Strings = (
+        'DC legacy - Copy (x) filename.ext'
+        'Windows - filename (x).ext'
+        'Other - filename(x).ext'
+      )
+      Style = csDropDownList
+      TabOrder = 5
+    end
+    object edtHashBufferSize: TEdit
+      AnchorSideLeft.Control = lblHashBufferSize
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = edtBufferSize
+      AnchorSideTop.Side = asrBottom
+      AnchorSideBottom.Side = asrCenter
+      Left = 267
+      Height = 28
+      Top = 42
+      Width = 80
+      TabOrder = 1
+    end
+    object lblHashBufferSize: TLabel
+      AnchorSideLeft.Control = gbExecutingOperations
+      AnchorSideTop.Control = edtHashBufferSize
+      AnchorSideTop.Side = asrCenter
+      Left = 10
+      Height = 20
+      Top = 46
+      Width = 253
+      BorderSpacing.Bottom = 10
+      Caption = 'Buffer size for &hash calculation (in KB):'
+      FocusControl = edtHashBufferSize
+      ParentColor = False
+    end
+  end
+end

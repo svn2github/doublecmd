@@ -1,0 +1,614 @@
+inherited frmOptionsFilesViews: TfrmOptionsFilesViews
+  Height = 550
+  Width = 640
+  ClientHeight = 550
+  ClientWidth = 640
+  DesignLeft = 200
+  DesignTop = 261
+  object gbSorting: TGroupBox[0]
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 163
+    Top = 6
+    Width = 628
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Around = 6
+    Caption = 'Sorting'
+    ChildSizing.LeftRightSpacing = 12
+    ChildSizing.TopBottomSpacing = 8
+    ChildSizing.HorizontalSpacing = 6
+    ChildSizing.VerticalSpacing = 12
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ClientHeight = 143
+    ClientWidth = 624
+    TabOrder = 0
+    object lblSortMethod: TLabel
+      AnchorSideTop.Side = asrCenter
+      Left = 12
+      Height = 15
+      Top = 8
+      Width = 104
+      Caption = '&Sort method:'
+      FocusControl = cbSortMethod
+      ParentColor = False
+    end
+    object cbSortMethod: TComboBox
+      AnchorSideLeft.Control = lblSortMethod
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblSortMethod
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = gbSorting
+      AnchorSideRight.Side = asrBottom
+      Left = 126
+      Height = 23
+      Top = 4
+      Width = 486
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      ItemHeight = 15
+      Items.Strings = (
+        'Alphabetical, considering accents'
+        'Natural sorting: alphabetical and numbers'
+      )
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object lblCaseSensitivity: TLabel
+      Left = 12
+      Height = 15
+      Top = 35
+      Width = 104
+      Caption = 'Case s&ensitivity:'
+      FocusControl = cbCaseSensitivity
+      ParentColor = False
+    end
+    object cbCaseSensitivity: TComboBox
+      AnchorSideLeft.Control = lblCaseSensitivity
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblCaseSensitivity
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = gbSorting
+      AnchorSideRight.Side = asrBottom
+      Left = 126
+      Height = 23
+      Top = 31
+      Width = 486
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      ItemHeight = 15
+      Items.Strings = (
+        'not case sensitive'
+        'according to locale settings (aAbBcC)'
+        'first upper then lower case (ABCabc)'
+      )
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object lblSortFolderMode: TLabel
+      Left = 12
+      Height = 15
+      Top = 62
+      Width = 104
+      Caption = 'So&rting directories:'
+      FocusControl = cbSortFolderMode
+      ParentColor = False
+    end
+    object cbSortFolderMode: TComboBox
+      AnchorSideLeft.Control = lblSortFolderMode
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblSortFolderMode
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = gbSorting
+      AnchorSideRight.Side = asrBottom
+      Left = 126
+      Height = 23
+      Top = 58
+      Width = 486
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      ItemHeight = 15
+      Items.Strings = (
+        'sort by name and show first'
+        'sort like files and show first'
+        'sort like files'
+      )
+      Style = csDropDownList
+      TabOrder = 2
+    end
+    object lblNewFilesPosition: TLabel
+      Left = 12
+      Height = 15
+      Top = 89
+      Width = 104
+      Caption = '&Insert new files:'
+      FocusControl = cbNewFilesPosition
+      ParentColor = False
+    end
+    object cbNewFilesPosition: TComboBox
+      AnchorSideLeft.Control = lblNewFilesPosition
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblNewFilesPosition
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = gbSorting
+      AnchorSideRight.Side = asrBottom
+      Left = 126
+      Height = 23
+      Top = 85
+      Width = 486
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      ItemHeight = 15
+      Style = csDropDownList
+      TabOrder = 3
+    end
+    object lblUpdatedFilesPosition: TLabel
+      Left = 12
+      Height = 15
+      Top = 116
+      Width = 104
+      Caption = '&Move updated files:'
+      FocusControl = cbUpdatedFilesPosition
+      ParentColor = False
+    end
+    object cbUpdatedFilesPosition: TComboBox
+      AnchorSideLeft.Control = lblUpdatedFilesPosition
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblUpdatedFilesPosition
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = gbSorting
+      AnchorSideRight.Side = asrBottom
+      Left = 126
+      Height = 23
+      Top = 112
+      Width = 486
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      ItemHeight = 15
+      Style = csDropDownList
+      TabOrder = 4
+    end
+  end
+  object gbFormatting: TGroupBox[1]
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = gbSorting
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 6
+    Height = 136
+    Top = 175
+    Width = 628
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Around = 6
+    Caption = 'Formatting'
+    ChildSizing.LeftRightSpacing = 12
+    ChildSizing.TopBottomSpacing = 8
+    ChildSizing.HorizontalSpacing = 6
+    ChildSizing.VerticalSpacing = 12
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ClientHeight = 116
+    ClientWidth = 624
+    TabOrder = 1
+    object lblDateTimeFormat: TLabel
+      AnchorSideTop.Side = asrCenter
+      Left = 12
+      Height = 15
+      Top = 8
+      Width = 117
+      Caption = '&Date and time format:'
+      FocusControl = cbDateTimeFormat
+      ParentColor = False
+    end
+    object cbFileSizeFormat: TComboBox
+      AnchorSideLeft.Control = lblFileSizeFormat
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblFileSizeFormat
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = speNumberOfDigitsFile
+      Left = 139
+      Height = 23
+      Top = 31
+      Width = 379
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      BorderSpacing.Left = 10
+      DropDownCount = 12
+      ItemHeight = 15
+      OnChange = RefreshOurExamples
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object lblFileSizeFormat: TLabel
+      Left = 12
+      Height = 15
+      Top = 35
+      Width = 117
+      Caption = 'File si&ze format:'
+      FocusControl = cbFileSizeFormat
+      ParentColor = False
+    end
+    object pnlDateTime: TPanel
+      AnchorSideLeft.Control = lblDateTimeFormat
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblDateTimeFormat
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = gbFormatting
+      AnchorSideRight.Side = asrBottom
+      Left = 139
+      Height = 23
+      Top = 4
+      Width = 473
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      BorderSpacing.Left = 10
+      BevelOuter = bvNone
+      ClientHeight = 23
+      ClientWidth = 473
+      TabOrder = 0
+      object lblDateTimeExample: TLabel
+        AnchorSideTop.Control = cbDateTimeFormat
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = pnlDateTime
+        AnchorSideRight.Side = asrBottom
+        Left = 379
+        Height = 15
+        Top = 4
+        Width = 94
+        Anchors = [akTop, akRight]
+        Caption = 'Incorrect format'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object cbDateTimeFormat: TComboBox
+        AnchorSideRight.Control = lblDateTimeExample
+        Left = 0
+        Height = 23
+        Top = 0
+        Width = 371
+        Align = alLeft
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        BorderSpacing.Right = 8
+        ItemHeight = 15
+        Items.Strings = (
+          'yyyy/mm/dd hh:mm:ss'
+          'yyyy/mm/dd hh:mm'
+          'yy/mm/dd hh:mm'
+          'dd/mm/yyyy hh:mm:ss'
+          'dd/mm/yyyy hh:mm'
+          'dd/mm/yy hh:mm'
+          'dd/mm/yyyy'
+          'dd/mm/yy'
+        )
+        OnChange = cbDateTimeFormatChange
+        TabOrder = 0
+      end
+    end
+    object speNumberOfDigitsFile: TSpinEdit
+      AnchorSideLeft.Control = cbFileSizeFormat
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = cbFileSizeFormat
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = lblFileSizeExample
+      Left = 524
+      Height = 23
+      Top = 31
+      Width = 50
+      Anchors = [akTop, akRight]
+      MaxValue = 3
+      OnChange = RefreshOurExamples
+      TabOrder = 2
+    end
+    object lblHeaderFooterSizeFormat: TLabel
+      Left = 12
+      Height = 15
+      Top = 62
+      Width = 117
+      Caption = '&Header/footer format:'
+      FocusControl = cbHeaderFooterSizeFormat
+      ParentColor = False
+    end
+    object cbHeaderFooterSizeFormat: TComboBox
+      AnchorSideLeft.Control = lblHeaderFooterSizeFormat
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblHeaderFooterSizeFormat
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = speNumberOfDigitsHeaderFooter
+      Left = 139
+      Height = 23
+      Top = 58
+      Width = 379
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      DropDownCount = 12
+      ItemHeight = 15
+      OnChange = RefreshOurExamples
+      Style = csDropDownList
+      TabOrder = 3
+    end
+    object speNumberOfDigitsHeaderFooter: TSpinEdit
+      AnchorSideLeft.Control = cbHeaderFooterSizeFormat
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = cbHeaderFooterSizeFormat
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = lblHeaderFooterSizeExample
+      Left = 524
+      Height = 23
+      Top = 58
+      Width = 50
+      Anchors = [akTop, akRight]
+      MaxValue = 3
+      OnChange = RefreshOurExamples
+      TabOrder = 4
+    end
+    object lblHeaderFooterSizeExample: TLabel
+      AnchorSideTop.Control = cbHeaderFooterSizeFormat
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = gbFormatting
+      AnchorSideRight.Side = asrBottom
+      Left = 580
+      Height = 12
+      Top = 63
+      Width = 32
+      Alignment = taRightJustify
+      Anchors = [akTop, akRight]
+      Constraints.MinHeight = 12
+      Constraints.MinWidth = 32
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblFileSizeExample: TLabel
+      AnchorSideTop.Control = cbFileSizeFormat
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = gbFormatting
+      AnchorSideRight.Side = asrBottom
+      Left = 580
+      Height = 12
+      Top = 36
+      Width = 32
+      Alignment = taRightJustify
+      Anchors = [akTop, akRight]
+      Constraints.MinHeight = 12
+      Constraints.MinWidth = 32
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblOperationSizeExample: TLabel
+      AnchorSideTop.Control = cbOperationSizeFormat
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = gbFormatting
+      AnchorSideRight.Side = asrBottom
+      Left = 580
+      Height = 12
+      Top = 90
+      Width = 32
+      Alignment = taRightJustify
+      Anchors = [akTop, akRight]
+      Constraints.MinHeight = 12
+      Constraints.MinWidth = 32
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object speNumberOfDigitsOperation: TSpinEdit
+      AnchorSideLeft.Control = cbOperationSizeFormat
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = cbOperationSizeFormat
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = lblOperationSizeExample
+      Left = 524
+      Height = 23
+      Top = 85
+      Width = 50
+      Anchors = [akTop, akRight]
+      MaxValue = 3
+      OnChange = RefreshOurExamples
+      TabOrder = 6
+    end
+    object cbOperationSizeFormat: TComboBox
+      AnchorSideLeft.Control = lblOperationSizeFormat
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblOperationSizeFormat
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = speNumberOfDigitsOperation
+      Left = 139
+      Height = 23
+      Top = 85
+      Width = 379
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      DropDownCount = 12
+      ItemHeight = 15
+      OnChange = RefreshOurExamples
+      Style = csDropDownList
+      TabOrder = 5
+    end
+    object lblOperationSizeFormat: TLabel
+      Left = 12
+      Height = 15
+      Top = 89
+      Width = 117
+      Caption = 'O&peration size format:'
+      FocusControl = cbOperationSizeFormat
+      ParentColor = False
+    end
+  end
+  object gbPersonalizedAbbreviationToUse: TGroupBox[2]
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = gbFormatting
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Side = asrBottom
+    Left = 6
+    Height = 55
+    Top = 317
+    Width = 628
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Around = 6
+    Caption = 'Personalized abbreviations to use:'
+    ChildSizing.LeftRightSpacing = 12
+    ChildSizing.TopBottomSpacing = 8
+    ChildSizing.HorizontalSpacing = 2
+    ClientHeight = 35
+    ClientWidth = 624
+    TabOrder = 2
+    object lblByte: TLabel
+      AnchorSideLeft.Control = gbPersonalizedAbbreviationToUse
+      AnchorSideTop.Control = gbPersonalizedAbbreviationToUse
+      AnchorSideBottom.Side = asrBottom
+      Left = 20
+      Height = 15
+      Top = 8
+      Width = 26
+      BorderSpacing.Left = 20
+      BorderSpacing.Top = 8
+      Caption = '&Byte:'
+      FocusControl = edByte
+      ParentColor = False
+    end
+    object edByte: TEdit
+      AnchorSideLeft.Control = lblByte
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblByte
+      AnchorSideTop.Side = asrCenter
+      Left = 48
+      Height = 23
+      Top = 4
+      Width = 44
+      MaxLength = 10
+      OnChange = RefreshOurExamples
+      TabOrder = 0
+    end
+    object lblKilobyte: TLabel
+      AnchorSideLeft.Control = edByte
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblMegabyte
+      AnchorSideTop.Side = asrCenter
+      Left = 107
+      Height = 15
+      Top = 8
+      Width = 46
+      BorderSpacing.Left = 15
+      Caption = '&Kilobyte:'
+      FocusControl = edKilo
+      ParentColor = False
+    end
+    object edKilo: TEdit
+      AnchorSideLeft.Control = lblKilobyte
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblByte
+      AnchorSideTop.Side = asrCenter
+      Left = 155
+      Height = 23
+      Top = 4
+      Width = 44
+      MaxLength = 10
+      OnChange = RefreshOurExamples
+      TabOrder = 1
+    end
+    object edMega: TEdit
+      AnchorSideLeft.Control = lblMegabyte
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblByte
+      AnchorSideTop.Side = asrCenter
+      Left = 272
+      Height = 23
+      Top = 4
+      Width = 44
+      MaxLength = 10
+      OnChange = RefreshOurExamples
+      TabOrder = 2
+    end
+    object lblMegabyte: TLabel
+      AnchorSideLeft.Control = edKilo
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblByte
+      AnchorSideTop.Side = asrCenter
+      Left = 214
+      Height = 15
+      Top = 8
+      Width = 56
+      BorderSpacing.Left = 15
+      Caption = 'Megab&yte:'
+      FocusControl = edMega
+      ParentColor = False
+    end
+    object lblGigabyte: TLabel
+      AnchorSideLeft.Control = edMega
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblByte
+      AnchorSideTop.Side = asrCenter
+      Left = 331
+      Height = 15
+      Top = 8
+      Width = 50
+      BorderSpacing.Left = 15
+      Caption = '&Gigabyte:'
+      FocusControl = edGiga
+      ParentColor = False
+    end
+    object edGiga: TEdit
+      AnchorSideLeft.Control = lblGigabyte
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblByte
+      AnchorSideTop.Side = asrCenter
+      Left = 383
+      Height = 23
+      Top = 4
+      Width = 44
+      MaxLength = 10
+      OnChange = RefreshOurExamples
+      TabOrder = 3
+    end
+    object btnDefault: TButton
+      AnchorSideLeft.Control = edTera
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblByte
+      AnchorSideTop.Side = asrCenter
+      Left = 551
+      Height = 25
+      Top = 3
+      Width = 64
+      AutoSize = True
+      BorderSpacing.Left = 15
+      Caption = 'De&fault'
+      OnClick = btnDefaultClick
+      TabOrder = 5
+    end
+    object edTera: TEdit
+      AnchorSideLeft.Control = lblTerabyte
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblByte
+      AnchorSideTop.Side = asrCenter
+      Left = 492
+      Height = 23
+      Top = 4
+      Width = 44
+      MaxLength = 10
+      OnChange = RefreshOurExamples
+      TabOrder = 4
+    end
+    object lblTerabyte: TLabel
+      AnchorSideLeft.Control = edGiga
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = lblByte
+      AnchorSideTop.Side = asrCenter
+      Left = 442
+      Height = 15
+      Top = 8
+      Width = 48
+      BorderSpacing.Left = 15
+      Caption = '&Terabyte:'
+      FocusControl = edTera
+      ParentColor = False
+    end
+  end
+end

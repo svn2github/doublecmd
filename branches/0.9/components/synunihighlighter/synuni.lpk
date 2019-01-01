@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <Name Value="SynUni"/>
+    <AddToProjectUsesSection Value="True"/>
+    <Author Value="Vitaly Nevzorov (aka Vit); Kirill Burtsev (aka Fantasist); Vitaly Lyapota (aka Vitalik); eastorwest; Alexander Koblov"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="source"/>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <SyntaxMode Value="Delphi"/>
+        </SyntaxOptions>
+      </Parsing>
+      <CodeGeneration>
+        <Checks>
+          <IOChecks Value="True"/>
+          <RangeChecks Value="True"/>
+          <OverflowChecks Value="True"/>
+          <StackChecks Value="True"/>
+        </Checks>
+      </CodeGeneration>
+      <Linking>
+        <Debugging>
+          <DebugInfoType Value="dsDwarf2Set"/>
+          <UseExternalDbgSyms Value="True"/>
+        </Debugging>
+      </Linking>
+    </CompilerOptions>
+    <Description Value="SynUniHighlighter component version 1.8 for syntax highlighting with SynEdit
+Ported to Lazarus by eastorwest on February 2012"/>
+    <License Value="Mozilla Public License Version 1.1
+https://www.mozilla.org/en-US/MPL/1.1/
+or
+GNU General Public License, version 2
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html"/>
+    <Version Major="1" Minor="8"/>
+    <Files Count="3">
+      <Item1>
+        <Filename Value="source/SynUniClasses.pas"/>
+        <UnitName Value="SynUniClasses"/>
+      </Item1>
+      <Item2>
+        <Filename Value="source/SynUniHighlighter.pas"/>
+        <UnitName Value="SynUniHighlighter"/>
+      </Item2>
+      <Item3>
+        <Filename Value="source/SynUniRules.pas"/>
+        <UnitName Value="SynUniRules"/>
+      </Item3>
+    </Files>
+    <RequiredPkgs Count="3">
+      <Item1>
+        <PackageName Value="FCL"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="SynEdit"/>
+      </Item3>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

@@ -1,0 +1,260 @@
+object frmEditHotkey: TfrmEditHotkey
+  Left = 577
+  Height = 465
+  Top = 168
+  Width = 458
+  BorderIcons = [biSystemMenu]
+  ClientHeight = 465
+  ClientWidth = 458
+  Constraints.MinHeight = 200
+  Constraints.MinWidth = 200
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '1.6.0.4'
+  object lblShortcuts: TLabel
+    AnchorSideLeft.Control = pnlShortcuts
+    AnchorSideTop.Control = Owner
+    AnchorSideBottom.Control = btnSelectFromList
+    AnchorSideBottom.Side = asrBottom
+    Left = 8
+    Height = 15
+    Top = 13
+    Width = 53
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Top = 6
+    Caption = 'Shortcuts:'
+    ParentColor = False
+  end
+  object pnlShortcuts: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = btnSelectFromList
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 8
+    Height = 0
+    Top = 28
+    Width = 442
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Left = 8
+    BorderSpacing.Right = 8
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    TabOrder = 0
+  end
+  object lblHotKeyConflict: TLabel
+    AnchorSideLeft.Control = pnlShortcuts
+    AnchorSideTop.Control = pnlShortcuts
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = pnlShortcuts
+    AnchorSideRight.Side = asrBottom
+    Left = 8
+    Height = 1
+    Top = 32
+    Width = 442
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    BorderSpacing.Bottom = 4
+    ParentColor = False
+    ParentShowHint = False
+    ShowHint = True
+    Visible = False
+    WordWrap = True
+  end
+  object lblParameters: TLabel
+    AnchorSideLeft.Control = pnlShortcuts
+    AnchorSideTop.Control = lblHotKeyConflict
+    AnchorSideTop.Side = asrBottom
+    Left = 8
+    Height = 15
+    Top = 39
+    Width = 189
+    BorderSpacing.Top = 6
+    Caption = '&Parameters (each in a separate line):'
+    FocusControl = edtParameters
+    ParentColor = False
+  end
+  object edtParameters: TMemo
+    AnchorSideLeft.Control = pnlShortcuts
+    AnchorSideTop.Control = lblParameters
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = pnlShortcuts
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = btnShowCommandHelp
+    Left = 8
+    Height = 328
+    Top = 54
+    Width = 442
+    HelpType = htKeyword
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 2
+    ScrollBars = ssAutoBoth
+    TabOrder = 1
+    WordWrap = False
+  end
+  object btnShowCommandHelp: TButton
+    AnchorSideLeft.Control = pnlShortcuts
+    AnchorSideRight.Control = pnlShortcuts
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = cgHKControls
+    Left = 8
+    Height = 10
+    Top = 386
+    Width = 442
+    Anchors = [akLeft, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Top = 4
+    OnClick = btnShowCommandHelpClick
+    TabOrder = 2
+  end
+  object cgHKControls: TCheckGroup
+    AnchorSideLeft.Control = pnlShortcuts
+    AnchorSideRight.Control = pnlShortcuts
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = btnOK
+    Left = 8
+    Height = 19
+    Top = 396
+    Width = 442
+    Anchors = [akLeft, akRight, akBottom]
+    AutoFill = True
+    AutoSize = True
+    Caption = 'Only for these controls'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    OnItemClick = cgHKControlsItemClick
+    TabOrder = 3
+    Visible = False
+  end
+  object btnOK: TBitBtn
+    AnchorSideLeft.Control = pnlShortcuts
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 8
+    Height = 40
+    Top = 419
+    Width = 120
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Top = 4
+    BorderSpacing.Bottom = 6
+    Caption = '&OK'
+    Constraints.MinHeight = 40
+    Constraints.MinWidth = 120
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    TabOrder = 4
+  end
+  object btnCancel: TBitBtn
+    AnchorSideRight.Control = pnlShortcuts
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 330
+    Height = 40
+    Top = 419
+    Width = 120
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Bottom = 6
+    Cancel = True
+    Caption = '&Cancel'
+    Constraints.MinHeight = 40
+    Constraints.MinWidth = 120
+    Kind = bkCancel
+    ModalResult = 2
+    TabOrder = 5
+  end
+  object btnAddShortcut: TSpeedButton
+    AnchorSideTop.Control = btnRemoveShortcut
+    AnchorSideRight.Control = btnRemoveShortcut
+    Left = 406
+    Height = 22
+    Hint = 'Add new shortcut to sequence'
+    Top = 6
+    Width = 22
+    Anchors = [akTop, akRight]
+    OnClick = btnAddShortcutClick
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object btnRemoveShortcut: TSpeedButton
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = pnlShortcuts
+    AnchorSideRight.Side = asrBottom
+    Left = 428
+    Height = 22
+    Hint = 'Remove last shortcut from sequence'
+    Top = 6
+    Width = 22
+    Anchors = [akTop, akRight]
+    BorderSpacing.Top = 6
+    OnClick = btnRemoveShortcutClick
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object btnSelectFromList: TSpeedButton
+    AnchorSideTop.Control = btnRemoveShortcut
+    AnchorSideRight.Control = btnAddShortcut
+    Left = 382
+    Height = 22
+    Hint = 'Select shortcut from list of remaining free available keys'
+    Top = 6
+    Width = 24
+    Anchors = [akTop, akRight]
+    Glyph.Data = {
+      36040000424D3604000000000000360000002800000010000000100000000100
+      2000000000000004000064000000640000000000000000000000000000140000
+      0033000000330000003300000033000000330000003300000033000000330000
+      00330000003300000033000000330000003300000014FFFFFF0073706F849390
+      8EFF93908EFF93908EFF93908EFF93908EFF93908EFF93908EFF93908EFF9390
+      8EFF93908EFF93908EFF93908EFF93908EFF73706F84FFFFFF00959290FFF1F2
+      F1FFD3D3D2FFD4D3D2FFD4D3D2FFD4D3D2FFD4D3D2FFD4D3D2FFD4D3D2FFD4D3
+      D2FFD4D3D2FFD4D3D2FFD3D3D2FFF1F1F0FF9A9796FFFFFFFF00969391FFF0F0
+      EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFEEEFEEFFADAAA9FFFFFFFF00999694FFEFEF
+      EFFFFFFFFFFFFDFDFDFFFDFDFDFFFDFDFDFFFDFDFDFFFDFDFDFFFDFDFDFFFDFD
+      FDFFFDFDFDFFFDFDFDFFFFFFFFFFE9E9E9FFAEABAAFFFFFFFF009C9996FFEAEA
+      EAFFFFFFFFFFFAFAFAFFFAFAFAFFFAFAFAFFFAFAFAFFFAFAFAFFFAFAFAFFFAFA
+      FAFFFAFAFAFFFAFAFAFFFFFFFFFFE4E4E4FFB0AEADFFFFFFFF009E9B99FFE5E6
+      E6FFFFFFFFFFFBFBFBFFF8F8F9FFF7F7F7FFF7F7F7FFF7F7F7FFF7F7F7FFF7F7
+      F7FFF7F7F7FFF6F6F6FFFFFFFFFFE0E0DFFFB1B0AEFFFFFFFF00A09D9BFFE1E1
+      E1FFFFFFFFFF696969FFFAFAF9FFF4F4F3FFF4F4F3FFF4F4F3FF696969FF6969
+      69FF696969FFF3F3F2FFFFFFFFFFDBDBDBFFB4B2B0FFFFFFFF00A3A09EFFDCDC
+      DCFFFFFFFFFF6F6F6FFFFEFEFCFFF6F6F5FFF2F2F1FFF1F1F0FFF1F1F0FF6F6F
+      6FFFF1F1F0FFF0F0EFFFFFFFFFFFD6D7D7FFB6B4B2FFFFFFFF00A5A3A1FFD9D8
+      D8FFFFFFFFFF727272FF727272FF6B6B6BFFF2F2F1FFEEEEEDFFEEEEEDFF7272
+      72FFEEEEEDFFEDEDECFFFFFFFFFFD3D2D2FFB7B6B4FFFFFFFF00A8A5A3FFD4D3
+      D2FFFFFFFFFF707070FFF7F7F6FFF0F1EFFFECECEBFFEBEBEAFFEBEBEAFF7070
+      70FFEBEBEAFFEAEAE9FFFFFFFFFFCECDCCFFBAB8B7FFFFFFFF00ABA8A6FFCFCE
+      CDFFFFFFFFFF707070FFF4F3F3FFEEEDEDFFEDECECFFE9E8E8FFE8E7E7FF7070
+      70FFE8E7E7FFE7E5E5FFFFFFFFFFCAC9C8FFBCBAB8FFFFFFFF00ADABA9FFC9CA
+      C9FFFFFFFFFF6D6D6DFF707070FF6F6F6FFF6A6A6AFFE7E6E5FF696969FF6D6D
+      6DFFE3E2E1FFE2E1E0FFFFFFFFFFC5C5C4FFBDBCBAFFFFFFFF00AFADABFFC2C1
+      C0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFC0BFBEFFC0BEBDFFFFFFFF00B1AFADFFE4E4
+      E3FFF1F1F1FFEFF0F0FFEFF0F0FFEFF0F0FFEFF0F0FFEFF0F0FFEFF0F0FFEFF0
+      F0FFEFF0F0FFEFF0F0FFF1F1F1FFE3E4E3FFB5B3B1FFFFFFFF00B5B3B165B3B1
+      AFFFB2AFADFFB1AFADFFB1AFADFFB1AFADFFB1AFADFFB1AFADFFB1AFADFFB1AF
+      ADFFB1AFADFFB1AFADFFB2AFADFFB3B1AEFFB4B2B065FFFFFF00
+    }
+    OnClick = btnSelectFromListClick
+  end
+  object pmWithAllShortcuts: TPopupMenu
+    left = 310
+    top = 13
+  end
+end
