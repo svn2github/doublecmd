@@ -194,8 +194,7 @@ begin
   S:= lua_tostring(L, 1);
   FromEnc:= lua_tostring(L, 2);
   ToEnc:= lua_tostring(L, 3);
-  S:= ConvertEncoding(S, FromEnc, ToEnc);
-  lua_pushstring(L, PAnsiChar(S));
+  lua_pushstring(L, ConvertEncoding(S, FromEnc, ToEnc));
 end;
 
 function luaClipbrdClear(L : Plua_State) : Integer; cdecl;
@@ -270,8 +269,8 @@ begin
     lua_pushnil(L);
     Exit;
   end;
-  ACaption:= lua_tostring(L, 1);
-  APrompt:= lua_tostring(L, 2);
+  ACaption:= lua_tocstring(L, 1);
+  APrompt:= lua_tocstring(L, 2);
   ACount:= lua_objlen(L, 3);
   AStringList:= TStringList.Create;
   for AIndex := 1 to ACount do
@@ -289,6 +288,24 @@ begin
     lua_pushnil(L);
   end;
   AStringList.Free;
+end;
+
+function luaLogWrite(L : Plua_State) : Integer; cdecl;
+var
+  sText: String;
+  bForce: Boolean = True;
+  bLogFile: Boolean = False;
+  LogMsgType: TLogMsgType = lmtInfo;
+begin
+  Result:= 0;
+  sText:= lua_tostring(L, 1);
+  if lua_isnumber(L, 2) then
+    LogMsgType:= TLogMsgType(lua_tointeger(L, 2));
+  if lua_isboolean(L, 3) then
+    bForce:= lua_toboolean(L, 3);
+  if lua_isboolean(L, 4) then
+    bLogFile:= lua_toboolean(L, 4);
+  logWrite(sText, LogMsgType, bForce, bLogFile);
 end;
 
 function luaExecuteCommand(L : Plua_State) : Integer; cdecl;
@@ -368,6 +385,7 @@ begin
   lua_setglobal(L, 'Dialogs');
 
   lua_newtable(L);
+    luaP_register(L, 'LogWrite', @luaLogWrite);
     luaP_register(L, 'ExecuteCommand', @luaExecuteCommand);
   lua_setglobal(L, 'DC');
 
@@ -443,7 +461,7 @@ begin
 
     // Check execution result
     if Status <> 0 then begin
-      Script:= StrPas(lua_tostring(L, -1));
+      Script:= lua_tostring(L, -1);
       MessageDlg(CeRawToUtf8(Script), mtError, [mbOK], 0);
     end;
 
