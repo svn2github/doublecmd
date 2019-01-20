@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Double Commander 0.9.0 alpha\n"
+"Project-Id-Version: Double Commander 0.9.0 beta\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-12-12 13:24+0300\n"
+"PO-Revision-Date: 2019-01-17 17:24+0300\n"
 "Last-Translator: Alexander Koblov <alexx2000@mail.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -4118,7 +4118,7 @@ msgstr "Сохранять при выходе"
 
 #: tfrmoptionsconfiguration.gbsortorderconfigurationoption.caption
 msgid "Sort order of configuration order in left tree"
-msgstr "Сортировка дерева конфигурации (слева)"
+msgstr "Сортировка дерева разделов настроек (слева)"
 
 #: tfrmoptionsconfiguration.gpconfigurationtreestate.caption
 msgid "Tree state when entering in configuration page"
@@ -8594,7 +8594,7 @@ msgstr "Версия"
 
 #: tfrmstartingsplash.lblwidgetsetver.caption
 msgid "WidgetsetVer"
-msgstr ""
+msgstr "Библиотека виджетов"
 
 #: tfrmsymlink.btncancel.caption
 msgctxt "TFRMSYMLINK.BTNCANCEL.CAPTION"
